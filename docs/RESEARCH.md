@@ -56,12 +56,34 @@ so no numeric FrontierMath winner was admitted.
 Search results exposed model rankings, news roundups and community anecdotes.
 Those were discovery leads only. No third-party roundup, search snippet, rumored
 model or anonymous style claim is used as an admitted performance observation.
-The seed has no community-test records; the format supports reproducible ones.
+The v0.2.0 update admits tiered firsthand community records as described below.
 
 Coverage is limited to verified candidates in this pass. Meta, Mistral, MiniMax,
 Z.ai, Xiaomi and specialist audio/image/proof systems are future discovery targets,
 not implicitly weaker models. Live routing should check relevant missing models.
 No full benchmark dataset was copied and no paid API comparison was run.
+
+## Community and frontend update · 2026-09-29
+
+The [Arena WebDev overall page](https://arena.ai/leaderboard/code) provides a
+dated task-specific crowd-preference comparison. Ten rows matching catalog
+models were admitted with the displayed effort settings. This is formal
+evaluation evidence, not an additional anecdotal popularity multiplier.
+
+[neuralhub.dev's authored experiment index](https://neuralhub.dev/ai-test-results)
+links Kimi3 web artifacts. They are admitted as an artifact-backed author report;
+we did not rerun generation or independently verify the output's functionality.
+The [UI usage report](https://www.reddit.com/r/kimi/comments/1vconet/comment/p157lwe/)
+and [contrary UI preference](https://www.reddit.com/r/kimi/comments/1vconet/comment/p2cjso7/)
+provide separately attributed firsthand signals. Relative dates are retained as
+unknown exact dates, discounted and bounded by first-seen expiry. Old Opus
+comparisons are not relabeled as evidence about Opus 5.5.
+
+These reports informed narrower visual-design mapping and a community channel;
+they do not support backend or reference-fidelity claims. The initial community
+sample concentrates on Kimi because it was the specific research question;
+other models require the same balanced search for favorable and adverse reports.
+See [community methodology](../skills/promptharbor/references/community.md).
 
 ## Architecture decisions
 

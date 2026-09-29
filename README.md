@@ -3,25 +3,37 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.1.0"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.2.0"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
   <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-09-29"></a>
 </p>
-<p align="center"><b>Give it a question. Get a model recommendation.<br>Give it a project. Get coordinated model handoffs.</b></p>
+<p align="center"><b>Give it a question. Choose from its Top 3 models.<br>Give it a project. Get coordinated model handoffs.</b></p>
 <p align="center">English · <a href="README.zh-CN.md">简体中文</a></p>
 
 PromptHarbor is an Agent Skill that identifies the **domain, subdomain and task**
 behind an ordinary prompt, then recommends suitable language models using
-task-specific evidence. For a larger project, it splits the work, suggests a
-model for each part, and writes copyable prompts with shared interfaces. The
+task-specific evaluations and weighted community reports. It offers **Top 3 choices**
+so you can use the subscriptions, APIs and tools you already have. For a larger
+project, it splits the work, offers Top 3 per part, and writes copyable prompts
+with shared interfaces. The
 original conversation brings the returned work together.
 
-**v0.1.0 is an initial, tested implementation with a curated evidence seed.**
-It is not an exhaustive model census or a validated predictor of the best model
-for every prompt. The host performs semantic classification and live research;
-the local helpers validate evidence and handoffs without API keys.
+The host performs semantic classification and live research; local helpers
+produce inspectable choices and validate handoffs without API keys.
 
 ## See the difference
+
+> “Design an interactive landing page. I have GPT-6 Sol, Kimi K3 and DeepSeek V4.1 Flash.”
+
+| Top 3 | Task-fit reason | Resource consideration |
+|---|---|---|
+| GPT-6 Sol | Stronger same-cohort WebDev support in this snapshot | Account tools and quota |
+| Kimi K3 | WebDev evidence plus artifact-backed visual-web reports | Style fit, quota and conflicting feedback |
+| DeepSeek V4.1 Flash | Another available candidate with task evaluation evidence | Deployment, cost and interaction checks |
+
+This visual-design example is restricted to the stated resources. See its
+[complete output with sources and dates](examples/frontend-output.md).
+Without a resource list, the skill offers a broader Top 3; with one, it filters.
 
 **A question**
 
@@ -36,16 +48,15 @@ does not prove trading profitability.
 
 > “Build a library management system with book ratings and reviews.”
 
-| Part | Model suggestion in the worked example | Handoff boundary |
+| Part | How choices work | Handoff boundary |
 |---|---|---|
-| Frontend | Claude Sonnet 5.5, provisional | UI states, typed API client, exact routes |
+| Frontend | Top 3 from task evaluations and community reports | UI states, typed API client, exact routes |
 | Database | Keep declared current GPT-6 Sol as a baseline | Schema, constraints, seed and SQL checks |
-| Backend | Claude Opus 5.5, provisional | API contract, transactions, error responses |
+| Backend | Top 3; user selects one for the shared contract | API contract, transactions, error responses |
 | Tests | Keep current model unless evidence supports moving | End-to-end scenarios and observed results |
 | Integration | Original conversation | Review, assemble, fix mismatches, run checks |
 
-These are snapshot-based example assignments, not permanent specialty rankings.
-See the [source-backed example](examples/library-system/project.json) and
+Each part uses the same interfaces whichever candidate you choose. See the [source-backed example](examples/library-system/project.json) and
 [complete generated prompts](examples/library-system/handoffs/PLAN.md).
 
 ```mermaid
@@ -65,14 +76,14 @@ flowchart LR
 
 - **Recognizes intent:** the host classifies ordinary prompts, mixed tasks and
   long projects; users do not need to choose a benchmark first.
-- **Explains recommendations:** exact model/version, source links, dates,
-  measured versus proxy evidence, tools and limitations.
+- **Offers three choices:** exact versions, concise reasons, sources and resource
+  tradeoffs; optionally restrict to models you can already access.
+- **Uses community experience:** task-specific weights, artifact quality,
+  author deduplication, conflicting reports and freshness decay.
 - **Handles handoffs:** complete prompts printed in the current conversation,
   contracts, file ownership, dependency order and return receipts.
 - **Keeps switching practical:** stay, test first, consider switching, or unknown.
   Reusing one model across components is often reasonable.
-- **Admits uncertainty:** no overall intelligence score, no invented per-domain
-  rankings, no missing-data-as-zero trick, no silent renewal of old evaluations.
 - **Works across providers:** cloud and open-weight candidates are considered.
   Hardware only matters when local deployment is explicitly required.
 
@@ -104,7 +115,7 @@ credentials, telemetry or automatic model switching are included.
 ## Use it
 
 ```text
-Use $promptharbor to recommend models for the problems I send in this conversation.
+Use $promptharbor to give me Top 3 models for each problem in this conversation.
 For projects, split the work and print separate copyable prompts. Keep this
 conversation responsible for integration when I return the outputs.
 ```
@@ -125,6 +136,7 @@ service that logs into model providers or dispatches API calls.
 
 ```sh
 python skills/promptharbor/scripts/harbor.py validate
+python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "Summarize this video"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
@@ -140,15 +152,14 @@ See [job format](skills/promptharbor/references/job-format.md) and
 For reproducible historical examples, use `--as-of 2026-09-29`; omit it for
 current advice. Expired records are excluded and may yield no recommendation.
 
-## Evidence, scope and freshness
+## Evidence and community feedback
 
-The initial snapshot covers **47 task leaves, 11 models, 37 evidence records and
-18 source references**. Counts describe catalog coverage, not classification
-accuracy or recommendation quality. [Coverage and gaps](docs/COVERAGE.md) show
+The snapshot covers **49 task leaves, 11 models, 50 evidence records and
+22 source references**. [Coverage and gaps](docs/COVERAGE.md) show
 where measured evidence exists and where only proxies or no evidence exist.
 
-Sources include official model documentation, model cards and task-specific
-results from independent evaluators. [Research notes](docs/RESEARCH.md) explain
+Sources include official documentation, model cards, independent evaluations
+and attributed firsthand community reports. [Research notes](docs/RESEARCH.md) explain
 what was inspected, including related projects. Every admitted claim links to
 its source; original tables, articles and model weights are not redistributed.
 
@@ -159,11 +170,31 @@ workflow identify review work; they never auto-promote scraped claims.
 See [methodology](skills/promptharbor/references/evidence.md) and
 [third-party attribution](THIRD_PARTY.md).
 
-Known limits: the seed is intentionally incomplete, writing preferences depend
-on language and style, many specialties lack direct evaluations, API prices do
-not equal total task cost, and a good benchmark score is not an outcome guarantee.
-The host behavioral suite is provided for evaluation; automated unit tests do
-not establish arbitrary-prompt recommendation accuracy.
+Community weights default to **30% for visual frontend work, 25% for most writing,
+15% generally, and 5% for financial/medical/legal tasks**. These are adjustable
+editorial defaults, not empirically calibrated optima. Linked artifacts receive
+more support than anecdotes; duplicates add nothing, negative reports subtract,
+and undated reports are discounted and expire. Arena crowd evaluations enter the
+formal channel once, not again as community anecdotes.
+
+Kimi K3 has both [public web-generation artifacts](https://neuralhub.dev/ai-test-results)
+and mixed [firsthand UI feedback](https://www.reddit.com/r/kimi/comments/1vconet/is_kimi_k3_actually_good_or_was_it_overhyped/).
+These inform visual-web recommendations without extending to reference fidelity
+or backend reliability. [Community policy and formula](skills/promptharbor/references/community.md)
+· [resource-filtered frontend example](examples/frontend.json).
+
+## Working boundaries
+
+- **Conditional Top 3:** task, setup and your resources determine the shortlist.
+  Fewer than three supported candidates means fewer suggestions, with a reason.
+- **Current evidence:** verify versions and access live; offline advice uses the
+  dated snapshot. Missing providers and new releases can be added through research.
+- **Task fit needs validation:** aesthetic preference, reference fidelity and
+  production correctness require different checks. Recommendation accuracy has
+  not yet been measured in a blinded cross-model outcome study.
+- **You choose; the main window integrates:** prompts move between models through
+  you. Shared contracts and actual integration tests govern acceptance; API prices
+  and a model name alone do not establish subscription access or total cost.
 
 ## Repository
 
@@ -188,8 +219,7 @@ python scripts/package_skill.py
 
 The archive is written to `dist/` with a SHA-256 checksum. See
 [CONTRIBUTING.md](CONTRIBUTING.md), [brand assets](assets/brand/README.md) and
-[release preparation](docs/RELEASING.md). The repository does not claim a
-published GitHub release or passing remote CI until those actually exist.
+[release preparation](docs/RELEASING.md).
 
 ## License
 

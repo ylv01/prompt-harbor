@@ -1,7 +1,7 @@
 interface:
   display_name: "PromptHarbor"
   short_description: "Match tasks to models and coordinate project handoffs"
-  default_prompt: "Use $promptharbor to identify my task, recommend suitable models, and split complex projects into copyable prompts with shared interfaces."
+  default_prompt: "Use $promptharbor to identify my task, offer Top 3 models with evaluation and community evidence, and split projects into copyable prompts with shared interfaces."
   icon_small: "./assets/avatar.png"
   icon_large: "./assets/logo.svg"
   brand_color: "#087F8C"

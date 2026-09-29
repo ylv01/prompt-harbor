@@ -1,8 +1,16 @@
 # Handoff: 后端：API 与事务
 
-Suggested model: **claude-opus-5-5**
+Planning default: **claude-opus-5-5**
 
 仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。
+
+## Top 3 choices
+
+- 1. **Claude Opus 5.5** (`claude-opus-5-5`): Task-matched vendor evaluation for Repository implementation; partial task coverage. Sources: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5)
+- 2. **DeepSeek-V4.1-Flash** (`deepseek-v4.1-flash`): Task-matched vendor evaluation for Repository implementation; partial task coverage. Sources: [DeepSeek-V4.1-Flash model card](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash)
+- 3. **Qwen3.8-27B** (`qwen3.8-27b`): Task-matched vendor evaluation for Repository implementation; partial task coverage. Sources: [Qwen3.8-27B model card](https://huggingface.co/Qwen/Qwen3.8-27B)
+
+The user selects the actual model. This prompt works with any chosen model; keep the same contracts and acceptance criteria.
 
 ## Project goal
 
@@ -120,7 +128,7 @@ Return the files plus a receipt JSON containing:
 {
   "task_id": "backend",
   "status": "complete",
-  "model_used": "claude-opus-5-5",
+  "model_used": "REPLACE_WITH_ACTUAL_MODEL",
   "contracts": {
     "interfaces": "3530d07d2a35807051af873c49567124ec987bab6353b89d6b0c4aae9e13dbf4"
   },

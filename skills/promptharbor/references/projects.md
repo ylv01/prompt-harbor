@@ -41,6 +41,12 @@ instead of treating helper sort order as authority. Shared hard constraints
 cannot be overridden by tasks. With no established winner, the current feasible
 model can be a baseline; clearly label that as no demonstrated comparative edge.
 
+Each part has up to three evidence-backed choices and a planning default. The
+manifest marks selection as `user_choice`. Changing among candidates preserves
+the same interfaces and acceptance tests; a receipt records the actual model.
+When evidence is absent, keep the feasible current baseline and explain why
+there are fewer than three suggestions. Do not force three different providers.
+
 The compiler emits PLAN.md, manifest.json, frozen contract copies, full task
 prompts and evidence JSON. It rejects duplicate owners, unsafe paths, missing
 contracts, dependency cycles and output overwrites. Render its full prompts in

@@ -8,8 +8,10 @@ rewrite claims or assert that a page fetch revalidated them.
 For each relevant model family: verify the official current version and lifecycle,
 capabilities and pricing; inspect independent benchmark publishers and methods;
 look for task-matched reproducible evaluations. Cover cloud and open-weight
-options. Keep community reports only when sample prompts, model version and
-reproduction steps exist. A viral anecdote is a research lead, not a winner.
+options. Admit community reports using [the tiered policy](community.md): prefer
+artifacts and reruns, discount firsthand anecdotes, retain counterevidence and
+deduplicate authors/origins. Hearsay and viral reposts remain discovery leads.
+Preserve the first-seen date of undated reports; rereading cannot reset it.
 
 Add source URL/title/publisher, publication date if known, and actual check date.
 Then add an evidence row with raw measurement, exact metric/version/protocol,

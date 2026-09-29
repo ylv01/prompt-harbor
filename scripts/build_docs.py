@@ -33,9 +33,9 @@ def outputs():
     lines=['# Task coverage and gaps','',f"Snapshot: **{data['models']['snapshot_date']}**. Generated from the catalog; not a quality leaderboard.",'',
            'Direct means a task-mapped measurement, not guaranteed transfer to the user’s prompt.',
            'Capability/proxy includes product support and adjacent-task inference. Missing means no admitted evidence.',
-           'All task mappings are editorial judgments. Vendor and independent measurements are separated.','',
-           '| Task | Domain / subdomain | Independent measurement | Vendor measurement | Capability / proxy |',
-           '|---|---|---|---|---|']
+           'All task mappings are editorial judgments. Community reports include signed counterevidence, not just endorsements.','',
+           '| Task | Domain / subdomain | Independent measurement | Vendor measurement | Capability / proxy | Community reports |',
+           '|---|---|---|---|---|---|']
     evs=data['evidence']['evidence']
     missing=[]
     for task in data['taxonomy']['tasks']:
@@ -43,9 +43,10 @@ def outputs():
         measured=[e for e in evs if i in e['direct_tasks'] and e['measurement']]
         independent=sorted({e['model_id'] for e in measured if e['kind']=='independent_eval'})
         vendor=sorted({e['model_id'] for e in measured if e['kind']=='vendor_eval'})
-        proxy=sorted({e['model_id'] for e in evs if i in e['proxy_tasks'] or i in e['direct_tasks'] and not e['measurement']})
-        if not independent and not vendor and not proxy:missing.append(i)
-        lines.append(f"| `{i}` | {task['domain']} / {task['subdomain']} | {', '.join(independent) or '—'} | {', '.join(vendor) or '—'} | {', '.join(proxy) or '—'} |")
+        proxy=sorted({e['model_id'] for e in evs if e['kind']!='community_test' and (i in e['proxy_tasks'] or i in e['direct_tasks'] and not e['measurement'])})
+        community=sorted({e['model_id']+' ('+e['community']['stance']+')' for e in evs if e['kind']=='community_test' and i in e['direct_tasks']+e['proxy_tasks']})
+        if not independent and not vendor and not proxy and not community:missing.append(i)
+        lines.append(f"| `{i}` | {task['domain']} / {task['subdomain']} | {', '.join(independent) or '—'} | {', '.join(vendor) or '—'} | {', '.join(proxy) or '—'} | {', '.join(community) or '—'} |")
     lines += ['', '## Explicit gaps', '', ', '.join(f'`{i}`' for i in missing), '',
               'These tasks are recognizable even when the catalog cannot establish a winner. Research live evidence, retain a feasible current model as a baseline, or propose a task trial.', '',
               '## Admitted sources', '']

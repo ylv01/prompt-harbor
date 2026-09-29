@@ -1,8 +1,14 @@
 # Handoff: 数据库：结构、约束与样例数据
 
-Suggested model: **gpt-6-sol**
+Planning default: **gpt-6-sol**
 
 Keep the current feasible model as a baseline; no comparative task advantage is established.
+
+## Top 3 choices
+
+Only 0 evidence-backed choices available; use the declared baseline when shown.
+
+The user selects the actual model. This prompt works with any chosen model; keep the same contracts and acceptance criteria.
 
 ## Project goal
 
@@ -116,7 +122,7 @@ Return the files plus a receipt JSON containing:
 {
   "task_id": "database",
   "status": "complete",
-  "model_used": "gpt-6-sol",
+  "model_used": "REPLACE_WITH_ACTUAL_MODEL",
   "contracts": {
     "interfaces": "3530d07d2a35807051af873c49567124ec987bab6353b89d6b0c4aae9e13dbf4"
   },

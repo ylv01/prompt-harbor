@@ -15,7 +15,7 @@ reading/browsing abilities. Model selection is not tied to the user's hardware.
 - models.json: exact public identifiers, lifecycle, verified capabilities and prices.
 - sources.json: primary URL, publisher, publication/check dates and review interval.
 - evidence.json: atomic claims with direct/proxy mappings and raw observations.
-- policy.json: freshness policy; no universal ability weights.
+- policy.json: freshness and task-specific community weights; inspectable editorial defaults.
 
 The helper uses readable JSON and explicit joins, suitable for small human-reviewed
 catalogs. Split by domain or add an index only when scale justifies it. There is

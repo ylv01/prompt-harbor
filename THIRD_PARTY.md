@@ -7,10 +7,14 @@ included. The project's Apache-2.0 license covers original curation and code;
 it does not relicense upstream materials or grant model usage rights.
 
 Independent measurements used here are attributed to **Artificial Analysis**
-and **Vals AI**. Their publications, data services, APIs and datasets retain their
+**Vals AI**, and **Arena**. Their publications, data services, APIs and datasets retain their
 own terms. Epoch AI is referenced for methodology, not a copied result table.
 Official model documentation and model cards belong to their respective
 publishers. Hugging Face hosting does not make a vendor claim independent.
+
+Community summaries credit **neuralhub.dev / Leandro**, **Cachesmr**, and
+**Bright_Spend6574** through direct sources. Linked demos remain on their authors'
+sites; their code and images are not redistributed or claimed as our own tests.
 
 The which-llm, RouteLLM and RouterBench links acknowledge related work. Their
 code was not incorporated. All logos and badges in this repository were created

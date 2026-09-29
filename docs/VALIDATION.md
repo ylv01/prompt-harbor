@@ -2,7 +2,7 @@
 
 Observed locally on Windows with Python 3.13.9:
 
-- 36 unittest cases passed, covering catalog links, task filters, incompatible
+- 50 unittest cases passed, covering catalog links, task filters, incompatible
   metrics, missing and stale data, unknown current models, proxy consistency,
   dependency cycles, artifact ownership, contract drift and missing deliveries.
 - Skill Creator's `quick_validate.py` accepted the portable skill. Windows
@@ -13,6 +13,9 @@ Observed locally on Windows with Python 3.13.9:
 - Both a copied installation and an extracted ZIP ran `harbor.py validate`
   outside the repository. Duplicate installation is refused; archives are
   byte-identical when built twice from identical input.
+- Top 3 checks cover resource filtering, changing rank with community weights,
+  duplicate suppression, negative evidence, unknown-date expiry, hard constraints
+  and user-selected project handoffs. The 15 host behavioral cases remain fixtures.
 - The library-system fixture compiled into four complete prompts with three
   execution batches, a frozen interface and evidence sidecars. Receipt checks
   rejected missing work and altered contracts. No library implementation was

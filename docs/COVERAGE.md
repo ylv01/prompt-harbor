@@ -4,61 +4,63 @@ Snapshot: **2026-09-29**. Generated from the catalog; not a quality leaderboard.
 
 Direct means a task-mapped measurement, not guaranteed transfer to the user’s prompt.
 Capability/proxy includes product support and adjacent-task inference. Missing means no admitted evidence.
-All task mappings are editorial judgments. Vendor and independent measurements are separated.
+All task mappings are editorial judgments. Community reports include signed counterevidence, not just endorsements.
 
-| Task | Domain / subdomain | Independent measurement | Vendor measurement | Capability / proxy |
-|---|---|---|---|---|
-| `software.debug` | Software / Maintenance | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, gpt-6-astra, gpt-6-sol, grok-4.7 |
-| `software.repo` | Software / Maintenance | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, gpt-6-astra, gpt-6-sol, grok-4.7 |
-| `software.algorithm` | Software / Algorithms | — | deepseek-v4.1-flash, qwen3.8-27b | — |
-| `software.frontend` | Software / Interfaces | — | — | claude-sonnet-5-5 |
-| `software.security` | Software / Security | — | — | — |
-| `software.architecture` | Software / Architecture | — | — | gpt-6-astra, gpt-6-sol |
-| `software.terminal` | Software / Tools | gpt-6-astra | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash | — |
-| `software.testing` | Software / Quality | — | — | claude-opus-5-5, gpt-6-sol |
-| `math.contest` | Mathematics / Problem solving | — | deepseek-v4.1-flash | — |
-| `math.proof` | Mathematics / Proof | — | — | deepseek-v4.1-flash, gpt-6-astra |
-| `math.formal` | Mathematics / Formal verification | — | — | — |
-| `math.numerical` | Mathematics / Computation | — | — | gpt-6-astra |
-| `finance.filings` | Finance / Fundamental analysis | gemini-3.8-flash | — | — |
-| `finance.valuation` | Finance / Fundamental analysis | — | — | gemini-3.8-flash |
-| `finance.backtest` | Finance / Quantitative research | — | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b |
-| `finance.factor` | Finance / Quantitative research | — | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b |
-| `finance.derivatives` | Finance / Quantitative research | — | — | deepseek-v4.1-flash |
-| `science.reasoning` | Science / Domain reasoning | — | deepseek-v4.1-flash | claude-opus-5-5, gpt-6-astra |
-| `science.compute` | Science / Computational research | — | claude-opus-5-5, kimi-k3 | gpt-6-astra |
-| `science.literature` | Science / Literature | — | — | gemini-3.8-flash, kimi-k3 |
-| `science.hypothesis` | Science / Discovery | — | — | — |
-| `writing.creative` | Writing / Creative | — | — | claude-sonnet-5-5 |
-| `writing.edit` | Writing / Editing | — | — | claude-sonnet-5-5 |
-| `writing.professional` | Writing / Professional | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, gpt-6-astra, grok-4.7 |
-| `writing.translation` | Writing / Multilingual | — | — | gpt-6-luna |
-| `context.retrieve` | Long context / Retrieval | — | — | — |
-| `context.synthesis` | Long context / Synthesis | gpt-6-astra | kimi-k3 | claude-fable-5-1, claude-opus-5-5 |
-| `context.summary` | Long context / Compression | — | — | gpt-6-luna |
-| `agent.workflow` | Agents / Tool use | gpt-6-astra | kimi-k3 | gemini-3.8-flash, gpt-6-sol, grok-4.7 |
-| `agent.computer` | Agents / Computer use | — | qwen3.8-27b | gpt-6-astra |
-| `agent.long` | Agents / Planning | — | — | claude-fable-5-1, claude-opus-5-5, gpt-6-astra, gpt-6-sol |
-| `vision.chart` | Vision / Reasoning | — | claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, qwen3.8-27b | — |
-| `vision.document` | Vision / Documents | — | qwen3.8-27b | — |
-| `vision.video` | Vision / Temporal | — | — | gemini-3.8-flash, kimi-k3 |
-| `vision.spatial` | Vision / Spatial reasoning | — | — | — |
-| `research.web` | Research / Web investigation | — | kimi-k3 | claude-fable-5-1, claude-opus-5-5, gemini-3.8-flash, gpt-6-astra |
-| `research.facts` | Research / Verification | — | — | gemini-3.8-flash, gpt-6-astra |
-| `data.analysis` | Data / Analysis | — | — | gemini-3.8-flash |
-| `data.sql` | Data / Querying | — | — | — |
-| `data.extract` | Data / Extraction | — | — | gpt-6-luna |
-| `data.spreadsheet` | Data / Spreadsheets | — | kimi-k3 | claude-sonnet-5-5 |
-| `audio.understand` | Audio / Understanding | — | — | gemini-3.8-flash |
-| `education.tutor` | Education / Learning | — | — | gpt-6-luna |
-| `professional.legal` | Professional / Legal | — | — | — |
-| `professional.medical` | Professional / Medical | — | — | — |
-| `general.everyday` | General / Everyday | — | — | gpt-6-luna |
-| `data.schema` | Data / Database design | — | — | — |
+| Task | Domain / subdomain | Independent measurement | Vendor measurement | Capability / proxy | Community reports |
+|---|---|---|---|---|---|
+| `software.debug` | Software / Maintenance | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, gpt-6-astra, gpt-6-sol, grok-4.7 | — |
+| `software.repo` | Software / Maintenance | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, gpt-6-astra, gpt-6-sol, grok-4.7 | — |
+| `software.algorithm` | Software / Algorithms | — | deepseek-v4.1-flash, qwen3.8-27b | — | — |
+| `software.frontend` | Software / Interfaces | claude-fable-5-1, claude-opus-5-5, deepseek-v4.1-flash, gemini-3.8-flash, gpt-6-astra, gpt-6-luna, gpt-6-sol, grok-4.7, kimi-k3, qwen3.8-27b | — | claude-sonnet-5-5 | kimi-k3 (negative), kimi-k3 (positive) |
+| `software.security` | Software / Security | — | — | — | — |
+| `software.architecture` | Software / Architecture | — | — | gpt-6-astra, gpt-6-sol | — |
+| `software.terminal` | Software / Tools | gpt-6-astra | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash | — | — |
+| `software.testing` | Software / Quality | — | — | claude-opus-5-5, gpt-6-sol | — |
+| `math.contest` | Mathematics / Problem solving | — | deepseek-v4.1-flash | — | — |
+| `math.proof` | Mathematics / Proof | — | — | deepseek-v4.1-flash, gpt-6-astra | — |
+| `math.formal` | Mathematics / Formal verification | — | — | — | — |
+| `math.numerical` | Mathematics / Computation | — | — | gpt-6-astra | — |
+| `finance.filings` | Finance / Fundamental analysis | gemini-3.8-flash | — | — | — |
+| `finance.valuation` | Finance / Fundamental analysis | — | — | gemini-3.8-flash | — |
+| `finance.backtest` | Finance / Quantitative research | — | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b | — |
+| `finance.factor` | Finance / Quantitative research | — | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b | — |
+| `finance.derivatives` | Finance / Quantitative research | — | — | deepseek-v4.1-flash | — |
+| `science.reasoning` | Science / Domain reasoning | — | deepseek-v4.1-flash | claude-opus-5-5, gpt-6-astra | — |
+| `science.compute` | Science / Computational research | — | claude-opus-5-5, kimi-k3 | gpt-6-astra | — |
+| `science.literature` | Science / Literature | — | — | gemini-3.8-flash, kimi-k3 | — |
+| `science.hypothesis` | Science / Discovery | — | — | — | — |
+| `writing.creative` | Writing / Creative | — | — | claude-sonnet-5-5 | — |
+| `writing.edit` | Writing / Editing | — | — | claude-sonnet-5-5 | — |
+| `writing.professional` | Writing / Professional | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, gpt-6-astra, grok-4.7 | — |
+| `writing.translation` | Writing / Multilingual | — | — | gpt-6-luna | — |
+| `context.retrieve` | Long context / Retrieval | — | — | — | — |
+| `context.synthesis` | Long context / Synthesis | gpt-6-astra | kimi-k3 | claude-fable-5-1, claude-opus-5-5 | — |
+| `context.summary` | Long context / Compression | — | — | gpt-6-luna | — |
+| `agent.workflow` | Agents / Tool use | gpt-6-astra | kimi-k3 | gemini-3.8-flash, gpt-6-sol, grok-4.7 | — |
+| `agent.computer` | Agents / Computer use | — | qwen3.8-27b | gpt-6-astra | — |
+| `agent.long` | Agents / Planning | — | — | claude-fable-5-1, claude-opus-5-5, gpt-6-astra, gpt-6-sol | — |
+| `vision.chart` | Vision / Reasoning | — | claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, qwen3.8-27b | — | — |
+| `vision.document` | Vision / Documents | — | qwen3.8-27b | — | — |
+| `vision.video` | Vision / Temporal | — | — | gemini-3.8-flash, kimi-k3 | — |
+| `vision.spatial` | Vision / Spatial reasoning | — | — | — | — |
+| `research.web` | Research / Web investigation | — | kimi-k3 | claude-fable-5-1, claude-opus-5-5, gemini-3.8-flash, gpt-6-astra | — |
+| `research.facts` | Research / Verification | — | — | gemini-3.8-flash, gpt-6-astra | — |
+| `data.analysis` | Data / Analysis | — | — | gemini-3.8-flash | — |
+| `data.sql` | Data / Querying | — | — | — | — |
+| `data.extract` | Data / Extraction | — | — | gpt-6-luna | — |
+| `data.spreadsheet` | Data / Spreadsheets | — | kimi-k3 | claude-sonnet-5-5 | — |
+| `audio.understand` | Audio / Understanding | — | — | gemini-3.8-flash | — |
+| `education.tutor` | Education / Learning | — | — | gpt-6-luna | — |
+| `professional.legal` | Professional / Legal | — | — | — | — |
+| `professional.medical` | Professional / Medical | — | — | — | — |
+| `general.everyday` | General / Everyday | — | — | gpt-6-luna | — |
+| `data.schema` | Data / Database design | — | — | — | — |
+| `software.frontend.design` | Software / Interface design | — | — | claude-fable-5-1, claude-opus-5-5, deepseek-v4.1-flash, gemini-3.8-flash, gpt-6-astra, gpt-6-luna, gpt-6-sol, grok-4.7, kimi-k3, qwen3.8-27b | kimi-k3 (negative), kimi-k3 (positive) |
+| `software.frontend.fidelity` | Software / Interface fidelity | — | — | — | — |
 
 ## Explicit gaps
 
-`software.security`, `math.formal`, `science.hypothesis`, `context.retrieve`, `vision.spatial`, `data.sql`, `professional.legal`, `professional.medical`, `data.schema`
+`software.security`, `math.formal`, `science.hypothesis`, `context.retrieve`, `vision.spatial`, `data.sql`, `professional.legal`, `professional.medical`, `data.schema`, `software.frontend.fidelity`
 
 These tasks are recognizable even when the catalog cannot establish a winner. Research live evidence, retain a feasible current model as a baseline, or propose a task trial.
 
@@ -82,3 +84,7 @@ These tasks are recognizable even when the catalog cannot establish a winner. Re
 - [richard-gyiko/which-llm README](https://github.com/richard-gyiko/which-llm) — richard-gyiko; checked 2026-09-29; publication not established.
 - [RouteLLM repository](https://github.com/lm-sys/RouteLLM) — LMSYS; checked 2026-09-29; publication not established.
 - [RouterBench paper](https://arxiv.org/abs/2403.12031) — RouterBench authors; checked 2026-09-29; publication 2024-03-18.
+- [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code) — Arena; checked 2026-09-29; publication 2026-09-25.
+- [AI Lab: authored web-generation experiments](https://neuralhub.dev/ai-test-results) — neuralhub.dev / Leandro; checked 2026-09-29; publication not established.
+- [First-person Kimi UI usage and quota report](https://www.reddit.com/r/kimi/comments/1vconet/comment/p157lwe/) — Reddit / Cachesmr; checked 2026-09-29; publication not established.
+- [First-person competing UI preference](https://www.reddit.com/r/kimi/comments/1vconet/comment/p2cjso7/) — Reddit / Bright_Spend6574; checked 2026-09-29; publication not established.

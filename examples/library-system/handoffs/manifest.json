@@ -26,8 +26,80 @@
   "assignments": [
     {
       "task_id": "frontend",
-      "model": "claude-sonnet-5-5",
-      "reason": "官方发布说明支持界面/文档工作这一候选方向；缺少此图书系统的独立前端对比，因此是待验收的候选建议。",
+      "model": "gpt-6-sol",
+      "reason": "Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model.",
+      "selection": "user_choice",
+      "recommendations": [
+        {
+          "rank": 1,
+          "model_id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "reason": "Task-matched independent evaluation for Frontend implementation",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 4,
+            "output": 20,
+            "max_input_tokens": 200000,
+            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          }
+        },
+        {
+          "rank": 2,
+          "model_id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "reason": "Task-matched independent evaluation for Frontend implementation",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1050000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 10,
+            "output": 50,
+            "max_input_tokens": 272000,
+            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          }
+        },
+        {
+          "rank": 3,
+          "model_id": "claude-fable-5-1",
+          "name": "Claude Fable 5.1",
+          "reason": "Task-matched independent evaluation for Frontend implementation",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 10,
+            "output": 50,
+            "max_input_tokens": 200000,
+            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          }
+        }
+      ],
       "depends_on": [],
       "deliverables": [
         "frontend/package.json",
@@ -45,6 +117,8 @@
       "task_id": "database",
       "model": "gpt-6-sol",
       "reason": "Keep the current feasible model as a baseline; no comparative task advantage is established.",
+      "selection": "user_choice",
+      "recommendations": [],
       "depends_on": [],
       "deliverables": [
         "database/001_schema.sql",
@@ -57,6 +131,68 @@
       "task_id": "backend",
       "model": "claude-opus-5-5",
       "reason": "仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。",
+      "selection": "user_choice",
+      "recommendations": [
+        {
+          "rank": 1,
+          "model_id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 4,
+            "output": 20,
+            "max_input_tokens": 200000,
+            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          }
+        },
+        {
+          "rank": 2,
+          "model_id": "deepseek-v4.1-flash",
+          "name": "DeepSeek-V4.1-Flash",
+          "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": true,
+            "price_applies": false
+          },
+          "price": null
+        },
+        {
+          "rank": 3,
+          "model_id": "qwen3.8-27b",
+          "name": "Qwen3.8-27B",
+          "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 262144,
+            "tool_calling": true,
+            "open_weights": true,
+            "price_applies": false
+          },
+          "price": null
+        }
+      ],
       "depends_on": [
         "database"
       ],
@@ -73,7 +209,56 @@
     {
       "task_id": "qa",
       "model": "gpt-6-sol",
-      "reason": "Keep the current feasible model as a baseline; no comparative task advantage is established.",
+      "reason": "Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model.",
+      "selection": "user_choice",
+      "recommendations": [
+        {
+          "rank": 1,
+          "model_id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "reason": "Capability or adjacent-task support for Test design",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 4,
+            "output": 20,
+            "max_input_tokens": 200000,
+            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          }
+        },
+        {
+          "rank": 2,
+          "model_id": "gpt-6-sol",
+          "name": "GPT-6 Sol",
+          "reason": "Capability or adjacent-task support for Test design",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1050000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 2,
+            "output": 10,
+            "max_input_tokens": 272000,
+            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          }
+        }
+      ],
       "depends_on": [
         "frontend",
         "database",

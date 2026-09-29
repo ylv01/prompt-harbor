@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0 — 2026-09-29
+
+- Default Top 3 recommendations with resource details, source-backed reasons and full audit output.
+- Top 3 choices per project part; portable prompts preserve contracts and record the actual model used.
+- Task-specific community weights, positive/negative reports, independent-origin deduplication,
+  age decay, undated-report expiry and strict resource filters.
+- Kimi K3 creative-web artifacts and conflicting firsthand UI reports; Arena WebDev snapshot
+  evaluated once in the formal channel across ten catalog models.
+- Separate creative visual design and reference fidelity tasks; catalog now has 49 tasks,
+  50 evidence records and 22 sources.
+- Consolidated README boundaries, documented weighting formula and new regression checks.
+
 ## 0.1.0 — 2026-09-29
 
 - Initial portable Agent Skill with semantic-host single-question and project modes.

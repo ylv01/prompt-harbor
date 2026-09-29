@@ -1,8 +1,16 @@
 # Handoff: 前端：图书列表、详情与书评
 
-Suggested model: **claude-sonnet-5-5**
+Planning default: **gpt-6-sol**
 
-官方发布说明支持界面/文档工作这一候选方向；缺少此图书系统的独立前端对比，因此是待验收的候选建议。
+Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model.
+
+## Top 3 choices
+
+- 1. **Claude Opus 5.5** (`claude-opus-5-5`): Task-matched independent evaluation for Frontend implementation. Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
+- 2. **GPT-6 Astra** (`gpt-6-astra`): Task-matched independent evaluation for Frontend implementation. Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
+- 3. **Claude Fable 5.1** (`claude-fable-5-1`): Task-matched independent evaluation for Frontend implementation. Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
+
+The user selects the actual model. This prompt works with any chosen model; keep the same contracts and acceptance criteria.
 
 ## Project goal
 
@@ -121,7 +129,7 @@ Return the files plus a receipt JSON containing:
 {
   "task_id": "frontend",
   "status": "complete",
-  "model_used": "claude-sonnet-5-5",
+  "model_used": "REPLACE_WITH_ACTUAL_MODEL",
   "contracts": {
     "interfaces": "3530d07d2a35807051af873c49567124ec987bab6353b89d6b0c4aae9e13dbf4"
   },

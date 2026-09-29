@@ -47,6 +47,10 @@ def validate(data):
     for section in data.values():
         require(section["schema_version"] == 1, "Unsupported schema version")
     snapshot = iso(data["models"]["snapshot_date"])
+    ranking = data["policy"]["ranking"]
+    for weight in [ranking["default_community_weight"], *ranking["task_community_weights"].values()]:
+        require(type(weight) in {int, float} and 0 <= weight <= 0.4, "Invalid community weight")
+    require(set(ranking["task_community_weights"]) <= tasks, "Unknown weighted task")
     for task in data["taxonomy"]["tasks"]:
         require(all(task.get(k) for k in ("domain", "subdomain", "label", "description", "validation")),
                 f"Incomplete task {task['id']}")
@@ -82,6 +86,15 @@ def validate(data):
             require(all(measurement.get(k) for k in ("benchmark", "version", "metric", "unit", "protocol")), "Incomplete measurement")
         if ev.get("comparison_group"):
             require(measurement is not None, "Comparison requires measurement")
+        if ev["kind"] == "community_test":
+            c = ev.get("community", {})
+            require(c.get("origin_id") and c.get("author"), "Community evidence needs its independent origin and author")
+            require(c.get("grade") in {"reproduced", "artifact_report", "firsthand"}, "Invalid community grade")
+            require(c.get("stance") in {"positive", "negative", "mixed"}, "Invalid community stance")
+            require(iso(c["first_seen_on"]) <= iso(ev["reviewed_on"]), "Invalid community first-seen date")
+            require(isinstance(c.get("artifact_urls"), list) and all(u.startswith("https://") for u in c["artifact_urls"]), "Invalid artifact URLs")
+            require(c["grade"] == "firsthand" or c["artifact_urls"], "Artifact evidence needs public artifacts")
+            require(c["grade"] != "reproduced" or c.get("reproduction_url", "").startswith("https://"), "Reproduced means a documented independent rerun")
     groups = {}
     for ev in data["evidence"]["evidence"]:
         group = ev.get("comparison_group")
@@ -111,7 +124,7 @@ def classify(prompt, data):
 def validate_job(job, data):
     allowed = {"tasks", "prompt", "classification_method", "classification_confidence", "notes",
                "current_model", "available_models", "input_modalities", "context_tokens", "tools_required",
-               "open_weights_only", "allow_preview", "priority", "max_input_price", "max_output_price"}
+               "open_weights_only", "allow_preview", "priority", "max_input_price", "max_output_price", "community_weight"}
     require(isinstance(job, dict) and not set(job) - allowed, "Unknown job field")
     tasks = {t["id"] for t in data["taxonomy"]["tasks"]}
     require(isinstance(job.get("tasks"), list) and 0 < len(job["tasks"]) <= 6, "Provide 1–6 task IDs")
@@ -134,6 +147,9 @@ def validate_job(job, data):
             "available_models must be an array of exact model IDs")
     if "current_model" in job:
         require(isinstance(job["current_model"], str), "current_model must be an exact model ID")
+    if "community_weight" in job:
+        require(type(job["community_weight"]) in {int, float} and 0 <= job["community_weight"] <= 0.4,
+                "community_weight must be between 0 and 0.4")
     return job
 
 
@@ -149,6 +165,11 @@ def evidence_fresh(ev, data, today):
     anchors = [ev["reviewed_on"], source["checked_on"]]
     if ev["reported_on"]:
         anchors.append(ev["reported_on"])
+    if ev["kind"] == "community_test":
+        if not 0 <= age_in_days(ev["reviewed_on"], today) <= policy["community_review_days"]:
+            return False
+        if not ev["reported_on"] and not 0 <= age_in_days(ev["community"]["first_seen_on"], today) <= policy["undated_community_days"]:
+            return False
     return all(0 <= age_in_days(a, today) <= policy["evidence_max_age_days"][ev["kind"]] for a in anchors)
 
 
@@ -191,6 +212,68 @@ def comparable_pairs(a, b):
     return pairs
 
 
+def ranking_support(candidate, candidates, job, data, today):
+    """Task-specific editorial support, not estimated intelligence or success probability."""
+    policy = data["policy"]["ranking"]
+    details = []
+    for task in job["tasks"]:
+        rows = candidate["evidence"]
+        strengths = []
+        measured = []
+        for ev in rows:
+            if ev["kind"] == "community_test":
+                continue
+            match = 1 if task in ev["direct_tasks"] else 0.45 if task in ev["proxy_tasks"] else 0
+            strength = {"independent_eval": 1, "vendor_eval": 0.8, "official_capability": 0.4}[ev["kind"]]
+            if not ev["measurement"] and ev["kind"] != "official_capability":
+                strength = 0.4
+            strengths.append(match * strength)
+            if match and ev["measurement"]:
+                measured.append(ev)
+        # Compare only curated identical protocols, with one observation per group/peer.
+        comparisons = {}
+        for other in candidates:
+            if other is candidate:
+                continue
+            other_rows = [e for e in other["evidence"] if task in e["direct_tasks"] + e["proxy_tasks"] and e["kind"] != "community_test"]
+            for a, b in comparable_pairs(measured, other_rows):
+                av, bv = a["measurement"]["value"], b["measurement"]["value"]
+                match = 1 if task in a["direct_tasks"] and task in b["direct_tasks"] else 0.45
+                comparisons[(a["comparison_group"], other["model_id"])] = (1 if av > bv else 0.5 if av == bv else 0, match)
+        peer_wins = sum(v[0] for v in comparisons.values()) / len(comparisons) if comparisons else None
+        comparison_support = sum(win*match for win, match in comparisons.values()) / len(comparisons) if comparisons else 0
+        strength = max(strengths, default=0)
+        # Missing comparisons add no observed support; they are not zero ability.
+        formal = 0.75 * strength + 0.25 * comparison_support
+        origins = {}
+        for ev in rows:
+            if ev["kind"] != "community_test":
+                continue
+            match = 1 if task in ev["direct_tasks"] else 0.45 if task in ev["proxy_tasks"] else 0
+            if not match:
+                continue
+            c = ev["community"]
+            quality = {"reproduced": 1, "artifact_report": 0.6, "firsthand": 0.2}[c["grade"]]
+            freshness = (0.5 ** (age_in_days(ev["reported_on"], today) / 60)
+                         if ev["reported_on"] else 0.5)
+            signal = {"positive": 1, "negative": -1, "mixed": 0}[c["stance"]] * quality * match * freshness
+            # Copies of one report never multiply its effect. Contradictions remain visible.
+            origin = origins.setdefault(c["origin_id"], {"signals": set(), "evidence_ids": []})
+            origin["signals"].add(signal)
+            origin["evidence_ids"].append(ev["id"])
+        values = [sum(o["signals"]) / len(o["signals"]) for o in origins.values()]
+        community = sum(values) / max(3, len(values))
+        weight = job.get("community_weight", policy["task_community_weights"].get(task, policy["default_community_weight"]))
+        details.append({"task": task, "formal_support": round(formal, 6), "evidence_strength": strength,
+                        "comparable_peer_win_fraction": peer_wins, "community_signal": round(community, 6),
+                        "community_weight": weight, "community_origins": len(origins),
+                        "origins": [{"origin_id": k, "signal": round(sum(v["signals"])/len(v["signals"]), 6),
+                                     "evidence_ids": v["evidence_ids"]} for k, v in sorted(origins.items())],
+                        "support": (1-weight)*formal + weight*community})
+    return {"support": round(sum(t["support"] for t in details)/len(details), 6), "tasks": details,
+            "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."}
+
+
 def route(job, data, today=None):
     today = today or date.today()
     validate(data)
@@ -212,24 +295,37 @@ def route(job, data, today=None):
             excluded.append({"model_id": model["id"], "reasons": reasons})
             continue
         rows = [ev for ev in relevant if ev["model_id"] == model["id"] and evidence_fresh(ev, data, today)]
-        if not rows:
+        weights = data['policy']['ranking']
+        coverage = {t for e in rows for t in tasks & set(e['direct_tasks'] + e['proxy_tasks'])
+                    if e['kind'] != 'community_test' or (e['community']['stance'] == 'positive'
+                    and job.get('community_weight', weights['task_community_weights'].get(t, weights['default_community_weight'])) > 0)}
+        if not coverage:
             excluded.append({"model_id": model["id"], "reasons": ["no_fresh_task_evidence"]})
             continue
         direct = set().union(*(set(e["direct_tasks"]) for e in rows if e["measurement"] and e["kind"] != "community_test")) & tasks
         independent = set().union(*(set(e["direct_tasks"]) for e in rows if e["kind"] == "independent_eval")) & tasks
-        coverage = set().union(*(set(e["direct_tasks"] + e["proxy_tasks"]) for e in rows)) & tasks
         candidates.append({"model_id": model["id"], "name": model["name"], "direct_tasks": sorted(direct),
                            "independent_tasks": sorted(independent), "covered_tasks": sorted(coverage),
                            "missing_tasks": sorted(tasks - coverage), "evidence": rows,
                            "price": model["price_usd_per_million"], "limitations": model["notes"],
+                           "resources": {"access": "user_listed" if "available_models" in job else "verify_account_access",
+                                         "input_modalities": model["input_modalities"], "context_tokens": model["context_tokens"],
+                                         "tool_calling": model["tool_calling"], "open_weights": model["open_weights"],
+                                         "price_applies": bool(model["price_usd_per_million"] and job.get("context_tokens", 0) <= model["price_usd_per_million"]["max_input_tokens"])},
                            "metadata_url": sources[model["source_id"]]["url"]})
     # This is evidence coverage, not a synthetic model intelligence score.
     def key(c):
         return (len(c["covered_tasks"]) == len(tasks), len(c["direct_tasks"]), len(c["independent_tasks"]), len(c["covered_tasks"]))
-    candidates.sort(key=lambda c: (tuple(-int(v) for v in key(c)), c["model_id"]))
-    top = [c for c in candidates if key(c) == key(candidates[0])] if candidates else []
-    warnings = ["Shortlist covers the bundled catalog only; verify current availability and new releases.",
-                "Evidence coverage is not model quality. Benchmark performance does not guarantee this prompt's outcome."]
+    for candidate in candidates:
+        candidate["ranking"] = ranking_support(candidate, candidates, job, data, today)
+    candidates.sort(key=lambda c: (-len(c["covered_tasks"]), -c["ranking"]["support"], c["model_id"]))
+    best_coverage = max((key(c) for c in candidates), default=None)
+    top = [c for c in candidates if key(c) == best_coverage]
+    warnings = []
+    if len(candidates) < 3:
+        warnings.append(f"Only {len(candidates)} eligible evidence-backed candidates; missing Top 3 slots are not invented.")
+    if any(c["missing_tasks"] for c in candidates[:3]):
+        warnings.append("Some recommendations cover only part of the request; see missing_tasks or split the work.")
     if job.get("classification_method") == "lexical_fallback":
         warnings.append("Lexical classification is provisional; use host semantic classification for ordinary prompts.")
     if job.get("priority") == "latency":
@@ -294,14 +390,31 @@ def route(job, data, today=None):
     stale = [e["id"] for e in relevant if not evidence_fresh(e, data, today)]
     if stale:
         warnings.append(f"{len(stale)} relevant evidence records are stale or future-dated and were excluded.")
-    if primary:
+    if primary and job.get("priority") == "cost":
         candidates.sort(key=lambda c: c["model_id"] != primary)
+    elif primary and candidates[0]["model_id"] != primary:
+        primary = None
+        decision = "shortlist"
+        rationale = "Weighted task support and the comparison cohort differ; choose from Top 3 using access and a task trial."
+    recommendations = []
+    for rank, c in enumerate(candidates[:3], 1):
+        community = any(t["community_origins"] for t in c["ranking"]["tasks"])
+        reason = ("Task-matched independent evaluation" if c["independent_tasks"] else
+                  "Task-matched vendor evaluation" if c["direct_tasks"] else "Capability or adjacent-task support")
+        if all(e['kind'] == 'community_test' for e in c['evidence']):
+            reason = "Community task reports only; a task trial is needed"
+        reason += " for " + ", ".join(task_map[t]["label"] for t in c["covered_tasks"])
+        if community:
+            reason += "; weighted community reports included (see signed signal and sources)"
+        if c["missing_tasks"]:
+            reason += "; partial task coverage"
+        recommendations.append({**c, "rank": rank, "reason": reason})
     return {"as_of": today.isoformat(), "snapshot_date": data["models"]["snapshot_date"],
             "classification": [{k: task_map[t][k] for k in ("id", "domain", "subdomain", "label")} for t in job["tasks"]],
             "classification_method": job.get("classification_method", "structured_job"),
             "decision": decision, "primary": primary, "rationale": rationale,
             "confidence": "insufficient" if not candidates else "limited",
-            "candidates": candidates, "switch": switch, "excluded": excluded,
+            "recommendations": recommendations, "candidates": candidates, "switch": switch, "excluded": excluded,
             "stale_evidence": stale, "warnings": warnings,
             "validation": [task_map[t]["validation"] for t in job["tasks"]],
             "sources": {e["source_id"]: sources[e["source_id"]] for c in candidates for e in c["evidence"]}}
@@ -310,17 +423,28 @@ def route(job, data, today=None):
 def markdown(result):
     lines = ["# PromptHarbor", "", " → ".join(t["label"] for t in result["classification"]), "",
              f"**Decision:** {result['decision']} · **Confidence:** {result['confidence']}",
-             f"**Primary:** {result['primary'] or 'No single winner established'}", "", result["rationale"], "",
+             "**Top 3:** choose using task fit and the models you can access.", "",
              f"**Switch:** {result['switch']['action']} — {result['switch']['reason']}", ""]
-    for candidate in result["candidates"][:3]:
-        lines += [f"## {candidate['name']}", ""]
-        for ev in candidate["evidence"][:3]:
+    for candidate in result["recommendations"]:
+        lines += [f"## {candidate['rank']}. {candidate['name']}", "", candidate["reason"], ""]
+        resources = candidate["resources"]
+        lines += [f"Access: {resources['access']}; open weights: {resources['open_weights']}; context: {resources['context_tokens'] or 'unknown'} tokens."]
+        price = candidate["price"]
+        lines += ([f"Recorded API input/output: ${price['input']}/${price['output']} per million tokens; subscription entitlement is separate."]
+                  if resources["price_applies"] else ["Applicable API price: unknown; check provider and account."])
+        for task in candidate["ranking"]["tasks"]:
+            lines.append(f"Community: {task['task']}, weight {task['community_weight']:.0%}, signed signal {task['community_signal']:+.3f}, independent origins {task['community_origins']}.")
+        # Keep community evidence visible even when several formal records precede it.
+        formal = [e for e in candidate["evidence"] if e["kind"] != "community_test"]
+        community = [e for e in candidate["evidence"] if e["kind"] == "community_test"]
+        for ev in formal[:2] + community:
             source = result["sources"][ev["source_id"]]
             lines.append(f"- {ev['claim']} ({ev['kind']}; {ev['setting']}). [Source]({source['url']})")
             lines.append(f"  Limit: {ev['limitations']} Report date: {ev['reported_on'] or 'not reported'}; reviewed {ev['reviewed_on']}.")
         lines += ["", "Limits: " + " ".join(candidate["limitations"]), ""]
     lines += ["## Validation", ""] + [f"- {v}" for v in result["validation"]]
-    lines += ["", "## Caveats", ""] + [f"- {v}" for v in result["warnings"]]
+    if result["warnings"]:
+        lines += ["", "## Selection notes", ""] + [f"- {v}" for v in result["warnings"]]
     lines += ["", f"As of {result['as_of']}; bundled snapshot {result['snapshot_date']}.", ""]
     return "\n".join(lines)
 

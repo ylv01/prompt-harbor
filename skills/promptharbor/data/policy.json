@@ -5,11 +5,32 @@
     "independent_eval": 60,
     "vendor_eval": 45,
     "official_capability": 30,
-    "community_test": 14
+    "community_test": 120
   },
   "notes": [
     "Age is measured from both report and review dates when report date is known.",
     "Unknown report dates are disclosed; reviewed_on is not an evaluation date.",
     "No global intelligence score or family-name extrapolation."
-  ]
+  ],
+  "community_review_days": 14,
+  "undated_community_days": 14,
+  "ranking": {
+    "default_community_weight": 0.15,
+    "task_community_weights": {
+      "finance.filings": 0.05,
+      "finance.valuation": 0.05,
+      "finance.backtest": 0.05,
+      "finance.factor": 0.05,
+      "finance.derivatives": 0.05,
+      "software.frontend": 0.3,
+      "software.frontend.design": 0.3,
+      "software.frontend.fidelity": 0.2,
+      "writing.creative": 0.25,
+      "writing.edit": 0.25,
+      "writing.professional": 0.25,
+      "professional.legal": 0.05,
+      "professional.medical": 0.05
+    },
+    "policy_status": "Editorial defaults, not outcome-calibrated weights. Override per job in [0, 0.4]."
+  }
 }

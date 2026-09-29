@@ -1,44 +1,124 @@
 {
   "schema_version": 1,
   "goal": "制作一个本地图书管理系统：浏览和新增图书、查看详情、提交评分与书评。此示例不包含账号、借阅或公开部署。",
-  "constraints": {"current_model": "gpt-6-sol", "priority": "quality"},
-  "contracts": [{"id": "interfaces", "version": "1.0.0", "path": "contracts/interfaces.md"}],
+  "constraints": {
+    "current_model": "gpt-6-sol",
+    "priority": "quality"
+  },
+  "contracts": [
+    {
+      "id": "interfaces",
+      "version": "1.0.0",
+      "path": "contracts/interfaces.md"
+    }
+  ],
   "tasks": [
     {
-      "id": "frontend", "title": "前端：图书列表、详情与书评",
+      "id": "frontend",
+      "title": "前端：图书列表、详情与书评",
       "objective": "按共享契约完成 React 界面、API 客户端、加载/空/失败状态及评分表单。使用可替换 mock 完成开发，最终验收必须连接真实后端。",
-      "job": {"tasks": ["software.frontend"], "classification_method": "host_semantic"},
-      "recommended_model": "claude-sonnet-5-5",
-      "assignment_reason": "官方发布说明支持界面/文档工作这一候选方向；缺少此图书系统的独立前端对比，因此是待验收的候选建议。",
+      "job": {
+        "tasks": [
+          "software.frontend"
+        ],
+        "classification_method": "host_semantic"
+      },
       "depends_on": [],
-      "deliverables": ["frontend/package.json", "frontend/index.html", "frontend/tsconfig.json", "frontend/vite.config.ts", "frontend/src/main.tsx", "frontend/src/App.tsx", "frontend/src/api.ts", "frontend/src/styles.css"],
-      "acceptance": ["构建通过且无 TypeScript 错误。", "完整覆盖契约中的列表、新增、详情、书评流程。", "表单标签可访问；错误消息来自约定错误结构；不硬编码评分。"]
+      "deliverables": [
+        "frontend/package.json",
+        "frontend/index.html",
+        "frontend/tsconfig.json",
+        "frontend/vite.config.ts",
+        "frontend/src/main.tsx",
+        "frontend/src/App.tsx",
+        "frontend/src/api.ts",
+        "frontend/src/styles.css"
+      ],
+      "acceptance": [
+        "构建通过且无 TypeScript 错误。",
+        "完整覆盖契约中的列表、新增、详情、书评流程。",
+        "表单标签可访问；错误消息来自约定错误结构；不硬编码评分。"
+      ]
     },
     {
-      "id": "database", "title": "数据库：结构、约束与样例数据",
+      "id": "database",
+      "title": "数据库：结构、约束与样例数据",
       "objective": "编写与共享契约一致的 PostgreSQL 初始化、可重复执行的种子数据与数据库验证 SQL。不要设计未约定的新接口或账号表。",
-      "job": {"tasks": ["data.schema"], "classification_method": "host_semantic"},
+      "job": {
+        "tasks": [
+          "data.schema"
+        ],
+        "classification_method": "host_semantic"
+      },
       "depends_on": [],
-      "deliverables": ["database/001_schema.sql", "database/002_seed.sql", "database/checks.sql"],
-      "acceptance": ["在空 PostgreSQL 16 数据库应用成功。", "种子重复执行不会重复插入；新图书 ID 不与种子冲突。", "验证外键、评分范围、ISBN 唯一性与分页索引。"]
+      "deliverables": [
+        "database/001_schema.sql",
+        "database/002_seed.sql",
+        "database/checks.sql"
+      ],
+      "acceptance": [
+        "在空 PostgreSQL 16 数据库应用成功。",
+        "种子重复执行不会重复插入；新图书 ID 不与种子冲突。",
+        "验证外键、评分范围、ISBN 唯一性与分页索引。"
+      ]
     },
     {
-      "id": "backend", "title": "后端：API 与事务",
+      "id": "backend",
+      "title": "后端：API 与事务",
       "objective": "根据共享契约和 database 交付实现 FastAPI 服务。处理校验、统一错误、事务回滚与跨域配置。保留数据库字段和类型，禁止悄悄修改接口。",
-      "job": {"tasks": ["software.repo", "data.sql"], "classification_method": "host_semantic", "tools_required": true},
+      "job": {
+        "tasks": [
+          "software.repo",
+          "data.sql"
+        ],
+        "classification_method": "host_semantic",
+        "tools_required": true
+      },
       "recommended_model": "claude-opus-5-5",
       "assignment_reason": "仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。",
-      "depends_on": ["database"],
-      "deliverables": ["backend/requirements.txt", "backend/app/__init__.py", "backend/app/main.py", "backend/app/db.py", "backend/app/schemas.py", "backend/tests/test_api.py"],
-      "acceptance": ["五个 API 操作完全遵守状态码、字段、排序和错误契约。", "测试覆盖评分 1/5/6、未知图书、重复 ISBN、分页 total 与平均分。", "SQL 参数化；失败事务回滚；不返回数据库凭据。"]
+      "depends_on": [
+        "database"
+      ],
+      "deliverables": [
+        "backend/requirements.txt",
+        "backend/app/__init__.py",
+        "backend/app/main.py",
+        "backend/app/db.py",
+        "backend/app/schemas.py",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "五个 API 操作完全遵守状态码、字段、排序和错误契约。",
+        "测试覆盖评分 1/5/6、未知图书、重复 ISBN、分页 total 与平均分。",
+        "SQL 参数化；失败事务回滚；不返回数据库凭据。"
+      ]
     },
     {
-      "id": "qa", "title": "集成测试：真实端到端流程",
+      "id": "qa",
+      "title": "集成测试：真实端到端流程",
       "objective": "拿到前端、后端、数据库的完整文件后，编写 Playwright 测试与运行说明，覆盖共享契约中的用户流程。报告实测结果；不要将未执行标为通过。",
-      "job": {"tasks": ["software.testing"], "classification_method": "host_semantic"},
-      "depends_on": ["frontend", "database", "backend"],
-      "deliverables": ["e2e/package.json", "e2e/playwright.config.ts", "e2e/library.spec.ts", "e2e/RUNBOOK.md"],
-      "acceptance": ["真实 API 与 PostgreSQL 环境运行新增图书、评论、刷新与平均分断言。", "有确定性的测试隔离和清理；不触碰生产数据库。", "列出实际执行命令、结果与未验证内容。"]
+      "job": {
+        "tasks": [
+          "software.testing"
+        ],
+        "classification_method": "host_semantic"
+      },
+      "depends_on": [
+        "frontend",
+        "database",
+        "backend"
+      ],
+      "deliverables": [
+        "e2e/package.json",
+        "e2e/playwright.config.ts",
+        "e2e/library.spec.ts",
+        "e2e/RUNBOOK.md"
+      ],
+      "acceptance": [
+        "真实 API 与 PostgreSQL 环境运行新增图书、评论、刷新与平均分断言。",
+        "有确定性的测试隔离和清理；不触碰生产数据库。",
+        "列出实际执行命令、结果与未验证内容。"
+      ]
     }
   ],
   "integration": {

@@ -14,6 +14,163 @@
   "primary": null,
   "rationale": "Several candidates or setups remain incomparable; use the task-specific trial below.",
   "confidence": "limited",
+  "recommendations": [
+    {
+      "model_id": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.testing"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "opus-repo",
+          "model_id": "claude-opus-5-5",
+          "source_id": "opus-launch",
+          "kind": "vendor_eval",
+          "claim": "FrontierCode 1.1 Main is reported as 54.4%.",
+          "direct_tasks": [
+            "software.repo"
+          ],
+          "proxy_tasks": [
+            "software.debug",
+            "software.testing",
+            "finance.backtest",
+            "finance.factor"
+          ],
+          "measurement": {
+            "benchmark": "FrontierCode",
+            "version": "1.1 Main",
+            "metric": "accuracy",
+            "value": 54.4,
+            "unit": "percent",
+            "protocol": "Anthropic release setup"
+          },
+          "setting": "Adaptive max; production safeguards and fallback policy",
+          "limitations": "Task transfer and performance on the user prompt are unmeasured. Finance mappings concern code implementation only, not financial methodology or returns.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 4,
+        "output": 20,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.2295,
+        "tasks": [
+          {
+            "task": "software.testing",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.2295
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "rank": 1,
+      "reason": "Capability or adjacent-task support for Test design"
+    },
+    {
+      "model_id": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.testing"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "sol-fit",
+          "model_id": "gpt-6-sol",
+          "source_id": "openai-sol",
+          "kind": "official_capability",
+          "claim": "Official documentation positions Sol for coding and agent workflows.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.debug",
+            "software.repo",
+            "software.testing",
+            "software.architecture",
+            "agent.workflow",
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Responses API; explicit reasoning effort",
+          "limitations": "No task-specific independent Sol result is admitted in this seed.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1050000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "ranking": {
+        "support": 0.11475,
+        "tasks": [
+          {
+            "task": "software.testing",
+            "formal_support": 0.135,
+            "evidence_strength": 0.18000000000000002,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.11475
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "rank": 2,
+      "reason": "Capability or adjacent-task support for Test design"
+    }
+  ],
   "candidates": [
     {
       "model_id": "claude-opus-5-5",
@@ -64,7 +221,35 @@
       "limitations": [
         "Account access, region and tool environment must be checked separately."
       ],
-      "metadata_url": "https://platform.claude.com/docs/en/models/overview"
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.2295,
+        "tasks": [
+          {
+            "task": "software.testing",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.2295
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
     },
     {
       "model_id": "gpt-6-sol",
@@ -108,7 +293,35 @@
       "limitations": [
         "Account access, region and tool environment must be checked separately."
       ],
-      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol"
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1050000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "ranking": {
+        "support": 0.11475,
+        "tasks": [
+          {
+            "task": "software.testing",
+            "formal_support": 0.135,
+            "evidence_strength": 0.18000000000000002,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.11475
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
     }
   ],
   "switch": {
@@ -173,8 +386,7 @@
   ],
   "stale_evidence": [],
   "warnings": [
-    "Shortlist covers the bundled catalog only; verify current availability and new releases.",
-    "Evidence coverage is not model quality. Benchmark performance does not guarantee this prompt's outcome."
+    "Only 2 eligible evidence-backed candidates; missing Top 3 slots are not invented."
   ],
   "validation": [
     "Measure faults detected and false positives, not test count."

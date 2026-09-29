@@ -162,6 +162,42 @@
       "published_on": "2024-03-18",
       "checked_on": "2026-09-29",
       "review_days": 90
+    },
+    {
+      "id": "arena-webdev",
+      "title": "Arena WebDev overall snapshot",
+      "url": "https://arena.ai/leaderboard/code",
+      "publisher": "Arena",
+      "published_on": "2026-09-25",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "neuralhub-kimi",
+      "title": "AI Lab: authored web-generation experiments",
+      "url": "https://neuralhub.dev/ai-test-results",
+      "publisher": "neuralhub.dev / Leandro",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-ui-firsthand",
+      "title": "First-person Kimi UI usage and quota report",
+      "url": "https://www.reddit.com/r/kimi/comments/1vconet/comment/p157lwe/",
+      "publisher": "Reddit / Cachesmr",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-ui-counterpoint",
+      "title": "First-person competing UI preference",
+      "url": "https://www.reddit.com/r/kimi/comments/1vconet/comment/p2cjso7/",
+      "publisher": "Reddit / Bright_Spend6574",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
     }
   ]
 }

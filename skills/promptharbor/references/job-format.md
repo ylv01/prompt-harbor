@@ -15,6 +15,7 @@ All fields except `tasks` are optional. Unknown fields fail validation.
   "open_weights_only": false,
   "allow_preview": false,
   "priority": "quality",
+  "community_weight": 0.15,
   "notes": ["Classification confidence is separate from evidence confidence."]
 }
 ```
@@ -29,7 +30,16 @@ headroom; unknown should be omitted. `priority`: quality (default), cost or late
 not subscription prices or total request budgets. Unknown pricing fails a hard cap.
 `prompt`: optional original request, local only; omit sensitive text when sharing.
 
-Example output includes classification, provisional primary (or null), evidence
+`community_weight`: optional number from 0 to 0.4. Omit to use task-specific
+defaults; 0 disables community influence. See [community policy](community.md).
+Tell the host which exact models your subscriptions/APIs provide when you want
+Top 3 restricted to existing resources; model availability does not imply quota,
+tool entitlement or an automatic purchase.
+
+Example output includes three ranked `recommendations` (or the actual smaller
+count), each with `reason`, `resources`, evidence and a `ranking` audit breakdown.
+`candidates` retains the complete shortlist. It also includes classification,
+provisional primary (or null), evidence
 records, source links, switch decision, excluded models with reasons, stale record
 IDs and task-specific validation checks. Helper JSON is intended for the host;
 the skill renders a concise answer in the user's language.

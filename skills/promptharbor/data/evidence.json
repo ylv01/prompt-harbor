@@ -888,6 +888,350 @@
       "reported_on": null,
       "reviewed_on": "2026-09-29",
       "comparison_group": null
+    },
+    {
+      "id": "claude-opus-5-5-arena-webdev",
+      "model_id": "claude-opus-5-5",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "claude-opus-5.5-max: observed WebDev preference rating 1827.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1827,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "claude-opus-5.5-max; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "gpt-6-astra-arena-webdev",
+      "model_id": "gpt-6-astra",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "gpt-6-astra-max: observed WebDev preference rating 1792.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1792,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gpt-6-astra-max; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "claude-fable-5-1-arena-webdev",
+      "model_id": "claude-fable-5-1",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "claude-fable-5.1-max: observed WebDev preference rating 1751.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1751,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "claude-fable-5.1-max; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "gpt-6-sol-arena-webdev",
+      "model_id": "gpt-6-sol",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "gpt-6-sol-max: observed WebDev preference rating 1681.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1681,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gpt-6-sol-max; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "kimi-k3-arena-webdev",
+      "model_id": "kimi-k3",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "kimi-k3-max: observed WebDev preference rating 1660.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1660,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "kimi-k3-max; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "grok-4.7-arena-webdev",
+      "model_id": "grok-4.7",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "grok-4.7-xhigh: observed WebDev preference rating 1629.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1629,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "grok-4.7-xhigh; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "deepseek-v4.1-flash-arena-webdev",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "deepseek-v4.1-flash-max: observed WebDev preference rating 1621.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1621,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "deepseek-v4.1-flash-max; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "gpt-6-luna-arena-webdev",
+      "model_id": "gpt-6-luna",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "gpt-6-luna-max: observed WebDev preference rating 1593.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1593,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gpt-6-luna-max; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "qwen3.8-27b-arena-webdev",
+      "model_id": "qwen3.8-27b",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "qwen3.8-27b: observed WebDev preference rating 1591.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1591,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "qwen3.8-27b; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "gemini-3.8-flash-arena-webdev",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "arena-webdev",
+      "kind": "independent_eval",
+      "claim": "gemini-3.8-flash-high: observed WebDev preference rating 1580.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-09-25 overall",
+        "metric": "preference rating",
+        "value": 1580,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gemini-3.8-flash-high; Arena deployment, not every consumer app setting",
+      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+      "reported_on": "2026-09-25",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "arena-webdev-2026-09-25"
+    },
+    {
+      "id": "kimi-community-websites",
+      "model_id": "kimi-k3",
+      "source_id": "neuralhub-kimi",
+      "kind": "community_test",
+      "claim": "The author lists two Kimi3 React/Vite web outputs as successful and links the generated sites.",
+      "direct_tasks": [
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [
+        "software.frontend"
+      ],
+      "measurement": null,
+      "setting": "Author identifies Kimi K3; exact deployment and effort unverified",
+      "limitations": "Self-reported artifacts, not rerun by PromptHarbor. Small creative-web sample; model settings and exact run date unknown. Older comparison models do not establish superiority over current versions. Mirrors by the same author count as one origin.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null,
+      "community": {
+        "author": "Leandro / neuralhub.dev",
+        "origin_id": "neuralhub-leandro",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-09-29",
+        "artifact_urls": [
+          "https://neuralhub.dev/test-sites/biggy-kimi3",
+          "https://neuralhub.dev/test-sites/websites-kimi3"
+        ]
+      }
+    },
+    {
+      "id": "kimi-community-ui-usage",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-ui-firsthand",
+      "kind": "community_test",
+      "claim": "A user favors Kimi for frontend work and reports using it as a UI subagent.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "Author identifies Kimi K3; exact deployment and effort unverified",
+      "limitations": "No public prompt, code or controlled comparison. The same author reports quota constraints; subscription access and speed require current verification. Relative date only.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null,
+      "community": {
+        "author": "Cachesmr",
+        "origin_id": "reddit-cachesmr",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-29",
+        "artifact_urls": []
+      }
+    },
+    {
+      "id": "kimi-community-ui-counterpoint",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-ui-counterpoint",
+      "kind": "community_test",
+      "claim": "Another user reports preferring Opus 5 results for visual effects and UI.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "Author identifies Kimi K3; exact deployment and effort unverified",
+      "limitations": "A relative preference against Kimi in this discussion, not proof of failure. No task artifacts or exact settings. It is not evidence for the newer Opus 5.5; relative date only.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null,
+      "community": {
+        "author": "Bright_Spend6574",
+        "origin_id": "reddit-bright-spend6574",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-29",
+        "artifact_urls": []
+      }
     }
   ]
 }

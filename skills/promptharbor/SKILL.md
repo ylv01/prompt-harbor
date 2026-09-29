@@ -1,16 +1,16 @@
 ---
 name: promptharbor
-description: Identify the domain and task behind an ordinary prompt, recommend suitable LLMs from current task-specific evidence, and advise whether to switch. For complex projects, split the work, assign suitable models, produce copyable handoff prompts with shared interface contracts, and integrate returned work in the main conversation. Use when the user wants model advice or has enabled PromptHarbor routing for this conversation.
+description: Identify the domain and task behind an ordinary prompt, recommend a Top 3 of suitable LLMs using current evaluations and weighted community reports, and advise whether to switch. For complex projects, split the work, offer Top 3 choices per part, produce copyable handoff prompts with shared interface contracts, and integrate returned work in the main conversation. Use when the user wants model advice or has enabled PromptHarbor routing for this conversation.
 license: Apache-2.0
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # PromptHarbor
 
 **Understand the work. Choose the model. Bring the pieces together.**
 
-Two modes: recommend a model for a question; or coordinate a project across
+Two modes: offer Top 3 model choices for a question; or coordinate a project across
 models through user-carried prompts and returned artifacts. This skill uses the
 host's semantic understanding and browsing. Python helpers are optional,
 deterministic evidence and handoff tools—not an embedded classifier LLM.
@@ -60,19 +60,27 @@ deterministic evidence and handoff tools—not an embedded classifier LLM.
    Separate official capability support, vendor tests, independent tests,
    community reproductions and your own inference. Never convert overall rank,
    context capacity, parameter count or brand reputation into a specialty claim.
-5. Explain a primary candidate and at most two useful alternatives. If no winner
-   is established, state that and offer a provisional candidate or small trial.
-   Report missing/contradictory evidence and source dates. When offline or stale,
-   say the recommendation is snapshot-based and cannot establish the latest best.
+5. Default to **three ranked choices**, each with its task-fit reason, source and
+   access/cost tradeoff. Let the user choose with existing subscriptions, quota,
+   APIs and tools. If they list available models, filter to that list. Otherwise
+   show the broader Top 3 without assuming subscriptions or demanding a purchase.
+   With fewer than three supported eligible models, show the actual count and
+   explain the gap. Never fill slots with unsupported specialty claims.
+6. Apply [community weighting](references/community.md): exact model and task,
+   independent origins, artifact quality, signed positive/negative reports and
+   freshness. Preserve disagreement. Likes and duplicated posts are not evidence
+   multipliers. Arena's systematic crowd evaluation belongs in independent tests;
+   do not count it again as community anecdotes. Do not invent missing scores.
 
 ## Single-question response
 
-Respond in the user's language. Usually 6–12 lines are enough:
+Respond in the user's language. Prefer a short comparison table:
 
 - **Task:** domain → subdomain → task; mention mixed tasks when relevant.
-- **Recommendation:** exact model + effort/tools when verified; concise task-fit reason.
-- **Evidence:** 1–3 direct source links, source type and date; distinguish inference.
-- **Alternative:** one meaningful tradeoff, if useful.
+- **Top 3:** rank, exact model + verified effort/tools, task-fit reason, access/cost
+  tradeoff and a source link per choice. Ranks express conditional recommendations.
+- **Evidence:** distinguish task evaluations, proxies and community feedback;
+  include dates and explain community influence when it changes the choice.
 - **Switch:** stay / test first / consider switching / unknown, with a reason.
 - **Caveat or check:** the specific uncertainty that could change the choice.
 
@@ -91,7 +99,8 @@ conversation remains the integration owner throughout.
 1. Decompose by deliverable and verifiable boundary (for example frontend,
    backend, database, tests), then classify each part with the same evidence policy.
    Shared requirements and interfaces come **before** parallel implementation.
-2. Show the user a compact part → suggested model → reason → dependency table.
+2. Show the user a compact part → Top 3 choices → reason → dependency table.
+   A planning default is a suggestion; the user selects the model for each part.
    Reusing one model across parts is allowed. No evidence supports a universal
    “best database LLM”; use a feasible baseline and explicit acceptance tests.
 3. Freeze versioned API/data contracts, file ownership, shared conventions and
@@ -103,9 +112,10 @@ conversation remains the integration owner throughout.
    ```
 
 4. **Print the full copyable prompt for every part in the current conversation**,
-   not just file links or a plan. Include the model suggestion, bounded objective,
+   not just file links or a plan. Include the three choices, bounded objective,
    exact shared contracts, upstream dependencies, owned deliverables, acceptance
-   criteria and receipt format. If lengthy, deliver in clearly numbered batches
+   criteria and receipt format recording the actual selected model. Use the same
+   interface contracts regardless of the chosen candidate. If lengthy, deliver in clearly numbered batches
    without omitting remaining prompts. Also provide generated files when available.
 5. Explain execution order. The user carries these prompts to chosen models and
    brings files/answers back. Do not spawn agents or external model calls merely

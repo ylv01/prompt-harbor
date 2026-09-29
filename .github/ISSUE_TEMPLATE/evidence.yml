@@ -17,3 +17,7 @@ body:
     attributes:
       label: Reproduction
       description: Public prompt/test steps, expected and observed result. Remove private data.
+  - type: textarea
+    attributes:
+      label: Community provenance
+      description: For community reports, provide original author/team, firsthand or artifact-backed status, positive and negative findings, original date, known reposts, and any sponsorship. Likes are not an evidence multiplier.

@@ -4,21 +4,21 @@
 
 Integration owner: **this conversation**. No models are called or changed automatically.
 
-| Part | Suggested model | Dependencies | Prompt |
-|---|---|---|---|
-| frontend | claude-sonnet-5-5 | None | [Copy prompt](prompts/frontend.md) |
-| database | gpt-6-sol | None | [Copy prompt](prompts/database.md) |
-| backend | claude-opus-5-5 | database | [Copy prompt](prompts/backend.md) |
-| qa | gpt-6-sol | frontend, database, backend | [Copy prompt](prompts/qa.md) |
+| Part | Top 3 choices | Planning default | Dependencies | Prompt |
+|---|---|---|---|---|
+| frontend | 1. Claude Opus 5.5, 2. GPT-6 Astra, 3. Claude Fable 5.1 | gpt-6-sol | None | [Copy prompt](prompts/frontend.md) |
+| database | Evidence gap; baseline only | gpt-6-sol | None | [Copy prompt](prompts/database.md) |
+| backend | 1. Claude Opus 5.5, 2. DeepSeek-V4.1-Flash, 3. Qwen3.8-27B | claude-opus-5-5 | database | [Copy prompt](prompts/backend.md) |
+| qa | 1. Claude Opus 5.5, 2. GPT-6 Sol | gpt-6-sol | frontend, database, backend | [Copy prompt](prompts/qa.md) |
 
 ## Assignment basis
 
-- **frontend:** 官方发布说明支持界面/文档工作这一候选方向；缺少此图书系统的独立前端对比，因此是待验收的候选建议。 [Evidence and gaps](prompts/frontend.evidence.json)
-  Sources: [Claude Sonnet 5.5 release evaluation](https://www.anthropic.com/claude-sonnet-5-5)
+- **frontend:** Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model. [Evidence and gaps](prompts/frontend.evidence.json)
+  Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
 - **database:** Keep the current feasible model as a baseline; no comparative task advantage is established. [Evidence and gaps](prompts/database.evidence.json)
 - **backend:** 仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。 [Evidence and gaps](prompts/backend.evidence.json)
   Sources: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5)
-- **qa:** Keep the current feasible model as a baseline; no comparative task advantage is established. [Evidence and gaps](prompts/qa.evidence.json)
+- **qa:** Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model. [Evidence and gaps](prompts/qa.evidence.json)
   Sources: [GPT-6 Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
 
 ## Execution batches

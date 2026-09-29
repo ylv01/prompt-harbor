@@ -1,8 +1,16 @@
 # Handoff: 集成测试：真实端到端流程
 
-Suggested model: **gpt-6-sol**
+Planning default: **gpt-6-sol**
 
-Keep the current feasible model as a baseline; no comparative task advantage is established.
+Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model.
+
+## Top 3 choices
+
+- 1. **Claude Opus 5.5** (`claude-opus-5-5`): Capability or adjacent-task support for Test design. Sources: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5)
+- 2. **GPT-6 Sol** (`gpt-6-sol`): Capability or adjacent-task support for Test design. Sources: [GPT-6 Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
+Only 2 evidence-backed choices available; use the declared baseline when shown.
+
+The user selects the actual model. This prompt works with any chosen model; keep the same contracts and acceptance criteria.
 
 ## Project goal
 
@@ -120,7 +128,7 @@ Return the files plus a receipt JSON containing:
 {
   "task_id": "qa",
   "status": "complete",
-  "model_used": "gpt-6-sol",
+  "model_used": "REPLACE_WITH_ACTUAL_MODEL",
   "contracts": {
     "interfaces": "3530d07d2a35807051af873c49567124ec987bab6353b89d6b0c4aae9e13dbf4"
   },

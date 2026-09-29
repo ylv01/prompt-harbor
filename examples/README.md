@@ -7,6 +7,14 @@ this snapshot; omit it for current advice.
 
 ## One question
 
+`frontend.json` demonstrates visual design restricted to three models the user
+already has access to, with 30% community weighting. It shows Top 3 choices,
+sources, resources and the signed community effect. Run:
+
+```sh
+python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.json
+```
+
 ```sh
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/video.json
@@ -43,7 +51,7 @@ This is intentional honesty, not an unsupported specialty recommendation.
 
 ```text
 Use $promptharbor for this conversation. For each problem I send, first identify
-the task and recommend a suitable model. For engineering projects, split the work
+the task and recommend Top 3 models. For engineering projects, split the work
 and print separate copyable prompts, keeping this conversation as integrator.
 ```
 

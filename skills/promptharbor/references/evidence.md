@@ -10,22 +10,41 @@ Mappings are PromptHarbor editorial judgments; measured results are source facts
 Apply the same proxy rationale consistently across models: repository implementation
 results may inform the coding part of a backtest for every tested model, not just
 one favored provider. They do not establish financial-methodology expertise.
-An official feature declaration proves feasibility only. Community evidence can
-surface a failure mode but cannot alone establish superiority.
+An official feature declaration proves feasibility only. Community evidence adds
+task-specific preference and failure signals under [community rules](community.md).
 
 Use independent task-matched tests when available. Vendor evaluations remain
 useful with visible qualification. Count independent *evaluators*, not URLs that
 repeat one press release. When reviewers disagree, preserve both claims and
 inspect versions, tool budgets, graders, language, samples and deployment.
 
-No synthetic intelligence score is calculated. The helper orders candidates by
-complete task coverage, number of directly measured tasks, independently measured
-tasks, then any supported tasks. This is retrieval prioritization, **not a model
-quality ranking**. Model ID only stabilizes remaining ties. A unique evidence
-coverage leader is a provisional suggestion; unequal coverage can reflect
-unequal measurement, not unequal skill. Raw scores are compared only in a curated
-comparison group with the same source, metric, version and recorded protocol.
-Different configurations are always named. No statistical significance is implied.
+The helper filters hard constraints, then orders candidates by supported task
+count and weighted task support, with model ID as a stable final tie-break.
+Return the first three as `recommendations`; retain the full `candidates` list
+and all exclusion reasons for inspection. Fewer than three candidates is an
+explicit evidence gap, never a reason to fabricate a specialty recommendation.
+
+For each task, strongest formal support uses independent measurement 1, vendor
+measurement 0.8, official/unmeasured capability 0.4, multiplied by task match
+(direct 1, proxy 0.45). Let this value be E. Let P be the observed win fraction
+against other eligible models **within a curated comparison group**, discounted
+by 0.45 for proxy matches. Exact score ties count as half a win. No comparable
+observations add no comparison support; this is not evidence of zero ability.
+Then `formal = 0.75*E + 0.25*P` and
+`task_support = (1-community_weight)*formal + community_weight*community_signal`.
+Multiple requested tasks have equal weight. Candidate support is their mean.
+
+These are inspectable editorial weights, not a calibrated success probability.
+Do not advertise the resulting number as an intelligence score. Sparse or uneven
+measurements can affect ordering; task trials resolve close or unsupported choices.
+Raw observations are compared only for the same source, metric, version and
+recorded protocol. Current groups use higher-is-better metrics; do not add a
+lower-is-better metric without implementing and testing its direction first.
+Different effort configurations remain named. No statistical significance is implied.
+
+`primary` remains a compatibility field for a provisional formal-coverage or
+within-cohort leader; it can be null even when Top 3 is populated. The public
+answer should render `recommendations`, not treat `primary` as the only choice.
 
 Confidence is deliberately capped at `limited` for seeded recommendations.
 Higher confidence in the host answer requires convergent independent evidence

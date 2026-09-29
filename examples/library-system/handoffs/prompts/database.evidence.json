@@ -14,6 +14,7 @@
   "primary": null,
   "rationale": "No eligible candidate has fresh evidence for these tasks. Research the missing evidence.",
   "confidence": "insufficient",
+  "recommendations": [],
   "candidates": [],
   "switch": {
     "action": "unknown",
@@ -89,8 +90,7 @@
   ],
   "stale_evidence": [],
   "warnings": [
-    "Shortlist covers the bundled catalog only; verify current availability and new releases.",
-    "Evidence coverage is not model quality. Benchmark performance does not guarantee this prompt's outcome."
+    "Only 0 eligible evidence-backed candidates; missing Top 3 slots are not invented."
   ],
   "validation": [
     "Apply migrations to a disposable database and verify constraints, indices, transactions and seed idempotence."

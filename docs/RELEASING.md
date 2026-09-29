@@ -17,7 +17,7 @@ selected, and no GitHub upload or release is implied by these files.
 6. Set topics such as `agent-skill`, `llm`, `model-selection`, `ai-agents` and
    `prompt-engineering`. Upload `assets/brand/social-preview.png` as social preview.
    The avatar is available for a project organization or other avatar surface.
-7. Let remote CI run. Create tag `v0.1.0` and a release with the skill ZIP and its
+7. Let remote CI run. Create tag `v0.2.0` and a release with the skill ZIP and its
    SHA-256 file only after checks pass. Do not use an unrun CI status badge.
 
 Future releases: bump skill metadata, CHANGELOG and generated version badge

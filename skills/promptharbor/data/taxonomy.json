@@ -517,6 +517,28 @@
         "database schema|schema design|数据库设计|表结构|数据建模"
       ],
       "validation": "Apply migrations to a disposable database and verify constraints, indices, transactions and seed idempotence."
+    },
+    {
+      "id": "software.frontend.design",
+      "domain": "Software",
+      "subdomain": "Interface design",
+      "label": "Generative visual web design",
+      "description": "Create an original landing page or visual interactive prototype; distinguish visual appeal from production correctness.",
+      "patterns": [
+        "landing page|落地页|视觉设计|创意网页"
+      ],
+      "validation": "Render the same brief at mobile and desktop sizes; inspect visual coherence, accessibility and working interactions."
+    },
+    {
+      "id": "software.frontend.fidelity",
+      "domain": "Software",
+      "subdomain": "Interface fidelity",
+      "label": "Reference-to-code fidelity",
+      "description": "Reproduce a supplied screenshot or design specification accurately.",
+      "patterns": [
+        "figma|像素级|还原设计|screenshot.to.code"
+      ],
+      "validation": "Compare rendered screenshots at specified viewports and test interaction/accessibility; do not substitute generic aesthetic preference."
     }
   ]
 }

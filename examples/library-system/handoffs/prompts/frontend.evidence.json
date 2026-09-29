@@ -11,10 +11,1147 @@
   ],
   "classification_method": "host_semantic",
   "decision": "provisional",
-  "primary": "claude-sonnet-5-5",
-  "rationale": "Best evidence coverage in this catalog; this is not proof of superiority over other models.",
+  "primary": "claude-opus-5-5",
+  "rationale": "Higher observed result within the same recorded comparison cohort; uncertainty and task transfer remain.",
   "confidence": "limited",
+  "recommendations": [
+    {
+      "model_id": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "claude-opus-5-5-arena-webdev",
+          "model_id": "claude-opus-5-5",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "claude-opus-5.5-max: observed WebDev preference rating 1827.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1827,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-opus-5.5-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 4,
+        "output": 20,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.7,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 1.0,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 1.0,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.7
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "rank": 1,
+      "reason": "Task-matched independent evaluation for Frontend implementation"
+    },
+    {
+      "model_id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "gpt-6-astra-arena-webdev",
+          "model_id": "gpt-6-astra",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "gpt-6-astra-max: observed WebDev preference rating 1792.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1792,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-astra-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 10,
+        "output": 50,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1050000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "ranking": {
+        "support": 0.680556,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.972222,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.8888888888888888,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.6805555555555555
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "rank": 2,
+      "reason": "Task-matched independent evaluation for Frontend implementation"
+    },
+    {
+      "model_id": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "claude-fable-5-1-arena-webdev",
+          "model_id": "claude-fable-5-1",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "claude-fable-5.1-max: observed WebDev preference rating 1751.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1751,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-fable-5.1-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 10,
+        "output": 50,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Some published evaluations use fallback models; do not attribute the composite result to the base model alone."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.661111,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.944444,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.7777777777777778,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.6611111111111111
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "rank": 3,
+      "reason": "Task-matched independent evaluation for Frontend implementation"
+    }
+  ],
   "candidates": [
+    {
+      "model_id": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "claude-opus-5-5-arena-webdev",
+          "model_id": "claude-opus-5-5",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "claude-opus-5.5-max: observed WebDev preference rating 1827.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1827,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-opus-5.5-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 4,
+        "output": 20,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.7,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 1.0,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 1.0,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.7
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "gpt-6-astra-arena-webdev",
+          "model_id": "gpt-6-astra",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "gpt-6-astra-max: observed WebDev preference rating 1792.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1792,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-astra-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 10,
+        "output": 50,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1050000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "ranking": {
+        "support": 0.680556,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.972222,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.8888888888888888,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.6805555555555555
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "claude-fable-5-1-arena-webdev",
+          "model_id": "claude-fable-5-1",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "claude-fable-5.1-max: observed WebDev preference rating 1751.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1751,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-fable-5.1-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 10,
+        "output": 50,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Some published evaluations use fallback models; do not attribute the composite result to the base model alone."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.661111,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.944444,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.7777777777777778,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.6611111111111111
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "gpt-6-sol-arena-webdev",
+          "model_id": "gpt-6-sol",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "gpt-6-sol-max: observed WebDev preference rating 1681.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1681,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-sol-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1050000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "ranking": {
+        "support": 0.641667,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.916667,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.6666666666666666,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.6416666666666666
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "kimi-k3",
+      "name": "Kimi K3",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "kimi-k3-arena-webdev",
+          "model_id": "kimi-k3",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "kimi-k3-max: observed WebDev preference rating 1660.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1660,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "kimi-k3-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        },
+        {
+          "id": "kimi-community-websites",
+          "model_id": "kimi-k3",
+          "source_id": "neuralhub-kimi",
+          "kind": "community_test",
+          "claim": "The author lists two Kimi3 React/Vite web outputs as successful and links the generated sites.",
+          "direct_tasks": [
+            "software.frontend.design"
+          ],
+          "proxy_tasks": [
+            "software.frontend"
+          ],
+          "measurement": null,
+          "setting": "Author identifies Kimi K3; exact deployment and effort unverified",
+          "limitations": "Self-reported artifacts, not rerun by PromptHarbor. Small creative-web sample; model settings and exact run date unknown. Older comparison models do not establish superiority over current versions. Mirrors by the same author count as one origin.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null,
+          "community": {
+            "author": "Leandro / neuralhub.dev",
+            "origin_id": "neuralhub-leandro",
+            "grade": "artifact_report",
+            "stance": "positive",
+            "first_seen_on": "2026-09-29",
+            "artifact_urls": [
+              "https://neuralhub.dev/test-sites/biggy-kimi3",
+              "https://neuralhub.dev/test-sites/websites-kimi3"
+            ]
+          }
+        },
+        {
+          "id": "kimi-community-ui-usage",
+          "model_id": "kimi-k3",
+          "source_id": "kimi-ui-firsthand",
+          "kind": "community_test",
+          "claim": "A user favors Kimi for frontend work and reports using it as a UI subagent.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": null,
+          "setting": "Author identifies Kimi K3; exact deployment and effort unverified",
+          "limitations": "No public prompt, code or controlled comparison. The same author reports quota constraints; subscription access and speed require current verification. Relative date only.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null,
+          "community": {
+            "author": "Cachesmr",
+            "origin_id": "reddit-cachesmr",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-29",
+            "artifact_urls": []
+          }
+        },
+        {
+          "id": "kimi-community-ui-counterpoint",
+          "model_id": "kimi-k3",
+          "source_id": "kimi-ui-counterpoint",
+          "kind": "community_test",
+          "claim": "Another user reports preferring Opus 5 results for visual effects and UI.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": null,
+          "setting": "Author identifies Kimi K3; exact deployment and effort unverified",
+          "limitations": "A relative preference against Kimi in this discussion, not proof of failure. No task artifacts or exact settings. It is not evidence for the newer Opus 5.5; relative date only.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null,
+          "community": {
+            "author": "Bright_Spend6574",
+            "origin_id": "reddit-bright-spend6574",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-29",
+            "artifact_urls": []
+          }
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Kimi K3 has its own weights license. Native video support and deployment-specific frame limits require verification."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "context_tokens": 1048576,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": false
+      },
+      "metadata_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "ranking": {
+        "support": 0.635722,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.888889,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.5555555555555556,
+            "community_signal": 0.045,
+            "community_weight": 0.3,
+            "community_origins": 3,
+            "origins": [
+              {
+                "origin_id": "neuralhub-leandro",
+                "signal": 0.135,
+                "evidence_ids": [
+                  "kimi-community-websites"
+                ]
+              },
+              {
+                "origin_id": "reddit-bright-spend6574",
+                "signal": -0.1,
+                "evidence_ids": [
+                  "kimi-community-ui-counterpoint"
+                ]
+              },
+              {
+                "origin_id": "reddit-cachesmr",
+                "signal": 0.1,
+                "evidence_ids": [
+                  "kimi-community-ui-usage"
+                ]
+              }
+            ],
+            "support": 0.6357222222222221
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "grok-4.7",
+      "name": "Grok 4.7",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "grok-4.7-arena-webdev",
+          "model_id": "grok-4.7",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "grok-4.7-xhigh: observed WebDev preference rating 1629.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1629,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "grok-4.7-xhigh; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 6,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "X/web search requires an enabled tool environment; it is not intrinsic fresh knowledge."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 500000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://docs.x.ai/developers/models/grok-4.7",
+      "ranking": {
+        "support": 0.602778,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.861111,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.4444444444444444,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.6027777777777777
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "deepseek-v4.1-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "deepseek-v4.1-flash-arena-webdev",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "deepseek-v4.1-flash-max: observed WebDev preference rating 1621.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1621,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "deepseek-v4.1-flash-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Open weights do not imply laptop suitability. Verify serving precision, hardware, license and API alias."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": false
+      },
+      "metadata_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "ranking": {
+        "support": 0.583333,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.833333,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.3333333333333333,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.5833333333333334
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "gpt-6-luna-arena-webdev",
+          "model_id": "gpt-6-luna",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "gpt-6-luna-max: observed WebDev preference rating 1593.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1593,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-luna-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": {
+        "input": 0.1,
+        "output": 0.5,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1050000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "ranking": {
+        "support": 0.563889,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.805556,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.2222222222222222,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.5638888888888889
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "qwen3.8-27b",
+      "name": "Qwen3.8-27B",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "qwen3.8-27b-arena-webdev",
+          "model_id": "qwen3.8-27b",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "qwen3.8-27b: observed WebDev preference rating 1591.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1591,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "qwen3.8-27b; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Native context recorded; extended context needs a separate serving configuration and quality test."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 262144,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": false
+      },
+      "metadata_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "ranking": {
+        "support": 0.544444,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.777778,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.1111111111111111,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.5444444444444444
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "gemini-3.8-flash",
+      "name": "Gemini 3.8 Flash",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "gemini-3.8-flash-arena-webdev",
+          "model_id": "gemini-3.8-flash",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "gemini-3.8-flash-high: observed WebDev preference rating 1580.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1580,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gemini-3.8-flash-high; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Price source is separate (gemini-launch); no price admitted from the capability-only source."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "context_tokens": 1048576,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": false
+      },
+      "metadata_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "ranking": {
+        "support": 0.525,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.75,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.0,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.5249999999999999
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
     {
       "model_id": "claude-sonnet-5-5",
       "name": "Claude Sonnet 5.5",
@@ -56,84 +1193,84 @@
       "limitations": [
         "Account access, region and tool environment must be checked separately."
       ],
-      "metadata_url": "https://platform.claude.com/docs/en/models/overview"
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.0945,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.135,
+            "evidence_strength": 0.18000000000000002,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "origins": [],
+            "support": 0.0945
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
     }
   ],
   "switch": {
-    "action": "unknown",
-    "reason": "Fresh comparable evidence about the current model is missing."
+    "action": "test_first",
+    "reason": "No matched task trial establishes a worthwhile improvement over the current model."
   },
-  "excluded": [
-    {
-      "model_id": "gpt-6-astra",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "gpt-6-sol",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "gpt-6-luna",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "claude-opus-5-5",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "claude-fable-5-1",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "gemini-3.8-flash",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "deepseek-v4.1-flash",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "qwen3.8-27b",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "kimi-k3",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "grok-4.7",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    }
-  ],
+  "excluded": [],
   "stale_evidence": [],
-  "warnings": [
-    "Shortlist covers the bundled catalog only; verify current availability and new releases.",
-    "Evidence coverage is not model quality. Benchmark performance does not guarantee this prompt's outcome."
-  ],
+  "warnings": [],
   "validation": [
     "Render at multiple sizes; compare fidelity, accessibility and interaction behavior."
   ],
   "sources": {
+    "arena-webdev": {
+      "id": "arena-webdev",
+      "title": "Arena WebDev overall snapshot",
+      "url": "https://arena.ai/leaderboard/code",
+      "publisher": "Arena",
+      "published_on": "2026-09-25",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "neuralhub-kimi": {
+      "id": "neuralhub-kimi",
+      "title": "AI Lab: authored web-generation experiments",
+      "url": "https://neuralhub.dev/ai-test-results",
+      "publisher": "neuralhub.dev / Leandro",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "kimi-ui-firsthand": {
+      "id": "kimi-ui-firsthand",
+      "title": "First-person Kimi UI usage and quota report",
+      "url": "https://www.reddit.com/r/kimi/comments/1vconet/comment/p157lwe/",
+      "publisher": "Reddit / Cachesmr",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "kimi-ui-counterpoint": {
+      "id": "kimi-ui-counterpoint",
+      "title": "First-person competing UI preference",
+      "url": "https://www.reddit.com/r/kimi/comments/1vconet/comment/p2cjso7/",
+      "publisher": "Reddit / Bright_Spend6574",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
     "sonnet-launch": {
       "id": "sonnet-launch",
       "title": "Claude Sonnet 5.5 release evaluation",
