@@ -1,0 +1,19 @@
+name: Evidence correction or addition
+description: Add a source or correct a task-specific claim.
+body:
+  - type: textarea
+    attributes:
+      label: Model and task
+      description: Exact model/version, affected task and proposed correction.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Source and setup
+      description: Primary URL, date, metric, reasoning effort, tools/harness, limitations.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: Public prompt/test steps, expected and observed result. Remove private data.

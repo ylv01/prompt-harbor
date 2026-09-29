@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img">
+<title>PromptHarbor</title>
+<rect width="1200" height="340" fill="#F5F8F6"/>
+<polyline points="99.000,170.000 99.093,174.822 99.372,179.535 99.834,184.137 100.477,188.625 101.298,192.996 102.296,197.246 103.468,201.374 104.812,205.375 106.327,209.248 108.009,212.988 109.856,216.594 111.867,220.062 114.039,223.390 116.370,226.574 118.858,229.612 121.500,232.500 124.295,235.236 127.239,237.816 130.332,240.239 133.570,242.500 136.952,244.597 140.476,246.527 144.138,248.288 147.938,249.875 151.872,251.287 155.938,252.520 160.136,253.571 164.461,254.438 168.912,255.117 173.487,255.605 178.184,255.901 183.000,256.000 187.816,255.901 192.513,255.605 197.088,255.117 201.539,254.438 205.864,253.571 210.062,252.520 214.128,251.287 218.062,249.875 221.862,248.288 225.524,246.527 229.048,244.597 232.430,242.500 235.668,240.239 238.761,237.816 241.705,235.236 244.500,232.500 247.142,229.612 249.630,226.574 251.961,223.390 254.133,220.062 256.144,216.594 257.991,212.988 259.673,209.248 261.188,205.375 262.532,201.374 263.704,197.246 264.702,192.996 265.523,188.625 266.166,184.137 266.628,179.535 266.907,174.822 267.000,170.000" fill="none" stroke="#087F8C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="121.000,103.000 121.000,137.000 183.000,179.000 183.000,218.000" fill="none" stroke="#087F8C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="245.000,103.000 245.000,137.000 183.000,179.000" fill="none" stroke="#087F8C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="183.000,80.000 183.000,134.000" fill="none" stroke="#087F8C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="183" cy="179" r="13" fill="#F07167"/>
+<text x="355" y="93" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="15" font-weight="700" fill="#087F8C">TASK  /  MODEL  /  DELIVERY</text>
+<text x="350" y="174" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="65" font-weight="700" fill="#132D38">PromptHarbor</text>
+<text x="354" y="222" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="24" font-weight="400" fill="#526B75">Understand the work. Choose the model.</text>
+<text x="354" y="258" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="24" font-weight="400" fill="#526B75">Bring the pieces together.</text>
+</svg>

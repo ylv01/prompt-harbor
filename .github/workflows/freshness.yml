@@ -1,0 +1,22 @@
+name: Evidence review due
+on:
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Report review queue
+        run: python scripts/freshness.py --fail-due > freshness.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-review-queue
+          path: freshness.json

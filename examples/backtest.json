@@ -1,0 +1,9 @@
+{
+  "tasks": ["finance.backtest", "software.repo"],
+  "classification_method": "host_semantic",
+  "classification_confidence": "high",
+  "current_model": "gpt-6-sol",
+  "tools_required": true,
+  "input_modalities": ["text"],
+  "notes": ["Check a Python equity backtest for look-ahead bias. Trading profitability is not a model benchmark."]
+}

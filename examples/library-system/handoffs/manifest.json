@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "goal": "制作一个本地图书管理系统：浏览和新增图书、查看详情、提交评分与书评。此示例不包含账号、借阅或公开部署。",
+  "as_of": "2026-09-29",
+  "integration_owner": "current_window",
+  "batches": [
+    [
+      "frontend",
+      "database"
+    ],
+    [
+      "backend"
+    ],
+    [
+      "qa"
+    ]
+  ],
+  "contracts": [
+    {
+      "id": "interfaces",
+      "version": "1.0.0",
+      "sha256": "3530d07d2a35807051af873c49567124ec987bab6353b89d6b0c4aae9e13dbf4",
+      "path": "contracts/interfaces.md"
+    }
+  ],
+  "assignments": [
+    {
+      "task_id": "frontend",
+      "model": "claude-sonnet-5-5",
+      "reason": "官方发布说明支持界面/文档工作这一候选方向；缺少此图书系统的独立前端对比，因此是待验收的候选建议。",
+      "depends_on": [],
+      "deliverables": [
+        "frontend/package.json",
+        "frontend/index.html",
+        "frontend/tsconfig.json",
+        "frontend/vite.config.ts",
+        "frontend/src/main.tsx",
+        "frontend/src/App.tsx",
+        "frontend/src/api.ts",
+        "frontend/src/styles.css"
+      ],
+      "prompt": "prompts/frontend.md"
+    },
+    {
+      "task_id": "database",
+      "model": "gpt-6-sol",
+      "reason": "Keep the current feasible model as a baseline; no comparative task advantage is established.",
+      "depends_on": [],
+      "deliverables": [
+        "database/001_schema.sql",
+        "database/002_seed.sql",
+        "database/checks.sql"
+      ],
+      "prompt": "prompts/database.md"
+    },
+    {
+      "task_id": "backend",
+      "model": "claude-opus-5-5",
+      "reason": "仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。",
+      "depends_on": [
+        "database"
+      ],
+      "deliverables": [
+        "backend/requirements.txt",
+        "backend/app/__init__.py",
+        "backend/app/main.py",
+        "backend/app/db.py",
+        "backend/app/schemas.py",
+        "backend/tests/test_api.py"
+      ],
+      "prompt": "prompts/backend.md"
+    },
+    {
+      "task_id": "qa",
+      "model": "gpt-6-sol",
+      "reason": "Keep the current feasible model as a baseline; no comparative task advantage is established.",
+      "depends_on": [
+        "frontend",
+        "database",
+        "backend"
+      ],
+      "deliverables": [
+        "e2e/package.json",
+        "e2e/playwright.config.ts",
+        "e2e/library.spec.ts",
+        "e2e/RUNBOOK.md"
+      ],
+      "prompt": "prompts/qa.md"
+    }
+  ]
+}

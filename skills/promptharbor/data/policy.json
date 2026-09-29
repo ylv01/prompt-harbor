@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "metadata_max_age_days": 30,
+  "evidence_max_age_days": {
+    "independent_eval": 60,
+    "vendor_eval": 45,
+    "official_capability": 30,
+    "community_test": 14
+  },
+  "notes": [
+    "Age is measured from both report and review dates when report date is known.",
+    "Unknown report dates are disclosed; reviewed_on is not an evaluation date.",
+    "No global intelligence score or family-name extrapolation."
+  ]
+}

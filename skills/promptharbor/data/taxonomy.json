@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "id": "software.debug",
+      "domain": "Software",
+      "subdomain": "Maintenance",
+      "label": "Debug a defect",
+      "description": "Find and repair a concrete failing behavior.",
+      "patterns": [
+        "\\bbug\\b|\\bdebug|报错|修复|排查|崩溃"
+      ],
+      "validation": "Reproduce the failure and run regression tests on the same repository."
+    },
+    {
+      "id": "software.repo",
+      "domain": "Software",
+      "subdomain": "Maintenance",
+      "label": "Repository implementation",
+      "description": "Implement a feature or migration spanning a repository.",
+      "patterns": [
+        "codebase|repository|代码库|重构|迁移|跨文件"
+      ],
+      "validation": "Use the same repository, tests, tools, time budget and acceptance criteria."
+    },
+    {
+      "id": "software.algorithm",
+      "domain": "Software",
+      "subdomain": "Algorithms",
+      "label": "Algorithmic coding",
+      "description": "Solve bounded programming or competitive coding problems.",
+      "patterns": [
+        "leetcode|codeforces|algorithm|算法题|编程竞赛"
+      ],
+      "validation": "Run hidden tests and adversarial complexity cases; do not reuse seen benchmark tasks."
+    },
+    {
+      "id": "software.frontend",
+      "domain": "Software",
+      "subdomain": "Interfaces",
+      "label": "Frontend implementation",
+      "description": "Build interfaces from requirements or a visual reference.",
+      "patterns": [
+        "frontend|前端|react|界面|网页"
+      ],
+      "validation": "Render at multiple sizes; compare fidelity, accessibility and interaction behavior."
+    },
+    {
+      "id": "software.security",
+      "domain": "Software",
+      "subdomain": "Security",
+      "label": "Defensive code review",
+      "description": "Find and fix vulnerabilities in authorized code.",
+      "patterns": [
+        "vulnerabilit|security review|安全审计|漏洞|防御"
+      ],
+      "validation": "Use a safe local reproduction and verify the patch without breaking behavior."
+    },
+    {
+      "id": "software.architecture",
+      "domain": "Software",
+      "subdomain": "Architecture",
+      "label": "System design",
+      "description": "Evaluate architecture and system tradeoffs.",
+      "patterns": [
+        "system design|architecture|系统设计|架构"
+      ],
+      "validation": "Score assumptions, tradeoffs, failure modes and requirements coverage."
+    },
+    {
+      "id": "software.terminal",
+      "domain": "Software",
+      "subdomain": "Tools",
+      "label": "Terminal agent",
+      "description": "Complete a task in a shell or development environment.",
+      "patterns": [
+        "terminal|shell|命令行|终端|devops|部署故障"
+      ],
+      "validation": "Match shell access, package state and agent harness; verify the resulting artifact."
+    },
+    {
+      "id": "software.testing",
+      "domain": "Software",
+      "subdomain": "Quality",
+      "label": "Test design",
+      "description": "Design tests that expose meaningful failures.",
+      "patterns": [
+        "unit test|test suite|测试用例|单元测试|测试策略"
+      ],
+      "validation": "Measure faults detected and false positives, not test count."
+    },
+    {
+      "id": "math.contest",
+      "domain": "Mathematics",
+      "subdomain": "Problem solving",
+      "label": "Competition mathematics",
+      "description": "Solve a well-posed contest problem.",
+      "patterns": [
+        "olympiad|aime|竞赛数学|奥数|数学竞赛"
+      ],
+      "validation": "Blind-grade solutions for correctness and reasoning with a fresh problem set."
+    },
+    {
+      "id": "math.proof",
+      "domain": "Mathematics",
+      "subdomain": "Proof",
+      "label": "Mathematical proof",
+      "description": "Develop or check a rigorous mathematical argument.",
+      "patterns": [
+        "\\bprove\\b|\\bproof\\b|证明|定理"
+      ],
+      "validation": "Check each inference; use a formal checker when a formal proof is requested."
+    },
+    {
+      "id": "math.formal",
+      "domain": "Mathematics",
+      "subdomain": "Formal verification",
+      "label": "Formal proof code",
+      "description": "Write machine-checkable Lean, Coq or Isabelle proofs.",
+      "patterns": [
+        "\\blean\\b|\\bcoq\\b|isabelle|形式化证明"
+      ],
+      "validation": "Compile with the exact prover and library versions; reject sorry/admit."
+    },
+    {
+      "id": "math.numerical",
+      "domain": "Mathematics",
+      "subdomain": "Computation",
+      "label": "Numerical reasoning",
+      "description": "Derive or compute a numerical result.",
+      "patterns": [
+        "numerical|integral|微分|积分|数值计算|线性代数"
+      ],
+      "validation": "Compare to a numerical or symbolic reference and inspect stability and units."
+    },
+    {
+      "id": "finance.filings",
+      "domain": "Finance",
+      "subdomain": "Fundamental analysis",
+      "label": "Financial filing research",
+      "description": "Find and reconcile information in company filings.",
+      "patterns": [
+        "10-k|10-q|sec filing|财报|年报|财务报表"
+      ],
+      "validation": "Check citations, accounting periods, units and every intermediate value."
+    },
+    {
+      "id": "finance.valuation",
+      "domain": "Finance",
+      "subdomain": "Fundamental analysis",
+      "label": "Valuation model",
+      "description": "Build a financial valuation with assumptions.",
+      "patterns": [
+        "\\bdcf\\b|valuation|估值|现金流折现"
+      ],
+      "validation": "Audit formula links, assumptions, scenarios and financial conventions."
+    },
+    {
+      "id": "finance.backtest",
+      "domain": "Finance",
+      "subdomain": "Quantitative research",
+      "label": "Backtest audit",
+      "description": "Implement or critique an investment backtest.",
+      "patterns": [
+        "backtest|look.?ahead|回测|未来函数|幸存者偏差"
+      ],
+      "validation": "Test for look-ahead, survivorship bias, costs, splits and out-of-sample leakage."
+    },
+    {
+      "id": "finance.factor",
+      "domain": "Finance",
+      "subdomain": "Quantitative research",
+      "label": "Factor research",
+      "description": "Evaluate factors or portfolio construction.",
+      "patterns": [
+        "alpha factor|portfolio optim|因子|量化|组合优化"
+      ],
+      "validation": "Use held-out periods and realistic costs; no benchmark proves alpha."
+    },
+    {
+      "id": "finance.derivatives",
+      "domain": "Finance",
+      "subdomain": "Quantitative research",
+      "label": "Derivative pricing",
+      "description": "Reason about derivatives, stochastic models and risk.",
+      "patterns": [
+        "derivative pricing|black.scholes|期权|衍生品|随机微积分"
+      ],
+      "validation": "Check derivation, units, limiting cases and simulation against a trusted reference."
+    },
+    {
+      "id": "science.reasoning",
+      "domain": "Science",
+      "subdomain": "Domain reasoning",
+      "label": "Scientific problem solving",
+      "description": "Solve a scientific question with explicit assumptions.",
+      "patterns": [
+        "physics|chemistry|biolog|物理|化学|生物|科研问题"
+      ],
+      "validation": "Have a domain expert check assumptions, units, evidence and reproducibility."
+    },
+    {
+      "id": "science.compute",
+      "domain": "Science",
+      "subdomain": "Computational research",
+      "label": "Scientific computing",
+      "description": "Implement or reproduce a computational experiment.",
+      "patterns": [
+        "scientific comput|simulation|复现实验|科学计算|仿真"
+      ],
+      "validation": "Reproduce a known result with fixed environment, data and seeds."
+    },
+    {
+      "id": "science.literature",
+      "domain": "Science",
+      "subdomain": "Literature",
+      "label": "Literature synthesis",
+      "description": "Synthesize research papers and compare findings.",
+      "patterns": [
+        "literature review|papers|文献|论文综述|研究综述"
+      ],
+      "validation": "Verify cited papers and assess study quality, disagreement and coverage."
+    },
+    {
+      "id": "science.hypothesis",
+      "domain": "Science",
+      "subdomain": "Discovery",
+      "label": "Hypothesis generation",
+      "description": "Generate testable research hypotheses.",
+      "patterns": [
+        "hypothes|研究假设|科学发现|实验设计"
+      ],
+      "validation": "Score falsifiability, novelty relative to literature and executable controls."
+    },
+    {
+      "id": "writing.creative",
+      "domain": "Writing",
+      "subdomain": "Creative",
+      "label": "Creative writing",
+      "description": "Write fiction, poetry or dialogue in a chosen voice.",
+      "patterns": [
+        "novel|fiction|poem|story|小说|诗歌|故事|对白"
+      ],
+      "validation": "Blind-compare samples in the target language using the user’s style rubric."
+    },
+    {
+      "id": "writing.edit",
+      "domain": "Writing",
+      "subdomain": "Editing",
+      "label": "Editing and rewriting",
+      "description": "Improve wording while preserving intended meaning.",
+      "patterns": [
+        "rewrite|polish|润色|改写|校对"
+      ],
+      "validation": "Compare meaning preservation, voice, factual consistency and brevity."
+    },
+    {
+      "id": "writing.professional",
+      "domain": "Writing",
+      "subdomain": "Professional",
+      "label": "Professional document",
+      "description": "Draft a clear memo, report or business document.",
+      "patterns": [
+        "memo|business report|proposal|报告|方案|商业计划"
+      ],
+      "validation": "Evaluate decision usefulness, completeness, factual accuracy and audience fit."
+    },
+    {
+      "id": "writing.translation",
+      "domain": "Writing",
+      "subdomain": "Multilingual",
+      "label": "Translation and localization",
+      "description": "Translate with terminology and cultural context.",
+      "patterns": [
+        "translat|localiz|翻译|本地化"
+      ],
+      "validation": "Use bilingual review of terminology, meaning, style and omissions."
+    },
+    {
+      "id": "context.retrieve",
+      "domain": "Long context",
+      "subdomain": "Retrieval",
+      "label": "Evidence retrieval",
+      "description": "Locate exact evidence in a large supplied corpus.",
+      "patterns": [
+        "find.*document|检索|定位.*证据|查找.*原文"
+      ],
+      "validation": "Plant known facts across the corpus and check source locations and distractors."
+    },
+    {
+      "id": "context.synthesis",
+      "domain": "Long context",
+      "subdomain": "Synthesis",
+      "label": "Long-document synthesis",
+      "description": "Combine and reconcile many long documents.",
+      "patterns": [
+        "long.context|long document|长上下文|长文|几十万|百万.*token|多份文档"
+      ],
+      "validation": "Test cross-document contradictions and middle-of-context recall at actual input size."
+    },
+    {
+      "id": "context.summary",
+      "domain": "Long context",
+      "subdomain": "Compression",
+      "label": "Summarization",
+      "description": "Summarize supplied content without inventing facts.",
+      "patterns": [
+        "summariz|summary|摘要|总结|概括"
+      ],
+      "validation": "Compare coverage, omissions and unsupported claims against the source."
+    },
+    {
+      "id": "agent.workflow",
+      "domain": "Agents",
+      "subdomain": "Tool use",
+      "label": "Business workflow agent",
+      "description": "Execute a multi-step workflow across tools.",
+      "patterns": [
+        "workflow|tool.call|工作流|工具调用|自动化流程"
+      ],
+      "validation": "Use identical tool schemas and permissions; verify final state and recovery."
+    },
+    {
+      "id": "agent.computer",
+      "domain": "Agents",
+      "subdomain": "Computer use",
+      "label": "GUI agent",
+      "description": "Interact with desktop or browser interfaces.",
+      "patterns": [
+        "computer use|browser agent|浏览器操作|桌面操作|点击.*按钮"
+      ],
+      "validation": "Evaluate end-state correctness in a sandbox with the same UI and action budget."
+    },
+    {
+      "id": "agent.long",
+      "domain": "Agents",
+      "subdomain": "Planning",
+      "label": "Long-running agent",
+      "description": "Carry out an extended task with state and recovery.",
+      "patterns": [
+        "long.running|long.horizon|多步骤|长期任务|长程|自主执行"
+      ],
+      "validation": "Measure completion, recovery, context retention and human interventions."
+    },
+    {
+      "id": "vision.chart",
+      "domain": "Vision",
+      "subdomain": "Reasoning",
+      "label": "Chart interpretation",
+      "description": "Extract and reason about visual charts.",
+      "patterns": [
+        "chart|图表|曲线图|柱状图"
+      ],
+      "validation": "Check values, labels, scales and conclusions against underlying data."
+    },
+    {
+      "id": "vision.document",
+      "domain": "Vision",
+      "subdomain": "Documents",
+      "label": "Document OCR and layout",
+      "description": "Read scanned documents or complex page layouts.",
+      "patterns": [
+        "\\bocr\\b|scanned|扫描|票据|版面"
+      ],
+      "validation": "Measure text, table-cell and reading-order accuracy on representative pages."
+    },
+    {
+      "id": "vision.video",
+      "domain": "Vision",
+      "subdomain": "Temporal",
+      "label": "Video understanding",
+      "description": "Understand events across time in a video.",
+      "patterns": [
+        "video|视频|录像"
+      ],
+      "validation": "Use event timestamps and temporal questions; verify upload and frame limits."
+    },
+    {
+      "id": "vision.spatial",
+      "domain": "Vision",
+      "subdomain": "Spatial reasoning",
+      "label": "Visual and spatial reasoning",
+      "description": "Reason about spatial relationships in images.",
+      "patterns": [
+        "spatial|几何图|空间关系|看图|图片"
+      ],
+      "validation": "Use novel images and check coordinates, relations and grounding."
+    },
+    {
+      "id": "research.web",
+      "domain": "Research",
+      "subdomain": "Web investigation",
+      "label": "Deep web research",
+      "description": "Search, reconcile and cite evidence from the web.",
+      "patterns": [
+        "deep research|web research|深度研究|联网调研|调查报告"
+      ],
+      "validation": "Audit source diversity, citation entailment, completeness and date relevance."
+    },
+    {
+      "id": "research.facts",
+      "domain": "Research",
+      "subdomain": "Verification",
+      "label": "Fact checking",
+      "description": "Verify a factual claim against trustworthy sources.",
+      "patterns": [
+        "fact.check|verify.*claim|事实核查|求证|真假"
+      ],
+      "validation": "Trace each claim to a primary source and report unresolved conflicts."
+    },
+    {
+      "id": "data.analysis",
+      "domain": "Data",
+      "subdomain": "Analysis",
+      "label": "Data analysis",
+      "description": "Analyze tabular data and explain findings.",
+      "patterns": [
+        "data analy|统计分析|数据分析|回归分析"
+      ],
+      "validation": "Run the calculations and inspect missingness, assumptions and uncertainty."
+    },
+    {
+      "id": "data.sql",
+      "domain": "Data",
+      "subdomain": "Querying",
+      "label": "SQL generation",
+      "description": "Translate data questions into database queries.",
+      "patterns": [
+        "\\bsql\\b|数据库查询|查询语句"
+      ],
+      "validation": "Execute against a sandbox with schema constraints and hidden test cases."
+    },
+    {
+      "id": "data.extract",
+      "domain": "Data",
+      "subdomain": "Extraction",
+      "label": "Structured extraction",
+      "description": "Extract fields into a schema.",
+      "patterns": [
+        "json|extract|结构化|提取|抽取"
+      ],
+      "validation": "Measure field precision/recall and schema validity with adversarial inputs."
+    },
+    {
+      "id": "data.spreadsheet",
+      "domain": "Data",
+      "subdomain": "Spreadsheets",
+      "label": "Spreadsheet modeling",
+      "description": "Edit or reason about workbook formulas and structure.",
+      "patterns": [
+        "spreadsheet|excel|电子表格|工作簿"
+      ],
+      "validation": "Recalculate, verify formulas and inspect rendered sheets and dependency links."
+    },
+    {
+      "id": "audio.understand",
+      "domain": "Audio",
+      "subdomain": "Understanding",
+      "label": "Audio understanding",
+      "description": "Transcribe or understand supplied audio.",
+      "patterns": [
+        "audio|transcri|音频|转录|录音"
+      ],
+      "validation": "Measure word errors, speaker attribution and timestamps in the target language."
+    },
+    {
+      "id": "education.tutor",
+      "domain": "Education",
+      "subdomain": "Learning",
+      "label": "Tutoring and explanation",
+      "description": "Explain a concept at the learner’s level.",
+      "patterns": [
+        "teach me|explain|教学|教我|解释|讲解"
+      ],
+      "validation": "Check conceptual accuracy, level fit and transfer to a new practice problem."
+    },
+    {
+      "id": "professional.legal",
+      "domain": "Professional",
+      "subdomain": "Legal",
+      "label": "Legal research",
+      "description": "Research legal questions with jurisdiction and date.",
+      "patterns": [
+        "legal|法律|合同|诉讼"
+      ],
+      "validation": "Check jurisdiction, current authority and citation entailment with expert review."
+    },
+    {
+      "id": "professional.medical",
+      "domain": "Professional",
+      "subdomain": "Medical",
+      "label": "Medical information",
+      "description": "Find and explain medical information.",
+      "patterns": [
+        "medical|diagnos|医学|医疗|疾病|药物"
+      ],
+      "validation": "Verify current clinical sources and distinguish information from individual diagnosis."
+    },
+    {
+      "id": "general.everyday",
+      "domain": "General",
+      "subdomain": "Everyday",
+      "label": "Everyday assistance",
+      "description": "A simple question or an intent outside the current taxonomy.",
+      "patterns": [
+        "hello|你好|晚饭|dinner|weather|天气"
+      ],
+      "validation": "Use the current capable model; check whether the result satisfies the user."
+    },
+    {
+      "id": "data.schema",
+      "domain": "Data",
+      "subdomain": "Database design",
+      "label": "Database schema design",
+      "description": "Design relational schemas, constraints and migrations.",
+      "patterns": [
+        "database schema|schema design|数据库设计|表结构|数据建模"
+      ],
+      "validation": "Apply migrations to a disposable database and verify constraints, indices, transactions and seed idempotence."
+    }
+  ]
+}

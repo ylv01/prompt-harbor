@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "openai-astra",
+      "title": "GPT-6 Astra model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "openai-sol",
+      "title": "GPT-6 Sol model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "openai-luna",
+      "title": "GPT-6 Luna model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "claude-models",
+      "title": "Claude model overview",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "publisher": "Anthropic",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "opus-launch",
+      "title": "Claude Opus 5.5 release evaluation",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "publisher": "Anthropic",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "sonnet-launch",
+      "title": "Claude Sonnet 5.5 release evaluation",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "publisher": "Anthropic",
+      "published_on": "2026-09-28",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-docs",
+      "title": "Gemini 3.8 Flash documentation",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "publisher": "Google",
+      "published_on": "2026-09-02",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-launch",
+      "title": "Gemini 3.8 Flash launch",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "publisher": "Google",
+      "published_on": "2026-09-02",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "aa-astra",
+      "title": "Benchmarking GPT-6 Astra",
+      "url": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
+      "publisher": "Artificial Analysis",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "vals-finance",
+      "title": "Finance Agent v2 results and methodology",
+      "url": "https://www.vals.ai/benchmarks/fabv2",
+      "publisher": "Vals AI",
+      "published_on": "2026-09-27",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "deepseek-card",
+      "title": "DeepSeek-V4.1-Flash model card",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "publisher": "DeepSeek",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "qwen-card",
+      "title": "Qwen3.8-27B model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "publisher": "Qwen",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-card",
+      "title": "Kimi K3 model card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "publisher": "Moonshot AI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "grok-docs",
+      "title": "Grok 4.7 model documentation",
+      "url": "https://docs.x.ai/developers/models/grok-4.7",
+      "publisher": "SpaceXAI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    {
+      "id": "epoch-math",
+      "title": "FrontierMath Tier 4 v2 methodology",
+      "url": "https://epoch.ai/benchmarks/frontiermath-tier-4-v2",
+      "publisher": "Epoch AI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 90
+    },
+    {
+      "id": "which-llm",
+      "title": "richard-gyiko/which-llm README",
+      "url": "https://github.com/richard-gyiko/which-llm",
+      "publisher": "richard-gyiko",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 90
+    },
+    {
+      "id": "routellm",
+      "title": "RouteLLM repository",
+      "url": "https://github.com/lm-sys/RouteLLM",
+      "publisher": "LMSYS",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 90
+    },
+    {
+      "id": "routerbench",
+      "title": "RouterBench paper",
+      "url": "https://arxiv.org/abs/2403.12031",
+      "publisher": "RouterBench authors",
+      "published_on": "2024-03-18",
+      "checked_on": "2026-09-29",
+      "review_days": 90
+    }
+  ]
+}

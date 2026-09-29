@@ -1,0 +1,893 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "id": "astra-terminal",
+      "model_id": "gpt-6-astra",
+      "source_id": "aa-astra",
+      "kind": "independent_eval",
+      "claim": "AA reports 56% on Terminal-Bench 4.0 in Codex.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.debug",
+        "software.repo"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "accuracy",
+        "value": 56,
+        "unit": "percent",
+        "protocol": "AA Coding Agent Index / Codex"
+      },
+      "setting": "Codex; max effort; distinct from AA general-agent setup",
+      "limitations": "The same article also reports 59% in another setup; do not merge these runs.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "astra-docs",
+      "model_id": "gpt-6-astra",
+      "source_id": "aa-astra",
+      "kind": "independent_eval",
+      "claim": "GDP.pdf all-criteria success is reported as 31%.",
+      "direct_tasks": [
+        "context.synthesis"
+      ],
+      "proxy_tasks": [
+        "writing.professional"
+      ],
+      "measurement": {
+        "benchmark": "GDP.pdf",
+        "version": "article snapshot",
+        "metric": "all-criteria pass",
+        "value": 31,
+        "unit": "percent",
+        "protocol": "AA professional documents"
+      },
+      "setting": "AA document evaluation; see source for exact configuration",
+      "limitations": "Task transfer and performance on the user prompt are unmeasured.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "astra-workflow",
+      "model_id": "gpt-6-astra",
+      "source_id": "aa-astra",
+      "kind": "independent_eval",
+      "claim": "AutomationBench-AA is reported as 69%.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": {
+        "benchmark": "AutomationBench-AA",
+        "version": "article snapshot",
+        "metric": "accuracy",
+        "value": 69,
+        "unit": "percent",
+        "protocol": "AA implementation"
+      },
+      "setting": "AA agent environment; not the Zapier leaderboard protocol",
+      "limitations": "Task transfer and performance on the user prompt are unmeasured.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "astra-fit",
+      "model_id": "gpt-6-astra",
+      "source_id": "openai-astra",
+      "kind": "official_capability",
+      "claim": "Official positioning includes difficult reasoning, research and tool-based work.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "math.proof",
+        "math.numerical",
+        "science.reasoning",
+        "science.compute",
+        "research.web",
+        "research.facts",
+        "software.architecture",
+        "agent.computer"
+      ],
+      "measurement": null,
+      "setting": "Responses API with appropriate tools",
+      "limitations": "Product positioning and available tools are not comparative task evaluations.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "sol-fit",
+      "model_id": "gpt-6-sol",
+      "source_id": "openai-sol",
+      "kind": "official_capability",
+      "claim": "Official documentation positions Sol for coding and agent workflows.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.debug",
+        "software.repo",
+        "software.testing",
+        "software.architecture",
+        "agent.workflow",
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Responses API; explicit reasoning effort",
+      "limitations": "No task-specific independent Sol result is admitted in this seed.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "luna-fit",
+      "model_id": "gpt-6-luna",
+      "source_id": "openai-luna",
+      "kind": "official_capability",
+      "claim": "Official documentation positions Luna for focused high-volume tasks.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "general.everyday",
+        "context.summary",
+        "data.extract",
+        "writing.translation",
+        "education.tutor"
+      ],
+      "measurement": null,
+      "setting": "Configured reasoning effort and structured outputs where needed",
+      "limitations": "Volume positioning is not proof of extraction, translation or tutoring quality.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "opus-terminal",
+      "model_id": "claude-opus-5-5",
+      "source_id": "opus-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 66.4% on Terminal-Bench 4.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.debug",
+        "software.repo"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "accuracy",
+        "value": 66.4,
+        "unit": "percent",
+        "protocol": "Anthropic release setup"
+      },
+      "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
+      "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "sonnet-terminal",
+      "model_id": "claude-sonnet-5-5",
+      "source_id": "sonnet-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 70.6% on Terminal-Bench 4.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.debug",
+        "software.repo"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "accuracy",
+        "value": 70.6,
+        "unit": "percent",
+        "protocol": "Anthropic release setup"
+      },
+      "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
+      "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
+      "reported_on": "2026-09-28",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-terminal",
+      "model_id": "claude-fable-5-1",
+      "source_id": "opus-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 55.8% on Terminal-Bench 4.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.debug",
+        "software.repo"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "accuracy",
+        "value": 55.8,
+        "unit": "percent",
+        "protocol": "Anthropic release setup"
+      },
+      "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
+      "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "opus-repo",
+      "model_id": "claude-opus-5-5",
+      "source_id": "opus-launch",
+      "kind": "vendor_eval",
+      "claim": "FrontierCode 1.1 Main is reported as 54.4%.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "software.debug",
+        "software.testing",
+        "finance.backtest",
+        "finance.factor"
+      ],
+      "measurement": {
+        "benchmark": "FrontierCode",
+        "version": "1.1 Main",
+        "metric": "accuracy",
+        "value": 54.4,
+        "unit": "percent",
+        "protocol": "Anthropic release setup"
+      },
+      "setting": "Adaptive max; production safeguards and fallback policy",
+      "limitations": "Task transfer and performance on the user prompt are unmeasured. Finance mappings concern code implementation only, not financial methodology or returns.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "opus-science",
+      "model_id": "claude-opus-5-5",
+      "source_id": "opus-launch",
+      "kind": "vendor_eval",
+      "claim": "Terminal-Bench-Science 0.1 is reported as 58.7%.",
+      "direct_tasks": [
+        "science.compute"
+      ],
+      "proxy_tasks": [
+        "science.reasoning"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench-Science",
+        "version": "0.1",
+        "metric": "accuracy",
+        "value": 58.7,
+        "unit": "percent",
+        "protocol": "Anthropic release setup"
+      },
+      "setting": "Adaptive max; release fallback policy",
+      "limitations": "Reported uncertainty is several points; this does not establish novel scientific discovery.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "opus-chart",
+      "model_id": "claude-opus-5-5",
+      "source_id": "sonnet-launch",
+      "kind": "vendor_eval",
+      "claim": "Chartography without tools is reported as 64.4%.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Chartography",
+        "version": "release snapshot",
+        "metric": "accuracy",
+        "value": 64.4,
+        "unit": "percent",
+        "protocol": "Anthropic no-tools comparison"
+      },
+      "setting": "No tools; published release comparison",
+      "limitations": "Task transfer and performance on the user prompt are unmeasured.",
+      "reported_on": "2026-09-28",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "anthropic-chart-no-tools-sep28"
+    },
+    {
+      "id": "sonnet-chart",
+      "model_id": "claude-sonnet-5-5",
+      "source_id": "sonnet-launch",
+      "kind": "vendor_eval",
+      "claim": "Chartography without tools is reported as 61.6%.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Chartography",
+        "version": "release snapshot",
+        "metric": "accuracy",
+        "value": 61.6,
+        "unit": "percent",
+        "protocol": "Anthropic no-tools comparison"
+      },
+      "setting": "No tools; published release comparison",
+      "limitations": "Task transfer and performance on the user prompt are unmeasured.",
+      "reported_on": "2026-09-28",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": "anthropic-chart-no-tools-sep28"
+    },
+    {
+      "id": "sonnet-doc",
+      "model_id": "claude-sonnet-5-5",
+      "source_id": "sonnet-launch",
+      "kind": "official_capability",
+      "claim": "Anthropic describes stronger document work and clearer writing.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "writing.professional",
+        "writing.edit",
+        "writing.creative",
+        "data.spreadsheet",
+        "software.frontend"
+      ],
+      "measurement": null,
+      "setting": "Release positioning; user preference must be tested",
+      "limitations": "Writing style is subjective; no independent language-specific preference study in this seed.",
+      "reported_on": "2026-09-28",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "opus-long",
+      "model_id": "claude-opus-5-5",
+      "source_id": "claude-models",
+      "kind": "official_capability",
+      "claim": "Official overview describes long-running agent and knowledge work.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.long",
+        "context.synthesis",
+        "writing.professional",
+        "research.web"
+      ],
+      "measurement": null,
+      "setting": "Claude API or tool-enabled host",
+      "limitations": "A 1M context specification does not prove reliable recall over 1M tokens.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-long",
+      "model_id": "claude-fable-5-1",
+      "source_id": "claude-models",
+      "kind": "official_capability",
+      "claim": "Official overview describes long-running agent and knowledge work.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.long",
+        "context.synthesis",
+        "writing.professional",
+        "research.web"
+      ],
+      "measurement": null,
+      "setting": "Claude API or tool-enabled host",
+      "limitations": "A 1M context specification does not prove reliable recall over 1M tokens.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-finance",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "vals-finance",
+      "kind": "independent_eval",
+      "claim": "Finance Agent v2 reports 61.44% partial-credit accuracy.",
+      "direct_tasks": [
+        "finance.filings"
+      ],
+      "proxy_tasks": [
+        "finance.valuation"
+      ],
+      "measurement": {
+        "benchmark": "Finance Agent",
+        "version": "2",
+        "metric": "partial-credit accuracy",
+        "value": 61.44,
+        "unit": "percent",
+        "protocol": "Vals v2 tool-enabled financial research"
+      },
+      "setting": "Public-company filing tasks; partial credit",
+      "limitations": "All-Pass ranking differs. No evidence of trading alpha, backtest validity or investment returns.",
+      "reported_on": "2026-09-27",
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-video",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "gemini-docs",
+      "kind": "official_capability",
+      "claim": "Native video and audio inputs are documented.",
+      "direct_tasks": [
+        "vision.video",
+        "audio.understand"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Gemini API; input limits and sampling depend on media",
+      "limitations": "Input support is feasibility evidence, not proof of best temporal reasoning.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-research",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "gemini-docs",
+      "kind": "official_capability",
+      "claim": "Search grounding and code execution tools are available.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "research.web",
+        "research.facts",
+        "science.literature",
+        "agent.workflow",
+        "data.analysis"
+      ],
+      "measurement": null,
+      "setting": "Gemini API with tools enabled",
+      "limitations": "Tool support alone cannot establish research completeness or citation quality.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "deepseek-repo",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "deepseek-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 74.2 on DeepSWE.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "finance.backtest",
+        "finance.factor"
+      ],
+      "measurement": {
+        "benchmark": "DeepSWE",
+        "version": "1.1",
+        "metric": "resolved",
+        "value": 74.2,
+        "unit": "percent",
+        "protocol": "mini-SWE; max reasoning 100; temperature 1.0"
+      },
+      "setting": "mini-SWE; max reasoning 100; temperature 1.0",
+      "limitations": "Vendor result; transfer to finance or proof work is a proxy, not a measured advantage.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "deepseek-terminal",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "deepseek-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 31.2 on Terminal-Bench.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "pass@1",
+        "value": 31.2,
+        "unit": "percent",
+        "protocol": "DeepSeek Harness Minimal; max reasoning 100"
+      },
+      "setting": "DeepSeek Harness Minimal; max reasoning 100",
+      "limitations": "Vendor result; transfer to finance or proof work is a proxy, not a measured advantage.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "deepseek-math",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "deepseek-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 65.6 on MathArena Apex.",
+      "direct_tasks": [
+        "math.contest"
+      ],
+      "proxy_tasks": [
+        "math.proof",
+        "finance.derivatives"
+      ],
+      "measurement": {
+        "benchmark": "MathArena Apex",
+        "version": "card snapshot",
+        "metric": "pass@1",
+        "value": 65.6,
+        "unit": "percent",
+        "protocol": "Max reasoning 100; temperature 1.0"
+      },
+      "setting": "Max reasoning 100; temperature 1.0",
+      "limitations": "Vendor result; transfer to finance or proof work is a proxy, not a measured advantage.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "deepseek-code",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "deepseek-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 3471 on Codeforces.",
+      "direct_tasks": [
+        "software.algorithm"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Codeforces",
+        "version": "card snapshot",
+        "metric": "rating",
+        "value": 3471,
+        "unit": "rating",
+        "protocol": "Max reasoning 100; temperature 1.0"
+      },
+      "setting": "Max reasoning 100; temperature 1.0",
+      "limitations": "Vendor result; transfer to finance or proof work is a proxy, not a measured advantage.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "deepseek-vision",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "deepseek-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 78.9 on Chartography.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Chartography",
+        "version": "card snapshot",
+        "metric": "pass@1",
+        "value": 78.9,
+        "unit": "percent",
+        "protocol": "Claude Code; tools; 512K context; max reasoning 100"
+      },
+      "setting": "Claude Code; tools; 512K context; max reasoning 100",
+      "limitations": "Vendor result; transfer to finance or proof work is a proxy, not a measured advantage.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "deepseek-science",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "deepseek-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 90.9 on GPQA.",
+      "direct_tasks": [
+        "science.reasoning"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "GPQA",
+        "version": "Diamond",
+        "metric": "pass@1",
+        "value": 90.9,
+        "unit": "percent",
+        "protocol": "Max reasoning 100; temperature 1.0"
+      },
+      "setting": "Max reasoning 100; temperature 1.0",
+      "limitations": "Vendor result; transfer to finance or proof work is a proxy, not a measured advantage.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "qwen-repo",
+      "model_id": "qwen3.8-27b",
+      "source_id": "qwen-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 42.2 on DeepSWE 1.1.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "finance.backtest",
+        "finance.factor"
+      ],
+      "measurement": {
+        "benchmark": "DeepSWE 1.1",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 42.2,
+        "unit": "percent",
+        "protocol": "Claude Code; 256K; temperature 1.0"
+      },
+      "setting": "Claude Code; 256K; temperature 1.0",
+      "limitations": "Vendor evaluation; modified annotations/harnesses may prevent cross-source comparisons. Finance mappings concern code implementation only, not financial methodology or returns.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "qwen-algorithm",
+      "model_id": "qwen3.8-27b",
+      "source_id": "qwen-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 90.3 on LiveCodeBench v6.",
+      "direct_tasks": [
+        "software.algorithm"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "LiveCodeBench v6",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 90.3,
+        "unit": "percent",
+        "protocol": "Model-card evaluation; full setup must be checked"
+      },
+      "setting": "Model-card evaluation; full setup must be checked",
+      "limitations": "Vendor evaluation; modified annotations/harnesses may prevent cross-source comparisons.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "qwen-document",
+      "model_id": "qwen3.8-27b",
+      "source_id": "qwen-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 91.1 on OmniDocBench 1.5.",
+      "direct_tasks": [
+        "vision.document"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "OmniDocBench 1.5",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 91.1,
+        "unit": "percent",
+        "protocol": "Model-card document evaluation"
+      },
+      "setting": "Model-card document evaluation",
+      "limitations": "Vendor evaluation; modified annotations/harnesses may prevent cross-source comparisons.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "qwen-chart",
+      "model_id": "qwen3.8-27b",
+      "source_id": "qwen-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 83.7 on CharXiv RQ.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "CharXiv RQ",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 83.7,
+        "unit": "percent",
+        "protocol": "No code interpreter; corrected annotations"
+      },
+      "setting": "No code interpreter; corrected annotations",
+      "limitations": "Vendor evaluation; modified annotations/harnesses may prevent cross-source comparisons.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "qwen-computer",
+      "model_id": "qwen3.8-27b",
+      "source_id": "qwen-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 84.3 on OSWorld-Verified.",
+      "direct_tasks": [
+        "agent.computer"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "OSWorld-Verified",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 84.3,
+        "unit": "percent",
+        "protocol": "Model-card GUI evaluation"
+      },
+      "setting": "Model-card GUI evaluation",
+      "limitations": "Vendor evaluation; modified annotations/harnesses may prevent cross-source comparisons.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-research",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 76.2 on ResearchRubrics.",
+      "direct_tasks": [
+        "research.web"
+      ],
+      "proxy_tasks": [
+        "science.literature"
+      ],
+      "measurement": {
+        "benchmark": "ResearchRubrics",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 76.2,
+        "unit": "percent",
+        "protocol": "Kimi K3 max; temperature 1.0; model-card research setup"
+      },
+      "setting": "Kimi K3 max; temperature 1.0; model-card research setup",
+      "limitations": "Self-reported; exact runtime and per-task reproducibility need verification.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-context",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 74.7 on AA-LCR.",
+      "direct_tasks": [
+        "context.synthesis"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "AA-LCR",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 74.7,
+        "unit": "percent",
+        "protocol": "Kimi K3 max; temperature 1.0"
+      },
+      "setting": "Kimi K3 max; temperature 1.0",
+      "limitations": "Self-reported; exact runtime and per-task reproducibility need verification.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-science",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 58.7 on SciCode.",
+      "direct_tasks": [
+        "science.compute"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "SciCode",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 58.7,
+        "unit": "percent",
+        "protocol": "Kimi K3 max; temperature 1.0"
+      },
+      "setting": "Kimi K3 max; temperature 1.0",
+      "limitations": "Self-reported; exact runtime and per-task reproducibility need verification.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-sheet",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 34.8 on SpreadsheetBench 2.",
+      "direct_tasks": [
+        "data.spreadsheet"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "SpreadsheetBench 2",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 34.8,
+        "unit": "percent",
+        "protocol": "Kimi K3 max; temperature 1.0"
+      },
+      "setting": "Kimi K3 max; temperature 1.0",
+      "limitations": "Self-reported; exact runtime and per-task reproducibility need verification.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-tools",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-card",
+      "kind": "vendor_eval",
+      "claim": "The model card reports 76.5 on Toolathlon-Verified.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Toolathlon-Verified",
+        "version": "card snapshot",
+        "metric": "reported score",
+        "value": 76.5,
+        "unit": "percent",
+        "protocol": "Kimi K3 max; temperature 1.0"
+      },
+      "setting": "Kimi K3 max; temperature 1.0",
+      "limitations": "Self-reported; exact runtime and per-task reproducibility need verification.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-video",
+      "model_id": "kimi-k3",
+      "source_id": "kimi-card",
+      "kind": "official_capability",
+      "claim": "Model-card prose describes video understanding.",
+      "direct_tasks": [
+        "vision.video"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Serving environment must support video/frame ingestion",
+      "limitations": "Summary table lists text and image; verify video ingestion for the chosen endpoint.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    },
+    {
+      "id": "grok-fit",
+      "model_id": "grok-4.7",
+      "source_id": "grok-docs",
+      "kind": "official_capability",
+      "claim": "Official documentation describes coding, agent and knowledge work.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug",
+        "agent.workflow",
+        "writing.professional"
+      ],
+      "measurement": null,
+      "setting": "API with function calling; exact effort specified",
+      "limitations": "No task-specific comparative Grok 4.7 benchmark is admitted in this seed.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-29",
+      "comparison_group": null
+    }
+  ]
+}

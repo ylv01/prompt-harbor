@@ -1,0 +1,544 @@
+{
+  "as_of": "2026-09-29",
+  "snapshot_date": "2026-09-29",
+  "classification": [
+    {
+      "id": "software.repo",
+      "domain": "Software",
+      "subdomain": "Maintenance",
+      "label": "Repository implementation"
+    },
+    {
+      "id": "data.sql",
+      "domain": "Data",
+      "subdomain": "Querying",
+      "label": "SQL generation"
+    }
+  ],
+  "classification_method": "host_semantic",
+  "decision": "shortlist",
+  "primary": null,
+  "rationale": "Several candidates or setups remain incomparable; use the task-specific trial below.",
+  "confidence": "limited",
+  "candidates": [
+    {
+      "model_id": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "opus-terminal",
+          "model_id": "claude-opus-5-5",
+          "source_id": "opus-launch",
+          "kind": "vendor_eval",
+          "claim": "Anthropic reports 66.4% on Terminal-Bench 4.0.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.debug",
+            "software.repo"
+          ],
+          "measurement": {
+            "benchmark": "Terminal-Bench",
+            "version": "4.0",
+            "metric": "accuracy",
+            "value": 66.4,
+            "unit": "percent",
+            "protocol": "Anthropic release setup"
+          },
+          "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
+          "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        },
+        {
+          "id": "opus-repo",
+          "model_id": "claude-opus-5-5",
+          "source_id": "opus-launch",
+          "kind": "vendor_eval",
+          "claim": "FrontierCode 1.1 Main is reported as 54.4%.",
+          "direct_tasks": [
+            "software.repo"
+          ],
+          "proxy_tasks": [
+            "software.debug",
+            "software.testing",
+            "finance.backtest",
+            "finance.factor"
+          ],
+          "measurement": {
+            "benchmark": "FrontierCode",
+            "version": "1.1 Main",
+            "metric": "accuracy",
+            "value": 54.4,
+            "unit": "percent",
+            "protocol": "Anthropic release setup"
+          },
+          "setting": "Adaptive max; production safeguards and fallback policy",
+          "limitations": "Task transfer and performance on the user prompt are unmeasured. Finance mappings concern code implementation only, not financial methodology or returns.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 4,
+        "output": 20,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview"
+    },
+    {
+      "model_id": "deepseek-v4.1-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "deepseek-repo",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "deepseek-card",
+          "kind": "vendor_eval",
+          "claim": "The model card reports 74.2 on DeepSWE.",
+          "direct_tasks": [
+            "software.repo"
+          ],
+          "proxy_tasks": [
+            "finance.backtest",
+            "finance.factor"
+          ],
+          "measurement": {
+            "benchmark": "DeepSWE",
+            "version": "1.1",
+            "metric": "resolved",
+            "value": 74.2,
+            "unit": "percent",
+            "protocol": "mini-SWE; max reasoning 100; temperature 1.0"
+          },
+          "setting": "mini-SWE; max reasoning 100; temperature 1.0",
+          "limitations": "Vendor result; transfer to finance or proof work is a proxy, not a measured advantage.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Open weights do not imply laptop suitability. Verify serving precision, hardware, license and API alias."
+      ],
+      "metadata_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+    },
+    {
+      "model_id": "qwen3.8-27b",
+      "name": "Qwen3.8-27B",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "qwen-repo",
+          "model_id": "qwen3.8-27b",
+          "source_id": "qwen-card",
+          "kind": "vendor_eval",
+          "claim": "The model card reports 42.2 on DeepSWE 1.1.",
+          "direct_tasks": [
+            "software.repo"
+          ],
+          "proxy_tasks": [
+            "finance.backtest",
+            "finance.factor"
+          ],
+          "measurement": {
+            "benchmark": "DeepSWE 1.1",
+            "version": "card snapshot",
+            "metric": "reported score",
+            "value": 42.2,
+            "unit": "percent",
+            "protocol": "Claude Code; 256K; temperature 1.0"
+          },
+          "setting": "Claude Code; 256K; temperature 1.0",
+          "limitations": "Vendor evaluation; modified annotations/harnesses may prevent cross-source comparisons. Finance mappings concern code implementation only, not financial methodology or returns.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Native context recorded; extended context needs a separate serving configuration and quality test."
+      ],
+      "metadata_url": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "fable-terminal",
+          "model_id": "claude-fable-5-1",
+          "source_id": "opus-launch",
+          "kind": "vendor_eval",
+          "claim": "Anthropic reports 55.8% on Terminal-Bench 4.0.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.debug",
+            "software.repo"
+          ],
+          "measurement": {
+            "benchmark": "Terminal-Bench",
+            "version": "4.0",
+            "metric": "accuracy",
+            "value": 55.8,
+            "unit": "percent",
+            "protocol": "Anthropic release setup"
+          },
+          "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
+          "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 10,
+        "output": 50,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Some published evaluations use fallback models; do not attribute the composite result to the base model alone."
+      ],
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview"
+    },
+    {
+      "model_id": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "sonnet-terminal",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "sonnet-launch",
+          "kind": "vendor_eval",
+          "claim": "Anthropic reports 70.6% on Terminal-Bench 4.0.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.debug",
+            "software.repo"
+          ],
+          "measurement": {
+            "benchmark": "Terminal-Bench",
+            "version": "4.0",
+            "metric": "accuracy",
+            "value": 70.6,
+            "unit": "percent",
+            "protocol": "Anthropic release setup"
+          },
+          "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
+          "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
+          "reported_on": "2026-09-28",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview"
+    },
+    {
+      "model_id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "astra-terminal",
+          "model_id": "gpt-6-astra",
+          "source_id": "aa-astra",
+          "kind": "independent_eval",
+          "claim": "AA reports 56% on Terminal-Bench 4.0 in Codex.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.debug",
+            "software.repo"
+          ],
+          "measurement": {
+            "benchmark": "Terminal-Bench",
+            "version": "4.0",
+            "metric": "accuracy",
+            "value": 56,
+            "unit": "percent",
+            "protocol": "AA Coding Agent Index / Codex"
+          },
+          "setting": "Codex; max effort; distinct from AA general-agent setup",
+          "limitations": "The same article also reports 59% in another setup; do not merge these runs.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 10,
+        "output": 50,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-astra"
+    },
+    {
+      "model_id": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "sol-fit",
+          "model_id": "gpt-6-sol",
+          "source_id": "openai-sol",
+          "kind": "official_capability",
+          "claim": "Official documentation positions Sol for coding and agent workflows.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.debug",
+            "software.repo",
+            "software.testing",
+            "software.architecture",
+            "agent.workflow",
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Responses API; explicit reasoning effort",
+          "limitations": "No task-specific independent Sol result is admitted in this seed.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol"
+    },
+    {
+      "model_id": "grok-4.7",
+      "name": "Grok 4.7",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "grok-fit",
+          "model_id": "grok-4.7",
+          "source_id": "grok-docs",
+          "kind": "official_capability",
+          "claim": "Official documentation describes coding, agent and knowledge work.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.repo",
+            "software.debug",
+            "agent.workflow",
+            "writing.professional"
+          ],
+          "measurement": null,
+          "setting": "API with function calling; exact effort specified",
+          "limitations": "No task-specific comparative Grok 4.7 benchmark is admitted in this seed.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 6,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "X/web search requires an enabled tool environment; it is not intrinsic fresh knowledge."
+      ],
+      "metadata_url": "https://docs.x.ai/developers/models/grok-4.7"
+    }
+  ],
+  "switch": {
+    "action": "test_first",
+    "reason": "No matched task trial establishes a worthwhile improvement over the current model."
+  },
+  "excluded": [
+    {
+      "model_id": "gpt-6-luna",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "gemini-3.8-flash",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "kimi-k3",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    }
+  ],
+  "stale_evidence": [],
+  "warnings": [
+    "Shortlist covers the bundled catalog only; verify current availability and new releases.",
+    "Evidence coverage is not model quality. Benchmark performance does not guarantee this prompt's outcome."
+  ],
+  "validation": [
+    "Use the same repository, tests, tools, time budget and acceptance criteria.",
+    "Execute against a sandbox with schema constraints and hidden test cases."
+  ],
+  "sources": {
+    "opus-launch": {
+      "id": "opus-launch",
+      "title": "Claude Opus 5.5 release evaluation",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "publisher": "Anthropic",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "deepseek-card": {
+      "id": "deepseek-card",
+      "title": "DeepSeek-V4.1-Flash model card",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "publisher": "DeepSeek",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "qwen-card": {
+      "id": "qwen-card",
+      "title": "Qwen3.8-27B model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "publisher": "Qwen",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "sonnet-launch": {
+      "id": "sonnet-launch",
+      "title": "Claude Sonnet 5.5 release evaluation",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "publisher": "Anthropic",
+      "published_on": "2026-09-28",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "aa-astra": {
+      "id": "aa-astra",
+      "title": "Benchmarking GPT-6 Astra",
+      "url": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
+      "publisher": "Artificial Analysis",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "openai-sol": {
+      "id": "openai-sol",
+      "title": "GPT-6 Sol model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "grok-docs": {
+      "id": "grok-docs",
+      "title": "Grok 4.7 model documentation",
+      "url": "https://docs.x.ai/developers/models/grok-4.7",
+      "publisher": "SpaceXAI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    }
+  }
+}

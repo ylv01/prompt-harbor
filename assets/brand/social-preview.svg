@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img">
+<title>PromptHarbor</title>
+<rect width="1280" height="640" fill="#F5F8F6"/>
+<rect x="0" y="0" width="12" height="640" rx="0" fill="#087F8C"/>
+<text x="80" y="104" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="19" font-weight="700" fill="#087F8C">AN OPEN AGENT SKILL</text>
+<text x="76" y="226" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="78" font-weight="700" fill="#132D38">PromptHarbor</text>
+<text x="80" y="297" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="32" font-weight="400" fill="#526B75">The right models for your work.</text>
+<text x="80" y="353" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="27" font-weight="400" fill="#526B75">One question. Or a whole project.</text>
+<rect x="80" y="423" width="624" height="83" rx="15" fill="#E4EFEB"/>
+<text x="104" y="459" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#087F8C">Understand  →  Recommend  →  Coordinate</text>
+<text x="104" y="489" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#526B75">Evidence-backed choices. Shared interfaces.</text>
+<polyline points="939.400,343.000 939.503,348.304 939.809,353.489 940.317,358.551 941.024,363.488 941.928,368.295 943.025,372.971 944.315,377.511 945.794,381.913 947.459,386.172 949.310,390.287 951.342,394.254 953.554,398.069 955.943,401.729 958.507,405.232 961.244,408.573 964.150,411.750 967.224,414.759 970.463,417.598 973.865,420.263 977.427,422.750 981.147,425.057 985.023,427.180 989.052,429.116 993.231,430.863 997.559,432.415 1002.032,433.771 1006.649,434.928 1011.407,435.881 1016.303,436.628 1021.336,437.166 1026.502,437.491 1031.800,437.600 1037.098,437.491 1042.264,437.166 1047.297,436.628 1052.193,435.881 1056.951,434.928 1061.568,433.771 1066.041,432.415 1070.369,430.863 1074.548,429.116 1078.577,427.180 1082.453,425.057 1086.173,422.750 1089.735,420.263 1093.137,417.598 1096.376,414.759 1099.450,411.750 1102.356,408.573 1105.093,405.232 1107.657,401.729 1110.046,398.069 1112.258,394.254 1114.290,390.287 1116.141,386.172 1117.806,381.913 1119.285,377.511 1120.575,372.971 1121.672,368.295 1122.576,363.488 1123.283,358.551 1123.791,353.489 1124.097,348.304 1124.200,343.000" fill="none" stroke="#087F8C" stroke-width="19.8" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="963.600,269.300 963.600,306.700 1031.800,352.900 1031.800,395.800" fill="none" stroke="#087F8C" stroke-width="19.8" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1100.000,269.300 1100.000,306.700 1031.800,352.900" fill="none" stroke="#087F8C" stroke-width="19.8" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1031.800,244.000 1031.800,303.400" fill="none" stroke="#087F8C" stroke-width="19.8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1031.8" cy="352.9" r="14.3" fill="#F07167"/>
+<text x="80" y="589" font-family="Segoe UI, DejaVu Sans, sans-serif" font-size="16" font-weight="700" fill="#526B75">MODEL ADVICE + COPYABLE HANDOFFS</text>
+</svg>

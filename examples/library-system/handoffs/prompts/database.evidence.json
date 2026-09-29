@@ -1,0 +1,99 @@
+{
+  "as_of": "2026-09-29",
+  "snapshot_date": "2026-09-29",
+  "classification": [
+    {
+      "id": "data.schema",
+      "domain": "Data",
+      "subdomain": "Database design",
+      "label": "Database schema design"
+    }
+  ],
+  "classification_method": "host_semantic",
+  "decision": "insufficient_evidence",
+  "primary": null,
+  "rationale": "No eligible candidate has fresh evidence for these tasks. Research the missing evidence.",
+  "confidence": "insufficient",
+  "candidates": [],
+  "switch": {
+    "action": "unknown",
+    "reason": "Fresh comparable evidence about the current model is missing."
+  },
+  "excluded": [
+    {
+      "model_id": "gpt-6-astra",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "gpt-6-sol",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "gpt-6-luna",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "claude-opus-5-5",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-5-5",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "claude-fable-5-1",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "gemini-3.8-flash",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "deepseek-v4.1-flash",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "qwen3.8-27b",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "kimi-k3",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "grok-4.7",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    }
+  ],
+  "stale_evidence": [],
+  "warnings": [
+    "Shortlist covers the bundled catalog only; verify current availability and new releases.",
+    "Evidence coverage is not model quality. Benchmark performance does not guarantee this prompt's outcome."
+  ],
+  "validation": [
+    "Apply migrations to a disposable database and verify constraints, indices, transactions and seed idempotence."
+  ],
+  "sources": {}
+}
