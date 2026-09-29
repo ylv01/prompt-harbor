@@ -1,7 +1,8 @@
 # Release preparation
 
-The repository is prepared locally. A repository owner/remote has not been
-selected, and no GitHub upload or release is implied by these files.
+Public repository: [ylv01/prompt-harbor](https://github.com/ylv01/prompt-harbor).
+The default branch is `main`. Publishing source commits and creating a tagged
+release are separate steps.
 
 1. Read README and coverage gaps. Confirm the desired public repository name,
    account and visibility. PromptHarbor is a project name, not trademark clearance.
@@ -11,9 +12,8 @@ selected, and no GitHub upload or release is implied by these files.
    current model is hypothetical and its stack is explicitly scoped.
 4. Run `python scripts/package_skill.py`; inspect archive contents.
    The installed skill includes code, data, references, artwork and licensing.
-5. Create the public repository and push the reviewed local commits once the
-   destination is authorized. Set repository description to:
-   `Task-aware model advice and contract-based multi-model project handoffs.`
+5. Push reviewed commits to the repository above. Keep the description focused
+   on task-specific Top 3 recommendations and multi-model project handoffs.
 6. Set topics such as `agent-skill`, `llm`, `model-selection`, `ai-agents` and
    `prompt-engineering`. Upload `assets/brand/social-preview.png` as social preview.
    The avatar is available for a project organization or other avatar surface.

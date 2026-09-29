@@ -89,9 +89,12 @@ flowchart LR
 
 ## Install
 
-Download or clone this repository, open a terminal in its root, then:
+Clone the repository, then install the skill:
 
 ```sh
+git clone https://github.com/ylv01/prompt-harbor.git
+cd prompt-harbor
+
 # Codex (respects CODEX_HOME if set)
 python scripts/install.py --host codex
 

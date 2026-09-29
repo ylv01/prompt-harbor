@@ -54,9 +54,11 @@ PromptHarbor 是一个 Agent Skill：识别普通 Prompt 的**领域、子领域
 
 ## 安装
 
-下载或克隆仓库，在仓库根目录运行：
+克隆仓库后安装 Skill：
 
 ```powershell
+git clone https://github.com/ylv01/prompt-harbor.git
+cd prompt-harbor
 python scripts/install.py --host codex
 ```
 
