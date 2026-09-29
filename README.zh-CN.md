@@ -1,7 +1,7 @@
 <p align="center"><img src="assets/brand/hero.svg" width="900" alt="PromptHarbor：理解任务，选择模型，汇合成果"></p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="Apache 2.0 许可证"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.2.0"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.2.1"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
   <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="模型数据 2026-09-29"></a>
 </p>
@@ -166,7 +166,7 @@ python scripts/freshness.py
 python scripts/package_skill.py
 ```
 
-安装包和 SHA-256 校验值输出到 `dist/`。
+ZIP 安装包输出到 `dist/`。
 参考 [贡献说明](CONTRIBUTING.md)、[品牌素材](assets/brand/README.md) 与
 [发布步骤](docs/RELEASING.md)。
 

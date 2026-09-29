@@ -25,8 +25,8 @@ when the catalog changes.
 ## Project artifacts
 
 Project JSON defines a DAG, contracts, owned files and acceptance checks. Compiler
-outputs are reviewable text, not provider-specific API requests. Contract hashes
-detect drift. Receipts make missing work visible, but are not trusted as proof
+outputs are reviewable text, not provider-specific API requests. Interface versions
+identify the shared agreement. Receipts make missing work visible, but are not trusted as proof
 of code behavior. Integration remains an active host-agent task.
 
 The compiler does not select an architecture, infer requirements or generate a

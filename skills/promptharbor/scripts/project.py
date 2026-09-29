@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import re
 import sys
@@ -84,8 +83,7 @@ def compile_project(project_path, output, today=None):
     for contract in project['contracts']:
         path = contained(project_path.parent, contract['path'])
         raw = path.read_bytes()
-        require(len(raw) <= 100_000, 'Contract is too large; split into focused contracts')
-        contracts.append({**contract, 'sha256': hashlib.sha256(raw).hexdigest(), 'content': raw.decode('utf-8-sig')})
+        contracts.append({**contract, 'content': raw.decode('utf-8-sig')})
     assignments = []
     for task in project['tasks']:
         job = task_job(project, task)
@@ -117,7 +115,7 @@ def compile_project(project_path, output, today=None):
         filename = c['id'] + Path(c['path']).suffix
         raw = contained(project_path.parent, c['path']).read_bytes()
         (output / 'contracts' / filename).write_bytes(raw)
-        manifest['contracts'].append({k: c[k] for k in ('id', 'version', 'sha256') } | {'path': 'contracts/' + filename})
+        manifest['contracts'].append({k: c[k] for k in ('id', 'version')} | {'path': 'contracts/' + filename})
     task_map = {t['id']: t for t in project['tasks']}
     for assignment in assignments:
         task = assignment['task']
@@ -145,13 +143,13 @@ def compile_project(project_path, output, today=None):
             lines.append('No upstream artifacts required. Work against the frozen contracts below.')
         lines += ['', '## Shared contracts', '', 'Do not silently change interfaces. Propose a versioned contract change to the main window first.']
         for c in contracts:
-            lines += ['', f"### {c['id']} · {c['version']} · SHA-256 `{c['sha256']}`", '', '~~~~text', c['content'].rstrip(), '~~~~']
+            lines += ['', f"### {c['id']} · {c['version']}", '', '~~~~text', c['content'].rstrip(), '~~~~']
         lines += ['', '## Owned deliverables', ''] + [f'- `{p}`' for p in task['deliverables']]
         lines += ['', 'Return complete files with their exact relative paths. Do not modify files owned by another task.', '', '## Acceptance criteria', '']
         lines += [f'- {a}' for a in task['acceptance']]
         lines += ['', '## Return format', '', 'Return the files plus a receipt JSON containing:', '', '```json',
                   json.dumps({'task_id': task['id'], 'status': 'complete', 'model_used': 'REPLACE_WITH_ACTUAL_MODEL',
-                              'contracts': {c['id']: c['sha256'] for c in contracts}, 'files': task['deliverables'],
+                              'contracts': {c['id']: c['version'] for c in contracts}, 'files': task['deliverables'],
                               'checks': [{'command': 'replace with actual command or manual check', 'result': 'passed / failed / not_run', 'evidence': 'actual observed output'}],
                               'known_gaps': [], 'contract_change_requests': []}, ensure_ascii=False, indent=2), '```', '',
                   'Never claim a test ran unless you ran it. Mark unavailable checks not_run. The main window verifies the receipt and runs integration checks.', '']
@@ -191,10 +189,7 @@ def compile_project(project_path, output, today=None):
 def verify_deliveries(manifest_path, receipt_dir, artifact_dir):
     manifest_path, receipt_dir, artifact_dir = Path(manifest_path), Path(receipt_dir), Path(artifact_dir)
     manifest = read_json(manifest_path)
-    expected = {c['id']: c['sha256'] for c in manifest['contracts']}
-    for c in manifest['contracts']:
-        raw = contained(manifest_path.parent, c['path']).read_bytes()
-        require(hashlib.sha256(raw).hexdigest() == c['sha256'], 'Frozen contract has changed')
+    expected = {c['id']: c['version'] for c in manifest['contracts']}
     findings = []
     for task in manifest['assignments']:
         errors = []
@@ -206,7 +201,7 @@ def verify_deliveries(manifest_path, receipt_dir, artifact_dir):
         if receipt.get('task_id') != task['task_id'] or receipt.get('status') != 'complete':
             errors.append('wrong_task_or_not_complete')
         if receipt.get('contracts') != expected:
-            errors.append('contract_hash_mismatch')
+            errors.append('contract_version_mismatch')
         if sorted(receipt.get('files', [])) != sorted(task['deliverables']):
             errors.append('deliverable_manifest_mismatch')
         for filename in task['deliverables']:

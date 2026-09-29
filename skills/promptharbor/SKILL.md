@@ -3,7 +3,7 @@ name: promptharbor
 description: Identify the domain and task behind an ordinary prompt, recommend a Top 3 of suitable LLMs using current evaluations and weighted community reports, and advise whether to switch. For complex projects, split the work, offer Top 3 choices per part, produce copyable handoff prompts with shared interface contracts, and integrate returned work in the main conversation. Use when the user wants model advice or has enabled PromptHarbor routing for this conversation.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # PromptHarbor

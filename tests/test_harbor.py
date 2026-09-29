@@ -178,7 +178,7 @@ class ProjectTests(unittest.TestCase):
             backend=(out/'prompts/backend.md').read_text(encoding='utf-8')
             self.assertIn('database/001_schema.sql',backend)
             self.assertIn('BOOK_NOT_FOUND',backend)
-            self.assertIn(m['contracts'][0]['sha256'],backend)
+            self.assertIn(m['contracts'][0]['version'],backend)
             self.assertTrue((out/'prompts/frontend.evidence.json').exists())
             with self.assertRaisesRegex(ValueError,'already exists'):
                 project.compile_project(self.sample,out,NOW)
@@ -206,7 +206,7 @@ class ProjectTests(unittest.TestCase):
                 for path in a['deliverables']:
                     target=artifacts/path; target.parent.mkdir(parents=True,exist_ok=True); target.write_text('test fixture',encoding='utf-8')
                 receipt={'task_id':a['task_id'],'status':'complete','files':a['deliverables'],
-                         'contracts':{c['id']:c['sha256'] for c in m['contracts']},
+                         'contracts':{c['id']:c['version'] for c in m['contracts']},
                          'checks':[{'command':'fixture check','result':'passed','evidence':'fixture only'}]}
                 (receipts/(a['task_id']+'.json')).write_text(json.dumps(receipt),encoding='utf-8')
             report=project.verify_deliveries(out/'manifest.json',receipts,artifacts)
@@ -216,13 +216,6 @@ class ProjectTests(unittest.TestCase):
             report=project.verify_deliveries(out/'manifest.json',receipts,artifacts)
             self.assertFalse(report['ready_for_integration_review'])
 
-    def test_changed_contract_detected(self):
-        with tempfile.TemporaryDirectory() as d:
-            root=Path(d);out=root/'handoffs'
-            m=project.compile_project(self.sample,out,NOW)
-            (out/m['contracts'][0]['path']).write_text('changed',encoding='utf-8')
-            with self.assertRaisesRegex(ValueError,'contract has changed'):
-                project.verify_deliveries(out/'manifest.json',root/'receipts',root/'artifacts')
 
 
 if __name__=='__main__':

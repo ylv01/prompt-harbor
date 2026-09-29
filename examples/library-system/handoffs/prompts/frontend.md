@@ -31,7 +31,7 @@ No upstream artifacts required. Work against the frozen contracts below.
 
 Do not silently change interfaces. Propose a versioned contract change to the main window first.
 
-### interfaces · 1.0.0 · SHA-256 `3530d07d2a35807051af873c49567124ec987bab6353b89d6b0c4aae9e13dbf4`
+### interfaces · 1.0.0
 
 ~~~~text
 # Library system contract · 1.0.0
@@ -131,7 +131,7 @@ Return the files plus a receipt JSON containing:
   "status": "complete",
   "model_used": "REPLACE_WITH_ACTUAL_MODEL",
   "contracts": {
-    "interfaces": "3530d07d2a35807051af873c49567124ec987bab6353b89d6b0c4aae9e13dbf4"
+    "interfaces": "1.0.0"
   },
   "files": [
     "frontend/package.json",

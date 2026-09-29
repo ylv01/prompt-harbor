@@ -3,7 +3,7 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.2.0"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.2.1"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
   <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-09-29"></a>
 </p>
@@ -217,7 +217,7 @@ python scripts/freshness.py
 python scripts/package_skill.py
 ```
 
-The archive is written to `dist/` with a SHA-256 checksum. See
+The ZIP archive is written to `dist/`. See
 [CONTRIBUTING.md](CONTRIBUTING.md), [brand assets](assets/brand/README.md) and
 [release preparation](docs/RELEASING.md).
 

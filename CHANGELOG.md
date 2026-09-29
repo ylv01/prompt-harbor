@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 — 2026-09-29
+
+- Simplified handoffs to interface versions and actual implementation review.
+- Removed cryptographic contract fingerprints, package checksum sidecars, arbitrary
+  contract-size limits and forced byte-identical ZIP generation.
+- Packaging now writes a normal ZIP and supports rebuilding the same output.
+
 ## 0.2.0 — 2026-09-29
 
 - Default Top 3 recommendations with resource details, source-backed reasons and full audit output.

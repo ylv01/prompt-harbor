@@ -35,7 +35,7 @@ Integration owner: **this conversation**. No models are called or changed automa
 4. Execute the checks below. Fix integration defects; return changed contracts to affected task owners.
 5. Report observed results and remaining gaps. Do not equate model self-reports with verification.
 
-- 主窗口审阅全部返回文件与契约散列；把各目录拼接到新的本地演示工程。
+- 主窗口对照接口约定审阅全部返回文件；把各目录拼接到新的本地演示工程。
 - 在可丢弃的 PostgreSQL 16 库应用 schema、seed 与 checks.sql；复跑 seed 验证幂等。
 - 安装后端依赖，执行 pytest backend/tests，再启动 API；检查 /health。
 - 前端 npm install 与 npm run build；将 VITE_API_BASE_URL 指向真实服务。
