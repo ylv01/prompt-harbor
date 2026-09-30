@@ -1,7 +1,7 @@
 <p align="center"><img src="assets/brand/hero.svg" width="900" alt="PromptHarbor：理解任务，选择模型，汇合成果"></p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="Apache 2.0 许可证"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.3.0"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.3.1"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
   <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="模型数据 2026-09-30"></a>
 </p>
@@ -13,6 +13,9 @@ PromptHarbor 是一个 Agent Skill：识别普通 Prompt 的**领域、子领域
 订阅、额度和工具自由选择。遇到较长工程时，每个部分也给出 Top 3；先约定接口，再拆分前端、后端、
 数据库等工作，在当前窗口输出可直接复制的提示词。用户交给相应模型，最后把结果
 带回主窗口检查、拼接和验收。
+
+**中文提问，计划文档与完整交接提示词也使用中文**，包括标题、模型推荐理由、
+执行步骤和返回说明。模型 ID、代码、路径、JSON 字段以及冻结的接口契约保留原文。
 
 宿主 Agent 负责语义理解和联网研究，本地脚本负责可复查的筛选、排序与交接验证。
 
@@ -26,7 +29,7 @@ PromptHarbor 是一个 Agent Skill：识别普通 Prompt 的**领域、子领域
 | Kimi K3 | WebDev 结果加上带作品的视觉网页社区记录 | 风格是否合适、可用额度；同时保留反面反馈 |
 | DeepSeek V4.1 Flash | 有同组任务评测，可作为第三个可用选择 | 实际部署、成本与交互验收 |
 
-这是限定上述资源的视觉设计示例，依据与日期见[完整输出](examples/frontend-output.md)。
+这是限定上述资源的视觉设计示例，依据与日期见[完整输出](examples/frontend-output.zh-CN.md)。
 不提供资源清单时，先给更广范围的 Top 3；提供后重新筛选。
 
 **单个问题：**“检查我的 Python 股票回测有没有未来函数。”
@@ -104,12 +107,18 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.j
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "总结这段视频"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
+python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
 python -m unittest discover -s tests -v
 ```
 
 `--prompt` 只是明确标注低置信度的中英文关键词降级模式。任意普通 Prompt 的语义
 分类和工程拆分由宿主 Agent 完成，脚本不伪装成一个内置的语义模型。
 推荐流程可通过 [结构化 job](skills/promptharbor/references/job-format.md) 复现。
+
+job 和 project 可设置 `"language": "zh-CN"`（也接受 `"zh"`）、`"en"` 或
+`"auto"`。默认自动识别中文 Prompt 或项目目标、任务标题与描述；没有中文时使用英文。
+`--language zh-CN` 可覆盖 JSON 设置。宿主应同时用中文撰写目标、任务说明与验收标准，
+脚本不会翻译这些自由文本或契约原文。交付前应检查 `PLAN.md` 和各部分提示词的语言。
 
 复现历史示例时使用示例记录的日期，当前快照可加 `--as-of 2026-09-30`；当前建议应省略它，不能用旧日期绕过
 过期检查。数据过期时可能不返回推荐。

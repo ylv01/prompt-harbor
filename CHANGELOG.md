@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.1 — 2026-09-30
+
+- Fixed Chinese requests producing English saved plans and handoff prompts.
+- Added automatic Chinese/English output language selection, explicit job/project
+  language settings and CLI overrides; localized recommendation explanations,
+  plan sections, prompt instructions and return guidance.
+- Preserved model IDs, machine-readable fields, source titles and frozen contract
+  text; the host writes supplied task prose in the user's language.
+- Added a Chinese project-document regression case and refreshed the worked example.
+
 ## 0.3.0 — 2026-09-30
 
 - Added GPT-6.1 Sol and MiMo-V2.6-Pro, Flash and Pro-UltraSpeed; the catalog now

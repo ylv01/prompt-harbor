@@ -156,6 +156,20 @@
         "Print complete prompts in the main window",
         "Record actual selected model in returns"
       ]
+    },
+    {
+      "id": "chinese-project-documents",
+      "context": "The user asks in Chinese and has not requested English. The host generates a project plan and full copyable prompts using the optional compiler.",
+      "prompt": "用项目模式评估这个可选周期数据模型统计工具，拆分核心引擎和命令行兼容层，每部分给出 Top 3、完整提示词和接口契约。",
+      "must": [
+        "Write the project goal, task descriptions, acceptance criteria and integration checks in Chinese",
+        "Set project language to zh-CN or preserve correct Chinese automatic detection",
+        "Use Chinese headings, recommendation reasons, execution instructions and return guidance in PLAN.md and every full handoff prompt",
+        "Print the complete Chinese prompts in the current conversation",
+        "Ask the receiving models to reply in Chinese",
+        "Preserve model IDs, code paths, JSON keys/enums and frozen contract contents",
+        "Inspect generated documents before delivery; a Chinese chat reply alone does not satisfy the language requirement"
+      ]
     }
   ]
 }

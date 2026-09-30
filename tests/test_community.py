@@ -174,7 +174,7 @@ class CommunityTests(unittest.TestCase):
     def test_project_handoffs_offer_choices_and_actual_model_receipt(self):
         with tempfile.TemporaryDirectory() as d:
             out = Path(d) / 'handoffs'
-            m = project.compile_project(ROOT/'examples/library-system/project.json', out, NOW)
+            m = project.compile_project(ROOT/'examples/library-system/project.json', out, NOW, language='en')
             frontend = next(a for a in m['assignments'] if a['task_id'] == 'frontend')
             qa = next(a for a in m['assignments'] if a['task_id'] == 'qa')
             self.assertEqual(qa['model'], 'gpt-6-sol')

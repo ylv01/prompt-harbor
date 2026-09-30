@@ -1,0 +1,1004 @@
+{
+  "schema_version": 1,
+  "tasks": {
+    "software.debug": {
+      "domain": "软件开发",
+      "subdomain": "维护",
+      "label": "缺陷排查与修复",
+      "validation": "复现故障，并在同一代码库中运行回归测试。"
+    },
+    "software.repo": {
+      "domain": "软件开发",
+      "subdomain": "维护",
+      "label": "代码库功能实现",
+      "validation": "使用相同代码库、测试、工具、时间预算和验收标准。"
+    },
+    "software.algorithm": {
+      "domain": "软件开发",
+      "subdomain": "算法",
+      "label": "算法编程",
+      "validation": "运行隐藏测试和极端复杂度用例；不要复用模型可能见过的评测题。"
+    },
+    "software.frontend": {
+      "domain": "软件开发",
+      "subdomain": "界面实现",
+      "label": "前端实现",
+      "validation": "在多种尺寸下渲染，检查还原度、无障碍支持和交互行为。"
+    },
+    "software.security": {
+      "domain": "软件开发",
+      "subdomain": "安全",
+      "label": "防御性代码审查",
+      "validation": "在安全的本地环境复现问题，验证补丁并确保原有行为正常。"
+    },
+    "software.architecture": {
+      "domain": "软件开发",
+      "subdomain": "架构",
+      "label": "系统设计",
+      "validation": "评估假设、方案取舍、故障模式和需求覆盖情况。"
+    },
+    "software.terminal": {
+      "domain": "软件开发",
+      "subdomain": "工具使用",
+      "label": "终端 Agent",
+      "validation": "保持终端权限、软件包状态和 Agent 执行框架一致，验证最终产物。"
+    },
+    "software.testing": {
+      "domain": "软件开发",
+      "subdomain": "质量保障",
+      "label": "测试设计",
+      "validation": "衡量发现的真实缺陷和误报，而不是测试数量。"
+    },
+    "math.contest": {
+      "domain": "数学",
+      "subdomain": "解题",
+      "label": "竞赛数学",
+      "validation": "使用新题集，盲评解答的正确性与推理。"
+    },
+    "math.proof": {
+      "domain": "数学",
+      "subdomain": "证明",
+      "label": "数学证明",
+      "validation": "检查每一步推理；要求形式化证明时，使用形式化验证器。"
+    },
+    "math.formal": {
+      "domain": "数学",
+      "subdomain": "形式化验证",
+      "label": "形式化证明代码",
+      "validation": "使用指定证明器和库版本编译；拒绝 sorry/admit。"
+    },
+    "math.numerical": {
+      "domain": "数学",
+      "subdomain": "计算",
+      "label": "数值推理",
+      "validation": "与数值或符号计算参考结果对照，检查稳定性和单位。"
+    },
+    "finance.filings": {
+      "domain": "金融",
+      "subdomain": "基本面分析",
+      "label": "公司财报研究",
+      "validation": "核查引用、会计期间、单位和每个中间值。"
+    },
+    "finance.valuation": {
+      "domain": "金融",
+      "subdomain": "基本面分析",
+      "label": "估值模型",
+      "validation": "审查公式引用、假设、情景和金融计算惯例。"
+    },
+    "finance.backtest": {
+      "domain": "金融",
+      "subdomain": "量化研究",
+      "label": "回测审查",
+      "validation": "检查未来信息泄漏、幸存者偏差、成本、数据划分和样本外泄漏。"
+    },
+    "finance.factor": {
+      "domain": "金融",
+      "subdomain": "量化研究",
+      "label": "因子研究",
+      "validation": "使用留出时段和真实成本；任何评测都不能证明策略具有 alpha。"
+    },
+    "finance.derivatives": {
+      "domain": "金融",
+      "subdomain": "量化研究",
+      "label": "衍生品定价",
+      "validation": "核查推导、单位和极限情形，并将模拟结果与可信参考对照。"
+    },
+    "science.reasoning": {
+      "domain": "科学研究",
+      "subdomain": "领域推理",
+      "label": "科学问题求解",
+      "validation": "由领域专家核查假设、单位、证据和可复现性。"
+    },
+    "science.compute": {
+      "domain": "科学研究",
+      "subdomain": "计算研究",
+      "label": "科学计算",
+      "validation": "固定环境、数据和随机种子，复现已知结果。"
+    },
+    "science.literature": {
+      "domain": "科学研究",
+      "subdomain": "文献",
+      "label": "文献综合分析",
+      "validation": "核实引用论文，评估研究质量、分歧和覆盖范围。"
+    },
+    "science.hypothesis": {
+      "domain": "科学研究",
+      "subdomain": "发现",
+      "label": "研究假设生成",
+      "validation": "评估可证伪性、相对现有文献的新颖性，以及对照实验是否可执行。"
+    },
+    "writing.creative": {
+      "domain": "写作",
+      "subdomain": "创作",
+      "label": "创意写作",
+      "validation": "按用户的风格标准，对目标语言的样稿进行盲评对比。"
+    },
+    "writing.edit": {
+      "domain": "写作",
+      "subdomain": "编辑",
+      "label": "润色与改写",
+      "validation": "比较原意保留、作者风格、事实一致性和简洁程度。"
+    },
+    "writing.professional": {
+      "domain": "写作",
+      "subdomain": "专业文档",
+      "label": "专业文档撰写",
+      "validation": "评估决策价值、完整性、事实准确性和读者适配程度。"
+    },
+    "writing.translation": {
+      "domain": "写作",
+      "subdomain": "多语言",
+      "label": "翻译与本地化",
+      "validation": "由双语审阅者核查术语、含义、风格和遗漏。"
+    },
+    "context.retrieve": {
+      "domain": "长上下文",
+      "subdomain": "检索",
+      "label": "证据检索",
+      "validation": "在语料各处放置已知事实，检查来源位置及干扰信息的影响。"
+    },
+    "context.synthesis": {
+      "domain": "长上下文",
+      "subdomain": "综合分析",
+      "label": "长文档综合分析",
+      "validation": "按实际输入长度测试跨文档矛盾识别和上下文中段信息回忆。"
+    },
+    "context.summary": {
+      "domain": "长上下文",
+      "subdomain": "压缩",
+      "label": "内容总结",
+      "validation": "对照原文检查覆盖范围、遗漏和无来源支持的说法。"
+    },
+    "agent.workflow": {
+      "domain": "智能体",
+      "subdomain": "工具使用",
+      "label": "业务工作流 Agent",
+      "validation": "使用相同工具接口和权限，验证最终状态与故障恢复。"
+    },
+    "agent.computer": {
+      "domain": "智能体",
+      "subdomain": "电脑操作",
+      "label": "图形界面 Agent",
+      "validation": "在界面和操作预算相同的沙箱中，评估最终状态是否正确。"
+    },
+    "agent.long": {
+      "domain": "智能体",
+      "subdomain": "规划",
+      "label": "长程任务 Agent",
+      "validation": "衡量任务完成、故障恢复、上下文保留和人工介入次数。"
+    },
+    "vision.chart": {
+      "domain": "视觉",
+      "subdomain": "推理",
+      "label": "图表解读",
+      "validation": "对照底层数据核查数值、标签、坐标尺度和结论。"
+    },
+    "vision.document": {
+      "domain": "视觉",
+      "subdomain": "文档",
+      "label": "文档 OCR 与版面理解",
+      "validation": "在有代表性的页面上，衡量文本、表格单元格和阅读顺序的准确性。"
+    },
+    "vision.video": {
+      "domain": "视觉",
+      "subdomain": "时间关系",
+      "label": "视频理解",
+      "validation": "使用事件时间戳和时序问题，并核查上传及帧数限制。"
+    },
+    "vision.spatial": {
+      "domain": "视觉",
+      "subdomain": "空间推理",
+      "label": "视觉与空间推理",
+      "validation": "使用新图像，核查坐标、关系和视觉定位。"
+    },
+    "research.web": {
+      "domain": "调研",
+      "subdomain": "网络调查",
+      "label": "深度联网调研",
+      "validation": "审查来源多样性、引用是否支持结论、完整性和日期相关性。"
+    },
+    "research.facts": {
+      "domain": "调研",
+      "subdomain": "核实",
+      "label": "事实核查",
+      "validation": "将每项说法追溯到一手来源，说明尚未解决的来源冲突。"
+    },
+    "data.analysis": {
+      "domain": "数据",
+      "subdomain": "分析",
+      "label": "数据分析",
+      "validation": "实际运行计算，检查缺失数据、假设和不确定性。"
+    },
+    "data.sql": {
+      "domain": "数据",
+      "subdomain": "查询",
+      "label": "SQL 生成",
+      "validation": "在带有模式约束和隐藏测试用例的沙箱中执行查询。"
+    },
+    "data.extract": {
+      "domain": "数据",
+      "subdomain": "抽取",
+      "label": "结构化抽取",
+      "validation": "使用对抗输入，衡量字段精确率、召回率和结构有效性。"
+    },
+    "data.spreadsheet": {
+      "domain": "数据",
+      "subdomain": "电子表格",
+      "label": "电子表格建模",
+      "validation": "重新计算、核查公式，并检查渲染结果和依赖引用。"
+    },
+    "audio.understand": {
+      "domain": "音频",
+      "subdomain": "理解",
+      "label": "音频理解",
+      "validation": "衡量目标语言的词错误率、说话人归属和时间戳准确性。"
+    },
+    "education.tutor": {
+      "domain": "教育",
+      "subdomain": "学习",
+      "label": "辅导与讲解",
+      "validation": "检查概念准确性、难度适配，以及能否迁移到新的练习题。"
+    },
+    "professional.legal": {
+      "domain": "专业领域",
+      "subdomain": "法律",
+      "label": "法律研究",
+      "validation": "由专家审查司法管辖区、现行权威依据及引用是否支持结论。"
+    },
+    "professional.medical": {
+      "domain": "专业领域",
+      "subdomain": "医学",
+      "label": "医学信息",
+      "validation": "核实最新临床来源，区分信息介绍与个体诊断。"
+    },
+    "general.everyday": {
+      "domain": "通用",
+      "subdomain": "日常",
+      "label": "日常协助",
+      "validation": "使用当前有能力处理任务的模型，检查结果是否满足用户需求。"
+    },
+    "data.schema": {
+      "domain": "数据",
+      "subdomain": "数据库设计",
+      "label": "数据库表结构设计",
+      "validation": "在临时数据库上执行迁移，验证约束、索引、事务和种子数据的幂等性。"
+    },
+    "software.frontend.design": {
+      "domain": "软件开发",
+      "subdomain": "界面设计",
+      "label": "原创网页视觉设计",
+      "validation": "按同一需求分别渲染移动端和桌面端，检查视觉一致性、无障碍支持和交互是否正常。"
+    },
+    "software.frontend.fidelity": {
+      "domain": "软件开发",
+      "subdomain": "界面还原",
+      "label": "参考设计还原",
+      "validation": "按指定视口对比渲染截图，并测试交互与无障碍支持；不要以一般审美偏好代替还原度评估。"
+    }
+  },
+  "evidence": {
+    "astra-terminal": {
+      "claim": "AA 报告：在 Codex 中，Terminal-Bench 4.0 得分为 56%。",
+      "setting": "Codex；max 档位；与 AA 通用 Agent 配置不同。",
+      "limitations": "同一文章还报告了另一配置下的 59%；不要合并这两次运行。"
+    },
+    "astra-docs": {
+      "claim": "GDP.pdf 全部标准均通过的成功率报告为 31%。",
+      "setting": "AA 文档评测；具体配置见来源。",
+      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
+    },
+    "astra-workflow": {
+      "claim": "AutomationBench-AA 的得分报告为 69%。",
+      "setting": "AA Agent 环境；不同于 Zapier 排行榜协议。",
+      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
+    },
+    "astra-fit": {
+      "claim": "官方定位包括高难度推理、调研和借助工具完成的工作。",
+      "setting": "Responses API，配备合适的工具。",
+      "limitations": "产品定位和工具可用性不等于针对具体任务的比较评测。"
+    },
+    "sol-fit": {
+      "claim": "官方文档将 Sol 定位于编程和 Agent 工作流。",
+      "setting": "Responses API；明确指定推理档位。",
+      "limitations": "本次初始目录未录入针对 Sol 具体任务的独立评测结果。"
+    },
+    "luna-fit": {
+      "claim": "官方文档将 Luna 定位于范围明确、处理量大的任务。",
+      "setting": "按需配置推理档位和结构化输出。",
+      "limitations": "高处理量定位不能证明抽取、翻译或辅导质量。"
+    },
+    "opus-terminal": {
+      "claim": "Anthropic 报告：Terminal-Bench 4.0 得分为 66.4%。",
+      "setting": "Opus xhigh；Sonnet max；Fable max，带回退机制；具体见来源。",
+      "limitations": "推理档位和回退配置不同；结果来自厂商，并非独立复现。"
+    },
+    "sonnet-terminal": {
+      "claim": "Anthropic 报告：Terminal-Bench 4.0 得分为 70.6%。",
+      "setting": "Opus xhigh；Sonnet max；Fable max，带回退机制；具体见来源。",
+      "limitations": "推理档位和回退配置不同；结果来自厂商，并非独立复现。"
+    },
+    "fable-terminal": {
+      "claim": "Anthropic 报告：Terminal-Bench 4.0 得分为 55.8%。",
+      "setting": "Opus xhigh；Sonnet max；Fable max，带回退机制；具体见来源。",
+      "limitations": "推理档位和回退配置不同；结果来自厂商，并非独立复现。"
+    },
+    "opus-repo": {
+      "claim": "FrontierCode 1.1 Main 的得分报告为 54.4%。",
+      "setting": "Adaptive max；生产环境保护措施和回退策略。",
+      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。金融任务映射仅涉及代码实现，不涉及金融方法或收益。"
+    },
+    "opus-science": {
+      "claim": "Terminal-Bench-Science 0.1 的得分报告为 58.7%。",
+      "setting": "Adaptive max；发布版本的回退策略。",
+      "limitations": "报告的不确定范围达数个百分点；该结果不能证明能够实现新的科学发现。"
+    },
+    "opus-chart": {
+      "claim": "不使用工具时，Chartography 的得分报告为 64.4%。",
+      "setting": "不使用工具；公开发布的版本比较。",
+      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
+    },
+    "sonnet-chart": {
+      "claim": "不使用工具时，Chartography 的得分报告为 61.6%。",
+      "setting": "不使用工具；公开发布的版本比较。",
+      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
+    },
+    "sonnet-doc": {
+      "claim": "Anthropic 描述了更强的文档处理能力和更清晰的写作。",
+      "setting": "发布时的产品定位；需实际测试用户偏好。",
+      "limitations": "写作风格具有主观性；本次初始目录未收录针对特定语言的独立偏好研究。"
+    },
+    "opus-long": {
+      "claim": "官方概述描述了长程 Agent 和知识工作能力。",
+      "setting": "Claude API 或启用工具的宿主环境。",
+      "limitations": "1M 上下文规格不能证明在 1M tokens 范围内可靠回忆信息。"
+    },
+    "fable-long": {
+      "claim": "官方概述描述了长程 Agent 和知识工作能力。",
+      "setting": "Claude API 或启用工具的宿主环境。",
+      "limitations": "1M 上下文规格不能证明在 1M tokens 范围内可靠回忆信息。"
+    },
+    "gemini-finance": {
+      "claim": "Finance Agent v2 报告的部分得分准确率为 61.44%。",
+      "setting": "上市公司财报任务；采用部分得分。",
+      "limitations": "All-Pass 的排名不同。该结果不能证明交易 alpha、回测有效性或投资收益。"
+    },
+    "gemini-video": {
+      "claim": "文档列明原生视频和音频输入支持。",
+      "setting": "Gemini API；输入限制和采样取决于媒体类型。",
+      "limitations": "输入支持可证明任务具备可执行条件，不能证明时序推理最优。"
+    },
+    "gemini-research": {
+      "claim": "提供搜索结果引用支持和代码执行工具。",
+      "setting": "启用工具的 Gemini API。",
+      "limitations": "仅有工具支持不能证明调研完整性或引用质量。"
+    },
+    "deepseek-repo": {
+      "claim": "模型卡报告：DeepSWE 得分为 74.2。",
+      "setting": "mini-SWE；最大推理设置为 100；temperature 1.0。",
+      "limitations": "厂商结果；向金融或证明任务的迁移仅是间接参考，并非实测优势。"
+    },
+    "deepseek-terminal": {
+      "claim": "模型卡报告：Terminal-Bench 得分为 31.2。",
+      "setting": "DeepSeek Harness Minimal；最大推理设置为 100。",
+      "limitations": "厂商结果；向金融或证明任务的迁移仅是间接参考，并非实测优势。"
+    },
+    "deepseek-math": {
+      "claim": "模型卡报告：MathArena Apex 得分为 65.6。",
+      "setting": "最大推理设置为 100；temperature 1.0。",
+      "limitations": "厂商结果；向金融或证明任务的迁移仅是间接参考，并非实测优势。"
+    },
+    "deepseek-code": {
+      "claim": "模型卡报告：Codeforces 得分为 3471。",
+      "setting": "最大推理设置为 100；temperature 1.0。",
+      "limitations": "厂商结果；向金融或证明任务的迁移仅是间接参考，并非实测优势。"
+    },
+    "deepseek-vision": {
+      "claim": "模型卡报告：Chartography 得分为 78.9。",
+      "setting": "Claude Code；使用工具；512K 上下文；最大推理设置为 100。",
+      "limitations": "厂商结果；向金融或证明任务的迁移仅是间接参考，并非实测优势。"
+    },
+    "deepseek-science": {
+      "claim": "模型卡报告：GPQA 得分为 90.9。",
+      "setting": "最大推理设置为 100；temperature 1.0。",
+      "limitations": "厂商结果；向金融或证明任务的迁移仅是间接参考，并非实测优势。"
+    },
+    "qwen-repo": {
+      "claim": "模型卡报告：DeepSWE 1.1 得分为 42.2。",
+      "setting": "Claude Code；256K；temperature 1.0。",
+      "limitations": "厂商评测；修改过的标注或执行框架可能使跨来源比较失效。金融任务映射仅涉及代码实现，不涉及金融方法或收益。"
+    },
+    "qwen-algorithm": {
+      "claim": "模型卡报告：LiveCodeBench v6 得分为 90.3。",
+      "setting": "模型卡评测；需核查完整配置。",
+      "limitations": "厂商评测；修改过的标注或执行框架可能使跨来源比较失效。"
+    },
+    "qwen-document": {
+      "claim": "模型卡报告：OmniDocBench 1.5 得分为 91.1。",
+      "setting": "模型卡中的文档评测。",
+      "limitations": "厂商评测；修改过的标注或执行框架可能使跨来源比较失效。"
+    },
+    "qwen-chart": {
+      "claim": "模型卡报告：CharXiv RQ 得分为 83.7。",
+      "setting": "不使用代码解释器；标注已修正。",
+      "limitations": "厂商评测；修改过的标注或执行框架可能使跨来源比较失效。"
+    },
+    "qwen-computer": {
+      "claim": "模型卡报告：OSWorld-Verified 得分为 84.3。",
+      "setting": "模型卡中的图形界面评测。",
+      "limitations": "厂商评测；修改过的标注或执行框架可能使跨来源比较失效。"
+    },
+    "kimi-research": {
+      "claim": "模型卡报告：ResearchRubrics 得分为 76.2。",
+      "setting": "Kimi K3 max；temperature 1.0；模型卡中的调研配置。",
+      "limitations": "模型方自报；需核查具体运行环境和逐任务可复现性。"
+    },
+    "kimi-context": {
+      "claim": "模型卡报告：AA-LCR 得分为 74.7。",
+      "setting": "Kimi K3 max；temperature 1.0。",
+      "limitations": "模型方自报；需核查具体运行环境和逐任务可复现性。"
+    },
+    "kimi-science": {
+      "claim": "模型卡报告：SciCode 得分为 58.7。",
+      "setting": "Kimi K3 max；temperature 1.0。",
+      "limitations": "模型方自报；需核查具体运行环境和逐任务可复现性。"
+    },
+    "kimi-sheet": {
+      "claim": "模型卡报告：SpreadsheetBench 2 得分为 34.8。",
+      "setting": "Kimi K3 max；temperature 1.0。",
+      "limitations": "模型方自报；需核查具体运行环境和逐任务可复现性。"
+    },
+    "kimi-tools": {
+      "claim": "模型卡报告：Toolathlon-Verified 得分为 76.5。",
+      "setting": "Kimi K3 max；temperature 1.0。",
+      "limitations": "模型方自报；需核查具体运行环境和逐任务可复现性。"
+    },
+    "kimi-video": {
+      "claim": "模型卡文字描述了视频理解能力。",
+      "setting": "推理服务环境须支持视频或视频帧输入。",
+      "limitations": "概览表仅列出文本和图像；需核查所选接口的视频输入支持。"
+    },
+    "grok-fit": {
+      "claim": "官方文档描述了编程、Agent 和知识工作能力。",
+      "setting": "支持函数调用的 API；明确指定推理档位。",
+      "limitations": "本次初始目录未收录针对 Grok 4.7 具体任务的比较评测。"
+    },
+    "claude-opus-5-5-arena-webdev": {
+      "claim": "claude-opus-5.5-max：记录的 WebDev 偏好评分为 1827。",
+      "setting": "claude-opus-5.5-max；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "gpt-6-astra-arena-webdev": {
+      "claim": "gpt-6-astra-max：记录的 WebDev 偏好评分为 1792。",
+      "setting": "gpt-6-astra-max；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "claude-fable-5-1-arena-webdev": {
+      "claim": "claude-fable-5.1-max：记录的 WebDev 偏好评分为 1751。",
+      "setting": "claude-fable-5.1-max；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "gpt-6-sol-arena-webdev": {
+      "claim": "gpt-6-sol-max：记录的 WebDev 偏好评分为 1681。",
+      "setting": "gpt-6-sol-max；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "kimi-k3-arena-webdev": {
+      "claim": "kimi-k3-max：记录的 WebDev 偏好评分为 1660。",
+      "setting": "kimi-k3-max；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "grok-4.7-arena-webdev": {
+      "claim": "grok-4.7-xhigh：记录的 WebDev 偏好评分为 1629。",
+      "setting": "grok-4.7-xhigh；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "deepseek-v4.1-flash-arena-webdev": {
+      "claim": "deepseek-v4.1-flash-max：记录的 WebDev 偏好评分为 1621。",
+      "setting": "deepseek-v4.1-flash-max；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "gpt-6-luna-arena-webdev": {
+      "claim": "gpt-6-luna-max：记录的 WebDev 偏好评分为 1593。",
+      "setting": "gpt-6-luna-max；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "qwen3.8-27b-arena-webdev": {
+      "claim": "qwen3.8-27b：记录的 WebDev 偏好评分为 1591。",
+      "setting": "qwen3.8-27b；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "gemini-3.8-flash-arena-webdev": {
+      "claim": "gemini-3.8-flash-high：记录的 WebDev 偏好评分为 1580。",
+      "setting": "gemini-3.8-flash-high；Arena 部署环境，不代表所有面向用户的应用设置。",
+      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
+    },
+    "kimi-community-websites": {
+      "claim": "作者列出两个 Kimi3 生成的 React/Vite 网页，表示结果成功，并链接了生成的网站。",
+      "setting": "作者明确使用 Kimi K3；具体部署和推理档位未核实。",
+      "limitations": "产物为作者自报，PromptHarbor 未重新运行。创意网页样本少；模型设置和确切运行日期未知。与旧版模型的比较不能证明优于当前版本。同一作者的转载仅计一个来源主体。",
+      "rating_rationale": "附有链接的创意网页支持对范围明确的设计任务作出正面评价；产物未被独立重新运行。"
+    },
+    "kimi-community-ui-usage": {
+      "claim": "一位用户偏好用 Kimi 处理前端任务，并报告将其作为 UI 子 Agent 使用。",
+      "setting": "作者明确使用 Kimi K3；具体部署和推理档位未核实。",
+      "limitations": "未公开提示词、代码或受控比较。同一作者提到额度限制；需按当前情况核查订阅权限和速度。仅显示相对日期。",
+      "rating_rationale": "具体的前端子 Agent 使用经历形成正面参考，但缺少代码或相同提示词的对照。"
+    },
+    "kimi-community-ui-counterpoint": {
+      "claim": "另一位用户表示更偏好 Opus 5 的视觉效果和 UI 结果。",
+      "setting": "作者明确使用 Kimi K3；具体部署和推理档位未核实。",
+      "limitations": "仅是该讨论中相对 Kimi 的偏好，并非失败证明。没有任务产物或确切设置。不能作为较新 Opus 5.5 的证据；仅显示相对日期。",
+      "rating_rationale": "保留不利的视觉偏好反馈；缺少输出和受控任务比较，不能得出更强的负面结论。"
+    },
+    "gpt-6.1-sol-official": {
+      "claim": "OpenAI 将 GPT-6.1 Sol 定位于复杂编程、电脑操作和专业工作，并提供 Responses 工具及图像输入。",
+      "setting": "官方模型定位和 API 功能声明；并非任务质量测量。",
+      "limitations": "产品功能与定位不能证明相对任务质量。工具支持取决于具体接口。"
+    },
+    "mimo-vendor-01": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 DeepSWE v1.1 得分为 71.9。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果，未经独立复现。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-02": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 Toolathlon-Verified 得分为 76.9。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果，未经独立复现。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-03": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 Terminal Bench 4.0 得分为 34.9。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果；不同版本的 Terminal Bench 测试集不能直接比较。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-04": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 OSWorld-Verified 得分为 82.0。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果，未经独立复现。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-05": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 MiMo VisualCoding 得分为 72.3。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "该厂商视觉编程测试集仅能间接参考前端还原度，并非生产界面的验收测试。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-06": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 DeepSWE v1.1 得分为 67.9。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果，未经独立复现。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-07": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 Toolathlon-Verified 得分为 73.6。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果，未经独立复现。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-08": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 Terminal Bench 4.0 得分为 28.8。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果；不同版本的 Terminal Bench 测试集不能直接比较。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-09": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 OSWorld-Verified 得分为 80.8。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "由厂商运行的结果，未经独立复现。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-10": {
+      "claim": "Xiaomi 报告：原始 RL 权重版本的 MiMo VisualCoding 得分为 71.5。",
+      "setting": "使用厂商执行框架评测最初发布的 RL 权重版本；该结果未测量当前 MOPD API 别名。",
+      "limitations": "该厂商视觉编程测试集仅能间接参考前端还原度，并非生产界面的验收测试。原始 RL 结果保留为当前 API 别名的间接证据。记录的分数未测量 MOPD 权重版本或 UltraSpeed 服务档位。"
+    },
+    "mimo-vendor-11": {
+      "claim": "Xiaomi 将 Pro UltraSpeed 定位于交互式编程和复杂重构的服务档位。",
+      "setting": "官方对托管 UltraSpeed 服务档位的定位，并非实测任务表现。",
+      "limitations": "厂商对服务档位的定位。没有将 Pro 评测分数计为 UltraSpeed 实测结果；这里未独立确认其端到端任务完成能力。"
+    },
+    "mimo-vendor-12": {
+      "claim": "Xiaomi 报告通过 MOPD 更新缓解 Pro 和 Flash 的工具重复调用；API 别名于 2026 年 9 月 25 日切换到更新权重。",
+      "setting": "官方技术说明发表于 2026 年 9 月 27 日，描述了 9 月 25 日 API 更新和 MOPD 权重发布；并非独立任务评测。",
+      "limitations": "厂商关于问题缓解的说法，未独立验证任务完成。须区分原始 RL 的循环行为和更新后的 MOPD 部署；此前的 RL 分数未测量更新接口。"
+    },
+    "mimo-vendor-13": {
+      "claim": "Xiaomi 报告通过 MOPD 更新缓解 Pro 和 Flash 的工具重复调用；API 别名于 2026 年 9 月 25 日切换到更新权重。",
+      "setting": "官方技术说明发表于 2026 年 9 月 27 日，描述了 9 月 25 日 API 更新和 MOPD 权重发布；并非独立任务评测。",
+      "limitations": "厂商关于问题缓解的说法，未独立验证任务完成。须区分原始 RL 的循环行为和更新后的 MOPD 部署；此前的 RL 分数未测量更新接口。"
+    },
+    "gpt-6-astra-community-01": {
+      "claim": "作者报告在 Codex 中使用 Astra 搭建个人作品网站，编程结果出色，但订阅额度消耗很快。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "一个个人项目；没有相同提示词的对照或测试集。保留文章明确标注的 9 月 1 日，作为早期个人报告；发布及访问时间未被独立确认。订阅额度经历不等于 API 价格。",
+      "rating_rationale": "已发布的个人网站支持对范围明确的前端任务作出较好评价；一个项目和额度经历不能证明更广泛的优势。"
+    },
+    "gpt-6-astra-community-02": {
+      "claim": "作者内部由 AI 评审的脚本研究中，Astra 接近 6.1 Sol，但低于较早的 6 Sol。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "内部脚本写作研究包含 10 项任务，每项生成 5 个版本，由 3 个 AI 评审；没有公开提示词或评测代码。推理档位不同（6.1 Sol xhigh、Astra max）。AI 评审偏好不等于人类共识。原始页面仅显示相对时间，确切日期未知。",
+      "rating_rationale": "脚本有实用性，但报告显示其偏好评分落后于较早 Sol；规模较小、非公开的 AI 评审比较仅支持谨慎的混合评价。"
+    },
+    "gpt-6-sol-community-01": {
+      "claim": "作者报告在 xHigh 档位下修复 6 个项目，其中 4 个出现回归问题，随后用 Astra 修复。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "缺陷数量和私人项目均为作者自报；没有补丁、提示词或测试日志。执行框架和审查流程也可能影响结果。",
+      "rating_rationale": "具体的回归问题报告构成不利的调试参考；代码库未公开且缺少日志，置信度有限。"
+    },
+    "gpt-6-sol-community-02": {
+      "claim": "作者报告，Sol 运行 4 次修复了一个此前由多个模型参与处理的 Agent wiki。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "没有公开代码库或日志；此前尝试涉及其他模型，并非条件相同的试验。订阅用量与 API 成本需分开看。",
+      "rating_rationale": "明确描述的修复结果支持范围明确的调试用途；未公开代码的业余项目仅构成低置信度参考。"
+    },
+    "gpt-6-sol-community-03": {
+      "claim": "作者内部由 AI 评审的脚本研究更偏好较早的 6 Sol，而非 6.1 Sol 或 Astra。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "内部脚本写作研究包含 10 项任务，每项生成 5 个版本，由 3 个 AI 评审；没有公开提示词或评测代码。推理档位不同（6.1 Sol xhigh、Astra max）。AI 评审偏好不等于人类共识。原始页面仅显示相对时间，确切日期未知。",
+      "rating_rationale": "保留报告中旧版本的具体写作优势，不因版本更新就假定新版本最优。"
+    },
+    "gpt-6-luna-community-01": {
+      "claim": "作者报告，在混合模型 Agent 工作流中压缩 Discord 会话后，Luna 仍能有效延续上下文。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "没有会话记录或受控的上下文保留测试。其他模型及子 Agent 也参与了任务；所声称的会话 token 数不属于模型规格。",
+      "rating_rationale": "具体的长会话经历支持其参与工作流的实用性；混合模型影响和未经验证的信息保留能力限制了更高评分。"
+    },
+    "gpt-6-luna-community-02": {
+      "claim": "作者在独立工作树中测试了 10 项范围明确的 C++/Python 任务，报告 6 Luna 执行更快，但 AI 评审经常更偏好旧版 Luna 的最终工程结果。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "一个 60k 行代码库、high 而非 max 档位、10 项任务，由 GPT-5.6 Sol 评审；没有独立重放。速度结论取决于具体工作负载。",
+      "rating_rationale": "速度和局部执行有实用性，但集成质量好坏参半；该反馈针对具体任务，并非普遍降级判断。"
+    },
+    "gpt-6.1-sol-community-01": {
+      "claim": "作者内部由 AI 评审的脚本研究中，6.1 Sol 接近 Astra，但低于较早 6 Sol，报告的生成费用也高于旧 Sol。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "内部脚本写作研究包含 10 项任务，每项生成 5 个版本，由 3 个 AI 评审；没有公开提示词或评测代码。推理档位不同（6.1 Sol xhigh、Astra max）。AI 评审偏好不等于人类共识。原始页面仅显示相对时间，确切日期未知。",
+      "rating_rationale": "新模型仍可能不符合某类具体写作偏好；保留混合结果，不把私人 Elo 评分当作公开评测证据。"
+    },
+    "gpt-6.1-sol-community-02": {
+      "claim": "作者报告，用 Sol 规划、本地 Qwen 编码制作了 3 个小游戏，API 支出减少，但耗时明显长于仅使用 Sol。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "每个游戏只运行一次；未检查输出产物或功能测试。API 节省计算未包含本地硬件和电费。作者开发其推广的 AtomicAgent/Fusion 编排工具，存在商业利益影响。",
+      "rating_rationale": "范围明确的规划与编程拆分产生了作者报告的交付物和成本节省；延迟及验收不确定性限制了推荐力度。"
+    },
+    "gpt-6.1-sol-community-03": {
+      "claim": "作者报告，medium 档位的一次 safari 游戏迭代缺少音乐，玩法运行不佳，再次追问后仍未修复。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "未检查返回代码或验收日志；灵感链接是输入，并非生成结果的证明。仅有一次早期任务，使用 medium 档位。",
+      "rating_rationale": "具体需求遗漏和作者报告的不可用交互构成负面前端参考；一次早期 medium 档位运行不能作为普遍结论。"
+    },
+    "claude-opus-5-5-community-01": {
+      "claim": "在 Claude Desktop 中，Opus 5.5 将作者已有机器人项目的语音异常追溯到上游 Home Assistant 实体查询中的两个缺陷。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "一个项目、一次会话；没有条件相同的比较，也未检查公开补丁。作者使用 AI 辅助编辑，但声明由自己承担编辑责任。",
+      "rating_rationale": "从具体症状成功定位原因，支持调试实用性；单个私人案例不能支持接近满分的总体评价。"
+    },
+    "claude-opus-5-5-community-02": {
+      "claim": "作者将代码审查、Git 工作流和文档任务重复运行 3 次；Opus 5.5 在配合 skills 时表现较好，未辅助的输出则有波动。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "任务为小规模清单检查；使用 Opus 5 评审；模型默认推理档位不同。Git 评分标准可能出现满分饱和；原始文件链接抓取失败，未独立检查。",
+      "rating_rationale": "重复任务结果比笼统好评更有参考价值；结果波动和评分标准饱和限制了更强结论。"
+    },
+    "claude-opus-5-5-community-03": {
+      "claim": "一位评论者报告，在独立分支上将 120k 行测试代码分为 17 部分重构：Opus 5.5 high 比 Sonnet 5.5 high 遗留更多规则违规，耗时也更长。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "私人代码库和三层审查为作者自报；补丁、提示词或耗时未独立检查。单次重构工作不能确立对整个模型的排名。",
+      "rating_rationale": "尽管其他反馈对 Opus 有利，仍保留具体的不利实现报告；低置信度限制了泛化。"
+    },
+    "claude-sonnet-5-5-community-01": {
+      "claim": "在作者重复进行的审查、Git 工作流和文档/ADR 任务中，配合 skills 的 Sonnet 5.5 与 Opus 5.5 表现接近，估算生成成本更低。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "小规模清单任务、模型评审、不同默认推理档位，以及可能饱和的 Git 评分标准。公开原始文件链接无法抓取；作者承认本次测试接近不能证明整体能力相同。",
+      "rating_rationale": "3 次运行和明确的限制说明支持正面的实践反馈；评分方法和推理档位的干扰限制置信度。"
+    },
+    "claude-sonnet-5-5-community-02": {
+      "claim": "一位评论者报告，在独立分支重构 120k 行测试集时，Sonnet 5.5 high 比 Opus 5.5 high 违规更少、各部分处理更快。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "代码未公开；描述了审查方法，但未独立验证。仅一个工作负载，使用发生在发布当天，没有公开补丁。",
+      "rating_rationale": "具体分支比较和审查标准支持任务适配性；复现不足，不能给予更高评分。"
+    },
+    "claude-sonnet-5-5-community-03": {
+      "claim": "一位评论者报告，在两个低/中等难度编程任务中，Sonnet 5.5 high 起初更快、更便宜，但遗留缺陷或遗漏；Opus 审查和返工抵消了这一优势。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "仅两个未详细说明的任务；没有提示词、补丁、账单或代码产物。这段经历涉及审查后的总成本，并非经过验证的 token 单价比较。",
+      "rating_rationale": "具体的遗留缺陷和返工反馈构成负面参考；可复现性弱，置信度有限。"
+    },
+    "claude-fable-5-1-community-01": {
+      "claim": "面对 17 页手写扫描件，作者更偏好 Fable 5.1 草稿的结构和开头；处理耗时明显长于 Astra 配置。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "一个个人任务；应用和工具不同；属于主观偏好，没有盲评。作者披露收到了 OpenAI 宣传礼品。",
+      "rating_rationale": "明确的内容转换任务和质量/时间取舍支持写作适配性，同时保留比较中的干扰因素。"
+    },
+    "claude-fable-5-1-community-02": {
+      "claim": "展示的测试保留了既有页面的品牌风格，但新企业主页存在可读性和间距问题，完整品牌方案弱于作者偏好的 Astra 结果。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "两个需求简报、主观偏好，没有转化率测量；执行框架和图像生成权限不同。与写作测试来自同一作者，不应计为第二位独立评审。",
+      "rating_rationale": "品牌风格保留有实用性，但可见布局问题使该任务评价好坏参半。"
+    },
+    "claude-fable-5-1-community-03": {
+      "claim": "在 7 章课程改写中，作者发现文字只有轻微改善，仍需逐章编辑以恢复自己的文风。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "公开了改写前后片段，但未检查完整会话输出；fleet 模式使模型归因受到干扰。",
+      "rating_rationale": "改善幅度不大且仍需逐句编辑，支持对保留特定作者文风作出混合评分。"
+    },
+    "claude-fable-5-1-community-04": {
+      "claim": "课程工作流所需引导减少，并恢复了缓存的 Agent 结果，但低估用量，在完成前耗尽订阅额度。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "一个使用 fleet 模式的工作流；恢复执行和额度计量也涉及 Claude Code/产品行为。与课程改写来自同一主体，不应在同一任务中重复计数。",
+      "rating_rationale": "恢复执行具有实践价值；用量估算不足和交付中断抵消了其在长程工作上的部分优势。"
+    },
+    "claude-fable-5-1-community-05": {
+      "claim": "在 3 个可见动画需求中，Fable 5.1 的立交动画无明显故障、轮播旋转正确，并使运载火箭保持在画面内，但火箭仍有缺陷。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "每个需求仅尝试一次；评审并非盲评，制作工具的执行框架不同。附有在线产物链接，但未公开确切提示词文件；没有生产或无障碍验证。",
+      "rating_rationale": "具体的运动正确性对视觉原型有参考价值；残余缺陷和样本少限制了评分。"
+    },
+    "gemini-3.8-flash-community-01": {
+      "claim": "作者在 OpenCode 中搭建 Plotline，报告 Gemini 3.8 Flash 成功完成混合截图抽取、可编辑表格和重新抽取功能。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "提示词和演示已公开；未独立检查抽取误差数据集或源代码库。单个产物由作者操作，使用 OpenCode/high 档位。",
+      "rating_rationale": "可用的抽取工作流支持这一任务；一个演示不能证明 10/10 的准确性。"
+    },
+    "gemini-3.8-flash-community-02": {
+      "claim": "Figures 的数据视图可用，但上传和导航失效；Parallax 的部分页面设计成功，但存在加载、可读性和主题问题。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "与 Plotline 属于同一作者的制作系列；样本有限，比较对象的执行框架不同。不能把成功搭建应用转化为金融推理能力的证明。",
+      "rating_rationale": "部分功能可用，但也有严重、用户可见的故障；在保留抽取成功案例的同时保留不利证据。"
+    },
+    "gemini-3.8-flash-community-03": {
+      "claim": "一个 7 项任务的演示比较生成了可用网站和可行走的体素世界，但平台游戏坠落检测和复杂 3D 动作失败。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "附有截图和视频链接；完整提示词需订阅 LINE，未检查。原型少且类型不同，未明确独立验收测试；作者披露了推广分成关系。",
+      "rating_rationale": "简单原型可用，但交互故障限制了其处理复杂前端的置信度。"
+    },
+    "gemini-3.8-flash-community-04": {
+      "claim": "作者描述了使用录制视频挑选截图位置，使截图与博客文章的说明相对应。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "没有时间戳准确性测量或视频问答数据集；同一文章中的评测说法不纳入这段使用经历。与原型系列由同一评审者提供。",
+      "rating_rationale": "具体的作者工作流提示视频功能有实用性，但不能证明实测时序准确性。"
+    },
+    "grok-4.7-community-01": {
+      "claim": "作者报告，在上下文清晰时，模型能在包含分布式工作流和数据管道的 Rust 代码库中完成可用的跨文件修改和调试，但偶尔过度复杂化或偏离架构。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "私人代码库；未检查提示词或测试；Cursor 的路由和执行框架可能影响体验。",
+      "rating_rationale": "具体的既有代码库使用经历是正面参考；架构错误和缺少公开结果限制了评分。"
+    },
+    "grok-4.7-community-02": {
+      "claim": "4 个使用 xhigh 的 Grok Build 需求生成了基本合理的机制，但存在可见动画或游戏缺陷；Hill Climb 产物在已知故障存在时仍报告完成。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "每个需求仅尝试一次；人工评分并非盲评；早前一轮所用工具不同。页面中的独立评测和厂商说法不纳入该社区记录。",
+      "rating_rationale": "多次可见故障支持负面的视觉制作评分；适用范围仅限这些需求。"
+    },
+    "grok-4.7-community-03": {
+      "claim": "作者渲染了由 Grok 4.7、Opus 5.5 和 GPT-6 Sol 按相同提示词生成的 SVG 动画；Grok 产生了运动，但该评审者认为其姿态较不自然。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "一个简单动画和主观审美偏好；未说明 TokenRouter 的推理档位或设置。原帖附有渲染 GIF 链接，未在本地执行。",
+      "rating_rationale": "主要元素基本正确，但观察者认为构图较弱，因此形成针对该任务的轻微负面参考。"
+    },
+    "deepseek-v4.1-flash-community-01": {
+      "claim": "作者报告，使用 DeepSeek Harness 和最大推理设置，一次生成了成功的响应式网站，采用 HTML、vanilla JavaScript、Tailwind、GSAP 和 Lucide。移动端适配与视觉反馈令人满意，但 token 消耗较高。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "仅一位作者和一个网站；未链接原始提示词或源项目。有媒体预览图，但未重放或验证视频。耗时、支出和 token 总量均为自报。页面仅显示相对时间，因此不推断确切发表日期。不能证明参考设计还原度或生产正确性。",
+      "rating_rationale": "具体前端技术栈、首次生成结果和移动端表现支持较好的使用报告；缺少提示词、源代码和独立执行，置信度有限。"
+    },
+    "deepseek-v4.1-flash-community-02": {
+      "claim": "作者报告，代码虽通过即时检查，但逐渐积累嵌套分支、重复逻辑和局部修补。在 PDF/幻灯片工作流中，模型虽生成较快，却出现不必要的工具绕路，降低总体任务效率。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "未公开提示词、代码库、工具轨迹或计时日志。未说明执行框架和推理设置；比较对象仅称 GPT-6，并非目录中的确切模型。页面时间为相对时间。该报告是不利的任务观察，不能证明模型训练原因，也不是受控成本比较。",
+      "rating_rationale": "报告中的工作能够完成，但可维护性和工作流规范多次令人失望。该分数描述作者的经历；缺少产物，属于低置信度证据。"
+    },
+    "deepseek-v4.1-flash-community-03": {
+      "claim": "作者报告，持续在 OpenCode 中使用该模型，修复既有项目中多个编程 Agent 遗留的问题。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "未提供具体缺陷、代码库、提示词、补丁或测试结果。此前的 Agent 以产品名称描述，因此不能归因到确切模型版本。页面仅显示相对时间。回复中有其他作者关于幻觉的提醒，不能视为本报告已验证的失败。",
+      "rating_rationale": "反复用于修复构成正面任务参考，但缺少可审查补丁的笼统好评仅值得中等编辑评分和低置信度。"
+    },
+    "qwen3.8-27b-community-01": {
+      "claim": "作者报告，在 MacBook Pro M5 Max 上，使用 LM Studio 0.4.21 Build 2、默认 XHigh 推理和 Vontra 的 Qwen3.8-27B-oQ8 MLX 量化版本，成功完成英译日测试。作者的评分器给出满分；推理耗时数分钟。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "使用特定量化版本和运行环境，仅一位作者的翻译测试；文章未提供完整原文、译文或评分标准。评审使用 LLM，而非双语盲评小组。英文页为机器翻译。此分数是编辑判断，并非将作者原始分数除以 10。未采纳附录中转述的评测说法。",
+      "rating_rationale": "明确的翻译方向和可复现环境支持较好的翻译使用报告。缺少测试文本且由 LLM 评分限制了泛化；较慢的 XHigh 推理也有实际成本。"
+    },
+    "qwen3.8-27b-community-02": {
+      "claim": "作者在大量使用 Hermes Agent 后，报告 Ninfer 配合 Qwen3.8-27B NVFP4 出现长时间工具循环和遗忘指令。用 llama-server 配合 Unsloth UD-Q4_K_XL 重跑相同提示词，据称避免了这些循环，尽管小规模评测结果相近。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "这是针对特定量化/推理引擎组合的负面报告，不代表所有 Qwen3.8 部署。量化和引擎同时更换，影响难以分离。未链接提示词或轨迹。未显示确切时间。没有新证据时，不应将负面评分推广到原始精度或 Unsloth/llama-server 配置。",
+      "rating_rationale": "频繁中断和需要提醒指令，使报告中的配置不适合长时间工具任务；对照量化版本表现不同，需保留具体部署条件。"
+    },
+    "qwen3.8-27b-community-03": {
+      "claim": "据报告，TensorSharp 中配有 Playwright skill 的本地 Qwen3.8-27B Agent，一次运行完成了 Amazon 纸张购买的搜索、比较和购买准备。作者负责登录和最终购买授权；附有工具轨迹视频和运行框架代码库链接。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "一个任务、一次运行；没有重复成功率。浏览器操作通过 Playwright 代码完成，不能证明原生截图驱动的图形界面能力。作者开发了所演示的运行框架。未重放链接视频或复现工作流。量化版本未说明；页面确切时间仅以相对时间显示。人工登录和交易授权属于成功配置的一部分。",
+      "rating_rationale": "具体完成的工作流、可获取的运行框架和轨迹支持实用工具调用；人工介入、开发者利益和单次运行限制了置信度。"
+    },
+    "kimi-k3-community-01": {
+      "claim": "Kimi K3 通过 Kimi Code CLI 交付了 Rails 8/RubyLLM/Hotwire/Docker 聊天应用，具有正确的会话回放、受限历史记录和可用的聊天校验。审查发现缺少系统指令、持久化/并发处理较弱、错误覆盖不足。提供了公开结果提交和项目链接。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "仅一次应用开发；Kimi Code 订阅执行框架有 256K 套餐限制。最初的 OpenCode/Moonshot 工具接口不兼容，因此更换了执行框架。公开比较针对较早竞争版本，并非目录中当前后续版本。作者检查了项目；我们打开了结果提交，但未重新运行。不覆盖迁移、后台任务或生产工具操作。证据来自 7 月，须保留其时间影响。",
+      "rating_rationale": "可运行且经过审查的代码库具有具体优点和缺陷，值得较好但并不完整的任务评价；这属于编辑判断，并非换算作者的 89/100 评分。"
+    },
+    "kimi-k3-community-02": {
+      "claim": "First Tree 团队报告，在一个代码库问题中，单独使用 Kimi K3 时安全响应头过于宽松，质量检查薄弱。增加评审 Agent 和共享 Context Tree 后，经过更多迭代产生了更严格的来源限制和测试。文章链接了对比的拉取请求。",
+      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
+      "limitations": "属于自我推广，明确披露了团队身份；评审、共享上下文、迭代次数和支出同时变化。GPT 比较对象是未增加该执行框架的确切旧版本。Claude Opus 负责评分。已打开两个 PR 摘要，支持所述策略差异；未复现测试。PR 日期为 2026 年 7 月 22/27 日，报告确切日期仍未知。跨平台转载计为同一来源主体。",
+      "rating_rationale": "报告展示了独立配置中的明显任务失败，以及强化审查后的改善。中等编辑评价和低置信度保留了两方面结果，不将框架辅助后的成功视为模型本身的优势。"
+    },
+    "mimo-v2.6-pro-community-01": {
+      "claim": "作者报告，MiMo-V2.6-Pro 修复了一个能登录但无法获取关注列表的 Instagram 脚本。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。RL/MOPD 权重修订版和确切测试日期未知。",
+      "limitations": "一次修复经历，没有公开代码库或执行日志。此前模型编写初始脚本，MiMo 负责修复；任务不同，不能据此确立条件相同的胜率。打开的原文仅显示相对时间；确切报告日期未核实。",
+      "rating_rationale": "报告中的故障和修复结果具体，支持正面的调试评价。缺少复现产物，置信度有限。这是我们的编辑判断，不是作者的数值评分或实测成功率。"
+    },
+    "mimo-v2.6-pro-community-02": {
+      "claim": "作者报告，MiMo-V2.6-Pro 未能完成涉及 JEV 状态层的 Agent 架构重构，也在另一次文件树和聊天面板前端修改中遗漏了明确需求。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。RL/MOPD 权重修订版和确切测试日期未知。",
+      "limitations": "两个私人任务，没有代码、完整提示词或验收日志。约 7 小时的耗时为作者自报，不能代表典型延迟。与 Astra 的比较基于既往经历。仅显示相对时间，不推断确切日期。",
+      "rating_rationale": "报告中未遵循需求和未维持架构一致性的情况，构成长工程任务的负面参考。一个人的任务不能确立普遍失败率。"
+    },
+    "mimo-v2.6-pro-community-03": {
+      "claim": "作者报告，Pro 生成的 bubblewrap/Git 写入限制可通过环境变量和命令别名绕过，并给出示例。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。RL/MOPD 权重修订版和确切测试日期未知。",
+      "limitations": "原文包含部分失败示例，但没有完整补丁。所声称的 9 个漏洞中有部分由另一个模型指出，本项目未复现。标题中的 benchmaxxing 指控并非已确立事实。",
+      "rating_rationale": "报告描述了该任务中可绕过的安全边界。保留这些具体失败，不采纳标题对模型的全面否定；总体排行榜分数不能证明该实现正确。"
+    },
+    "mimo-v2.6-pro-community-04": {
+      "claim": "评论者明确使用普通 Pro，而非 Flash 或 UltraSpeed，并报告相对自己使用 V2.5-Pro 的经历，角色互动更生动、提示词遵循更好。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。RL/MOPD 权重修订版和确切测试日期未知。",
+      "limitations": "个人角色扮演偏好，没有完整会话或统一写作标准。不能证明专业写作能力。其他评论表达相反偏好，并担忧过度思考。",
+      "rating_rationale": "变体明确，报告描述了角色互动和提示词遵循，支持试用其处理对话式创意写作。不能证明事实准确性或一般写作优势。"
+    },
+    "mimo-v2.6-pro-community-05": {
+      "claim": "作者对 Pro 和 Flash 提出相同的在线网站 UI/UX 维护需求；据报告，两者均陷入终端 grep 循环，之后由另一模型完成修改。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。发布初期时间根据讨论推断；打开的原文仅显示相对时间。确切测试日期和 RL/MOPD 权重修订版未核实。",
+      "limitations": "没有公开代码库、工具轨迹或模型配置。模型行为和 CommandCode 集成都可能影响结果。对该作者测试的第三方转述须保留相同来源主体，不能增加独立权重。Xiaomi 于 2026 年 9 月 25 日更新了 Pro/Flash 的 API 别名并发布 MOPD 权重。该报告未固定权重版本，循环可能来自较早修订版。降低其对当前部署的参考权重须有明确评估；仅凭公告不能证明该具体故障已经修复。",
+      "rating_rationale": "报告中的工具循环阻碍了交付，对该终端辅助前端维护任务形成负面参考。并非对模型一般智能水平的结论。"
+    },
+    "mimo-v2.6-flash-community-01": {
+      "claim": "同一作者明确报告，在网站 UI/UX 维护任务中，Flash 与 Pro 一样陷入 grep 循环。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。发布初期时间根据讨论推断；打开的原文仅显示相对时间。确切测试日期和 RL/MOPD 权重修订版未核实。",
+      "limitations": "没有公开代码库或完整轨迹。属于同一次测试；第三方摘要不是独立复现。Xiaomi 于 2026 年 9 月 25 日更新了 Pro/Flash 的 API 别名并发布 MOPD 权重。该报告未固定权重版本，循环可能来自较早修订版。降低其对当前部署的参考权重须有明确评估；仅凭公告不能证明该具体故障已经修复。",
+      "rating_rationale": "任务可辨识，但无法根据现有材料复现。该评价对报告所用执行框架中的可靠性不利。"
+    },
+    "mimo-v2.6-flash-community-02": {
+      "claim": "作者在一个意外损坏的工作树中要求创建新分支并执行 cherry-pick，报告 Flash 未能恢复任务，并进行了大量无效终端操作。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。发布初期时间根据讨论推断；打开的原文仅显示相对时间。确切测试日期和 RL/MOPD 权重修订版未核实。",
+      "limitations": "异常代码库状态是实际任务的一部分。未公开完整运行轨迹；作者担心可能造成损坏，不等于确实发生了损坏。同一讨论中其他用户有正面经历。Xiaomi 于 2026 年 9 月 25 日更新了 Pro/Flash 的 API 别名并发布 MOPD 权重。该报告未固定权重版本，循环可能来自较早修订版。降低其对当前部署的参考权重须有明确评估；仅凭公告不能证明该具体故障已经修复。",
+      "rating_rationale": "未能恢复异常代码库状态，对终端 Agent 任务具有参考意义。保留报告中的失败，不推定未经核实的损坏。"
+    },
+    "mimo-v2.6-flash-community-03": {
+      "claim": "一位 OpenCode 用户报告，对 Flash 的初步印象较好：速度快、费用低、所需思考较少。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。RL/MOPD 权重修订版和确切测试日期未知。",
+      "limitations": "没有具体任务、token 数量或延迟测量。这是低置信度的使用印象，不是速度测试。",
+      "rating_rationale": "保留正面的亲身体验，但任务不明确，因此对编程工具工作流只能形成较弱的间接参考。"
+    },
+    "mimo-v2.6-flash-community-04": {
+      "claim": "一位使用过两个模型的用户更偏好 MiMo-V2.6-Flash 的输出，并报告早期循环问题在上游更改及自建路由器循环检测的共同作用下改善。",
+      "setting": "作者使用未固定版本的 Flash API 别名，提到近期上游更改及自己的路由器。确切报告日期和权重修订版未知。",
+      "limitations": "没有具体交付物或可复现轨迹。改善同时涉及模型更新和用户自建路由保护，不能仅归因于模型。报告日期和权重版本未固定。",
+      "rating_rationale": "保留后续正面经历和实际改善，同时保留执行框架的贡献和版本不确定性，避免只收集早期失败。"
+    },
+    "mimo-v2.6-flash-community-05": {
+      "claim": "一位评论者报告，Flash 修复了另一模型未能解决的问题。主 Agent 将工作拆成范围明确的子任务；评论者仍提到过度思考。",
+      "setting": "讨论明确指定 V2.6-Flash，但未固定权重修订版。除报告中明确说明外，确切报告日期和部署设置未知。",
+      "limitations": "缺陷未公开。子任务成功不能证明独立架构设计能力；主 Agent 拆解带来的收益不能全部归因于 Flash。",
+      "rating_rationale": "报告结果支持用明确限定的任务进行调试，同时需考虑其思考耗时以及主 Agent 拆解的帮助。"
+    },
+    "mimo-v2.6-flash-community-06": {
+      "claim": "一位用户报告，在 Alpine Linux 3.23 上使用 OpenCode 1.18.32 和 MiMo-V2.6-Flash，经过数次迭代后出现 Glob/Find/Read 重复操作，并列出复现步骤。",
+      "setting": "问题发表于 2026 年 9 月 22 日，早于官方 9 月 25 日 API 更新，因此属于更新前报告；确切首发权重版本未固定。报告所用执行框架为 Alpine Linux 3.23 上的 OpenCode 1.18.32。",
+      "limitations": "打开的原始问题明确说明了日期、环境和步骤，但没有完整轨迹或具体代码库。抓取时问题仍为开放状态，并不能证明后续修复已被独立验证。",
+      "rating_rationale": "明确的环境和步骤支持对历史工具循环作出负面评价。Xiaomi 后续宣布了针对这类失败的 MOPD 缓解措施，降低了该报告对更新后部署排名的相关性。",
+      "applicability_reason": "原始问题发表于 9 月 22 日，早于官方 9 月 25 日 API 更新，涉及 MOPD 针对的工具重复调用问题。因此降低历史修订版的相关权重；不声称本项目复现了修复。"
+    },
+    "mimo-v2.6-pro-ultraspeed-community-01": {
+      "claim": "作者链接了参考设计和 3 个生成网页，报告 UltraSpeed 的参考设计还原较弱，总制作耗时较长，归因于过度思考，动态背景效果也出现扭曲。",
+      "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。RL/MOPD 权重修订版和确切测试日期未知。",
+      "limitations": "已打开 MiMo 产出页面并确认可访问，但本项目没有进行浏览器视觉验收。没有完整提示词、相同预算或盲评。作者称未要求移动端支持；其他评论者对移动端排名有异议。Astra 变体未明确，不能映射到 GPT-6.1-Sol。",
+      "rating_rationale": "可检查的产物和明确模型变体支持针对具体任务的评价。页面可访问，但作者指出了还原度和动态效果缺陷。该分数是编辑参考，并非我们重新运行得出的视觉质量分数。"
+    }
+  },
+  "models": {
+    "gpt-6-astra": {
+      "notes": [
+        "需另行核查账号权限、地区和工具环境。"
+      ]
+    },
+    "gpt-6-sol": {
+      "notes": [
+        "需另行核查账号权限、地区和工具环境。"
+      ]
+    },
+    "gpt-6.1-sol": {
+      "notes": [
+        "通过 Responses API 支持工具调用；该模型在 Chat Completions 中不支持工具。",
+        "最大输出为 128000 tokens。推理档位：low、medium、high、xhigh、max。",
+        "未复制 GPT-6 Sol 的评测结果；6.1 的具体任务证据单独维护。需核查账号权限和工具环境。"
+      ]
+    },
+    "gpt-6-luna": {
+      "notes": [
+        "需另行核查账号权限、地区和工具环境。"
+      ]
+    },
+    "claude-opus-5-5": {
+      "notes": [
+        "需另行核查账号权限、地区和工具环境。"
+      ]
+    },
+    "claude-sonnet-5-5": {
+      "notes": [
+        "需另行核查账号权限、地区和工具环境。"
+      ]
+    },
+    "claude-fable-5-1": {
+      "notes": [
+        "部分公开评测使用了回退模型；不能将组合结果仅归因于基础模型。"
+      ]
+    },
+    "gemini-3.8-flash": {
+      "notes": [
+        "价格另有来源（gemini-launch）；仅说明能力的来源未用于录入价格。"
+      ]
+    },
+    "deepseek-v4.1-flash": {
+      "notes": [
+        "开放权重不代表适合笔记本部署。需核查推理精度、硬件、许可证和 API 别名。"
+      ]
+    },
+    "qwen3.8-27b": {
+      "notes": [
+        "记录的是原生上下文长度；扩展上下文需要单独配置推理服务并测试质量。"
+      ]
+    },
+    "kimi-k3": {
+      "notes": [
+        "Kimi K3 使用自己的权重许可证。需核查原生视频支持及具体部署的帧数限制。"
+      ]
+    },
+    "grok-4.7": {
+      "notes": [
+        "X/网络搜索需要启用相应工具环境；模型本身并不因此具有最新知识。"
+      ]
+    },
+    "mimo-v2.6-pro": {
+      "notes": [
+        "API id 为 mimo-v2.6-pro。已提供 MIT 许可的 RL 权重版本；API 服务与本地量化结果可能不同。",
+        "官方上下文标为 1M；1000000 是保守记录，并非声称官方给出了未注明的二进制 token 上限。",
+        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
+        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ]
+    },
+    "mimo-v2.6-flash": {
+      "notes": [
+        "API id 为 mimo-v2.6-flash。已提供 MIT 许可的 RL 权重版本；解析器、量化和执行框架都会影响结果。",
+        "官方上下文标为 1M，保守记录为 1000000 tokens。",
+        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
+        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ]
+    },
+    "mimo-v2.6-pro-ultraspeed": {
+      "notes": [
+        "UltraSpeed 是开放权重 Pro 模型的独立服务档位，并非另行发布的权重版本或经过独立评测的模型。",
+        "底层 Pro 权重已开放，但 UltraSpeed 托管服务档位没有可单独下载的权重版本。本地部署应选择 Pro 或 Flash；UltraSpeed 的速度宣传不能迁移到本地服务。",
+        "宣传中最高 20x 的输出速度是厂商说法，不保证端到端任务耗时。不要将 Pro 评测分数复制为 UltraSpeed 的实测结果。",
+        "官方中文模型页列出四种输入；英文页虽以全模态能力为标题，目前仅列文本。这里采用中文页和 API 能力表。",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ]
+    }
+  }
+}

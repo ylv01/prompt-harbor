@@ -186,7 +186,7 @@ class ProjectTests(unittest.TestCase):
     def test_compilation_produces_complete_prompts(self):
         with tempfile.TemporaryDirectory() as d:
             out=Path(d)/'handoffs'
-            m=project.compile_project(self.sample,out,NOW)
+            m=project.compile_project(self.sample,out,NOW,language='en')
             self.assertEqual(len(m['assignments']),4)
             db=next(a for a in m['assignments'] if a['task_id']=='database')
             self.assertEqual(db['model'],'gpt-6-sol')
@@ -217,7 +217,7 @@ class ProjectTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); out=root/'handoffs'; receipts=root/'receipts'; artifacts=root/'artifacts'
             receipts.mkdir(); artifacts.mkdir()
-            m=project.compile_project(self.sample,out,NOW)
+            m=project.compile_project(self.sample,out,NOW,language='en')
             for a in m['assignments']:
                 for path in a['deliverables']:
                     target=artifacts/path; target.parent.mkdir(parents=True,exist_ok=True); target.write_text('test fixture',encoding='utf-8')

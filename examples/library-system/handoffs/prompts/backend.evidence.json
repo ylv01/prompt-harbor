@@ -1,24 +1,25 @@
 {
   "as_of": "2026-09-30",
   "snapshot_date": "2026-09-30",
+  "language": "zh-CN",
   "classification": [
     {
       "id": "software.repo",
-      "domain": "Software",
-      "subdomain": "Maintenance",
-      "label": "Repository implementation"
+      "domain": "软件开发",
+      "subdomain": "维护",
+      "label": "代码库功能实现"
     },
     {
       "id": "data.sql",
-      "domain": "Data",
-      "subdomain": "Querying",
-      "label": "SQL generation"
+      "domain": "数据",
+      "subdomain": "查询",
+      "label": "SQL 生成"
     }
   ],
   "classification_method": "host_semantic",
   "decision": "shortlist",
   "primary": null,
-  "rationale": "Several candidates or setups remain incomparable; use the task-specific trial below.",
+  "rationale": "部分候选的测试条件无法直接比较，可用下方验收方法试做本次任务。",
   "confidence": "limited",
   "recommendations": [
     {
@@ -201,7 +202,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -278,7 +279,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 1,
-      "reason": "Task-matched vendor evaluation for Repository implementation; weighted community reports included (see signed signal and sources); partial task coverage"
+      "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务"
     },
     {
       "model_id": "deepseek-v4.1-flash",
@@ -390,7 +391,7 @@
       ],
       "price": null,
       "limitations": [
-        "Open weights do not imply laptop suitability. Verify serving precision, hardware, license and API alias."
+        "开放权重不代表适合笔记本部署。需核查推理精度、硬件、许可证和 API 别名。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -458,7 +459,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 2,
-      "reason": "Task-matched vendor evaluation for Repository implementation; weighted community reports included (see signed signal and sources); partial task coverage"
+      "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务"
     },
     {
       "model_id": "qwen3.8-27b",
@@ -504,7 +505,7 @@
       ],
       "price": null,
       "limitations": [
-        "Native context recorded; extended context needs a separate serving configuration and quality test."
+        "记录的是原生上下文长度；扩展上下文需要单独配置推理服务并测试质量。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -553,7 +554,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 3,
-      "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage"
+      "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；仅覆盖部分任务"
     }
   ],
   "candidates": [
@@ -737,7 +738,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -924,7 +925,7 @@
       ],
       "price": null,
       "limitations": [
-        "Open weights do not imply laptop suitability. Verify serving precision, hardware, license and API alias."
+        "开放权重不代表适合笔记本部署。需核查推理精度、硬件、许可证和 API 别名。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1036,7 +1037,7 @@
       ],
       "price": null,
       "limitations": [
-        "Native context recorded; extended context needs a separate serving configuration and quality test."
+        "记录的是原生上下文长度；扩展上下文需要单独配置推理服务并测试质量。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1132,7 +1133,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1324,11 +1325,11 @@
         "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
       },
       "limitations": [
-        "API id is mimo-v2.6-flash. MIT-licensed RL checkpoint is available; serving parsers, quantization and harness affect results.",
-        "Official context is stated as 1M; recorded conservatively as 1000000 tokens.",
-        "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
-        "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
-        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+        "API id 为 mimo-v2.6-flash。已提供 MIT 许可的 RL 权重版本；解析器、量化和执行框架都会影响结果。",
+        "官方上下文标为 1M，保守记录为 1000000 tokens。",
+        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
+        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1556,7 +1557,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1680,7 +1681,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Some published evaluations use fallback models; do not attribute the composite result to the base model alone."
+        "部分公开评测使用了回退模型；不能将组合结果仅归因于基础模型。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1842,11 +1843,11 @@
         "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
       },
       "limitations": [
-        "API id is mimo-v2.6-pro. MIT-licensed RL checkpoint is available; API serving and local quantization can differ.",
-        "Official context is stated as 1M; 1000000 is a conservative interpretation rather than claiming an unstated binary-token limit.",
-        "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
-        "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
-        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+        "API id 为 mimo-v2.6-pro。已提供 MIT 许可的 RL 权重版本；API 服务与本地量化结果可能不同。",
+        "官方上下文标为 1M；1000000 是保守记录，并非声称官方给出了未注明的二进制 token 上限。",
+        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
+        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1990,7 +1991,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "X/web search requires an enabled tool environment; it is not intrinsic fresh knowledge."
+        "X/网络搜索需要启用相应工具环境；模型本身并不因此具有最新知识。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -2157,7 +2158,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -2266,9 +2267,9 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Tool calling is supported through Responses API; Chat Completions does not support tools for this model.",
-        "128000 maximum output tokens. Reasoning efforts: low, medium, high, xhigh, max.",
-        "No copied GPT-6 Sol benchmark results: exact 6.1 task evidence is maintained separately. Account access and tool environment require checking."
+        "通过 Responses API 支持工具调用；该模型在 Chat Completions 中不支持工具。",
+        "最大输出为 128000 tokens。推理档位：low、medium、high、xhigh、max。",
+        "未复制 GPT-6 Sol 的评测结果；6.1 的具体任务证据单独维护。需核查账号权限和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -2357,11 +2358,11 @@
         "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, reasoning volume. This tier does not support batch API."
       },
       "limitations": [
-        "UltraSpeed is a separate serving tier of the open-weight Pro checkpoint, not a separate released checkpoint or independently measured benchmark model.",
-        "The underlying Pro weights are open, but the exact UltraSpeed hosted serving tier has no separately downloadable checkpoint. For local deployment choose Pro or Flash; UltraSpeed speed claims do not transfer to local serving.",
-        "Its advertised up-to-20x output speed is a vendor claim, not an end-to-end task latency guarantee. Do not copy Pro benchmark scores into an UltraSpeed measured-result row.",
-        "Official Chinese model page lists all four inputs; English page currently shows only text despite its omni-modal capability heading. Chinese page and API capability table are used here.",
-        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+        "UltraSpeed 是开放权重 Pro 模型的独立服务档位，并非另行发布的权重版本或经过独立评测的模型。",
+        "底层 Pro 权重已开放，但 UltraSpeed 托管服务档位没有可单独下载的权重版本。本地部署应选择 Pro 或 Flash；UltraSpeed 的速度宣传不能迁移到本地服务。",
+        "宣传中最高 20x 的输出速度是厂商说法，不保证端到端任务耗时。不要将 Pro 评测分数复制为 UltraSpeed 的实测结果。",
+        "官方中文模型页列出四种输入；英文页虽以全模态能力为标题，目前仅列文本。这里采用中文页和 API 能力表。",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -2502,7 +2503,7 @@
       ],
       "price": null,
       "limitations": [
-        "Kimi K3 has its own weights license. Native video support and deployment-specific frame limits require verification."
+        "Kimi K3 使用自己的权重许可证。需核查原生视频支持及具体部署的帧数限制。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -2694,7 +2695,7 @@
       ],
       "price": null,
       "limitations": [
-        "Price source is separate (gemini-launch); no price admitted from the capability-only source."
+        "价格另有来源（gemini-launch）；仅说明能力的来源未用于录入价格。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -2768,7 +2769,7 @@
   ],
   "switch": {
     "action": "test_first",
-    "reason": "No matched task trial establishes a worthwhile improvement over the current model."
+    "reason": "尚无针对同一任务的实测证明切换值得，建议先试做再决定。"
   },
   "excluded": [
     {
@@ -2780,11 +2781,11 @@
   ],
   "stale_evidence": [],
   "warnings": [
-    "Some recommendations cover only part of the request; see missing_tasks or split the work."
+    "部分推荐只覆盖本次需求的一部分，请查看 missing_tasks 或拆分任务。"
   ],
   "validation": [
-    "Use the same repository, tests, tools, time budget and acceptance criteria.",
-    "Execute against a sandbox with schema constraints and hidden test cases."
+    "使用相同代码库、测试、工具、时间预算和验收标准。",
+    "在带有模式约束和隐藏测试用例的沙箱中执行查询。"
   ],
   "sources": {
     "opus-launch": {

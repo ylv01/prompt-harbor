@@ -46,6 +46,10 @@ same-name benchmarks can have different task subsets or scoring. Update the
 snapshot date after review, regenerate coverage, community assessments and badges, run validation and
 tests, inspect the diff, and record the change in CHANGELOG.md.
 
+When catalog text changes, update the matching task, evidence and model-note
+translations in `data/locales/zh-CN.json`. Keep IDs, measurements and source
+records unchanged; verify the Chinese rendered recommendation before publishing.
+
 Freshness limits are editorial review policy, not measured half-lives of ability.
 If extending them, explain why the task remains stable. Refreshing `reviewed_on`
 must not erase an old `reported_on`. Browsing output and downloaded source content

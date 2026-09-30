@@ -20,6 +20,7 @@ Create `project.json` next to the contract files:
 ```json
 {
   "schema_version": 1,
+  "language": "en",
   "goal": "A small library system with book reviews",
   "constraints": {"current_model": "gpt-6-sol"},
   "contracts": [{"id": "api", "version": "1.0.0", "path": "contracts/api.yaml"}],
@@ -34,6 +35,21 @@ Create `project.json` next to the contract files:
   "integration": {"checks": ["Run the frontend against a real API and verify book listing."]}
 }
 ```
+
+Use the user's language for the plan and all handoff prompts. Optional `language`
+accepts `auto` (default), `zh-CN` (`zh` is an alias) or `en`. Selection order is
+`compile --language` → explicit project `language` → `constraints.language` →
+automatic detection from the goal and task titles/objectives. Auto recognizes
+Chinese; otherwise the helper uses English. The chosen language is recorded in
+the manifest and controls generated headings, recommendation explanations and
+instructions asking the receiving model to reply in that language.
+
+The host must write supplied goals, objectives, acceptance criteria and checks in
+the intended language. The compiler does not translate those fields or frozen
+contracts. Model IDs, JSON keys/enums, code, paths and original source titles stay
+unchanged. For a Chinese project, use `"language": "zh-CN"` and Chinese task prose;
+inspect PLAN.md and each prompt before delivering them. For other languages,
+the host renders the user-facing documents in the requested language itself.
 
 Optional task `recommended_model` must be evidence-eligible and accompanied by
 `assignment_reason`. This allows the host to choose on task-specific grounds

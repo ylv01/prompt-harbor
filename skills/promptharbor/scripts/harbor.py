@@ -8,6 +8,7 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
+from i18n import catalog_text, message, resolve_language
 
 ROOT = Path(__file__).resolve().parents[1]
 KINDS = {"independent_eval", "vendor_eval", "official_capability", "community_test"}
@@ -19,8 +20,10 @@ def read_json(path):
 
 
 def load_data(root=ROOT):
-    return {name: read_json(root / "data" / f"{name}.json")
+    data = {name: read_json(root / "data" / f"{name}.json")
             for name in ("taxonomy", "models", "sources", "evidence", "policy", "community_research")}
+    data['locale_zh'] = read_json(root / 'data/locales/zh-CN.json')
+    return data
 
 
 def require(condition, message):
@@ -144,8 +147,9 @@ def classify(prompt, data):
 def validate_job(job, data):
     allowed = {"tasks", "prompt", "classification_method", "classification_confidence", "notes",
                "current_model", "available_models", "input_modalities", "context_tokens", "tools_required",
-               "open_weights_only", "allow_preview", "priority", "max_input_price", "max_output_price", "community_weight"}
+               "open_weights_only", "allow_preview", "priority", "max_input_price", "max_output_price", "community_weight", "language"}
     require(isinstance(job, dict) and not set(job) - allowed, "Unknown job field")
+    resolve_language(job.get('language'))
     tasks = {t["id"] for t in data["taxonomy"]["tasks"]}
     require(isinstance(job.get("tasks"), list) and 0 < len(job["tasks"]) <= 6, "Provide 1–6 task IDs")
     require(all(isinstance(t, str) for t in job["tasks"]) and set(job["tasks"]) <= tasks, "Unknown task ID")
@@ -348,6 +352,9 @@ def route(job, data, today=None):
     validate(data)
     validate_job(job, data)
     job = dict(job)
+    language = resolve_language(job.get('language'), job.get('prompt'))
+    def say(template, **values):
+        return message(template, language, **values)
     if "input_modalities" not in job:
         defaults = {"vision.video": "video", "audio.understand": "audio", "vision.chart": "image",
                     "vision.document": "image", "vision.spatial": "image"}
@@ -376,7 +383,7 @@ def route(job, data, today=None):
         candidates.append({"model_id": model["id"], "name": model["name"], "direct_tasks": sorted(direct),
                            "independent_tasks": sorted(independent), "covered_tasks": sorted(coverage),
                            "missing_tasks": sorted(tasks - coverage), "evidence": rows,
-                           "price": model["price_usd_per_million"], "limitations": model["notes"],
+                           "price": model["price_usd_per_million"], "limitations": catalog_text(data, 'models', model['id'], 'notes', model['notes'], language),
                            "resources": {"access": "user_listed" if "available_models" in job else "verify_account_access",
                                          "input_modalities": model["input_modalities"], "context_tokens": model["context_tokens"],
                                          "tool_calling": model["tool_calling"], "open_weights": model["open_weights"],
@@ -392,23 +399,23 @@ def route(job, data, today=None):
     top = [c for c in candidates if key(c) == best_coverage]
     warnings = []
     if len(candidates) < 3:
-        warnings.append(f"Only {len(candidates)} eligible evidence-backed candidates; missing Top 3 slots are not invented.")
+        warnings.append(say('Only {count} eligible evidence-backed candidates; missing Top 3 slots are not invented.', count=len(candidates)))
     if any(c["missing_tasks"] for c in candidates[:3]):
-        warnings.append("Some recommendations cover only part of the request; see missing_tasks or split the work.")
+        warnings.append(say("Some recommendations cover only part of the request; see missing_tasks or split the work."))
     if job.get("classification_method") == "lexical_fallback":
-        warnings.append("Lexical classification is provisional; use host semantic classification for ordinary prompts.")
+        warnings.append(say("Lexical classification is provisional; use host semantic classification for ordinary prompts."))
     if job.get("priority") == "latency":
-        warnings.append("No comparable deployment latency data is bundled; measure end-to-end latency before choosing.")
+        warnings.append(say("No comparable deployment latency data is bundled; measure end-to-end latency before choosing."))
     primary, decision = None, "insufficient_evidence"
-    rationale = "No eligible candidate has fresh evidence for these tasks. Research the missing evidence."
+    rationale = say("No eligible candidate has fresh evidence for these tasks. Research the missing evidence.")
     # Pick a measured Pareto-dominant candidate only inside a curated comparable cohort.
     if candidates:
         decision = "shortlist"
-        rationale = "Several candidates or setups remain incomparable; use the task-specific trial below."
+        rationale = say("Several candidates or setups remain incomparable; use the task-specific trial below.")
         if len(top) == 1:
             primary = top[0]["model_id"]
             decision = "provisional"
-            rationale = "Best evidence coverage in this catalog; this is not proof of superiority over other models."
+            rationale = say("Best evidence coverage in this catalog; this is not proof of superiority over other models.")
         else:
             for candidate in top:
                 wins = []
@@ -423,7 +430,7 @@ def route(job, data, today=None):
                 if wins and all(wins):
                     primary = candidate["model_id"]
                     decision = "provisional"
-                    rationale = "Higher observed result within the same recorded comparison cohort; uncertainty and task transfer remain."
+                    rationale = say("Higher observed result within the same recorded comparison cohort; uncertainty and task transfer remain.")
                     break
         if job.get("priority") == "cost":
             priced = [c for c in top if c["price"] and job.get("context_tokens", 0) <= c["price"]["max_input_tokens"]]
@@ -434,11 +441,11 @@ def route(job, data, today=None):
             if len(cheap) == 1:
                 primary = cheap[0]["model_id"]
                 decision = "provisional"
-                rationale = "Lowest recorded input and output unit rates among equally covered candidates; total task cost remains unknown."
+                rationale = say("Lowest recorded input and output unit rates among equally covered candidates; total task cost remains unknown.")
             else:
-                warnings.append("Cost preference cannot be resolved: rates are missing, tied, or have different tradeoffs.")
+                warnings.append(say("Cost preference cannot be resolved: rates are missing, tied, or have different tradeoffs."))
     current = job.get("current_model")
-    switch = {"action": "unknown", "reason": "Current model was not provided; do not infer it from the assistant's identity."}
+    switch = {"action": "unknown", "reason": say("Current model was not provided; do not infer it from the assistant's identity.")}
     if current:
         known = {m["id"] for m in data["models"]["models"]}
         eligible_current = next((c for c in candidates if c["model_id"] == current), None)
@@ -446,85 +453,99 @@ def route(job, data, today=None):
         hard_incompatible = {"input_modality_not_verified", "context_too_small_or_unknown", "tools_not_verified",
                              "closed_weights", "input_price_over_budget", "output_price_over_budget", "unavailable_or_preview"}
         if current not in known:
-            switch = {"action": "unknown", "reason": "Current model is outside the catalog; verify its exact version and capabilities."}
+            switch = {"action": "unknown", "reason": say("Current model is outside the catalog; verify its exact version and capabilities.")}
         elif candidates and set(hard) & hard_incompatible:
-            switch = {"action": "consider_switch", "reason": "Current model does not meet a verified hard constraint: " + ", ".join(hard)}
+            switch = {"action": "consider_switch", "reason": say('Current model does not meet a verified hard constraint: {constraints}', constraints=', '.join(say(h) for h in hard))}
         elif eligible_current and (primary == current or tasks == {"general.everyday"}):
-            switch = {"action": "stay", "reason": "No demonstrated benefit outweighs moving this task and its context."}
+            switch = {"action": "stay", "reason": say("No demonstrated benefit outweighs moving this task and its context.")}
         elif candidates and eligible_current:
-            switch = {"action": "test_first", "reason": "No matched task trial establishes a worthwhile improvement over the current model."}
+            switch = {"action": "test_first", "reason": say("No matched task trial establishes a worthwhile improvement over the current model.")}
         else:
-            switch = {"action": "unknown", "reason": "Fresh comparable evidence about the current model is missing."}
+            switch = {"action": "unknown", "reason": say("Fresh comparable evidence about the current model is missing.")}
     task_map = {t["id"]: t for t in data["taxonomy"]["tasks"]}
+    def task_text(task_id, field):
+        return catalog_text(data, 'tasks', task_id, field, task_map[task_id][field], language)
     stale = [e["id"] for e in relevant if not evidence_fresh(e, data, today)]
     if stale:
-        warnings.append(f"{len(stale)} relevant evidence records are stale or future-dated and were excluded.")
+        warnings.append(say('{count} relevant evidence records are stale or future-dated and were excluded.', count=len(stale)))
     if primary and job.get("priority") == "cost":
         candidates.sort(key=lambda c: c["model_id"] != primary)
     elif primary and candidates[0]["model_id"] != primary:
         primary = None
         decision = "shortlist"
-        rationale = "Weighted task support and the comparison cohort differ; choose from Top 3 using access and a task trial."
+        rationale = say("Weighted task support and the comparison cohort differ; choose from Top 3 using access and a task trial.")
     recommendations = []
     for rank, c in enumerate(candidates[:3], 1):
         community = any(t["community_origins"] for t in c["ranking"]["tasks"])
-        reason = ("Task-matched independent evaluation" if c["independent_tasks"] else
+        reason = say("Task-matched independent evaluation" if c["independent_tasks"] else
                   "Task-matched vendor evaluation" if c["direct_tasks"] else "Capability or adjacent-task support")
         if all(e['kind'] == 'community_test' for e in c['evidence']):
-            reason = "Community task reports only; a task trial is needed"
-        reason += " for " + ", ".join(task_map[t]["label"] for t in c["covered_tasks"])
+            reason = say("Community task reports only; a task trial is needed")
+        reason += say(" for ") + ", ".join(task_text(t, 'label') for t in c["covered_tasks"])
         if community:
-            reason += "; weighted community reports included (see signed signal and sources)"
+            reason += say("; weighted community reports included (see signed signal and sources)")
         if c["missing_tasks"]:
-            reason += "; partial task coverage"
+            reason += say("; partial task coverage")
         recommendations.append({**c, "rank": rank, "reason": reason})
-    return {"as_of": today.isoformat(), "snapshot_date": data["models"]["snapshot_date"],
-            "classification": [{k: task_map[t][k] for k in ("id", "domain", "subdomain", "label")} for t in job["tasks"]],
+    return {"as_of": today.isoformat(), "snapshot_date": data["models"]["snapshot_date"], 'language': language,
+            "classification": [{'id': t, **{k: task_text(t, k) for k in ('domain', 'subdomain', 'label')}} for t in job["tasks"]],
             "classification_method": job.get("classification_method", "structured_job"),
             "decision": decision, "primary": primary, "rationale": rationale,
             "confidence": "insufficient" if not candidates else "limited",
             "recommendations": recommendations, "candidates": candidates, "switch": switch, "excluded": excluded,
             "stale_evidence": stale, "warnings": warnings,
-            "validation": [task_map[t]["validation"] for t in job["tasks"]],
+            "validation": [task_text(t, 'validation') for t in job["tasks"]],
             "sources": {sid: sources[sid] for c in candidates for e in c['evidence']
                         for sid in [e['source_id'], *([e['community']['applicability']['source_id']]
                         if e.get('community', {}).get('applicability') else [])]}}
 
 
-def markdown(result):
+def markdown(result, data=None):
+    language = result.get('language', 'en')
+    if language == 'zh-CN' and data is None:
+        data = load_data()
+    def say(template, **values):
+        return message(template, language, **values)
+    def evidence_text(ev, field, original=None):
+        return catalog_text(data, 'evidence', ev['id'], field,
+                            ev[field] if original is None else original, language) if data else (ev[field] if original is None else original)
     lines = ["# PromptHarbor", "", " → ".join(t["label"] for t in result["classification"]), "",
-             f"**Decision:** {result['decision']} · **Confidence:** {result['confidence']}",
-             "**Top 3:** choose using task fit and the models you can access.", "",
-             f"**Switch:** {result['switch']['action']} — {result['switch']['reason']}", ""]
+             f"**{say('Decision')}:** {say(result['decision'])} · **{say('Confidence')}:** {say(result['confidence'])}",
+             '**Top 3:** '+say('choose using task fit and the models you can access.'), '',
+             f"**{say('Switch')}:** {say(result['switch']['action'])} — {result['switch']['reason']}", ""]
     for candidate in result["recommendations"]:
         lines += [f"## {candidate['rank']}. {candidate['name']}", "", candidate["reason"], ""]
         resources = candidate["resources"]
-        lines += [f"Access: {resources['access']}; open weights: {resources['open_weights']}; context: {resources['context_tokens'] or 'unknown'} tokens."]
+        lines += [say('Access: {access}; open weights: {weights}; context: {context} tokens.',
+                      access=say(resources['access']), weights=say('yes' if resources['open_weights'] else 'no'),
+                      context=resources['context_tokens'] or say('unknown'))]
         price = candidate["price"]
-        lines += ([f"Recorded API input/output: ${price['input']}/${price['output']} per million tokens; subscription entitlement is separate."]
-                  if resources["price_applies"] else ["Applicable API price: unknown; check provider and account."])
+        lines += ([say('Recorded API input/output: ${input}/${output} per million tokens; subscription entitlement is separate.', input=price['input'], output=price['output'])]
+                  if resources["price_applies"] else [say('Applicable API price: unknown; check provider and account.')])
         for task in candidate["ranking"]["tasks"]:
-            score = f"{task['community_score']}/10" if task['community_score'] is not None else 'not rated'
-            lines.append(f"Community: {task['task']}, {score} ({task['community_confidence']} confidence; {task['community_mapping']} mapping), weight {task['community_weight']:.0%}, origins {task['community_origins']}.")
+            score = f"{task['community_score']}/10" if task['community_score'] is not None else say('not rated')
+            lines.append(say('Community: {task}, {score} ({confidence} confidence; {mapping} mapping), weight {weight}, origins {origins}.',
+                             task=task['task'], score=score, confidence=say(task['community_confidence']),
+                             mapping=say(task['community_mapping']), weight=f"{task['community_weight']:.0%}", origins=task['community_origins']))
         # Keep community evidence visible even when several formal records precede it.
         formal = [e for e in candidate["evidence"] if e["kind"] != "community_test"]
         community = [e for e in candidate["evidence"] if e["kind"] == "community_test"]
         for ev in formal[:2] + community:
             source = result["sources"][ev["source_id"]]
-            lines.append(f"- {ev['claim']} ({ev['kind']}; {ev['setting']}). [Source]({source['url']})")
-            lines.append(f"  Limit: {ev['limitations']} Report date: {ev['reported_on'] or 'not reported'}; reviewed {ev['reviewed_on']}.")
+            lines.append(f"- {evidence_text(ev, 'claim')} ({say(ev['kind'])}; {evidence_text(ev, 'setting')}). [{say('Source')}]({source['url']})")
+            lines.append(f"  {say('Limit')}: {evidence_text(ev, 'limitations')} {say('Report date')}: {ev['reported_on'] or say('not reported')}; {say('reviewed')} {ev['reviewed_on']}.")
             if ev['kind'] == 'community_test':
                 rating = ev['community']['rating']
-                lines.append(f"  Editorial assessment: {rating['value']}/10 — {rating['rationale']}")
+                lines.append('  '+say('Editorial assessment: {score}/10 — {reason}', score=rating['value'], reason=evidence_text(ev, 'rating_rationale', rating['rationale'])))
                 if ev['community'].get('applicability'):
                     a = ev['community']['applicability']
                     source = result['sources'][a['source_id']]
-                    lines.append(f"  Current-revision relevance: {a['weight']} × — {a['reason']} [{source['title']}]({source['url']}).")
-        lines += ["", "Limits: " + " ".join(candidate["limitations"]), ""]
-    lines += ["## Validation", ""] + [f"- {v}" for v in result["validation"]]
+                    lines.append('  '+say('Current-revision relevance: {weight} × — {reason}', weight=a['weight'], reason=evidence_text(ev, 'applicability_reason', a['reason']))+f" [{source['title']}]({source['url']}).")
+        lines += ["", say('Limits')+': '+" ".join(candidate["limitations"]), ""]
+    lines += ["## "+say('Validation'), ""] + [f"- {v}" for v in result["validation"]]
     if result["warnings"]:
-        lines += ["", "## Selection notes", ""] + [f"- {v}" for v in result["warnings"]]
-    lines += ["", f"As of {result['as_of']}; bundled snapshot {result['snapshot_date']}.", ""]
+        lines += ["", "## "+say('Selection notes'), ""] + [f"- {v}" for v in result["warnings"]]
+    lines += ["", say('As of {as_of}; bundled snapshot {snapshot}.', as_of=result['as_of'], snapshot=result['snapshot_date']), ""]
     return "\n".join(lines)
 
 
@@ -554,6 +575,7 @@ def main(argv=None):
     choice.add_argument("--stdin", action="store_true")
     p.add_argument("--as-of", type=iso, default=date.today())
     p.add_argument("--format", choices=["json", "markdown"], default="markdown")
+    p.add_argument('--language', choices=['auto', 'zh-CN', 'zh', 'en'], help='Override the job language; auto follows the prompt.')
     p = sub.add_parser("audit")
     p.add_argument("--as-of", type=iso, default=date.today())
     p.add_argument("--fail-due", action="store_true")
@@ -573,6 +595,8 @@ def main(argv=None):
             output = community_report(data, args.as_of)
         else:
             job = read_json(args.job) if args.job else classify(sys.stdin.read() if args.stdin else args.prompt, data)
+            if args.language is not None:
+                job['language'] = args.language
             output = route(job, data, args.as_of)
             if args.format == "markdown":
                 print(markdown(output))

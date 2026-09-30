@@ -1,24 +1,25 @@
 {
   "as_of": "2026-09-30",
   "snapshot_date": "2026-09-30",
+  "language": "zh-CN",
   "classification": [
     {
       "id": "data.schema",
-      "domain": "Data",
-      "subdomain": "Database design",
-      "label": "Database schema design"
+      "domain": "数据",
+      "subdomain": "数据库设计",
+      "label": "数据库表结构设计"
     }
   ],
   "classification_method": "host_semantic",
   "decision": "insufficient_evidence",
   "primary": null,
-  "rationale": "No eligible candidate has fresh evidence for these tasks. Research the missing evidence.",
+  "rationale": "这些任务目前没有具备有效证据的合适候选，需要补充相关资料。",
   "confidence": "insufficient",
   "recommendations": [],
   "candidates": [],
   "switch": {
     "action": "unknown",
-    "reason": "Fresh comparable evidence about the current model is missing."
+    "reason": "缺少当前模型的有效可比证据，暂时无法判断切换收益。"
   },
   "excluded": [
     {
@@ -114,10 +115,10 @@
   ],
   "stale_evidence": [],
   "warnings": [
-    "Only 0 eligible evidence-backed candidates; missing Top 3 slots are not invented."
+    "目前只有 0 个符合条件且有依据的候选模型，Top 3 的空缺保留。"
   ],
   "validation": [
-    "Apply migrations to a disposable database and verify constraints, indices, transactions and seed idempotence."
+    "在临时数据库上执行迁移，验证约束、索引、事务和种子数据的幂等性。"
   ],
   "sources": {}
 }

@@ -14,7 +14,21 @@ from build_docs import outputs
 
 def check():
     errors=[]
-    validate(load_data())
+    data=load_data();validate(data)
+    locale=data['locale_zh']
+    for section,rows,fields in [('tasks',data['taxonomy']['tasks'],('domain','subdomain','label','validation')),
+                                ('evidence',data['evidence']['evidence'],('claim','setting','limitations')),
+                                ('models',data['models']['models'],('notes',))]:
+        translations=locale[section]
+        if set(translations)!={row['id'] for row in rows}:
+            errors.append('Chinese translation coverage differs from '+section)
+        for row in rows:
+            required=list(fields)
+            if section=='evidence' and row['kind']=='community_test':
+                required.append('rating_rationale')
+                if row['community'].get('applicability'):required.append('applicability_reason')
+            if any(not translations.get(row['id'],{}).get(field) for field in required):
+                errors.append('Missing Chinese text: '+row['id'])
     required=['LICENSE','README.md','README.zh-CN.md','CHANGELOG.md','THIRD_PARTY.md',
               'assets/brand/social-preview.png','assets/brand/avatar.png','evals/host-cases.json',
               'skills/promptharbor/assets/logo.svg','skills/promptharbor/assets/avatar.png',

@@ -2,7 +2,7 @@
 
 Observed locally on Windows with Python 3.13.9:
 
-- **60 unittest cases passed**, covering catalog links, task filters, incompatible
+- **70 unittest cases passed**, covering catalog links, task filters, incompatible
   metrics, missing and stale data, unknown current models, proxy consistency,
   dependency cycles, artifact ownership, interface versions and missing deliveries.
 - Skill Creator's `quick_validate.py` accepted the portable skill. Windows
@@ -14,7 +14,11 @@ Observed locally on Windows with Python 3.13.9:
   outside the repository. The extracted skill runs independently of the repository.
 - Top 3 checks cover resource filtering, changing rank with community weights,
   duplicate suppression, negative evidence, unknown-date expiry, hard constraints
-  and user-selected project handoffs. The 15 host behavioral cases remain fixtures.
+  and user-selected project handoffs. The 16 host behavioral cases remain fixtures.
+- Chinese requests generate Chinese plans, handoff instructions, recommendation
+  explanations, evidence summaries and validation guidance. Explicit English and
+  CLI overrides work, language does not change ranking, frozen contract bytes
+  remain unchanged, and the standalone ZIP includes the locale data and helper.
 - New community checks cover 0–10 task ratings, missing scores, artifact/directness
   weighting, future assessment exclusion, all-model search coverage and source-linked
   CLI reports. GPT-6.1 Sol and all three MiMo variants pass explicit resource filtering.

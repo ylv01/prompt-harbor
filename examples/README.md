@@ -11,6 +11,9 @@ this snapshot; omit it for current advice.
 already has access to, with 30% community weighting. It shows Top 3 choices,
 sources, resources and the signed community effect. Run:
 
+See the saved [English output](frontend-output.md) and
+[Chinese output](frontend-output.zh-CN.md); only the presentation language differs.
+
 ```sh
 python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.json
 ```
@@ -44,6 +47,14 @@ Open `out/library-handoffs/PLAN.md`. Copy each complete prompt in `prompts/` int
 the selected model's conversation. Start frontend and database together; provide
 database output to backend; give all implementations to QA. Return all results
 to the original conversation for integration.
+
+This example's project goal, task descriptions, generated plan and prompts are in
+Chinese. With no explicit language setting, the compiler automatically resolves
+`zh-CN` from the Chinese goal and task descriptions. An explicit `--language en`
+changes helper headings and instructions, while supplied prose and frozen
+contracts retain their text. For a fully English project, write the supplied task
+fields in English too. The skill checks generated documents, not just its chat
+response, against the user's requested language.
 
 The example interprets “评价” as user ratings and book reviews. It is a small
 local demonstration, not a complete production library system. Technology choices

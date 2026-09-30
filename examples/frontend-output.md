@@ -11,7 +11,7 @@ Generative visual web design
 
 Capability or adjacent-task support for Generative visual web design
 
-Access: user_listed; open weights: False; context: 1050000 tokens.
+Access: user_listed; open weights: no; context: 1050000 tokens.
 Recorded API input/output: $2/$10 per million tokens; subscription entitlement is separate.
 Community: software.frontend.design, not rated (insufficient confidence; none mapping), weight 30%, origins 0.
 - gpt-6-sol-max: observed WebDev preference rating 1681. (independent_eval; gpt-6-sol-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)
@@ -23,7 +23,7 @@ Limits: Account access, region and tool environment must be checked separately.
 
 Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources)
 
-Access: user_listed; open weights: True; context: 1048576 tokens.
+Access: user_listed; open weights: yes; context: 1048576 tokens.
 Applicable API price: unknown; check provider and account.
 Community: software.frontend.design, 7.0/10 (low confidence; direct_and_proxy mapping), weight 30%, origins 3.
 - kimi-k3-max: observed WebDev preference rating 1660. (independent_eval; kimi-k3-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)
@@ -44,7 +44,7 @@ Limits: Kimi K3 has its own weights license. Native video support and deployment
 
 Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources)
 
-Access: user_listed; open weights: True; context: 1000000 tokens.
+Access: user_listed; open weights: yes; context: 1000000 tokens.
 Applicable API price: unknown; check provider and account.
 Community: software.frontend.design, 8.0/10 (low confidence; direct mapping), weight 30%, origins 1.
 - deepseek-v4.1-flash-max: observed WebDev preference rating 1621. (independent_eval; deepseek-v4.1-flash-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)

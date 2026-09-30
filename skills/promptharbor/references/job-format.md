@@ -5,6 +5,7 @@ All fields except `tasks` are optional. Unknown fields fail validation.
 ```json
 {
   "tasks": ["finance.backtest", "software.repo"],
+  "language": "auto",
   "classification_method": "host_semantic",
   "classification_confidence": "high",
   "current_model": "gpt-6-sol",
@@ -30,6 +31,13 @@ headroom; unknown should be omitted. `priority`: quality (default), cost or late
 not subscription prices or total request budgets. Unknown pricing fails a hard cap.
 `prompt`: optional original request, local only; omit sensitive text when sharing.
 
+`language`: `auto` (default), `zh-CN` (`zh` alias) or `en`. An explicit
+`recommend --language` overrides the job setting. Auto recognizes Chinese in the
+job's prompt; otherwise helper output is English. The resolved language is
+included in the result and applies to recommendation reasons, explanations and
+Markdown headings. Supplied notes and original source titles retain their text;
+the host writes its explanations and saved documents in the user's language.
+
 `community_weight`: optional number from 0 to 0.4. Omit to use task-specific
 defaults; 0 disables community influence. See [community policy](community.md).
 Tell the host which exact models your subscriptions/APIs provide when you want
@@ -42,4 +50,4 @@ count), each with `reason`, `resources`, evidence and a `ranking` audit breakdow
 provisional primary (or null), evidence
 records, source links, switch decision, excluded models with reasons, stale record
 IDs and task-specific validation checks. Helper JSON is intended for the host;
-the skill renders a concise answer in the user's language.
+the skill renders a concise answer in the user's language, including saved files.

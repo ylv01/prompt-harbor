@@ -3,7 +3,7 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.3.0"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.3.1"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
   <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-09-30"></a>
 </p>
@@ -83,6 +83,8 @@ flowchart LR
   quality, author deduplication and adverse reports affect their influence.
 - **Handles handoffs:** complete prompts printed in the current conversation,
   contracts, file ownership, dependency order and return receipts.
+- **Keeps documents in your language:** Chinese requests produce Chinese plans,
+  recommendation explanations and handoff prompts, as well as Chinese chat replies.
 - **Keeps switching practical:** stay, test first, consider switching, or unknown.
   Reusing one model across components is often reasonable.
 - **Works across providers:** cloud and open-weight candidates are considered.
@@ -136,6 +138,12 @@ and receipts back to the main conversation. The skill reviews and integrates
 them in the authorized workspace. This is user-mediated coordination, not a
 service that logs into model providers or dispatches API calls.
 
+Plans and full handoff prompts follow the user's language. Local helpers support
+`language: "auto"`, `"zh-CN"` (`"zh"` alias) and `"en"`; `--language` overrides
+the JSON setting. Auto recognizes Chinese prompt/project text and otherwise uses
+English. The host writes supplied task descriptions in the intended language;
+model IDs, code, paths, JSON fields and frozen contracts retain their original text.
+
 ## Try the local helpers
 
 ```sh
@@ -145,6 +153,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.j
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "Summarize this video"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
+python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
 python -m unittest discover -s tests -v
 ```
 

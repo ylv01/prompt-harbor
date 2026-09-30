@@ -1,18 +1,19 @@
 {
   "as_of": "2026-09-30",
   "snapshot_date": "2026-09-30",
+  "language": "zh-CN",
   "classification": [
     {
       "id": "software.testing",
-      "domain": "Software",
-      "subdomain": "Quality",
-      "label": "Test design"
+      "domain": "软件开发",
+      "subdomain": "质量保障",
+      "label": "测试设计"
     }
   ],
   "classification_method": "host_semantic",
   "decision": "shortlist",
   "primary": null,
-  "rationale": "Several candidates or setups remain incomparable; use the task-specific trial below.",
+  "rationale": "部分候选的测试条件无法直接比较，可用下方验收方法试做本次任务。",
   "confidence": "limited",
   "recommendations": [
     {
@@ -94,7 +95,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -139,7 +140,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 1,
-      "reason": "Capability or adjacent-task support for Test design; weighted community reports included (see signed signal and sources)"
+      "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源"
     },
     {
       "model_id": "gpt-6-sol",
@@ -181,7 +182,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -216,7 +217,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 2,
-      "reason": "Capability or adjacent-task support for Test design"
+      "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计"
     },
     {
       "model_id": "kimi-k3",
@@ -306,7 +307,7 @@
       ],
       "price": null,
       "limitations": [
-        "Kimi K3 has its own weights license. Native video support and deployment-specific frame limits require verification."
+        "Kimi K3 使用自己的权重许可证。需核查原生视频支持及具体部署的帧数限制。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -361,7 +362,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 3,
-      "reason": "Community task reports only; a task trial is needed for Test design; weighted community reports included (see signed signal and sources)"
+      "reason": "目前依据为社区任务报告，需要实际试做，对应任务：测试设计；已计入社区评价，可查看评分及来源"
     }
   ],
   "candidates": [
@@ -444,7 +445,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -529,7 +530,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -652,7 +653,7 @@
       ],
       "price": null,
       "limitations": [
-        "Kimi K3 has its own weights license. Native video support and deployment-specific frame limits require verification."
+        "Kimi K3 使用自己的权重许可证。需核查原生视频支持及具体部署的帧数限制。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -757,7 +758,7 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -805,7 +806,7 @@
   ],
   "switch": {
     "action": "test_first",
-    "reason": "No matched task trial establishes a worthwhile improvement over the current model."
+    "reason": "尚无针对同一任务的实测证明切换值得，建议先试做再决定。"
   },
   "excluded": [
     {
@@ -878,7 +879,7 @@
   "stale_evidence": [],
   "warnings": [],
   "validation": [
-    "Measure faults detected and false positives, not test count."
+    "衡量发现的真实缺陷和误报，而不是测试数量。"
   ],
   "sources": {
     "opus-launch": {

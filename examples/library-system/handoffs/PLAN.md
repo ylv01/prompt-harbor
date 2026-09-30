@@ -1,39 +1,39 @@
-# Project handoffs
+# 项目分工计划
 
 制作一个本地图书管理系统：浏览和新增图书、查看详情、提交评分与书评。此示例不包含账号、借阅或公开部署。
 
-Integration owner: **this conversation**. No models are called or changed automatically.
+集成负责人：**当前主窗口**。模型由用户选择和使用，本计划不会自动调用或切换模型。
 
-| Part | Top 3 choices | Planning default | Dependencies | Prompt |
+| 项目部分 | Top 3 候选模型 | 计划默认模型 | 依赖 | 提示词 |
 |---|---|---|---|---|
-| frontend | 1. GPT-6 Astra, 2. Claude Opus 5.5, 3. Claude Fable 5.1 | gpt-6-sol | None | [Copy prompt](prompts/frontend.md) |
-| database | Evidence gap; baseline only | gpt-6-sol | None | [Copy prompt](prompts/database.md) |
-| backend | 1. Claude Opus 5.5, 2. DeepSeek-V4.1-Flash, 3. Qwen3.8-27B | claude-opus-5-5 | database | [Copy prompt](prompts/backend.md) |
-| qa | 1. Claude Opus 5.5, 2. GPT-6 Sol, 3. Kimi K3 | gpt-6-sol | frontend, database, backend | [Copy prompt](prompts/qa.md) |
+| 前端：图书列表、详情与书评 (`frontend`) | 1. GPT-6 Astra, 2. Claude Opus 5.5, 3. Claude Fable 5.1 | gpt-6-sol | 无 | [复制提示词](prompts/frontend.md) |
+| 数据库：结构、约束与样例数据 (`database`) | 证据不足，先保留当前模型 | gpt-6-sol | 无 | [复制提示词](prompts/database.md) |
+| 后端：API 与事务 (`backend`) | 1. Claude Opus 5.5, 2. DeepSeek-V4.1-Flash, 3. Qwen3.8-27B | claude-opus-5-5 | database | [复制提示词](prompts/backend.md) |
+| 集成测试：真实端到端流程 (`qa`) | 1. Claude Opus 5.5, 2. GPT-6 Sol, 3. Kimi K3 | gpt-6-sol | frontend, database, backend | [复制提示词](prompts/qa.md) |
 
-## Assignment basis
+## 分工依据
 
-- **frontend:** Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model. [Evidence and gaps](prompts/frontend.evidence.json)
-  Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
-- **database:** Keep the current feasible model as a baseline; no comparative task advantage is established. [Evidence and gaps](prompts/database.evidence.json)
-- **backend:** 仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。 [Evidence and gaps](prompts/backend.evidence.json)
-  Sources: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 found two defects in the author's Stackchan/Home Assistant code](https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/)
-- **qa:** Keep the current feasible model as the planning baseline; Top 3 remain available choices. No matched task trial establishes a worthwhile improvement over the current model. [Evidence and gaps](prompts/qa.evidence.json)
-  Sources: [GPT-6 Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
+- **前端：图书列表、详情与书评:** 继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。 [证据与缺口](prompts/frontend.evidence.json)
+  来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
+- **数据库：结构、约束与样例数据:** 继续以当前可用模型作为默认，尚无证据证明其他模型在该任务上更合适。 [证据与缺口](prompts/database.evidence.json)
+- **后端：API 与事务:** 仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。 [证据与缺口](prompts/backend.evidence.json)
+  来源: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 found two defects in the author's Stackchan/Home Assistant code](https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/)
+- **集成测试：真实端到端流程:** 继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。 [证据与缺口](prompts/qa.evidence.json)
+  来源: [GPT-6 Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
 
-## Execution batches
+## 执行顺序
 
 1. frontend, database
 2. backend
 3. qa
 
-## Main-window integration
+## 主窗口集成步骤
 
-1. Collect exact files and receipts from each model; retain originals.
-2. Run verify-deliveries. A valid receipt only means the handoff is structurally ready.
-3. Review implementations, resolve interface mismatches, apply migrations in a disposable database, and assemble the project.
-4. Execute the checks below. Fix integration defects; return changed contracts to affected task owners.
-5. Report observed results and remaining gaps. Do not equate model self-reports with verification.
+1. 收集各模型返回的完整文件和回执，保留原始交付。
+2. 运行 verify-deliveries 核对交付；回执通过仅表示交付结构完整。
+3. 审查实现、修正接口不一致，在临时数据库中验证迁移，再组装项目。
+4. 执行下方验收检查，修复集成问题；若契约有变更，将新版本发给受影响的任务负责人。
+5. 汇报实际验证结果和剩余问题，模型自述不能代替验收。
 
 - 主窗口对照接口约定审阅全部返回文件；把各目录拼接到新的本地演示工程。
 - 在可丢弃的 PostgreSQL 16 库应用 schema、seed 与 checks.sql；复跑 seed 验证幂等。
