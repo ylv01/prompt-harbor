@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-29",
-  "snapshot_date": "2026-09-29",
+  "as_of": "2026-09-30",
+  "snapshot_date": "2026-09-30",
   "classification": [
     {
       "id": "software.repo",
@@ -90,6 +90,108 @@
           "reported_on": "2026-09-22",
           "reviewed_on": "2026-09-29",
           "comparison_group": null
+        },
+        {
+          "id": "claude-opus-5-5-community-01",
+          "model_id": "claude-opus-5-5",
+          "source_id": "community-source-044",
+          "kind": "community_test",
+          "claim": "In Claude Desktop, Opus 5.5 traced corrupted speech to two upstream Home Assistant entity-query defects in the author's existing robot project.",
+          "direct_tasks": [
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "One project/session; no matched comparison or public patch inspected. Author uses AI for editing but states editorial responsibility.",
+          "reported_on": "2026-09-23",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Alex Januschewsky",
+            "origin_id": "alex-januschewsky-stackchan-20260923",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 8.0,
+              "rationale": "Concrete symptom-to-cause success supports debugging usefulness; the single private case does not support a near-perfect general rating.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "claude-opus-5-5-community-02",
+          "model_id": "claude-opus-5-5",
+          "source_id": "community-source-045",
+          "kind": "community_test",
+          "claim": "The author reran code-review, Git-workflow and documentation tasks three times; Opus 5.5 performed well with skills but unassisted outputs varied.",
+          "direct_tasks": [
+            "software.debug",
+            "writing.professional"
+          ],
+          "proxy_tasks": [
+            "software.repo",
+            "software.terminal"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Small checklist tasks; Opus 5 judge; model defaults use different effort levels. Git rubric can saturate; raw-file link returned a fetch error, so it was not independently inspected.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "maverick_man1111",
+            "origin_id": "maverick-man1111-driftproof-013",
+            "grade": "firsthand",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://driftproofhq.com/reports/013/"
+            ],
+            "rating": {
+              "value": 7.0,
+              "rationale": "Repeated task results are more useful than enthusiasm; variability and rubric saturation limit stronger conclusions.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "claude-opus-5-5-community-03",
+          "model_id": "claude-opus-5-5",
+          "source_id": "community-source-046",
+          "kind": "community_test",
+          "claim": "A commenter reports a 17-slice refactor of 120k lines of tests on separate branches: Opus 5.5 high left more rule violations and took longer than Sonnet 5.5 high.",
+          "direct_tasks": [
+            "software.repo",
+            "software.testing"
+          ],
+          "proxy_tasks": [],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Self-reported private repository and three-layer review; no patches, prompts or timings independently inspected. One refactor workload does not establish a model-wide ordering.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Outrageous-Issue9722 (comment)",
+            "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 4.0,
+              "rationale": "Retains a concrete adverse implementation report despite positive Opus feedback elsewhere; low confidence prevents overgeneralization.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
         }
       ],
       "price": {
@@ -114,18 +216,49 @@
       },
       "metadata_url": "https://platform.claude.com/docs/en/models/overview",
       "ranking": {
-        "support": 0.255,
+        "support": 0.256195,
         "tasks": [
           {
             "task": "software.repo",
             "formal_support": 0.6,
             "evidence_strength": 0.8,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
+            "community_signal": 0.015935,
             "community_weight": 0.15,
-            "community_origins": 0,
-            "origins": [],
-            "support": 0.51
+            "community_origins": 3,
+            "community_score": 6.0,
+            "community_confidence": "low",
+            "community_mapping": "direct_and_proxy",
+            "origins": [
+              {
+                "origin_id": "alex-januschewsky-stackchan-20260923",
+                "score": 8.0,
+                "reliability": 0.08300845742273454,
+                "signal": 0.049805,
+                "evidence_ids": [
+                  "claude-opus-5-5-community-01"
+                ]
+              },
+              {
+                "origin_id": "maverick-man1111-driftproof-013",
+                "score": 7.0,
+                "reliability": 0.045000000000000005,
+                "signal": 0.018,
+                "evidence_ids": [
+                  "claude-opus-5-5-community-02"
+                ]
+              },
+              {
+                "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+                "score": 4.0,
+                "reliability": 0.1,
+                "signal": -0.02,
+                "evidence_ids": [
+                  "claude-opus-5-5-community-03"
+                ]
+              }
+            ],
+            "support": 0.51239025
           },
           {
             "task": "data.sql",
@@ -135,6 +268,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -142,7 +278,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 1,
-      "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage"
+      "reason": "Task-matched vendor evaluation for Repository implementation; weighted community reports included (see signed signal and sources); partial task coverage"
     },
     {
       "model_id": "deepseek-v4.1-flash",
@@ -184,6 +320,72 @@
           "reported_on": null,
           "reviewed_on": "2026-09-29",
           "comparison_group": null
+        },
+        {
+          "id": "deepseek-v4.1-flash-community-02",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "community-source-057",
+          "kind": "community_test",
+          "claim": "The author reports code that passes immediate checks but accumulates nested branches, duplicated logic and local fixes. On PDF/slide workflows the model reportedly took unnecessary tool detours, weakening total task efficiency despite fast generation.",
+          "direct_tasks": [
+            "software.repo",
+            "agent.workflow"
+          ],
+          "proxy_tasks": [
+            "software.debug"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "No prompts, repository, tool traces or timed logs are published. Harness and reasoning settings are unspecified; comparator is only called GPT-6 and is not an exact catalog model. Page timestamp is relative. The report is an adverse task observation, not a verified causal claim about model training or a controlled cost comparison.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Logical_Catch_3207",
+            "origin_id": "reddit-logical-catch-3207-deepseek41-maintenance",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 3.5,
+              "rationale": "The reported work completes but maintainability and workflow discipline repeatedly disappoint. The score describes this author's account; missing artifacts make it low-confidence evidence.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "deepseek-v4.1-flash-community-03",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "community-source-058",
+          "kind": "community_test",
+          "claim": "The author reports continuous use in OpenCode to repair problems left in an existing project by several coding agents.",
+          "direct_tasks": [
+            "software.debug",
+            "software.repo"
+          ],
+          "proxy_tasks": [],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "No specific defect, repository, prompt, patch or test result is provided. Earlier agents are product names, so comparisons cannot be assigned to exact model versions. The page exposes only a relative timestamp. Replies include hallucination cautions, but those are separate authors and must not be treated as this report's verified failures.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "danilofs",
+            "origin_id": "reddit-danilofs-deepseek41-repo-repairs",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 7.0,
+              "rationale": "Repeated repair use is a positive task signal, but broad praise without reviewable patches warrants a moderate editorial score and low confidence.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
         }
       ],
       "price": null,
@@ -203,18 +405,40 @@
       },
       "metadata_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
       "ranking": {
-        "support": 0.255,
+        "support": 0.25525,
         "tasks": [
           {
             "task": "software.repo",
             "formal_support": 0.6,
             "evidence_strength": 0.8,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
+            "community_signal": 0.003333,
             "community_weight": 0.15,
-            "community_origins": 0,
-            "origins": [],
-            "support": 0.51
+            "community_origins": 2,
+            "community_score": 5.2,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "reddit-danilofs-deepseek41-repo-repairs",
+                "score": 7.0,
+                "reliability": 0.1,
+                "signal": 0.04,
+                "evidence_ids": [
+                  "deepseek-v4.1-flash-community-03"
+                ]
+              },
+              {
+                "origin_id": "reddit-logical-catch-3207-deepseek41-maintenance",
+                "score": 3.5,
+                "reliability": 0.1,
+                "signal": -0.03,
+                "evidence_ids": [
+                  "deepseek-v4.1-flash-community-02"
+                ]
+              }
+            ],
+            "support": 0.51049995
           },
           {
             "task": "data.sql",
@@ -224,6 +448,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -231,7 +458,7 @@
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 2,
-      "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage"
+      "reason": "Task-matched vendor evaluation for Repository implementation; weighted community reports included (see signed signal and sources); partial task coverage"
     },
     {
       "model_id": "qwen3.8-27b",
@@ -302,6 +529,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.51
           },
@@ -313,6 +543,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -393,6 +626,108 @@
           "reported_on": "2026-09-22",
           "reviewed_on": "2026-09-29",
           "comparison_group": null
+        },
+        {
+          "id": "claude-opus-5-5-community-01",
+          "model_id": "claude-opus-5-5",
+          "source_id": "community-source-044",
+          "kind": "community_test",
+          "claim": "In Claude Desktop, Opus 5.5 traced corrupted speech to two upstream Home Assistant entity-query defects in the author's existing robot project.",
+          "direct_tasks": [
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "One project/session; no matched comparison or public patch inspected. Author uses AI for editing but states editorial responsibility.",
+          "reported_on": "2026-09-23",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Alex Januschewsky",
+            "origin_id": "alex-januschewsky-stackchan-20260923",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 8.0,
+              "rationale": "Concrete symptom-to-cause success supports debugging usefulness; the single private case does not support a near-perfect general rating.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "claude-opus-5-5-community-02",
+          "model_id": "claude-opus-5-5",
+          "source_id": "community-source-045",
+          "kind": "community_test",
+          "claim": "The author reran code-review, Git-workflow and documentation tasks three times; Opus 5.5 performed well with skills but unassisted outputs varied.",
+          "direct_tasks": [
+            "software.debug",
+            "writing.professional"
+          ],
+          "proxy_tasks": [
+            "software.repo",
+            "software.terminal"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Small checklist tasks; Opus 5 judge; model defaults use different effort levels. Git rubric can saturate; raw-file link returned a fetch error, so it was not independently inspected.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "maverick_man1111",
+            "origin_id": "maverick-man1111-driftproof-013",
+            "grade": "firsthand",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://driftproofhq.com/reports/013/"
+            ],
+            "rating": {
+              "value": 7.0,
+              "rationale": "Repeated task results are more useful than enthusiasm; variability and rubric saturation limit stronger conclusions.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "claude-opus-5-5-community-03",
+          "model_id": "claude-opus-5-5",
+          "source_id": "community-source-046",
+          "kind": "community_test",
+          "claim": "A commenter reports a 17-slice refactor of 120k lines of tests on separate branches: Opus 5.5 high left more rule violations and took longer than Sonnet 5.5 high.",
+          "direct_tasks": [
+            "software.repo",
+            "software.testing"
+          ],
+          "proxy_tasks": [],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Self-reported private repository and three-layer review; no patches, prompts or timings independently inspected. One refactor workload does not establish a model-wide ordering.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Outrageous-Issue9722 (comment)",
+            "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 4.0,
+              "rationale": "Retains a concrete adverse implementation report despite positive Opus feedback elsewhere; low confidence prevents overgeneralization.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
         }
       ],
       "price": {
@@ -417,18 +752,49 @@
       },
       "metadata_url": "https://platform.claude.com/docs/en/models/overview",
       "ranking": {
-        "support": 0.255,
+        "support": 0.256195,
         "tasks": [
           {
             "task": "software.repo",
             "formal_support": 0.6,
             "evidence_strength": 0.8,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
+            "community_signal": 0.015935,
             "community_weight": 0.15,
-            "community_origins": 0,
-            "origins": [],
-            "support": 0.51
+            "community_origins": 3,
+            "community_score": 6.0,
+            "community_confidence": "low",
+            "community_mapping": "direct_and_proxy",
+            "origins": [
+              {
+                "origin_id": "alex-januschewsky-stackchan-20260923",
+                "score": 8.0,
+                "reliability": 0.08300845742273454,
+                "signal": 0.049805,
+                "evidence_ids": [
+                  "claude-opus-5-5-community-01"
+                ]
+              },
+              {
+                "origin_id": "maverick-man1111-driftproof-013",
+                "score": 7.0,
+                "reliability": 0.045000000000000005,
+                "signal": 0.018,
+                "evidence_ids": [
+                  "claude-opus-5-5-community-02"
+                ]
+              },
+              {
+                "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+                "score": 4.0,
+                "reliability": 0.1,
+                "signal": -0.02,
+                "evidence_ids": [
+                  "claude-opus-5-5-community-03"
+                ]
+              }
+            ],
+            "support": 0.51239025
           },
           {
             "task": "data.sql",
@@ -438,6 +804,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -485,6 +854,72 @@
           "reported_on": null,
           "reviewed_on": "2026-09-29",
           "comparison_group": null
+        },
+        {
+          "id": "deepseek-v4.1-flash-community-02",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "community-source-057",
+          "kind": "community_test",
+          "claim": "The author reports code that passes immediate checks but accumulates nested branches, duplicated logic and local fixes. On PDF/slide workflows the model reportedly took unnecessary tool detours, weakening total task efficiency despite fast generation.",
+          "direct_tasks": [
+            "software.repo",
+            "agent.workflow"
+          ],
+          "proxy_tasks": [
+            "software.debug"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "No prompts, repository, tool traces or timed logs are published. Harness and reasoning settings are unspecified; comparator is only called GPT-6 and is not an exact catalog model. Page timestamp is relative. The report is an adverse task observation, not a verified causal claim about model training or a controlled cost comparison.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Logical_Catch_3207",
+            "origin_id": "reddit-logical-catch-3207-deepseek41-maintenance",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 3.5,
+              "rationale": "The reported work completes but maintainability and workflow discipline repeatedly disappoint. The score describes this author's account; missing artifacts make it low-confidence evidence.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "deepseek-v4.1-flash-community-03",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "community-source-058",
+          "kind": "community_test",
+          "claim": "The author reports continuous use in OpenCode to repair problems left in an existing project by several coding agents.",
+          "direct_tasks": [
+            "software.debug",
+            "software.repo"
+          ],
+          "proxy_tasks": [],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "No specific defect, repository, prompt, patch or test result is provided. Earlier agents are product names, so comparisons cannot be assigned to exact model versions. The page exposes only a relative timestamp. Replies include hallucination cautions, but those are separate authors and must not be treated as this report's verified failures.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "danilofs",
+            "origin_id": "reddit-danilofs-deepseek41-repo-repairs",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 7.0,
+              "rationale": "Repeated repair use is a positive task signal, but broad praise without reviewable patches warrants a moderate editorial score and low confidence.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
         }
       ],
       "price": null,
@@ -504,18 +939,40 @@
       },
       "metadata_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
       "ranking": {
-        "support": 0.255,
+        "support": 0.25525,
         "tasks": [
           {
             "task": "software.repo",
             "formal_support": 0.6,
             "evidence_strength": 0.8,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
+            "community_signal": 0.003333,
             "community_weight": 0.15,
-            "community_origins": 0,
-            "origins": [],
-            "support": 0.51
+            "community_origins": 2,
+            "community_score": 5.2,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "reddit-danilofs-deepseek41-repo-repairs",
+                "score": 7.0,
+                "reliability": 0.1,
+                "signal": 0.04,
+                "evidence_ids": [
+                  "deepseek-v4.1-flash-community-03"
+                ]
+              },
+              {
+                "origin_id": "reddit-logical-catch-3207-deepseek41-maintenance",
+                "score": 3.5,
+                "reliability": 0.1,
+                "signal": -0.03,
+                "evidence_ids": [
+                  "deepseek-v4.1-flash-community-02"
+                ]
+              }
+            ],
+            "support": 0.51049995
           },
           {
             "task": "data.sql",
@@ -525,6 +982,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -601,6 +1061,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.51
           },
@@ -612,6 +1075,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -691,6 +1157,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.286875
           },
@@ -702,6 +1171,461 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.0
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "mimo-v2.6-flash",
+      "name": "MiMo-V2.6-Flash",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "mimo-vendor-06",
+          "model_id": "mimo-v2.6-flash",
+          "source_id": "community-source-036",
+          "kind": "vendor_eval",
+          "claim": "Xiaomi reports a DeepSWE v1.1 score of 67.9 for the original RL checkpoint.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.repo",
+            "software.debug"
+          ],
+          "measurement": {
+            "benchmark": "DeepSWE",
+            "version": "1.1",
+            "metric": "reported score",
+            "value": 67.9,
+            "unit": "points",
+            "protocol": "Vendor model-card evaluation; retain its original harness and budget."
+          },
+          "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+          "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null
+        },
+        {
+          "id": "mimo-v2.6-flash-community-03",
+          "model_id": "mimo-v2.6-flash",
+          "source_id": "community-source-069",
+          "kind": "community_test",
+          "claim": "An OpenCode user reports an encouraging first impression of Flash as fast, inexpensive and requiring less thinking.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.repo",
+            "software.terminal"
+          ],
+          "measurement": null,
+          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+          "limitations": "No concrete task, token counts or latency measurements are provided. This is a low-confidence usage impression, not a speed test.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Leather-Cod2129",
+            "origin_id": "reddit:Leather-Cod2129:mimo26flash-early-impression",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 7,
+              "rationale": "Retain the favorable firsthand experience, but the unspecified task makes it only a weak proxy for coding-tool workflows.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "mimo-v2.6-flash-community-04",
+          "model_id": "mimo-v2.6-flash",
+          "source_id": "community-source-070",
+          "kind": "community_test",
+          "claim": "A user of both models prefers MiMo-V2.6-Flash's outputs and reports that early loops improved through a combination of upstream changes and loop detection in their own router.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "The author uses an unpinned Flash API alias and mentions recent upstream changes together with their own router. The exact report date and checkpoint revision are unknown.",
+          "limitations": "No specific deliverable or reproducible trace is provided. Improvement combines model updates and user-built routing safeguards, so it cannot be attributed to the model alone. The report date and checkpoint are not pinned.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "oulu2006",
+            "origin_id": "reddit:oulu2006:mimo26flash-loop-mitigation",
+            "grade": "firsthand",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 7.5,
+              "rationale": "Retain the later positive experience and practical improvement alongside the harness contribution and revision uncertainty, rather than collecting only early failures.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "mimo-v2.6-flash-community-05",
+          "model_id": "mimo-v2.6-flash",
+          "source_id": "community-source-071",
+          "kind": "community_test",
+          "claim": "A commenter reports that Flash fixed problems another model had not resolved. A main agent divided the work into clearly scoped subtasks; the commenter still reports overthinking.",
+          "direct_tasks": [
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "The discussion explicitly identifies V2.6-Flash, but the checkpoint revision is unpinned. The exact report date and deployment settings are unknown unless stated in the report.",
+          "limitations": "The defects are not public. Success on bounded subtasks does not establish independent architectural design ability, and the benefit of the main agent's decomposition cannot be attributed entirely to Flash.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "XKiiroiSenkoX",
+            "origin_id": "reddit:XKiiroiSenkoX:mimo26flash-scoped-fixes",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 8,
+              "rationale": "The reported outcome supports debugging with clearly scoped assignments, subject to the stated thinking-time concern and assistance from the main agent's decomposition.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        }
+      ],
+      "price": {
+        "input": 0.14,
+        "output": 0.28,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
+      },
+      "limitations": [
+        "API id is mimo-v2.6-flash. MIT-licensed RL checkpoint is available; serving parsers, quantization and harness affect results.",
+        "Official context is stated as 1M; recorded conservatively as 1000000 tokens.",
+        "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
+        "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": true
+      },
+      "metadata_url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-flash",
+      "ranking": {
+        "support": 0.116437,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0225,
+            "community_weight": 0.15,
+            "community_origins": 3,
+            "community_score": 7.5,
+            "community_confidence": "low",
+            "community_mapping": "proxy",
+            "origins": [
+              {
+                "origin_id": "reddit:Leather-Cod2129:mimo26flash-early-impression",
+                "score": 7.0,
+                "reliability": 0.045000000000000005,
+                "signal": 0.018,
+                "evidence_ids": [
+                  "mimo-v2.6-flash-community-03"
+                ]
+              },
+              {
+                "origin_id": "reddit:XKiiroiSenkoX:mimo26flash-scoped-fixes",
+                "score": 8.0,
+                "reliability": 0.045000000000000005,
+                "signal": 0.027,
+                "evidence_ids": [
+                  "mimo-v2.6-flash-community-05"
+                ]
+              },
+              {
+                "origin_id": "reddit:oulu2006:mimo26flash-loop-mitigation",
+                "score": 7.5,
+                "reliability": 0.045000000000000005,
+                "signal": 0.0225,
+                "evidence_ids": [
+                  "mimo-v2.6-flash-community-04"
+                ]
+              }
+            ],
+            "support": 0.232875
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.0,
+            "evidence_strength": 0.0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.0
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "sonnet-terminal",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "sonnet-launch",
+          "kind": "vendor_eval",
+          "claim": "Anthropic reports 70.6% on Terminal-Bench 4.0.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.debug",
+            "software.repo"
+          ],
+          "measurement": {
+            "benchmark": "Terminal-Bench",
+            "version": "4.0",
+            "metric": "accuracy",
+            "value": 70.6,
+            "unit": "percent",
+            "protocol": "Anthropic release setup"
+          },
+          "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
+          "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
+          "reported_on": "2026-09-28",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        },
+        {
+          "id": "claude-sonnet-5-5-community-01",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "community-source-045",
+          "kind": "community_test",
+          "claim": "On the author's repeated review, Git-workflow and docs/ADR tasks, Sonnet 5.5 with skills was comparable to Opus 5.5 and cheaper in estimated generation cost.",
+          "direct_tasks": [
+            "software.debug",
+            "writing.professional"
+          ],
+          "proxy_tasks": [
+            "software.repo",
+            "software.terminal"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Small checklist tasks, model judge, differing default effort and potentially saturated Git rubric. Public raw-file link could not be fetched; author acknowledges equivalence on this test does not prove equal overall capability.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "maverick_man1111",
+            "origin_id": "maverick-man1111-driftproof-013",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://driftproofhq.com/reports/013/"
+            ],
+            "rating": {
+              "value": 7.5,
+              "rationale": "Three runs and stated caveats support a positive practical report, while grading and effort confounds cap confidence.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "claude-sonnet-5-5-community-02",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "community-source-046",
+          "kind": "community_test",
+          "claim": "A commenter reports fewer violations and faster slices for Sonnet 5.5 high than Opus 5.5 high on separate branches refactoring a 120k-line test suite.",
+          "direct_tasks": [
+            "software.repo",
+            "software.testing"
+          ],
+          "proxy_tasks": [],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Private code; reviewer methodology described but not independently verified. One workload, release-day usage and no public patches.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Outrageous-Issue9722 (comment)",
+            "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 8.0,
+              "rationale": "Concrete branch comparison and review criteria support the task fit; insufficient replication for a higher score.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "claude-sonnet-5-5-community-03",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "community-source-047",
+          "kind": "community_test",
+          "claim": "In two low/medium difficulty coding tasks, the commenter reports Sonnet 5.5 high was initially faster/cheaper but left bugs or omissions; Opus review and rework erased that advantage.",
+          "direct_tasks": [
+            "software.repo"
+          ],
+          "proxy_tasks": [
+            "software.debug"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Only two unspecified tasks; no prompts, patches, invoice or code artifacts. Anecdote concerns total cost after review, not a verified token-rate comparison.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "msw3age (comment)",
+            "origin_id": "msw3age-sonnet-high-two-tasks",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 3.5,
+              "rationale": "Specific residual-defect and rework complaint is an adverse signal; weak reproducibility keeps the confidence limited.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "Account access, region and tool environment must be checked separately."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.116062,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0175,
+            "community_weight": 0.15,
+            "community_origins": 3,
+            "community_score": 6.1,
+            "community_confidence": "low",
+            "community_mapping": "direct_and_proxy",
+            "origins": [
+              {
+                "origin_id": "maverick-man1111-driftproof-013",
+                "score": 7.5,
+                "reliability": 0.045000000000000005,
+                "signal": 0.0225,
+                "evidence_ids": [
+                  "claude-sonnet-5-5-community-01"
+                ]
+              },
+              {
+                "origin_id": "msw3age-sonnet-high-two-tasks",
+                "score": 3.5,
+                "reliability": 0.1,
+                "signal": -0.03,
+                "evidence_ids": [
+                  "claude-sonnet-5-5-community-03"
+                ]
+              },
+              {
+                "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+                "score": 8.0,
+                "reliability": 0.1,
+                "signal": 0.06,
+                "evidence_ids": [
+                  "claude-sonnet-5-5-community-02"
+                ]
+              }
+            ],
+            "support": 0.232125
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.0,
+            "evidence_strength": 0.0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -781,6 +1705,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.2295
           },
@@ -792,6 +1719,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -800,8 +1730,8 @@
       }
     },
     {
-      "model_id": "claude-sonnet-5-5",
-      "name": "Claude Sonnet 5.5",
+      "model_id": "mimo-v2.6-pro",
+      "name": "MiMo-V2.6-Pro",
       "direct_tasks": [],
       "independent_tasks": [],
       "covered_tasks": [
@@ -812,67 +1742,161 @@
       ],
       "evidence": [
         {
-          "id": "sonnet-terminal",
-          "model_id": "claude-sonnet-5-5",
-          "source_id": "sonnet-launch",
+          "id": "mimo-vendor-01",
+          "model_id": "mimo-v2.6-pro",
+          "source_id": "community-source-035",
           "kind": "vendor_eval",
-          "claim": "Anthropic reports 70.6% on Terminal-Bench 4.0.",
-          "direct_tasks": [
-            "software.terminal"
-          ],
+          "claim": "Xiaomi reports a DeepSWE v1.1 score of 71.9 for the original RL checkpoint.",
+          "direct_tasks": [],
           "proxy_tasks": [
-            "software.debug",
-            "software.repo"
+            "software.repo",
+            "software.debug"
           ],
           "measurement": {
-            "benchmark": "Terminal-Bench",
-            "version": "4.0",
-            "metric": "accuracy",
-            "value": 70.6,
-            "unit": "percent",
-            "protocol": "Anthropic release setup"
+            "benchmark": "DeepSWE",
+            "version": "1.1",
+            "metric": "reported score",
+            "value": 71.9,
+            "unit": "points",
+            "protocol": "Vendor model-card evaluation; retain its original harness and budget."
           },
-          "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
-          "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
-          "reported_on": "2026-09-28",
-          "reviewed_on": "2026-09-29",
+          "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+          "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-30",
           "comparison_group": null
+        },
+        {
+          "id": "mimo-v2.6-pro-community-02",
+          "model_id": "mimo-v2.6-pro",
+          "source_id": "community-source-065",
+          "kind": "community_test",
+          "claim": "The author reports that MiMo-V2.6-Pro failed an agent architecture refactor involving a JEV state layer and also missed explicit requirements in a separate frontend change to a file tree and chat panel.",
+          "direct_tasks": [
+            "software.repo",
+            "software.architecture",
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+          "limitations": "Two private tasks, without code, complete prompts or acceptance logs. The approximately seven-hour duration is author-reported and does not establish typical latency. The Astra comparison relies on previous experience. Only relative timestamps are shown; no absolute date is inferred.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Civil-Direction-6981",
+            "origin_id": "reddit:Civil-Direction-6981:mimo26pro-refactor",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 3,
+              "rationale": "Reported failures in following requirements and maintaining architectural consistency provide a negative signal for longer engineering tasks. One person's tasks do not establish a general failure rate.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "mimo-v2.6-pro-community-03",
+          "model_id": "mimo-v2.6-pro",
+          "source_id": "community-source-066",
+          "kind": "community_test",
+          "claim": "The author reports bypasses involving environment variables and command aliases in Pro-generated bubblewrap/Git write restrictions and provides examples.",
+          "direct_tasks": [
+            "software.security"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+          "limitations": "The original includes selected failure examples but no complete patch. Some of the nine alleged vulnerabilities were identified by another model and have not been reproduced by this project. The title's benchmaxxing accusation is not an established fact.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "crusaderky",
+            "origin_id": "reddit:crusaderky:mimo26-security-git",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 2.5,
+              "rationale": "The report describes bypassable security boundaries on the stated task. Retain these specific failures without adopting the title's blanket condemnation; an overall leaderboard score cannot establish correctness of this implementation.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
         }
       ],
       "price": {
-        "input": 2,
-        "output": 10,
-        "max_input_tokens": 200000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+        "input": 0.435,
+        "output": 0.87,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
       },
       "limitations": [
-        "Account access, region and tool environment must be checked separately."
+        "API id is mimo-v2.6-pro. MIT-licensed RL checkpoint is available; API serving and local quantization can differ.",
+        "Official context is stated as 1M; 1000000 is a conservative interpretation rather than claiming an unstated binary-token limit.",
+        "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
+        "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
       ],
       "resources": {
         "access": "verify_account_access",
         "input_modalities": [
           "text",
-          "image"
+          "image",
+          "video",
+          "audio"
         ],
         "context_tokens": 1000000,
         "tool_calling": true,
-        "open_weights": false,
+        "open_weights": true,
         "price_applies": true
       },
-      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "metadata_url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-pro",
       "ranking": {
-        "support": 0.11475,
+        "support": 0.113188,
         "tasks": [
           {
             "task": "software.repo",
             "formal_support": 0.27,
             "evidence_strength": 0.36000000000000004,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
+            "community_signal": -0.020833,
             "community_weight": 0.15,
-            "community_origins": 0,
-            "origins": [],
-            "support": 0.2295
+            "community_origins": 2,
+            "community_score": 2.8,
+            "community_confidence": "low",
+            "community_mapping": "direct_and_proxy",
+            "origins": [
+              {
+                "origin_id": "reddit:Civil-Direction-6981:mimo26pro-refactor",
+                "score": 3.0,
+                "reliability": 0.1,
+                "signal": -0.04,
+                "evidence_ids": [
+                  "mimo-v2.6-pro-community-02"
+                ]
+              },
+              {
+                "origin_id": "reddit:crusaderky:mimo26-security-git",
+                "score": 2.5,
+                "reliability": 0.045000000000000005,
+                "signal": -0.0225,
+                "evidence_ids": [
+                  "mimo-v2.6-pro-community-03"
+                ]
+              }
+            ],
+            "support": 0.22637505000000002
           },
           {
             "task": "data.sql",
@@ -882,6 +1906,142 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.0
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "grok-4.7",
+      "name": "Grok 4.7",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "grok-fit",
+          "model_id": "grok-4.7",
+          "source_id": "grok-docs",
+          "kind": "official_capability",
+          "claim": "Official documentation describes coding, agent and knowledge work.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.repo",
+            "software.debug",
+            "agent.workflow",
+            "writing.professional"
+          ],
+          "measurement": null,
+          "setting": "API with function calling; exact effort specified",
+          "limitations": "No task-specific comparative Grok 4.7 benchmark is admitted in this seed.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        },
+        {
+          "id": "grok-4.7-community-01",
+          "model_id": "grok-4.7",
+          "source_id": "community-source-053",
+          "kind": "community_test",
+          "claim": "With clear context, the author reports usable multi-file changes and debugging in a Rust codebase with distributed workflows and data pipelines, with occasional overcomplication/architectural drift.",
+          "direct_tasks": [
+            "software.repo",
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.architecture"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Private repository, no prompts or tests inspected; Cursor routing/harness may affect experience.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "akeebismail",
+            "origin_id": "akeebismail-grok-rust-repository",
+            "grade": "firsthand",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 7.0,
+              "rationale": "Concrete existing-repository use is positive; architectural mistakes and lack of public outcomes cap the score.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 6,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "X/web search requires an enabled tool environment; it is not intrinsic fresh knowledge."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 500000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://docs.x.ai/developers/models/grok-4.7",
+      "ranking": {
+        "support": 0.058375,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.135,
+            "evidence_strength": 0.18000000000000002,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.013333,
+            "community_weight": 0.15,
+            "community_origins": 1,
+            "community_score": 7.0,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "akeebismail-grok-rust-repository",
+                "score": 7.0,
+                "reliability": 0.1,
+                "signal": 0.04,
+                "evidence_ids": [
+                  "grok-4.7-community-01"
+                ]
+              }
+            ],
+            "support": 0.11674995
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.0,
+            "evidence_strength": 0.0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -922,6 +2082,72 @@
           "reported_on": null,
           "reviewed_on": "2026-09-29",
           "comparison_group": null
+        },
+        {
+          "id": "gpt-6-sol-community-01",
+          "model_id": "gpt-6-sol",
+          "source_id": "community-source-039",
+          "kind": "community_test",
+          "claim": "At xHigh effort, the author reports fixes across six projects introducing regressions in four, subsequently repaired using Astra.",
+          "direct_tasks": [
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Self-reported bug counts and private projects; no patches, prompts or test logs. Harness and review process may contribute.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "skynet86",
+            "origin_id": "author:skynet86",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 3.5,
+              "rationale": "Concrete reported regressions justify an adverse debugging signal; the private repositories and missing logs limit confidence.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "gpt-6-sol-community-02",
+          "model_id": "gpt-6-sol",
+          "source_id": "community-source-040",
+          "kind": "community_test",
+          "claim": "The author reports four Sol runs fixed an agentic wiki previously handled with mixed models.",
+          "direct_tasks": [
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "No public repository or logs; prior attempts involved other models and are not a matched trial. Subscription usage is separate from API cost.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "ilias_from_ilios",
+            "origin_id": "author:ilias_from_ilios",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 8,
+              "rationale": "A described repair outcome supports bounded debugging use; a hobby project without public code is a low-confidence signal.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
         }
       ],
       "price": {
@@ -946,18 +2172,40 @@
       },
       "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
       "ranking": {
-        "support": 0.057375,
+        "support": 0.057712,
         "tasks": [
           {
             "task": "software.repo",
             "formal_support": 0.135,
             "evidence_strength": 0.18000000000000002,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
+            "community_signal": 0.0045,
             "community_weight": 0.15,
-            "community_origins": 0,
-            "origins": [],
-            "support": 0.11475
+            "community_origins": 2,
+            "community_score": 5.8,
+            "community_confidence": "low",
+            "community_mapping": "proxy",
+            "origins": [
+              {
+                "origin_id": "author:ilias_from_ilios",
+                "score": 8.0,
+                "reliability": 0.045000000000000005,
+                "signal": 0.027,
+                "evidence_ids": [
+                  "gpt-6-sol-community-02"
+                ]
+              },
+              {
+                "origin_id": "author:skynet86",
+                "score": 3.5,
+                "reliability": 0.045000000000000005,
+                "signal": -0.0135,
+                "evidence_ids": [
+                  "gpt-6-sol-community-01"
+                ]
+              }
+            ],
+            "support": 0.115425
           },
           {
             "task": "data.sql",
@@ -967,6 +2215,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -975,8 +2226,8 @@
       }
     },
     {
-      "model_id": "grok-4.7",
-      "name": "Grok 4.7",
+      "model_id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
       "direct_tasks": [],
       "independent_tasks": [],
       "covered_tasks": [
@@ -987,34 +2238,37 @@
       ],
       "evidence": [
         {
-          "id": "grok-fit",
-          "model_id": "grok-4.7",
-          "source_id": "grok-docs",
+          "id": "gpt-6.1-sol-official",
+          "model_id": "gpt-6.1-sol",
+          "source_id": "openai-sol-6-1",
           "kind": "official_capability",
-          "claim": "Official documentation describes coding, agent and knowledge work.",
+          "claim": "OpenAI positions GPT-6.1 Sol for complex coding, computer use and professional work, with Responses tools and image input.",
           "direct_tasks": [],
           "proxy_tasks": [
             "software.repo",
             "software.debug",
+            "agent.computer",
             "agent.workflow",
             "writing.professional"
           ],
           "measurement": null,
-          "setting": "API with function calling; exact effort specified",
-          "limitations": "No task-specific comparative Grok 4.7 benchmark is admitted in this seed.",
+          "setting": "Official model positioning and API feature declaration; not a task quality measurement.",
+          "limitations": "Product capability and positioning do not prove relative task quality. Tool support is endpoint-specific.",
           "reported_on": null,
-          "reviewed_on": "2026-09-29",
+          "reviewed_on": "2026-09-30",
           "comparison_group": null
         }
       ],
       "price": {
         "input": 2,
-        "output": 6,
-        "max_input_tokens": 200000,
+        "output": 10,
+        "max_input_tokens": 272000,
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "X/web search requires an enabled tool environment; it is not intrinsic fresh knowledge."
+        "Tool calling is supported through Responses API; Chat Completions does not support tools for this model.",
+        "128000 maximum output tokens. Reasoning efforts: low, medium, high, xhigh, max.",
+        "No copied GPT-6 Sol benchmark results: exact 6.1 task evidence is maintained separately. Account access and tool environment require checking."
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1022,12 +2276,12 @@
           "text",
           "image"
         ],
-        "context_tokens": 500000,
+        "context_tokens": 1050000,
         "tool_calling": true,
         "open_weights": false,
         "price_applies": true
       },
-      "metadata_url": "https://docs.x.ai/developers/models/grok-4.7",
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
       "ranking": {
         "support": 0.057375,
         "tasks": [
@@ -1039,6 +2293,9 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.11475
           },
@@ -1050,6 +2307,457 @@
             "community_signal": 0.0,
             "community_weight": 0.15,
             "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.0
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "mimo-v2.6-pro-ultraspeed",
+      "name": "MiMo-V2.6-Pro-UltraSpeed",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "mimo-vendor-11",
+          "model_id": "mimo-v2.6-pro-ultraspeed",
+          "source_id": "mimo-v2.6-pro-ultraspeed-official",
+          "kind": "official_capability",
+          "claim": "Xiaomi positions Pro UltraSpeed as a serving tier for interactive coding and complex refactoring.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.repo",
+            "software.frontend",
+            "agent.workflow",
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Official positioning of the hosted UltraSpeed serving tier, not measured task performance.",
+          "limitations": "Vendor serving-tier positioning. No Pro benchmark score is counted as a measured UltraSpeed result; its end-to-end task completion is not independently established here.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 4.35,
+        "output": 8.7,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, reasoning volume. This tier does not support batch API."
+      },
+      "limitations": [
+        "UltraSpeed is a separate serving tier of the open-weight Pro checkpoint, not a separate released checkpoint or independently measured benchmark model.",
+        "The underlying Pro weights are open, but the exact UltraSpeed hosted serving tier has no separately downloadable checkpoint. For local deployment choose Pro or Flash; UltraSpeed speed claims do not transfer to local serving.",
+        "Its advertised up-to-20x output speed is a vendor claim, not an end-to-end task latency guarantee. Do not copy Pro benchmark scores into an UltraSpeed measured-result row.",
+        "Official Chinese model page lists all four inputs; English page currently shows only text despite its omni-modal capability heading. Chinese page and API capability table are used here.",
+        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-pro-ultraspeed",
+      "ranking": {
+        "support": 0.057375,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.135,
+            "evidence_strength": 0.18000000000000002,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.11475
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.0,
+            "evidence_strength": 0.0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.0
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "kimi-k3",
+      "name": "Kimi K3",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "kimi-k3-community-01",
+          "model_id": "kimi-k3",
+          "source_id": "community-source-062",
+          "kind": "community_test",
+          "claim": "Kimi K3 via Kimi Code CLI delivered a Rails 8/RubyLLM/Hotwire/Docker chat app with correct conversation replay, bounded history and working chat validation. Review found missing system instructions, weak persistence/concurrency handling and insufficient error coverage. A public result commit and project links are available.",
+          "direct_tasks": [
+            "software.repo"
+          ],
+          "proxy_tasks": [
+            "software.testing",
+            "software.architecture"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "One app run; Kimi Code subscription harness at a 256K plan limit. Original OpenCode/Moonshot tool schema was incompatible and the harness was changed. Published model comparisons concern older competitors, not current catalog successors. Project was inspected by the author; we opened the result commit but did not rerun it. Does not cover migrations, background jobs or production tool actions. Evidence is dated July and must retain its age.",
+          "reported_on": "2026-07-17",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Fabio Akita",
+            "origin_id": "akitaonrails-kimi-k3-rails-chat-app-20260717",
+            "grade": "artifact_report",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://github.com/akitaonrails/llm-coding-benchmark/commit/2bf1d7b3e3bbc7e6ff9a18a07390333c86bda615",
+              "https://github.com/akitaonrails/llm-coding-benchmark"
+            ],
+            "rating": {
+              "value": 8.0,
+              "rationale": "A functioning reviewed repository with concrete strengths and defects merits a strong but incomplete task assessment; this is editorial judgment rather than a conversion of the author's 89/100 rubric.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "kimi-k3-community-02",
+          "model_id": "kimi-k3",
+          "source_id": "community-source-063",
+          "kind": "community_test",
+          "claim": "The First Tree team reports that standalone Kimi K3 left permissive security headers and weak QA on one repository issue. Adding a reviewer and shared Context Tree produced stricter origin restrictions and tests after many more iterations. The post links the compared pull requests.",
+          "direct_tasks": [
+            "software.security",
+            "software.repo"
+          ],
+          "proxy_tasks": [
+            "software.testing",
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Self-promotion with explicit team disclosure; reviewer, shared context, iterations and spending changed together. GPT comparator is an older exact version without the added harness. Claude Opus supplied grading. Both PR summaries were opened and support the described policy differences; tests were not reproduced. The PRs date to July 22/27, 2026, while the report's exact date remains unknown. Cross-posts count as the same origin.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Still_Amphibian545 / First Tree team",
+            "origin_id": "first-tree-team-kimi-k3-security-issue",
+            "grade": "artifact_report",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://github.com/agent-team-foundation/first-tree/pull/1932",
+              "https://github.com/agent-team-foundation/first-tree/pull/2026"
+            ],
+            "rating": {
+              "value": 5.5,
+              "rationale": "The report shows substantial task failure in the standalone setup and improvement with intensive review. A middling editorial outcome and low confidence preserve both findings without treating framework-assisted success as intrinsic superiority.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Kimi K3 has its own weights license. Native video support and deployment-specific frame limits require verification."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "context_tokens": 1048576,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": false
+      },
+      "metadata_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "ranking": {
+        "support": 0.004534,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.0,
+            "evidence_strength": 0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.060454,
+            "community_weight": 0.15,
+            "community_origins": 2,
+            "community_score": 6.6,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "akitaonrails-kimi-k3-rails-chat-app-20260717",
+                "score": 8.0,
+                "reliability": 0.25226892457611433,
+                "signal": 0.151361,
+                "evidence_ids": [
+                  "kimi-k3-community-01"
+                ]
+              },
+              {
+                "origin_id": "first-tree-team-kimi-k3-security-issue",
+                "score": 5.5,
+                "reliability": 0.3,
+                "signal": 0.03,
+                "evidence_ids": [
+                  "kimi-k3-community-02"
+                ]
+              }
+            ],
+            "support": 0.009068099999999999
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.0,
+            "evidence_strength": 0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.0
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "gemini-3.8-flash",
+      "name": "Gemini 3.8 Flash",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.repo"
+      ],
+      "missing_tasks": [
+        "data.sql"
+      ],
+      "evidence": [
+        {
+          "id": "gemini-3.8-flash-community-01",
+          "model_id": "gemini-3.8-flash",
+          "source_id": "community-source-051",
+          "kind": "community_test",
+          "claim": "The author built Plotline in OpenCode and reports successful mixed screenshot extraction, editable tables and working re-extraction using Gemini 3.8 Flash.",
+          "direct_tasks": [
+            "data.extract",
+            "vision.chart",
+            "vision.document"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Prompt/demo are published; no extraction error dataset or source repository independently inspected. Author-operated single build, OpenCode/high effort.",
+          "reported_on": "2026-09-03",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Ramanpal Singh",
+            "origin_id": "ramanpal-singh-gemini-five-apps-20260903",
+            "grade": "artifact_report",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://promptslove.com/blog/gemini-3-8-flash-review/"
+            ],
+            "rating": {
+              "value": 8.0,
+              "rationale": "Working extraction workflow supports this task; one demo does not justify 10/10 accuracy.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "gemini-3.8-flash-community-02",
+          "model_id": "gemini-3.8-flash",
+          "source_id": "community-source-051",
+          "kind": "community_test",
+          "claim": "Figures had working data views but broken upload/navigation; Parallax had loading, readability and theme defects despite some successful page design.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design",
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Same author/build series as Plotline; limited samples and different comparator harness. Do not turn successful application construction into proof of financial reasoning.",
+          "reported_on": "2026-09-03",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Ramanpal Singh",
+            "origin_id": "ramanpal-singh-gemini-five-apps-20260903",
+            "grade": "artifact_report",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://promptslove.com/blog/gemini-3-8-flash-review/"
+            ],
+            "rating": {
+              "value": 4.5,
+              "rationale": "Working parts offset serious user-visible failures; preserves adverse evidence alongside extraction success.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "gemini-3.8-flash-community-03",
+          "model_id": "gemini-3.8-flash",
+          "source_id": "community-source-052",
+          "kind": "community_test",
+          "claim": "A seven-task demo comparison produced usable websites and a walkable voxel world, but platformer fall detection and complex 3D action failed.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Screenshots and video linked; complete prompts require LINE subscription and were not inspected. Small heterogeneous prototypes, unspecified independent acceptance tests; affiliate disclosure.",
+          "reported_on": "2026-09-08",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "せなお / Routine Labo",
+            "origin_id": "routine-labo-gemini-seven-tasks-20260908",
+            "grade": "artifact_report",
+            "stance": "mixed",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [
+              "https://rutinelabo.com/gemini-38-flash-review/"
+            ],
+            "rating": {
+              "value": 5.5,
+              "rationale": "Simple prototypes are usable but interaction failures limit confidence for complex frontends.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        }
+      ],
+      "price": null,
+      "limitations": [
+        "Price source is separate (gemini-launch); no price admitted from the capability-only source."
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "context_tokens": 1048576,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": false
+      },
+      "metadata_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "ranking": {
+        "support": 0.001759,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.0,
+            "evidence_strength": 0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.023451,
+            "community_weight": 0.15,
+            "community_origins": 2,
+            "community_score": 5.9,
+            "community_confidence": "low",
+            "community_mapping": "proxy",
+            "origins": [
+              {
+                "origin_id": "ramanpal-singh-gemini-five-apps-20260903",
+                "score": 6.2,
+                "reliability": 0.19765156895265945,
+                "signal": 0.049413,
+                "evidence_ids": [
+                  "gemini-3.8-flash-community-01",
+                  "gemini-3.8-flash-community-02"
+                ]
+              },
+              {
+                "origin_id": "routine-labo-gemini-seven-tasks-20260908",
+                "score": 5.5,
+                "reliability": 0.2094045428475542,
+                "signal": 0.02094,
+                "evidence_ids": [
+                  "gemini-3.8-flash-community-03"
+                ]
+              }
+            ],
+            "support": 0.0035176499999999998
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.0,
+            "evidence_strength": 0,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
             "origins": [],
             "support": 0.0
           }
@@ -1065,18 +2773,6 @@
   "excluded": [
     {
       "model_id": "gpt-6-luna",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "gemini-3.8-flash",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    },
-    {
-      "model_id": "kimi-k3",
       "reasons": [
         "no_fresh_task_evidence"
       ]
@@ -1100,6 +2796,33 @@
       "checked_on": "2026-09-29",
       "review_days": 14
     },
+    "community-source-044": {
+      "id": "community-source-044",
+      "title": "Opus 5.5 found two defects in the author's Stackchan/Home Assistant code",
+      "url": "https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/",
+      "publisher": "Alex Januschewsky",
+      "published_on": "2026-09-23",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-045": {
+      "id": "community-source-045",
+      "title": "Three-run skill comparison: Opus 5.5 and Sonnet 5.5",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1wtend0/tested_sonnet_55_vs_opus_55_with_the_same_skills/",
+      "publisher": "maverick_man1111",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-046": {
+      "id": "community-source-046",
+      "title": "Opus 5.5 versus Sonnet 5.5 on a large test refactor",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/",
+      "publisher": "Outrageous-Issue9722 (comment)",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
     "deepseek-card": {
       "id": "deepseek-card",
       "title": "DeepSeek-V4.1-Flash model card",
@@ -1107,6 +2830,24 @@
       "publisher": "DeepSeek",
       "published_on": null,
       "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "community-source-057": {
+      "id": "community-source-057",
+      "title": "DeepSeek V4.1 Flash is cheap per token—but is it actually cheap per completed task?",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wdd9hh/deepseek_v41_flash_is_cheap_per_tokenbut_is_it/",
+      "publisher": "Logical_Catch_3207",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-058": {
+      "id": "community-source-058",
+      "title": "DeepSeek v4.1 Flash is truly amazing",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wgohh2/deepseek_v41_flash_is_truly_amazing/",
+      "publisher": "danilofs",
+      "published_on": null,
+      "checked_on": "2026-09-30",
       "review_days": 14
     },
     "qwen-card": {
@@ -1127,6 +2868,42 @@
       "checked_on": "2026-09-29",
       "review_days": 14
     },
+    "community-source-036": {
+      "id": "community-source-036",
+      "title": "MiMo-V2.6-Flash-RL official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "publisher": "Xiaomi",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-069": {
+      "id": "community-source-069",
+      "title": "Mimo 2.6 Flash is a beast and seems to use very low token count",
+      "url": "https://www.reddit.com/r/opencode/comments/1wn191t/mimo_26_flash_is_a_beast_and_seems_to_use_very/",
+      "publisher": "Leather-Cod2129",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-070": {
+      "id": "community-source-070",
+      "title": "Which do you choose: DeepSeek v4.1 Flash or MiMo V2.6 Flash — improvement comment",
+      "url": "https://www.reddit.com/r/opencode/comments/1wp2ctx/which_do_you_choose_deepseek_v41_flash_or_mimo/",
+      "publisher": "oulu2006",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-071": {
+      "id": "community-source-071",
+      "title": "Pretty poor results with MiMo v2.6 Flash + Hermes — opposite experience comment",
+      "url": "https://www.reddit.com/r/hermesagent/comments/1wnkeak/pretty_poor_results_with_mimo_v26_flash_hermes/",
+      "publisher": "XKiiroiSenkoX",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
     "sonnet-launch": {
       "id": "sonnet-launch",
       "title": "Claude Sonnet 5.5 release evaluation",
@@ -1134,6 +2911,60 @@
       "publisher": "Anthropic",
       "published_on": "2026-09-28",
       "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "community-source-047": {
+      "id": "community-source-047",
+      "title": "Sonnet 5.5 high left bugs and required expensive rework",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1wsqfzk/sonnet_55_is_not_worth_using_it_unless_at_lowmed/",
+      "publisher": "msw3age (comment)",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-035": {
+      "id": "community-source-035",
+      "title": "MiMo-V2.6-Pro-RL official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "publisher": "Xiaomi",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-065": {
+      "id": "community-source-065",
+      "title": "Mimo 2.6 Pro feedback after 7 hours of testing",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wn3p6b/mimo_26_pro_feedback_after_7_hours_of_testing/",
+      "publisher": "Civil-Direction-6981",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-066": {
+      "id": "community-source-066",
+      "title": "MiMo-V2.6 (both Pro and Flash) is a benchmaxxed scam",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1woa5d3/mimov26_both_pro_and_flash_is_a_benchmaxxed_scam/",
+      "publisher": "crusaderky",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "grok-docs": {
+      "id": "grok-docs",
+      "title": "Grok 4.7 model documentation",
+      "url": "https://docs.x.ai/developers/models/grok-4.7",
+      "publisher": "SpaceXAI",
+      "published_on": null,
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
+    "community-source-053": {
+      "id": "community-source-053",
+      "title": "Grok 4.7 on a large Rust repository in Cursor",
+      "url": "https://www.reddit.com/r/cursor/comments/1wrktgc/am_i_the_only_one_who_thinks_grok_47_is_actually/",
+      "publisher": "akeebismail",
+      "published_on": null,
+      "checked_on": "2026-09-30",
       "review_days": 14
     },
     "openai-sol": {
@@ -1145,13 +2976,76 @@
       "checked_on": "2026-09-29",
       "review_days": 14
     },
-    "grok-docs": {
-      "id": "grok-docs",
-      "title": "Grok 4.7 model documentation",
-      "url": "https://docs.x.ai/developers/models/grok-4.7",
-      "publisher": "SpaceXAI",
+    "community-source-039": {
+      "id": "community-source-039",
+      "title": "Sol review and regression complaint",
+      "url": "https://www.reddit.com/r/codex/comments/1wp5x1a/gpt6_sol_is_not_good/",
+      "publisher": "skynet86",
       "published_on": null,
-      "checked_on": "2026-09-29",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-040": {
+      "id": "community-source-040",
+      "title": "Sol repaired an agentic wiki",
+      "url": "https://www.reddit.com/r/openclaw/comments/1wrgu8e/how_is_gpt6luna_so_good/",
+      "publisher": "ilias_from_ilios",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "openai-sol-6-1": {
+      "id": "openai-sol-6-1",
+      "title": "GPT-6.1 Sol model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "mimo-v2.6-pro-ultraspeed-official": {
+      "id": "mimo-v2.6-pro-ultraspeed-official",
+      "title": "Xiaomi MiMo-V2.6-Pro-UltraSpeed official model page",
+      "url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-pro-ultraspeed",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-062": {
+      "id": "community-source-062",
+      "title": "LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?",
+      "url": "https://akitaonrails.com/en/2026/07/17/llm-benchmarks-kimi-k3/",
+      "publisher": "Fabio Akita",
+      "published_on": "2026-07-17",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-063": {
+      "id": "community-source-063",
+      "title": "Kimi K3 with Context Tree Beats GPT 5.6 Sol on a Real Engineering Task",
+      "url": "https://www.reddit.com/r/kimi/comments/1vba5ie/kimi_k3_with_context_tree_beats_gpt_56_sol_on_a/",
+      "publisher": "Still_Amphibian545 / First Tree team",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-051": {
+      "id": "community-source-051",
+      "title": "Plotline screenshot-to-data app worked from one prompt",
+      "url": "https://promptslove.com/blog/gemini-3-8-flash-review/",
+      "publisher": "Ramanpal Singh",
+      "published_on": "2026-09-03",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-052": {
+      "id": "community-source-052",
+      "title": "Gemini 3.8 Flash game prototypes: simpler worlds versus broken 3D action",
+      "url": "https://rutinelabo.com/gemini-38-flash-review/",
+      "publisher": "せなお / Routine Labo",
+      "published_on": "2026-09-08",
+      "checked_on": "2026-09-30",
       "review_days": 14
     }
   }

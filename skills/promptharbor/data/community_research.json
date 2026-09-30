@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "score_scale": 10,
+  "score_definition": "Editorial judgment of retrieved task reports, not a measured benchmark or universal model ability score.",
+  "models": [
+    {
+      "id": "gpt-6-astra",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"GPT-6 Astra\" review portfolio coding",
+        "\"GPT-6 Astra\" writing firsthand Reddit"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "gpt-6-astra-community-01",
+        "gpt-6-astra-community-02"
+      ]
+    },
+    {
+      "id": "gpt-6-sol",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"GPT-6 Sol\" coding regression review Reddit",
+        "\"GPT-6 Sol\" writing scripts tested",
+        "\"GPT-6 Sol\" agent wiki fixed"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "gpt-6-sol-community-01",
+        "gpt-6-sol-community-02",
+        "gpt-6-sol-community-03"
+      ]
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"gpt-6.1-sol\" official model",
+        "\"GPT-6.1 Sol\" review writing",
+        "\"GPT-6.1 Sol\" planner Qwen",
+        "\"GPT 6.1 Sol\" disappointing game"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "gpt-6.1-sol-community-01",
+        "gpt-6.1-sol-community-02",
+        "gpt-6.1-sol-community-03"
+      ]
+    },
+    {
+      "id": "gpt-6-luna",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"GPT-6 Luna\" AB tested repo",
+        "\"GPT-6 Luna\" OpenClaw context firsthand"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "gpt-6-luna-community-01",
+        "gpt-6-luna-community-02"
+      ]
+    },
+    {
+      "id": "claude-opus-5-5",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"Claude Opus 5.5\" review coding Reddit",
+        "\"Claude Opus 5.5\" firsthand code review",
+        "\"Sonnet 5.5\" \"review\" -opus"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "claude-opus-5-5-community-01",
+        "claude-opus-5-5-community-02",
+        "claude-opus-5-5-community-03"
+      ]
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"Claude Sonnet 5.5\" experience frontend reddit",
+        "\"Sonnet 5.5\" \"I\" \"tested\"",
+        "\"Sonnet 5.5\" site:reddit.com",
+        "\"Sonnet 5.5\" -opus -grok"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "claude-sonnet-5-5-community-01",
+        "claude-sonnet-5-5-community-02",
+        "claude-sonnet-5-5-community-03"
+      ]
+    },
+    {
+      "id": "claude-fable-5-1",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"Claude Fable 5.1\" writing review",
+        "\"Fable 5.1\" firsthand writing tests"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "claude-fable-5-1-community-01",
+        "claude-fable-5-1-community-02",
+        "claude-fable-5-1-community-03",
+        "claude-fable-5-1-community-04",
+        "claude-fable-5-1-community-05"
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"Gemini 3.8 Flash\" experience review",
+        "\"Gemini 3.8 Flash\" hands-on video app tests"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "gemini-3.8-flash-community-01",
+        "gemini-3.8-flash-community-02",
+        "gemini-3.8-flash-community-03",
+        "gemini-3.8-flash-community-04"
+      ]
+    },
+    {
+      "id": "deepseek-v4.1-flash",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"DeepSeek V4.1 Flash\" review Reddit coding",
+        "\"DeepSeek-V4.1-Flash\" \"surprised\" \"UI bug\""
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "deepseek-v4.1-flash-community-01",
+        "deepseek-v4.1-flash-community-02",
+        "deepseek-v4.1-flash-community-03"
+      ]
+    },
+    {
+      "id": "qwen3.8-27b",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"Qwen3.8-27B\" review Reddit",
+        "\"Qwen3.8-27B\" \"Trial Report\"",
+        "\"Qwen3.8-27B\" \"Ninfer\"",
+        "\"Qwen3.8 27B\" \"Amazon\""
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "qwen3.8-27b-community-01",
+        "qwen3.8-27b-community-02",
+        "qwen3.8-27b-community-03"
+      ]
+    },
+    {
+      "id": "kimi-k3",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"Kimi K3\" coding review Reddit",
+        "\"Kimi K3\" \"Context Tree\" reviewer agent",
+        "\"Kimi K3\" \"backend\" \"reddit.com\" review",
+        "\"Kimi K3\" \"math\" \"review\" reddit"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "kimi-community-websites",
+        "kimi-community-ui-usage",
+        "kimi-community-ui-counterpoint",
+        "kimi-k3-community-01",
+        "kimi-k3-community-02"
+      ]
+    },
+    {
+      "id": "grok-4.7",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "\"Grok 4.7\" review coding experience",
+        "\"Grok 4.7\" site:reddit.com"
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "grok-4.7-community-01",
+        "grok-4.7-community-02",
+        "grok-4.7-community-03"
+      ]
+    },
+    {
+      "id": "mimo-v2.6-pro",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "MiMo Xiaomi models official September2026 MiMoV2 modelcard",
+        "site:github.com XiaomiMiMo MiMoV2ProFlash",
+        "MiMoV2Pro reviewcoding firsthandreddit",
+        "\"MiMo-V2.6-Pro\" \"review\"",
+        "\"mimo-v2.6-flash\" review",
+        "site:reddit.com \"mimo\" \"2.6\"",
+        "site:linux.do \"MiMo\" \"2.6\"",
+        "\"mimo-v2.6-pro\" \"fixed\" \"reddit\"",
+        "\"mimo-v2.6-pro-ultraspeed\" reviewreddit",
+        "site:mimo.mi.com \"mimo-v2.6-pro-ultraspeed\" \"1M\"",
+        "\"mimo\" \"2.6 flash\" \"fixed\" reddit",
+        "site:mimo.xiaomi.com \"tool-call\" \"repetition\""
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "mimo-v2.6-pro-community-01",
+        "mimo-v2.6-pro-community-02",
+        "mimo-v2.6-pro-community-03",
+        "mimo-v2.6-pro-community-04",
+        "mimo-v2.6-pro-community-05"
+      ]
+    },
+    {
+      "id": "mimo-v2.6-flash",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "MiMo Xiaomi models official September2026 MiMoV2 modelcard",
+        "site:github.com XiaomiMiMo MiMoV2ProFlash",
+        "MiMoV2Pro reviewcoding firsthandreddit",
+        "\"MiMo-V2.6-Pro\" \"review\"",
+        "\"mimo-v2.6-flash\" review",
+        "site:reddit.com \"mimo\" \"2.6\"",
+        "site:linux.do \"MiMo\" \"2.6\"",
+        "\"mimo-v2.6-pro\" \"fixed\" \"reddit\"",
+        "\"mimo-v2.6-pro-ultraspeed\" reviewreddit",
+        "site:mimo.mi.com \"mimo-v2.6-pro-ultraspeed\" \"1M\"",
+        "\"mimo\" \"2.6 flash\" \"fixed\" reddit",
+        "site:mimo.xiaomi.com \"tool-call\" \"repetition\""
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "mimo-v2.6-flash-community-01",
+        "mimo-v2.6-flash-community-02",
+        "mimo-v2.6-flash-community-03",
+        "mimo-v2.6-flash-community-04",
+        "mimo-v2.6-flash-community-05",
+        "mimo-v2.6-flash-community-06"
+      ]
+    },
+    {
+      "id": "mimo-v2.6-pro-ultraspeed",
+      "searched_on": "2026-09-30",
+      "queries": [
+        "MiMo Xiaomi models official September2026 MiMoV2 modelcard",
+        "site:github.com XiaomiMiMo MiMoV2ProFlash",
+        "MiMoV2Pro reviewcoding firsthandreddit",
+        "\"MiMo-V2.6-Pro\" \"review\"",
+        "\"mimo-v2.6-flash\" review",
+        "site:reddit.com \"mimo\" \"2.6\"",
+        "site:linux.do \"MiMo\" \"2.6\"",
+        "\"mimo-v2.6-pro\" \"fixed\" \"reddit\"",
+        "\"mimo-v2.6-pro-ultraspeed\" reviewreddit",
+        "site:mimo.mi.com \"mimo-v2.6-pro-ultraspeed\" \"1M\"",
+        "\"mimo\" \"2.6 flash\" \"fixed\" reddit",
+        "site:mimo.xiaomi.com \"tool-call\" \"repetition\""
+      ],
+      "status": "reviewed",
+      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
+      "evidence_ids": [
+        "mimo-v2.6-pro-ultraspeed-community-01"
+      ]
+    }
+  ]
+}

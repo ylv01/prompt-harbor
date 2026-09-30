@@ -198,6 +198,465 @@
       "published_on": null,
       "checked_on": "2026-09-29",
       "review_days": 14
+    },
+    {
+      "id": "openai-sol-6-1",
+      "title": "GPT-6.1 Sol model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-024",
+      "title": "Xiaomi MiMo official API pricing",
+      "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-025",
+      "title": "Xiaomi MiMo model releases",
+      "url": "https://mimo.mi.com/docs/en-US/updates/model",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-026",
+      "title": "Xiaomi MiMo model deprecation schedule",
+      "url": "https://mimo.mi.com/docs/en-US/updates/deprecate",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-027",
+      "title": "Xiaomi MiMo model capability table",
+      "url": "https://mimo.mi.com/docs/en-US/quick-start/model",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-028",
+      "title": "MiMo-V2.6 launch announcement",
+      "url": "https://mimo.mi.com/docs/en-US/news/latest/v2-6",
+      "publisher": "Xiaomi",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-029",
+      "title": "Diagnosing and Mitigating Tool-Call Repetition in MiMo-V2.6",
+      "url": "https://mimo.xiaomi.com/blog/mimo-v2-6-tool-call-repetition",
+      "publisher": "Xiaomi",
+      "published_on": "2026-09-27",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-030",
+      "title": "MiMo-V2.6-Pro-MOPD official checkpoint",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-031",
+      "title": "MiMo-V2.6-Flash-MOPD official checkpoint",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "mimo-v2.6-pro-official",
+      "title": "Xiaomi MiMo-V2.6-Pro official model page",
+      "url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-pro",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "mimo-v2.6-flash-official",
+      "title": "Xiaomi MiMo-V2.6-Flash official model page",
+      "url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-flash",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "mimo-v2.6-pro-ultraspeed-official",
+      "title": "Xiaomi MiMo-V2.6-Pro-UltraSpeed official model page",
+      "url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-pro-ultraspeed",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-035",
+      "title": "MiMo-V2.6-Pro-RL official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "publisher": "Xiaomi",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-036",
+      "title": "MiMo-V2.6-Flash-RL official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "publisher": "Xiaomi",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-037",
+      "title": "Astra built the author’s portfolio",
+      "url": "https://www.najam.pk/blog/gpt-6-astra-review",
+      "publisher": "Najam Saeed",
+      "published_on": "2026-09-01",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-038",
+      "title": "Scriptwriting comparison: Astra",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/",
+      "publisher": "OnlyProggingForFun",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-039",
+      "title": "Sol review and regression complaint",
+      "url": "https://www.reddit.com/r/codex/comments/1wp5x1a/gpt6_sol_is_not_good/",
+      "publisher": "skynet86",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-040",
+      "title": "Sol repaired an agentic wiki",
+      "url": "https://www.reddit.com/r/openclaw/comments/1wrgu8e/how_is_gpt6luna_so_good/",
+      "publisher": "ilias_from_ilios",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-041",
+      "title": "Ten engineering tasks: Luna version comparison",
+      "url": "https://www.reddit.com/r/codex/comments/1wp7ckc/i_ab_tested_gpt56_luna_and_gpt6_luna_on_the_same/",
+      "publisher": "rundef",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-042",
+      "title": "6.1 Sol planner with a local Qwen coder",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wtqp7l/using_gpt61_sol_only_as_the_planner_and_letting_a/",
+      "publisher": "GapNew4766",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-043",
+      "title": "6.1 Sol medium: safari game complaint",
+      "url": "https://www.reddit.com/r/OpenaiCodex/comments/1wtrad9/gpt_61_sol_has_been_pretty_disappointing_that_i/",
+      "publisher": "Upper-Animator-5067",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-044",
+      "title": "Opus 5.5 found two defects in the author's Stackchan/Home Assistant code",
+      "url": "https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/",
+      "publisher": "Alex Januschewsky",
+      "published_on": "2026-09-23",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-045",
+      "title": "Three-run skill comparison: Opus 5.5 and Sonnet 5.5",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1wtend0/tested_sonnet_55_vs_opus_55_with_the_same_skills/",
+      "publisher": "maverick_man1111",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-046",
+      "title": "Opus 5.5 versus Sonnet 5.5 on a large test refactor",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/",
+      "publisher": "Outrageous-Issue9722 (comment)",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-047",
+      "title": "Sonnet 5.5 high left bugs and required expensive rework",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1wsqfzk/sonnet_55_is_not_worth_using_it_unless_at_lowmed/",
+      "publisher": "msw3age (comment)",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-048",
+      "title": "Fable 5.1 structured a draft from handwritten notes",
+      "url": "https://aaronmakelky.com/blog/astra-vs-fable",
+      "publisher": "Aaron Makelky",
+      "published_on": "2026-09-15",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-049",
+      "title": "Seven-chapter Fable 5.1 rewrite still needed voice editing",
+      "url": "https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions",
+      "publisher": "AI-Native PM authors (Girish PM origin)",
+      "published_on": "2026-09-02",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-050",
+      "title": "Fable 5.1 animated SVG and rocket-page build-off",
+      "url": "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026",
+      "publisher": "BitsMinds hands-on reviewers",
+      "published_on": "2026-09-21",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-051",
+      "title": "Plotline screenshot-to-data app worked from one prompt",
+      "url": "https://promptslove.com/blog/gemini-3-8-flash-review/",
+      "publisher": "Ramanpal Singh",
+      "published_on": "2026-09-03",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-052",
+      "title": "Gemini 3.8 Flash game prototypes: simpler worlds versus broken 3D action",
+      "url": "https://rutinelabo.com/gemini-38-flash-review/",
+      "publisher": "せなお / Routine Labo",
+      "published_on": "2026-09-08",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-053",
+      "title": "Grok 4.7 on a large Rust repository in Cursor",
+      "url": "https://www.reddit.com/r/cursor/comments/1wrktgc/am_i_the_only_one_who_thinks_grok_47_is_actually/",
+      "publisher": "akeebismail",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-054",
+      "title": "Four Grok 4.7 visual builds shipped user-visible defects",
+      "url": "https://www.bitsminds.com/reviews/grok-4-7-review",
+      "publisher": "BitsMinds hands-on reviewers",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-055",
+      "title": "Grok 4.7 animated SVG pelican comparison",
+      "url": "https://www.reddit.com/r/grok/comments/1wp5iwr/grok_47_was_supposed_to_crush_opus_and_gpt6_then/",
+      "publisher": "Obligation19",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-056",
+      "title": "DeepSeek 4.1 Flash surprised me — 6 minutes, one attempt, $0.07",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wcj9ux/deepseek_41_flash_surprised_me_6_minutes_one/",
+      "publisher": "nehuenpereyra",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-057",
+      "title": "DeepSeek V4.1 Flash is cheap per token—but is it actually cheap per completed task?",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wdd9hh/deepseek_v41_flash_is_cheap_per_tokenbut_is_it/",
+      "publisher": "Logical_Catch_3207",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-058",
+      "title": "DeepSeek v4.1 Flash is truly amazing",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wgohh2/deepseek_v41_flash_is_truly_amazing/",
+      "publisher": "danilofs",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-059",
+      "title": "Qwen3.8-27B Trial Report (with Addendum)",
+      "url": "https://note.com/a_matsukaze/n/n9796f33ac3c5?hl=en",
+      "publisher": "A. Matsukaze",
+      "published_on": "2026-08-15",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-060",
+      "title": "Disappointed in Ninfer + Qwen 3.8-27B:nvfp4",
+      "url": "https://www.reddit.com/r/LocalLLM/comments/1wlze6z/disappointed_in_ninfer_qwen_3827bnvfp4/",
+      "publisher": "michmill1970",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-061",
+      "title": "I gave a local Qwen3.8 27B agent my Amazon account — and it bought paper for me",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wn0mm4/i_gave_a_local_qwen38_27b_agent_my_amazon_account/",
+      "publisher": "fuzhongkai",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-062",
+      "title": "LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?",
+      "url": "https://akitaonrails.com/en/2026/07/17/llm-benchmarks-kimi-k3/",
+      "publisher": "Fabio Akita",
+      "published_on": "2026-07-17",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-063",
+      "title": "Kimi K3 with Context Tree Beats GPT 5.6 Sol on a Real Engineering Task",
+      "url": "https://www.reddit.com/r/kimi/comments/1vba5ie/kimi_k3_with_context_tree_beats_gpt_56_sol_on_a/",
+      "publisher": "Still_Amphibian545 / First Tree team",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-064",
+      "title": "Short review about the mimo 2.6 pro model",
+      "url": "https://www.reddit.com/r/opencodeCLI/comments/1wmv8nn/short_review_about_the_mimo_26_pro_model/",
+      "publisher": "irukadesune",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-065",
+      "title": "Mimo 2.6 Pro feedback after 7 hours of testing",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wn3p6b/mimo_26_pro_feedback_after_7_hours_of_testing/",
+      "publisher": "Civil-Direction-6981",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-066",
+      "title": "MiMo-V2.6 (both Pro and Flash) is a benchmaxxed scam",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1woa5d3/mimov26_both_pro_and_flash_is_a_benchmaxxed_scam/",
+      "publisher": "crusaderky",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-067",
+      "title": "Opinions on the new mimo 2.6? — Pro-version roleplay comment",
+      "url": "https://www.reddit.com/r/SillyTavernAI/comments/1wn5nf4/opinions_on_the_new_mimo_26/",
+      "publisher": "LordVulpius",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-068",
+      "title": "For me, DS v4.1 is way better than mimo v2.6",
+      "url": "https://www.reddit.com/r/CommandCode/comments/1wmvmut/for_me_ds_v41_is_way_better_than_mimo_v26/",
+      "publisher": "choiyoh",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-069",
+      "title": "Mimo 2.6 Flash is a beast and seems to use very low token count",
+      "url": "https://www.reddit.com/r/opencode/comments/1wn191t/mimo_26_flash_is_a_beast_and_seems_to_use_very/",
+      "publisher": "Leather-Cod2129",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-070",
+      "title": "Which do you choose: DeepSeek v4.1 Flash or MiMo V2.6 Flash — improvement comment",
+      "url": "https://www.reddit.com/r/opencode/comments/1wp2ctx/which_do_you_choose_deepseek_v41_flash_or_mimo/",
+      "publisher": "oulu2006",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-071",
+      "title": "Pretty poor results with MiMo v2.6 Flash + Hermes — opposite experience comment",
+      "url": "https://www.reddit.com/r/hermesagent/comments/1wnkeak/pretty_poor_results_with_mimo_v26_flash_hermes/",
+      "publisher": "XKiiroiSenkoX",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-072",
+      "title": "Bug: New MiMo 2.6 Flash is unusable due to it ending up in infinite loops",
+      "url": "https://github.com/anomalyco/opencode/issues/50678",
+      "publisher": "omani",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "community-source-073",
+      "title": "MiMo 2.6 Pro UltraSpeed image-to-HTML comparison",
+      "url": "https://news.ycombinator.com/item?id=49794584",
+      "publisher": "jjcm",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
     }
   ]
 }

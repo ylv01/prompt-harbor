@@ -6,9 +6,9 @@ Keep the current feasible model as the planning baseline; Top 3 remain available
 
 ## Top 3 choices
 
-- 1. **Claude Opus 5.5** (`claude-opus-5-5`): Capability or adjacent-task support for Test design. Sources: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5)
+- 1. **Claude Opus 5.5** (`claude-opus-5-5`): Capability or adjacent-task support for Test design; weighted community reports included (see signed signal and sources). Sources: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 versus Sonnet 5.5 on a large test refactor](https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/)
 - 2. **GPT-6 Sol** (`gpt-6-sol`): Capability or adjacent-task support for Test design. Sources: [GPT-6 Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
-Only 2 evidence-backed choices available; use the declared baseline when shown.
+- 3. **Kimi K3** (`kimi-k3`): Community task reports only; a task trial is needed for Test design; weighted community reports included (see signed signal and sources). Sources: [LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?](https://akitaonrails.com/en/2026/07/17/llm-benchmarks-kimi-k3/), [Kimi K3 with Context Tree Beats GPT 5.6 Sol on a Real Engineering Task](https://www.reddit.com/r/kimi/comments/1vba5ie/kimi_k3_with_context_tree_beats_gpt_56_sol_on_a/)
 
 The user selects the actual model. This prompt works with any chosen model; keep the same contracts and acceptance criteria.
 

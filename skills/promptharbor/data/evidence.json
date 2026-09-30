@@ -1176,7 +1176,13 @@
         "artifact_urls": [
           "https://neuralhub.dev/test-sites/biggy-kimi3",
           "https://neuralhub.dev/test-sites/websites-kimi3"
-        ]
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Linked creative-web outputs support a positive bounded design result; outputs were not independently rerun.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
       }
     },
     {
@@ -1203,7 +1209,13 @@
         "grade": "firsthand",
         "stance": "positive",
         "first_seen_on": "2026-09-29",
-        "artifact_urls": []
+        "artifact_urls": [],
+        "rating": {
+          "value": 7.0,
+          "rationale": "A specific frontend subagent usage account is positive but lacks code or matched prompts.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
       }
     },
     {
@@ -1230,7 +1242,1961 @@
         "grade": "firsthand",
         "stance": "negative",
         "first_seen_on": "2026-09-29",
-        "artifact_urls": []
+        "artifact_urls": [],
+        "rating": {
+          "value": 4.0,
+          "rationale": "Preserves an adverse visual preference; no output or controlled task comparison supports a stronger negative conclusion.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.1-sol-official",
+      "model_id": "gpt-6.1-sol",
+      "source_id": "openai-sol-6-1",
+      "kind": "official_capability",
+      "claim": "OpenAI positions GPT-6.1 Sol for complex coding, computer use and professional work, with Responses tools and image input.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug",
+        "agent.computer",
+        "agent.workflow",
+        "writing.professional"
+      ],
+      "measurement": null,
+      "setting": "Official model positioning and API feature declaration; not a task quality measurement.",
+      "limitations": "Product capability and positioning do not prove relative task quality. Tool support is endpoint-specific.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-01",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-035",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a DeepSWE v1.1 score of 71.9 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "DeepSWE",
+        "version": "1.1",
+        "metric": "reported score",
+        "value": 71.9,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; retain its original harness and budget."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-02",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-035",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a Toolathlon-Verified score of 76.9 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Toolathlon-Verified",
+        "version": "model-card2026-09-22",
+        "metric": "reported score",
+        "value": 76.9,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; tool environment-specific."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-03",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-035",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a Terminal Bench 4.0 score of 34.9 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.terminal"
+      ],
+      "measurement": {
+        "benchmark": "Terminal Bench",
+        "version": "4.0",
+        "metric": "reported score",
+        "value": 34.9,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; exact terminal harness required."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result; different Terminal Bench suite versions are not comparable. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-04",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-035",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a OSWorld-Verified score of 82.0 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.computer"
+      ],
+      "measurement": {
+        "benchmark": "OSWorld-Verified",
+        "version": "model-card2026-09-22",
+        "metric": "reported score",
+        "value": 82.0,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; GUI harness-specific."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-05",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-035",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a MiMo VisualCoding score of 72.3 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.frontend",
+        "software.frontend.fidelity"
+      ],
+      "measurement": {
+        "benchmark": "MiMo VisualCoding",
+        "version": "model-card2026-09-22",
+        "metric": "reported score",
+        "value": 72.3,
+        "unit": "points",
+        "protocol": "Vendor's visual-coding suite; task definition needs further inspection."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "This vendor visual-coding suite is a proxy for frontend fidelity, not a production UI acceptance test. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-06",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-036",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a DeepSWE v1.1 score of 67.9 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "DeepSWE",
+        "version": "1.1",
+        "metric": "reported score",
+        "value": 67.9,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; retain its original harness and budget."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-07",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-036",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a Toolathlon-Verified score of 73.6 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Toolathlon-Verified",
+        "version": "model-card2026-09-22",
+        "metric": "reported score",
+        "value": 73.6,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; tool environment-specific."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-08",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-036",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a Terminal Bench 4.0 score of 28.8 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.terminal"
+      ],
+      "measurement": {
+        "benchmark": "Terminal Bench",
+        "version": "4.0",
+        "metric": "reported score",
+        "value": 28.8,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; exact terminal harness required."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result; different Terminal Bench suite versions are not comparable. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-09",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-036",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a OSWorld-Verified score of 80.8 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.computer"
+      ],
+      "measurement": {
+        "benchmark": "OSWorld-Verified",
+        "version": "model-card2026-09-22",
+        "metric": "reported score",
+        "value": 80.8,
+        "unit": "points",
+        "protocol": "Vendor model-card evaluation; GUI harness-specific."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "Vendor-run result without independent replication. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-10",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-036",
+      "kind": "vendor_eval",
+      "claim": "Xiaomi reports a MiMo VisualCoding score of 71.5 for the original RL checkpoint.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.frontend",
+        "software.frontend.fidelity"
+      ],
+      "measurement": {
+        "benchmark": "MiMo VisualCoding",
+        "version": "model-card2026-09-22",
+        "metric": "reported score",
+        "value": 71.5,
+        "unit": "points",
+        "protocol": "Vendor's visual-coding suite; task definition needs further inspection."
+      },
+      "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+      "limitations": "This vendor visual-coding suite is a proxy for frontend fidelity, not a production UI acceptance test. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-11",
+      "model_id": "mimo-v2.6-pro-ultraspeed",
+      "source_id": "mimo-v2.6-pro-ultraspeed-official",
+      "kind": "official_capability",
+      "claim": "Xiaomi positions Pro UltraSpeed as a serving tier for interactive coding and complex refactoring.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.repo",
+        "software.frontend",
+        "agent.workflow",
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Official positioning of the hosted UltraSpeed serving tier, not measured task performance.",
+      "limitations": "Vendor serving-tier positioning. No Pro benchmark score is counted as a measured UltraSpeed result; its end-to-end task completion is not independently established here.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-12",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-029",
+      "kind": "official_capability",
+      "claim": "Xiaomi reports an MOPD update targeting tool-call repetition in Pro and Flash; the API aliases switched to updated weights on September 25, 2026.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.terminal",
+        "agent.workflow",
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Official technical note published September 27, 2026, describing the September 25 API update and MOPD checkpoint release; not an independent task evaluation.",
+      "limitations": "Vendor mitigation claim, not independently verified task completion. Distinguish original RL loop behavior from the updated MOPD deployment; earlier RL scores do not measure the updated endpoint.",
+      "reported_on": "2026-09-27",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "mimo-vendor-13",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-029",
+      "kind": "official_capability",
+      "claim": "Xiaomi reports an MOPD update targeting tool-call repetition in Pro and Flash; the API aliases switched to updated weights on September 25, 2026.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.terminal",
+        "agent.workflow",
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Official technical note published September 27, 2026, describing the September 25 API update and MOPD checkpoint release; not an independent task evaluation.",
+      "limitations": "Vendor mitigation claim, not independently verified task completion. Distinguish original RL loop behavior from the updated MOPD deployment; earlier RL scores do not measure the updated endpoint.",
+      "reported_on": "2026-09-27",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6-astra-community-01",
+      "model_id": "gpt-6-astra",
+      "source_id": "community-source-037",
+      "kind": "community_test",
+      "claim": "The author reports building his portfolio with Astra in Codex, with strong coding results but rapid subscription quota consumption.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One personal project; no matched prompts or test suite. The explicit September 1 article date is retained as an early personal report; release/access timing is not independently established. Subscription quota anecdotes are not API prices.",
+      "reported_on": "2026-09-01",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Najam Saeed",
+        "origin_id": "author:najam saeed",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://www.najam.pk/"
+        ],
+        "rating": {
+          "value": 8,
+          "rationale": "A published personal website supports a strong bounded frontend result; one project and quota anecdotes do not establish broader superiority.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6-astra-community-02",
+      "model_id": "gpt-6-astra",
+      "source_id": "community-source-038",
+      "kind": "community_test",
+      "claim": "The author’s internal AI-judged script study places Astra near 6.1 Sol but below the older 6 Sol.",
+      "direct_tasks": [
+        "writing.creative"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "OnlyProggingForFun",
+        "origin_id": "author:onlyproggingforfun",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 6.5,
+          "rationale": "Useful scripts with a reported preference gap to older Sol; a small private AI-judged comparison supports only a cautious mixed rating.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6-sol-community-01",
+      "model_id": "gpt-6-sol",
+      "source_id": "community-source-039",
+      "kind": "community_test",
+      "claim": "At xHigh effort, the author reports fixes across six projects introducing regressions in four, subsequently repaired using Astra.",
+      "direct_tasks": [
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Self-reported bug counts and private projects; no patches, prompts or test logs. Harness and review process may contribute.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "skynet86",
+        "origin_id": "author:skynet86",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3.5,
+          "rationale": "Concrete reported regressions justify an adverse debugging signal; the private repositories and missing logs limit confidence.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6-sol-community-02",
+      "model_id": "gpt-6-sol",
+      "source_id": "community-source-040",
+      "kind": "community_test",
+      "claim": "The author reports four Sol runs fixed an agentic wiki previously handled with mixed models.",
+      "direct_tasks": [
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "No public repository or logs; prior attempts involved other models and are not a matched trial. Subscription usage is separate from API cost.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "ilias_from_ilios",
+        "origin_id": "author:ilias_from_ilios",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8,
+          "rationale": "A described repair outcome supports bounded debugging use; a hobby project without public code is a low-confidence signal.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6-sol-community-03",
+      "model_id": "gpt-6-sol",
+      "source_id": "community-source-038",
+      "kind": "community_test",
+      "claim": "The author’s internal AI-judged script study prefers older 6 Sol over 6.1 Sol and Astra.",
+      "direct_tasks": [
+        "writing.creative"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "OnlyProggingForFun",
+        "origin_id": "author:onlyproggingforfun",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8,
+          "rationale": "Retains a specific writing advantage reported for the older version rather than assuming the newest release is best.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6-luna-community-01",
+      "model_id": "gpt-6-luna",
+      "source_id": "community-source-040",
+      "kind": "community_test",
+      "claim": "The author reports useful Luna context continuity after Discord-session compaction in a mixed-model agent workflow.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [
+        "context.summary"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "No transcripts or controlled context-retention test. Other models/subagents contributed; claimed session token counts are not model specifications.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "ilias_from_ilios",
+        "origin_id": "author:ilias_from_ilios",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 7.5,
+          "rationale": "A concrete extended-session account supports useful workflow participation; mixed-model effects and unverified retention prevent a stronger score.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6-luna-community-02",
+      "model_id": "gpt-6-luna",
+      "source_id": "community-source-041",
+      "kind": "community_test",
+      "claim": "On ten bounded C++/Python tasks in separate worktrees, the author reports faster 6 Luna execution but an AI judge often preferred the older Luna’s final engineering work.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One 60k-line repository, high rather than max effort, ten tasks and GPT-5.6 Sol judging; no independent replay. Speed is workload-specific.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "rundef",
+        "origin_id": "author:rundef",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 5,
+          "rationale": "Speed and narrow execution were useful, while integration quality was mixed; this is task-specific feedback, not a universal downgrade.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.1-sol-community-01",
+      "model_id": "gpt-6.1-sol",
+      "source_id": "community-source-038",
+      "kind": "community_test",
+      "claim": "The author’s internal AI-judged script study places 6.1 Sol close to Astra but below older 6 Sol, with higher reported generation expense than older Sol.",
+      "direct_tasks": [
+        "writing.creative"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "OnlyProggingForFun",
+        "origin_id": "author:onlyproggingforfun",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 6.5,
+          "rationale": "A new model can still be weaker for a specific writing preference; retain the mixed result without treating private Elo as public benchmark evidence.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.1-sol-community-02",
+      "model_id": "gpt-6.1-sol",
+      "source_id": "community-source-042",
+      "kind": "community_test",
+      "claim": "The author reports building three small games with Sol planning and local Qwen coding, reducing API spend while taking much longer than Sol alone.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [
+        "software.architecture"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One run per game; no inspected output artifacts or functional tests. Local hardware/electricity omitted from API savings. Author develops the promoted AtomicAgent/Fusion orchestration tool, a commercial-interest confound.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "GapNew4766",
+        "origin_id": "author:gapnew4766",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 7.5,
+          "rationale": "The bounded planning/coding split produced reported deliverables and cost savings; latency and acceptance uncertainty constrain the recommendation.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.1-sol-community-03",
+      "model_id": "gpt-6.1-sol",
+      "source_id": "community-source-043",
+      "kind": "community_test",
+      "claim": "The author reports a medium-effort safari game iteration missed music and delivered poorly working gameplay, with another follow-up not fixing it.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "No returned code or acceptance log inspected; inspiration link is input, not proof of generated output. Medium effort and one early task only.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Upper-Animator-5067",
+        "origin_id": "author:upper-animator-5067",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3,
+          "rationale": "Specific missing requirements and unusable reported interaction warrant a negative frontend signal; a single early medium-effort run is not a general verdict.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-opus-5-5-community-01",
+      "model_id": "claude-opus-5-5",
+      "source_id": "community-source-044",
+      "kind": "community_test",
+      "claim": "In Claude Desktop, Opus 5.5 traced corrupted speech to two upstream Home Assistant entity-query defects in the author's existing robot project.",
+      "direct_tasks": [
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One project/session; no matched comparison or public patch inspected. Author uses AI for editing but states editorial responsibility.",
+      "reported_on": "2026-09-23",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Alex Januschewsky",
+        "origin_id": "alex-januschewsky-stackchan-20260923",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8.0,
+          "rationale": "Concrete symptom-to-cause success supports debugging usefulness; the single private case does not support a near-perfect general rating.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-opus-5-5-community-02",
+      "model_id": "claude-opus-5-5",
+      "source_id": "community-source-045",
+      "kind": "community_test",
+      "claim": "The author reran code-review, Git-workflow and documentation tasks three times; Opus 5.5 performed well with skills but unassisted outputs varied.",
+      "direct_tasks": [
+        "software.debug",
+        "writing.professional"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.terminal"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Small checklist tasks; Opus 5 judge; model defaults use different effort levels. Git rubric can saturate; raw-file link returned a fetch error, so it was not independently inspected.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "maverick_man1111",
+        "origin_id": "maverick-man1111-driftproof-013",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://driftproofhq.com/reports/013/"
+        ],
+        "rating": {
+          "value": 7.0,
+          "rationale": "Repeated task results are more useful than enthusiasm; variability and rubric saturation limit stronger conclusions.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-opus-5-5-community-03",
+      "model_id": "claude-opus-5-5",
+      "source_id": "community-source-046",
+      "kind": "community_test",
+      "claim": "A commenter reports a 17-slice refactor of 120k lines of tests on separate branches: Opus 5.5 high left more rule violations and took longer than Sonnet 5.5 high.",
+      "direct_tasks": [
+        "software.repo",
+        "software.testing"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Self-reported private repository and three-layer review; no patches, prompts or timings independently inspected. One refactor workload does not establish a model-wide ordering.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Outrageous-Issue9722 (comment)",
+        "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 4.0,
+          "rationale": "Retains a concrete adverse implementation report despite positive Opus feedback elsewhere; low confidence prevents overgeneralization.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-sonnet-5-5-community-01",
+      "model_id": "claude-sonnet-5-5",
+      "source_id": "community-source-045",
+      "kind": "community_test",
+      "claim": "On the author's repeated review, Git-workflow and docs/ADR tasks, Sonnet 5.5 with skills was comparable to Opus 5.5 and cheaper in estimated generation cost.",
+      "direct_tasks": [
+        "software.debug",
+        "writing.professional"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.terminal"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Small checklist tasks, model judge, differing default effort and potentially saturated Git rubric. Public raw-file link could not be fetched; author acknowledges equivalence on this test does not prove equal overall capability.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "maverick_man1111",
+        "origin_id": "maverick-man1111-driftproof-013",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://driftproofhq.com/reports/013/"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Three runs and stated caveats support a positive practical report, while grading and effort confounds cap confidence.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-sonnet-5-5-community-02",
+      "model_id": "claude-sonnet-5-5",
+      "source_id": "community-source-046",
+      "kind": "community_test",
+      "claim": "A commenter reports fewer violations and faster slices for Sonnet 5.5 high than Opus 5.5 high on separate branches refactoring a 120k-line test suite.",
+      "direct_tasks": [
+        "software.repo",
+        "software.testing"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Private code; reviewer methodology described but not independently verified. One workload, release-day usage and no public patches.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Outrageous-Issue9722 (comment)",
+        "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8.0,
+          "rationale": "Concrete branch comparison and review criteria support the task fit; insufficient replication for a higher score.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-sonnet-5-5-community-03",
+      "model_id": "claude-sonnet-5-5",
+      "source_id": "community-source-047",
+      "kind": "community_test",
+      "claim": "In two low/medium difficulty coding tasks, the commenter reports Sonnet 5.5 high was initially faster/cheaper but left bugs or omissions; Opus review and rework erased that advantage.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "software.debug"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Only two unspecified tasks; no prompts, patches, invoice or code artifacts. Anecdote concerns total cost after review, not a verified token-rate comparison.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "msw3age (comment)",
+        "origin_id": "msw3age-sonnet-high-two-tasks",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3.5,
+          "rationale": "Specific residual-defect and rework complaint is an adverse signal; weak reproducibility keeps the confidence limited.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-1-community-01",
+      "model_id": "claude-fable-5-1",
+      "source_id": "community-source-048",
+      "kind": "community_test",
+      "claim": "Given 17 scanned handwritten pages, the author preferred Fable 5.1's draft structure and opening; processing took substantially longer than the Astra setup.",
+      "direct_tasks": [
+        "writing.edit",
+        "writing.professional"
+      ],
+      "proxy_tasks": [
+        "vision.document"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One personal task; different applications and tools; subjective preference, no blind grading. Author discloses receiving OpenAI promotional merchandise.",
+      "reported_on": "2026-09-15",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Aaron Makelky",
+        "origin_id": "aaron-makelky-astra-fable-20260915",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://aaronmakelky.com/blog/astra-vs-fable"
+        ],
+        "rating": {
+          "value": 8.0,
+          "rationale": "Clear transformation task and explicit quality/time tradeoff support writing fit, with comparison confounds retained.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-1-community-02",
+      "model_id": "claude-fable-5-1",
+      "source_id": "community-source-048",
+      "kind": "community_test",
+      "claim": "The shown tests retained an existing page's branding, but a new business homepage had readability/spacing faults and a weaker complete brand package than the author's preferred Astra result.",
+      "direct_tasks": [
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [
+        "software.frontend"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Two briefs, subjective preference, no conversion measurement; different harnesses and image-generation access. Same origin as the writing test; do not count as an independent second reviewer.",
+      "reported_on": "2026-09-15",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Aaron Makelky reporting tests with Ryan Doser",
+        "origin_id": "aaron-makelky-astra-fable-20260915",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://aaronmakelky.com/blog/astra-vs-fable"
+        ],
+        "rating": {
+          "value": 5.0,
+          "rationale": "Brand retention is useful, while visible layout faults warrant a mixed task assessment.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-1-community-03",
+      "model_id": "claude-fable-5-1",
+      "source_id": "community-source-049",
+      "kind": "community_test",
+      "claim": "On a seven-chapter course rewrite, the authors found only marginal prose improvement and still edited every chapter to restore their voice.",
+      "direct_tasks": [
+        "writing.edit"
+      ],
+      "proxy_tasks": [
+        "writing.professional"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Before/after excerpt is public, but complete session outputs were not inspected; fleet mode confounds model attribution.",
+      "reported_on": "2026-09-02",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "AI-Native PM authors (Girish PM origin)",
+        "origin_id": "ai-native-pm-girishpm-fable-rewrite-20260902",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions"
+        ],
+        "rating": {
+          "value": 5.5,
+          "rationale": "Modest improvement and necessary line editing support a mixed score for preserving a specific author voice.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-1-community-04",
+      "model_id": "claude-fable-5-1",
+      "source_id": "community-source-049",
+      "kind": "community_test",
+      "claim": "The course workflow needed less steering and recovered cached agent results, but underestimated usage and exhausted its subscription allowance before completion.",
+      "direct_tasks": [
+        "agent.long",
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One workflow with fleet mode; resumption and allowance accounting also belong to Claude Code/product behavior. Same origin as the course rewrite; do not count twice per task.",
+      "reported_on": "2026-09-02",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "AI-Native PM authors (Girish PM origin)",
+        "origin_id": "ai-native-pm-girishpm-fable-rewrite-20260902",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 6.0,
+          "rationale": "Recovery is a practical gain; usage estimation and interrupted delivery offset it for long-running work.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-1-community-05",
+      "model_id": "claude-fable-5-1",
+      "source_id": "community-source-050",
+      "kind": "community_test",
+      "claim": "In three visible animation briefs, Fable 5.1 had a fault-free interchange and a correctly rotating carousel, and kept the launch vehicle in frame, with remaining rocket defects.",
+      "direct_tasks": [
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [
+        "software.frontend"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Single attempt per brief; non-blind judging and different maker harnesses. Live builds are linked, but exact prompt files were not published; no production/accessibility validation.",
+      "reported_on": "2026-09-21",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "BitsMinds hands-on reviewers",
+        "origin_id": "bitsminds-cross-lab-three-briefs-20260921",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026"
+        ],
+        "rating": {
+          "value": 8.0,
+          "rationale": "Concrete motion correctness is useful evidence for visual prototypes; residual defects and small sample cap the score.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gemini-3.8-flash-community-01",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "community-source-051",
+      "kind": "community_test",
+      "claim": "The author built Plotline in OpenCode and reports successful mixed screenshot extraction, editable tables and working re-extraction using Gemini 3.8 Flash.",
+      "direct_tasks": [
+        "data.extract",
+        "vision.chart",
+        "vision.document"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Prompt/demo are published; no extraction error dataset or source repository independently inspected. Author-operated single build, OpenCode/high effort.",
+      "reported_on": "2026-09-03",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Ramanpal Singh",
+        "origin_id": "ramanpal-singh-gemini-five-apps-20260903",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://promptslove.com/blog/gemini-3-8-flash-review/"
+        ],
+        "rating": {
+          "value": 8.0,
+          "rationale": "Working extraction workflow supports this task; one demo does not justify 10/10 accuracy.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gemini-3.8-flash-community-02",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "community-source-051",
+      "kind": "community_test",
+      "claim": "Figures had working data views but broken upload/navigation; Parallax had loading, readability and theme defects despite some successful page design.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design",
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Same author/build series as Plotline; limited samples and different comparator harness. Do not turn successful application construction into proof of financial reasoning.",
+      "reported_on": "2026-09-03",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Ramanpal Singh",
+        "origin_id": "ramanpal-singh-gemini-five-apps-20260903",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://promptslove.com/blog/gemini-3-8-flash-review/"
+        ],
+        "rating": {
+          "value": 4.5,
+          "rationale": "Working parts offset serious user-visible failures; preserves adverse evidence alongside extraction success.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gemini-3.8-flash-community-03",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "community-source-052",
+      "kind": "community_test",
+      "claim": "A seven-task demo comparison produced usable websites and a walkable voxel world, but platformer fall detection and complex 3D action failed.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Screenshots and video linked; complete prompts require LINE subscription and were not inspected. Small heterogeneous prototypes, unspecified independent acceptance tests; affiliate disclosure.",
+      "reported_on": "2026-09-08",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "せなお / Routine Labo",
+        "origin_id": "routine-labo-gemini-seven-tasks-20260908",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://rutinelabo.com/gemini-38-flash-review/"
+        ],
+        "rating": {
+          "value": 5.5,
+          "rationale": "Simple prototypes are usable but interaction failures limit confidence for complex frontends.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "gemini-3.8-flash-community-04",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "community-source-052",
+      "kind": "community_test",
+      "claim": "The author describes using recorded video to choose screenshot positions that correspond to a blog article's explanation.",
+      "direct_tasks": [
+        "vision.video"
+      ],
+      "proxy_tasks": [
+        "context.summary"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "No timestamp accuracy or video question dataset; benchmark assertions in the same article are excluded from this anecdote. Same reviewer as the prototype series.",
+      "reported_on": "2026-09-08",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "せなお / Routine Labo",
+        "origin_id": "routine-labo-gemini-seven-tasks-20260908",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 7.0,
+          "rationale": "Concrete author workflow suggests video usefulness without establishing measured temporal accuracy.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "grok-4.7-community-01",
+      "model_id": "grok-4.7",
+      "source_id": "community-source-053",
+      "kind": "community_test",
+      "claim": "With clear context, the author reports usable multi-file changes and debugging in a Rust codebase with distributed workflows and data pipelines, with occasional overcomplication/architectural drift.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.architecture"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Private repository, no prompts or tests inspected; Cursor routing/harness may affect experience.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "akeebismail",
+        "origin_id": "akeebismail-grok-rust-repository",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 7.0,
+          "rationale": "Concrete existing-repository use is positive; architectural mistakes and lack of public outcomes cap the score.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "grok-4.7-community-02",
+      "model_id": "grok-4.7",
+      "source_id": "community-source-054",
+      "kind": "community_test",
+      "claim": "Four xhigh Grok Build briefs had sound mechanisms but visible animation/game defects; the Hill Climb build reported completion with known faults.",
+      "direct_tasks": [
+        "software.frontend.design",
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.testing"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One attempt per brief; non-blind human scoring; tools differed in the earlier round. Independent benchmark and vendor claims on the page are excluded from this community record.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "BitsMinds hands-on reviewers",
+        "origin_id": "bitsminds-grok-four-briefs-20260922",
+        "grade": "artifact_report",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026",
+          "https://www.bitsminds.com/news/claude-opus-5-vs-gpt-5-6-sol-vs-grok-4-7-hill-climb-2026"
+        ],
+        "rating": {
+          "value": 3.5,
+          "rationale": "Repeated visible failures support an adverse visual-build score; scope stays on those briefs.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "grok-4.7-community-03",
+      "model_id": "grok-4.7",
+      "source_id": "community-source-055",
+      "kind": "community_test",
+      "claim": "The author rendered same-prompt SVG animations from Grok 4.7, Opus 5.5 and GPT-6 Sol; Grok produced movement but its pose was less convincing to that reviewer.",
+      "direct_tasks": [
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [
+        "software.frontend"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One toy animation and subjective aesthetic preference; TokenRouter effort/settings not specified. Rendered GIF is linked on the original post; it was not executed locally.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Obligation19",
+        "origin_id": "obligation19-grok-pelican-svg",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://www.reddit.com/r/grok/comments/1wp5iwr/grok_47_was_supposed_to_crush_opus_and_gpt6_then/"
+        ],
+        "rating": {
+          "value": 4.5,
+          "rationale": "Correct broad elements but weaker perceived composition justify a slightly adverse task-specific signal.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "deepseek-v4.1-flash-community-01",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "community-source-056",
+      "kind": "community_test",
+      "claim": "The author reports a successful first-pass responsive website using DeepSeek Harness at maximum reasoning, with HTML, vanilla JavaScript, Tailwind, GSAP and Lucide. Mobile adaptation and visual feedback were satisfactory, while token consumption was high.",
+      "direct_tasks": [
+        "software.frontend",
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Single author and website; original prompt and source project are not linked. A media poster is present but the video was not replayed or validated. Reported time, spend and token totals are self-reports. Page exposes only a relative timestamp, so no exact publication date is inferred. Does not establish reference fidelity or production correctness.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "nehuenpereyra",
+        "origin_id": "reddit-nehuenpereyra-deepseek41-frontend-demo",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8.0,
+          "rationale": "A concrete frontend stack, first-pass result and mobile outcome support a strong reported result; missing prompt, source and independent execution keep confidence limited.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "deepseek-v4.1-flash-community-02",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "community-source-057",
+      "kind": "community_test",
+      "claim": "The author reports code that passes immediate checks but accumulates nested branches, duplicated logic and local fixes. On PDF/slide workflows the model reportedly took unnecessary tool detours, weakening total task efficiency despite fast generation.",
+      "direct_tasks": [
+        "software.repo",
+        "agent.workflow"
+      ],
+      "proxy_tasks": [
+        "software.debug"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "No prompts, repository, tool traces or timed logs are published. Harness and reasoning settings are unspecified; comparator is only called GPT-6 and is not an exact catalog model. Page timestamp is relative. The report is an adverse task observation, not a verified causal claim about model training or a controlled cost comparison.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Logical_Catch_3207",
+        "origin_id": "reddit-logical-catch-3207-deepseek41-maintenance",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3.5,
+          "rationale": "The reported work completes but maintainability and workflow discipline repeatedly disappoint. The score describes this author's account; missing artifacts make it low-confidence evidence.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "deepseek-v4.1-flash-community-03",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "community-source-058",
+      "kind": "community_test",
+      "claim": "The author reports continuous use in OpenCode to repair problems left in an existing project by several coding agents.",
+      "direct_tasks": [
+        "software.debug",
+        "software.repo"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "No specific defect, repository, prompt, patch or test result is provided. Earlier agents are product names, so comparisons cannot be assigned to exact model versions. The page exposes only a relative timestamp. Replies include hallucination cautions, but those are separate authors and must not be treated as this report's verified failures.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "danilofs",
+        "origin_id": "reddit-danilofs-deepseek41-repo-repairs",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 7.0,
+          "rationale": "Repeated repair use is a positive task signal, but broad praise without reviewable patches warrants a moderate editorial score and low confidence.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "qwen3.8-27b-community-01",
+      "model_id": "qwen3.8-27b",
+      "source_id": "community-source-059",
+      "kind": "community_test",
+      "claim": "The author reports a successful English-to-Japanese translation test using Vontra's Qwen3.8-27B-oQ8 MLX quant in LM Studio 0.4.21 Build 2, default XHigh reasoning, on a MacBook Pro M5 Max. The author's grader awarded a perfect result; reasoning took several minutes.",
+      "direct_tasks": [
+        "writing.translation"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Specific quantization and runtime, one author's translation test, no complete source/translation pair or grading rubric in this article. Grading uses an LLM rather than a bilingual blinded panel. The English page is machine translated. The score is an editorial assessment, not the author's raw score divided by ten. No claim is admitted from the secondhand benchmark addendum.",
+      "reported_on": "2026-08-15",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "A. Matsukaze",
+        "origin_id": "note-a-matsukaze-qwen38-english-japanese",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8.0,
+          "rationale": "A concrete language direction and reproducible environment support a strong reported translation result. Missing test text and LLM grading limit generalization, and slow XHigh reasoning is a practical cost.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "qwen3.8-27b-community-02",
+      "model_id": "qwen3.8-27b",
+      "source_id": "community-source-060",
+      "kind": "community_test",
+      "claim": "After extensive Hermes agent use, the author reports repetitive long tool-call loops and forgotten instructions with Ninfer plus Qwen3.8-27B NVFP4. Re-running the same prompts with llama-server plus Unsloth UD-Q4_K_XL reportedly avoided those loops, despite similar small evaluation results.",
+      "direct_tasks": [
+        "agent.workflow",
+        "agent.long"
+      ],
+      "proxy_tasks": [
+        "context.synthesis"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "This is an adverse report about a particular quantization/inference-engine combination, not every Qwen3.8 deployment. Quantization and engine changed together, so their effects are confounded. Prompts and traces are not linked. Exact timestamp is not exposed. Do not extend the negative score to original precision or Unsloth/llama-server settings without new evidence.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "michmill1970",
+        "origin_id": "reddit-michmill1970-qwen38-nvfp4-hermes",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3.0,
+          "rationale": "Repeated interruptions and instruction reminders make the reported setup unreliable for extended tool work; the contrasting quantization result requires preserving the deployment condition.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "qwen3.8-27b-community-03",
+      "model_id": "qwen3.8-27b",
+      "source_id": "community-source-061",
+      "kind": "community_test",
+      "claim": "A local Qwen3.8-27B agent in TensorSharp with a Playwright skill reportedly searched, compared and prepared an Amazon paper purchase in one run. The author handled login and final purchase approval; a video with tool trace and the runtime repository are linked.",
+      "direct_tasks": [
+        "agent.computer",
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One task and one run; no repeated success rate. Browser operations use Playwright code, so this does not prove native screenshot-driven GUI skill. Author develops the demonstrated runtime. The linked video was not replayed and the workflow was not reproduced. Quantization is unspecified; exact page timestamp is relative. Human login and transaction approval are part of the successful setup.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "fuzhongkai",
+        "origin_id": "tensorsharp-fuzhongkai-qwen38-amazon-paper",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://github.com/zhongkaifu/TensorSharp"
+        ],
+        "rating": {
+          "value": 8.0,
+          "rationale": "A concrete completed workflow with available runtime and trace supports practical tool use, while human intervention, developer interest and a single run limit confidence.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "kimi-k3-community-01",
+      "model_id": "kimi-k3",
+      "source_id": "community-source-062",
+      "kind": "community_test",
+      "claim": "Kimi K3 via Kimi Code CLI delivered a Rails 8/RubyLLM/Hotwire/Docker chat app with correct conversation replay, bounded history and working chat validation. Review found missing system instructions, weak persistence/concurrency handling and insufficient error coverage. A public result commit and project links are available.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "software.testing",
+        "software.architecture"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "One app run; Kimi Code subscription harness at a 256K plan limit. Original OpenCode/Moonshot tool schema was incompatible and the harness was changed. Published model comparisons concern older competitors, not current catalog successors. Project was inspected by the author; we opened the result commit but did not rerun it. Does not cover migrations, background jobs or production tool actions. Evidence is dated July and must retain its age.",
+      "reported_on": "2026-07-17",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Fabio Akita",
+        "origin_id": "akitaonrails-kimi-k3-rails-chat-app-20260717",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://github.com/akitaonrails/llm-coding-benchmark/commit/2bf1d7b3e3bbc7e6ff9a18a07390333c86bda615",
+          "https://github.com/akitaonrails/llm-coding-benchmark"
+        ],
+        "rating": {
+          "value": 8.0,
+          "rationale": "A functioning reviewed repository with concrete strengths and defects merits a strong but incomplete task assessment; this is editorial judgment rather than a conversion of the author's 89/100 rubric.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "kimi-k3-community-02",
+      "model_id": "kimi-k3",
+      "source_id": "community-source-063",
+      "kind": "community_test",
+      "claim": "The First Tree team reports that standalone Kimi K3 left permissive security headers and weak QA on one repository issue. Adding a reviewer and shared Context Tree produced stricter origin restrictions and tests after many more iterations. The post links the compared pull requests.",
+      "direct_tasks": [
+        "software.security",
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "software.testing",
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+      "limitations": "Self-promotion with explicit team disclosure; reviewer, shared context, iterations and spending changed together. GPT comparator is an older exact version without the added harness. Claude Opus supplied grading. Both PR summaries were opened and support the described policy differences; tests were not reproduced. The PRs date to July 22/27, 2026, while the report's exact date remains unknown. Cross-posts count as the same origin.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Still_Amphibian545 / First Tree team",
+        "origin_id": "first-tree-team-kimi-k3-security-issue",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://github.com/agent-team-foundation/first-tree/pull/1932",
+          "https://github.com/agent-team-foundation/first-tree/pull/2026"
+        ],
+        "rating": {
+          "value": 5.5,
+          "rationale": "The report shows substantial task failure in the standalone setup and improvement with intensive review. A middling editorial outcome and low confidence preserve both findings without treating framework-assisted success as intrinsic superiority.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro-community-01",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-064",
+      "kind": "community_test",
+      "claim": "The author reports that MiMo-V2.6-Pro repaired an Instagram following-list script that could log in but could not retrieve the list.",
+      "direct_tasks": [
+        "software.debug"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+      "limitations": "One repair experience, with no public repository or execution logs. The previous model wrote the initial script while MiMo repaired it; these are different tasks and do not establish a matched win rate. The opened original shows only relative timestamps; the absolute report date is unverified.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "irukadesune",
+        "origin_id": "reddit:irukadesune:mimo26pro-instagram-debug",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8,
+          "rationale": "The reported failure and repair outcome are concrete, supporting a positive debugging assessment. Missing reproduction artifacts limit confidence. This is our editorial judgment, not the author's numerical rating or a measured success rate.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro-community-02",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-065",
+      "kind": "community_test",
+      "claim": "The author reports that MiMo-V2.6-Pro failed an agent architecture refactor involving a JEV state layer and also missed explicit requirements in a separate frontend change to a file tree and chat panel.",
+      "direct_tasks": [
+        "software.repo",
+        "software.architecture",
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+      "limitations": "Two private tasks, without code, complete prompts or acceptance logs. The approximately seven-hour duration is author-reported and does not establish typical latency. The Astra comparison relies on previous experience. Only relative timestamps are shown; no absolute date is inferred.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Civil-Direction-6981",
+        "origin_id": "reddit:Civil-Direction-6981:mimo26pro-refactor",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3,
+          "rationale": "Reported failures in following requirements and maintaining architectural consistency provide a negative signal for longer engineering tasks. One person's tasks do not establish a general failure rate.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro-community-03",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-066",
+      "kind": "community_test",
+      "claim": "The author reports bypasses involving environment variables and command aliases in Pro-generated bubblewrap/Git write restrictions and provides examples.",
+      "direct_tasks": [
+        "software.security"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+      "limitations": "The original includes selected failure examples but no complete patch. Some of the nine alleged vulnerabilities were identified by another model and have not been reproduced by this project. The title's benchmaxxing accusation is not an established fact.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "crusaderky",
+        "origin_id": "reddit:crusaderky:mimo26-security-git",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 2.5,
+          "rationale": "The report describes bypassable security boundaries on the stated task. Retain these specific failures without adopting the title's blanket condemnation; an overall leaderboard score cannot establish correctness of this implementation.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro-community-04",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-067",
+      "kind": "community_test",
+      "claim": "The commenter explicitly used regular Pro, rather than Flash or UltraSpeed, and reports livelier character interactions and better prompt adherence than in their own V2.5-Pro experience.",
+      "direct_tasks": [
+        "writing.creative"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+      "limitations": "Personal roleplay preference, without a complete conversation or common writing rubric. It does not establish professional-writing ability. Other comments express opposing preferences and concerns about overthinking.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "LordVulpius",
+        "origin_id": "reddit:LordVulpius:mimo26pro-roleplay",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8,
+          "rationale": "The variant is explicit and the report describes character interaction and prompt adherence, supporting a trial for conversational creative writing. It does not establish factual accuracy or a general writing advantage.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro-community-05",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "community-source-068",
+      "kind": "community_test",
+      "claim": "The author gave Pro and Flash the same UI/UX maintenance request for a live website; both reportedly stalled in terminal grep loops, after which another model completed the change.",
+      "direct_tasks": [
+        "software.terminal",
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. Launch-period timing is inferred from the discussion; the opened original shows only relative timestamps. The absolute test date and RL/MOPD checkpoint revision are unverified.",
+      "limitations": "No repository, tool trace or model configuration is public. Model behavior and the CommandCode integration can both affect the result. Third-party retellings of this author's test must retain the same origin and add no independent weight. Xiaomi updated the Pro/Flash API aliases on September 25, 2026 and released MOPD weights. This report does not pin a checkpoint, so the loop may concern the earlier revision. Any reduction in current-deployment relevance requires an explicit assessment; the announcement alone does not establish that this specific failure was fixed.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "choiyoh",
+        "origin_id": "reddit:choiyoh:mimo26-ui-loop",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 2.5,
+          "rationale": "The reported tool loop prevented delivery and supplies a negative signal for this terminal-assisted frontend maintenance task. It is not a conclusion about general model intelligence.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-flash-community-01",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-068",
+      "kind": "community_test",
+      "claim": "The same author explicitly reports that Flash, as well as Pro, stalled in grep loops during the website UI/UX maintenance task.",
+      "direct_tasks": [
+        "software.terminal",
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. Launch-period timing is inferred from the discussion; the opened original shows only relative timestamps. The absolute test date and RL/MOPD checkpoint revision are unverified.",
+      "limitations": "No repository or complete trace is public. This shares the same test origin; third-party summaries are not independent replications. Xiaomi updated the Pro/Flash API aliases on September 25, 2026 and released MOPD weights. This report does not pin a checkpoint, so the loop may concern the earlier revision. Any reduction in current-deployment relevance requires an explicit assessment; the announcement alone does not establish that this specific failure was fixed.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "choiyoh",
+        "origin_id": "reddit:choiyoh:mimo26-ui-loop",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 2.5,
+          "rationale": "The task is identifiable but not reproducible from the available materials. The assessment is negative for reliability in the reported harness.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-flash-community-02",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-066",
+      "kind": "community_test",
+      "claim": "The author requested a new branch and a cherry-pick in an unexpectedly corrupted worktree, reporting that Flash failed to recover the task and performed many unproductive terminal operations.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.debug",
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. Launch-period timing is inferred from the discussion; the opened original shows only relative timestamps. The absolute test date and RL/MOPD checkpoint revision are unverified.",
+      "limitations": "The unusual repository state was part of the actual task. No complete run trace is public, and the author's fear of possible damage is not evidence that damage occurred. Other users in the same thread report positive experiences. Xiaomi updated the Pro/Flash API aliases on September 25, 2026 and released MOPD weights. This report does not pin a checkpoint, so the loop may concern the earlier revision. Any reduction in current-deployment relevance requires an explicit assessment; the announcement alone does not establish that this specific failure was fixed.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "crusaderky",
+        "origin_id": "reddit:crusaderky:mimo26-security-git",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 2.5,
+          "rationale": "Failure to recover an unusual repository state is a relevant terminal-agent task signal. The assessment retains the reported failure without assuming unverified damage.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-flash-community-03",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-069",
+      "kind": "community_test",
+      "claim": "An OpenCode user reports an encouraging first impression of Flash as fast, inexpensive and requiring less thinking.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.repo",
+        "software.terminal"
+      ],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+      "limitations": "No concrete task, token counts or latency measurements are provided. This is a low-confidence usage impression, not a speed test.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "Leather-Cod2129",
+        "origin_id": "reddit:Leather-Cod2129:mimo26flash-early-impression",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 7,
+          "rationale": "Retain the favorable firsthand experience, but the unspecified task makes it only a weak proxy for coding-tool workflows.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-flash-community-04",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-070",
+      "kind": "community_test",
+      "claim": "A user of both models prefers MiMo-V2.6-Flash's outputs and reports that early loops improved through a combination of upstream changes and loop detection in their own router.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "The author uses an unpinned Flash API alias and mentions recent upstream changes together with their own router. The exact report date and checkpoint revision are unknown.",
+      "limitations": "No specific deliverable or reproducible trace is provided. Improvement combines model updates and user-built routing safeguards, so it cannot be attributed to the model alone. The report date and checkpoint are not pinned.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "oulu2006",
+        "origin_id": "reddit:oulu2006:mimo26flash-loop-mitigation",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Retain the later positive experience and practical improvement alongside the harness contribution and revision uncertainty, rather than collecting only early failures.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-flash-community-05",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-071",
+      "kind": "community_test",
+      "claim": "A commenter reports that Flash fixed problems another model had not resolved. A main agent divided the work into clearly scoped subtasks; the commenter still reports overthinking.",
+      "direct_tasks": [
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "The discussion explicitly identifies V2.6-Flash, but the checkpoint revision is unpinned. The exact report date and deployment settings are unknown unless stated in the report.",
+      "limitations": "The defects are not public. Success on bounded subtasks does not establish independent architectural design ability, and the benefit of the main agent's decomposition cannot be attributed entirely to Flash.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "XKiiroiSenkoX",
+        "origin_id": "reddit:XKiiroiSenkoX:mimo26flash-scoped-fixes",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8,
+          "rationale": "The reported outcome supports debugging with clearly scoped assignments, subject to the stated thinking-time concern and assistance from the main agent's decomposition.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-flash-community-06",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "community-source-072",
+      "kind": "community_test",
+      "claim": "A user reports repeated Glob/Find/Read operations after several iterations with MiMo-V2.6-Flash in OpenCode 1.18.32 on Alpine Linux 3.23 and lists reproduction steps.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "The issue was opened on September 22, 2026, before the official September 25 API update. This establishes a pre-update report; the exact launch checkpoint is not pinned. The reported harness is OpenCode 1.18.32 on Alpine Linux 3.23.",
+      "limitations": "The opened original issue identifies the date, environment and steps, but supplies no complete trace or concrete repository. Its open status in the retrieved snapshot does not establish that the subsequent fix has been independently verified.",
+      "reported_on": "2026-09-22",
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "omani",
+        "origin_id": "github:omani:opencode50678",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [],
+        "rating": {
+          "value": 2.5,
+          "rationale": "The specified environment and steps support a negative assessment of the historical tool loop. Xiaomi subsequently announced an MOPD mitigation for this failure class, reducing this report's relevance to ranking the updated deployment.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        },
+        "applicability": {
+          "weight": 0.25,
+          "reason": "The original issue was opened on September 22, before the official September 25 API update, and concerns the tool-repetition failure class addressed by MOPD. This discounts relevance of the historical revision; it does not claim that this project reproduced the fix.",
+          "source_id": "community-source-029"
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro-ultraspeed-community-01",
+      "model_id": "mimo-v2.6-pro-ultraspeed",
+      "source_id": "community-source-073",
+      "kind": "community_test",
+      "claim": "The author links a reference design and three generated webpages, reporting weaker reference fidelity from UltraSpeed, a long total build time attributed to overthinking, and distorted dynamic background effects.",
+      "direct_tasks": [
+        "software.frontend",
+        "software.frontend.fidelity"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+      "limitations": "The MiMo output page was opened and confirmed accessible, but this project performed no browser visual acceptance test. Complete prompts, equal budgets and blind ratings are unavailable. The author says mobile support was not requested; other commenters dispute the mobile ranking. The Astra variant is unspecified and cannot be mapped to GPT-6.1-Sol.",
+      "reported_on": null,
+      "reviewed_on": "2026-09-30",
+      "comparison_group": null,
+      "community": {
+        "author": "jjcm",
+        "origin_id": "hn:jjcm:annui-image-html",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-09-30",
+        "artifact_urls": [
+          "https://html.non.io/annui-mimo/",
+          "https://html.non.io/Annui-grok/",
+          "https://html.non.io/annui/",
+          "https://non.io/video/annui-comparison.mp4"
+        ],
+        "rating": {
+          "value": 4.5,
+          "rationale": "Inspectable outputs and an explicit model variant support a task-specific assessment. The page is accessible, while the author identifies reference-fidelity and dynamic-effect defects. This score is an editorial signal, not a visual-quality score from our own rerun.",
+          "confidence": "low",
+          "assessed_on": "2026-09-30"
+        }
       }
     }
   ]

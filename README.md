@@ -3,9 +3,9 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.2.1"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.3.0"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
-  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-09-29"></a>
+  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-09-30"></a>
 </p>
 <p align="center"><b>Give it a question. Choose from its Top 3 models.<br>Give it a project. Get coordinated model handoffs.</b></p>
 <p align="center">English · <a href="README.zh-CN.md">简体中文</a></p>
@@ -78,8 +78,9 @@ flowchart LR
   long projects; users do not need to choose a benchmark first.
 - **Offers three choices:** exact versions, concise reasons, sources and resource
   tradeoffs; optionally restrict to models you can already access.
-- **Uses community experience:** task-specific weights, artifact quality,
-  author deduplication, conflicting reports and freshness decay.
+- **Uses community experience across the catalog:** task-specific editorial
+  scores out of 10, source links, reasons, confidence and freshness; artifact
+  quality, author deduplication and adverse reports affect their influence.
 - **Handles handoffs:** complete prompts printed in the current conversation,
   contracts, file ownership, dependency order and return receipts.
 - **Keeps switching practical:** stay, test first, consider switching, or unknown.
@@ -139,6 +140,7 @@ service that logs into model providers or dispatches API calls.
 
 ```sh
 python skills/promptharbor/scripts/harbor.py validate
+python skills/promptharbor/scripts/harbor.py community
 python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "Summarize this video"
@@ -152,14 +154,28 @@ the host skill. For reliable CLI use, pass a host-authored structured job.
 See [job format](skills/promptharbor/references/job-format.md) and
 [project format](skills/promptharbor/references/projects.md).
 
-For reproducible historical examples, use `--as-of 2026-09-29`; omit it for
+For reproducible historical examples, use the date recorded with the example
+(`--as-of 2026-09-30` for the current snapshot); omit it for
 current advice. Expired records are excluded and may yield no recommendation.
 
 ## Evidence and community feedback
 
-The snapshot covers **49 task leaves, 11 models, 50 evidence records and
-22 source references**. [Coverage and gaps](docs/COVERAGE.md) show
-where measured evidence exists and where only proxies or no evidence exist.
+The **2026-09-30 snapshot includes 15 models and 49 task leaves**. Community
+research has been performed for every catalog model. [Coverage and gaps](docs/COVERAGE.md)
+list the current evidence/source counts; [community assessments](docs/COMMUNITY.md)
+show model-by-task scores, origins and sources. Tasks without suitable reports
+remain unrated.
+
+| Provider | Catalog models |
+|---|---|
+| OpenAI | GPT-6.1 Sol, GPT-6 Astra, GPT-6 Sol, GPT-6 Luna |
+| Anthropic | Claude Opus 5.5, Sonnet 5.5, Fable 5.1 |
+| Google | Gemini 3.8 Flash |
+| DeepSeek | DeepSeek V4.1 Flash |
+| Alibaba | Qwen3.8-27B |
+| Moonshot AI | Kimi K3 |
+| xAI | Grok 4.7 |
+| Xiaomi | MiMo-V2.6-Pro, MiMo-V2.6-Flash, MiMo-V2.6-Pro-UltraSpeed |
 
 Sources include official documentation, model cards, independent evaluations
 and attributed firsthand community reports. [Research notes](docs/RESEARCH.md) explain
@@ -175,16 +191,28 @@ See [methodology](skills/promptharbor/references/evidence.md) and
 
 Community weights default to **30% for visual frontend work, 25% for most writing,
 15% generally, and 5% for financial/medical/legal tasks**. These are adjustable
-editorial defaults, not empirically calibrated optima. Linked artifacts receive
-more support than anecdotes; duplicates add nothing, negative reports subtract,
-and undated reports are discounted and expire. Arena crowd evaluations enter the
-formal channel once, not again as community anecdotes.
+editorial defaults, with a per-job override from 0 to 40%. Reference fidelity
+uses 20%. Every admitted community report has an **editorial score from 0 to 10**,
+a rationale, assessment date and confidence. Scores describe the specific task
+reported; they are not benchmark measurements. Linked artifacts receive more
+support than anecdotes; duplicates add nothing, negative reports can lower the
+signal, and undated reports are discounted and expire. Arena crowd evaluations
+enter the formal channel once, not again as community anecdotes.
 
-Kimi K3 has both [public web-generation artifacts](https://neuralhub.dev/ai-test-results)
-and mixed [firsthand UI feedback](https://www.reddit.com/r/kimi/comments/1vconet/is_kimi_k3_actually_good_or_was_it_overhyped/).
-These inform visual-web recommendations without extending to reference fidelity
-or backend reliability. [Community policy and formula](skills/promptharbor/references/community.md)
-· [resource-filtered frontend example](examples/frontend.json).
+The sample now spans coding, review, writing, frontend, multimodal extraction and
+other reported tasks across the catalog. Positive and adverse findings remain
+visible together. See [community scores and sources](docs/COMMUNITY.md),
+[the policy and formula](skills/promptharbor/references/community.md), and the
+[per-model search log](skills/promptharbor/data/community_research.json).
+
+Xiaomi's [September 27 technical note](https://mimo.xiaomi.com/blog/mimo-v2-6-tool-call-repetition)
+says the September 25 MiMo API update mitigated repeated tool calls; PromptHarbor
+has not independently reproduced that mitigation. The known September 22 OpenCode
+complaint is marked as historical; unrelated reports retain their own scope.
+Original RL-checkpoint benchmark results are not transferred to the current MOPD
+deployment. Pro and Flash have open weights; UltraSpeed is a hosted service tier
+without a separate downloadable checkpoint. Choose Pro or Flash for local use;
+the hosted UltraSpeed acceleration is not a local model feature.
 
 ## Working boundaries
 

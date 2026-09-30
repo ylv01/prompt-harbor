@@ -6,9 +6,9 @@ Keep the current feasible model as the planning baseline; Top 3 remain available
 
 ## Top 3 choices
 
-- 1. **Claude Opus 5.5** (`claude-opus-5-5`): Task-matched independent evaluation for Frontend implementation. Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
-- 2. **GPT-6 Astra** (`gpt-6-astra`): Task-matched independent evaluation for Frontend implementation. Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
-- 3. **Claude Fable 5.1** (`claude-fable-5-1`): Task-matched independent evaluation for Frontend implementation. Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
+- 1. **GPT-6 Astra** (`gpt-6-astra`): Task-matched independent evaluation for Frontend implementation; weighted community reports included (see signed signal and sources). Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Astra built the author’s portfolio](https://www.najam.pk/blog/gpt-6-astra-review)
+- 2. **Claude Opus 5.5** (`claude-opus-5-5`): Task-matched independent evaluation for Frontend implementation. Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
+- 3. **Claude Fable 5.1** (`claude-fable-5-1`): Task-matched independent evaluation for Frontend implementation; weighted community reports included (see signed signal and sources). Sources: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Fable 5.1 structured a draft from handwritten notes](https://aaronmakelky.com/blog/astra-vs-fable), [Fable 5.1 animated SVG and rocket-page build-off](https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026)
 
 The user selects the actual model. This prompt works with any chosen model; keep the same contracts and acceptance criteria.
 

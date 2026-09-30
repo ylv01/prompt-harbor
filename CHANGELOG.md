@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.0 — 2026-09-30
+
+- Added GPT-6.1 Sol and MiMo-V2.6-Pro, Flash and Pro-UltraSpeed; the catalog now
+  contains 15 exact models.
+- Researched community reports for every catalog model, with a per-model search
+  log, task-specific editorial scores out of 10, reasons, dates and confidence.
+- Added `harbor.py community` and a generated community assessment table with
+  source-linked model/task ratings; unsupported tasks remain unrated.
+- Community ranking now uses the signed editorial score alongside report quality,
+  task match, origin deduplication and freshness. Negative and mixed findings stay
+  visible; existing task weights and the 40% override limit are preserved.
+- Distinguished MiMo launch-period tool-loop complaints, corrected current API
+  aliases and original RL checkpoints instead of combining their results.
+- Updated the portable skill, bilingual documentation, attribution and examples.
+
 ## 0.2.1 — 2026-09-29
 
 - Simplified handoffs to interface versions and actual implementation review.
@@ -29,6 +44,5 @@
 - English/Chinese READMEs, original vector brand, avatar/social images and local badges.
 - Installer, reproducible skill archive, CI and scheduled review reporting.
 
-This records repository preparation, not an assertion that a public release has
-already been published. The initial catalog is incomplete and no paid cross-model
-outcome study has been performed.
+Entries record repository changes; a release tag and GitHub release are separate
+publication steps.

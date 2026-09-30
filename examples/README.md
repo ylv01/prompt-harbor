@@ -2,7 +2,7 @@
 
 These examples describe recommendation behavior, not paid cross-model evaluations.
 The current model in fixtures is a declared hypothetical value, not inferred
-from the assistant running the skill. Use `--as-of 2026-09-29` only to reproduce
+from the assistant running the skill. Use `--as-of 2026-09-30` only to reproduce
 this snapshot; omit it for current advice.
 
 ## One question
@@ -18,6 +18,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.j
 ```sh
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/video.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/agent-planning.json
 ```
 
 A backtest combines quantitative methodology and repository work. Coding evidence
@@ -26,6 +27,11 @@ checks explicitly include look-ahead bias and out-of-sample leakage.
 
 A native video request excludes models without verified video input. This is
 a capability constraint, not a claim that one model has the best vision scores.
+
+`agent-planning.json` limits a workflow question to GPT-6.1 Sol and the three
+current MiMo variants. Community scores apply to the reported workflow tasks;
+older MiMo RL measurements remain clearly marked adjacent-version evidence.
+Use `harbor.py community` to inspect every model's task ratings and source URLs.
 
 ## A whole engineering project
 

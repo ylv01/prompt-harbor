@@ -1,8 +1,8 @@
-# Validation record · 2026-09-29
+# Validation record · 2026-09-30
 
 Observed locally on Windows with Python 3.13.9:
 
-- 49 unittest cases passed, covering catalog links, task filters, incompatible
+- **60 unittest cases passed**, covering catalog links, task filters, incompatible
   metrics, missing and stale data, unknown current models, proxy consistency,
   dependency cycles, artifact ownership, interface versions and missing deliveries.
 - Skill Creator's `quick_validate.py` accepted the portable skill. Windows
@@ -15,18 +15,28 @@ Observed locally on Windows with Python 3.13.9:
 - Top 3 checks cover resource filtering, changing rank with community weights,
   duplicate suppression, negative evidence, unknown-date expiry, hard constraints
   and user-selected project handoffs. The 15 host behavioral cases remain fixtures.
+- New community checks cover 0–10 task ratings, missing scores, artifact/directness
+  weighting, future assessment exclusion, all-model search coverage and source-linked
+  CLI reports. GPT-6.1 Sol and all three MiMo variants pass explicit resource filtering.
+- A known pre-update MiMo report retains its negative result and original score
+  while its influence on the current revision is reduced by the documented 0.25 factor.
+- Local open-weight filtering includes MiMo Pro/Flash and excludes the exact
+  hosted UltraSpeed tier, whose acceleration is not a downloadable checkpoint.
 - The library-system fixture compiled into four complete prompts with three
   execution batches, a frozen interface and evidence sidecars. Receipt checks
   rejected missing work and mismatched interface versions. No library implementation was
   claimed to have been built by this example.
 - Logo, wordmark, avatar and social preview were inspected together, including
   the mark at 24, 48, 96 and 128 pixels. SVG assets are self-contained.
-- Freshness audit found no due sources or expired catalog records on this date.
+- Freshness audit found no due sources, expired records or overdue community searches.
 
-Not performed: remote GitHub CI, Linux/Python 3.10 execution, independent host
-behavioral evaluation, paid multi-provider output comparison, production library
-deployment, public GitHub publishing or a trademark clearance search. CI is
-configured to cover Linux/Windows and Python 3.10/3.13 once the repository is pushed.
+The previous published revision passed GitHub CI on Linux/Windows and Python
+3.10/3.13. The same matrix validates each new push; current results are in
+[GitHub Actions](https://github.com/ylv01/prompt-harbor/actions).
+
+Not performed: independent host behavioral evaluation, community-test reproduction,
+paid multi-provider output comparison, production library deployment or trademark
+clearance. The logo and layout inspections above were completed for the initial release.
 
 These checks establish implementation behavior and packaging integrity, not the
 accuracy of model recommendations across arbitrary future prompts. The host

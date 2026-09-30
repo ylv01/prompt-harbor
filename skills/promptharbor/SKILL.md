@@ -3,7 +3,7 @@ name: promptharbor
 description: Identify the domain and task behind an ordinary prompt, recommend a Top 3 of suitable LLMs using current evaluations and weighted community reports, and advise whether to switch. For complex projects, split the work, offer Top 3 choices per part, produce copyable handoff prompts with shared interface contracts, and integrate returned work in the main conversation. Use when the user wants model advice or has enabled PromptHarbor routing for this conversation.
 license: Apache-2.0
 metadata:
-  version: "0.2.1"
+  version: "0.3.0"
 ---
 
 # PromptHarbor
@@ -66,11 +66,19 @@ deterministic evidence and handoff tools—not an embedded classifier LLM.
    show the broader Top 3 without assuming subscriptions or demanding a purchase.
    With fewer than three supported eligible models, show the actual count and
    explain the gap. Never fill slots with unsupported specialty claims.
-6. Apply [community weighting](references/community.md): exact model and task,
-   independent origins, artifact quality, signed positive/negative reports and
-   freshness. Preserve disagreement. Likes and duplicated posts are not evidence
+6. Apply [community weighting](references/community.md) across relevant models:
+   read original task reports, retain successes and failures, and assess each
+   supported report from **0 to 10** with a concise rationale, assessment date and
+   confidence. Label this as editorial judgment of a concrete task, not a benchmark
+   measurement or a global model score. Track exact model/deployment, independent
+   origins, artifact quality and freshness. Preserve disagreement and leave tasks
+   without suitable reports unrated. Likes and duplicated posts are not evidence
    multipliers. Arena's systematic crowd evaluation belongs in independent tests;
-   do not count it again as community anecdotes. Do not invent missing scores.
+   do not count it again as community anecdotes. To inspect the bundled coverage:
+
+   ```sh
+   python <skill-dir>/scripts/harbor.py community
+   ```
 
 ## Single-question response
 
@@ -80,7 +88,8 @@ Respond in the user's language. Prefer a short comparison table:
 - **Top 3:** rank, exact model + verified effort/tools, task-fit reason, access/cost
   tradeoff and a source link per choice. Ranks express conditional recommendations.
 - **Evidence:** distinguish task evaluations, proxies and community feedback;
-  include dates and explain community influence when it changes the choice.
+  include dates and show the relevant community score, confidence and source when
+  available. Explain community influence when it changes the choice.
 - **Switch:** stay / test first / consider switching / unknown, with a reason.
 - **Caveat or check:** the specific uncertainty that could change the choice.
 
@@ -131,4 +140,8 @@ conversation remains the integration owner throughout.
 Read [refresh procedure](references/refresh.md) when updating evidence. Keep
 release version separate from model-data snapshot date. Validate changes with
 `python <skill-dir>/scripts/harbor.py validate`. A successful link check must
-never automatically renew a capability or performance claim.
+never automatically renew a capability or performance claim. Research community
+feedback for every catalog model and record queries/results in
+`data/community_research.json`; score only the tasks supported by admitted reports.
+Keep deployment corrections explicit: an older API complaint or RL-checkpoint
+benchmark does not establish the current patched/distilled endpoint's performance.

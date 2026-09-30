@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "goal": "制作一个本地图书管理系统：浏览和新增图书、查看详情、提交评分与书评。此示例不包含账号、借阅或公开部署。",
-  "as_of": "2026-09-29",
+  "as_of": "2026-09-30",
   "integration_owner": "current_window",
   "batches": [
     [
@@ -31,6 +31,29 @@
       "recommendations": [
         {
           "rank": 1,
+          "model_id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "reason": "Task-matched independent evaluation for Frontend implementation; weighted community reports included (see signed signal and sources)",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1050000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 10,
+            "output": 50,
+            "max_input_tokens": 272000,
+            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          }
+        },
+        {
+          "rank": 2,
           "model_id": "claude-opus-5-5",
           "name": "Claude Opus 5.5",
           "reason": "Task-matched independent evaluation for Frontend implementation",
@@ -53,33 +76,10 @@
           }
         },
         {
-          "rank": 2,
-          "model_id": "gpt-6-astra",
-          "name": "GPT-6 Astra",
-          "reason": "Task-matched independent evaluation for Frontend implementation",
-          "resources": {
-            "access": "verify_account_access",
-            "input_modalities": [
-              "text",
-              "image"
-            ],
-            "context_tokens": 1050000,
-            "tool_calling": true,
-            "open_weights": false,
-            "price_applies": true
-          },
-          "price": {
-            "input": 10,
-            "output": 50,
-            "max_input_tokens": 272000,
-            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-          }
-        },
-        {
           "rank": 3,
           "model_id": "claude-fable-5-1",
           "name": "Claude Fable 5.1",
-          "reason": "Task-matched independent evaluation for Frontend implementation",
+          "reason": "Task-matched independent evaluation for Frontend implementation; weighted community reports included (see signed signal and sources)",
           "resources": {
             "access": "verify_account_access",
             "input_modalities": [
@@ -136,7 +136,7 @@
           "rank": 1,
           "model_id": "claude-opus-5-5",
           "name": "Claude Opus 5.5",
-          "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage",
+          "reason": "Task-matched vendor evaluation for Repository implementation; weighted community reports included (see signed signal and sources); partial task coverage",
           "resources": {
             "access": "verify_account_access",
             "input_modalities": [
@@ -159,7 +159,7 @@
           "rank": 2,
           "model_id": "deepseek-v4.1-flash",
           "name": "DeepSeek-V4.1-Flash",
-          "reason": "Task-matched vendor evaluation for Repository implementation; partial task coverage",
+          "reason": "Task-matched vendor evaluation for Repository implementation; weighted community reports included (see signed signal and sources); partial task coverage",
           "resources": {
             "access": "verify_account_access",
             "input_modalities": [
@@ -215,7 +215,7 @@
           "rank": 1,
           "model_id": "claude-opus-5-5",
           "name": "Claude Opus 5.5",
-          "reason": "Capability or adjacent-task support for Test design",
+          "reason": "Capability or adjacent-task support for Test design; weighted community reports included (see signed signal and sources)",
           "resources": {
             "access": "verify_account_access",
             "input_modalities": [
@@ -256,6 +256,25 @@
             "max_input_tokens": 272000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
           }
+        },
+        {
+          "rank": 3,
+          "model_id": "kimi-k3",
+          "name": "Kimi K3",
+          "reason": "Community task reports only; a task trial is needed for Test design; weighted community reports included (see signed signal and sources)",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image",
+              "video"
+            ],
+            "context_tokens": 1048576,
+            "tool_calling": true,
+            "open_weights": true,
+            "price_applies": false
+          },
+          "price": null
         }
       ],
       "depends_on": [

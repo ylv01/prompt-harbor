@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-09-29",
-  "coverage": "Curated seed, not exhaustive. Listed capabilities are not per-task quality scores.",
+  "snapshot_date": "2026-09-30",
+  "coverage": "Task-specific curated catalog with community research for every listed model. Feature support and editorial report scores are separate from benchmark measurements.",
   "models": [
     {
       "id": "gpt-6-astra",
@@ -49,6 +49,32 @@
       },
       "notes": [
         "Account access, region and tool environment must be checked separately."
+      ]
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_id": "openai-sol-6-1",
+      "status": "available",
+      "verified_on": "2026-09-30",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "context_tokens": 1050000,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "notes": [
+        "Tool calling is supported through Responses API; Chat Completions does not support tools for this model.",
+        "128000 maximum output tokens. Reasoning efforts: low, medium, high, xhigh, max.",
+        "No copied GPT-6 Sol benchmark results: exact 6.1 task evidence is maintained separately. Account access and tool environment require checking."
       ]
     },
     {
@@ -248,6 +274,96 @@
       },
       "notes": [
         "X/web search requires an enabled tool environment; it is not intrinsic fresh knowledge."
+      ]
+    },
+    {
+      "id": "mimo-v2.6-pro",
+      "name": "MiMo-V2.6-Pro",
+      "provider": "Xiaomi",
+      "source_id": "mimo-v2.6-pro-official",
+      "status": "available",
+      "verified_on": "2026-09-30",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "context_tokens": 1000000,
+      "tool_calling": true,
+      "open_weights": true,
+      "price_usd_per_million": {
+        "input": 0.435,
+        "output": 0.87,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
+      },
+      "notes": [
+        "API id is mimo-v2.6-pro. MIT-licensed RL checkpoint is available; API serving and local quantization can differ.",
+        "Official context is stated as 1M; 1000000 is a conservative interpretation rather than claiming an unstated binary-token limit.",
+        "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
+        "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ]
+    },
+    {
+      "id": "mimo-v2.6-flash",
+      "name": "MiMo-V2.6-Flash",
+      "provider": "Xiaomi",
+      "source_id": "mimo-v2.6-flash-official",
+      "status": "available",
+      "verified_on": "2026-09-30",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "context_tokens": 1000000,
+      "tool_calling": true,
+      "open_weights": true,
+      "price_usd_per_million": {
+        "input": 0.14,
+        "output": 0.28,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
+      },
+      "notes": [
+        "API id is mimo-v2.6-flash. MIT-licensed RL checkpoint is available; serving parsers, quantization and harness affect results.",
+        "Official context is stated as 1M; recorded conservatively as 1000000 tokens.",
+        "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
+        "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ]
+    },
+    {
+      "id": "mimo-v2.6-pro-ultraspeed",
+      "name": "MiMo-V2.6-Pro-UltraSpeed",
+      "provider": "Xiaomi",
+      "source_id": "mimo-v2.6-pro-ultraspeed-official",
+      "status": "available",
+      "verified_on": "2026-09-30",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "context_tokens": 1000000,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 4.35,
+        "output": 8.7,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, reasoning volume. This tier does not support batch API."
+      },
+      "notes": [
+        "UltraSpeed is a separate serving tier of the open-weight Pro checkpoint, not a separate released checkpoint or independently measured benchmark model.",
+        "The underlying Pro weights are open, but the exact UltraSpeed hosted serving tier has no separately downloadable checkpoint. For local deployment choose Pro or Flash; UltraSpeed speed claims do not transfer to local serving.",
+        "Its advertised up-to-20x output speed is a vendor claim, not an end-to-end task latency guarantee. Do not copy Pro benchmark scores into an UltraSpeed measured-result row.",
+        "Official Chinese model page lists all four inputs; English page currently shows only text despite its omni-modal capability heading. Chinese page and API capability table are used here.",
+        "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
       ]
     }
   ]

@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT / 'skills/promptharbor/scripts'))
 import harbor
 import project
 
-NOW = date(2026, 9, 29)
+NOW = date(2026, 9, 30)
 
 
 class RecommendationTests(unittest.TestCase):
@@ -31,7 +31,9 @@ class RecommendationTests(unittest.TestCase):
         self.assertIn('gemini-3.8-flash', [m['model_id'] for m in r['candidates']])
 
     def test_missing_database_evidence_is_not_a_zero_score(self):
-        r = self.run_job(tasks=['data.schema'])
+        # This catalog model has no database-specific evidence. Other models may
+        # gain real task reports as the catalog grows.
+        r = self.run_job(tasks=['data.schema'], available_models=['gpt-6-luna'])
         self.assertIsNone(r['primary'])
         self.assertEqual(r['decision'], 'insufficient_evidence')
 
@@ -66,6 +68,15 @@ class RecommendationTests(unittest.TestCase):
         self.assertTrue(r['candidates'])
         self.assertTrue({m['model_id'] for m in r['candidates']} <= allowed)
 
+    def test_mimo_hosted_acceleration_is_not_a_local_weights_option(self):
+        available = ['mimo-v2.6-pro-ultraspeed', 'mimo-v2.6-pro', 'mimo-v2.6-flash']
+        r = self.run_job(tasks=['software.repo'], available_models=available,
+                         open_weights_only=True)
+        self.assertEqual({m['model_id'] for m in r['candidates']},
+                         {'mimo-v2.6-pro', 'mimo-v2.6-flash'})
+        acceleration = next(m for m in r['excluded'] if m['model_id'] == 'mimo-v2.6-pro-ultraspeed')
+        self.assertIn('closed_weights', acceleration['reasons'])
+
     def test_old_snapshot_cannot_claim_current_winner(self):
         r = harbor.route({'tasks':['software.repo']}, self.data, date(2027,1,1))
         self.assertFalse(r['candidates'])
@@ -85,7 +96,12 @@ class RecommendationTests(unittest.TestCase):
         self.assertFalse(r['candidates'])
 
     def test_unknown_long_context_tier_fails_price_cap(self):
-        r = self.run_job(tasks=['software.repo'], max_input_price=100, context_tokens=500000)
+        # Verified MiMo rates cover long inputs. Isolate providers whose
+        # recorded standard tier stops before this input size.
+        models = [m['id'] for m in self.data['models']['models']
+                  if m['provider'] in ['OpenAI', 'Anthropic']]
+        r = self.run_job(tasks=['software.repo'], max_input_price=100,
+                         context_tokens=500000, available_models=models)
         self.assertFalse(r['candidates'])
 
     def test_context_does_not_use_unverified_extension(self):

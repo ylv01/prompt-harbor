@@ -1,9 +1,9 @@
 <p align="center"><img src="assets/brand/hero.svg" width="900" alt="PromptHarbor：理解任务，选择模型，汇合成果"></p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="Apache 2.0 许可证"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.2.1"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.3.0"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
-  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="模型数据 2026-09-29"></a>
+  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="模型数据 2026-09-30"></a>
 </p>
 <p align="center"><b>给它一个问题，它给你最值得考虑的 Top 3 模型。<br>给它一个工程，它帮你拆分、分配模型，并把成果带回主窗口。</b></p>
 <p align="center"><a href="README.md">English</a> · 简体中文</p>
@@ -99,6 +99,7 @@ $promptharbor 这个任务适合什么模型：用 Lean 完成下面这个定理
 
 ```sh
 python skills/promptharbor/scripts/harbor.py validate
+python skills/promptharbor/scripts/harbor.py community
 python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "总结这段视频"
@@ -110,12 +111,25 @@ python -m unittest discover -s tests -v
 分类和工程拆分由宿主 Agent 完成，脚本不伪装成一个内置的语义模型。
 推荐流程可通过 [结构化 job](skills/promptharbor/references/job-format.md) 复现。
 
-复现历史示例时可加 `--as-of 2026-09-29`；当前建议应省略它，不能用旧日期绕过
+复现历史示例时使用示例记录的日期，当前快照可加 `--as-of 2026-09-30`；当前建议应省略它，不能用旧日期绕过
 过期检查。数据过期时可能不返回推荐。
 
 ## 依据与社区评价
 
-当前快照包含 **49 个细分任务、11 个模型、50 条证据、22 个来源引用**。
+**2026-09-30 快照收录 15 个模型、49 个细分任务，全部模型都已开展社区检索。**
+证据与来源数量见[覆盖表](docs/COVERAGE.md)；每个模型的任务评分、理由、来源和
+置信度见[社区评价表](docs/COMMUNITY.md)。没有合适材料的任务保持未知。
+
+| 厂商 | 已收录模型 |
+|---|---|
+| OpenAI | GPT-6.1 Sol、GPT-6 Astra、GPT-6 Sol、GPT-6 Luna |
+| Anthropic | Claude Opus 5.5、Sonnet 5.5、Fable 5.1 |
+| Google | Gemini 3.8 Flash |
+| DeepSeek | DeepSeek V4.1 Flash |
+| Alibaba | Qwen3.8-27B |
+| Moonshot AI | Kimi K3 |
+| xAI | Grok 4.7 |
+| Xiaomi | MiMo-V2.6-Pro、MiMo-V2.6-Flash、MiMo-V2.6-Pro-UltraSpeed |
 
 - 区分官方能力声明、供应商测评、独立评测、社区作品报告、亲历反馈与推断。
 - 保存模型版本、推理档位、工具环境、评测版本、指标、日期与局限。
@@ -129,14 +143,24 @@ python -m unittest discover -s tests -v
 
 社区权重默认：**前端实现与视觉设计 30%、多数写作任务 25%、一般任务 15%、
 金融/医疗/法律任务 5%**。这些是可调整的初始策略，并非实验得出的最优比例。
-有作品和提示词的报告权重高于个人感受；同源转载不重复加权；负面反馈会减分，
-未知日期会折扣并限期失效。Arena 这类系统化人类偏好评测归入独立评测，避免重复计算。
+设计稿还原使用 20%，每个请求可覆盖为 0–40%。每条纳入的社区评价都有 **0–10 分
+的编辑评分、评分理由、判断日期和置信度**，按其实际任务给分。这是对已检索报告的
+判断，不冒充 Benchmark 分数。有作品和提示词的报告权重高于个人感受；同源转载
+不重复加权；负面反馈可以减分，未知日期会折扣并限期失效。Arena 这类系统化
+人类偏好评测归入独立评测，避免重复计算。
 
-Kimi K3 已纳入[公开网页作品记录](https://neuralhub.dev/ai-test-results)和
-[有正反意见的前端使用反馈](https://www.reddit.com/r/kimi/comments/1vconet/is_kimi_k3_actually_good_or_was_it_overhyped/)。
-这些证据影响视觉网页任务的推荐；“页面好看”“按设计稿还原”“后端正确”分别判断。
-详见[社区权重规则](skills/promptharbor/references/community.md)和
-[按已有模型筛选的前端示例](examples/frontend.json)。
+社区材料现在涵盖目录中的各个模型，涉及代码实现与审查、写作、前端、视觉提取等
+具体任务；正面结果和失败记录同时保留。“页面好看”“按设计稿还原”“后端正确”
+分别判断。查看[全模型社区评分与来源](docs/COMMUNITY.md)、
+[社区权重规则](skills/promptharbor/references/community.md)和
+[逐模型检索记录](skills/promptharbor/data/community_research.json)。
+
+Xiaomi 的[9 月 27 日技术说明](https://mimo.xiaomi.com/blog/mimo-v2-6-tool-call-repetition)
+称 9 月 25 日 MiMo API 更新缓解了工具重复调用；PromptHarbor 尚未独立复现这一
+改进。已知 9 月 22 日 OpenCode 投诉标注为历史记录，其他反馈保留各自范围；原始
+RL checkpoint 的基准结果不移植到当前 MOPD 部署。Pro 和 Flash 有开放权重，
+UltraSpeed 是托管服务档位，没有单独可下载的权重。本地部署可选 Pro 或 Flash，
+不能将托管 UltraSpeed 加速视为本地模型能力。
 
 更新机制包含过期检查与每周 GitHub 工作流，生成待复核报告，由维护者审核新证据。
 

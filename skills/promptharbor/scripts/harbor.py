@@ -20,7 +20,7 @@ def read_json(path):
 
 def load_data(root=ROOT):
     return {name: read_json(root / "data" / f"{name}.json")
-            for name in ("taxonomy", "models", "sources", "evidence", "policy")}
+            for name in ("taxonomy", "models", "sources", "evidence", "policy", "community_research")}
 
 
 def require(condition, message):
@@ -95,6 +95,16 @@ def validate(data):
             require(isinstance(c.get("artifact_urls"), list) and all(u.startswith("https://") for u in c["artifact_urls"]), "Invalid artifact URLs")
             require(c["grade"] == "firsthand" or c["artifact_urls"], "Artifact evidence needs public artifacts")
             require(c["grade"] != "reproduced" or c.get("reproduction_url", "").startswith("https://"), "Reproduced means a documented independent rerun")
+            rating = c.get('rating', {})
+            require(type(rating.get('value')) in {int, float} and 0 <= rating['value'] <= 10, 'Community rating must be 0–10')
+            require(rating.get('rationale') and rating.get('confidence') in {'low', 'medium', 'high'}, 'Community rating needs a reason and confidence')
+            require(iso(rating['assessed_on']) <= snapshot, 'Future community assessment')
+            applicability = c.get('applicability')
+            if applicability:
+                require(type(applicability.get('weight')) in {int, float} and 0 < applicability['weight'] <= 1,
+                        'Invalid community revision applicability')
+                require(applicability.get('reason') and applicability.get('source_id') in sources,
+                        'Revision applicability needs a reason and source')
     groups = {}
     for ev in data["evidence"]["evidence"]:
         group = ev.get("comparison_group")
@@ -103,6 +113,16 @@ def validate(data):
             key = (ev["source_id"], m["benchmark"], m["version"], m["metric"], m["unit"], m["protocol"])
             require(group not in groups or groups[group] == key, "Incompatible comparison group")
             groups[group] = key
+    researched = unique(data['community_research']['models'], 'community research model')
+    require(researched == models, 'Community research must cover every catalog model')
+    evidence_ids = {e['id']: e for e in data['evidence']['evidence']}
+    for row in data['community_research']['models']:
+        require(row.get('queries') and row.get('summary'), 'Community research needs queries and a summary')
+        require(iso(row['searched_on']) <= snapshot, 'Future community search')
+        require(row['status'] in {'reviewed', 'no_specific_reports'}, 'Invalid community research status')
+        for evidence_id in row['evidence_ids']:
+            ev = evidence_ids.get(evidence_id)
+            require(ev and ev['model_id'] == row['id'] and ev['kind'] == 'community_test', 'Broken community research evidence link')
     return True
 
 
@@ -166,6 +186,8 @@ def evidence_fresh(ev, data, today):
     if ev["reported_on"]:
         anchors.append(ev["reported_on"])
     if ev["kind"] == "community_test":
+        if iso(ev['community']['rating']['assessed_on']) > today:
+            return False
         if not 0 <= age_in_days(ev["reviewed_on"], today) <= policy["community_review_days"]:
             return False
         if not ev["reported_on"] and not 0 <= age_in_days(ev["community"]["first_seen_on"], today) <= policy["undated_community_days"]:
@@ -212,6 +234,68 @@ def comparable_pairs(a, b):
     return pairs
 
 
+def community_assessment(rows, task, today):
+    """Weighted editorial score for one model/task, with one vote per origin."""
+    origins = {}
+    mappings = set()
+    for ev in rows:
+        if ev['kind'] != 'community_test':
+            continue
+        if iso(ev['community']['rating']['assessed_on']) > today:
+            continue
+        match = 1 if task in ev['direct_tasks'] else 0.45 if task in ev['proxy_tasks'] else 0
+        if not match:
+            continue
+        mappings.add('direct' if task in ev['direct_tasks'] else 'proxy')
+        c = ev['community']
+        quality = {'reproduced': 1, 'artifact_report': 0.6, 'firsthand': 0.2}[c['grade']]
+        freshness = 0.5 ** (age_in_days(ev['reported_on'], today)/60) if ev['reported_on'] else 0.5
+        applicability = c.get('applicability', {}).get('weight', 1)
+        reliability = quality * match * freshness * applicability
+        score = c['rating']['value']
+        signal = (score - 5)/5 * reliability
+        origin = origins.setdefault(c['origin_id'], {'observations': set(), 'evidence_ids': []})
+        # Repeated URLs, reposts and copied records do not multiply a judgment.
+        origin['observations'].add((score, reliability, signal))
+        origin['evidence_ids'].append(ev['id'])
+    assessments = []
+    for origin_id, value in sorted(origins.items()):
+        obs = value['observations']
+        total = sum(o[1] for o in obs)
+        assessments.append({'origin_id': origin_id, 'score': sum(o[0]*o[1] for o in obs)/total,
+                            'reliability': max(o[1] for o in obs),
+                            'signal': sum(o[2] for o in obs)/len(obs), 'evidence_ids': value['evidence_ids']})
+    weight = sum(o['reliability'] for o in assessments)
+    score = round(sum(o['score']*o['reliability'] for o in assessments)/weight, 1) if weight else None
+    signal = sum(o['signal'] for o in assessments)/max(3, len(assessments))
+    confidence = 'insufficient' if not assessments else 'low'
+    if len(assessments) >= 3 and sum(o['reliability'] >= 0.3 for o in assessments) >= 2:
+        confidence = 'medium'
+    return {'score': score, 'scale': 10, 'confidence': confidence, 'signal': round(signal, 6),
+            'mapping': 'direct_and_proxy' if len(mappings) == 2 else next(iter(mappings), 'none'),
+            'origins': [{**o, 'score': round(o['score'], 1), 'signal': round(o['signal'], 6)} for o in assessments],
+            'origin_count': len(assessments), 'report_count': sum(len(o['observations']) for o in origins.values()),
+            'meaning': 'Editorial judgment of retrieved task reports, not a benchmark measurement or a global model rating.'}
+
+
+def community_report(data, today):
+    models = []
+    sources = {s['id']: s for s in data['sources']['sources']}
+    source_ids = set()
+    research = {r['id']: r for r in data['community_research']['models']}
+    for model in data['models']['models']:
+        rows = [e for e in data['evidence']['evidence'] if e['model_id'] == model['id']
+                and e['kind'] == 'community_test' and evidence_fresh(e, data, today)]
+        tasks = sorted({t for e in rows for t in e['direct_tasks'] + e['proxy_tasks']})
+        for e in rows:
+            source_ids.add(e['source_id'])
+            if e['community'].get('applicability'):
+                source_ids.add(e['community']['applicability']['source_id'])
+        models.append({'model_id': model['id'], 'name': model['name'], 'research': research[model['id']],
+                       'tasks': [{'task': t, **community_assessment(rows, t, today)} for t in tasks], 'reports': rows})
+    return {'as_of': str(today), 'models': models, 'sources': {sid: sources[sid] for sid in sorted(source_ids)}}
+
+
 def ranking_support(candidate, candidates, job, data, today):
     """Task-specific editorial support, not estimated intelligence or success probability."""
     policy = data["policy"]["ranking"]
@@ -245,30 +329,15 @@ def ranking_support(candidate, candidates, job, data, today):
         strength = max(strengths, default=0)
         # Missing comparisons add no observed support; they are not zero ability.
         formal = 0.75 * strength + 0.25 * comparison_support
-        origins = {}
-        for ev in rows:
-            if ev["kind"] != "community_test":
-                continue
-            match = 1 if task in ev["direct_tasks"] else 0.45 if task in ev["proxy_tasks"] else 0
-            if not match:
-                continue
-            c = ev["community"]
-            quality = {"reproduced": 1, "artifact_report": 0.6, "firsthand": 0.2}[c["grade"]]
-            freshness = (0.5 ** (age_in_days(ev["reported_on"], today) / 60)
-                         if ev["reported_on"] else 0.5)
-            signal = {"positive": 1, "negative": -1, "mixed": 0}[c["stance"]] * quality * match * freshness
-            # Copies of one report never multiply its effect. Contradictions remain visible.
-            origin = origins.setdefault(c["origin_id"], {"signals": set(), "evidence_ids": []})
-            origin["signals"].add(signal)
-            origin["evidence_ids"].append(ev["id"])
-        values = [sum(o["signals"]) / len(o["signals"]) for o in origins.values()]
-        community = sum(values) / max(3, len(values))
+        assessment = community_assessment(rows, task, today)
+        community = assessment['signal']
         weight = job.get("community_weight", policy["task_community_weights"].get(task, policy["default_community_weight"]))
         details.append({"task": task, "formal_support": round(formal, 6), "evidence_strength": strength,
                         "comparable_peer_win_fraction": peer_wins, "community_signal": round(community, 6),
-                        "community_weight": weight, "community_origins": len(origins),
-                        "origins": [{"origin_id": k, "signal": round(sum(v["signals"])/len(v["signals"]), 6),
-                                     "evidence_ids": v["evidence_ids"]} for k, v in sorted(origins.items())],
+                        "community_weight": weight, "community_origins": assessment['origin_count'],
+                        "community_score": assessment['score'], "community_confidence": assessment['confidence'],
+                        "community_mapping": assessment['mapping'],
+                        "origins": assessment['origins'],
                         "support": (1-weight)*formal + weight*community})
     return {"support": round(sum(t["support"] for t in details)/len(details), 6), "tasks": details,
             "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."}
@@ -297,7 +366,7 @@ def route(job, data, today=None):
         rows = [ev for ev in relevant if ev["model_id"] == model["id"] and evidence_fresh(ev, data, today)]
         weights = data['policy']['ranking']
         coverage = {t for e in rows for t in tasks & set(e['direct_tasks'] + e['proxy_tasks'])
-                    if e['kind'] != 'community_test' or (e['community']['stance'] == 'positive'
+                    if e['kind'] != 'community_test' or (e['community']['rating']['value'] > 5
                     and job.get('community_weight', weights['task_community_weights'].get(t, weights['default_community_weight'])) > 0)}
         if not coverage:
             excluded.append({"model_id": model["id"], "reasons": ["no_fresh_task_evidence"]})
@@ -417,7 +486,9 @@ def route(job, data, today=None):
             "recommendations": recommendations, "candidates": candidates, "switch": switch, "excluded": excluded,
             "stale_evidence": stale, "warnings": warnings,
             "validation": [task_map[t]["validation"] for t in job["tasks"]],
-            "sources": {e["source_id"]: sources[e["source_id"]] for c in candidates for e in c["evidence"]}}
+            "sources": {sid: sources[sid] for c in candidates for e in c['evidence']
+                        for sid in [e['source_id'], *([e['community']['applicability']['source_id']]
+                        if e.get('community', {}).get('applicability') else [])]}}
 
 
 def markdown(result):
@@ -433,7 +504,8 @@ def markdown(result):
         lines += ([f"Recorded API input/output: ${price['input']}/${price['output']} per million tokens; subscription entitlement is separate."]
                   if resources["price_applies"] else ["Applicable API price: unknown; check provider and account."])
         for task in candidate["ranking"]["tasks"]:
-            lines.append(f"Community: {task['task']}, weight {task['community_weight']:.0%}, signed signal {task['community_signal']:+.3f}, independent origins {task['community_origins']}.")
+            score = f"{task['community_score']}/10" if task['community_score'] is not None else 'not rated'
+            lines.append(f"Community: {task['task']}, {score} ({task['community_confidence']} confidence; {task['community_mapping']} mapping), weight {task['community_weight']:.0%}, origins {task['community_origins']}.")
         # Keep community evidence visible even when several formal records precede it.
         formal = [e for e in candidate["evidence"] if e["kind"] != "community_test"]
         community = [e for e in candidate["evidence"] if e["kind"] == "community_test"]
@@ -441,6 +513,13 @@ def markdown(result):
             source = result["sources"][ev["source_id"]]
             lines.append(f"- {ev['claim']} ({ev['kind']}; {ev['setting']}). [Source]({source['url']})")
             lines.append(f"  Limit: {ev['limitations']} Report date: {ev['reported_on'] or 'not reported'}; reviewed {ev['reviewed_on']}.")
+            if ev['kind'] == 'community_test':
+                rating = ev['community']['rating']
+                lines.append(f"  Editorial assessment: {rating['value']}/10 — {rating['rationale']}")
+                if ev['community'].get('applicability'):
+                    a = ev['community']['applicability']
+                    source = result['sources'][a['source_id']]
+                    lines.append(f"  Current-revision relevance: {a['weight']} × — {a['reason']} [{source['title']}]({source['url']}).")
         lines += ["", "Limits: " + " ".join(candidate["limitations"]), ""]
     lines += ["## Validation", ""] + [f"- {v}" for v in result["validation"]]
     if result["warnings"]:
@@ -452,8 +531,10 @@ def markdown(result):
 def audit(data, today):
     due_models = [m["id"] for m in data["models"]["models"] if eligibility(m, {"tasks": []}, data, today) == ["metadata_needs_refresh"]]
     stale = [e["id"] for e in data["evidence"]["evidence"] if not evidence_fresh(e, data, today)]
+    research_due = [r['id'] for r in data['community_research']['models']
+                    if not 0 <= age_in_days(r['searched_on'], today) <= data['policy']['community_review_days']]
     return {"as_of": str(today), "models_needing_refresh": due_models, "stale_evidence": stale,
-            "due": bool(due_models or stale)}
+            "community_searches_due": research_due, "due": bool(due_models or stale or research_due)}
 
 
 def main(argv=None):
@@ -461,6 +542,8 @@ def main(argv=None):
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("validate")
     sub.add_parser("taxonomy")
+    p = sub.add_parser('community')
+    p.add_argument('--as-of', type=iso, default=date.today())
     p = sub.add_parser("classify")
     p.add_argument("prompt", nargs="?")
     p.add_argument("--stdin", action="store_true")
@@ -486,6 +569,8 @@ def main(argv=None):
             output = classify(sys.stdin.read() if args.stdin else args.prompt, data)
         elif args.command == "audit":
             output = audit(data, args.as_of)
+        elif args.command == 'community':
+            output = community_report(data, args.as_of)
         else:
             job = read_json(args.job) if args.job else classify(sys.stdin.read() if args.stdin else args.prompt, data)
             output = route(job, data, args.as_of)

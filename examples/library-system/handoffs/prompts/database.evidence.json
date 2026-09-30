@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-29",
-  "snapshot_date": "2026-09-29",
+  "as_of": "2026-09-30",
+  "snapshot_date": "2026-09-30",
   "classification": [
     {
       "id": "data.schema",
@@ -29,6 +29,12 @@
     },
     {
       "model_id": "gpt-6-sol",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "gpt-6.1-sol",
       "reasons": [
         "no_fresh_task_evidence"
       ]
@@ -83,6 +89,24 @@
     },
     {
       "model_id": "grok-4.7",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "mimo-v2.6-pro",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "mimo-v2.6-flash",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    },
+    {
+      "model_id": "mimo-v2.6-pro-ultraspeed",
       "reasons": [
         "no_fresh_task_evidence"
       ]

@@ -1,0 +1,10 @@
+{
+  "prompt": "Plan a coding workflow where a planner assigns bounded tasks to a coder and checks the returned work.",
+  "tasks": ["agent.workflow"],
+  "classification_method": "host_semantic",
+  "classification_confidence": "high",
+  "tools_required": true,
+  "available_models": ["gpt-6.1-sol", "mimo-v2.6-pro", "mimo-v2.6-flash", "mimo-v2.6-pro-ultraspeed"],
+  "current_model": "gpt-6.1-sol",
+  "priority": "quality"
+}

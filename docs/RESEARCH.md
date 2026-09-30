@@ -59,7 +59,7 @@ model or anonymous style claim is used as an admitted performance observation.
 The v0.2.0 update admits tiered firsthand community records as described below.
 
 Coverage is limited to verified candidates in this pass. Meta, Mistral, MiniMax,
-Z.ai, Xiaomi and specialist audio/image/proof systems are future discovery targets,
+Z.ai and specialist audio/image/proof systems are future discovery targets,
 not implicitly weaker models. Live routing should check relevant missing models.
 No full benchmark dataset was copied and no paid API comparison was run.
 
@@ -84,6 +84,36 @@ they do not support backend or reference-fidelity claims. The initial community
 sample concentrates on Kimi because it was the specific research question;
 other models require the same balanced search for favorable and adverse reports.
 See [community methodology](../skills/promptharbor/references/community.md).
+
+## All-model community update · 2026-09-30
+
+This pass searched every catalog model and admitted original, task-specific
+reports for all 15. The [community report](COMMUNITY.md) lists editorial 0–10
+ratings, original URLs, authors, artifacts, dates and limitations. Favorable and
+adverse outcomes remain separate evidence rows. Search queries and admitted
+evidence IDs are stored in the portable `data/community_research.json` file.
+These ratings are our judgments of reported task outcomes; no generation was
+rerun and no rating is represented as a measured benchmark or broad consensus.
+
+[GPT-6.1 Sol documentation](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
+establishes the new exact model ID, image input, context, prices and Responses
+tool support. Its official positioning and exact-version community reports are
+stored separately; older Sol benchmark results are not copied to it.
+
+[Xiaomi’s model catalog](https://mimo.mi.com/docs/en-US/quick-start/model)
+and [pricing documentation](https://mimo.mi.com/docs/en-US/price/pay-as-you-go)
+establish MiMo-V2.6-Pro, Flash and the Pro-UltraSpeed serving tier. The
+[September 27 tool-repetition update](https://mimo.xiaomi.com/blog/mimo-v2-6-tool-call-repetition)
+says Pro/Flash API aliases changed on September 25 and links MOPD weights.
+Original RL model-card measurements are retained as adjacent-version proxy
+evidence, with their original checkpoint and protocol. They are not claimed
+as MOPD or UltraSpeed measured results.
+
+Only the dated [September 22 OpenCode issue](https://github.com/anomalyco/opencode/issues/50678)
+gets a documented 0.25 relevance factor for the current revision. Its exact
+tool-repetition failure predates the official update; this is an editorial
+discount, not an independently verified fix. Reddit reports with unknown
+revision/date retain their uncertainty rather than receiving an assumed fix.
 
 ## Architecture decisions
 
