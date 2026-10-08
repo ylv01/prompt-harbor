@@ -20,5 +20,5 @@ def package(output):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--out',type=Path,default=ROOT/'dist/promptharbor-0.3.1.zip')
+    p.add_argument('--out',type=Path,default=ROOT/'dist/promptharbor-0.3.2.zip')
     print(package(p.parse_args().out))

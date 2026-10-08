@@ -1,6 +1,6 @@
 # Community task ratings
 
-Reviewed: **2026-09-30**. All **15** catalog models were searched.
+Reviewed: **2026-10-08**. All **16** catalog models were searched.
 
 Scores are PromptHarbor editorial judgments of specific reported outcomes, on a 0–10 scale. They are not benchmark measurements or global model ratings.
 Unknown task ratings remain unknown. A **proxy** label means only adjacent-task reports support that rating; it is not a direct observation of that task.
@@ -10,7 +10,6 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 | Model | Task ratings (0–10) | Distinct report origins |
 |---|---|---|
 | GPT-6 Astra | `software.frontend` **8.0**; `software.frontend.design` **8.0** (proxy); `writing.creative` **6.5** | 2 |
-| GPT-6 Sol | `software.debug` **5.8**; `software.repo` **5.8** (proxy); `writing.creative` **8.0** | 3 |
 | GPT-6.1 Sol | `agent.workflow` **7.5**; `software.architecture` **7.5** (proxy); `software.frontend` **3.0**; `software.frontend.design` **3.0** (proxy); `writing.creative` **6.5** | 3 |
 | GPT-6 Luna | `agent.workflow` **7.5**; `context.summary` **7.5** (proxy); `software.repo` **5.0** | 2 |
 | Claude Opus 5.5 | `software.debug` **7.6**; `software.repo` **6.0**; `software.terminal` **7.0** (proxy); `software.testing` **4.0**; `writing.professional` **7.0** | 3 |
@@ -24,6 +23,8 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 | MiMo-V2.6-Pro | `agent.long` **2.8** (proxy); `software.architecture` **3.0**; `software.debug` **8.0**; `software.frontend` **2.8**; `software.repo` **2.8**; `software.security` **2.5**; `software.terminal` **2.5**; `writing.creative` **8.0** | 5 |
 | MiMo-V2.6-Flash | `agent.long` **2.5** (proxy); `software.debug` **6.3**; `software.frontend` **2.5**; `software.repo` **7.5** (proxy); `software.terminal` **4.3** | 6 |
 | MiMo-V2.6-Pro-UltraSpeed | `software.frontend` **4.5**; `software.frontend.fidelity` **4.5** | 1 |
+| GLM-5.3 | `software.algorithm` **7.5**; `software.debug` **7.7**; `software.frontend` **8.0**; `software.repo` **8.0** (proxy); `writing.creative` **3.5** | 3 |
+| GLM-5.3-Flash | `agent.long` **4.1**; `software.debug` **8.0**; `software.frontend` **6.5**; `software.frontend.design` **6.5** (proxy); `software.repo` **5.9**; `software.terminal` **3.0** | 3 |
 
 ## GPT-6 Astra
 
@@ -58,52 +59,6 @@ Direct tasks: `writing.creative`. Proxy tasks: None.
 The author’s internal AI-judged script study places Astra near 6.1 Sol but below the older 6 Sol.
 
 **Rating reason:** Useful scripts with a reported preference gap to older Sol; a small private AI-judged comparison supports only a cautious mixed rating.
-
-**Limits:** Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.
-
-## GPT-6 Sol
-
-Search: 2026-09-30 · status: reviewed
-
-Queries: `"GPT-6 Sol" coding regression review Reddit`; `"GPT-6 Sol" writing scripts tested`; `"GPT-6 Sol" agent wiki fixed`
-
-- `software.debug`: **5.8/10**, low confidence, direct mapping, 2 origin(s).
-- `software.repo`: **5.8/10**, low confidence, proxy mapping, 2 origin(s).
-- `writing.creative`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-
-### [Sol review and regression complaint](https://www.reddit.com/r/codex/comments/1wp5x1a/gpt6_sol_is_not_good/)
-
-**3.5/10** · negative · firsthand · low confidence. Author: skynet86.
-Reported: absolute date unknown · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.debug`. Proxy tasks: `software.repo`.
-
-At xHigh effort, the author reports fixes across six projects introducing regressions in four, subsequently repaired using Astra.
-
-**Rating reason:** Concrete reported regressions justify an adverse debugging signal; the private repositories and missing logs limit confidence.
-
-**Limits:** Self-reported bug counts and private projects; no patches, prompts or test logs. Harness and review process may contribute.
-
-### [Sol repaired an agentic wiki](https://www.reddit.com/r/openclaw/comments/1wrgu8e/how_is_gpt6luna_so_good/)
-
-**8/10** · positive · firsthand · low confidence. Author: ilias_from_ilios.
-Reported: absolute date unknown · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.debug`. Proxy tasks: `software.repo`.
-
-The author reports four Sol runs fixed an agentic wiki previously handled with mixed models.
-
-**Rating reason:** A described repair outcome supports bounded debugging use; a hobby project without public code is a low-confidence signal.
-
-**Limits:** No public repository or logs; prior attempts involved other models and are not a matched trial. Subscription usage is separate from API cost.
-
-### [Scriptwriting comparison: Astra](https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/)
-
-**8/10** · positive · firsthand · low confidence. Author: OnlyProggingForFun.
-Reported: absolute date unknown · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `writing.creative`. Proxy tasks: None.
-
-The author’s internal AI-judged script study prefers older 6 Sol over 6.1 Sol and Astra.
-
-**Rating reason:** Retains a specific writing advantage reported for the older version rather than assuming the newest release is best.
 
 **Limits:** Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.
 
@@ -854,3 +809,104 @@ The author links a reference design and three generated webpages, reporting weak
 **Limits:** The MiMo output page was opened and confirmed accessible, but this project performed no browser visual acceptance test. Complete prompts, equal budgets and blind ratings are unavailable. The author says mobile support was not requested; other commenters dispute the mobile ranking. The Astra variant is unspecified and cannot be mapped to GPT-6.1-Sol.
 
 Artifacts: [artifact 1](https://html.non.io/annui-mimo/), [artifact 2](https://html.non.io/Annui-grok/), [artifact 3](https://html.non.io/annui/), [artifact 4](https://non.io/video/annui-comparison.mp4).
+
+## GLM-5.3
+
+Search: 2026-10-08 · status: reviewed
+
+Queries: `"GLM 5.3" "I tested" coding`; `"GLM 5.3" daily driver debugging frontend`; `"GLM 5.3" long roleplay voice drift`; `"GLM 5.3" coding failed review`
+
+- `software.algorithm`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.debug`: **7.7/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
+- `software.frontend`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.repo`: **8.0/10**, low confidence, proxy mapping, 1 origin(s).
+- `writing.creative`: **3.5/10**, low confidence, direct mapping, 1 origin(s).
+
+### [GLM-5.3: nine executed Python functions, retained run aggregates](https://www.datallmlab.com/blog/glm-5-3-review.html)
+
+**7.5/10** · positive · artifact_report · low confidence. Author: Kevin Fan.
+Reported: 2026-08-22 · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `software.algorithm`. Proxy tasks: `software.debug`.
+
+The author reports nine of nine self-contained Python functions passing hidden assertions and publishes a dated aggregate record.
+
+**Rating reason:** Executed tests and retained aggregates support a positive bounded algorithm result; nine familiar functions cannot establish frontier engineering superiority.
+
+**Limits:** Standard tasks may occur in training data. Aggregates retain no per-task responses or variance. Short Python prompts do not test repositories, agents or long context. The publisher operates an LLM gateway; PromptHarbor did not rerun it.
+
+Artifacts: [artifact 1](https://www.datallmlab.com/blog/data/benchmark-evidence-2026-10-03.json).
+
+### [GLM-5.3 daily use: coding, debugging and frontend](https://www.reddit.com/r/ZaiGLM/comments/1vs3bba/glm_53_is_my_daily_driver_and_has_a_little/)
+
+**8/10** · positive · firsthand · low confidence. Author: Sensitive_Song4219.
+Reported: absolute date unknown · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `software.debug`, `software.frontend`. Proxy tasks: `software.repo`.
+
+The user describes GLM-5.3 as a daily coding, debugging and frontend model, while keeping Sol-High for review and general administration.
+
+**Rating reason:** Specific recurring development use supports a positive coding report, with low confidence because outputs and settings are not public.
+
+**Limits:** Personal ongoing usage with no shared code or matched test suite. World knowledge is described as weaker. Only relative dates were visible; no version-specific claim is inferred for the review model.
+
+### [GLM-5.3 long roleplay: reported voice drift](https://www.reddit.com/r/SillyTavernAI/comments/1w8u98c/why_people_prefer_glm_52_than_glm_53/)
+
+**3.5/10** · negative · firsthand · low confidence. Author: Ant-Hime.
+Reported: absolute date unknown · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `writing.creative`. Proxy tasks: None.
+
+A user reports that GLM-5.3 character voice softens and drifts during extended roleplay, despite finding it smarter than 5.2.
+
+**Rating reason:** Repeated voice drift is adverse for sustained character writing, but absent transcripts limit the strength of the negative judgment.
+
+**Limits:** No public conversation, target-length threshold or controlled style rubric. Presets and content filters affect this use case; the report does not establish performance on ordinary short fiction. Relative date only.
+
+## GLM-5.3-Flash
+
+Search: 2026-10-08 · status: reviewed
+
+Queries: `"GLM 5.3 Flash" review Reddit`; `"GLM 5.3 Flash" backend debugging refactoring`; `"glm-5.3-flash" tool-call loop issue`; `"GLM 5.3 Flash" OCR`; `"GLM 5.3 Flash" frontend benchmark`; `"GLM 5.3 Flash" roleplay`
+
+- `agent.long`: **4.1/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
+- `software.debug`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend.design`: **6.5/10**, low confidence, proxy mapping, 1 origin(s).
+- `software.repo`: **5.9/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
+- `software.terminal`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
+
+### [GLM-5.3-Flash implements planned backend and debugging work](https://www.reddit.com/r/opencode/comments/1wroplu/xiaomi_mimo_26_flash_vs_glm_53_flash/)
+
+**8/10** · positive · firsthand · low confidence. Author: Winter-Bit2411.
+Reported: absolute date unknown · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `software.repo`, `software.debug`. Proxy tasks: `agent.long`.
+
+The user reports successful backend development, debugging, refactoring and feature implementation with GLM-5.3-Flash following plans made with Opus.
+
+**Rating reason:** Specific successful plan-following development is useful for implementation handoffs, but unshared outputs prevent a strong superiority claim.
+
+**Limits:** No public repository, acceptance results or matched prompts. The upstream planner contributes to the result; this does not demonstrate GLM independently creating the architecture. Relative date only.
+
+### [GLM-5.3-Flash Devin Desktop tool-schema error loop](https://www.reddit.com/r/CognitionLabs/comments/1whs4oj/bug_report_glm53_flash_model_gets_stuck_in_a/)
+
+**3/10** · negative · firsthand · low confidence. Author: Sensitive-Bottle4165.
+Reported: 2026-09-16 · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `agent.long`, `software.terminal`. Proxy tasks: `software.repo`.
+
+The author reports repeated invalid grep parameters and fabricated paths during Java code review; more than fifteen tool failures required manual interruption before a correct context-only answer.
+
+**Rating reason:** Specific failure sequences and an intervention support a negative tool-recovery report; they do not show that the model cannot understand Java code.
+
+**Limits:** No complete session trace or repository is available. Model, tool-schema integration and context handling are not isolated. The successful answer after intervention limits the claim to recovery/tool-use behavior.
+
+### [GLM-5.3-Flash frontend renders: strong simple pages, weak dense-dashboard accessibility](https://samihedhli.com/articles/glm-5-3-flash-frontend-benchmark/)
+
+**6.5/10** · mixed · artifact_report · low confidence. Author: Sami Hedhli.
+Reported: 2026-08-29 · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `software.frontend`. Proxy tasks: `software.frontend.design`.
+
+The author publishes strong simple-page outputs but a dense dashboard with severe accessibility defects. The live profile shows nine runs, including dashboard 10/100 and landing-page 100/100 accessibility.
+
+**Rating reason:** Public task outputs expose meaningful complexity-dependent strengths and defects; a mixed score avoids treating fast rendering as reliable complex UI implementation.
+
+**Limits:** Accessibility is not visual quality or complete interaction correctness. Different harnesses and reruns affect results; small public sample. PromptHarbor opened the profile but did not visually accept or rerun outputs.
+
+Artifacts: [artifact 1](https://openvibeeval.com/models/glm-5-3-flash/).

@@ -20,7 +20,7 @@ No competitor source code was copied.
 
 Official catalogs were inspected for exact names, modalities, context and
 availability: [OpenAI Astra](https://developers.openai.com/api/docs/models/gpt-6-astra),
-[Sol](https://developers.openai.com/api/docs/models/gpt-6-sol),
+[Sol 6.1](https://developers.openai.com/api/docs/models/gpt-6.1-sol),
 [Luna](https://developers.openai.com/api/docs/models/gpt-6-luna),
 [Claude](https://platform.claude.com/docs/en/models/overview),
 [Gemini](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash),
@@ -59,7 +59,7 @@ model or anonymous style claim is used as an admitted performance observation.
 The v0.2.0 update admits tiered firsthand community records as described below.
 
 Coverage is limited to verified candidates in this pass. Meta, Mistral, MiniMax,
-Z.ai and specialist audio/image/proof systems are future discovery targets,
+and specialist audio/image/proof systems are future discovery targets,
 not implicitly weaker models. Live routing should check relevant missing models.
 No full benchmark dataset was copied and no paid API comparison was run.
 
@@ -114,6 +114,48 @@ gets a documented 0.25 relevance factor for the current revision. Its exact
 tool-repetition failure predates the official update; this is an editorial
 discount, not an independently verified fix. Reddit reports with unknown
 revision/date retain their uncertainty rather than receiving an assumed fix.
+
+## Catalog replacement and GLM update · 2026-10-08
+
+GPT-6 Sol has been removed from the active catalog, its evidence and resource
+examples. GPT-6.1 Sol remains a separate exact version. Historical attributed
+comparisons retain their actual model names; measurements are never relabeled.
+Planning defaults remain optional suggestions, restricted by the user's resources.
+
+The [October 7 Arena WebDev cohort](https://arena.ai/leaderboard/code/webdev)
+admits GPT-6.1 Sol at its displayed max setting and contemporary catalog peers.
+September observations remain dated and separate. These are preference results;
+they do not establish code correctness, design fidelity or identical tool setups.
+MiMo serving entries are not interpreted as specific downloaded checkpoints.
+
+[OpenAI's GPT-6.1 Sol documentation](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
+was checked again: standard input/output is $2/$10 per million tokens for inputs
+up to 272K, with cached input $0.10. This does not support a blanket claim that
+all requests cost less or every task improves over a predecessor. Effort, context
+and service tiers still affect actual task cost.
+
+[GLM-5.3](https://docs.z.ai/guides/llm/glm-5.3) and
+[GLM-5.3-Flash](https://docs.z.ai/guides/vlm/glm-5.3-flash) add distinct text-only
+and native multimodal choices. Context capacity, reasoning modes and account
+protocol restrictions are recorded separately from task quality. The
+[official USD price page](https://docs.z.ai/guides/overview/pricing) governs prices;
+Arena's price/license labels are not used for model metadata. The flagship has a
+dedicated weight license; Flash weights use MIT.
+
+Vendor cards disclose coding, terminal, security and workflow settings. Flash's
+[machine-readable results](https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/.eval_results/GLM-5.3-Flash.yaml)
+date three measurements to August 26: the original dates are preserved and those
+records expire under the 45-day vendor TTL. Other rows with unknown evaluation
+dates explicitly say so. HLE results are multidisciplinary proxies, not dedicated
+mathematical or scientific-workflow proof; different Terminal-Bench versions are
+not put in the same comparison group.
+
+Both GLM variants have three attributed community reports with task-scoped 0–10
+editorial assessments. They include small public Python/frontend artifacts,
+reported backend/debugging use, and contrary tool-recovery or writing outcomes.
+Public report artifacts are not independent reproduction, and planner-assisted
+coding is not credited as autonomous architecture design. Full sources,
+limitations, search queries and Chinese summaries accompany each record.
 
 ## Architecture decisions
 

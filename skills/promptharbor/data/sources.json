@@ -11,15 +11,6 @@
       "review_days": 14
     },
     {
-      "id": "openai-sol",
-      "title": "GPT-6 Sol model documentation",
-      "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-      "publisher": "OpenAI",
-      "published_on": null,
-      "checked_on": "2026-09-29",
-      "review_days": 14
-    },
-    {
       "id": "openai-luna",
       "title": "GPT-6 Luna model documentation",
       "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
@@ -205,7 +196,7 @@
       "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
       "publisher": "OpenAI",
       "published_on": null,
-      "checked_on": "2026-09-30",
+      "checked_on": "2026-10-08",
       "review_days": 14
     },
     {
@@ -339,15 +330,6 @@
       "title": "Scriptwriting comparison: Astra",
       "url": "https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/",
       "publisher": "OnlyProggingForFun",
-      "published_on": null,
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
-      "id": "community-source-039",
-      "title": "Sol review and regression complaint",
-      "url": "https://www.reddit.com/r/codex/comments/1wp5x1a/gpt6_sol_is_not_good/",
-      "publisher": "skynet86",
       "published_on": null,
       "checked_on": "2026-09-30",
       "review_days": 14
@@ -656,6 +638,141 @@
       "publisher": "jjcm",
       "published_on": null,
       "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    {
+      "id": "arena-webdev-2026-10-07",
+      "title": "Arena WebDev Overall — October 7, 2026",
+      "url": "https://arena.ai/leaderboard/code/webdev",
+      "publisher": "Arena",
+      "published_on": "2026-10-07",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-5.3-docs",
+      "title": "GLM-5.3 model documentation",
+      "url": "https://docs.z.ai/guides/llm/glm-5.3",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-5.3-flash-docs",
+      "title": "GLM-5.3-Flash model documentation",
+      "url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-pricing",
+      "title": "Z.ai official USD API pricing",
+      "url": "https://docs.z.ai/guides/overview/pricing",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-5.3-card",
+      "title": "GLM-5.3 official weights and evaluation card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-5.3-flash-card",
+      "title": "GLM-5.3-Flash official weights and evaluation settings",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-5.3-flash-eval-results",
+      "title": "GLM-5.3-Flash official machine-readable evaluation results",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/.eval_results/GLM-5.3-Flash.yaml",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-5.3-license",
+      "title": "GLM-5.3 weight license",
+      "url": "https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-release-notes",
+      "title": "Z.ai official model release notes",
+      "url": "https://docs.z.ai/release-notes/new-released",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-community-datallm",
+      "title": "GLM-5.3: nine executed Python functions, retained run aggregates",
+      "url": "https://www.datallmlab.com/blog/glm-5-3-review.html",
+      "publisher": "Kevin Fan / DataLLM Lab",
+      "published_on": "2026-08-22",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-community-daily-driver",
+      "title": "GLM-5.3 daily use: coding, debugging and frontend",
+      "url": "https://www.reddit.com/r/ZaiGLM/comments/1vs3bba/glm_53_is_my_daily_driver_and_has_a_little/",
+      "publisher": "Sensitive_Song4219",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-community-roleplay-drift",
+      "title": "GLM-5.3 long roleplay: reported voice drift",
+      "url": "https://www.reddit.com/r/SillyTavernAI/comments/1w8u98c/why_people_prefer_glm_52_than_glm_53/",
+      "publisher": "Ant-Hime",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-community-backend",
+      "title": "GLM-5.3-Flash implements planned backend and debugging work",
+      "url": "https://www.reddit.com/r/opencode/comments/1wroplu/xiaomi_mimo_26_flash_vs_glm_53_flash/",
+      "publisher": "Winter-Bit2411",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-community-devin-loop",
+      "title": "GLM-5.3-Flash Devin Desktop tool-schema error loop",
+      "url": "https://www.reddit.com/r/CognitionLabs/comments/1whs4oj/bug_report_glm53_flash_model_gets_stuck_in_a/",
+      "publisher": "Sensitive-Bottle4165",
+      "published_on": "2026-09-16",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "glm-community-frontend",
+      "title": "GLM-5.3-Flash frontend renders: strong simple pages, weak dense-dashboard accessibility",
+      "url": "https://samihedhli.com/articles/glm-5-3-flash-frontend-benchmark/",
+      "publisher": "Sami Hedhli",
+      "published_on": null,
+      "checked_on": "2026-10-08",
       "review_days": 14
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-30",
-  "snapshot_date": "2026-09-30",
+  "as_of": "2026-10-08",
+  "snapshot_date": "2026-10-08",
   "language": "zh-CN",
   "classification": [
     {
@@ -17,8 +17,8 @@
   "confidence": "limited",
   "recommendations": [
     {
-      "model_id": "claude-opus-5-5",
-      "name": "Claude Opus 5.5",
+      "model_id": "glm-5.3",
+      "name": "GLM-5.3",
       "direct_tasks": [],
       "independent_tasks": [],
       "covered_tasks": [
@@ -27,182 +27,86 @@
       "missing_tasks": [],
       "evidence": [
         {
-          "id": "opus-repo",
-          "model_id": "claude-opus-5-5",
-          "source_id": "opus-launch",
+          "id": "glm-5.3-deepswe",
+          "model_id": "glm-5.3",
+          "source_id": "glm-5.3-card",
           "kind": "vendor_eval",
-          "claim": "FrontierCode 1.1 Main is reported as 54.4%.",
+          "claim": "Z.ai reports 66.9 on DeepSWE v1.1.",
           "direct_tasks": [
-            "software.repo"
+            "software.repo",
+            "software.debug"
           ],
           "proxy_tasks": [
-            "software.debug",
             "software.testing",
-            "finance.backtest",
-            "finance.factor"
+            "software.architecture"
           ],
           "measurement": {
-            "benchmark": "FrontierCode",
-            "version": "1.1 Main",
-            "metric": "accuracy",
-            "value": 54.4,
-            "unit": "percent",
-            "protocol": "Anthropic release setup"
+            "benchmark": "DeepSWE",
+            "version": "1.1",
+            "metric": "reported score",
+            "value": 66.9,
+            "unit": "points",
+            "protocol": "Z.ai mini-swe-agent / 400K / six hours"
           },
-          "setting": "Adaptive max; production safeguards and fallback policy",
-          "limitations": "Task transfer and performance on the user prompt are unmeasured. Finance mappings concern code implementation only, not financial methodology or returns.",
-          "reported_on": "2026-09-22",
-          "reviewed_on": "2026-09-29",
+          "setting": "mini-swe-agent; temperature 0.95, top_p 1.0; six-hour timeout; 400K context; max reasoning effort.",
+          "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
+          "reported_on": null,
+          "reviewed_on": "2026-10-08",
           "comparison_group": null
         },
         {
-          "id": "claude-opus-5-5-community-03",
-          "model_id": "claude-opus-5-5",
-          "source_id": "community-source-046",
-          "kind": "community_test",
-          "claim": "A commenter reports a 17-slice refactor of 120k lines of tests on separate branches: Opus 5.5 high left more rule violations and took longer than Sonnet 5.5 high.",
-          "direct_tasks": [
+          "id": "glm-5.3-engineering-capability",
+          "model_id": "glm-5.3",
+          "source_id": "glm-5.3-docs",
+          "kind": "official_capability",
+          "claim": "Official documentation supports tool calling and positions GLM-5.3 for complex software engineering and long-horizon agents.",
+          "direct_tasks": [],
+          "proxy_tasks": [
             "software.repo",
-            "software.testing"
+            "software.architecture",
+            "software.testing",
+            "agent.long"
           ],
-          "proxy_tasks": [],
           "measurement": null,
-          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-          "limitations": "Self-reported private repository and three-layer review; no patches, prompts or timings independently inspected. One refactor workload does not establish a model-wide ordering.",
+          "setting": "Current API documentation; capability positioning rather than a measured task result.",
+          "limitations": "Feature and positioning evidence does not establish superiority on architecture, test design or the user project.",
           "reported_on": null,
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "Outrageous-Issue9722 (comment)",
-            "origin_id": "outrageous-issue9722-test-refactor-17-slices",
-            "grade": "firsthand",
-            "stance": "negative",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [],
-            "rating": {
-              "value": 4.0,
-              "rationale": "Retains a concrete adverse implementation report despite positive Opus feedback elsewhere; low confidence prevents overgeneralization.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
         }
       ],
       "price": {
-        "input": 4,
-        "output": 20,
-        "max_input_tokens": 200000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+        "input": 1.4,
+        "output": 4.4,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
       },
       "limitations": [
-        "需另行核查账号权限、地区和工具环境。"
+        "仅支持文本输入；图片和视频任务需要其他模型或外部预处理。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的十进制 1000000 token 记录。",
+        "开放权重采用 GLM-5.3 专用许可证：https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+        "权重：https://huggingface.co/zai-org/GLM-5.3；价格：https://docs.z.ai/guides/overview/pricing",
+        "不同账户历史的 API 协议可用性可能不同；请分别确认端点及 Coding Plan 权限。"
       ],
       "resources": {
         "access": "verify_account_access",
         "input_modalities": [
-          "text",
-          "image"
+          "text"
         ],
         "context_tokens": 1000000,
         "tool_calling": true,
-        "open_weights": false,
+        "open_weights": true,
         "price_applies": true
       },
-      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "metadata_url": "https://docs.z.ai/guides/llm/glm-5.3",
       "ranking": {
-        "support": 0.2285,
+        "support": 0.2295,
         "tasks": [
           {
             "task": "software.testing",
             "formal_support": 0.27,
             "evidence_strength": 0.36000000000000004,
-            "comparable_peer_win_fraction": null,
-            "community_signal": -0.006667,
-            "community_weight": 0.15,
-            "community_origins": 1,
-            "community_score": 4.0,
-            "community_confidence": "low",
-            "community_mapping": "direct",
-            "origins": [
-              {
-                "origin_id": "outrageous-issue9722-test-refactor-17-slices",
-                "score": 4.0,
-                "reliability": 0.1,
-                "signal": -0.02,
-                "evidence_ids": [
-                  "claude-opus-5-5-community-03"
-                ]
-              }
-            ],
-            "support": 0.22849995
-          }
-        ],
-        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
-      },
-      "rank": 1,
-      "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源"
-    },
-    {
-      "model_id": "gpt-6-sol",
-      "name": "GPT-6 Sol",
-      "direct_tasks": [],
-      "independent_tasks": [],
-      "covered_tasks": [
-        "software.testing"
-      ],
-      "missing_tasks": [],
-      "evidence": [
-        {
-          "id": "sol-fit",
-          "model_id": "gpt-6-sol",
-          "source_id": "openai-sol",
-          "kind": "official_capability",
-          "claim": "Official documentation positions Sol for coding and agent workflows.",
-          "direct_tasks": [],
-          "proxy_tasks": [
-            "software.debug",
-            "software.repo",
-            "software.testing",
-            "software.architecture",
-            "agent.workflow",
-            "agent.long"
-          ],
-          "measurement": null,
-          "setting": "Responses API; explicit reasoning effort",
-          "limitations": "No task-specific independent Sol result is admitted in this seed.",
-          "reported_on": null,
-          "reviewed_on": "2026-09-29",
-          "comparison_group": null
-        }
-      ],
-      "price": {
-        "input": 2,
-        "output": 10,
-        "max_input_tokens": 272000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "limitations": [
-        "需另行核查账号权限、地区和工具环境。"
-      ],
-      "resources": {
-        "access": "verify_account_access",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "context_tokens": 1050000,
-        "tool_calling": true,
-        "open_weights": false,
-        "price_applies": true
-      },
-      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-      "ranking": {
-        "support": 0.11475,
-        "tasks": [
-          {
-            "task": "software.testing",
-            "formal_support": 0.135,
-            "evidence_strength": 0.18000000000000002,
             "comparable_peer_win_fraction": null,
             "community_signal": 0.0,
             "community_weight": 0.15,
@@ -211,7 +115,95 @@
             "community_confidence": "insufficient",
             "community_mapping": "none",
             "origins": [],
-            "support": 0.11475
+            "support": 0.2295
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "rank": 1,
+      "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计"
+    },
+    {
+      "model_id": "glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.testing"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "glm-5.3-flash-deepswe",
+          "model_id": "glm-5.3-flash",
+          "source_id": "glm-5.3-flash-eval-results",
+          "kind": "vendor_eval",
+          "claim": "Z.ai reports 63.4 on DeepSWE v1.1.",
+          "direct_tasks": [
+            "software.repo",
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.testing",
+            "software.architecture"
+          ],
+          "measurement": {
+            "benchmark": "DeepSWE",
+            "version": "1.1",
+            "metric": "reported score",
+            "value": 63.4,
+            "unit": "points",
+            "protocol": "Z.ai mini-swe-agent / 400K / six hours"
+          },
+          "setting": "mini-swe-agent; temperature 0.95, top_p 1.0; six-hour timeout; 400K context; max reasoning effort (card footnotes).",
+          "limitations": "Vendor-run; requires the stated harness; unreplicated task transfer.",
+          "reported_on": "2026-08-26",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 0.15,
+        "output": 0.5,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+      },
+      "limitations": [
+        "原生支持文本、图片和视频；文件支持属于服务输入包装，不是单独的模态；视频 Agent 示例不作为原生音频输入的依据。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的 1000000 token 记录。",
+        "MIT 许可证权重：https://huggingface.co/zai-org/GLM-5.3-Flash；价格：https://docs.z.ai/guides/overview/pricing",
+        "Coding Plan 配额与 API token 价格分别计算；FlashX 是独立的加速托管档位，其吞吐速度不等于 Flash 的任务质量分数。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": true
+      },
+      "metadata_url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+      "ranking": {
+        "support": 0.2295,
+        "tasks": [
+          {
+            "task": "software.testing",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.2295
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -220,8 +212,8 @@
       "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计"
     },
     {
-      "model_id": "kimi-k3",
-      "name": "Kimi K3",
+      "model_id": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
       "direct_tasks": [],
       "independent_tasks": [],
       "covered_tasks": [
@@ -230,84 +222,279 @@
       "missing_tasks": [],
       "evidence": [
         {
-          "id": "kimi-k3-community-01",
-          "model_id": "kimi-k3",
-          "source_id": "community-source-062",
-          "kind": "community_test",
-          "claim": "Kimi K3 via Kimi Code CLI delivered a Rails 8/RubyLLM/Hotwire/Docker chat app with correct conversation replay, bounded history and working chat validation. Review found missing system instructions, weak persistence/concurrency handling and insufficient error coverage. A public result commit and project links are available.",
+          "id": "opus-repo",
+          "model_id": "claude-opus-5-5",
+          "source_id": "opus-launch",
+          "kind": "vendor_eval",
+          "claim": "FrontierCode 1.1 Main is reported as 54.4%.",
           "direct_tasks": [
             "software.repo"
           ],
           "proxy_tasks": [
+            "software.debug",
             "software.testing",
-            "software.architecture"
+            "finance.backtest",
+            "finance.factor"
           ],
-          "measurement": null,
-          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-          "limitations": "One app run; Kimi Code subscription harness at a 256K plan limit. Original OpenCode/Moonshot tool schema was incompatible and the harness was changed. Published model comparisons concern older competitors, not current catalog successors. Project was inspected by the author; we opened the result commit but did not rerun it. Does not cover migrations, background jobs or production tool actions. Evidence is dated July and must retain its age.",
-          "reported_on": "2026-07-17",
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "Fabio Akita",
-            "origin_id": "akitaonrails-kimi-k3-rails-chat-app-20260717",
-            "grade": "artifact_report",
-            "stance": "mixed",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [
-              "https://github.com/akitaonrails/llm-coding-benchmark/commit/2bf1d7b3e3bbc7e6ff9a18a07390333c86bda615",
-              "https://github.com/akitaonrails/llm-coding-benchmark"
-            ],
-            "rating": {
-              "value": 8.0,
-              "rationale": "A functioning reviewed repository with concrete strengths and defects merits a strong but incomplete task assessment; this is editorial judgment rather than a conversion of the author's 89/100 rubric.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
+          "measurement": {
+            "benchmark": "FrontierCode",
+            "version": "1.1 Main",
+            "metric": "accuracy",
+            "value": 54.4,
+            "unit": "percent",
+            "protocol": "Anthropic release setup"
+          },
+          "setting": "Adaptive max; production safeguards and fallback policy",
+          "limitations": "Task transfer and performance on the user prompt are unmeasured. Finance mappings concern code implementation only, not financial methodology or returns.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
         },
         {
-          "id": "kimi-k3-community-02",
-          "model_id": "kimi-k3",
-          "source_id": "community-source-063",
+          "id": "claude-opus-5-5-community-03",
+          "model_id": "claude-opus-5-5",
+          "source_id": "community-source-046",
           "kind": "community_test",
-          "claim": "The First Tree team reports that standalone Kimi K3 left permissive security headers and weak QA on one repository issue. Adding a reviewer and shared Context Tree produced stricter origin restrictions and tests after many more iterations. The post links the compared pull requests.",
+          "claim": "A commenter reports a 17-slice refactor of 120k lines of tests on separate branches: Opus 5.5 high left more rule violations and took longer than Sonnet 5.5 high.",
           "direct_tasks": [
-            "software.security",
-            "software.repo"
+            "software.repo",
+            "software.testing"
           ],
-          "proxy_tasks": [
-            "software.testing",
-            "agent.long"
-          ],
+          "proxy_tasks": [],
           "measurement": null,
           "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-          "limitations": "Self-promotion with explicit team disclosure; reviewer, shared context, iterations and spending changed together. GPT comparator is an older exact version without the added harness. Claude Opus supplied grading. Both PR summaries were opened and support the described policy differences; tests were not reproduced. The PRs date to July 22/27, 2026, while the report's exact date remains unknown. Cross-posts count as the same origin.",
+          "limitations": "Self-reported private repository and three-layer review; no patches, prompts or timings independently inspected. One refactor workload does not establish a model-wide ordering.",
           "reported_on": null,
           "reviewed_on": "2026-09-30",
           "comparison_group": null,
           "community": {
-            "author": "Still_Amphibian545 / First Tree team",
-            "origin_id": "first-tree-team-kimi-k3-security-issue",
-            "grade": "artifact_report",
-            "stance": "mixed",
+            "author": "Outrageous-Issue9722 (comment)",
+            "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+            "grade": "firsthand",
+            "stance": "negative",
             "first_seen_on": "2026-09-30",
-            "artifact_urls": [
-              "https://github.com/agent-team-foundation/first-tree/pull/1932",
-              "https://github.com/agent-team-foundation/first-tree/pull/2026"
-            ],
+            "artifact_urls": [],
             "rating": {
-              "value": 5.5,
-              "rationale": "The report shows substantial task failure in the standalone setup and improvement with intensive review. A middling editorial outcome and low confidence preserve both findings without treating framework-assisted success as intrinsic superiority.",
+              "value": 4.0,
+              "rationale": "Retains a concrete adverse implementation report despite positive Opus feedback elsewhere; low confidence prevents overgeneralization.",
               "confidence": "low",
               "assessed_on": "2026-09-30"
             }
           }
         }
       ],
-      "price": null,
+      "price": {
+        "input": 4,
+        "output": 20,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
       "limitations": [
-        "Kimi K3 使用自己的权重许可证。需核查原生视频支持及具体部署的帧数限制。"
+        "需另行核查账号权限、地区和工具环境。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.2285,
+        "tasks": [
+          {
+            "task": "software.testing",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": -0.006667,
+            "community_weight": 0.15,
+            "community_origins": 1,
+            "community_score": 4.0,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "outrageous-issue9722-test-refactor-17-slices",
+                "score": 4.0,
+                "reliability": 0.1,
+                "signal": -0.02,
+                "evidence_ids": [
+                  "claude-opus-5-5-community-03"
+                ]
+              }
+            ],
+            "support": 0.22849995
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "rank": 3,
+      "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源"
+    }
+  ],
+  "candidates": [
+    {
+      "model_id": "glm-5.3",
+      "name": "GLM-5.3",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.testing"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "glm-5.3-deepswe",
+          "model_id": "glm-5.3",
+          "source_id": "glm-5.3-card",
+          "kind": "vendor_eval",
+          "claim": "Z.ai reports 66.9 on DeepSWE v1.1.",
+          "direct_tasks": [
+            "software.repo",
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.testing",
+            "software.architecture"
+          ],
+          "measurement": {
+            "benchmark": "DeepSWE",
+            "version": "1.1",
+            "metric": "reported score",
+            "value": 66.9,
+            "unit": "points",
+            "protocol": "Z.ai mini-swe-agent / 400K / six hours"
+          },
+          "setting": "mini-swe-agent; temperature 0.95, top_p 1.0; six-hour timeout; 400K context; max reasoning effort.",
+          "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
+          "reported_on": null,
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        },
+        {
+          "id": "glm-5.3-engineering-capability",
+          "model_id": "glm-5.3",
+          "source_id": "glm-5.3-docs",
+          "kind": "official_capability",
+          "claim": "Official documentation supports tool calling and positions GLM-5.3 for complex software engineering and long-horizon agents.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.repo",
+            "software.architecture",
+            "software.testing",
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Current API documentation; capability positioning rather than a measured task result.",
+          "limitations": "Feature and positioning evidence does not establish superiority on architecture, test design or the user project.",
+          "reported_on": null,
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 1.4,
+        "output": 4.4,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+      },
+      "limitations": [
+        "仅支持文本输入；图片和视频任务需要其他模型或外部预处理。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的十进制 1000000 token 记录。",
+        "开放权重采用 GLM-5.3 专用许可证：https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+        "权重：https://huggingface.co/zai-org/GLM-5.3；价格：https://docs.z.ai/guides/overview/pricing",
+        "不同账户历史的 API 协议可用性可能不同；请分别确认端点及 Coding Plan 权限。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": true
+      },
+      "metadata_url": "https://docs.z.ai/guides/llm/glm-5.3",
+      "ranking": {
+        "support": 0.2295,
+        "tasks": [
+          {
+            "task": "software.testing",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.2295
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "direct_tasks": [],
+      "independent_tasks": [],
+      "covered_tasks": [
+        "software.testing"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "glm-5.3-flash-deepswe",
+          "model_id": "glm-5.3-flash",
+          "source_id": "glm-5.3-flash-eval-results",
+          "kind": "vendor_eval",
+          "claim": "Z.ai reports 63.4 on DeepSWE v1.1.",
+          "direct_tasks": [
+            "software.repo",
+            "software.debug"
+          ],
+          "proxy_tasks": [
+            "software.testing",
+            "software.architecture"
+          ],
+          "measurement": {
+            "benchmark": "DeepSWE",
+            "version": "1.1",
+            "metric": "reported score",
+            "value": 63.4,
+            "unit": "points",
+            "protocol": "Z.ai mini-swe-agent / 400K / six hours"
+          },
+          "setting": "mini-swe-agent; temperature 0.95, top_p 1.0; six-hour timeout; 400K context; max reasoning effort (card footnotes).",
+          "limitations": "Vendor-run; requires the stated harness; unreplicated task transfer.",
+          "reported_on": "2026-08-26",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 0.15,
+        "output": 0.5,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+      },
+      "limitations": [
+        "原生支持文本、图片和视频；文件支持属于服务输入包装，不是单独的模态；视频 Agent 示例不作为原生音频输入的依据。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的 1000000 token 记录。",
+        "MIT 许可证权重：https://huggingface.co/zai-org/GLM-5.3-Flash；价格：https://docs.z.ai/guides/overview/pricing",
+        "Coding Plan 配额与 API token 价格分别计算；FlashX 是独立的加速托管档位，其吞吐速度不等于 Flash 的任务质量分数。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -316,56 +503,33 @@
           "image",
           "video"
         ],
-        "context_tokens": 1048576,
+        "context_tokens": 1000000,
         "tool_calling": true,
         "open_weights": true,
-        "price_applies": false
+        "price_applies": true
       },
-      "metadata_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "metadata_url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
       "ranking": {
-        "support": 0.004081,
+        "support": 0.2295,
         "tasks": [
           {
             "task": "software.testing",
-            "formal_support": 0.0,
-            "evidence_strength": 0,
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.027204,
+            "community_signal": 0.0,
             "community_weight": 0.15,
-            "community_origins": 2,
-            "community_score": 6.6,
-            "community_confidence": "low",
-            "community_mapping": "proxy",
-            "origins": [
-              {
-                "origin_id": "akitaonrails-kimi-k3-rails-chat-app-20260717",
-                "score": 8.0,
-                "reliability": 0.11352101605925147,
-                "signal": 0.068113,
-                "evidence_ids": [
-                  "kimi-k3-community-01"
-                ]
-              },
-              {
-                "origin_id": "first-tree-team-kimi-k3-security-issue",
-                "score": 5.5,
-                "reliability": 0.135,
-                "signal": 0.0135,
-                "evidence_ids": [
-                  "kimi-k3-community-02"
-                ]
-              }
-            ],
-            "support": 0.004080599999999999
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.2295
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
-      },
-      "rank": 3,
-      "reason": "目前依据为社区任务报告，需要实际试做，对应任务：测试设计；已计入社区评价，可查看评分及来源"
-    }
-  ],
-  "candidates": [
+      }
+    },
     {
       "model_id": "claude-opus-5-5",
       "name": "Claude Opus 5.5",
@@ -491,81 +655,6 @@
       }
     },
     {
-      "model_id": "gpt-6-sol",
-      "name": "GPT-6 Sol",
-      "direct_tasks": [],
-      "independent_tasks": [],
-      "covered_tasks": [
-        "software.testing"
-      ],
-      "missing_tasks": [],
-      "evidence": [
-        {
-          "id": "sol-fit",
-          "model_id": "gpt-6-sol",
-          "source_id": "openai-sol",
-          "kind": "official_capability",
-          "claim": "Official documentation positions Sol for coding and agent workflows.",
-          "direct_tasks": [],
-          "proxy_tasks": [
-            "software.debug",
-            "software.repo",
-            "software.testing",
-            "software.architecture",
-            "agent.workflow",
-            "agent.long"
-          ],
-          "measurement": null,
-          "setting": "Responses API; explicit reasoning effort",
-          "limitations": "No task-specific independent Sol result is admitted in this seed.",
-          "reported_on": null,
-          "reviewed_on": "2026-09-29",
-          "comparison_group": null
-        }
-      ],
-      "price": {
-        "input": 2,
-        "output": 10,
-        "max_input_tokens": 272000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "limitations": [
-        "需另行核查账号权限、地区和工具环境。"
-      ],
-      "resources": {
-        "access": "verify_account_access",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "context_tokens": 1050000,
-        "tool_calling": true,
-        "open_weights": false,
-        "price_applies": true
-      },
-      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-      "ranking": {
-        "support": 0.11475,
-        "tasks": [
-          {
-            "task": "software.testing",
-            "formal_support": 0.135,
-            "evidence_strength": 0.18000000000000002,
-            "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
-            "community_weight": 0.15,
-            "community_origins": 0,
-            "community_score": null,
-            "community_confidence": "insufficient",
-            "community_mapping": "none",
-            "origins": [],
-            "support": 0.11475
-          }
-        ],
-        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
-      }
-    },
-    {
       "model_id": "kimi-k3",
       "name": "Kimi K3",
       "direct_tasks": [],
@@ -669,14 +758,14 @@
       },
       "metadata_url": "https://huggingface.co/moonshotai/Kimi-K3",
       "ranking": {
-        "support": 0.004081,
+        "support": 0.00378,
         "tasks": [
           {
             "task": "software.testing",
             "formal_support": 0.0,
             "evidence_strength": 0,
             "comparable_peer_win_fraction": null,
-            "community_signal": 0.027204,
+            "community_signal": 0.0252,
             "community_weight": 0.15,
             "community_origins": 2,
             "community_score": 6.6,
@@ -686,8 +775,8 @@
               {
                 "origin_id": "akitaonrails-kimi-k3-rails-chat-app-20260717",
                 "score": 8.0,
-                "reliability": 0.11352101605925147,
-                "signal": 0.068113,
+                "reliability": 0.10349966326519805,
+                "signal": 0.0621,
                 "evidence_ids": [
                   "kimi-k3-community-01"
                 ]
@@ -702,7 +791,7 @@
                 ]
               }
             ],
-            "support": 0.004080599999999999
+            "support": 0.00378
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -805,8 +894,8 @@
     }
   ],
   "switch": {
-    "action": "test_first",
-    "reason": "尚无针对同一任务的实测证明切换值得，建议先试做再决定。"
+    "action": "unknown",
+    "reason": "缺少当前模型的有效可比证据，暂时无法判断切换收益。"
   },
   "excluded": [
     {
@@ -882,6 +971,33 @@
     "衡量发现的真实缺陷和误报，而不是测试数量。"
   ],
   "sources": {
+    "glm-5.3-card": {
+      "id": "glm-5.3-card",
+      "title": "GLM-5.3 official weights and evaluation card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    "glm-5.3-docs": {
+      "id": "glm-5.3-docs",
+      "title": "GLM-5.3 model documentation",
+      "url": "https://docs.z.ai/guides/llm/glm-5.3",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    "glm-5.3-flash-eval-results": {
+      "id": "glm-5.3-flash-eval-results",
+      "title": "GLM-5.3-Flash official machine-readable evaluation results",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/.eval_results/GLM-5.3-Flash.yaml",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
     "opus-launch": {
       "id": "opus-launch",
       "title": "Claude Opus 5.5 release evaluation",
@@ -898,15 +1014,6 @@
       "publisher": "Outrageous-Issue9722 (comment)",
       "published_on": null,
       "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    "openai-sol": {
-      "id": "openai-sol",
-      "title": "GPT-6 Sol model documentation",
-      "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-      "publisher": "OpenAI",
-      "published_on": null,
-      "checked_on": "2026-09-29",
       "review_days": 14
     },
     "community-source-062": {

@@ -6,7 +6,7 @@ import json
 import sys
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +15,7 @@ import harbor
 import project
 
 NOW = date(2026, 9, 30)
+UPDATED = date(2026, 10, 8)
 
 
 def keep_evidence(data, rows):
@@ -59,14 +60,14 @@ class CommunityTests(unittest.TestCase):
         self.data = harbor.load_data()
         self.job = {'tasks': ['software.frontend.design']}
 
-    def result(self, **extra):
-        return harbor.route({**self.job, **extra}, self.data, NOW)
+    def result(self, today=NOW, **extra):
+        return harbor.route({**self.job, **extra}, self.data, today)
 
     def kimi(self, **extra):
         return next(c for c in self.result(**extra)['candidates'] if c['model_id'] == 'kimi-k3')
 
     def test_top_three_are_ordered_unique_and_resource_filtered(self):
-        ids = ['kimi-k3', 'gpt-6-sol', 'deepseek-v4.1-flash']
+        ids = ['kimi-k3', 'claude-opus-5-5', 'deepseek-v4.1-flash']
         r = self.result(available_models=ids)
         self.assertEqual([c['rank'] for c in r['recommendations']], [1, 2, 3])
         self.assertEqual({c['model_id'] for c in r['recommendations']}, set(ids))
@@ -83,21 +84,21 @@ class CommunityTests(unittest.TestCase):
         # changing real-world reports and benchmark comparisons.
         seed = next(e for e in self.data['evidence']['evidence'] if e['kind'] == 'official_capability')
         rows = []
-        for model in ['gpt-6-sol', 'gpt-6-luna']:
+        for model in ['gpt-6.1-sol', 'gpt-6-luna']:
             formal = copy.deepcopy(seed)
             formal.update(id='fixture-formal-' + model, model_id=model,
                           direct_tasks=self.job['tasks'], proxy_tasks=[], comparison_group=None)
             rows.append(formal)
-        report = community_fixture(value=9, model='gpt-6-sol')
+        report = community_fixture(value=9, model='gpt-6.1-sol')
         report['source_id'] = next(e['source_id'] for e in self.data['evidence']['evidence']
                                    if e['kind'] == 'community_test')
         rows.append(report)
         keep_evidence(self.data, rows)
-        allowed = ['gpt-6-luna', 'gpt-6-sol']
-        off = self.result(community_weight=0, available_models=allowed)
-        on = self.result(community_weight=0.3, available_models=allowed)
+        allowed = ['gpt-6-luna', 'gpt-6.1-sol']
+        off = self.result(today=UPDATED, community_weight=0, available_models=allowed)
+        on = self.result(today=UPDATED, community_weight=0.3, available_models=allowed)
         self.assertEqual(off['recommendations'][0]['model_id'], 'gpt-6-luna')
-        self.assertEqual(on['recommendations'][0]['model_id'], 'gpt-6-sol')
+        self.assertEqual(on['recommendations'][0]['model_id'], 'gpt-6.1-sol')
         self.assertGreater(on['recommendations'][0]['ranking']['support'],
                            on['recommendations'][1]['ranking']['support'])
 
@@ -174,10 +175,11 @@ class CommunityTests(unittest.TestCase):
     def test_project_handoffs_offer_choices_and_actual_model_receipt(self):
         with tempfile.TemporaryDirectory() as d:
             out = Path(d) / 'handoffs'
-            m = project.compile_project(ROOT/'examples/library-system/project.json', out, NOW, language='en')
+            m = project.compile_project(ROOT/'examples/library-system/project.json', out, UPDATED, language='en')
             frontend = next(a for a in m['assignments'] if a['task_id'] == 'frontend')
             qa = next(a for a in m['assignments'] if a['task_id'] == 'qa')
-            self.assertEqual(qa['model'], 'gpt-6-sol')
+            self.assertIn(qa['model'], {r['model_id'] for r in qa['recommendations']})
+            self.assertEqual(qa['selection'], 'user_choice')
             self.assertEqual(len(frontend['recommendations']), 3)
             self.assertEqual(frontend['selection'], 'user_choice')
             prompt = (out/'prompts/frontend.md').read_text(encoding='utf-8')
@@ -278,7 +280,8 @@ class EditorialAssessmentTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     harbor.validate(edited)
         edited = copy.deepcopy(self.data)
-        next(e for e in edited['evidence']['evidence'] if e['id'] == seed['id'])['community']['rating']['assessed_on'] = '2026-10-01'
+        future = date.fromisoformat(edited['models']['snapshot_date']) + timedelta(days=1)
+        next(e for e in edited['evidence']['evidence'] if e['id'] == seed['id'])['community']['rating']['assessed_on'] = future.isoformat()
         with self.assertRaises(ValueError):
             harbor.validate(edited)
 
@@ -326,11 +329,36 @@ class EditorialAssessmentTests(unittest.TestCase):
         for model in added:
             supported = next(e for e in self.data['evidence']['evidence']
                              if e['model_id'] == model and e['kind'] != 'community_test'
-                             and harbor.evidence_fresh(e, self.data, NOW))
+                             and harbor.evidence_fresh(e, self.data, UPDATED))
             task = (supported['direct_tasks'] + supported['proxy_tasks'])[0]
             with self.subTest(model=model, task=task):
-                result = harbor.route({'tasks': [task], 'available_models': [model]}, self.data, NOW)
+                result = harbor.route({'tasks': [task], 'available_models': [model]}, self.data, UPDATED)
                 self.assertEqual([r['model_id'] for r in result['recommendations']], [model])
+
+    def test_glm_variants_have_task_evidence_and_separate_community_reviews(self):
+        models = {m['id']: m for m in self.data['models']['models']}
+        research = {r['id']: r for r in self.data['community_research']['models']}
+        evidence = {e['id']: e for e in self.data['evidence']['evidence']}
+        for model in ['glm-5.3', 'glm-5.3-flash']:
+            with self.subTest(model=model):
+                self.assertIn(model, models)
+                row = research[model]
+                self.assertTrue(row['queries'])
+                self.assertEqual(row['searched_on'], UPDATED.isoformat())
+                self.assertTrue(all(evidence[e]['model_id'] == model for e in row['evidence_ids']))
+                supported = next(e for e in evidence.values()
+                                 if e['model_id'] == model and e['kind'] != 'community_test'
+                                 and harbor.evidence_fresh(e, self.data, UPDATED))
+                task = (supported['direct_tasks'] + supported['proxy_tasks'])[0]
+                result = harbor.route({'tasks': [task], 'available_models': [model]},
+                                      self.data, UPDATED)
+                self.assertEqual([r['model_id'] for r in result['recommendations']], [model])
+                reports = [evidence[e] for e in row['evidence_ids']]
+                self.assertTrue(reports)
+                for report in reports:
+                    self.assertEqual(report['kind'], 'community_test')
+                    self.assertTrue(report['community']['rating']['rationale'])
+                    self.assertIn(report['id'], self.data['locale_zh']['evidence'])
 
 
 if __name__ == '__main__':

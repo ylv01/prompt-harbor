@@ -1,6 +1,6 @@
 {
   "tasks": ["vision.video"],
   "classification_method": "host_semantic",
-  "current_model": "gpt-6-sol",
+  "current_model": "gpt-6.1-sol",
   "input_modalities": ["text", "video"]
 }

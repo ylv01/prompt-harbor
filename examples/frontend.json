@@ -6,7 +6,7 @@
   "prompt": "Create an original responsive landing page with working interactions.",
   "available_models": [
     "kimi-k3",
-    "gpt-6-sol",
+    "gpt-6.1-sol",
     "deepseek-v4.1-flash"
   ],
   "community_weight": 0.3

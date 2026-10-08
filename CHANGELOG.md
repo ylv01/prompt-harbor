@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.2 — 2026-10-08
+
+- Remove GPT-6 Sol from active recommendations and resource examples; use the
+  separately evidenced GPT-6.1 Sol. Keep replaceable project planning defaults.
+- Add GLM-5.3 and GLM-5.3-Flash with exact-version capabilities, task evaluations,
+  attributed positive/adverse community assessments and full Chinese catalog text.
+- Admit a separate October 7 WebDev cohort, including GPT-6.1 Sol and both GLM
+  variants. Preserve historical observations without relabeling measurements.
+- Refresh bilingual examples, coverage, badges and standalone packaging.
+
 ## 0.3.1 — 2026-09-30
 
 - Fixed Chinese requests producing English saved plans and handoff prompts.

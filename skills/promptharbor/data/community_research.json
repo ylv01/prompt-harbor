@@ -18,22 +18,6 @@
       ]
     },
     {
-      "id": "gpt-6-sol",
-      "searched_on": "2026-09-30",
-      "queries": [
-        "\"GPT-6 Sol\" coding regression review Reddit",
-        "\"GPT-6 Sol\" writing scripts tested",
-        "\"GPT-6 Sol\" agent wiki fixed"
-      ],
-      "status": "reviewed",
-      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
-      "evidence_ids": [
-        "gpt-6-sol-community-01",
-        "gpt-6-sol-community-02",
-        "gpt-6-sol-community-03"
-      ]
-    },
-    {
       "id": "gpt-6.1-sol",
       "searched_on": "2026-09-30",
       "queries": [
@@ -272,6 +256,42 @@
       "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
       "evidence_ids": [
         "mimo-v2.6-pro-ultraspeed-community-01"
+      ]
+    },
+    {
+      "id": "glm-5.3",
+      "searched_on": "2026-10-08",
+      "queries": [
+        "\"GLM 5.3\" \"I tested\" coding",
+        "\"GLM 5.3\" daily driver debugging frontend",
+        "\"GLM 5.3\" long roleplay voice drift",
+        "\"GLM 5.3\" coding failed review"
+      ],
+      "status": "reviewed",
+      "summary": "Exact-version task reports reviewed, including bounded outputs, adverse reports and deployment limits; editorial ratings are not universal capability scores.",
+      "evidence_ids": [
+        "glm-5.3-community-01",
+        "glm-5.3-community-02",
+        "glm-5.3-community-03"
+      ]
+    },
+    {
+      "id": "glm-5.3-flash",
+      "searched_on": "2026-10-08",
+      "queries": [
+        "\"GLM 5.3 Flash\" review Reddit",
+        "\"GLM 5.3 Flash\" backend debugging refactoring",
+        "\"glm-5.3-flash\" tool-call loop issue",
+        "\"GLM 5.3 Flash\" OCR",
+        "\"GLM 5.3 Flash\" frontend benchmark",
+        "\"GLM 5.3 Flash\" roleplay"
+      ],
+      "status": "reviewed",
+      "summary": "Exact-version task reports reviewed, including bounded outputs, adverse reports and deployment limits; editorial ratings are not universal capability scores.",
+      "evidence_ids": [
+        "glm-5.3-flash-community-02",
+        "glm-5.3-flash-community-03",
+        "glm-5.3-flash-community-07"
       ]
     }
   ]

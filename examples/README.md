@@ -2,7 +2,7 @@
 
 These examples describe recommendation behavior, not paid cross-model evaluations.
 The current model in fixtures is a declared hypothetical value, not inferred
-from the assistant running the skill. Use `--as-of 2026-09-30` only to reproduce
+from the assistant running the skill. Use `--as-of 2026-10-08` only to reproduce
 this snapshot; omit it for current advice.
 
 ## One question
@@ -22,6 +22,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.j
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/video.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/agent-planning.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 ```
 
 A backtest combines quantitative methodology and repository work. Coding evidence
@@ -35,6 +36,10 @@ a capability constraint, not a claim that one model has the best vision scores.
 current MiMo variants. Community scores apply to the reported workflow tasks;
 older MiMo RL measurements remain clearly marked adjacent-version evidence.
 Use `harbor.py community` to inspect every model's task ratings and source URLs.
+
+`glm.json` is a Chinese repository-implementation brief restricted to GLM-5.3,
+GLM-5.3-Flash and GPT-6.1 Sol. It demonstrates exact-version task evidence,
+community feedback and localized recommendations within a user's resource list.
 
 ## A whole engineering project
 

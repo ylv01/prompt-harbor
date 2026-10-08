@@ -1,14 +1,14 @@
 # 分工提示词：前端：图书列表、详情与书评
 
-计划默认模型：**gpt-6-sol**
+计划默认模型：**gpt-6.1-sol**
 
 继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。
 
 ## Top 3 候选模型
 
-- 1. **GPT-6 Astra** (`gpt-6-astra`): 有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源. 来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Astra built the author’s portfolio](https://www.najam.pk/blog/gpt-6-astra-review)
-- 2. **Claude Opus 5.5** (`claude-opus-5-5`): 有匹配该任务的独立评测，对应任务：前端实现. 来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
-- 3. **Claude Fable 5.1** (`claude-fable-5-1`): 有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源. 来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Fable 5.1 structured a draft from handwritten notes](https://aaronmakelky.com/blog/astra-vs-fable), [Fable 5.1 animated SVG and rocket-page build-off](https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026)
+- 1. **GPT-6 Astra** (`gpt-6-astra`): 有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源. 来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Astra built the author’s portfolio](https://www.najam.pk/blog/gpt-6-astra-review), [Arena WebDev Overall — October 7, 2026](https://arena.ai/leaderboard/code/webdev)
+- 2. **Claude Opus 5.5** (`claude-opus-5-5`): 有匹配该任务的独立评测，对应任务：前端实现. 来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Arena WebDev Overall — October 7, 2026](https://arena.ai/leaderboard/code/webdev)
+- 3. **Claude Sonnet 5.5** (`claude-sonnet-5-5`): 有匹配该任务的独立评测，对应任务：前端实现. 来源: [Claude Sonnet 5.5 release evaluation](https://www.anthropic.com/claude-sonnet-5-5), [Arena WebDev Overall — October 7, 2026](https://arena.ai/leaderboard/code/webdev)
 
 实际使用的模型由用户选择。无论选择哪个候选，都应遵循同一份接口契约和验收标准。
 

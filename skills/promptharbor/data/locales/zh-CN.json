@@ -317,11 +317,6 @@
       "setting": "Responses API，配备合适的工具。",
       "limitations": "产品定位和工具可用性不等于针对具体任务的比较评测。"
     },
-    "sol-fit": {
-      "claim": "官方文档将 Sol 定位于编程和 Agent 工作流。",
-      "setting": "Responses API；明确指定推理档位。",
-      "limitations": "本次初始目录未录入针对 Sol 具体任务的独立评测结果。"
-    },
     "luna-fit": {
       "claim": "官方文档将 Luna 定位于范围明确、处理量大的任务。",
       "setting": "按需配置推理档位和结构化输出。",
@@ -497,11 +492,6 @@
       "setting": "claude-fable-5.1-max；Arena 部署环境，不代表所有面向用户的应用设置。",
       "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
     },
-    "gpt-6-sol-arena-webdev": {
-      "claim": "gpt-6-sol-max：记录的 WebDev 偏好评分为 1681。",
-      "setting": "gpt-6-sol-max；Arena 部署环境，不代表所有面向用户的应用设置。",
-      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
-    },
     "kimi-k3-arena-webdev": {
       "claim": "kimi-k3-max：记录的 WebDev 偏好评分为 1660。",
       "setting": "kimi-k3-max；Arena 部署环境，不代表所有面向用户的应用设置。",
@@ -631,24 +621,6 @@
       "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
       "limitations": "内部脚本写作研究包含 10 项任务，每项生成 5 个版本，由 3 个 AI 评审；没有公开提示词或评测代码。推理档位不同（6.1 Sol xhigh、Astra max）。AI 评审偏好不等于人类共识。原始页面仅显示相对时间，确切日期未知。",
       "rating_rationale": "脚本有实用性，但报告显示其偏好评分落后于较早 Sol；规模较小、非公开的 AI 评审比较仅支持谨慎的混合评价。"
-    },
-    "gpt-6-sol-community-01": {
-      "claim": "作者报告在 xHigh 档位下修复 6 个项目，其中 4 个出现回归问题，随后用 Astra 修复。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "缺陷数量和私人项目均为作者自报；没有补丁、提示词或测试日志。执行框架和审查流程也可能影响结果。",
-      "rating_rationale": "具体的回归问题报告构成不利的调试参考；代码库未公开且缺少日志，置信度有限。"
-    },
-    "gpt-6-sol-community-02": {
-      "claim": "作者报告，Sol 运行 4 次修复了一个此前由多个模型参与处理的 Agent wiki。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "没有公开代码库或日志；此前尝试涉及其他模型，并非条件相同的试验。订阅用量与 API 成本需分开看。",
-      "rating_rationale": "明确描述的修复结果支持范围明确的调试用途；未公开代码的业余项目仅构成低置信度参考。"
-    },
-    "gpt-6-sol-community-03": {
-      "claim": "作者内部由 AI 评审的脚本研究更偏好较早的 6 Sol，而非 6.1 Sol 或 Astra。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "内部脚本写作研究包含 10 项任务，每项生成 5 个版本，由 3 个 AI 评审；没有公开提示词或评测代码。推理档位不同（6.1 Sol xhigh、Astra max）。AI 评审偏好不等于人类共识。原始页面仅显示相对时间，确切日期未知。",
-      "rating_rationale": "保留报告中旧版本的具体写作优势，不因版本更新就假定新版本最优。"
     },
     "gpt-6-luna-community-01": {
       "claim": "作者报告，在混合模型 Agent 工作流中压缩 Discord 会话后，Luna 仍能有效延续上下文。",
@@ -908,6 +880,177 @@
       "setting": "作者明确指定 V2.6 变体，但除报告中明确说明外，服务提供方路由、推理档位和执行框架均未核实。RL/MOPD 权重修订版和确切测试日期未知。",
       "limitations": "已打开 MiMo 产出页面并确认可访问，但本项目没有进行浏览器视觉验收。没有完整提示词、相同预算或盲评。作者称未要求移动端支持；其他评论者对移动端排名有异议。Astra 变体未明确，不能映射到 GPT-6.1-Sol。",
       "rating_rationale": "可检查的产物和明确模型变体支持针对具体任务的评价。页面可访问，但作者指出了还原度和动态效果缺陷。该分数是编辑参考，并非我们重新运行得出的视觉质量分数。"
+    },
+    "claude-opus-5-5-arena-webdev-2026-10-07": {
+      "claim": "claude-opus-5.5-max 的 WebDev 偏好评分为 1814，页面区间为 ±16。",
+      "setting": "claude-opus-5.5-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "gpt-6-astra-arena-webdev-2026-10-07": {
+      "claim": "gpt-6-astra-max 的 WebDev 偏好评分为 1788，页面区间为 ±11。",
+      "setting": "gpt-6-astra-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "claude-sonnet-5-5-arena-webdev-2026-10-07": {
+      "claim": "claude-sonnet-5.5-xhigh 的 WebDev 偏好评分为 1773，页面区间为 ±15。",
+      "setting": "claude-sonnet-5.5-xhigh；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "gpt-6.1-sol-arena-webdev-2026-10-07": {
+      "claim": "gpt-6.1-sol-max 的 WebDev 偏好评分为 1757，页面区间为 ±15。",
+      "setting": "gpt-6.1-sol-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "claude-fable-5-1-arena-webdev-2026-10-07": {
+      "claim": "claude-fable-5.1-max 的 WebDev 偏好评分为 1745，页面区间为 ±9。",
+      "setting": "claude-fable-5.1-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "kimi-k3-arena-webdev-2026-10-07": {
+      "claim": "kimi-k3-max 的 WebDev 偏好评分为 1655，页面区间为 ±6。",
+      "setting": "kimi-k3-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "grok-4.7-arena-webdev-2026-10-07": {
+      "claim": "grok-4.7-xhigh 的 WebDev 偏好评分为 1638，页面区间为 ±11。",
+      "setting": "grok-4.7-xhigh；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "mimo-v2.6-flash-arena-webdev-2026-10-07": {
+      "claim": "mimo-v2.6-flash 的 WebDev 偏好评分为 1636，页面区间为 ±11。",
+      "setting": "mimo-v2.6-flash；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "mimo-v2.6-pro-arena-webdev-2026-10-07": {
+      "claim": "mimo-v2.6-pro 的 WebDev 偏好评分为 1630，页面区间为 ±11。",
+      "setting": "mimo-v2.6-pro；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "deepseek-v4.1-flash-arena-webdev-2026-10-07": {
+      "claim": "deepseek-v4.1-flash-max 的 WebDev 偏好评分为 1619，页面区间为 ±11。",
+      "setting": "deepseek-v4.1-flash-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "qwen3.8-27b-arena-webdev-2026-10-07": {
+      "claim": "qwen3.8-27b 的 WebDev 偏好评分为 1592，页面区间为 ±7。",
+      "setting": "qwen3.8-27b；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "gemini-3.8-flash-arena-webdev-2026-10-07": {
+      "claim": "gemini-3.8-flash-high 的 WebDev 偏好评分为 1583，页面区间为 ±8。该条目标注为初步结果。",
+      "setting": "gemini-3.8-flash-high；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。该条目标注为初步结果。"
+    },
+    "gpt-6-luna-arena-webdev-2026-10-07": {
+      "claim": "gpt-6-luna-max 的 WebDev 偏好评分为 1582，页面区间为 ±7。",
+      "setting": "gpt-6-luna-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
+    },
+    "glm-5.3-deepswe": {
+      "claim": "Z.ai 报告 GLM-5.3 的 DeepSWE v1.1 得分为 66.9。",
+      "setting": "mini-swe-agent；temperature 0.95、top_p 1.0；六小时超时；400K 上下文；max 推理。",
+      "limitations": "厂商评测；尚未验证任务与运行环境之间的迁移效果；评测日期未标明。"
+    },
+    "glm-5.3-terminal": {
+      "claim": "Z.ai 报告 GLM-5.3 的 Terminal-Bench 3.0 得分为 28.3。",
+      "setting": "Claude Code 2.1.207、max；400K/128K 上下文/输出；三次运行平均；600 轮、十小时超时；隔离容器。",
+      "limitations": "厂商评测；尚未验证任务与运行环境之间的迁移效果；评测日期未标明。"
+    },
+    "glm-5.3-cybergym": {
+      "claim": "Z.ai 报告 GLM-5.3 在 CyberGym 漏洞发现任务上的成绩为 84.5%。",
+      "setting": "Claude Code 2.1.207、max；单次 pass@1；1507 项任务；无网页工具；无超时限制。",
+      "limitations": "厂商评测；尚未验证任务与运行环境之间的迁移效果；评测日期未标明。"
+    },
+    "glm-5.3-automation": {
+      "claim": "Z.ai 报告 GLM-5.3 的 AutomationBench v1.0.6 得分为 48.2。",
+      "setting": "AutomationBench v1.0.6，包含 null 类型修复；厂商模型卡评测。",
+      "limitations": "厂商评测；尚未验证任务与运行环境之间的迁移效果；评测日期未标明。"
+    },
+    "glm-5.3-hle-tools": {
+      "claim": "Z.ai 报告 GLM-5.3 的带工具 HLE 得分为 62.5。",
+      "setting": "temperature 1.0、top_p 0.95；300K 受管理上下文、163840 输出 token；GPT-5.6-luna medium 判分。",
+      "limitations": "厂商多学科问答成绩；仅作邻近证据，不等同于科研工作流或单独的数学评测；日期未标明。"
+    },
+    "glm-5.3-engineering-capability": {
+      "claim": "官方文档确认工具调用，并将 GLM-5.3 定位于复杂软件工程和长程 Agent 任务。",
+      "setting": "当前 API 文档；能力与定位说明，并非具体任务的测量结果。",
+      "limitations": "功能与定位资料不能证明其在架构、测试设计或用户项目上优于其他模型。"
+    },
+    "glm-5.3-flash-deepswe": {
+      "claim": "Z.ai 报告 GLM-5.3-Flash 的 DeepSWE v1.1 得分为 63.4。",
+      "setting": "mini-swe-agent；temperature 0.95、top_p 1.0；六小时超时；400K 上下文；max 推理，见模型卡注释。",
+      "limitations": "厂商评测；需要复现所述运行环境；具体任务迁移尚未独立验证。"
+    },
+    "glm-5.3-flash-terminal": {
+      "claim": "Z.ai 报告 GLM-5.3-Flash 的 Terminal-Bench 2.1 得分为 84.3。",
+      "setting": "Claude Code 2.1.207；temperature 1.0、top_p 1；65536 输出 token；六小时超时；max 推理，见模型卡注释。",
+      "limitations": "厂商评测；Terminal-Bench 2.1 不能与 3.0 或 4.0 的成绩直接比较。"
+    },
+    "glm-5.3-flash-hle-tools": {
+      "claim": "Z.ai 报告 GLM-5.3-Flash 的全量带工具 HLE 得分为 55.3。",
+      "setting": "temperature 1.0、top_p 0.95；300K 受管理上下文、163840 输出 token；GPT-5.6-luna medium 判分，见模型卡注释。",
+      "limitations": "厂商多学科邻近证据；并非独立的数学测试、科研工作流或无工具 HLE 成绩。"
+    },
+    "glm-5.3-flash-automation": {
+      "claim": "Z.ai 报告 GLM-5.3-Flash 的 AutomationBench 得分为 48.8。",
+      "setting": "模型卡注释指定 AutomationBench v1.0.6，包含 null 类型修复；建议以 max 推理复现。",
+      "limitations": "厂商成绩；此文档中的对应行未指定精确评测日期；具体任务迁移未经测量。"
+    },
+    "glm-5.3-flash-visual-capability": {
+      "claim": "官方文档确认原生图片/视频输入、基于视觉的界面迭代和电脑操作 Agent 能力。",
+      "setting": "依据 API 模态及截图、视频、渲染反馈工作流说明；实际操作需要启用外部工具。",
+      "limitations": "功能支持不是视觉、界面还原或 GUI 任务成功率的测量成绩。"
+    },
+    "glm-5.3-flash-professional-capability": {
+      "claim": "官方示例涵盖可追溯金融研究及经过渲染检查的 Office 文档交付。",
+      "setting": "厂商工作流指南，包含工具、引用和交付物渲染检查。",
+      "limitations": "示例说明适用方向；没有提供金融准确性或文档质量的专项测量结果。"
+    },
+    "glm-5.3-arena-webdev-2026-10-07": {
+      "claim": "glm-5.3-max 的 WebDev 偏好评分为 1622，页面区间为 ±8。",
+      "setting": "glm-5.3-max；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。单价和权重许可证以 Z.ai 官方资料为准，不能采用 Arena 标签代替这些事实。"
+    },
+    "glm-5.3-flash-arena-webdev-2026-10-07": {
+      "claim": "glm-5.3-flash 的 WebDev 偏好评分为 1610，页面区间为 ±7。",
+      "setting": "glm-5.3-flash；Arena 部署，使用页面列出的推理档位。",
+      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。单价和权重许可证以 Z.ai 官方资料为准，不能采用 Arena 标签代替这些事实。"
+    },
+    "glm-5.3-community-01": {
+      "claim": "作者报告 9 个独立 Python 函数全部通过隐藏断言，并公开了带日期的汇总记录。",
+      "setting": "通过 OpenRouter 调用 z-ai/glm-5.3；测试日期为 2026-08-22；请求 temperature 0、max_tokens 4000；每道题只计一次尝试。",
+      "limitations": "常见题可能已出现在训练数据中；汇总记录没有逐题回复或方差。短 Python 提示词不测试代码库、Agent 或长上下文。作者运营模型网关；本项目未复现。",
+      "rating_rationale": "执行测试与保留的汇总支持对这组算法题的正面评价；9 个熟悉的函数题不能证明大型工程能力领先。"
+    },
+    "glm-5.3-community-02": {
+      "claim": "用户把 GLM-5.3 用作日常编程、调试和前端模型，同时保留 Sol-High 进行审查和一般运维工作。",
+      "setting": "作者明确提到 GLM-5.3，复杂工作使用 Max 推理；实际服务后端和提示词未核实。",
+      "limitations": "属于个人持续使用经验，没有公开代码或同条件测试；作者认为常识知识较弱。页面只显示相对日期；不推断其审查模型的具体版本。",
+      "rating_rationale": "具体且重复的开发用途支持正面评价；产出和配置未公开，因此置信度低。"
+    },
+    "glm-5.3-community-03": {
+      "claim": "一位用户认为 GLM-5.3 比 5.2 更聪明，但报告长篇角色扮演中人物声音逐渐变软、偏移。",
+      "setting": "个人长篇角色扮演，使用自定义预设；服务后端与推理配置未核实。",
+      "limitations": "没有公开对话、长度阈值或同条件风格评分。预设及内容过滤会影响该用途；不能据此判断普通短篇小说表现。仅显示相对日期。",
+      "rating_rationale": "持续的人物声音偏移对长篇角色写作不利；没有对话记录，限制了负面结论的力度。"
+    },
+    "glm-5.3-flash-community-02": {
+      "claim": "用户报告 GLM-5.3-Flash 按 Opus 制定的计划完成后端开发、调试、重构和功能实现。",
+      "setting": "明确指定 Flash 变体，来自编程 Agent 讨论；GLM 服务提供方和推理档位未说明。",
+      "limitations": "没有公开代码库、验收结果或同条件提示词。上游规划模型参与了结果，不能证明 GLM 独立完成架构设计。仅显示相对日期。",
+      "rating_rationale": "具体的计划执行成功经验有助于工程任务交接；未公开产出，不能据此宣称全面胜过其他模型。"
+    },
+    "glm-5.3-flash-community-03": {
+      "claim": "作者报告 Java 代码审查时反复使用无效 grep 参数和虚构路径，超过 15 次工具失败后需手动中断；干预后模型仅靠已有上下文正确回答。",
+      "setting": "Devin Desktop、macOS Darwin 24.6.0、GLM-5.3-Flash，工作目录含 15 个以上 Java 仓库；明确日期为 2026-09-16。",
+      "limitations": "没有完整会话轨迹或代码库；未隔离模型、工具结构集成和上下文处理因素。干预后回答成功，因此结论限于工具使用及恢复行为。",
+      "rating_rationale": "具体失败序列和手动干预支持对工具恢复的负面评价；不能说明模型无法理解 Java 代码。"
+    },
+    "glm-5.3-flash-community-07": {
+      "claim": "作者公开了表现较好的简单页面，以及存在严重无障碍缺陷的密集仪表盘。现有模型页有 9 次运行，其中仪表盘无障碍 10/100、落地页 100/100。",
+      "setting": "通过 ZCode 和 Cline 使用 GLM-5.3-Flash；模型页运行日期为 2026-08-26/29；文章最初描述较小的 7 个完成结果集合。",
+      "limitations": "无障碍分数不等于视觉质量或完整交互正确性。不同执行框架和重试影响结果；公开样本小。本项目已打开结果页，但未进行视觉验收或复现。",
+      "rating_rationale": "公开产物展示了随复杂度变化的优势与缺陷；混合分数避免把快速渲染等同于可靠的复杂 UI 实现。"
     }
   },
   "models": {
@@ -916,16 +1059,12 @@
         "需另行核查账号权限、地区和工具环境。"
       ]
     },
-    "gpt-6-sol": {
-      "notes": [
-        "需另行核查账号权限、地区和工具环境。"
-      ]
-    },
     "gpt-6.1-sol": {
       "notes": [
         "通过 Responses API 支持工具调用；该模型在 Chat Completions 中不支持工具。",
         "最大输出为 128000 tokens。推理档位：low、medium、high、xhigh、max。",
-        "未复制 GPT-6 Sol 的评测结果；6.1 的具体任务证据单独维护。需核查账号权限和工具环境。"
+        "使用该版本自己的评测，不继承前代结果；账号权限和工具环境需分别确认。",
+        "输入不超过 272000 token 时，标准输入/输出单价仍为每百万 token 2/10 美元，缓存输入为 0.10 美元；更长请求、推理档位和服务档位会影响总成本。"
       ]
     },
     "gpt-6-luna": {
@@ -998,6 +1137,25 @@
         "宣传中最高 20x 的输出速度是厂商说法，不保证端到端任务耗时。不要将 Pro 评测分数复制为 UltraSpeed 的实测结果。",
         "官方中文模型页列出四种输入；英文页虽以全模态能力为标题，目前仅列文本。这里采用中文页和 API 能力表。",
         "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ]
+    },
+    "glm-5.3": {
+      "notes": [
+        "仅支持文本输入；图片和视频任务需要其他模型或外部预处理。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的十进制 1000000 token 记录。",
+        "开放权重采用 GLM-5.3 专用许可证：https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+        "权重：https://huggingface.co/zai-org/GLM-5.3；价格：https://docs.z.ai/guides/overview/pricing",
+        "不同账户历史的 API 协议可用性可能不同；请分别确认端点及 Coding Plan 权限。"
+      ]
+    },
+    "glm-5.3-flash": {
+      "notes": [
+        "原生支持文本、图片和视频；文件支持属于服务输入包装，不是单独的模态；视频 Agent 示例不作为原生音频输入的依据。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的 1000000 token 记录。",
+        "MIT 许可证权重：https://huggingface.co/zai-org/GLM-5.3-Flash；价格：https://docs.z.ai/guides/overview/pricing",
+        "Coding Plan 配额与 API token 价格分别计算；FlashX 是独立的加速托管档位，其吞吐速度不等于 Flash 的任务质量分数。"
       ]
     }
   }

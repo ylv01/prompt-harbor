@@ -1,14 +1,14 @@
 # 分工提示词：集成测试：真实端到端流程
 
-计划默认模型：**gpt-6-sol**
+计划默认模型：**glm-5.3**
 
-继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。
+有官方能力说明或相邻任务证据，对应任务：测试设计
 
 ## Top 3 候选模型
 
-- 1. **Claude Opus 5.5** (`claude-opus-5-5`): 有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源. 来源: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 versus Sonnet 5.5 on a large test refactor](https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/)
-- 2. **GPT-6 Sol** (`gpt-6-sol`): 有官方能力说明或相邻任务证据，对应任务：测试设计. 来源: [GPT-6 Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
-- 3. **Kimi K3** (`kimi-k3`): 目前依据为社区任务报告，需要实际试做，对应任务：测试设计；已计入社区评价，可查看评分及来源. 来源: [LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?](https://akitaonrails.com/en/2026/07/17/llm-benchmarks-kimi-k3/), [Kimi K3 with Context Tree Beats GPT 5.6 Sol on a Real Engineering Task](https://www.reddit.com/r/kimi/comments/1vba5ie/kimi_k3_with_context_tree_beats_gpt_56_sol_on_a/)
+- 1. **GLM-5.3** (`glm-5.3`): 有官方能力说明或相邻任务证据，对应任务：测试设计. 来源: [GLM-5.3 official weights and evaluation card](https://huggingface.co/zai-org/GLM-5.3), [GLM-5.3 model documentation](https://docs.z.ai/guides/llm/glm-5.3)
+- 2. **GLM-5.3-Flash** (`glm-5.3-flash`): 有官方能力说明或相邻任务证据，对应任务：测试设计. 来源: [GLM-5.3-Flash official machine-readable evaluation results](https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/.eval_results/GLM-5.3-Flash.yaml)
+- 3. **Claude Opus 5.5** (`claude-opus-5-5`): 有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源. 来源: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 versus Sonnet 5.5 on a large test refactor](https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/)
 
 实际使用的模型由用户选择。无论选择哪个候选，都应遵循同一份接口契约和验收标准。
 

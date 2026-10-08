@@ -105,28 +105,6 @@
       "comparison_group": null
     },
     {
-      "id": "sol-fit",
-      "model_id": "gpt-6-sol",
-      "source_id": "openai-sol",
-      "kind": "official_capability",
-      "claim": "Official documentation positions Sol for coding and agent workflows.",
-      "direct_tasks": [],
-      "proxy_tasks": [
-        "software.debug",
-        "software.repo",
-        "software.testing",
-        "software.architecture",
-        "agent.workflow",
-        "agent.long"
-      ],
-      "measurement": null,
-      "setting": "Responses API; explicit reasoning effort",
-      "limitations": "No task-specific independent Sol result is admitted in this seed.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-29",
-      "comparison_group": null
-    },
-    {
       "id": "luna-fit",
       "model_id": "gpt-6-luna",
       "source_id": "openai-luna",
@@ -968,32 +946,6 @@
       "comparison_group": "arena-webdev-2026-09-25"
     },
     {
-      "id": "gpt-6-sol-arena-webdev",
-      "model_id": "gpt-6-sol",
-      "source_id": "arena-webdev",
-      "kind": "independent_eval",
-      "claim": "gpt-6-sol-max: observed WebDev preference rating 1681.",
-      "direct_tasks": [
-        "software.frontend"
-      ],
-      "proxy_tasks": [
-        "software.frontend.design"
-      ],
-      "measurement": {
-        "benchmark": "Arena WebDev",
-        "version": "2026-09-25 overall",
-        "metric": "preference rating",
-        "value": 1681,
-        "unit": "rating points",
-        "protocol": "Arena WebDev Overall snapshot; configuration per row"
-      },
-      "setting": "gpt-6-sol-max; Arena deployment, not every consumer app setting",
-      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
-      "reported_on": "2026-09-25",
-      "reviewed_on": "2026-09-29",
-      "comparison_group": "arena-webdev-2026-09-25"
-    },
-    {
       "id": "kimi-k3-arena-webdev",
       "model_id": "kimi-k3",
       "source_id": "arena-webdev",
@@ -1635,103 +1587,6 @@
         "rating": {
           "value": 6.5,
           "rationale": "Useful scripts with a reported preference gap to older Sol; a small private AI-judged comparison supports only a cautious mixed rating.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "gpt-6-sol-community-01",
-      "model_id": "gpt-6-sol",
-      "source_id": "community-source-039",
-      "kind": "community_test",
-      "claim": "At xHigh effort, the author reports fixes across six projects introducing regressions in four, subsequently repaired using Astra.",
-      "direct_tasks": [
-        "software.debug"
-      ],
-      "proxy_tasks": [
-        "software.repo"
-      ],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "Self-reported bug counts and private projects; no patches, prompts or test logs. Harness and review process may contribute.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "skynet86",
-        "origin_id": "author:skynet86",
-        "grade": "firsthand",
-        "stance": "negative",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [],
-        "rating": {
-          "value": 3.5,
-          "rationale": "Concrete reported regressions justify an adverse debugging signal; the private repositories and missing logs limit confidence.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "gpt-6-sol-community-02",
-      "model_id": "gpt-6-sol",
-      "source_id": "community-source-040",
-      "kind": "community_test",
-      "claim": "The author reports four Sol runs fixed an agentic wiki previously handled with mixed models.",
-      "direct_tasks": [
-        "software.debug"
-      ],
-      "proxy_tasks": [
-        "software.repo"
-      ],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "No public repository or logs; prior attempts involved other models and are not a matched trial. Subscription usage is separate from API cost.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "ilias_from_ilios",
-        "origin_id": "author:ilias_from_ilios",
-        "grade": "firsthand",
-        "stance": "positive",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [],
-        "rating": {
-          "value": 8,
-          "rationale": "A described repair outcome supports bounded debugging use; a hobby project without public code is a low-confidence signal.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "gpt-6-sol-community-03",
-      "model_id": "gpt-6-sol",
-      "source_id": "community-source-038",
-      "kind": "community_test",
-      "claim": "The author’s internal AI-judged script study prefers older 6 Sol over 6.1 Sol and Astra.",
-      "direct_tasks": [
-        "writing.creative"
-      ],
-      "proxy_tasks": [],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "OnlyProggingForFun",
-        "origin_id": "author:onlyproggingforfun",
-        "grade": "firsthand",
-        "stance": "positive",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [],
-        "rating": {
-          "value": 8,
-          "rationale": "Retains a specific writing advantage reported for the older version rather than assuming the newest release is best.",
           "confidence": "low",
           "assessed_on": "2026-09-30"
         }
@@ -3198,6 +3053,899 @@
           "assessed_on": "2026-09-30"
         }
       }
+    },
+    {
+      "id": "claude-opus-5-5-arena-webdev-2026-10-07",
+      "model_id": "claude-opus-5-5",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "claude-opus-5.5-max: WebDev preference rating 1814 (displayed interval ±16).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1814,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "claude-opus-5.5-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "gpt-6-astra-arena-webdev-2026-10-07",
+      "model_id": "gpt-6-astra",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "gpt-6-astra-max: WebDev preference rating 1788 (displayed interval ±11).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1788,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gpt-6-astra-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "claude-sonnet-5-5-arena-webdev-2026-10-07",
+      "model_id": "claude-sonnet-5-5",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "claude-sonnet-5.5-xhigh: WebDev preference rating 1773 (displayed interval ±15).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1773,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "claude-sonnet-5.5-xhigh; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "gpt-6.1-sol-arena-webdev-2026-10-07",
+      "model_id": "gpt-6.1-sol",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "gpt-6.1-sol-max: WebDev preference rating 1757 (displayed interval ±15).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1757,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gpt-6.1-sol-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "claude-fable-5-1-arena-webdev-2026-10-07",
+      "model_id": "claude-fable-5-1",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "claude-fable-5.1-max: WebDev preference rating 1745 (displayed interval ±9).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1745,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "claude-fable-5.1-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "kimi-k3-arena-webdev-2026-10-07",
+      "model_id": "kimi-k3",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "kimi-k3-max: WebDev preference rating 1655 (displayed interval ±6).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1655,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "kimi-k3-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "grok-4.7-arena-webdev-2026-10-07",
+      "model_id": "grok-4.7",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "grok-4.7-xhigh: WebDev preference rating 1638 (displayed interval ±11).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1638,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "grok-4.7-xhigh; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "mimo-v2.6-flash-arena-webdev-2026-10-07",
+      "model_id": "mimo-v2.6-flash",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "mimo-v2.6-flash: WebDev preference rating 1636 (displayed interval ±11).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1636,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "mimo-v2.6-flash; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "mimo-v2.6-pro-arena-webdev-2026-10-07",
+      "model_id": "mimo-v2.6-pro",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "mimo-v2.6-pro: WebDev preference rating 1630 (displayed interval ±11).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1630,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "mimo-v2.6-pro; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "deepseek-v4.1-flash-arena-webdev-2026-10-07",
+      "model_id": "deepseek-v4.1-flash",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "deepseek-v4.1-flash-max: WebDev preference rating 1619 (displayed interval ±11).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1619,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "deepseek-v4.1-flash-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "qwen3.8-27b-arena-webdev-2026-10-07",
+      "model_id": "qwen3.8-27b",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "qwen3.8-27b: WebDev preference rating 1592 (displayed interval ±7).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1592,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "qwen3.8-27b; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "gemini-3.8-flash-arena-webdev-2026-10-07",
+      "model_id": "gemini-3.8-flash",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "gemini-3.8-flash-high: WebDev preference rating 1583 (displayed interval ±8). Preliminary entry.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1583,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gemini-3.8-flash-high; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints. Preliminary entry.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "gpt-6-luna-arena-webdev-2026-10-07",
+      "model_id": "gpt-6-luna",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "gpt-6-luna-max: WebDev preference rating 1582 (displayed interval ±7).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1582,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "gpt-6-luna-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "glm-5.3-deepswe",
+      "model_id": "glm-5.3",
+      "source_id": "glm-5.3-card",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 66.9 on DeepSWE v1.1.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.testing",
+        "software.architecture"
+      ],
+      "measurement": {
+        "benchmark": "DeepSWE",
+        "version": "1.1",
+        "metric": "reported score",
+        "value": 66.9,
+        "unit": "points",
+        "protocol": "Z.ai mini-swe-agent / 400K / six hours"
+      },
+      "setting": "mini-swe-agent; temperature 0.95, top_p 1.0; six-hour timeout; 400K context; max reasoning effort.",
+      "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-terminal",
+      "model_id": "glm-5.3",
+      "source_id": "glm-5.3-card",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 28.3 on Terminal-Bench 3.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "3.0",
+        "metric": "reported score",
+        "value": 28.3,
+        "unit": "points",
+        "protocol": "Z.ai Claude Code 2.1.207 / max / avg@3"
+      },
+      "setting": "Claude Code 2.1.207, max; 400K/128K context/output; avg@3; 600 turns, ten-hour timeout; isolated containers.",
+      "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-cybergym",
+      "model_id": "glm-5.3",
+      "source_id": "glm-5.3-card",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 84.5% on CyberGym vulnerability discovery.",
+      "direct_tasks": [
+        "software.security"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "CyberGym",
+        "version": "model-card snapshot",
+        "metric": "pass@1",
+        "value": 84.5,
+        "unit": "percent",
+        "protocol": "Z.ai Claude Code 2.1.207 / max / single-run pass@1"
+      },
+      "setting": "Claude Code 2.1.207, max; single-run pass@1; 1507 tasks; no web tools; unlimited timeout.",
+      "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-automation",
+      "model_id": "glm-5.3",
+      "source_id": "glm-5.3-card",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 48.2 on AutomationBench v1.0.6.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": {
+        "benchmark": "AutomationBench",
+        "version": "1.0.6",
+        "metric": "reported score",
+        "value": 48.2,
+        "unit": "points",
+        "protocol": "Z.ai vendor evaluation / v1.0.6 with null-type fix"
+      },
+      "setting": "AutomationBench v1.0.6 with null-type fix; vendor model-card run.",
+      "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-hle-tools",
+      "model_id": "glm-5.3",
+      "source_id": "glm-5.3-card",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 62.5 on HLE with tools.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "science.reasoning",
+        "math.contest"
+      ],
+      "measurement": {
+        "benchmark": "HLE",
+        "version": "with tools / model-card snapshot",
+        "metric": "reported score",
+        "value": 62.5,
+        "unit": "points",
+        "protocol": "Z.ai tools / 300K managed context / GPT-5.6-luna medium judge"
+      },
+      "setting": "temperature 1.0, top_p 0.95; 300K managed context, 163840 generation tokens; GPT-5.6-luna medium judge.",
+      "limitations": "Vendor-run multidisciplinary question score; proxy only; not a scientific workflow or dedicated mathematics evaluation; date unspecified.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-engineering-capability",
+      "model_id": "glm-5.3",
+      "source_id": "glm-5.3-docs",
+      "kind": "official_capability",
+      "claim": "Official documentation supports tool calling and positions GLM-5.3 for complex software engineering and long-horizon agents.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.repo",
+        "software.architecture",
+        "software.testing",
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Current API documentation; capability positioning rather than a measured task result.",
+      "limitations": "Feature and positioning evidence does not establish superiority on architecture, test design or the user project.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-flash-deepswe",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-5.3-flash-eval-results",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 63.4 on DeepSWE v1.1.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.testing",
+        "software.architecture"
+      ],
+      "measurement": {
+        "benchmark": "DeepSWE",
+        "version": "1.1",
+        "metric": "reported score",
+        "value": 63.4,
+        "unit": "points",
+        "protocol": "Z.ai mini-swe-agent / 400K / six hours"
+      },
+      "setting": "mini-swe-agent; temperature 0.95, top_p 1.0; six-hour timeout; 400K context; max reasoning effort (card footnotes).",
+      "limitations": "Vendor-run; requires the stated harness; unreplicated task transfer.",
+      "reported_on": "2026-08-26",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-flash-terminal",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-5.3-flash-eval-results",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 84.3 on Terminal-Bench 2.1.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "2.1",
+        "metric": "reported score",
+        "value": 84.3,
+        "unit": "points",
+        "protocol": "Z.ai Claude Code 2.1.207 / max / six hours"
+      },
+      "setting": "Claude Code 2.1.207; temperature 1.0, top_p 1; 65536 output tokens; six-hour timeout; max effort (card footnotes).",
+      "limitations": "Vendor-run; Terminal-Bench 2.1 is not comparable with version 3.0 or 4.0.",
+      "reported_on": "2026-08-26",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-flash-hle-tools",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-5.3-flash-eval-results",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 55.3 on full-set HLE with tools.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "science.reasoning",
+        "math.contest"
+      ],
+      "measurement": {
+        "benchmark": "HLE",
+        "version": "full set with tools",
+        "metric": "reported score",
+        "value": 55.3,
+        "unit": "points",
+        "protocol": "Z.ai tools / 300K managed context / GPT-5.6-luna medium judge"
+      },
+      "setting": "temperature 1.0, top_p 0.95; 300K managed context, 163840 generation tokens; GPT-5.6-luna medium judge (card footnotes).",
+      "limitations": "Vendor-run multidisciplinary proxy; not a dedicated mathematics test, scientific workflow, or no-tools HLE score.",
+      "reported_on": "2026-08-26",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-flash-automation",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-5.3-flash-docs",
+      "kind": "vendor_eval",
+      "claim": "Z.ai reports 48.8 on AutomationBench.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": {
+        "benchmark": "AutomationBench",
+        "version": "1.0.6",
+        "metric": "reported score",
+        "value": 48.8,
+        "unit": "points",
+        "protocol": "Z.ai vendor evaluation / v1.0.6 with null-type fix"
+      },
+      "setting": "Model-card footnotes specify AutomationBench v1.0.6 with null-type fix; max reasoning reproduction recommended.",
+      "limitations": "Vendor result; exact evaluation date is not specified in this documentation row; task transfer unmeasured.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-flash-visual-capability",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-5.3-flash-docs",
+      "kind": "official_capability",
+      "claim": "Official documentation supports native image/video inputs, visual UI iteration and computer-use agents.",
+      "direct_tasks": [
+        "vision.video",
+        "agent.computer"
+      ],
+      "proxy_tasks": [
+        "software.frontend",
+        "software.frontend.fidelity",
+        "vision.document",
+        "vision.spatial"
+      ],
+      "measurement": null,
+      "setting": "API modalities and documented screenshot/video/render-feedback workflows; enabled external tools required for actions.",
+      "limitations": "Capability support is not a measured vision, UI fidelity or GUI success rate.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-flash-professional-capability",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-5.3-flash-docs",
+      "kind": "official_capability",
+      "claim": "Official examples cover auditable financial research and rendered Office deliverables.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "finance.filings",
+        "finance.valuation",
+        "data.spreadsheet",
+        "writing.professional",
+        "context.synthesis"
+      ],
+      "measurement": null,
+      "setting": "Vendor workflow guidance with tools, citations and rendered artifact inspection.",
+      "limitations": "Examples show intended applicability; no financial accuracy or document quality benchmark is supplied.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "glm-5.3-community-01",
+      "model_id": "glm-5.3",
+      "source_id": "glm-community-datallm",
+      "kind": "community_test",
+      "claim": "The author reports nine of nine self-contained Python functions passing hidden assertions and publishes a dated aggregate record.",
+      "direct_tasks": [
+        "software.algorithm"
+      ],
+      "proxy_tasks": [
+        "software.debug"
+      ],
+      "measurement": null,
+      "setting": "OpenRouter z-ai/glm-5.3; run 2026-08-22; requested temperature 0, max_tokens 4000; one scored attempt per task.",
+      "limitations": "Standard tasks may occur in training data. Aggregates retain no per-task responses or variance. Short Python prompts do not test repositories, agents or long context. The publisher operates an LLM gateway; PromptHarbor did not rerun it.",
+      "reported_on": "2026-08-22",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Kevin Fan",
+        "origin_id": "author:kevin-fan-datallm",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [
+          "https://www.datallmlab.com/blog/data/benchmark-evidence-2026-10-03.json"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Executed tests and retained aggregates support a positive bounded algorithm result; nine familiar functions cannot establish frontier engineering superiority.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "glm-5.3-community-02",
+      "model_id": "glm-5.3",
+      "source_id": "glm-community-daily-driver",
+      "kind": "community_test",
+      "claim": "The user describes GLM-5.3 as a daily coding, debugging and frontend model, while keeping Sol-High for review and general administration.",
+      "direct_tasks": [
+        "software.debug",
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Author names GLM-5.3 and Max reasoning for complex work; exact backend and prompts are unverified.",
+      "limitations": "Personal ongoing usage with no shared code or matched test suite. World knowledge is described as weaker. Only relative dates were visible; no version-specific claim is inferred for the review model.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Sensitive_Song4219",
+        "origin_id": "reddit:sensitive-song4219",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8,
+          "rationale": "Specific recurring development use supports a positive coding report, with low confidence because outputs and settings are not public.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "glm-5.3-community-03",
+      "model_id": "glm-5.3",
+      "source_id": "glm-community-roleplay-drift",
+      "kind": "community_test",
+      "claim": "A user reports that GLM-5.3 character voice softens and drifts during extended roleplay, despite finding it smarter than 5.2.",
+      "direct_tasks": [
+        "writing.creative"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Personal long roleplay with a customized preset; deployment and reasoning setting unverified.",
+      "limitations": "No public conversation, target-length threshold or controlled style rubric. Presets and content filters affect this use case; the report does not establish performance on ordinary short fiction. Relative date only.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Ant-Hime",
+        "origin_id": "reddit:ant-hime",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3.5,
+          "rationale": "Repeated voice drift is adverse for sustained character writing, but absent transcripts limit the strength of the negative judgment.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "glm-5.3-flash-community-02",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-community-backend",
+      "kind": "community_test",
+      "claim": "The user reports successful backend development, debugging, refactoring and feature implementation with GLM-5.3-Flash following plans made with Opus.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": null,
+      "setting": "Exact Flash variant named; coding-agent discussion. GLM provider and reasoning effort unspecified.",
+      "limitations": "No public repository, acceptance results or matched prompts. The upstream planner contributes to the result; this does not demonstrate GLM independently creating the architecture. Relative date only.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Winter-Bit2411",
+        "origin_id": "reddit:winter-bit2411",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [],
+        "rating": {
+          "value": 8,
+          "rationale": "Specific successful plan-following development is useful for implementation handoffs, but unshared outputs prevent a strong superiority claim.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "glm-5.3-flash-community-03",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-community-devin-loop",
+      "kind": "community_test",
+      "claim": "The author reports repeated invalid grep parameters and fabricated paths during Java code review; more than fifteen tool failures required manual interruption before a correct context-only answer.",
+      "direct_tasks": [
+        "agent.long",
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": null,
+      "setting": "Devin Desktop, macOS Darwin 24.6.0, GLM-5.3-Flash, workspace with 15+ Java repositories; dated 2026-09-16.",
+      "limitations": "No complete session trace or repository is available. Model, tool-schema integration and context handling are not isolated. The successful answer after intervention limits the claim to recovery/tool-use behavior.",
+      "reported_on": "2026-09-16",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Sensitive-Bottle4165",
+        "origin_id": "reddit:sensitive-bottle4165",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3,
+          "rationale": "Specific failure sequences and an intervention support a negative tool-recovery report; they do not show that the model cannot understand Java code.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "glm-5.3-flash-community-07",
+      "model_id": "glm-5.3-flash",
+      "source_id": "glm-community-frontend",
+      "kind": "community_test",
+      "claim": "The author publishes strong simple-page outputs but a dense dashboard with severe accessibility defects. The live profile shows nine runs, including dashboard 10/100 and landing-page 100/100 accessibility.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "GLM-5.3-Flash through ZCode and Cline. Dated live runs 2026-08-26/29; article originally describes a smaller seven-completion set.",
+      "limitations": "Accessibility is not visual quality or complete interaction correctness. Different harnesses and reruns affect results; small public sample. PromptHarbor opened the profile but did not visually accept or rerun outputs.",
+      "reported_on": "2026-08-29",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Sami Hedhli",
+        "origin_id": "author:sami-hedhli-openvibeeval",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [
+          "https://openvibeeval.com/models/glm-5-3-flash/"
+        ],
+        "rating": {
+          "value": 6.5,
+          "rationale": "Public task outputs expose meaningful complexity-dependent strengths and defects; a mixed score avoids treating fast rendering as reliable complex UI implementation.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "glm-5.3-arena-webdev-2026-10-07",
+      "model_id": "glm-5.3",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "glm-5.3-max: WebDev preference rating 1622 (displayed interval ±8).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1622,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "glm-5.3-max; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Use official Z.ai prices and weight licenses; Arena labels are not authoritative for those facts.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "glm-5.3-flash-arena-webdev-2026-10-07",
+      "model_id": "glm-5.3-flash",
+      "source_id": "arena-webdev-2026-10-07",
+      "kind": "independent_eval",
+      "claim": "glm-5.3-flash: WebDev preference rating 1610 (displayed interval ±7).",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev",
+        "version": "2026-10-07 overall",
+        "metric": "preference rating",
+        "value": 1610,
+        "unit": "rating points",
+        "protocol": "Arena WebDev Overall snapshot; configuration per row"
+      },
+      "setting": "glm-5.3-flash; Arena deployment with the displayed effort setting.",
+      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Use official Z.ai prices and weight licenses; Arena labels are not authoritative for those facts.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": "arena-webdev-2026-10-07"
     }
   ]
 }

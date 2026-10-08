@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-30",
-  "snapshot_date": "2026-09-30",
+  "as_of": "2026-10-08",
+  "snapshot_date": "2026-10-08",
   "language": "zh-CN",
   "classification": [
     {
@@ -90,6 +90,32 @@
               "assessed_on": "2026-09-30"
             }
           }
+        },
+        {
+          "id": "gpt-6-astra-arena-webdev-2026-10-07",
+          "model_id": "gpt-6-astra",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "gpt-6-astra-max: WebDev preference rating 1788 (displayed interval ±11).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1788,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-astra-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
@@ -114,14 +140,14 @@
       },
       "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
       "ranking": {
-        "support": 0.706307,
+        "support": 0.707569,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.972222,
+            "formal_support": 0.977273,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.8888888888888888,
-            "community_signal": 0.085839,
+            "comparable_peer_win_fraction": 0.9090909090909091,
+            "community_signal": 0.078261,
             "community_weight": 0.3,
             "community_origins": 1,
             "community_score": 8.0,
@@ -131,14 +157,14 @@
               {
                 "origin_id": "author:najam saeed",
                 "score": 8.0,
-                "reliability": 0.4291937797305775,
-                "signal": 0.257516,
+                "reliability": 0.39130562092966925,
+                "signal": 0.234783,
                 "evidence_ids": [
                   "gpt-6-astra-community-01"
                 ]
               }
             ],
-            "support": 0.7063072555555555
+            "support": 0.707569209090909
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -185,6 +211,32 @@
           "reported_on": "2026-09-25",
           "reviewed_on": "2026-09-29",
           "comparison_group": "arena-webdev-2026-09-25"
+        },
+        {
+          "id": "claude-opus-5-5-arena-webdev-2026-10-07",
+          "model_id": "claude-opus-5-5",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "claude-opus-5.5-max: WebDev preference rating 1814 (displayed interval ±16).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1814,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-opus-5.5-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
@@ -232,8 +284,8 @@
       "reason": "有匹配该任务的独立评测，对应任务：前端实现"
     },
     {
-      "model_id": "claude-fable-5-1",
-      "name": "Claude Fable 5.1",
+      "model_id": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
       "direct_tasks": [
         "software.frontend"
       ],
@@ -246,11 +298,32 @@
       "missing_tasks": [],
       "evidence": [
         {
-          "id": "claude-fable-5-1-arena-webdev",
-          "model_id": "claude-fable-5-1",
-          "source_id": "arena-webdev",
+          "id": "sonnet-doc",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "sonnet-launch",
+          "kind": "official_capability",
+          "claim": "Anthropic describes stronger document work and clearer writing.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "writing.professional",
+            "writing.edit",
+            "writing.creative",
+            "data.spreadsheet",
+            "software.frontend"
+          ],
+          "measurement": null,
+          "setting": "Release positioning; user preference must be tested",
+          "limitations": "Writing style is subjective; no independent language-specific preference study in this seed.",
+          "reported_on": "2026-09-28",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        },
+        {
+          "id": "claude-sonnet-5-5-arena-webdev-2026-10-07",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "arena-webdev-2026-10-07",
           "kind": "independent_eval",
-          "claim": "claude-fable-5.1-max: observed WebDev preference rating 1751.",
+          "claim": "claude-sonnet-5.5-xhigh: WebDev preference rating 1773 (displayed interval ±15).",
           "direct_tasks": [
             "software.frontend"
           ],
@@ -259,97 +332,27 @@
           ],
           "measurement": {
             "benchmark": "Arena WebDev",
-            "version": "2026-09-25 overall",
+            "version": "2026-10-07 overall",
             "metric": "preference rating",
-            "value": 1751,
+            "value": 1773,
             "unit": "rating points",
             "protocol": "Arena WebDev Overall snapshot; configuration per row"
           },
-          "setting": "claude-fable-5.1-max; Arena deployment, not every consumer app setting",
-          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
-          "reported_on": "2026-09-25",
-          "reviewed_on": "2026-09-29",
-          "comparison_group": "arena-webdev-2026-09-25"
-        },
-        {
-          "id": "claude-fable-5-1-community-02",
-          "model_id": "claude-fable-5-1",
-          "source_id": "community-source-048",
-          "kind": "community_test",
-          "claim": "The shown tests retained an existing page's branding, but a new business homepage had readability/spacing faults and a weaker complete brand package than the author's preferred Astra result.",
-          "direct_tasks": [
-            "software.frontend.design"
-          ],
-          "proxy_tasks": [
-            "software.frontend"
-          ],
-          "measurement": null,
-          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-          "limitations": "Two briefs, subjective preference, no conversion measurement; different harnesses and image-generation access. Same origin as the writing test; do not count as an independent second reviewer.",
-          "reported_on": "2026-09-15",
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "Aaron Makelky reporting tests with Ryan Doser",
-            "origin_id": "aaron-makelky-astra-fable-20260915",
-            "grade": "artifact_report",
-            "stance": "mixed",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [
-              "https://aaronmakelky.com/blog/astra-vs-fable"
-            ],
-            "rating": {
-              "value": 5.0,
-              "rationale": "Brand retention is useful, while visible layout faults warrant a mixed task assessment.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
-        },
-        {
-          "id": "claude-fable-5-1-community-05",
-          "model_id": "claude-fable-5-1",
-          "source_id": "community-source-050",
-          "kind": "community_test",
-          "claim": "In three visible animation briefs, Fable 5.1 had a fault-free interchange and a correctly rotating carousel, and kept the launch vehicle in frame, with remaining rocket defects.",
-          "direct_tasks": [
-            "software.frontend.design"
-          ],
-          "proxy_tasks": [
-            "software.frontend"
-          ],
-          "measurement": null,
-          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-          "limitations": "Single attempt per brief; non-blind judging and different maker harnesses. Live builds are linked, but exact prompt files were not published; no production/accessibility validation.",
-          "reported_on": "2026-09-21",
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "BitsMinds hands-on reviewers",
-            "origin_id": "bitsminds-cross-lab-three-briefs-20260921",
-            "grade": "artifact_report",
-            "stance": "positive",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [
-              "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026"
-            ],
-            "rating": {
-              "value": 8.0,
-              "rationale": "Concrete motion correctness is useful evidence for visual prototypes; residual defects and small sample cap the score.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
+          "setting": "claude-sonnet-5.5-xhigh; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
-        "input": 10,
-        "output": 50,
+        "input": 2,
+        "output": 10,
         "max_input_tokens": 200000,
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "部分公开评测使用了回退模型；不能将组合结果仅归因于基础模型。"
+        "需另行核查账号权限、地区和工具环境。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -364,46 +367,27 @@
       },
       "metadata_url": "https://platform.claude.com/docs/en/models/overview",
       "ranking": {
-        "support": 0.675712,
+        "support": 0.675,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.944444,
+            "formal_support": 0.964286,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.7777777777777778,
-            "community_signal": 0.048668,
+            "comparable_peer_win_fraction": 0.8571428571428571,
+            "community_signal": 0.0,
             "community_weight": 0.3,
-            "community_origins": 2,
-            "community_score": 6.6,
-            "community_confidence": "low",
-            "community_mapping": "proxy",
-            "origins": [
-              {
-                "origin_id": "aaron-makelky-astra-fable-20260915",
-                "score": 5.0,
-                "reliability": 0.22704203211850293,
-                "signal": 0.0,
-                "evidence_ids": [
-                  "claude-fable-5-1-community-02"
-                ]
-              },
-              {
-                "origin_id": "bitsminds-cross-lab-three-briefs-20260921",
-                "score": 8.0,
-                "reliability": 0.24333762490492417,
-                "signal": 0.146003,
-                "evidence_ids": [
-                  "claude-fable-5-1-community-05"
-                ]
-              }
-            ],
-            "support": 0.675711511111111
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.6749999999999999
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
       "rank": 3,
-      "reason": "有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源"
+      "reason": "有匹配该任务的独立评测，对应任务：前端实现"
     }
   ],
   "candidates": [
@@ -481,6 +465,32 @@
               "assessed_on": "2026-09-30"
             }
           }
+        },
+        {
+          "id": "gpt-6-astra-arena-webdev-2026-10-07",
+          "model_id": "gpt-6-astra",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "gpt-6-astra-max: WebDev preference rating 1788 (displayed interval ±11).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1788,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-astra-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
@@ -505,14 +515,14 @@
       },
       "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
       "ranking": {
-        "support": 0.706307,
+        "support": 0.707569,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.972222,
+            "formal_support": 0.977273,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.8888888888888888,
-            "community_signal": 0.085839,
+            "comparable_peer_win_fraction": 0.9090909090909091,
+            "community_signal": 0.078261,
             "community_weight": 0.3,
             "community_origins": 1,
             "community_score": 8.0,
@@ -522,14 +532,14 @@
               {
                 "origin_id": "author:najam saeed",
                 "score": 8.0,
-                "reliability": 0.4291937797305775,
-                "signal": 0.257516,
+                "reliability": 0.39130562092966925,
+                "signal": 0.234783,
                 "evidence_ids": [
                   "gpt-6-astra-community-01"
                 ]
               }
             ],
-            "support": 0.7063072555555555
+            "support": 0.707569209090909
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -574,6 +584,32 @@
           "reported_on": "2026-09-25",
           "reviewed_on": "2026-09-29",
           "comparison_group": "arena-webdev-2026-09-25"
+        },
+        {
+          "id": "claude-opus-5-5-arena-webdev-2026-10-07",
+          "model_id": "claude-opus-5-5",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "claude-opus-5.5-max: WebDev preference rating 1814 (displayed interval ±16).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1814,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-opus-5.5-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
@@ -613,6 +649,110 @@
             "community_mapping": "none",
             "origins": [],
             "support": 0.7
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "sonnet-doc",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "sonnet-launch",
+          "kind": "official_capability",
+          "claim": "Anthropic describes stronger document work and clearer writing.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "writing.professional",
+            "writing.edit",
+            "writing.creative",
+            "data.spreadsheet",
+            "software.frontend"
+          ],
+          "measurement": null,
+          "setting": "Release positioning; user preference must be tested",
+          "limitations": "Writing style is subjective; no independent language-specific preference study in this seed.",
+          "reported_on": "2026-09-28",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": null
+        },
+        {
+          "id": "claude-sonnet-5-5-arena-webdev-2026-10-07",
+          "model_id": "claude-sonnet-5-5",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "claude-sonnet-5.5-xhigh: WebDev preference rating 1773 (displayed interval ±15).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1773,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-sonnet-5.5-xhigh; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
+        }
+      ],
+      "price": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 200000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "需另行核查账号权限、地区和工具环境。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
+      "ranking": {
+        "support": 0.675,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.964286,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.8571428571428571,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.6749999999999999
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -727,6 +867,32 @@
               "assessed_on": "2026-09-30"
             }
           }
+        },
+        {
+          "id": "claude-fable-5-1-arena-webdev-2026-10-07",
+          "model_id": "claude-fable-5-1",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "claude-fable-5.1-max: WebDev preference rating 1745 (displayed interval ±9).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1745,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "claude-fable-5.1-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
@@ -751,14 +917,14 @@
       },
       "metadata_url": "https://platform.claude.com/docs/en/models/overview",
       "ranking": {
-        "support": 0.675712,
+        "support": 0.665584,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.944444,
+            "formal_support": 0.931818,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.7777777777777778,
-            "community_signal": 0.048668,
+            "comparable_peer_win_fraction": 0.7272727272727273,
+            "community_signal": 0.044371,
             "community_weight": 0.3,
             "community_origins": 2,
             "community_score": 6.6,
@@ -768,7 +934,7 @@
               {
                 "origin_id": "aaron-makelky-astra-fable-20260915",
                 "score": 5.0,
-                "reliability": 0.22704203211850293,
+                "reliability": 0.20699932653039607,
                 "signal": 0.0,
                 "evidence_ids": [
                   "claude-fable-5-1-community-02"
@@ -777,22 +943,22 @@
               {
                 "origin_id": "bitsminds-cross-lab-three-briefs-20260921",
                 "score": 8.0,
-                "reliability": 0.24333762490492417,
-                "signal": 0.146003,
+                "reliability": 0.2218563849381634,
+                "signal": 0.133114,
                 "evidence_ids": [
                   "claude-fable-5-1-community-05"
                 ]
               }
             ],
-            "support": 0.675711511111111
+            "support": 0.6655840272727273
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       }
     },
     {
-      "model_id": "gpt-6-sol",
-      "name": "GPT-6 Sol",
+      "model_id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
       "direct_tasks": [
         "software.frontend"
       ],
@@ -805,11 +971,44 @@
       "missing_tasks": [],
       "evidence": [
         {
-          "id": "gpt-6-sol-arena-webdev",
-          "model_id": "gpt-6-sol",
-          "source_id": "arena-webdev",
+          "id": "gpt-6.1-sol-community-03",
+          "model_id": "gpt-6.1-sol",
+          "source_id": "community-source-043",
+          "kind": "community_test",
+          "claim": "The author reports a medium-effort safari game iteration missed music and delivered poorly working gameplay, with another follow-up not fixing it.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "No returned code or acceptance log inspected; inspiration link is input, not proof of generated output. Medium effort and one early task only.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Upper-Animator-5067",
+            "origin_id": "author:upper-animator-5067",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 3,
+              "rationale": "Specific missing requirements and unusable reported interaction warrant a negative frontend signal; a single early medium-effort run is not a general verdict.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "gpt-6.1-sol-arena-webdev-2026-10-07",
+          "model_id": "gpt-6.1-sol",
+          "source_id": "arena-webdev-2026-10-07",
           "kind": "independent_eval",
-          "claim": "gpt-6-sol-max: observed WebDev preference rating 1681.",
+          "claim": "gpt-6.1-sol-max: WebDev preference rating 1757 (displayed interval ±15).",
           "direct_tasks": [
             "software.frontend"
           ],
@@ -818,17 +1017,17 @@
           ],
           "measurement": {
             "benchmark": "Arena WebDev",
-            "version": "2026-09-25 overall",
+            "version": "2026-10-07 overall",
             "metric": "preference rating",
-            "value": 1681,
+            "value": 1757,
             "unit": "rating points",
             "protocol": "Arena WebDev Overall snapshot; configuration per row"
           },
-          "setting": "gpt-6-sol-max; Arena deployment, not every consumer app setting",
-          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
-          "reported_on": "2026-09-25",
-          "reviewed_on": "2026-09-29",
-          "comparison_group": "arena-webdev-2026-09-25"
+          "setting": "gpt-6.1-sol-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
@@ -838,7 +1037,10 @@
         "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
       },
       "limitations": [
-        "需另行核查账号权限、地区和工具环境。"
+        "通过 Responses API 支持工具调用；该模型在 Chat Completions 中不支持工具。",
+        "最大输出为 128000 tokens。推理档位：low、medium、high、xhigh、max。",
+        "使用该版本自己的评测，不继承前代结果；账号权限和工具环境需分别确认。",
+        "输入不超过 272000 token 时，标准输入/输出单价仍为每百万 token 2/10 美元，缓存输入为 0.10 美元；更长请求、推理档位和服务档位会影响总成本。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -851,23 +1053,33 @@
         "open_weights": false,
         "price_applies": true
       },
-      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
       "ranking": {
-        "support": 0.641667,
+        "support": 0.6585,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.916667,
+            "formal_support": 0.946429,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.6666666666666666,
-            "community_signal": 0.0,
+            "comparable_peer_win_fraction": 0.7857142857142857,
+            "community_signal": -0.013333,
             "community_weight": 0.3,
-            "community_origins": 0,
-            "community_score": null,
-            "community_confidence": "insufficient",
-            "community_mapping": "none",
-            "origins": [],
-            "support": 0.6416666666666666
+            "community_origins": 1,
+            "community_score": 3.0,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "author:upper-animator-5067",
+                "score": 3.0,
+                "reliability": 0.1,
+                "signal": -0.04,
+                "evidence_ids": [
+                  "gpt-6.1-sol-community-03"
+                ]
+              }
+            ],
+            "support": 0.6585001
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -1014,6 +1226,32 @@
               "assessed_on": "2026-09-30"
             }
           }
+        },
+        {
+          "id": "kimi-k3-arena-webdev-2026-10-07",
+          "model_id": "kimi-k3",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "kimi-k3-max: WebDev preference rating 1655 (displayed interval ±6).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1655,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "kimi-k3-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": null,
@@ -1034,13 +1272,13 @@
       },
       "metadata_url": "https://huggingface.co/moonshotai/Kimi-K3",
       "ranking": {
-        "support": 0.630972,
+        "support": 0.645114,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.888889,
+            "formal_support": 0.909091,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.5555555555555556,
+            "comparable_peer_win_fraction": 0.6363636363636364,
             "community_signal": 0.029167,
             "community_weight": 0.3,
             "community_origins": 3,
@@ -1076,15 +1314,15 @@
                 ]
               }
             ],
-            "support": 0.6309723222222221
+            "support": 0.6451137363636363
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       }
     },
     {
-      "model_id": "deepseek-v4.1-flash",
-      "name": "DeepSeek-V4.1-Flash",
+      "model_id": "mimo-v2.6-flash",
+      "name": "MiMo-V2.6-Flash",
       "direct_tasks": [
         "software.frontend"
       ],
@@ -1097,11 +1335,70 @@
       "missing_tasks": [],
       "evidence": [
         {
-          "id": "deepseek-v4.1-flash-arena-webdev",
-          "model_id": "deepseek-v4.1-flash",
-          "source_id": "arena-webdev",
+          "id": "mimo-vendor-10",
+          "model_id": "mimo-v2.6-flash",
+          "source_id": "community-source-036",
+          "kind": "vendor_eval",
+          "claim": "Xiaomi reports a MiMo VisualCoding score of 71.5 for the original RL checkpoint.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.frontend",
+            "software.frontend.fidelity"
+          ],
+          "measurement": {
+            "benchmark": "MiMo VisualCoding",
+            "version": "model-card2026-09-22",
+            "metric": "reported score",
+            "value": 71.5,
+            "unit": "points",
+            "protocol": "Vendor's visual-coding suite; task definition needs further inspection."
+          },
+          "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+          "limitations": "This vendor visual-coding suite is a proxy for frontend fidelity, not a production UI acceptance test. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null
+        },
+        {
+          "id": "mimo-v2.6-flash-community-01",
+          "model_id": "mimo-v2.6-flash",
+          "source_id": "community-source-068",
+          "kind": "community_test",
+          "claim": "The same author explicitly reports that Flash, as well as Pro, stalled in grep loops during the website UI/UX maintenance task.",
+          "direct_tasks": [
+            "software.terminal",
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. Launch-period timing is inferred from the discussion; the opened original shows only relative timestamps. The absolute test date and RL/MOPD checkpoint revision are unverified.",
+          "limitations": "No repository or complete trace is public. This shares the same test origin; third-party summaries are not independent replications. Xiaomi updated the Pro/Flash API aliases on September 25, 2026 and released MOPD weights. This report does not pin a checkpoint, so the loop may concern the earlier revision. Any reduction in current-deployment relevance requires an explicit assessment; the announcement alone does not establish that this specific failure was fixed.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "choiyoh",
+            "origin_id": "reddit:choiyoh:mimo26-ui-loop",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 2.5,
+              "rationale": "The task is identifiable but not reproducible from the available materials. The assessment is negative for reliability in the reported harness.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "mimo-v2.6-flash-arena-webdev-2026-10-07",
+          "model_id": "mimo-v2.6-flash",
+          "source_id": "arena-webdev-2026-10-07",
           "kind": "independent_eval",
-          "claim": "deepseek-v4.1-flash-max: observed WebDev preference rating 1621.",
+          "claim": "mimo-v2.6-flash: WebDev preference rating 1636 (displayed interval ±11).",
           "direct_tasks": [
             "software.frontend"
           ],
@@ -1110,93 +1407,72 @@
           ],
           "measurement": {
             "benchmark": "Arena WebDev",
-            "version": "2026-09-25 overall",
+            "version": "2026-10-07 overall",
             "metric": "preference rating",
-            "value": 1621,
+            "value": 1636,
             "unit": "rating points",
             "protocol": "Arena WebDev Overall snapshot; configuration per row"
           },
-          "setting": "deepseek-v4.1-flash-max; Arena deployment, not every consumer app setting",
-          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
-          "reported_on": "2026-09-25",
-          "reviewed_on": "2026-09-29",
-          "comparison_group": "arena-webdev-2026-09-25"
-        },
-        {
-          "id": "deepseek-v4.1-flash-community-01",
-          "model_id": "deepseek-v4.1-flash",
-          "source_id": "community-source-056",
-          "kind": "community_test",
-          "claim": "The author reports a successful first-pass responsive website using DeepSeek Harness at maximum reasoning, with HTML, vanilla JavaScript, Tailwind, GSAP and Lucide. Mobile adaptation and visual feedback were satisfactory, while token consumption was high.",
-          "direct_tasks": [
-            "software.frontend",
-            "software.frontend.design"
-          ],
-          "proxy_tasks": [],
-          "measurement": null,
-          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-          "limitations": "Single author and website; original prompt and source project are not linked. A media poster is present but the video was not replayed or validated. Reported time, spend and token totals are self-reports. Page exposes only a relative timestamp, so no exact publication date is inferred. Does not establish reference fidelity or production correctness.",
-          "reported_on": null,
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "nehuenpereyra",
-            "origin_id": "reddit-nehuenpereyra-deepseek41-frontend-demo",
-            "grade": "firsthand",
-            "stance": "positive",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [],
-            "rating": {
-              "value": 8.0,
-              "rationale": "A concrete frontend stack, first-pass result and mobile outcome support a strong reported result; missing prompt, source and independent execution keep confidence limited.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
+          "setting": "mimo-v2.6-flash; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
-      "price": null,
+      "price": {
+        "input": 0.14,
+        "output": 0.28,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
+      },
       "limitations": [
-        "开放权重不代表适合笔记本部署。需核查推理精度、硬件、许可证和 API 别名。"
+        "API id 为 mimo-v2.6-flash。已提供 MIT 许可的 RL 权重版本；解析器、量化和执行框架都会影响结果。",
+        "官方上下文标为 1M，保守记录为 1000000 tokens。",
+        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
+        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
       ],
       "resources": {
         "access": "verify_account_access",
         "input_modalities": [
           "text",
-          "image"
+          "image",
+          "video",
+          "audio"
         ],
         "context_tokens": 1000000,
         "tool_calling": true,
         "open_weights": true,
-        "price_applies": false
+        "price_applies": true
       },
-      "metadata_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "metadata_url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-flash",
       "ranking": {
-        "support": 0.589333,
+        "support": 0.6075,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.833333,
+            "formal_support": 0.875,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.3333333333333333,
-            "community_signal": 0.02,
+            "comparable_peer_win_fraction": 0.5,
+            "community_signal": -0.016667,
             "community_weight": 0.3,
             "community_origins": 1,
-            "community_score": 8.0,
+            "community_score": 2.5,
             "community_confidence": "low",
             "community_mapping": "direct",
             "origins": [
               {
-                "origin_id": "reddit-nehuenpereyra-deepseek41-frontend-demo",
-                "score": 8.0,
+                "origin_id": "reddit:choiyoh:mimo26-ui-loop",
+                "score": 2.5,
                 "reliability": 0.1,
-                "signal": 0.06,
+                "signal": -0.05,
                 "evidence_ids": [
-                  "deepseek-v4.1-flash-community-01"
+                  "mimo-v2.6-flash-community-01"
                 ]
               }
             ],
-            "support": 0.5893333333333334
+            "support": 0.6074999
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -1313,6 +1589,32 @@
               "assessed_on": "2026-09-30"
             }
           }
+        },
+        {
+          "id": "grok-4.7-arena-webdev-2026-10-07",
+          "model_id": "grok-4.7",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "grok-4.7-xhigh: WebDev preference rating 1638 (displayed interval ±11).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1638,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "grok-4.7-xhigh; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": {
@@ -1337,14 +1639,14 @@
       },
       "metadata_url": "https://docs.x.ai/developers/models/grok-4.7",
       "ranking": {
-        "support": 0.585017,
+        "support": 0.604142,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.861111,
+            "formal_support": 0.886364,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.4444444444444444,
-            "community_signal": -0.059203,
+            "comparable_peer_win_fraction": 0.5454545454545454,
+            "community_signal": -0.054374,
             "community_weight": 0.3,
             "community_origins": 2,
             "community_score": 3.7,
@@ -1354,8 +1656,8 @@
               {
                 "origin_id": "bitsminds-grok-four-briefs-20260922",
                 "score": 3.5,
-                "reliability": 0.5470334931349301,
-                "signal": -0.16411,
+                "reliability": 0.4987427376856726,
+                "signal": -0.149623,
                 "evidence_ids": [
                   "grok-4.7-community-02"
                 ]
@@ -1370,15 +1672,15 @@
                 ]
               }
             ],
-            "support": 0.5850168777777778
+            "support": 0.6041423454545454
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       }
     },
     {
-      "model_id": "gpt-6-luna",
-      "name": "GPT-6 Luna",
+      "model_id": "glm-5.3",
+      "name": "GLM-5.3",
       "direct_tasks": [
         "software.frontend"
       ],
@@ -1391,11 +1693,344 @@
       "missing_tasks": [],
       "evidence": [
         {
-          "id": "gpt-6-luna-arena-webdev",
-          "model_id": "gpt-6-luna",
+          "id": "glm-5.3-community-02",
+          "model_id": "glm-5.3",
+          "source_id": "glm-community-daily-driver",
+          "kind": "community_test",
+          "claim": "The user describes GLM-5.3 as a daily coding, debugging and frontend model, while keeping Sol-High for review and general administration.",
+          "direct_tasks": [
+            "software.debug",
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.repo"
+          ],
+          "measurement": null,
+          "setting": "Author names GLM-5.3 and Max reasoning for complex work; exact backend and prompts are unverified.",
+          "limitations": "Personal ongoing usage with no shared code or matched test suite. World knowledge is described as weaker. Only relative dates were visible; no version-specific claim is inferred for the review model.",
+          "reported_on": null,
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null,
+          "community": {
+            "author": "Sensitive_Song4219",
+            "origin_id": "reddit:sensitive-song4219",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-10-08",
+            "artifact_urls": [],
+            "rating": {
+              "value": 8,
+              "rationale": "Specific recurring development use supports a positive coding report, with low confidence because outputs and settings are not public.",
+              "confidence": "low",
+              "assessed_on": "2026-10-08"
+            }
+          }
+        },
+        {
+          "id": "glm-5.3-arena-webdev-2026-10-07",
+          "model_id": "glm-5.3",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "glm-5.3-max: WebDev preference rating 1622 (displayed interval ±8).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1622,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "glm-5.3-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Use official Z.ai prices and weight licenses; Arena labels are not authoritative for those facts.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
+        }
+      ],
+      "price": {
+        "input": 1.4,
+        "output": 4.4,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+      },
+      "limitations": [
+        "仅支持文本输入；图片和视频任务需要其他模型或外部预处理。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的十进制 1000000 token 记录。",
+        "开放权重采用 GLM-5.3 专用许可证：https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+        "权重：https://huggingface.co/zai-org/GLM-5.3；价格：https://docs.z.ai/guides/overview/pricing",
+        "不同账户历史的 API 协议可用性可能不同；请分别确认端点及 Coding Plan 权限。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": true
+      },
+      "metadata_url": "https://docs.z.ai/guides/llm/glm-5.3",
+      "ranking": {
+        "support": 0.5935,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.839286,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.35714285714285715,
+            "community_signal": 0.02,
+            "community_weight": 0.3,
+            "community_origins": 1,
+            "community_score": 8.0,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "reddit:sensitive-song4219",
+                "score": 8.0,
+                "reliability": 0.1,
+                "signal": 0.06,
+                "evidence_ids": [
+                  "glm-5.3-community-02"
+                ]
+              }
+            ],
+            "support": 0.5935
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "mimo-v2.6-pro",
+      "name": "MiMo-V2.6-Pro",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "mimo-vendor-05",
+          "model_id": "mimo-v2.6-pro",
+          "source_id": "community-source-035",
+          "kind": "vendor_eval",
+          "claim": "Xiaomi reports a MiMo VisualCoding score of 72.3 for the original RL checkpoint.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "software.frontend",
+            "software.frontend.fidelity"
+          ],
+          "measurement": {
+            "benchmark": "MiMo VisualCoding",
+            "version": "model-card2026-09-22",
+            "metric": "reported score",
+            "value": 72.3,
+            "unit": "points",
+            "protocol": "Vendor's visual-coding suite; task definition needs further inspection."
+          },
+          "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
+          "limitations": "This vendor visual-coding suite is a proxy for frontend fidelity, not a production UI acceptance test. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
+          "reported_on": "2026-09-22",
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null
+        },
+        {
+          "id": "mimo-v2.6-pro-community-02",
+          "model_id": "mimo-v2.6-pro",
+          "source_id": "community-source-065",
+          "kind": "community_test",
+          "claim": "The author reports that MiMo-V2.6-Pro failed an agent architecture refactor involving a JEV state layer and also missed explicit requirements in a separate frontend change to a file tree and chat panel.",
+          "direct_tasks": [
+            "software.repo",
+            "software.architecture",
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
+          "limitations": "Two private tasks, without code, complete prompts or acceptance logs. The approximately seven-hour duration is author-reported and does not establish typical latency. The Astra comparison relies on previous experience. Only relative timestamps are shown; no absolute date is inferred.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "Civil-Direction-6981",
+            "origin_id": "reddit:Civil-Direction-6981:mimo26pro-refactor",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 3,
+              "rationale": "Reported failures in following requirements and maintaining architectural consistency provide a negative signal for longer engineering tasks. One person's tasks do not establish a general failure rate.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "mimo-v2.6-pro-community-05",
+          "model_id": "mimo-v2.6-pro",
+          "source_id": "community-source-068",
+          "kind": "community_test",
+          "claim": "The author gave Pro and Flash the same UI/UX maintenance request for a live website; both reportedly stalled in terminal grep loops, after which another model completed the change.",
+          "direct_tasks": [
+            "software.terminal",
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "agent.long"
+          ],
+          "measurement": null,
+          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. Launch-period timing is inferred from the discussion; the opened original shows only relative timestamps. The absolute test date and RL/MOPD checkpoint revision are unverified.",
+          "limitations": "No repository, tool trace or model configuration is public. Model behavior and the CommandCode integration can both affect the result. Third-party retellings of this author's test must retain the same origin and add no independent weight. Xiaomi updated the Pro/Flash API aliases on September 25, 2026 and released MOPD weights. This report does not pin a checkpoint, so the loop may concern the earlier revision. Any reduction in current-deployment relevance requires an explicit assessment; the announcement alone does not establish that this specific failure was fixed.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "choiyoh",
+            "origin_id": "reddit:choiyoh:mimo26-ui-loop",
+            "grade": "firsthand",
+            "stance": "negative",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 2.5,
+              "rationale": "The reported tool loop prevented delivery and supplies a negative signal for this terminal-assisted frontend maintenance task. It is not a conclusion about general model intelligence.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "mimo-v2.6-pro-arena-webdev-2026-10-07",
+          "model_id": "mimo-v2.6-pro",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "mimo-v2.6-pro: WebDev preference rating 1630 (displayed interval ±11).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1630,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "mimo-v2.6-pro; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
+        }
+      ],
+      "price": {
+        "input": 0.435,
+        "output": 0.87,
+        "max_input_tokens": 1000000,
+        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
+      },
+      "limitations": [
+        "API id 为 mimo-v2.6-pro。已提供 MIT 许可的 RL 权重版本；API 服务与本地量化结果可能不同。",
+        "官方上下文标为 1M；1000000 是保守记录，并非声称官方给出了未注明的二进制 token 上限。",
+        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
+        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": true
+      },
+      "metadata_url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-pro",
+      "ranking": {
+        "support": 0.591,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.857143,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.42857142857142855,
+            "community_signal": -0.03,
+            "community_weight": 0.3,
+            "community_origins": 2,
+            "community_score": 2.8,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "reddit:Civil-Direction-6981:mimo26pro-refactor",
+                "score": 3.0,
+                "reliability": 0.1,
+                "signal": -0.04,
+                "evidence_ids": [
+                  "mimo-v2.6-pro-community-02"
+                ]
+              },
+              {
+                "origin_id": "reddit:choiyoh:mimo26-ui-loop",
+                "score": 2.5,
+                "reliability": 0.1,
+                "signal": -0.05,
+                "evidence_ids": [
+                  "mimo-v2.6-pro-community-05"
+                ]
+              }
+            ],
+            "support": 0.591
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "deepseek-v4.1-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "deepseek-v4.1-flash-arena-webdev",
+          "model_id": "deepseek-v4.1-flash",
           "source_id": "arena-webdev",
           "kind": "independent_eval",
-          "claim": "gpt-6-luna-max: observed WebDev preference rating 1593.",
+          "claim": "deepseek-v4.1-flash-max: observed WebDev preference rating 1621.",
           "direct_tasks": [
             "software.frontend"
           ],
@@ -1406,25 +2041,78 @@
             "benchmark": "Arena WebDev",
             "version": "2026-09-25 overall",
             "metric": "preference rating",
-            "value": 1593,
+            "value": 1621,
             "unit": "rating points",
             "protocol": "Arena WebDev Overall snapshot; configuration per row"
           },
-          "setting": "gpt-6-luna-max; Arena deployment, not every consumer app setting",
+          "setting": "deepseek-v4.1-flash-max; Arena deployment, not every consumer app setting",
           "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
           "reported_on": "2026-09-25",
           "reviewed_on": "2026-09-29",
           "comparison_group": "arena-webdev-2026-09-25"
+        },
+        {
+          "id": "deepseek-v4.1-flash-community-01",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "community-source-056",
+          "kind": "community_test",
+          "claim": "The author reports a successful first-pass responsive website using DeepSeek Harness at maximum reasoning, with HTML, vanilla JavaScript, Tailwind, GSAP and Lucide. Mobile adaptation and visual feedback were satisfactory, while token consumption was high.",
+          "direct_tasks": [
+            "software.frontend",
+            "software.frontend.design"
+          ],
+          "proxy_tasks": [],
+          "measurement": null,
+          "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
+          "limitations": "Single author and website; original prompt and source project are not linked. A media poster is present but the video was not replayed or validated. Reported time, spend and token totals are self-reports. Page exposes only a relative timestamp, so no exact publication date is inferred. Does not establish reference fidelity or production correctness.",
+          "reported_on": null,
+          "reviewed_on": "2026-09-30",
+          "comparison_group": null,
+          "community": {
+            "author": "nehuenpereyra",
+            "origin_id": "reddit-nehuenpereyra-deepseek41-frontend-demo",
+            "grade": "firsthand",
+            "stance": "positive",
+            "first_seen_on": "2026-09-30",
+            "artifact_urls": [],
+            "rating": {
+              "value": 8.0,
+              "rationale": "A concrete frontend stack, first-pass result and mobile outcome support a strong reported result; missing prompt, source and independent execution keep confidence limited.",
+              "confidence": "low",
+              "assessed_on": "2026-09-30"
+            }
+          }
+        },
+        {
+          "id": "deepseek-v4.1-flash-arena-webdev-2026-10-07",
+          "model_id": "deepseek-v4.1-flash",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "deepseek-v4.1-flash-max: WebDev preference rating 1619 (displayed interval ±11).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1619,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "deepseek-v4.1-flash-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
-      "price": {
-        "input": 0.1,
-        "output": 0.5,
-        "max_input_tokens": 272000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
+      "price": null,
       "limitations": [
-        "需另行核查账号权限、地区和工具环境。"
+        "开放权重不代表适合笔记本部署。需核查推理精度、硬件、许可证和 API 别名。"
       ],
       "resources": {
         "access": "verify_account_access",
@@ -1432,28 +2120,194 @@
           "text",
           "image"
         ],
-        "context_tokens": 1050000,
+        "context_tokens": 1000000,
         "tool_calling": true,
-        "open_weights": false,
-        "price_applies": true
+        "open_weights": true,
+        "price_applies": false
       },
-      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "metadata_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
       "ranking": {
-        "support": 0.563889,
+        "support": 0.586682,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.805556,
+            "formal_support": 0.829545,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.2222222222222222,
-            "community_signal": 0.0,
+            "comparable_peer_win_fraction": 0.3181818181818182,
+            "community_signal": 0.02,
             "community_weight": 0.3,
-            "community_origins": 0,
-            "community_score": null,
-            "community_confidence": "insufficient",
-            "community_mapping": "none",
-            "origins": [],
-            "support": 0.5638888888888889
+            "community_origins": 1,
+            "community_score": 8.0,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "reddit-nehuenpereyra-deepseek41-frontend-demo",
+                "score": 8.0,
+                "reliability": 0.1,
+                "signal": 0.06,
+                "evidence_ids": [
+                  "deepseek-v4.1-flash-community-01"
+                ]
+              }
+            ],
+            "support": 0.5866818181818182
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "glm-5.3-flash-visual-capability",
+          "model_id": "glm-5.3-flash",
+          "source_id": "glm-5.3-flash-docs",
+          "kind": "official_capability",
+          "claim": "Official documentation supports native image/video inputs, visual UI iteration and computer-use agents.",
+          "direct_tasks": [
+            "vision.video",
+            "agent.computer"
+          ],
+          "proxy_tasks": [
+            "software.frontend",
+            "software.frontend.fidelity",
+            "vision.document",
+            "vision.spatial"
+          ],
+          "measurement": null,
+          "setting": "API modalities and documented screenshot/video/render-feedback workflows; enabled external tools required for actions.",
+          "limitations": "Capability support is not a measured vision, UI fidelity or GUI success rate.",
+          "reported_on": null,
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        },
+        {
+          "id": "glm-5.3-flash-community-07",
+          "model_id": "glm-5.3-flash",
+          "source_id": "glm-community-frontend",
+          "kind": "community_test",
+          "claim": "The author publishes strong simple-page outputs but a dense dashboard with severe accessibility defects. The live profile shows nine runs, including dashboard 10/100 and landing-page 100/100 accessibility.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": null,
+          "setting": "GLM-5.3-Flash through ZCode and Cline. Dated live runs 2026-08-26/29; article originally describes a smaller seven-completion set.",
+          "limitations": "Accessibility is not visual quality or complete interaction correctness. Different harnesses and reruns affect results; small public sample. PromptHarbor opened the profile but did not visually accept or rerun outputs.",
+          "reported_on": "2026-08-29",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null,
+          "community": {
+            "author": "Sami Hedhli",
+            "origin_id": "author:sami-hedhli-openvibeeval",
+            "grade": "artifact_report",
+            "stance": "mixed",
+            "first_seen_on": "2026-10-08",
+            "artifact_urls": [
+              "https://openvibeeval.com/models/glm-5-3-flash/"
+            ],
+            "rating": {
+              "value": 6.5,
+              "rationale": "Public task outputs expose meaningful complexity-dependent strengths and defects; a mixed score avoids treating fast rendering as reliable complex UI implementation.",
+              "confidence": "low",
+              "assessed_on": "2026-10-08"
+            }
+          }
+        },
+        {
+          "id": "glm-5.3-flash-arena-webdev-2026-10-07",
+          "model_id": "glm-5.3-flash",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "glm-5.3-flash: WebDev preference rating 1610 (displayed interval ±7).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1610,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "glm-5.3-flash; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Use official Z.ai prices and weight licenses; Arena labels are not authoritative for those facts.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
+        }
+      ],
+      "price": {
+        "input": 0.15,
+        "output": 0.5,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+      },
+      "limitations": [
+        "原生支持文本、图片和视频；文件支持属于服务输入包装，不是单独的模态；视频 Agent 示例不作为原生音频输入的依据。",
+        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
+        "官方上下文写作 1M；此处按保守的 1000000 token 记录。",
+        "MIT 许可证权重：https://huggingface.co/zai-org/GLM-5.3-Flash；价格：https://docs.z.ai/guides/overview/pricing",
+        "Coding Plan 配额与 API token 价格分别计算；FlashX 是独立的加速托管档位，其吞吐速度不等于 Flash 的任务质量分数。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": true,
+        "price_applies": true
+      },
+      "metadata_url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+      "ranking": {
+        "support": 0.573839,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.803571,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.21428571428571427,
+            "community_signal": 0.037798,
+            "community_weight": 0.3,
+            "community_origins": 1,
+            "community_score": 6.5,
+            "community_confidence": "low",
+            "community_mapping": "direct",
+            "origins": [
+              {
+                "origin_id": "author:sami-hedhli-openvibeeval",
+                "score": 6.5,
+                "reliability": 0.37797631496846196,
+                "signal": 0.113393,
+                "evidence_ids": [
+                  "glm-5.3-flash-community-07"
+                ]
+              }
+            ],
+            "support": 0.5738394
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -1498,6 +2352,32 @@
           "reported_on": "2026-09-25",
           "reviewed_on": "2026-09-29",
           "comparison_group": "arena-webdev-2026-09-25"
+        },
+        {
+          "id": "qwen3.8-27b-arena-webdev-2026-10-07",
+          "model_id": "qwen3.8-27b",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "qwen3.8-27b: WebDev preference rating 1592 (displayed interval ±7).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1592,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "qwen3.8-27b; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": null,
@@ -1517,13 +2397,13 @@
       },
       "metadata_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
       "ranking": {
-        "support": 0.544444,
+        "support": 0.548864,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.777778,
+            "formal_support": 0.784091,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.1111111111111111,
+            "comparable_peer_win_fraction": 0.13636363636363635,
             "community_signal": 0.0,
             "community_weight": 0.3,
             "community_origins": 0,
@@ -1531,7 +2411,116 @@
             "community_confidence": "insufficient",
             "community_mapping": "none",
             "origins": [],
-            "support": 0.5444444444444444
+            "support": 0.5488636363636363
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      }
+    },
+    {
+      "model_id": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "independent_tasks": [
+        "software.frontend"
+      ],
+      "covered_tasks": [
+        "software.frontend"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "gpt-6-luna-arena-webdev",
+          "model_id": "gpt-6-luna",
+          "source_id": "arena-webdev",
+          "kind": "independent_eval",
+          "claim": "gpt-6-luna-max: observed WebDev preference rating 1593.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-09-25 overall",
+            "metric": "preference rating",
+            "value": 1593,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-luna-max; Arena deployment, not every consumer app setting",
+          "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
+          "reported_on": "2026-09-25",
+          "reviewed_on": "2026-09-29",
+          "comparison_group": "arena-webdev-2026-09-25"
+        },
+        {
+          "id": "gpt-6-luna-arena-webdev-2026-10-07",
+          "model_id": "gpt-6-luna",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "gpt-6-luna-max: WebDev preference rating 1582 (displayed interval ±7).",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1582,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gpt-6-luna-max; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
+        }
+      ],
+      "price": {
+        "input": 0.1,
+        "output": 0.5,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+      },
+      "limitations": [
+        "需另行核查账号权限、地区和工具环境。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1050000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "ranking": {
+        "support": 0.540909,
+        "tasks": [
+          {
+            "task": "software.frontend",
+            "formal_support": 0.772727,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": 0.09090909090909091,
+            "community_signal": 0.0,
+            "community_weight": 0.3,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.5409090909090909
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -1647,6 +2636,32 @@
               "assessed_on": "2026-09-30"
             }
           }
+        },
+        {
+          "id": "gemini-3.8-flash-arena-webdev-2026-10-07",
+          "model_id": "gemini-3.8-flash",
+          "source_id": "arena-webdev-2026-10-07",
+          "kind": "independent_eval",
+          "claim": "gemini-3.8-flash-high: WebDev preference rating 1583 (displayed interval ±8). Preliminary entry.",
+          "direct_tasks": [
+            "software.frontend"
+          ],
+          "proxy_tasks": [
+            "software.frontend.design"
+          ],
+          "measurement": {
+            "benchmark": "Arena WebDev",
+            "version": "2026-10-07 overall",
+            "metric": "preference rating",
+            "value": 1583,
+            "unit": "rating points",
+            "protocol": "Arena WebDev Overall snapshot; configuration per row"
+          },
+          "setting": "gemini-3.8-flash-high; Arena deployment with the displayed effort setting.",
+          "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints. Preliminary entry.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": "arena-webdev-2026-10-07"
         }
       ],
       "price": null,
@@ -1668,14 +2683,14 @@
       },
       "metadata_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
       "ranking": {
-        "support": 0.525261,
+        "support": 0.533193,
         "tasks": [
           {
             "task": "software.frontend",
-            "formal_support": 0.75,
+            "formal_support": 0.761364,
             "evidence_strength": 1,
-            "comparable_peer_win_fraction": 0.0,
-            "community_signal": 0.000871,
+            "comparable_peer_win_fraction": 0.045454545454545456,
+            "community_signal": 0.000794,
             "community_weight": 0.3,
             "community_origins": 2,
             "community_score": 5.0,
@@ -1685,8 +2700,8 @@
               {
                 "origin_id": "ramanpal-singh-gemini-five-apps-20260903",
                 "score": 4.5,
-                "reliability": 0.4392257087836876,
-                "signal": -0.043923,
+                "reliability": 0.4004519562510103,
+                "signal": -0.040045,
                 "evidence_ids": [
                   "gemini-3.8-flash-community-02"
                 ]
@@ -1694,388 +2709,14 @@
               {
                 "origin_id": "routine-labo-gemini-seven-tasks-20260908",
                 "score": 5.5,
-                "reliability": 0.46534342855012034,
-                "signal": 0.046534,
+                "reliability": 0.4242640687119285,
+                "signal": 0.042426,
                 "evidence_ids": [
                   "gemini-3.8-flash-community-03"
                 ]
               }
             ],
-            "support": 0.5252612999999999
-          }
-        ],
-        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
-      }
-    },
-    {
-      "model_id": "mimo-v2.6-flash",
-      "name": "MiMo-V2.6-Flash",
-      "direct_tasks": [],
-      "independent_tasks": [],
-      "covered_tasks": [
-        "software.frontend"
-      ],
-      "missing_tasks": [],
-      "evidence": [
-        {
-          "id": "mimo-vendor-10",
-          "model_id": "mimo-v2.6-flash",
-          "source_id": "community-source-036",
-          "kind": "vendor_eval",
-          "claim": "Xiaomi reports a MiMo VisualCoding score of 71.5 for the original RL checkpoint.",
-          "direct_tasks": [],
-          "proxy_tasks": [
-            "software.frontend",
-            "software.frontend.fidelity"
-          ],
-          "measurement": {
-            "benchmark": "MiMo VisualCoding",
-            "version": "model-card2026-09-22",
-            "metric": "reported score",
-            "value": 71.5,
-            "unit": "points",
-            "protocol": "Vendor's visual-coding suite; task definition needs further inspection."
-          },
-          "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
-          "limitations": "This vendor visual-coding suite is a proxy for frontend fidelity, not a production UI acceptance test. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
-          "reported_on": "2026-09-22",
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null
-        },
-        {
-          "id": "mimo-v2.6-flash-community-01",
-          "model_id": "mimo-v2.6-flash",
-          "source_id": "community-source-068",
-          "kind": "community_test",
-          "claim": "The same author explicitly reports that Flash, as well as Pro, stalled in grep loops during the website UI/UX maintenance task.",
-          "direct_tasks": [
-            "software.terminal",
-            "software.frontend"
-          ],
-          "proxy_tasks": [
-            "agent.long"
-          ],
-          "measurement": null,
-          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. Launch-period timing is inferred from the discussion; the opened original shows only relative timestamps. The absolute test date and RL/MOPD checkpoint revision are unverified.",
-          "limitations": "No repository or complete trace is public. This shares the same test origin; third-party summaries are not independent replications. Xiaomi updated the Pro/Flash API aliases on September 25, 2026 and released MOPD weights. This report does not pin a checkpoint, so the loop may concern the earlier revision. Any reduction in current-deployment relevance requires an explicit assessment; the announcement alone does not establish that this specific failure was fixed.",
-          "reported_on": null,
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "choiyoh",
-            "origin_id": "reddit:choiyoh:mimo26-ui-loop",
-            "grade": "firsthand",
-            "stance": "negative",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [],
-            "rating": {
-              "value": 2.5,
-              "rationale": "The task is identifiable but not reproducible from the available materials. The assessment is negative for reliability in the reported harness.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
-        }
-      ],
-      "price": {
-        "input": 0.14,
-        "output": 0.28,
-        "max_input_tokens": 1000000,
-        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
-      },
-      "limitations": [
-        "API id 为 mimo-v2.6-flash。已提供 MIT 许可的 RL 权重版本；解析器、量化和执行框架都会影响结果。",
-        "官方上下文标为 1M，保守记录为 1000000 tokens。",
-        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
-        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
-        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
-      ],
-      "resources": {
-        "access": "verify_account_access",
-        "input_modalities": [
-          "text",
-          "image",
-          "video",
-          "audio"
-        ],
-        "context_tokens": 1000000,
-        "tool_calling": true,
-        "open_weights": true,
-        "price_applies": true
-      },
-      "metadata_url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-flash",
-      "ranking": {
-        "support": 0.184,
-        "tasks": [
-          {
-            "task": "software.frontend",
-            "formal_support": 0.27,
-            "evidence_strength": 0.36000000000000004,
-            "comparable_peer_win_fraction": null,
-            "community_signal": -0.016667,
-            "community_weight": 0.3,
-            "community_origins": 1,
-            "community_score": 2.5,
-            "community_confidence": "low",
-            "community_mapping": "direct",
-            "origins": [
-              {
-                "origin_id": "reddit:choiyoh:mimo26-ui-loop",
-                "score": 2.5,
-                "reliability": 0.1,
-                "signal": -0.05,
-                "evidence_ids": [
-                  "mimo-v2.6-flash-community-01"
-                ]
-              }
-            ],
-            "support": 0.1839999
-          }
-        ],
-        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
-      }
-    },
-    {
-      "model_id": "mimo-v2.6-pro",
-      "name": "MiMo-V2.6-Pro",
-      "direct_tasks": [],
-      "independent_tasks": [],
-      "covered_tasks": [
-        "software.frontend"
-      ],
-      "missing_tasks": [],
-      "evidence": [
-        {
-          "id": "mimo-vendor-05",
-          "model_id": "mimo-v2.6-pro",
-          "source_id": "community-source-035",
-          "kind": "vendor_eval",
-          "claim": "Xiaomi reports a MiMo VisualCoding score of 72.3 for the original RL checkpoint.",
-          "direct_tasks": [],
-          "proxy_tasks": [
-            "software.frontend",
-            "software.frontend.fidelity"
-          ],
-          "measurement": {
-            "benchmark": "MiMo VisualCoding",
-            "version": "model-card2026-09-22",
-            "metric": "reported score",
-            "value": 72.3,
-            "unit": "points",
-            "protocol": "Vendor's visual-coding suite; task definition needs further inspection."
-          },
-          "setting": "Original released RL checkpoint evaluated in the vendor harness; the current MOPD API alias was not measured by this result.",
-          "limitations": "This vendor visual-coding suite is a proxy for frontend fidelity, not a production UI acceptance test. The original RL result is retained as proxy evidence for the current API alias. The recorded score does not measure the MOPD checkpoint or UltraSpeed tier.",
-          "reported_on": "2026-09-22",
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null
-        },
-        {
-          "id": "mimo-v2.6-pro-community-02",
-          "model_id": "mimo-v2.6-pro",
-          "source_id": "community-source-065",
-          "kind": "community_test",
-          "claim": "The author reports that MiMo-V2.6-Pro failed an agent architecture refactor involving a JEV state layer and also missed explicit requirements in a separate frontend change to a file tree and chat panel.",
-          "direct_tasks": [
-            "software.repo",
-            "software.architecture",
-            "software.frontend"
-          ],
-          "proxy_tasks": [
-            "agent.long"
-          ],
-          "measurement": null,
-          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. The RL/MOPD checkpoint revision and absolute test date are unknown.",
-          "limitations": "Two private tasks, without code, complete prompts or acceptance logs. The approximately seven-hour duration is author-reported and does not establish typical latency. The Astra comparison relies on previous experience. Only relative timestamps are shown; no absolute date is inferred.",
-          "reported_on": null,
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "Civil-Direction-6981",
-            "origin_id": "reddit:Civil-Direction-6981:mimo26pro-refactor",
-            "grade": "firsthand",
-            "stance": "negative",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [],
-            "rating": {
-              "value": 3,
-              "rationale": "Reported failures in following requirements and maintaining architectural consistency provide a negative signal for longer engineering tasks. One person's tasks do not establish a general failure rate.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
-        },
-        {
-          "id": "mimo-v2.6-pro-community-05",
-          "model_id": "mimo-v2.6-pro",
-          "source_id": "community-source-068",
-          "kind": "community_test",
-          "claim": "The author gave Pro and Flash the same UI/UX maintenance request for a live website; both reportedly stalled in terminal grep loops, after which another model completed the change.",
-          "direct_tasks": [
-            "software.terminal",
-            "software.frontend"
-          ],
-          "proxy_tasks": [
-            "agent.long"
-          ],
-          "measurement": null,
-          "setting": "Author names the exact V2.6 variant, but the provider route, effort and harness are unverified unless specified in the report. Launch-period timing is inferred from the discussion; the opened original shows only relative timestamps. The absolute test date and RL/MOPD checkpoint revision are unverified.",
-          "limitations": "No repository, tool trace or model configuration is public. Model behavior and the CommandCode integration can both affect the result. Third-party retellings of this author's test must retain the same origin and add no independent weight. Xiaomi updated the Pro/Flash API aliases on September 25, 2026 and released MOPD weights. This report does not pin a checkpoint, so the loop may concern the earlier revision. Any reduction in current-deployment relevance requires an explicit assessment; the announcement alone does not establish that this specific failure was fixed.",
-          "reported_on": null,
-          "reviewed_on": "2026-09-30",
-          "comparison_group": null,
-          "community": {
-            "author": "choiyoh",
-            "origin_id": "reddit:choiyoh:mimo26-ui-loop",
-            "grade": "firsthand",
-            "stance": "negative",
-            "first_seen_on": "2026-09-30",
-            "artifact_urls": [],
-            "rating": {
-              "value": 2.5,
-              "rationale": "The reported tool loop prevented delivery and supplies a negative signal for this terminal-assisted frontend maintenance task. It is not a conclusion about general model intelligence.",
-              "confidence": "low",
-              "assessed_on": "2026-09-30"
-            }
-          }
-        }
-      ],
-      "price": {
-        "input": 0.435,
-        "output": 0.87,
-        "max_input_tokens": 1000000,
-        "scope": "Official overseas pay-as-you-go uncached API tokens; USD per million. Excludes search fees, cache, batch discounts and reasoning volume."
-      },
-      "limitations": [
-        "API id 为 mimo-v2.6-pro。已提供 MIT 许可的 RL 权重版本；API 服务与本地量化结果可能不同。",
-        "官方上下文标为 1M；1000000 是保守记录，并非声称官方给出了未注明的二进制 token 上限。",
-        "API 别名于 2026-09-25 06:00 UTC+8 切换到缓解工具重复调用的模型；本地部署应使用更新的 MOPD 权重版本。首发 RL 评测结果仍单独标注。",
-        "开放权重版本：https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
-        "官方价格：https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
-      ],
-      "resources": {
-        "access": "verify_account_access",
-        "input_modalities": [
-          "text",
-          "image",
-          "video",
-          "audio"
-        ],
-        "context_tokens": 1000000,
-        "tool_calling": true,
-        "open_weights": true,
-        "price_applies": true
-      },
-      "metadata_url": "https://mimo.mi.com/models/zh-CN/mimo-v2.6-pro",
-      "ranking": {
-        "support": 0.18,
-        "tasks": [
-          {
-            "task": "software.frontend",
-            "formal_support": 0.27,
-            "evidence_strength": 0.36000000000000004,
-            "comparable_peer_win_fraction": null,
-            "community_signal": -0.03,
-            "community_weight": 0.3,
-            "community_origins": 2,
-            "community_score": 2.8,
-            "community_confidence": "low",
-            "community_mapping": "direct",
-            "origins": [
-              {
-                "origin_id": "reddit:Civil-Direction-6981:mimo26pro-refactor",
-                "score": 3.0,
-                "reliability": 0.1,
-                "signal": -0.04,
-                "evidence_ids": [
-                  "mimo-v2.6-pro-community-02"
-                ]
-              },
-              {
-                "origin_id": "reddit:choiyoh:mimo26-ui-loop",
-                "score": 2.5,
-                "reliability": 0.1,
-                "signal": -0.05,
-                "evidence_ids": [
-                  "mimo-v2.6-pro-community-05"
-                ]
-              }
-            ],
-            "support": 0.18
-          }
-        ],
-        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
-      }
-    },
-    {
-      "model_id": "claude-sonnet-5-5",
-      "name": "Claude Sonnet 5.5",
-      "direct_tasks": [],
-      "independent_tasks": [],
-      "covered_tasks": [
-        "software.frontend"
-      ],
-      "missing_tasks": [],
-      "evidence": [
-        {
-          "id": "sonnet-doc",
-          "model_id": "claude-sonnet-5-5",
-          "source_id": "sonnet-launch",
-          "kind": "official_capability",
-          "claim": "Anthropic describes stronger document work and clearer writing.",
-          "direct_tasks": [],
-          "proxy_tasks": [
-            "writing.professional",
-            "writing.edit",
-            "writing.creative",
-            "data.spreadsheet",
-            "software.frontend"
-          ],
-          "measurement": null,
-          "setting": "Release positioning; user preference must be tested",
-          "limitations": "Writing style is subjective; no independent language-specific preference study in this seed.",
-          "reported_on": "2026-09-28",
-          "reviewed_on": "2026-09-29",
-          "comparison_group": null
-        }
-      ],
-      "price": {
-        "input": 2,
-        "output": 10,
-        "max_input_tokens": 200000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "limitations": [
-        "需另行核查账号权限、地区和工具环境。"
-      ],
-      "resources": {
-        "access": "verify_account_access",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "context_tokens": 1000000,
-        "tool_calling": true,
-        "open_weights": false,
-        "price_applies": true
-      },
-      "metadata_url": "https://platform.claude.com/docs/en/models/overview",
-      "ranking": {
-        "support": 0.0945,
-        "tasks": [
-          {
-            "task": "software.frontend",
-            "formal_support": 0.135,
-            "evidence_strength": 0.18000000000000002,
-            "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
-            "community_weight": 0.3,
-            "community_origins": 0,
-            "community_score": null,
-            "community_confidence": "insufficient",
-            "community_mapping": "none",
-            "origins": [],
-            "support": 0.0945
+            "support": 0.5331927454545454
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
@@ -2212,14 +2853,7 @@
     "action": "test_first",
     "reason": "尚无针对同一任务的实测证明切换值得，建议先试做再决定。"
   },
-  "excluded": [
-    {
-      "model_id": "gpt-6.1-sol",
-      "reasons": [
-        "no_fresh_task_evidence"
-      ]
-    }
-  ],
+  "excluded": [],
   "stale_evidence": [],
   "warnings": [],
   "validation": [
@@ -2244,6 +2878,24 @@
       "checked_on": "2026-09-30",
       "review_days": 14
     },
+    "arena-webdev-2026-10-07": {
+      "id": "arena-webdev-2026-10-07",
+      "title": "Arena WebDev Overall — October 7, 2026",
+      "url": "https://arena.ai/leaderboard/code/webdev",
+      "publisher": "Arena",
+      "published_on": "2026-10-07",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    "sonnet-launch": {
+      "id": "sonnet-launch",
+      "title": "Claude Sonnet 5.5 release evaluation",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "publisher": "Anthropic",
+      "published_on": "2026-09-28",
+      "checked_on": "2026-09-29",
+      "review_days": 14
+    },
     "community-source-048": {
       "id": "community-source-048",
       "title": "Fable 5.1 structured a draft from handwritten notes",
@@ -2259,6 +2911,15 @@
       "url": "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026",
       "publisher": "BitsMinds hands-on reviewers",
       "published_on": "2026-09-21",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-043": {
+      "id": "community-source-043",
+      "title": "6.1 Sol medium: safari game complaint",
+      "url": "https://www.reddit.com/r/OpenaiCodex/comments/1wtrad9/gpt_61_sol_has_been_pretty_disappointing_that_i/",
+      "publisher": "Upper-Animator-5067",
+      "published_on": null,
       "checked_on": "2026-09-30",
       "review_days": 14
     },
@@ -2289,11 +2950,20 @@
       "checked_on": "2026-09-29",
       "review_days": 14
     },
-    "community-source-056": {
-      "id": "community-source-056",
-      "title": "DeepSeek 4.1 Flash surprised me — 6 minutes, one attempt, $0.07",
-      "url": "https://www.reddit.com/r/DeepSeek/comments/1wcj9ux/deepseek_41_flash_surprised_me_6_minutes_one/",
-      "publisher": "nehuenpereyra",
+    "community-source-036": {
+      "id": "community-source-036",
+      "title": "MiMo-V2.6-Flash-RL official model card",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "publisher": "Xiaomi",
+      "published_on": "2026-09-22",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-068": {
+      "id": "community-source-068",
+      "title": "For me, DS v4.1 is way better than mimo v2.6",
+      "url": "https://www.reddit.com/r/CommandCode/comments/1wmvmut/for_me_ds_v41_is_way_better_than_mimo_v26/",
+      "publisher": "choiyoh",
       "published_on": null,
       "checked_on": "2026-09-30",
       "review_days": 14
@@ -2316,40 +2986,13 @@
       "checked_on": "2026-09-30",
       "review_days": 14
     },
-    "community-source-051": {
-      "id": "community-source-051",
-      "title": "Plotline screenshot-to-data app worked from one prompt",
-      "url": "https://promptslove.com/blog/gemini-3-8-flash-review/",
-      "publisher": "Ramanpal Singh",
-      "published_on": "2026-09-03",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    "community-source-052": {
-      "id": "community-source-052",
-      "title": "Gemini 3.8 Flash game prototypes: simpler worlds versus broken 3D action",
-      "url": "https://rutinelabo.com/gemini-38-flash-review/",
-      "publisher": "せなお / Routine Labo",
-      "published_on": "2026-09-08",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    "community-source-036": {
-      "id": "community-source-036",
-      "title": "MiMo-V2.6-Flash-RL official model card",
-      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
-      "publisher": "Xiaomi",
-      "published_on": "2026-09-22",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    "community-source-068": {
-      "id": "community-source-068",
-      "title": "For me, DS v4.1 is way better than mimo v2.6",
-      "url": "https://www.reddit.com/r/CommandCode/comments/1wmvmut/for_me_ds_v41_is_way_better_than_mimo_v26/",
-      "publisher": "choiyoh",
+    "glm-community-daily-driver": {
+      "id": "glm-community-daily-driver",
+      "title": "GLM-5.3 daily use: coding, debugging and frontend",
+      "url": "https://www.reddit.com/r/ZaiGLM/comments/1vs3bba/glm_53_is_my_daily_driver_and_has_a_little/",
+      "publisher": "Sensitive_Song4219",
       "published_on": null,
-      "checked_on": "2026-09-30",
+      "checked_on": "2026-10-08",
       "review_days": 14
     },
     "community-source-035": {
@@ -2370,13 +3013,49 @@
       "checked_on": "2026-09-30",
       "review_days": 14
     },
-    "sonnet-launch": {
-      "id": "sonnet-launch",
-      "title": "Claude Sonnet 5.5 release evaluation",
-      "url": "https://www.anthropic.com/claude-sonnet-5-5",
-      "publisher": "Anthropic",
-      "published_on": "2026-09-28",
-      "checked_on": "2026-09-29",
+    "community-source-056": {
+      "id": "community-source-056",
+      "title": "DeepSeek 4.1 Flash surprised me — 6 minutes, one attempt, $0.07",
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1wcj9ux/deepseek_41_flash_surprised_me_6_minutes_one/",
+      "publisher": "nehuenpereyra",
+      "published_on": null,
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "glm-5.3-flash-docs": {
+      "id": "glm-5.3-flash-docs",
+      "title": "GLM-5.3-Flash model documentation",
+      "url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+      "publisher": "Z.ai",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    "glm-community-frontend": {
+      "id": "glm-community-frontend",
+      "title": "GLM-5.3-Flash frontend renders: strong simple pages, weak dense-dashboard accessibility",
+      "url": "https://samihedhli.com/articles/glm-5-3-flash-frontend-benchmark/",
+      "publisher": "Sami Hedhli",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    "community-source-051": {
+      "id": "community-source-051",
+      "title": "Plotline screenshot-to-data app worked from one prompt",
+      "url": "https://promptslove.com/blog/gemini-3-8-flash-review/",
+      "publisher": "Ramanpal Singh",
+      "published_on": "2026-09-03",
+      "checked_on": "2026-09-30",
+      "review_days": 14
+    },
+    "community-source-052": {
+      "id": "community-source-052",
+      "title": "Gemini 3.8 Flash game prototypes: simpler worlds versus broken 3D action",
+      "url": "https://rutinelabo.com/gemini-38-flash-review/",
+      "publisher": "せなお / Routine Labo",
+      "published_on": "2026-09-08",
+      "checked_on": "2026-09-30",
       "review_days": 14
     },
     "mimo-v2.6-pro-ultraspeed-official": {

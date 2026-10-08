@@ -1,0 +1,8 @@
+{
+  "tasks": ["software.repo"],
+  "classification_method": "host_semantic",
+  "prompt": "为已有图书管理仓库实现评分 API，遵循现有接口，运行相关测试，并报告失败原因。",
+  "language": "zh-CN",
+  "available_models": ["glm-5.3", "glm-5.3-flash", "gpt-6.1-sol"],
+  "tools_required": true
+}

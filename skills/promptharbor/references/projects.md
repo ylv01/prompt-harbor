@@ -22,7 +22,7 @@ Create `project.json` next to the contract files:
   "schema_version": 1,
   "language": "en",
   "goal": "A small library system with book reviews",
-  "constraints": {"current_model": "gpt-6-sol"},
+  "constraints": {"current_model": "gpt-6.1-sol"},
   "contracts": [{"id": "api", "version": "1.0.0", "path": "contracts/api.yaml"}],
   "tasks": [{
     "id": "frontend", "title": "Frontend",
@@ -60,6 +60,10 @@ model can be a baseline; clearly label that as no demonstrated comparative edge.
 Each part has up to three evidence-backed choices and a planning default. The
 manifest marks selection as `user_choice`. Changing among candidates preserves
 the same interfaces and acceptance tests; a receipt records the actual model.
+The default is a replaceable suggestion, not a required subscription. The example's
+`current_model` is supplied by that example; it is not a global default. Record the
+user's exact current model only when known, and use `available_models` to restrict
+choices to their resources. Omit `current_model` when it is unknown.
 When evidence is absent, keep the feasible current baseline and explain why
 there are fewer than three suggestions. Do not force three different providers.
 

@@ -3,9 +3,9 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.3.1"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.3.2"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
-  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-09-30"></a>
+  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-10-08"></a>
 </p>
 <p align="center"><b>Give it a question. Choose from its Top 3 models.<br>Give it a project. Get coordinated model handoffs.</b></p>
 <p align="center">English · <a href="README.zh-CN.md">简体中文</a></p>
@@ -23,11 +23,11 @@ produce inspectable choices and validate handoffs without API keys.
 
 ## See the difference
 
-> “Design an interactive landing page. I have GPT-6 Sol, Kimi K3 and DeepSeek V4.1 Flash.”
+> “Design an interactive landing page. I have GPT-6.1 Sol, Kimi K3 and DeepSeek V4.1 Flash.”
 
 | Top 3 | Task-fit reason | Resource consideration |
 |---|---|---|
-| GPT-6 Sol | Stronger same-cohort WebDev support in this snapshot | Account tools and quota |
+| GPT-6.1 Sol | Stronger same-cohort WebDev support in this snapshot | Account tools and quota |
 | Kimi K3 | WebDev evidence plus artifact-backed visual-web reports | Style fit, quota and conflicting feedback |
 | DeepSeek V4.1 Flash | Another available candidate with task evaluation evidence | Deployment, cost and interaction checks |
 
@@ -51,13 +51,17 @@ does not prove trading profitability.
 | Part | How choices work | Handoff boundary |
 |---|---|---|
 | Frontend | Top 3 from task evaluations and community reports | UI states, typed API client, exact routes |
-| Database | Keep declared current GPT-6 Sol as a baseline | Schema, constraints, seed and SQL checks |
+| Database | Keep declared current GPT-6.1 Sol as a baseline | Schema, constraints, seed and SQL checks |
 | Backend | Top 3; user selects one for the shared contract | API contract, transactions, error responses |
-| Tests | Keep current model unless evidence supports moving | End-to-end scenarios and observed results |
+| Tests | Select an eligible suggestion; keep a supported current baseline when appropriate | End-to-end scenarios and observed results |
 | Integration | Original conversation | Review, assemble, fix mismatches, run checks |
 
 Each part uses the same interfaces whichever candidate you choose. See the [source-backed example](examples/library-system/project.json) and
 [complete generated prompts](examples/library-system/handoffs/PLAN.md).
+
+A **planning default** is a replaceable suggestion. It does not require an account
+for that model. Supply `available_models` to use your own resources; the example's
+declared `current_model` is not a global default.
 
 ```mermaid
 flowchart LR
@@ -151,6 +155,7 @@ python skills/promptharbor/scripts/harbor.py validate
 python skills/promptharbor/scripts/harbor.py community
 python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "Summarize this video"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
@@ -164,12 +169,12 @@ See [job format](skills/promptharbor/references/job-format.md) and
 [project format](skills/promptharbor/references/projects.md).
 
 For reproducible historical examples, use the date recorded with the example
-(`--as-of 2026-09-30` for the current snapshot); omit it for
+(`--as-of 2026-10-08` for the current snapshot); omit it for
 current advice. Expired records are excluded and may yield no recommendation.
 
 ## Evidence and community feedback
 
-The **2026-09-30 snapshot includes 15 models and 49 task leaves**. Community
+The **2026-10-08 snapshot includes 16 models and 49 task leaves**. Community
 research has been performed for every catalog model. [Coverage and gaps](docs/COVERAGE.md)
 list the current evidence/source counts; [community assessments](docs/COMMUNITY.md)
 show model-by-task scores, origins and sources. Tasks without suitable reports
@@ -177,7 +182,7 @@ remain unrated.
 
 | Provider | Catalog models |
 |---|---|
-| OpenAI | GPT-6.1 Sol, GPT-6 Astra, GPT-6 Sol, GPT-6 Luna |
+| OpenAI | GPT-6.1 Sol, GPT-6 Astra, GPT-6 Luna |
 | Anthropic | Claude Opus 5.5, Sonnet 5.5, Fable 5.1 |
 | Google | Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
@@ -185,6 +190,7 @@ remain unrated.
 | Moonshot AI | Kimi K3 |
 | xAI | Grok 4.7 |
 | Xiaomi | MiMo-V2.6-Pro, MiMo-V2.6-Flash, MiMo-V2.6-Pro-UltraSpeed |
+| Z.ai | GLM-5.3, GLM-5.3-Flash |
 
 Sources include official documentation, model cards, independent evaluations
 and attributed firsthand community reports. [Research notes](docs/RESEARCH.md) explain

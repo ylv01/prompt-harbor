@@ -56,7 +56,7 @@
     },
     {
       "id": "video-constraint",
-      "context": "Current model is explicitly gpt-6-sol.",
+      "context": "Current model is explicitly gpt-6.1-sol.",
       "prompt": "看完这段 30 分钟视频，指出三次操作顺序出错的时间。",
       "must": [
         "Identify temporal video understanding",
@@ -127,7 +127,7 @@
     },
     {
       "id": "top-three-resources",
-      "context": "Routing active. User has Kimi K3, GPT-6 Sol and DeepSeek V4.1 Flash.",
+      "context": "Routing active. User has Kimi K3, GPT-6.1 Sol and DeepSeek V4.1 Flash.",
       "prompt": "给我做落地页最适合的三个模型，优先用我已有的资源。",
       "must": [
         "Return three ranked resource-eligible choices with individual reasons and sources",

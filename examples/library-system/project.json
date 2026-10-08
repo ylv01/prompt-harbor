@@ -2,7 +2,7 @@
   "schema_version": 1,
   "goal": "制作一个本地图书管理系统：浏览和新增图书、查看详情、提交评分与书评。此示例不包含账号、借阅或公开部署。",
   "constraints": {
-    "current_model": "gpt-6-sol",
+    "current_model": "gpt-6.1-sol",
     "priority": "quality"
   },
   "contracts": [

@@ -6,20 +6,20 @@
 
 | 项目部分 | Top 3 候选模型 | 计划默认模型 | 依赖 | 提示词 |
 |---|---|---|---|---|
-| 前端：图书列表、详情与书评 (`frontend`) | 1. GPT-6 Astra, 2. Claude Opus 5.5, 3. Claude Fable 5.1 | gpt-6-sol | 无 | [复制提示词](prompts/frontend.md) |
-| 数据库：结构、约束与样例数据 (`database`) | 证据不足，先保留当前模型 | gpt-6-sol | 无 | [复制提示词](prompts/database.md) |
-| 后端：API 与事务 (`backend`) | 1. Claude Opus 5.5, 2. DeepSeek-V4.1-Flash, 3. Qwen3.8-27B | claude-opus-5-5 | database | [复制提示词](prompts/backend.md) |
-| 集成测试：真实端到端流程 (`qa`) | 1. Claude Opus 5.5, 2. GPT-6 Sol, 3. Kimi K3 | gpt-6-sol | frontend, database, backend | [复制提示词](prompts/qa.md) |
+| 前端：图书列表、详情与书评 (`frontend`) | 1. GPT-6 Astra, 2. Claude Opus 5.5, 3. Claude Sonnet 5.5 | gpt-6.1-sol | 无 | [复制提示词](prompts/frontend.md) |
+| 数据库：结构、约束与样例数据 (`database`) | 证据不足，先保留当前模型 | gpt-6.1-sol | 无 | [复制提示词](prompts/database.md) |
+| 后端：API 与事务 (`backend`) | 1. Claude Opus 5.5, 2. GLM-5.3-Flash, 3. GLM-5.3 | claude-opus-5-5 | database | [复制提示词](prompts/backend.md) |
+| 集成测试：真实端到端流程 (`qa`) | 1. GLM-5.3, 2. GLM-5.3-Flash, 3. Claude Opus 5.5 | glm-5.3 | frontend, database, backend | [复制提示词](prompts/qa.md) |
 
 ## 分工依据
 
 - **前端：图书列表、详情与书评:** 继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。 [证据与缺口](prompts/frontend.evidence.json)
-  来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code)
+  来源: [6.1 Sol medium: safari game complaint](https://www.reddit.com/r/OpenaiCodex/comments/1wtrad9/gpt_61_sol_has_been_pretty_disappointing_that_i/), [Arena WebDev Overall — October 7, 2026](https://arena.ai/leaderboard/code/webdev)
 - **数据库：结构、约束与样例数据:** 继续以当前可用模型作为默认，尚无证据证明其他模型在该任务上更合适。 [证据与缺口](prompts/database.evidence.json)
 - **后端：API 与事务:** 仓库实现有供应商测评可参考；数据库与本项目业务规则仍需独立验收，不声称它是数据库领域冠军。 [证据与缺口](prompts/backend.evidence.json)
   来源: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 found two defects in the author's Stackchan/Home Assistant code](https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/)
-- **集成测试：真实端到端流程:** 继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。 [证据与缺口](prompts/qa.evidence.json)
-  来源: [GPT-6 Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
+- **集成测试：真实端到端流程:** 有官方能力说明或相邻任务证据，对应任务：测试设计 [证据与缺口](prompts/qa.evidence.json)
+  来源: [GLM-5.3 official weights and evaluation card](https://huggingface.co/zai-org/GLM-5.3), [GLM-5.3 model documentation](https://docs.z.ai/guides/llm/glm-5.3)
 
 ## 执行顺序
 

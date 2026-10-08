@@ -7,17 +7,20 @@ Generative visual web design
 
 **Switch:** unknown — Current model was not provided; do not infer it from the assistant's identity.
 
-## 1. GPT-6 Sol
+## 1. GPT-6.1 Sol
 
-Capability or adjacent-task support for Generative visual web design
+Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources)
 
 Access: user_listed; open weights: no; context: 1050000 tokens.
 Recorded API input/output: $2/$10 per million tokens; subscription entitlement is separate.
-Community: software.frontend.design, not rated (insufficient confidence; none mapping), weight 30%, origins 0.
-- gpt-6-sol-max: observed WebDev preference rating 1681. (independent_eval; gpt-6-sol-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)
-  Limit: Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity. Report date: 2026-09-25; reviewed 2026-09-29.
+Community: software.frontend.design, 3.0/10 (low confidence; proxy mapping), weight 30%, origins 1.
+- gpt-6.1-sol-max: WebDev preference rating 1757 (displayed interval ±15). (independent_eval; gpt-6.1-sol-max; Arena deployment with the displayed effort setting.). [Source](https://arena.ai/leaderboard/code/webdev)
+  Limit: Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints. Report date: 2026-10-07; reviewed 2026-10-08.
+- The author reports a medium-effort safari game iteration missed music and delivered poorly working gameplay, with another follow-up not fixing it. (community_test; Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.). [Source](https://www.reddit.com/r/OpenaiCodex/comments/1wtrad9/gpt_61_sol_has_been_pretty_disappointing_that_i/)
+  Limit: No returned code or acceptance log inspected; inspiration link is input, not proof of generated output. Medium effort and one early task only. Report date: not reported; reviewed 2026-09-30.
+  Editorial assessment: 3/10 — Specific missing requirements and unusable reported interaction warrant a negative frontend signal; a single early medium-effort run is not a general verdict.
 
-Limits: Account access, region and tool environment must be checked separately.
+Limits: Tool calling is supported through Responses API; Chat Completions does not support tools for this model. 128000 maximum output tokens. Reasoning efforts: low, medium, high, xhigh, max. Exact-version evaluations are maintained separately from predecessor results. Account access and tool environment require checking. Standard input/output rates remain $2/$10 per million tokens up to 272000 input tokens; cached input is $0.10. Longer requests, effort and service tier affect total cost.
 
 ## 2. Kimi K3
 
@@ -28,6 +31,8 @@ Applicable API price: unknown; check provider and account.
 Community: software.frontend.design, 7.0/10 (low confidence; direct_and_proxy mapping), weight 30%, origins 3.
 - kimi-k3-max: observed WebDev preference rating 1660. (independent_eval; kimi-k3-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)
   Limit: Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity. Report date: 2026-09-25; reviewed 2026-09-29.
+- kimi-k3-max: WebDev preference rating 1655 (displayed interval ±6). (independent_eval; kimi-k3-max; Arena deployment with the displayed effort setting.). [Source](https://arena.ai/leaderboard/code/webdev)
+  Limit: Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints. Report date: 2026-10-07; reviewed 2026-10-08.
 - The author lists two Kimi3 React/Vite web outputs as successful and links the generated sites. (community_test; Author identifies Kimi K3; exact deployment and effort unverified). [Source](https://neuralhub.dev/ai-test-results)
   Limit: Self-reported artifacts, not rerun by PromptHarbor. Small creative-web sample; model settings and exact run date unknown. Older comparison models do not establish superiority over current versions. Mirrors by the same author count as one origin. Report date: not reported; reviewed 2026-09-29.
   Editorial assessment: 7.5/10 — Linked creative-web outputs support a positive bounded design result; outputs were not independently rerun.
@@ -49,6 +54,8 @@ Applicable API price: unknown; check provider and account.
 Community: software.frontend.design, 8.0/10 (low confidence; direct mapping), weight 30%, origins 1.
 - deepseek-v4.1-flash-max: observed WebDev preference rating 1621. (independent_eval; deepseek-v4.1-flash-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)
   Limit: Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity. Report date: 2026-09-25; reviewed 2026-09-29.
+- deepseek-v4.1-flash-max: WebDev preference rating 1619 (displayed interval ±11). (independent_eval; deepseek-v4.1-flash-max; Arena deployment with the displayed effort setting.). [Source](https://arena.ai/leaderboard/code/webdev)
+  Limit: Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints. Report date: 2026-10-07; reviewed 2026-10-08.
 - The author reports a successful first-pass responsive website using DeepSeek Harness at maximum reasoning, with HTML, vanilla JavaScript, Tailwind, GSAP and Lucide. Mobile adaptation and visual feedback were satisfactory, while token consumption was high. (community_test; Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.). [Source](https://www.reddit.com/r/DeepSeek/comments/1wcj9ux/deepseek_41_flash_surprised_me_6_minutes_one/)
   Limit: Single author and website; original prompt and source project are not linked. A media poster is present but the video was not replayed or validated. Reported time, spend and token totals are self-reports. Page exposes only a relative timestamp, so no exact publication date is inferred. Does not establish reference fidelity or production correctness. Report date: not reported; reviewed 2026-09-30.
   Editorial assessment: 8.0/10 — A concrete frontend stack, first-pass result and mobile outcome support a strong reported result; missing prompt, source and independent execution keep confidence limited.
@@ -59,4 +66,4 @@ Limits: Open weights do not imply laptop suitability. Verify serving precision, 
 
 - Render the same brief at mobile and desktop sizes; inspect visual coherence, accessibility and working interactions.
 
-As of 2026-09-30; bundled snapshot 2026-09-30.
+As of 2026-10-08; bundled snapshot 2026-10-08.

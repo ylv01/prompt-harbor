@@ -12,6 +12,7 @@ import harbor
 import project
 
 NOW = date(2026, 9, 30)
+UPDATED = date(2026, 10, 8)
 
 
 class RecommendationTests(unittest.TestCase):
@@ -24,9 +25,20 @@ class RecommendationTests(unittest.TestCase):
     def test_catalog_links_are_valid(self):
         self.assertTrue(harbor.validate(self.data))
 
+    def test_retired_sol_is_removed_without_relabeling_its_evidence(self):
+        models = {m['id'] for m in self.data['models']['models']}
+        self.assertNotIn('gpt-6-sol', models)
+        self.assertIn('gpt-6.1-sol', models)
+        self.assertNotIn('gpt-6-sol', self.data['locale_zh']['models'])
+        self.assertFalse(any(e['model_id'] == 'gpt-6-sol'
+                             for e in self.data['evidence']['evidence']))
+        self.assertFalse(any(e['id'].startswith('gpt-6-sol-')
+                             for e in self.data['evidence']['evidence']))
+
     def test_native_video_excludes_text_image_only_models(self):
-        r = self.run_job(tasks=['vision.video'], current_model='gpt-6-sol')
-        self.assertNotIn('gpt-6-sol', [m['model_id'] for m in r['candidates']])
+        r = harbor.route({'tasks': ['vision.video'], 'current_model': 'gpt-6.1-sol'},
+                         self.data, UPDATED)
+        self.assertNotIn('gpt-6.1-sol', [m['model_id'] for m in r['candidates']])
         self.assertEqual(r['switch']['action'], 'consider_switch')
         self.assertIn('gemini-3.8-flash', [m['model_id'] for m in r['candidates']])
 
@@ -76,6 +88,25 @@ class RecommendationTests(unittest.TestCase):
                          {'mimo-v2.6-pro', 'mimo-v2.6-flash'})
         acceleration = next(m for m in r['excluded'] if m['model_id'] == 'mimo-v2.6-pro-ultraspeed')
         self.assertIn('closed_weights', acceleration['reasons'])
+
+    def test_glm_video_routing_respects_the_specific_variant(self):
+        result = harbor.route({'tasks': ['vision.video'],
+                               'current_model': 'glm-5.3',
+                               'available_models': ['glm-5.3', 'glm-5.3-flash']},
+                              self.data, UPDATED)
+        self.assertEqual([r['model_id'] for r in result['recommendations']], ['glm-5.3-flash'])
+        self.assertNotIn('glm-5.3', [c['model_id'] for c in result['candidates']])
+        self.assertEqual(result['switch']['action'], 'consider_switch')
+
+    def test_glm_context_and_budget_constraints_apply_to_recommendations(self):
+        available = ['glm-5.3', 'glm-5.3-flash']
+        too_long = harbor.route({'tasks': ['software.repo'], 'available_models': available,
+                                 'context_tokens': 1_000_001}, self.data, UPDATED)
+        self.assertFalse(too_long['recommendations'])
+        affordable = harbor.route({'tasks': ['software.repo'], 'available_models': available,
+                                    'open_weights_only': True, 'tools_required': True,
+                                    'max_input_price': 0.2}, self.data, UPDATED)
+        self.assertEqual([r['model_id'] for r in affordable['recommendations']], ['glm-5.3-flash'])
 
     def test_old_snapshot_cannot_claim_current_winner(self):
         r = harbor.route({'tasks':['software.repo']}, self.data, date(2027,1,1))
@@ -186,10 +217,10 @@ class ProjectTests(unittest.TestCase):
     def test_compilation_produces_complete_prompts(self):
         with tempfile.TemporaryDirectory() as d:
             out=Path(d)/'handoffs'
-            m=project.compile_project(self.sample,out,NOW,language='en')
+            m=project.compile_project(self.sample,out,UPDATED,language='en')
             self.assertEqual(len(m['assignments']),4)
             db=next(a for a in m['assignments'] if a['task_id']=='database')
-            self.assertEqual(db['model'],'gpt-6-sol')
+            self.assertEqual(db['model'],'gpt-6.1-sol')
             self.assertIn('baseline',db['reason'])
             backend=(out/'prompts/backend.md').read_text(encoding='utf-8')
             self.assertIn('database/001_schema.sql',backend)
@@ -198,6 +229,38 @@ class ProjectTests(unittest.TestCase):
             self.assertTrue((out/'prompts/frontend.evidence.json').exists())
             with self.assertRaisesRegex(ValueError,'already exists'):
                 project.compile_project(self.sample,out,NOW)
+
+    def test_planning_default_respects_only_non_openai_resources(self):
+        # The sample declares a current model. A user with another provider's
+        # model gets the same planning behavior without an OpenAI dependency.
+        allowed = {'kimi-k3'}
+        for declared_current in ['kimi-k3', None]:
+            with self.subTest(current_model=declared_current), tempfile.TemporaryDirectory() as d:
+                value = copy.deepcopy(self.p)
+                value['constraints']['available_models'] = sorted(allowed)
+                if declared_current:
+                    value['constraints']['current_model'] = declared_current
+                else:
+                    value['constraints'].pop('current_model', None)
+                for task in value['tasks']:
+                    task.pop('recommended_model', None)
+                    task.pop('assignment_reason', None)
+                root = Path(d)
+                for contract in value['contracts']:
+                    target = root / contract['path']
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes((self.sample.parent / contract['path']).read_bytes())
+                path = root / 'project.json'
+                path.write_text(json.dumps(value, ensure_ascii=False), encoding='utf-8')
+                manifest = project.compile_project(path, root / 'handoffs', UPDATED, language='en')
+                for assignment in manifest['assignments']:
+                    self.assertIn(assignment['model'], allowed | {None})
+                    self.assertEqual(assignment['selection'], 'user_choice')
+                    self.assertTrue({r['model_id'] for r in assignment['recommendations']} <= allowed)
+                if declared_current:
+                    database = next(a for a in manifest['assignments'] if a['task_id'] == 'database')
+                    self.assertEqual(database['model'], declared_current)
+                    self.assertIn('baseline', database['reason'])
 
     def test_stale_assignment_fails_before_output_creation(self):
         with tempfile.TemporaryDirectory() as d:
@@ -209,7 +272,7 @@ class ProjectTests(unittest.TestCase):
     def test_missing_receipts_cannot_pass(self):
         with tempfile.TemporaryDirectory() as d:
             out=Path(d)/'handoffs'
-            project.compile_project(self.sample,out,NOW)
+            project.compile_project(self.sample,out,UPDATED)
             report=project.verify_deliveries(out/'manifest.json',Path(d)/'receipts',Path(d)/'artifacts')
             self.assertFalse(report['ready_for_integration_review'])
 
@@ -217,7 +280,7 @@ class ProjectTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); out=root/'handoffs'; receipts=root/'receipts'; artifacts=root/'artifacts'
             receipts.mkdir(); artifacts.mkdir()
-            m=project.compile_project(self.sample,out,NOW,language='en')
+            m=project.compile_project(self.sample,out,UPDATED,language='en')
             for a in m['assignments']:
                 for path in a['deliverables']:
                     target=artifacts/path; target.parent.mkdir(parents=True,exist_ok=True); target.write_text('test fixture',encoding='utf-8')

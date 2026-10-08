@@ -1,8 +1,8 @@
-# Validation record · 2026-09-30
+# Validation record · 2026-10-08
 
 Observed locally on Windows with Python 3.13.9:
 
-- **70 unittest cases passed**, covering catalog links, task filters, incompatible
+- **76 unittest cases passed**, covering catalog links, task filters, incompatible
   metrics, missing and stale data, unknown current models, proxy consistency,
   dependency cycles, artifact ownership, interface versions and missing deliveries.
 - Skill Creator's `quick_validate.py` accepted the portable skill. Windows
@@ -26,6 +26,13 @@ Observed locally on Windows with Python 3.13.9:
   while its influence on the current revision is reduced by the documented 0.25 factor.
 - Local open-weight filtering includes MiMo Pro/Flash and excludes the exact
   hosted UltraSpeed tier, whose acceleration is not a downloadable checkpoint.
+- GPT-6 Sol is absent from active model/evidence records. GPT-6.1 Sol uses its
+  independently dated October WebDev record, without inheriting old Sol scores.
+- GLM-5.3 and GLM-5.3-Flash pass exact-version resource, context, price and open-weight
+  filtering. Native video excludes the text-only flagship and admits Flash; both
+  have separate source-linked community records and complete Chinese explanations.
+- Planning defaults remain replaceable. A project restricted to Kimi has no
+  OpenAI default, both with and without a declared current model.
 - The library-system fixture compiled into four complete prompts with three
   execution batches, a frozen interface and evidence sidecars. Receipt checks
   rejected missing work and mismatched interface versions. No library implementation was

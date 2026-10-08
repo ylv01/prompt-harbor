@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "goal": "制作一个本地图书管理系统：浏览和新增图书、查看详情、提交评分与书评。此示例不包含账号、借阅或公开部署。",
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-08",
   "language": "zh-CN",
   "integration_owner": "current_window",
   "batches": [
@@ -26,7 +26,7 @@
   "assignments": [
     {
       "task_id": "frontend",
-      "model": "gpt-6-sol",
+      "model": "gpt-6.1-sol",
       "reason": "继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。",
       "selection": "user_choice",
       "recommendations": [
@@ -78,9 +78,9 @@
         },
         {
           "rank": 3,
-          "model_id": "claude-fable-5-1",
-          "name": "Claude Fable 5.1",
-          "reason": "有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源",
+          "model_id": "claude-sonnet-5-5",
+          "name": "Claude Sonnet 5.5",
+          "reason": "有匹配该任务的独立评测，对应任务：前端实现",
           "resources": {
             "access": "verify_account_access",
             "input_modalities": [
@@ -93,8 +93,8 @@
             "price_applies": true
           },
           "price": {
-            "input": 10,
-            "output": 50,
+            "input": 2,
+            "output": 10,
             "max_input_tokens": 200000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
           }
@@ -115,7 +115,7 @@
     },
     {
       "task_id": "database",
-      "model": "gpt-6-sol",
+      "model": "gpt-6.1-sol",
       "reason": "继续以当前可用模型作为默认，尚无证据证明其他模型在该任务上更合适。",
       "selection": "user_choice",
       "recommendations": [],
@@ -158,39 +158,49 @@
         },
         {
           "rank": 2,
-          "model_id": "deepseek-v4.1-flash",
-          "name": "DeepSeek-V4.1-Flash",
+          "model_id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
           "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务",
           "resources": {
             "access": "verify_account_access",
             "input_modalities": [
               "text",
-              "image"
+              "image",
+              "video"
             ],
             "context_tokens": 1000000,
             "tool_calling": true,
             "open_weights": true,
-            "price_applies": false
+            "price_applies": true
           },
-          "price": null
+          "price": {
+            "input": 0.15,
+            "output": 0.5,
+            "max_input_tokens": 1000000,
+            "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+          }
         },
         {
           "rank": 3,
-          "model_id": "qwen3.8-27b",
-          "name": "Qwen3.8-27B",
-          "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；仅覆盖部分任务",
+          "model_id": "glm-5.3",
+          "name": "GLM-5.3",
+          "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务",
           "resources": {
             "access": "verify_account_access",
             "input_modalities": [
-              "text",
-              "image"
+              "text"
             ],
-            "context_tokens": 262144,
+            "context_tokens": 1000000,
             "tool_calling": true,
             "open_weights": true,
-            "price_applies": false
+            "price_applies": true
           },
-          "price": null
+          "price": {
+            "input": 1.4,
+            "output": 4.4,
+            "max_input_tokens": 1000000,
+            "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+          }
         }
       ],
       "depends_on": [
@@ -208,12 +218,58 @@
     },
     {
       "task_id": "qa",
-      "model": "gpt-6-sol",
-      "reason": "继续以当前可用模型作为计划默认，Top 3 仍可自由选择。尚无针对同一任务的实测证明切换值得，建议先试做再决定。",
+      "model": "glm-5.3",
+      "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计",
       "selection": "user_choice",
       "recommendations": [
         {
           "rank": 1,
+          "model_id": "glm-5.3",
+          "name": "GLM-5.3",
+          "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": true,
+            "price_applies": true
+          },
+          "price": {
+            "input": 1.4,
+            "output": 4.4,
+            "max_input_tokens": 1000000,
+            "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+          }
+        },
+        {
+          "rank": 2,
+          "model_id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image",
+              "video"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": true,
+            "price_applies": true
+          },
+          "price": {
+            "input": 0.15,
+            "output": 0.5,
+            "max_input_tokens": 1000000,
+            "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+          }
+        },
+        {
+          "rank": 3,
           "model_id": "claude-opus-5-5",
           "name": "Claude Opus 5.5",
           "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源",
@@ -234,48 +290,6 @@
             "max_input_tokens": 200000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
           }
-        },
-        {
-          "rank": 2,
-          "model_id": "gpt-6-sol",
-          "name": "GPT-6 Sol",
-          "reason": "有官方能力说明或相邻任务证据，对应任务：测试设计",
-          "resources": {
-            "access": "verify_account_access",
-            "input_modalities": [
-              "text",
-              "image"
-            ],
-            "context_tokens": 1050000,
-            "tool_calling": true,
-            "open_weights": false,
-            "price_applies": true
-          },
-          "price": {
-            "input": 2,
-            "output": 10,
-            "max_input_tokens": 272000,
-            "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-          }
-        },
-        {
-          "rank": 3,
-          "model_id": "kimi-k3",
-          "name": "Kimi K3",
-          "reason": "目前依据为社区任务报告，需要实际试做，对应任务：测试设计；已计入社区评价，可查看评分及来源",
-          "resources": {
-            "access": "verify_account_access",
-            "input_modalities": [
-              "text",
-              "image",
-              "video"
-            ],
-            "context_tokens": 1048576,
-            "tool_calling": true,
-            "open_weights": true,
-            "price_applies": false
-          },
-          "price": null
         }
       ],
       "depends_on": [

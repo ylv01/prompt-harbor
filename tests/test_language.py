@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT / 'skills/promptharbor/scripts'))
 import harbor
 import project
 
-NOW = date(2026, 9, 30)
+NOW = date(2026, 10, 8)
 HAS_CHINESE = re.compile(r'[\u3400-\u9fff]')
 
 
@@ -141,7 +141,7 @@ class LanguageTests(unittest.TestCase):
     def test_chinese_single_question_localizes_reasons_and_validation(self):
         job = {'prompt': '帮我为现有代码仓库设计测试',
                'tasks': ['software.testing'], 'classification_method': 'host_semantic',
-               'available_models': ['gpt-6-sol']}
+               'available_models': ['claude-opus-5-5']}
         result = harbor.route(job, self.data, NOW)
         self.assertEqual(result['language'], 'zh-CN')
         self.assertTrue(result['recommendations'])
@@ -159,7 +159,7 @@ class LanguageTests(unittest.TestCase):
 
     def test_language_only_changes_presentation_not_ranking(self):
         job = {'tasks': ['software.frontend'], 'prompt': '制作一个图书列表网页',
-               'available_models': ['gpt-6-sol', 'kimi-k3', 'deepseek-v4.1-flash']}
+               'available_models': ['gpt-6.1-sol', 'kimi-k3', 'deepseek-v4.1-flash']}
         chinese = harbor.route({**job, 'language': 'zh-CN'}, self.data, NOW)
         english = harbor.route({**job, 'language': 'en'}, self.data, NOW)
         self.assertEqual(chinese['language'], 'zh-CN')
@@ -191,6 +191,36 @@ class LanguageTests(unittest.TestCase):
                 source = chinese['sources'][evidence['source_id']]
                 self.assertIn(source['url'], rendered)
         self.assertGreater(community_count, 0)
+
+    def test_chinese_glm_recommendations_localize_model_and_evidence_text(self):
+        for model in ['glm-5.3', 'glm-5.3-flash']:
+            with self.subTest(model=model):
+                supported = next(e for e in self.data['evidence']['evidence']
+                                 if e['model_id'] == model and e['kind'] != 'community_test'
+                                 and harbor.evidence_fresh(e, self.data, NOW))
+                task = (supported['direct_tasks'] + supported['proxy_tasks'])[0]
+                result = harbor.route({'prompt': '请分析这个任务，并推荐适合我的模型',
+                                       'tasks': [task], 'available_models': [model],
+                                       'classification_method': 'host_semantic'}, self.data, NOW)
+                self.assertEqual(result['language'], 'zh-CN')
+                self.assertEqual([r['model_id'] for r in result['recommendations']], [model])
+                rendered = harbor.markdown(result, self.data)
+                candidate = result['recommendations'][0]
+                self.assertRegex(candidate['reason'], HAS_CHINESE)
+                for note in candidate['limitations']:
+                    self.assertRegex(note, HAS_CHINESE)
+                    self.assertIn(note, rendered)
+                formal = [e for e in candidate['evidence'] if e['kind'] != 'community_test']
+                shown = {e['id'] for e in formal[:2]}
+                shown.update(e['id'] for e in candidate['evidence'] if e['kind'] == 'community_test')
+                for evidence in candidate['evidence']:
+                    localized = self.data['locale_zh']['evidence'][evidence['id']]
+                    for field in ['claim', 'setting', 'limitations']:
+                        self.assertRegex(localized[field], HAS_CHINESE)
+                        if evidence['id'] in shown:
+                            self.assertIn(localized[field], rendered)
+                    if evidence['id'] in shown:
+                        self.assertIn(result['sources'][evidence['source_id']]['url'], rendered)
 
     def test_route_cli_language_overrides_job(self):
         with tempfile.TemporaryDirectory() as directory:

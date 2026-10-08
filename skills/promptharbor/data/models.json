@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-09-30",
+  "snapshot_date": "2026-10-08",
   "coverage": "Task-specific curated catalog with community research for every listed model. Feature support and editorial report scores are separate from benchmark measurements.",
   "models": [
     {
@@ -28,36 +28,12 @@
       ]
     },
     {
-      "id": "gpt-6-sol",
-      "name": "GPT-6 Sol",
-      "provider": "OpenAI",
-      "source_id": "openai-sol",
-      "status": "available",
-      "verified_on": "2026-09-29",
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "context_tokens": 1050000,
-      "tool_calling": true,
-      "open_weights": false,
-      "price_usd_per_million": {
-        "input": 2,
-        "output": 10,
-        "max_input_tokens": 272000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "notes": [
-        "Account access, region and tool environment must be checked separately."
-      ]
-    },
-    {
       "id": "gpt-6.1-sol",
       "name": "GPT-6.1 Sol",
       "provider": "OpenAI",
       "source_id": "openai-sol-6-1",
       "status": "available",
-      "verified_on": "2026-09-30",
+      "verified_on": "2026-10-08",
       "input_modalities": [
         "text",
         "image"
@@ -74,7 +50,8 @@
       "notes": [
         "Tool calling is supported through Responses API; Chat Completions does not support tools for this model.",
         "128000 maximum output tokens. Reasoning efforts: low, medium, high, xhigh, max.",
-        "No copied GPT-6 Sol benchmark results: exact 6.1 task evidence is maintained separately. Account access and tool environment require checking."
+        "Exact-version evaluations are maintained separately from predecessor results. Account access and tool environment require checking.",
+        "Standard input/output rates remain $2/$10 per million tokens up to 272000 input tokens; cached input is $0.10. Longer requests, effort and service tier affect total cost."
       ]
     },
     {
@@ -364,6 +341,63 @@
         "Its advertised up-to-20x output speed is a vendor claim, not an end-to-end task latency guarantee. Do not copy Pro benchmark scores into an UltraSpeed measured-result row.",
         "Official Chinese model page lists all four inputs; English page currently shows only text despite its omni-modal capability heading. Chinese page and API capability table are used here.",
         "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+      ]
+    },
+    {
+      "id": "glm-5.3",
+      "name": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_id": "glm-5.3-docs",
+      "status": "available",
+      "verified_on": "2026-10-08",
+      "input_modalities": [
+        "text"
+      ],
+      "context_tokens": 1000000,
+      "tool_calling": true,
+      "open_weights": true,
+      "price_usd_per_million": {
+        "input": 1.4,
+        "output": 4.4,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+      },
+      "notes": [
+        "Text-only inputs; image and video tasks require another model or external preprocessing.",
+        "Reasoning cannot be disabled; low, high and max are supported, with max the default. Maximum output is 128K.",
+        "Official context is 1M; 1000000 records a conservative decimal interpretation.",
+        "Open weights use the GLM-5.3 license, not MIT: https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+        "Weights: https://huggingface.co/zai-org/GLM-5.3 ; pricing: https://docs.z.ai/guides/overview/pricing",
+        "API protocol availability depends on account history; verify the endpoint and Coding Plan access separately."
+      ]
+    },
+    {
+      "id": "glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "provider": "Z.ai",
+      "source_id": "glm-5.3-flash-docs",
+      "status": "available",
+      "verified_on": "2026-10-08",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "context_tokens": 1000000,
+      "tool_calling": true,
+      "open_weights": true,
+      "price_usd_per_million": {
+        "input": 0.15,
+        "output": 0.5,
+        "max_input_tokens": 1000000,
+        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+      },
+      "notes": [
+        "Native text, image and video inputs; file support is a service input wrapper, not a separate modality. Audio input is not admitted from video-agent examples.",
+        "Reasoning cannot be disabled; low, high and max are supported, with max the default. Maximum output is 128K.",
+        "Official context is 1M; recorded conservatively as 1000000 tokens.",
+        "MIT-licensed weights: https://huggingface.co/zai-org/GLM-5.3-Flash ; pricing: https://docs.z.ai/guides/overview/pricing",
+        "Coding Plan quotas and API token prices differ. FlashX is a separate faster hosted tier; its throughput is not a Flash task-quality score."
       ]
     }
   ]
