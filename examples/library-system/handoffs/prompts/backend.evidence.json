@@ -17,11 +17,185 @@
     }
   ],
   "classification_method": "host_semantic",
-  "decision": "shortlist",
-  "primary": null,
-  "rationale": "部分候选的测试条件无法直接比较，可用下方验收方法试做本次任务。",
+  "decision": "provisional",
+  "primary": "claude-haiku-5-5",
+  "rationale": "该模型在当前目录中的证据覆盖最完整，仍需结合具体任务验收。",
   "confidence": "limited",
   "recommendations": [
+    {
+      "model_id": "claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "direct_tasks": [
+        "data.sql"
+      ],
+      "independent_tasks": [
+        "data.sql"
+      ],
+      "covered_tasks": [
+        "data.sql",
+        "software.repo"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "haiku-5-5-summary",
+          "model_id": "claude-haiku-5-5",
+          "source_id": "haiku-5-5-launch",
+          "kind": "official_capability",
+          "claim": "Anthropic recommends short summaries, compaction and bounded coding subagents.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "context.summary",
+            "software.repo",
+            "software.debug"
+          ],
+          "measurement": null,
+          "setting": "Release positioning.",
+          "limitations": "Bounded helpers; not evidence of completing a large project independently.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        },
+        {
+          "id": "haiku-5-5-terminal",
+          "model_id": "claude-haiku-5-5",
+          "source_id": "haiku-5-5-launch",
+          "kind": "vendor_eval",
+          "claim": "Anthropic reports 39.2% on Terminal-Bench 4.0.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.repo",
+            "software.debug"
+          ],
+          "measurement": {
+            "benchmark": "Terminal-Bench",
+            "version": "4.0",
+            "metric": "accuracy",
+            "value": 39.2,
+            "unit": "percent",
+            "protocol": "Anthropic Haiku 5.5 release table"
+          },
+          "setting": "Vendor release table; effort not verified in this record.",
+          "limitations": "No independent replication; default medium effort may differ.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        },
+        {
+          "id": "haiku-5-5-plotly-analysis",
+          "model_id": "claude-haiku-5-5",
+          "source_id": "plotly-haiku-5-5-analysis",
+          "kind": "independent_eval",
+          "claim": "Plotly reports 37/43 questions passed (86%), including all 20 SQL analytics questions.",
+          "direct_tasks": [
+            "data.analysis",
+            "data.sql"
+          ],
+          "proxy_tasks": [],
+          "measurement": {
+            "benchmark": "Plotly data analytics exam",
+            "version": "Haiku 5.5 October 2026 release run",
+            "metric": "questions passed",
+            "value": 37,
+            "unit": "out of 43",
+            "protocol": "Plotly Studio Embedded; same agent/tools/prompts; synthetic wind-fleet warehouse"
+          },
+          "setting": "20M rows, 44 tables; verified answer keys; 14s median per question. Effort unspecified.",
+          "limitations": "Private exam, one harness, no independent rerun. Missed three hidden patterns and three statistics traps.",
+          "reported_on": null,
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 0.1,
+        "output": 0.5,
+        "max_input_tokens": 100000,
+        "scope": "Standard uncached Claude API USD per million text tokens; prompts up to 100k; excludes caching, tools, discounts and regional tiers."
+      },
+      "limitations": [
+        "2026 年 10 月 7 日发布，定位于范围明确的信息抽取、摘要和辅助任务；数据分析依据来自一个 Plotly 执行环境。",
+        "单次输入超过 10 万 token 时，每百万输入/输出价格为 0.50/2.50 美元。默认推理档位为 medium，较高档位评测可能不同。",
+        "SQL 数据分析成绩没有评测表结构设计、事务正确性或完整后端交付。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+      "ranking": {
+        "support": 0.4335,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.2295
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.75,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.6375
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.1 / $0.5 (输入长度 ≤100,000 tokens); $0.5 / $2.5 (输入长度 >100,000–≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 100000,
+            "input": 0.1,
+            "output": 0.5
+          },
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.5,
+            "output": 2.5
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
+      },
+      "rank": 1,
+      "reason": "有匹配该任务的独立评测，对应任务：SQL 生成；有官方能力说明或相邻任务证据，对应任务：代码库功能实现"
+    },
     {
       "model_id": "claude-opus-5-5",
       "name": "Claude Opus 5.5",
@@ -278,7 +452,29 @@
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
-      "rank": 1,
+      "price_reference": {
+        "status": "available",
+        "text": "$4 / $20 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4,
+            "output": 20
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
+      },
+      "rank": 2,
       "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务"
     },
     {
@@ -498,201 +694,27 @@
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
-      "rank": 2,
-      "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务"
-    },
-    {
-      "model_id": "glm-5.3",
-      "name": "GLM-5.3",
-      "direct_tasks": [
-        "software.repo"
-      ],
-      "independent_tasks": [],
-      "covered_tasks": [
-        "software.repo"
-      ],
-      "missing_tasks": [
-        "data.sql"
-      ],
-      "evidence": [
-        {
-          "id": "glm-5.3-deepswe",
-          "model_id": "glm-5.3",
-          "source_id": "glm-5.3-card",
-          "kind": "vendor_eval",
-          "claim": "Z.ai reports 66.9 on DeepSWE v1.1.",
-          "direct_tasks": [
-            "software.repo",
-            "software.debug"
-          ],
-          "proxy_tasks": [
-            "software.testing",
-            "software.architecture"
-          ],
-          "measurement": {
-            "benchmark": "DeepSWE",
-            "version": "1.1",
-            "metric": "reported score",
-            "value": 66.9,
-            "unit": "points",
-            "protocol": "Z.ai mini-swe-agent / 400K / six hours"
-          },
-          "setting": "mini-swe-agent; temperature 0.95, top_p 1.0; six-hour timeout; 400K context; max reasoning effort.",
-          "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
-          "reported_on": null,
-          "reviewed_on": "2026-10-08",
-          "comparison_group": null
-        },
-        {
-          "id": "glm-5.3-terminal",
-          "model_id": "glm-5.3",
-          "source_id": "glm-5.3-card",
-          "kind": "vendor_eval",
-          "claim": "Z.ai reports 28.3 on Terminal-Bench 3.0.",
-          "direct_tasks": [
-            "software.terminal"
-          ],
-          "proxy_tasks": [
-            "software.repo",
-            "software.debug"
-          ],
-          "measurement": {
-            "benchmark": "Terminal-Bench",
-            "version": "3.0",
-            "metric": "reported score",
-            "value": 28.3,
-            "unit": "points",
-            "protocol": "Z.ai Claude Code 2.1.207 / max / avg@3"
-          },
-          "setting": "Claude Code 2.1.207, max; 400K/128K context/output; avg@3; 600 turns, ten-hour timeout; isolated containers.",
-          "limitations": "Vendor-run; task and harness transfer unmeasured; evaluation date unspecified.",
-          "reported_on": null,
-          "reviewed_on": "2026-10-08",
-          "comparison_group": null
-        },
-        {
-          "id": "glm-5.3-engineering-capability",
-          "model_id": "glm-5.3",
-          "source_id": "glm-5.3-docs",
-          "kind": "official_capability",
-          "claim": "Official documentation supports tool calling and positions GLM-5.3 for complex software engineering and long-horizon agents.",
-          "direct_tasks": [],
-          "proxy_tasks": [
-            "software.repo",
-            "software.architecture",
-            "software.testing",
-            "agent.long"
-          ],
-          "measurement": null,
-          "setting": "Current API documentation; capability positioning rather than a measured task result.",
-          "limitations": "Feature and positioning evidence does not establish superiority on architecture, test design or the user project.",
-          "reported_on": null,
-          "reviewed_on": "2026-10-08",
-          "comparison_group": null
-        },
-        {
-          "id": "glm-5.3-community-02",
-          "model_id": "glm-5.3",
-          "source_id": "glm-community-daily-driver",
-          "kind": "community_test",
-          "claim": "The user describes GLM-5.3 as a daily coding, debugging and frontend model, while keeping Sol-High for review and general administration.",
-          "direct_tasks": [
-            "software.debug",
-            "software.frontend"
-          ],
-          "proxy_tasks": [
-            "software.repo"
-          ],
-          "measurement": null,
-          "setting": "Author names GLM-5.3 and Max reasoning for complex work; exact backend and prompts are unverified.",
-          "limitations": "Personal ongoing usage with no shared code or matched test suite. World knowledge is described as weaker. Only relative dates were visible; no version-specific claim is inferred for the review model.",
-          "reported_on": null,
-          "reviewed_on": "2026-10-08",
-          "comparison_group": null,
-          "community": {
-            "author": "Sensitive_Song4219",
-            "origin_id": "reddit:sensitive-song4219",
-            "grade": "firsthand",
-            "stance": "positive",
-            "first_seen_on": "2026-10-08",
-            "artifact_urls": [],
-            "rating": {
-              "value": 8,
-              "rationale": "Specific recurring development use supports a positive coding report, with low confidence because outputs and settings are not public.",
-              "confidence": "low",
-              "assessed_on": "2026-10-08"
-            }
-          }
-        }
-      ],
-      "price": {
-        "input": 1.4,
-        "output": 4.4,
-        "max_input_tokens": 1000000,
-        "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
-      },
-      "limitations": [
-        "仅支持文本输入；图片和视频任务需要其他模型或外部预处理。",
-        "无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。",
-        "官方上下文写作 1M；此处按保守的十进制 1000000 token 记录。",
-        "开放权重采用 GLM-5.3 专用许可证：https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
-        "权重：https://huggingface.co/zai-org/GLM-5.3；价格：https://docs.z.ai/guides/overview/pricing",
-        "不同账户历史的 API 协议可用性可能不同；请分别确认端点及 Coding Plan 权限。"
-      ],
-      "resources": {
-        "access": "verify_account_access",
-        "input_modalities": [
-          "text"
-        ],
-        "context_tokens": 1000000,
-        "tool_calling": true,
-        "open_weights": true,
-        "price_applies": true
-      },
-      "metadata_url": "https://docs.z.ai/guides/llm/glm-5.3",
-      "ranking": {
-        "support": 0.255675,
-        "tasks": [
+      "price_reference": {
+        "status": "available",
+        "text": "$0.15 / $0.5 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
           {
-            "task": "software.repo",
-            "formal_support": 0.6,
-            "evidence_strength": 0.8,
-            "comparable_peer_win_fraction": null,
-            "community_signal": 0.009,
-            "community_weight": 0.15,
-            "community_origins": 1,
-            "community_score": 8.0,
-            "community_confidence": "low",
-            "community_mapping": "proxy",
-            "origins": [
-              {
-                "origin_id": "reddit:sensitive-song4219",
-                "score": 8.0,
-                "reliability": 0.045000000000000005,
-                "signal": 0.027,
-                "evidence_ids": [
-                  "glm-5.3-community-02"
-                ]
-              }
-            ],
-            "support": 0.51135
-          },
-          {
-            "task": "data.sql",
-            "formal_support": 0.0,
-            "evidence_strength": 0.0,
-            "comparable_peer_win_fraction": null,
-            "community_signal": 0.0,
-            "community_weight": 0.15,
-            "community_origins": 0,
-            "community_score": null,
-            "community_confidence": "insufficient",
-            "community_mapping": "none",
-            "origins": [],
-            "support": 0.0
+            "max_input_tokens": 1000000,
+            "input": 0.15,
+            "output": 0.5
           }
         ],
-        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+        "source": {
+          "id": "glm-pricing",
+          "title": "Z.ai official USD API pricing",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       },
       "rank": 3,
       "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务"
@@ -700,6 +722,178 @@
   ],
   "candidates": [
     {
+      "model_id": "claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "direct_tasks": [
+        "data.sql"
+      ],
+      "independent_tasks": [
+        "data.sql"
+      ],
+      "covered_tasks": [
+        "data.sql",
+        "software.repo"
+      ],
+      "missing_tasks": [],
+      "evidence": [
+        {
+          "id": "haiku-5-5-summary",
+          "model_id": "claude-haiku-5-5",
+          "source_id": "haiku-5-5-launch",
+          "kind": "official_capability",
+          "claim": "Anthropic recommends short summaries, compaction and bounded coding subagents.",
+          "direct_tasks": [],
+          "proxy_tasks": [
+            "context.summary",
+            "software.repo",
+            "software.debug"
+          ],
+          "measurement": null,
+          "setting": "Release positioning.",
+          "limitations": "Bounded helpers; not evidence of completing a large project independently.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        },
+        {
+          "id": "haiku-5-5-terminal",
+          "model_id": "claude-haiku-5-5",
+          "source_id": "haiku-5-5-launch",
+          "kind": "vendor_eval",
+          "claim": "Anthropic reports 39.2% on Terminal-Bench 4.0.",
+          "direct_tasks": [
+            "software.terminal"
+          ],
+          "proxy_tasks": [
+            "software.repo",
+            "software.debug"
+          ],
+          "measurement": {
+            "benchmark": "Terminal-Bench",
+            "version": "4.0",
+            "metric": "accuracy",
+            "value": 39.2,
+            "unit": "percent",
+            "protocol": "Anthropic Haiku 5.5 release table"
+          },
+          "setting": "Vendor release table; effort not verified in this record.",
+          "limitations": "No independent replication; default medium effort may differ.",
+          "reported_on": "2026-10-07",
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        },
+        {
+          "id": "haiku-5-5-plotly-analysis",
+          "model_id": "claude-haiku-5-5",
+          "source_id": "plotly-haiku-5-5-analysis",
+          "kind": "independent_eval",
+          "claim": "Plotly reports 37/43 questions passed (86%), including all 20 SQL analytics questions.",
+          "direct_tasks": [
+            "data.analysis",
+            "data.sql"
+          ],
+          "proxy_tasks": [],
+          "measurement": {
+            "benchmark": "Plotly data analytics exam",
+            "version": "Haiku 5.5 October 2026 release run",
+            "metric": "questions passed",
+            "value": 37,
+            "unit": "out of 43",
+            "protocol": "Plotly Studio Embedded; same agent/tools/prompts; synthetic wind-fleet warehouse"
+          },
+          "setting": "20M rows, 44 tables; verified answer keys; 14s median per question. Effort unspecified.",
+          "limitations": "Private exam, one harness, no independent rerun. Missed three hidden patterns and three statistics traps.",
+          "reported_on": null,
+          "reviewed_on": "2026-10-08",
+          "comparison_group": null
+        }
+      ],
+      "price": {
+        "input": 0.1,
+        "output": 0.5,
+        "max_input_tokens": 100000,
+        "scope": "Standard uncached Claude API USD per million text tokens; prompts up to 100k; excludes caching, tools, discounts and regional tiers."
+      },
+      "limitations": [
+        "2026 年 10 月 7 日发布，定位于范围明确的信息抽取、摘要和辅助任务；数据分析依据来自一个 Plotly 执行环境。",
+        "单次输入超过 10 万 token 时，每百万输入/输出价格为 0.50/2.50 美元。默认推理档位为 medium，较高档位评测可能不同。",
+        "SQL 数据分析成绩没有评测表结构设计、事务正确性或完整后端交付。"
+      ],
+      "resources": {
+        "access": "verify_account_access",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "context_tokens": 1000000,
+        "tool_calling": true,
+        "open_weights": false,
+        "price_applies": true
+      },
+      "metadata_url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+      "ranking": {
+        "support": 0.4335,
+        "tasks": [
+          {
+            "task": "software.repo",
+            "formal_support": 0.27,
+            "evidence_strength": 0.36000000000000004,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.2295
+          },
+          {
+            "task": "data.sql",
+            "formal_support": 0.75,
+            "evidence_strength": 1,
+            "comparable_peer_win_fraction": null,
+            "community_signal": 0.0,
+            "community_weight": 0.15,
+            "community_origins": 0,
+            "community_score": null,
+            "community_confidence": "insufficient",
+            "community_mapping": "none",
+            "origins": [],
+            "support": 0.6375
+          }
+        ],
+        "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.1 / $0.5 (输入长度 ≤100,000 tokens); $0.5 / $2.5 (输入长度 >100,000–≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 100000,
+            "input": 0.1,
+            "output": 0.5
+          },
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.5,
+            "output": 2.5
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
+      }
+    },
+    {
       "model_id": "claude-opus-5-5",
       "name": "Claude Opus 5.5",
       "direct_tasks": [
@@ -954,6 +1148,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$4 / $20 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4,
+            "output": 20
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -1172,6 +1388,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.15 / $0.5 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.15,
+            "output": 0.5
+          }
+        ],
+        "source": {
+          "id": "glm-pricing",
+          "title": "Z.ai official USD API pricing",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -1366,6 +1604,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$1.4 / $4.4 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 1.4,
+            "output": 4.4
+          }
+        ],
+        "source": {
+          "id": "glm-pricing",
+          "title": "Z.ai official USD API pricing",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -1544,6 +1804,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.3 / $1.2 (输入长度 ≤1,000,000 tokens) · 以上为高峰参考；非高峰 $0.15 / $0.60。高峰为周一至周五 UTC 01:00–04:00、06:00–10:00，中国法定节假日除外。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.3,
+            "output": 1.2
+          }
+        ],
+        "source": {
+          "id": "deepseek-pricing",
+          "title": "DeepSeek API official pricing",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "以上为高峰参考；非高峰 $0.15 / $0.60。高峰为周一至周五 UTC 01:00–04:00、06:00–10:00，中国法定节假日除外。",
+        "valid_until": null
       }
     },
     {
@@ -1637,6 +1919,22 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "unknown",
+        "text": "未知，请核实厂商价格 · 价格取决于托管平台或本地运行成本；开放权重不等于免费推理。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [],
+        "source": {
+          "id": "qwen-card",
+          "title": "Qwen3.8-27B model card",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "verified_on": "2026-09-29"
+        },
+        "context_tokens": null,
+        "note": "价格取决于托管平台或本地运行成本；开放权重不等于免费推理。",
+        "valid_until": null
       }
     },
     {
@@ -1733,6 +2031,33 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$10 / $50 (输入长度 ≤272,000 tokens); $20 / $75 (输入长度 >272,000–≤1,050,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 10,
+            "output": 50
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 20,
+            "output": 75.0
+          }
+        ],
+        "source": {
+          "id": "openai-astra-pricing",
+          "title": "GPT-6 Astra model documentation — API pricing",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -1959,6 +2284,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.14 / $0.28 (输入长度 ≤1,000,000 tokens) · 海外美元价目；国内人民币计费另有价格。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.14,
+            "output": 0.28
+          }
+        ],
+        "source": {
+          "id": "mimo-pricing",
+          "title": "Xiaomi MiMo official API pricing",
+          "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "海外美元价目；国内人民币计费另有价格。",
+        "valid_until": null
       }
     },
     {
@@ -2185,6 +2532,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$2 / $10 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 2,
+            "output": 10
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -2281,6 +2650,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$10 / $50 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 10,
+            "output": 50
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -2468,6 +2859,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.435 / $0.87 (输入长度 ≤1,000,000 tokens) · 海外美元价目；国内人民币计费另有价格。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.435,
+            "output": 0.87
+          }
+        ],
+        "source": {
+          "id": "mimo-pricing",
+          "title": "Xiaomi MiMo official API pricing",
+          "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "海外美元价目；国内人民币计费另有价格。",
+        "valid_until": null
       }
     },
     {
@@ -2601,6 +3014,33 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$2 / $6 (输入长度 ≤200,000 tokens); $4 / $12 (输入长度 >200,000–≤500,000 tokens) · 全球标准 API；不含美国区域附加费及应用内 Fast 模式。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 200000,
+            "input": 2,
+            "output": 6
+          },
+          {
+            "max_input_tokens": 500000,
+            "input": 4,
+            "output": 12
+          }
+        ],
+        "source": {
+          "id": "grok-pricing",
+          "title": "Grok 4.7 release and long-context pricing",
+          "url": "https://docs.x.ai/developers/release-notes",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "全球标准 API；不含美国区域附加费及应用内 Fast 模式。",
+        "valid_until": null
       }
     },
     {
@@ -2694,6 +3134,33 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$2 / $10 (输入长度 ≤272,000 tokens); $4 / $15 (输入长度 >272,000–≤1,050,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 2,
+            "output": 10
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 4,
+            "output": 15.0
+          }
+        ],
+        "source": {
+          "id": "openai-sol-6-1-pricing",
+          "title": "GPT-6.1 Sol model documentation — API pricing",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -2789,6 +3256,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$4.35 / $8.7 (输入长度 ≤1,000,000 tokens) · 海外美元价目；国内人民币计费另有价格。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4.35,
+            "output": 8.7
+          }
+        ],
+        "source": {
+          "id": "mimo-pricing",
+          "title": "Xiaomi MiMo official API pricing",
+          "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "海外美元价目；国内人民币计费另有价格。",
+        "valid_until": null
       }
     },
     {
@@ -2948,6 +3437,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$3 / $15 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 3,
+            "output": 15
+          }
+        ],
+        "source": {
+          "id": "kimi-pricing",
+          "title": "Kimi API official model pricing",
+          "url": "https://platform.kimi.ai/",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -3142,6 +3653,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.75 / $3.75 (输入长度 ≤1,000,000 tokens) · 标准 API 优惠价截至 2026-12-31。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.75,
+            "output": 3.75
+          }
+        ],
+        "source": {
+          "id": "gemini-pricing",
+          "title": "Gemini Developer API official pricing",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "标准 API 优惠价截至 2026-12-31。",
+        "valid_until": "2026-12-31"
       }
     }
   ],
@@ -3166,6 +3699,24 @@
     "在带有模式约束和隐藏测试用例的沙箱中执行查询。"
   ],
   "sources": {
+    "haiku-5-5-launch": {
+      "id": "haiku-5-5-launch",
+      "title": "Claude Haiku 5.5 release evaluation",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "publisher": "Anthropic",
+      "published_on": "2026-10-07",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    "plotly-haiku-5-5-analysis": {
+      "id": "plotly-haiku-5-5-analysis",
+      "title": "Plotly Haiku 5.5 data analytics exam",
+      "url": "https://plotly.com/blog/claude-haiku-5-5-plotly-data-analytics-bench/",
+      "publisher": "Plotly",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
     "opus-launch": {
       "id": "opus-launch",
       "title": "Claude Opus 5.5 release evaluation",

@@ -6,11 +6,25 @@
 
 ## Top 3 候选模型
 
-- 1. **Claude Opus 5.5** (`claude-opus-5-5`): 有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务. 来源: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 found two defects in the author's Stackchan/Home Assistant code](https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/), [Three-run skill comparison: Opus 5.5 and Sonnet 5.5](https://www.reddit.com/r/ClaudeAI/comments/1wtend0/tested_sonnet_55_vs_opus_55_with_the_same_skills/), [Opus 5.5 versus Sonnet 5.5 on a large test refactor](https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/)
-- 2. **GLM-5.3-Flash** (`glm-5.3-flash`): 有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务. 来源: [GLM-5.3-Flash official machine-readable evaluation results](https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/.eval_results/GLM-5.3-Flash.yaml), [GLM-5.3-Flash implements planned backend and debugging work](https://www.reddit.com/r/opencode/comments/1wroplu/xiaomi_mimo_26_flash_vs_glm_53_flash/), [GLM-5.3-Flash Devin Desktop tool-schema error loop](https://www.reddit.com/r/CognitionLabs/comments/1whs4oj/bug_report_glm53_flash_model_gets_stuck_in_a/)
-- 3. **GLM-5.3** (`glm-5.3`): 有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务. 来源: [GLM-5.3 official weights and evaluation card](https://huggingface.co/zai-org/GLM-5.3), [GLM-5.3 model documentation](https://docs.z.ai/guides/llm/glm-5.3), [GLM-5.3 daily use: coding, debugging and frontend](https://www.reddit.com/r/ZaiGLM/comments/1vs3bba/glm_53_is_my_daily_driver_and_has_a_little/)
+| 排名 | 模型 | 适合本任务的依据 | 价格参考 |
+|---|---|---|---|
+| 1 | **Claude Haiku 5.5** (`claude-haiku-5-5`) | 有匹配该任务的独立评测，对应任务：SQL 生成；有官方能力说明或相邻任务证据，对应任务：代码库功能实现 | $0.1 / $0.5 (输入长度 ≤100,000 tokens); $0.5 / $2.5 (输入长度 >100,000–≤1,000,000 tokens)<br>[价格来源](https://platform.claude.com/docs/en/about-claude/pricing) · 2026-10-08 |
+| 2 | **Claude Opus 5.5** (`claude-opus-5-5`) | 有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务 | $4 / $20 (输入长度 ≤1,000,000 tokens)<br>[价格来源](https://platform.claude.com/docs/en/about-claude/pricing) · 2026-10-08 |
+| 3 | **GLM-5.3-Flash** (`glm-5.3-flash`) | 有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务 | $0.15 / $0.5 (输入长度 ≤1,000,000 tokens)<br>[价格来源](https://docs.z.ai/guides/overview/pricing) · 2026-10-08 |
+
+价格参考：标准文本 API 非缓存输入 / 输出单价，单位为美元 / 百万 tokens。仅供对比，不改变推荐权重；订阅、本地部署、音频、图像、工具及缓存费用需单独确认。
+
+- 1. **Claude Haiku 5.5** (`claude-haiku-5-5`): 有匹配该任务的独立评测，对应任务：SQL 生成；有官方能力说明或相邻任务证据，对应任务：代码库功能实现. 来源: [Claude Haiku 5.5 release evaluation](https://www.anthropic.com/claude-haiku-5-5), [Plotly Haiku 5.5 data analytics exam](https://plotly.com/blog/claude-haiku-5-5-plotly-data-analytics-bench/)
+- 2. **Claude Opus 5.5** (`claude-opus-5-5`): 有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务. 来源: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 found two defects in the author's Stackchan/Home Assistant code](https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/), [Three-run skill comparison: Opus 5.5 and Sonnet 5.5](https://www.reddit.com/r/ClaudeAI/comments/1wtend0/tested_sonnet_55_vs_opus_55_with_the_same_skills/), [Opus 5.5 versus Sonnet 5.5 on a large test refactor](https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/)
+- 3. **GLM-5.3-Flash** (`glm-5.3-flash`): 有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务. 来源: [GLM-5.3-Flash official machine-readable evaluation results](https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/.eval_results/GLM-5.3-Flash.yaml), [GLM-5.3-Flash implements planned backend and debugging work](https://www.reddit.com/r/opencode/comments/1wroplu/xiaomi_mimo_26_flash_vs_glm_53_flash/), [GLM-5.3-Flash Devin Desktop tool-schema error loop](https://www.reddit.com/r/CognitionLabs/comments/1whs4oj/bug_report_glm53_flash_model_gets_stuck_in_a/)
 
 实际使用的模型由用户选择。无论选择哪个候选，都应遵循同一份接口契约和验收标准。
+
+## 各模型的适用限制
+
+- **Claude Haiku 5.5** (`claude-haiku-5-5`): 2026 年 10 月 7 日发布，定位于范围明确的信息抽取、摘要和辅助任务；数据分析依据来自一个 Plotly 执行环境。 单次输入超过 10 万 token 时，每百万输入/输出价格为 0.50/2.50 美元。默认推理档位为 medium，较高档位评测可能不同。 SQL 数据分析成绩没有评测表结构设计、事务正确性或完整后端交付。
+- **Claude Opus 5.5** (`claude-opus-5-5`): 需另行核查账号权限、地区和工具环境。
+- **GLM-5.3-Flash** (`glm-5.3-flash`): 原生支持文本、图片和视频；文件支持属于服务输入包装，不是单独的模态；视频 Agent 示例不作为原生音频输入的依据。 无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。 官方上下文写作 1M；此处按保守的 1000000 token 记录。 MIT 许可证权重：https://huggingface.co/zai-org/GLM-5.3-Flash；价格：https://docs.z.ai/guides/overview/pricing Coding Plan 配额与 API token 价格分别计算；FlashX 是独立的加速托管档位，其吞吐速度不等于 Flash 的任务质量分数。
 
 ## 项目目标
 

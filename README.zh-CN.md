@@ -1,7 +1,7 @@
 <p align="center"><img src="assets/brand/hero.svg" width="900" alt="PromptHarbor：理解任务，选择模型，汇合成果"></p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="Apache 2.0 许可证"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.3.2"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.4.0"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
   <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="模型数据 2026-10-08"></a>
 </p>
@@ -23,11 +23,16 @@ PromptHarbor 是一个 Agent Skill：识别普通 Prompt 的**领域、子领域
 
 **输出长这样：**“设计一个有交互的落地页。我已有 GPT-6.1 Sol、Kimi K3、DeepSeek V4.1 Flash。”
 
-| Top 3 | 简洁理由 | 选择时看什么 |
-|---|---|---|
-| GPT-6.1 Sol | 当前快照的同组 WebDev 评测提供较强支持 | 已有账号的工具权限与额度 |
-| Kimi K3 | WebDev 结果加上带作品的视觉网页社区记录 | 风格是否合适、可用额度；同时保留反面反馈 |
-| DeepSeek V4.1 Flash | 有同组任务评测，可作为第三个可用选择 | 实际部署、成本与交互验收 |
+| Top 3 | 简洁理由 | 选择时看什么 | 价格参考：输入 / 输出 |
+|---|---|---|---|
+| GPT-6.1 Sol | 当前快照的同组 WebDev 评测提供较强支持 | 已有账号的工具权限与额度 | [$2 / $10](https://developers.openai.com/api/docs/models/gpt-6.1-sol)，输入 ≤27.2 万 token |
+| Kimi K3 | WebDev 结果加上带作品的视觉网页社区记录 | 风格是否合适、可用额度；同时保留反面反馈 | [$3 / $15](https://platform.kimi.ai/)，输入 ≤100 万 token |
+| DeepSeek V4.1 Flash | 有同组任务评测，可作为第三个可用选择 | 实际部署、成本与交互验收 | [$0.15 / $0.60 非高峰；$0.30 / $1.20 高峰](https://api-docs.deepseek.com/quick_start/pricing/)，输入 ≤100 万 token |
+
+价格于 **2026-10-08** 核对，单位为**每百万标准文本 API 输入 / 输出 token 的美元价格**。
+所有生成的 Top 3 表格都包含这一列，包括工程计划和完整交接提示词，并标注适用
+长度、来源与核对日期。**价格仅供参考，不改变推荐权重**。订阅、本地运行、
+多模态、工具和缓存计费另算；缺失或过期的价格显示未知。[价格规则](skills/promptharbor/references/prices.md)。
 
 这是限定上述资源的视觉设计示例，依据与日期见[完整输出](examples/frontend-output.zh-CN.md)。
 不提供资源清单时，先给更广范围的 Top 3；提供后重新筛选。
@@ -109,6 +114,7 @@ python skills/promptharbor/scripts/harbor.py community
 python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "总结这段视频"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
@@ -129,14 +135,14 @@ job 和 project 可设置 `"language": "zh-CN"`（也接受 `"zh"`）、`"en"` �
 
 ## 依据与社区评价
 
-**2026-10-08 快照收录 16 个模型、49 个细分任务，全部模型都已开展社区检索。**
+**2026-10-08 快照收录 17 个模型、49 个细分任务，全部模型都已开展社区检索。**
 证据与来源数量见[覆盖表](docs/COVERAGE.md)；每个模型的任务评分、理由、来源和
 置信度见[社区评价表](docs/COMMUNITY.md)。没有合适材料的任务保持未知。
 
 | 厂商 | 已收录模型 |
 |---|---|
 | OpenAI | GPT-6.1 Sol、GPT-6 Astra、GPT-6 Luna |
-| Anthropic | Claude Opus 5.5、Sonnet 5.5、Fable 5.1 |
+| Anthropic | Claude Opus 5.5、Sonnet 5.5、Haiku 5.5、Fable 5.1 |
 | Google | Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
 | Alibaba | Qwen3.8-27B |

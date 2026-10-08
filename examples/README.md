@@ -23,6 +23,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.j
 python skills/promptharbor/scripts/harbor.py recommend --job examples/video.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/agent-planning.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
 ```
 
 A backtest combines quantitative methodology and repository work. Coding evidence
@@ -40,6 +41,16 @@ Use `harbor.py community` to inspect every model's task ratings and source URLs.
 `glm.json` is a Chinese repository-implementation brief restricted to GLM-5.3,
 GLM-5.3-Flash and GPT-6.1 Sol. It demonstrates exact-version task evidence,
 community feedback and localized recommendations within a user's resource list.
+
+`haiku.json` is a Chinese analytics/SQL brief with a declared 50K-token input
+budget and tool requirement. Its [saved output](haiku-output.zh-CN.md) includes
+Haiku 5.5 and price references; the evidence distinguishes one private analytics
+exam from broader claims about statistical competence.
+
+All saved Top 3 tables show standard text API input/output price references,
+applicable length, source and verification date. Price references do not change
+selection weights. Missing prices are unknown; model subscriptions and local
+running costs are separate.
 
 ## A whole engineering project
 

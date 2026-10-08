@@ -2,7 +2,7 @@
 
 Observed locally on Windows with Python 3.13.9:
 
-- **76 unittest cases passed**, covering catalog links, task filters, incompatible
+- **91 unittest cases passed**, covering catalog links, task filters, incompatible
   metrics, missing and stale data, unknown current models, proxy consistency,
   dependency cycles, artifact ownership, interface versions and missing deliveries.
 - Skill Creator's `quick_validate.py` accepted the portable skill. Windows
@@ -31,6 +31,16 @@ Observed locally on Windows with Python 3.13.9:
 - GLM-5.3 and GLM-5.3-Flash pass exact-version resource, context, price and open-weight
   filtering. Native video excludes the text-only flagship and admits Flash; both
   have separate source-linked community records and complete Chinese explanations.
+- Price references render in Chinese and English across single-task tables, PLAN,
+  full handoff prompts and manifest choices, with provider URLs, check dates and
+  input-length tiers. Missing, stale, future-dated and expired references remain
+  unknown. Price refresh auditing is separate from evidence freshness.
+- Changing, removing or replacing display prices preserves recommendation support,
+  order, primary, switching, hard constraints and existing cost-priority behavior.
+- Haiku 5.5 has exact-version metadata, nine attributed evidence records, three
+  task-specific community reports and complete Chinese text. SQL independent
+  evidence is distinguished from adjacent repository evidence in mixed-task reasons;
+  every handoff shows the candidates' concrete applicability limits.
 - Planning defaults remain replaceable. A project restricted to Kimi has no
   OpenAI default, both with and without a declared current model.
 - The library-system fixture compiled into four complete prompts with three

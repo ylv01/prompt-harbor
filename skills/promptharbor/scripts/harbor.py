@@ -9,6 +9,7 @@ import sys
 from datetime import date
 from pathlib import Path
 from i18n import catalog_text, message, resolve_language
+from price import price_cell, price_notice, price_reference, price_refresh_due, shortlist_table
 
 ROOT = Path(__file__).resolve().parents[1]
 KINDS = {"independent_eval", "vendor_eval", "official_capability", "community_test"}
@@ -474,14 +475,30 @@ def route(job, data, today=None):
         primary = None
         decision = "shortlist"
         rationale = say("Weighted task support and the comparison cohort differ; choose from Top 3 using access and a task trial.")
+    # Display-only prices are attached after every eligibility, ordering, cost
+    # preference and switching decision. Selection uses the existing price field.
+    models_by_id = {m['id']: m for m in data['models']['models']}
+    for candidate in candidates:
+        candidate['price_reference'] = price_reference(models_by_id[candidate['model_id']], sources,
+                                                       data['policy'], today, language, job.get('context_tokens'))
     recommendations = []
     for rank, c in enumerate(candidates[:3], 1):
         community = any(t["community_origins"] for t in c["ranking"]["tasks"])
-        reason = say("Task-matched independent evaluation" if c["independent_tasks"] else
-                  "Task-matched vendor evaluation" if c["direct_tasks"] else "Capability or adjacent-task support")
-        if all(e['kind'] == 'community_test' for e in c['evidence']):
-            reason = say("Community task reports only; a task trial is needed")
-        reason += say(" for ") + ", ".join(task_text(t, 'label') for t in c["covered_tasks"])
+        # Name only the tasks backed by each evidence level. A direct result
+        # for one task must not make another task's proxy evidence look direct.
+        independent_tasks = set(c['independent_tasks'])
+        vendor_tasks = set(c['direct_tasks']) - independent_tasks
+        remaining_tasks = set(c['covered_tasks']) - independent_tasks - vendor_tasks
+        community_only_tasks = {t for t in remaining_tasks if all(
+            e['kind'] == 'community_test' for e in c['evidence']
+            if t in e['direct_tasks'] + e['proxy_tasks'])}
+        groups = [('Task-matched independent evaluation', independent_tasks),
+                  ('Task-matched vendor evaluation', vendor_tasks),
+                  ('Capability or adjacent-task support', remaining_tasks - community_only_tasks),
+                  ('Community task reports only; a task trial is needed', community_only_tasks)]
+        reason = ('；' if language == 'zh-CN' else '; ').join(
+            say(label) + say(' for ') + ', '.join(task_text(t, 'label') for t in sorted(group))
+            for label, group in groups if group)
         if community:
             reason += say("; weighted community reports included (see signed signal and sources)")
         if c["missing_tasks"]:
@@ -513,15 +530,16 @@ def markdown(result, data=None):
              f"**{say('Decision')}:** {say(result['decision'])} · **{say('Confidence')}:** {say(result['confidence'])}",
              '**Top 3:** '+say('choose using task fit and the models you can access.'), '',
              f"**{say('Switch')}:** {say(result['switch']['action'])} — {result['switch']['reason']}", ""]
+    lines += shortlist_table(result['recommendations'], language) + ['', price_notice(language), '']
     for candidate in result["recommendations"]:
         lines += [f"## {candidate['rank']}. {candidate['name']}", "", candidate["reason"], ""]
         resources = candidate["resources"]
         lines += [say('Access: {access}; open weights: {weights}; context: {context} tokens.',
                       access=say(resources['access']), weights=say('yes' if resources['open_weights'] else 'no'),
                       context=resources['context_tokens'] or say('unknown'))]
-        price = candidate["price"]
-        lines += ([say('Recorded API input/output: ${input}/${output} per million tokens; subscription entitlement is separate.', input=price['input'], output=price['output'])]
-                  if resources["price_applies"] else [say('Applicable API price: unknown; check provider and account.')])
+        reference = candidate.get('price_reference')
+        lines += ([say('Price reference')+': '+price_cell(reference, language)] if reference
+                  else [say('Applicable API price: unknown; check provider and account.')])
         for task in candidate["ranking"]["tasks"]:
             score = f"{task['community_score']}/10" if task['community_score'] is not None else say('not rated')
             lines.append(say('Community: {task}, {score} ({confidence} confidence; {mapping} mapping), weight {weight}, origins {origins}.',
@@ -554,8 +572,10 @@ def audit(data, today):
     stale = [e["id"] for e in data["evidence"]["evidence"] if not evidence_fresh(e, data, today)]
     research_due = [r['id'] for r in data['community_research']['models']
                     if not 0 <= age_in_days(r['searched_on'], today) <= data['policy']['community_review_days']]
+    due_prices = [m['id'] for m in data['models']['models'] if price_refresh_due(m, data['policy'], today)]
     return {"as_of": str(today), "models_needing_refresh": due_models, "stale_evidence": stale,
-            "community_searches_due": research_due, "due": bool(due_models or stale or research_due)}
+            "community_searches_due": research_due, 'prices_needing_refresh': due_prices,
+            "due": bool(due_models or stale or research_due or due_prices)}
 
 
 def main(argv=None):

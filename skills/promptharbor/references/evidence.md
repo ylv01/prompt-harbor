@@ -64,8 +64,11 @@ dates are shown as unknown. Old evidence is excluded from current shortlists but
 retained for historical inspection. `--as-of` is for reproducible snapshots,
 never a workaround to hide stale data from a current user.
 
-Prices describe standard uncached API text tokens within the recorded input
-range. Unknown cost, long-context tiers, tool charges, output/reasoning volume,
+[Price references](prices.md) describe standard uncached API text tokens within the
+recorded input range. The optional `price_reference` field is presentation only: it
+is attached after selection, and changing it cannot affect rank, primary, switching
+or eligibility. Existing budget constraints and cost priority continue to use
+`price_usd_per_million`, whose established values are preserved. Unknown cost, long-context tiers, tool charges, output/reasoning volume,
 latency, region and subscription entitlement require live verification. The
 helper's cost mode picks a model only when both unit rates dominate equally
 covered peers; it does not estimate total task cost.

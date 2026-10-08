@@ -25,7 +25,25 @@
       },
       "notes": [
         "Account access, region and tool environment must be checked separately."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "openai-astra-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 10,
+            "output": 50
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 20,
+            "output": 75.0
+          }
+        ]
+      }
     },
     {
       "id": "gpt-6.1-sol",
@@ -52,7 +70,25 @@
         "128000 maximum output tokens. Reasoning efforts: low, medium, high, xhigh, max.",
         "Exact-version evaluations are maintained separately from predecessor results. Account access and tool environment require checking.",
         "Standard input/output rates remain $2/$10 per million tokens up to 272000 input tokens; cached input is $0.10. Longer requests, effort and service tier affect total cost."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "openai-sol-6-1-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 2,
+            "output": 10
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 4,
+            "output": 15.0
+          }
+        ]
+      }
     },
     {
       "id": "gpt-6-luna",
@@ -76,7 +112,25 @@
       },
       "notes": [
         "Account access, region and tool environment must be checked separately."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "openai-luna-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 0.1,
+            "output": 0.5
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 0.2,
+            "output": 0.75
+          }
+        ]
+      }
     },
     {
       "id": "claude-opus-5-5",
@@ -100,7 +154,20 @@
       },
       "notes": [
         "Account access, region and tool environment must be checked separately."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "claude-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4,
+            "output": 20
+          }
+        ]
+      }
     },
     {
       "id": "claude-sonnet-5-5",
@@ -124,7 +191,20 @@
       },
       "notes": [
         "Account access, region and tool environment must be checked separately."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "claude-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 2,
+            "output": 10
+          }
+        ]
+      }
     },
     {
       "id": "claude-fable-5-1",
@@ -148,7 +228,20 @@
       },
       "notes": [
         "Some published evaluations use fallback models; do not attribute the composite result to the base model alone."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "claude-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 10,
+            "output": 50
+          }
+        ]
+      }
     },
     {
       "id": "gemini-3.8-flash",
@@ -169,7 +262,25 @@
       "price_usd_per_million": null,
       "notes": [
         "Price source is separate (gemini-launch); no price admitted from the capability-only source."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "gemini-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.75,
+            "output": 3.75
+          }
+        ],
+        "notes": {
+          "en": "Introductory standard tariff through 2026-12-31.",
+          "zh-CN": "标准 API 优惠价截至 2026-12-31。"
+        },
+        "valid_until": "2026-12-31"
+      }
     },
     {
       "id": "deepseek-v4.1-flash",
@@ -188,7 +299,24 @@
       "price_usd_per_million": null,
       "notes": [
         "Open weights do not imply laptop suitability. Verify serving precision, hardware, license and API alias."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "deepseek-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.3,
+            "output": 1.2
+          }
+        ],
+        "notes": {
+          "en": "Peak reference; off-peak $0.15 / $0.60. Peak: Mon–Fri 01:00–04:00 and 06:00–10:00 UTC, excluding Chinese public holidays.",
+          "zh-CN": "以上为高峰参考；非高峰 $0.15 / $0.60。高峰为周一至周五 UTC 01:00–04:00、06:00–10:00，中国法定节假日除外。"
+        }
+      }
     },
     {
       "id": "qwen3.8-27b",
@@ -207,7 +335,18 @@
       "price_usd_per_million": null,
       "notes": [
         "Native context recorded; extended context needs a separate serving configuration and quality test."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "qwen-card",
+        "verified_on": "2026-09-29",
+        "tiers": [],
+        "notes": {
+          "en": "Hosting provider or local running cost varies; open weights do not mean free inference.",
+          "zh-CN": "价格取决于托管平台或本地运行成本；开放权重不等于免费推理。"
+        }
+      }
     },
     {
       "id": "kimi-k3",
@@ -227,7 +366,20 @@
       "price_usd_per_million": null,
       "notes": [
         "Kimi K3 has its own weights license. Native video support and deployment-specific frame limits require verification."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "kimi-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 3,
+            "output": 15
+          }
+        ]
+      }
     },
     {
       "id": "grok-4.7",
@@ -251,7 +403,29 @@
       },
       "notes": [
         "X/web search requires an enabled tool environment; it is not intrinsic fresh knowledge."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "grok-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 200000,
+            "input": 2,
+            "output": 6
+          },
+          {
+            "max_input_tokens": 500000,
+            "input": 4,
+            "output": 12
+          }
+        ],
+        "notes": {
+          "en": "Standard global endpoint; US regional surcharge and app-only Fast mode excluded.",
+          "zh-CN": "全球标准 API；不含美国区域附加费及应用内 Fast 模式。"
+        }
+      }
     },
     {
       "id": "mimo-v2.6-pro",
@@ -281,7 +455,24 @@
         "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
         "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
         "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "mimo-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.435,
+            "output": 0.87
+          }
+        ],
+        "notes": {
+          "en": "Overseas USD tariff; domestic RMB tariff differs.",
+          "zh-CN": "海外美元价目；国内人民币计费另有价格。"
+        }
+      }
     },
     {
       "id": "mimo-v2.6-flash",
@@ -311,7 +502,24 @@
         "API alias was updated to the tool-repetition-mitigated model on 2026-09-25 06:00 UTC+8; use the newer MOPD checkpoint for local deployment. Launch RL benchmark rows remain separately labeled.",
         "Open-weight checkpoint: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
         "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "mimo-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.14,
+            "output": 0.28
+          }
+        ],
+        "notes": {
+          "en": "Overseas USD tariff; domestic RMB tariff differs.",
+          "zh-CN": "海外美元价目；国内人民币计费另有价格。"
+        }
+      }
     },
     {
       "id": "mimo-v2.6-pro-ultraspeed",
@@ -341,7 +549,24 @@
         "Its advertised up-to-20x output speed is a vendor claim, not an end-to-end task latency guarantee. Do not copy Pro benchmark scores into an UltraSpeed measured-result row.",
         "Official Chinese model page lists all four inputs; English page currently shows only text despite its omni-modal capability heading. Chinese page and API capability table are used here.",
         "Official pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "mimo-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4.35,
+            "output": 8.7
+          }
+        ],
+        "notes": {
+          "en": "Overseas USD tariff; domestic RMB tariff differs.",
+          "zh-CN": "海外美元价目；国内人民币计费另有价格。"
+        }
+      }
     },
     {
       "id": "glm-5.3",
@@ -369,7 +594,20 @@
         "Open weights use the GLM-5.3 license, not MIT: https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
         "Weights: https://huggingface.co/zai-org/GLM-5.3 ; pricing: https://docs.z.ai/guides/overview/pricing",
         "API protocol availability depends on account history; verify the endpoint and Coding Plan access separately."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "glm-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 1.4,
+            "output": 4.4
+          }
+        ]
+      }
     },
     {
       "id": "glm-5.3-flash",
@@ -398,7 +636,64 @@
         "Official context is 1M; recorded conservatively as 1000000 tokens.",
         "MIT-licensed weights: https://huggingface.co/zai-org/GLM-5.3-Flash ; pricing: https://docs.z.ai/guides/overview/pricing",
         "Coding Plan quotas and API token prices differ. FlashX is a separate faster hosted tier; its throughput is not a Flash task-quality score."
-      ]
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "glm-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.15,
+            "output": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_id": "haiku-5-5-docs",
+      "status": "available",
+      "verified_on": "2026-10-08",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "context_tokens": 1000000,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 0.1,
+        "output": 0.5,
+        "max_input_tokens": 100000,
+        "scope": "Standard uncached Claude API USD per million text tokens; prompts up to 100k; excludes caching, tools, discounts and regional tiers."
+      },
+      "notes": [
+        "Released October 7, 2026; designed for bounded extraction, summaries and helper tasks. Analytics evidence comes from one Plotly harness.",
+        "Requests over 100k input tokens use $0.50 input / $2.50 output per million. Default effort is medium; high-effort benchmark results may differ.",
+        "SQL analytics results do not measure schema design, transaction correctness or delivery of a complete backend."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "claude-pricing",
+        "verified_on": "2026-10-08",
+        "tiers": [
+          {
+            "max_input_tokens": 100000,
+            "input": 0.1,
+            "output": 0.5
+          },
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.5,
+            "output": 2.5
+          }
+        ]
+      }
     }
   ]
 }

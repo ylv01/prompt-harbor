@@ -3,7 +3,7 @@ name: promptharbor
 description: Identify the domain and task behind an ordinary prompt, recommend a Top 3 of suitable LLMs using current evaluations and weighted community reports, and advise whether to switch. For complex projects, split the work, offer Top 3 choices per part, produce copyable handoff prompts with shared interface contracts, and integrate returned work in the main conversation. Use when the user wants model advice or has enabled PromptHarbor routing for this conversation.
 license: Apache-2.0
 metadata:
-  version: "0.3.2"
+  version: "0.4.0"
 ---
 
 # PromptHarbor
@@ -72,7 +72,10 @@ deterministic evidence and handoff tools—not an embedded classifier LLM.
    community reproductions and your own inference. Never convert overall rank,
    context capacity, parameter count or brand reputation into a specialty claim.
 5. Default to **three ranked choices**, each with its task-fit reason, source and
-   access/cost tradeoff. Let the user choose with existing subscriptions, quota,
+   access/cost tradeoff. Every Top 3 table includes a **price reference** column: standard
+   text API USD per million input / output tokens, applicable context tier, source and
+   check date. Unknown or expired rates remain unknown. Follow [price rules](references/prices.md);
+   these references are display only and never change recommendation weights. Let the user choose with existing subscriptions, quota,
    APIs and tools. If they list available models, filter to that list. Otherwise
    show the broader Top 3 without assuming subscriptions or demanding a purchase.
    With fewer than three supported eligible models, show the actual count and
@@ -101,8 +104,8 @@ Respond in the user's language, including any saved recommendation document.
 Prefer a short comparison table:
 
 - **Task:** domain → subdomain → task; mention mixed tasks when relevant.
-- **Top 3:** rank, exact model + verified effort/tools, task-fit reason, access/cost
-  tradeoff and a source link per choice. Ranks express conditional recommendations.
+- **Top 3:** rank, exact model + verified effort/tools, task-fit reason, price reference,
+  access tradeoff and a source link per choice. Ranks express conditional recommendations.
 - **Evidence:** distinguish task evaluations, proxies and community feedback;
   include dates and show the relevant community score, confidence and source when
   available. Explain community influence when it changes the choice.
@@ -124,7 +127,9 @@ conversation remains the integration owner throughout.
 1. Decompose by deliverable and verifiable boundary (for example frontend,
    backend, database, tests), then classify each part with the same evidence policy.
    Shared requirements and interfaces come **before** parallel implementation.
-2. Show the user a compact part → Top 3 choices → reason → dependency table.
+2. Show the user a compact part → Top 3 choices → price references → dependency table.
+   Keep numbered prices aligned with the corresponding choices. Every full handoff
+   prompt also includes its own Top 3 comparison table with price references.
    A planning default is a suggestion; the user selects the model for each part.
    Reusing one model across parts is allowed. No evidence supports a universal
    “best database LLM”; use a feasible baseline and explicit acceptance tests.

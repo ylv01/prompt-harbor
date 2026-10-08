@@ -7,12 +7,20 @@ Generative visual web design
 
 **Switch:** unknown — Current model was not provided; do not infer it from the assistant's identity.
 
+| Rank | Model | Task fit | Price reference |
+|---|---|---|---|
+| 1 | **GPT-6.1 Sol** (`gpt-6.1-sol`) | Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources) | $2 / $10 (≤272,000 input tokens); $4 / $15 (>272,000–≤1,050,000 input tokens)<br>[Price source](https://developers.openai.com/api/docs/models/gpt-6.1-sol) · 2026-10-08 |
+| 2 | **Kimi K3** (`kimi-k3`) | Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources) | $3 / $15 (≤1,000,000 input tokens)<br>[Price source](https://platform.kimi.ai/) · 2026-10-08 |
+| 3 | **DeepSeek-V4.1-Flash** (`deepseek-v4.1-flash`) | Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources) | $0.3 / $1.2 (≤1,000,000 input tokens) · Peak reference; off-peak $0.15 / $0.60. Peak: Mon–Fri 01:00–04:00 and 06:00–10:00 UTC, excluding Chinese public holidays.<br>[Price source](https://api-docs.deepseek.com/quick_start/pricing/) · 2026-10-08 |
+
+Price reference: USD per million standard text API input / output tokens, uncached rates. Display only; recommendation weights are unchanged. Subscriptions, local hosting, audio, images, tools and cache charges are separate.
+
 ## 1. GPT-6.1 Sol
 
 Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources)
 
 Access: user_listed; open weights: no; context: 1050000 tokens.
-Recorded API input/output: $2/$10 per million tokens; subscription entitlement is separate.
+Price reference: $2 / $10 (≤272,000 input tokens); $4 / $15 (>272,000–≤1,050,000 input tokens)<br>[Price source](https://developers.openai.com/api/docs/models/gpt-6.1-sol) · 2026-10-08
 Community: software.frontend.design, 3.0/10 (low confidence; proxy mapping), weight 30%, origins 1.
 - gpt-6.1-sol-max: WebDev preference rating 1757 (displayed interval ±15). (independent_eval; gpt-6.1-sol-max; Arena deployment with the displayed effort setting.). [Source](https://arena.ai/leaderboard/code/webdev)
   Limit: Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints. Report date: 2026-10-07; reviewed 2026-10-08.
@@ -27,7 +35,7 @@ Limits: Tool calling is supported through Responses API; Chat Completions does n
 Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources)
 
 Access: user_listed; open weights: yes; context: 1048576 tokens.
-Applicable API price: unknown; check provider and account.
+Price reference: $3 / $15 (≤1,000,000 input tokens)<br>[Price source](https://platform.kimi.ai/) · 2026-10-08
 Community: software.frontend.design, 7.0/10 (low confidence; direct_and_proxy mapping), weight 30%, origins 3.
 - kimi-k3-max: observed WebDev preference rating 1660. (independent_eval; kimi-k3-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)
   Limit: Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity. Report date: 2026-09-25; reviewed 2026-09-29.
@@ -50,7 +58,7 @@ Limits: Kimi K3 has its own weights license. Native video support and deployment
 Capability or adjacent-task support for Generative visual web design; weighted community reports included (see signed signal and sources)
 
 Access: user_listed; open weights: yes; context: 1000000 tokens.
-Applicable API price: unknown; check provider and account.
+Price reference: $0.3 / $1.2 (≤1,000,000 input tokens) · Peak reference; off-peak $0.15 / $0.60. Peak: Mon–Fri 01:00–04:00 and 06:00–10:00 UTC, excluding Chinese public holidays.<br>[Price source](https://api-docs.deepseek.com/quick_start/pricing/) · 2026-10-08
 Community: software.frontend.design, 8.0/10 (low confidence; direct mapping), weight 30%, origins 1.
 - deepseek-v4.1-flash-max: observed WebDev preference rating 1621. (independent_eval; deepseek-v4.1-flash-max; Arena deployment, not every consumer app setting). [Source](https://arena.ai/leaderboard/code)
   Limit: Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity. Report date: 2026-09-25; reviewed 2026-09-29.

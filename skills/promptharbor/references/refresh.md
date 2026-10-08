@@ -50,6 +50,12 @@ When catalog text changes, update the matching task, evidence and model-note
 translations in `data/locales/zh-CN.json`. Keep IDs, measurements and source
 records unchanged; verify the Chinese rendered recommendation before publishing.
 
+Review the optional `price_reference` independently of capability metadata: use the
+actual pricing source and check date, preserve context tiers and time/region notes,
+and record any `valid_until` offer expiry. These fields are display only; updating
+them must not silently change the existing `price_usd_per_million` budget inputs.
+Audit reports `prices_needing_refresh` separately. See [price rules](prices.md).
+
 Freshness limits are editorial review policy, not measured half-lives of ability.
 If extending them, explain why the task remains stable. Refreshing `reviewed_on`
 must not erase an old `reported_on`. Browsing output and downloaded source content

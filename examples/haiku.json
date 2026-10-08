@@ -1,0 +1,11 @@
+{
+  "prompt": "根据已有 SQL 数据库完成经营数据分析，并核对统计假设。推荐三个模型供我选择。",
+  "language": "zh-CN",
+  "tasks": [
+    "data.analysis",
+    "data.sql"
+  ],
+  "context_tokens": 50000,
+  "classification_method": "host_semantic",
+  "tools_required": true
+}

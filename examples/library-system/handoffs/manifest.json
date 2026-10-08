@@ -51,6 +51,33 @@
             "output": 50,
             "max_input_tokens": 272000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$10 / $50 (输入长度 ≤272,000 tokens); $20 / $75 (输入长度 >272,000–≤1,050,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 272000,
+                "input": 10,
+                "output": 50
+              },
+              {
+                "max_input_tokens": 1050000,
+                "input": 20,
+                "output": 75.0
+              }
+            ],
+            "source": {
+              "id": "openai-astra-pricing",
+              "title": "GPT-6 Astra model documentation — API pricing",
+              "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         },
         {
@@ -74,6 +101,28 @@
             "output": 20,
             "max_input_tokens": 200000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$4 / $20 (输入长度 ≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 1000000,
+                "input": 4,
+                "output": 20
+              }
+            ],
+            "source": {
+              "id": "claude-pricing",
+              "title": "Claude API official pricing",
+              "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         },
         {
@@ -97,6 +146,28 @@
             "output": 10,
             "max_input_tokens": 200000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$2 / $10 (输入长度 ≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 1000000,
+                "input": 2,
+                "output": 10
+              }
+            ],
+            "source": {
+              "id": "claude-pricing",
+              "title": "Claude API official pricing",
+              "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         }
       ],
@@ -135,6 +206,56 @@
       "recommendations": [
         {
           "rank": 1,
+          "model_id": "claude-haiku-5-5",
+          "name": "Claude Haiku 5.5",
+          "reason": "有匹配该任务的独立评测，对应任务：SQL 生成；有官方能力说明或相邻任务证据，对应任务：代码库功能实现",
+          "resources": {
+            "access": "verify_account_access",
+            "input_modalities": [
+              "text",
+              "image"
+            ],
+            "context_tokens": 1000000,
+            "tool_calling": true,
+            "open_weights": false,
+            "price_applies": true
+          },
+          "price": {
+            "input": 0.1,
+            "output": 0.5,
+            "max_input_tokens": 100000,
+            "scope": "Standard uncached Claude API USD per million text tokens; prompts up to 100k; excludes caching, tools, discounts and regional tiers."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$0.1 / $0.5 (输入长度 ≤100,000 tokens); $0.5 / $2.5 (输入长度 >100,000–≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 100000,
+                "input": 0.1,
+                "output": 0.5
+              },
+              {
+                "max_input_tokens": 1000000,
+                "input": 0.5,
+                "output": 2.5
+              }
+            ],
+            "source": {
+              "id": "claude-pricing",
+              "title": "Claude API official pricing",
+              "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
+          }
+        },
+        {
+          "rank": 2,
           "model_id": "claude-opus-5-5",
           "name": "Claude Opus 5.5",
           "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务",
@@ -154,10 +275,32 @@
             "output": 20,
             "max_input_tokens": 200000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$4 / $20 (输入长度 ≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 1000000,
+                "input": 4,
+                "output": 20
+              }
+            ],
+            "source": {
+              "id": "claude-pricing",
+              "title": "Claude API official pricing",
+              "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         },
         {
-          "rank": 2,
+          "rank": 3,
           "model_id": "glm-5.3-flash",
           "name": "GLM-5.3-Flash",
           "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务",
@@ -178,28 +321,28 @@
             "output": 0.5,
             "max_input_tokens": 1000000,
             "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
-          }
-        },
-        {
-          "rank": 3,
-          "model_id": "glm-5.3",
-          "name": "GLM-5.3",
-          "reason": "有匹配该任务的厂商评测，对应任务：代码库功能实现；已计入社区评价，可查看评分及来源；仅覆盖部分任务",
-          "resources": {
-            "access": "verify_account_access",
-            "input_modalities": [
-              "text"
-            ],
-            "context_tokens": 1000000,
-            "tool_calling": true,
-            "open_weights": true,
-            "price_applies": true
           },
-          "price": {
-            "input": 1.4,
-            "output": 4.4,
-            "max_input_tokens": 1000000,
-            "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+          "price_reference": {
+            "status": "available",
+            "text": "$0.15 / $0.5 (输入长度 ≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 1000000,
+                "input": 0.15,
+                "output": 0.5
+              }
+            ],
+            "source": {
+              "id": "glm-pricing",
+              "title": "Z.ai official USD API pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         }
       ],
@@ -242,6 +385,28 @@
             "output": 4.4,
             "max_input_tokens": 1000000,
             "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$1.4 / $4.4 (输入长度 ≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 1000000,
+                "input": 1.4,
+                "output": 4.4
+              }
+            ],
+            "source": {
+              "id": "glm-pricing",
+              "title": "Z.ai official USD API pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         },
         {
@@ -266,6 +431,28 @@
             "output": 0.5,
             "max_input_tokens": 1000000,
             "scope": "Official Z.ai uncached API token prices in USD per million; excludes cached input, storage, web-search fees and Coding Plan subscriptions."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$0.15 / $0.5 (输入长度 ≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 1000000,
+                "input": 0.15,
+                "output": 0.5
+              }
+            ],
+            "source": {
+              "id": "glm-pricing",
+              "title": "Z.ai official USD API pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         },
         {
@@ -289,6 +476,28 @@
             "output": 20,
             "max_input_tokens": 200000,
             "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
+          },
+          "price_reference": {
+            "status": "available",
+            "text": "$4 / $20 (输入长度 ≤1,000,000 tokens)",
+            "currency": "USD",
+            "unit": "per_million_tokens",
+            "tiers": [
+              {
+                "max_input_tokens": 1000000,
+                "input": 4,
+                "output": 20
+              }
+            ],
+            "source": {
+              "id": "claude-pricing",
+              "title": "Claude API official pricing",
+              "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+              "verified_on": "2026-10-08"
+            },
+            "context_tokens": null,
+            "note": null,
+            "valid_until": null
           }
         }
       ],

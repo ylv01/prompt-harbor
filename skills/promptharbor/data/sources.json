@@ -774,6 +774,141 @@
       "published_on": null,
       "checked_on": "2026-10-08",
       "review_days": 14
+    },
+    {
+      "id": "haiku-5-5-docs",
+      "title": "Claude Haiku 5.5 model documentation",
+      "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+      "publisher": "Anthropic",
+      "published_on": "2026-10-07",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "haiku-5-5-launch",
+      "title": "Claude Haiku 5.5 release evaluation",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "publisher": "Anthropic",
+      "published_on": "2026-10-07",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "plotly-haiku-5-5-analysis",
+      "title": "Plotly Haiku 5.5 data analytics exam",
+      "url": "https://plotly.com/blog/claude-haiku-5-5-plotly-data-analytics-bench/",
+      "publisher": "Plotly",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "rundown-haiku-5-5-routing",
+      "title": "Rundown's Haiku 5.5 message-routing fixture",
+      "url": "https://app.therundown.ai/guides/claude-haiku-workflows",
+      "publisher": "The Rundown",
+      "published_on": "2026-10-07",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "steadybatch-haiku-5-5",
+      "title": "Haiku 5.5 structured-extraction batch runs",
+      "url": "https://github.com/kotwal-itpro/steadybatch",
+      "publisher": "Ankur Kotwal",
+      "published_on": "2026-10-07",
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "reddit-haiku-5-5-attribution",
+      "title": "Haiku 5.5 book-line attribution and context reports",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1x0829f/haiku_55_token_usage/",
+      "publisher": "Reddit r/ClaudeAI",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "claude-pricing",
+      "title": "Claude API official pricing",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "publisher": "Anthropic",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "mimo-pricing",
+      "title": "Xiaomi MiMo official API pricing",
+      "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+      "publisher": "Xiaomi",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-pricing",
+      "title": "Kimi API official model pricing",
+      "url": "https://platform.kimi.ai/",
+      "publisher": "Moonshot AI",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-pricing",
+      "title": "Gemini Developer API official pricing",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "deepseek-pricing",
+      "title": "DeepSeek API official pricing",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "publisher": "DeepSeek",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "grok-pricing",
+      "title": "Grok 4.7 release and long-context pricing",
+      "url": "https://docs.x.ai/developers/release-notes",
+      "publisher": "SpaceXAI",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "openai-astra-pricing",
+      "title": "GPT-6 Astra model documentation — API pricing",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "openai-luna-pricing",
+      "title": "GPT-6 Luna model documentation — API pricing",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
+    },
+    {
+      "id": "openai-sol-6-1-pricing",
+      "title": "GPT-6.1 Sol model documentation — API pricing",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "publisher": "OpenAI",
+      "published_on": null,
+      "checked_on": "2026-10-08",
+      "review_days": 14
     }
   ]
 }

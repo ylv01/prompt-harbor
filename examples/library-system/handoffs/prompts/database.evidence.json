@@ -117,6 +117,12 @@
       "reasons": [
         "no_fresh_task_evidence"
       ]
+    },
+    {
+      "model_id": "claude-haiku-5-5",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
     }
   ],
   "stale_evidence": [],

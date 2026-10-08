@@ -10,6 +10,7 @@ from pathlib import Path
 
 from harbor import eligibility, load_data, markdown, read_json, require, route, validate_job
 from i18n import message, resolve_language
+from price import price_cell, price_notice, shortlist_table, table_cell
 
 
 def safe_relative(value):
@@ -136,9 +137,13 @@ def compile_project(project_path, output, today=None, language=None):
             choice_lines.append(f"- {c['rank']}. **{c['name']}** (`{c['model_id']}`): {c['reason']}. {say('Sources')}: {source_links}")
         if len(choices) < 3:
             choice_lines.append(say('Only {count} evidence-backed choices available; use the declared baseline when shown.', count=len(choices)))
+        limit_lines = (['## '+say('Model-specific limits'), ''] +
+                       [f"- **{c['name']}** (`{c['model_id']}`): "+' '.join(c['limitations']) for c in choices] + ['']
+                       if choices else [])
         lines = ['# '+say('Handoff: {title}', title=task['title']), '', say('Planning default: **{model}**', model=model), '', assignment['reason'], '',
-                 '## '+say('Top 3 choices'), '', *choice_lines, '',
+                 '## '+say('Top 3 choices'), '', *shortlist_table(choices, language), '', price_notice(language), '', *choice_lines, '',
                  say('The user selects the actual model. This prompt works with any chosen model; keep the same contracts and acceptance criteria.'), '',
+                 *limit_lines,
                  '## '+say('Project goal'), '', project['goal'], '', '## '+say('Your bounded assignment'), '', task['objective'], '',
                  say('Write explanations, the delivery summary and receipt evidence in English. Preserve code identifiers, paths, contract text, JSON keys and status values.'), '',
                  say('The current conversation is the integration owner. Return artifacts to it; do not contact other agents or publish anything.'),
@@ -166,16 +171,17 @@ def compile_project(project_path, output, today=None, language=None):
         (output / 'prompts' / (task['id'] + '.evidence.json')).write_text(json.dumps(assignment['evidence'], ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
         manifest['assignments'].append({'task_id':task['id'], 'model':assignment['model'], 'reason':assignment['reason'],
                                         'selection':'user_choice',
-                                        'recommendations':[{k:c[k] for k in ('rank','model_id','name','reason','resources','price')} for c in choices],
+                                        'recommendations':[{k:c[k] for k in ('rank','model_id','name','reason','resources','price','price_reference')} for c in choices],
                                         'depends_on':task['depends_on'], 'deliverables':task['deliverables'],
                                         'prompt':'prompts/'+task['id']+'.md'})
     plan = ['# '+say('Project handoffs'), '', project['goal'], '', say('Integration owner: **this conversation**. No models are called or changed automatically.'), '',
-            say('| Part | Top 3 choices | Planning default | Dependencies | Prompt |'), '|---|---|---|---|---|']
+            say('| Part | Top 3 choices | Price reference | Planning default | Dependencies | Prompt |'), '|---|---|---|---|---|---|']
     for a in manifest['assignments']:
-        options = ', '.join(f"{c['rank']}. {c['name']}" for c in a['recommendations']) or say('Evidence gap; baseline only')
+        options = '<br>'.join(f"{c['rank']}. {table_cell(c['name'])}" for c in a['recommendations']) or say('Evidence gap; baseline only')
+        prices = '<br>'.join(f"{c['rank']}. {price_cell(c['price_reference'], language)}" for c in a['recommendations']) or say('Unknown — verify provider pricing')
         part = task_map[a['task_id']]['title']
-        plan.append(f"| {part} (`{a['task_id']}`) | {options} | {a['model'] or say('Unresolved')} | {', '.join(a['depends_on']) or say('None')} | [{say('Copy prompt')}]({a['prompt']}) |")
-    plan += ['', '## '+say('Assignment basis'), '']
+        plan.append(f"| {table_cell(part)} (`{a['task_id']}`) | {options} | {prices} | {a['model'] or say('Unresolved')} | {', '.join(a['depends_on']) or say('None')} | [{say('Copy prompt')}]({a['prompt']}) |")
+    plan += ['', price_notice(language), '', '## '+say('Assignment basis'), '']
     for a in assignments:
         task=a['task']
         plan += [f"- **{task['title']}:** {a['reason']} [{say('Evidence and gaps')}](prompts/{task['id']}.evidence.json)"]

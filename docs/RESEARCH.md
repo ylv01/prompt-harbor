@@ -157,6 +157,31 @@ Public report artifacts are not independent reproduction, and planner-assisted
 coding is not credited as autonomous architecture design. Full sources,
 limitations, search queries and Chinese summaries accompany each record.
 
+## Haiku and price references · 2026-10-08
+
+[Claude Haiku 5.5](https://www.anthropic.com/claude-haiku-5-5) is recorded as the
+October 7 release, without borrowing earlier Haiku scores. Official terminal,
+computer-use and chart results preserve unverified effort because the full
+system-card PDF could not be retrieved. They have no cross-model comparison group.
+[Plotly's original analytics exam](https://plotly.com/blog/claude-haiku-5-5-plotly-data-analytics-bench/)
+is an independent evaluator result from one private exam and harness; its missed
+statistical traps and hidden patterns remain visible.
+
+Three original community task reports are admitted: Rundown's small routing
+fixture, Kotwal's structured-extraction batch runs and an adverse book-attribution
+report. Each has a task-scoped editorial assessment, exact-version attribution,
+setup limitations and complete Chinese text. A public harness is an artifact,
+not a rerun by PromptHarbor. Unknown publication dates remain unknown.
+
+The catalog now includes 17 models, and every one has a dated community search
+log. Search coverage is separate from the availability of evidence for each task.
+[Community assessments](COMMUNITY.md) retain all supported scores and contrary results.
+
+Official price pages were checked for display-only references, including context,
+peak/off-peak and introductory tariffs. Existing budget/cost-priority inputs were
+preserved. [Price rules](../skills/promptharbor/references/prices.md) explain the
+separate fields and why open weights or missing prices never imply free inference.
+
 ## Architecture decisions
 
 1. **Semantic host, deterministic helpers.** The existing agent interprets intent

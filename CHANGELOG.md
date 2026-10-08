@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.0 — 2026-10-08
+
+- Add Claude Haiku 5.5 with exact-version official capabilities, qualified vendor
+  results, a Plotly analytics evaluation and three original community task reports.
+- Add input/output price reference columns to single-task Top 3 tables, project
+  plans and every handoff prompt, with context tiers, source links and check dates.
+- Keep display prices separate from ranking, switching, resource eligibility and
+  existing budget/cost-priority behavior; missing or expired references stay unknown.
+- Cover all catalog models with qualified price references or explicit unknowns,
+  including Haiku long-input rates, DeepSeek time rates and Gemini offer expiry.
+- Extend price refresh auditing, bilingual documentation, examples and regression checks.
+
 ## 0.3.2 — 2026-10-08
 
 - Remove GPT-6 Sol from active recommendations and resource examples; use the

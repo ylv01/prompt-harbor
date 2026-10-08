@@ -293,6 +293,26 @@
         "glm-5.3-flash-community-03",
         "glm-5.3-flash-community-07"
       ]
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "searched_on": "2026-10-08",
+      "queries": [
+        "\"Haiku 5.5\" experience coding benchmark",
+        "\"Haiku 5.5\" reddit coding",
+        "\"Haiku 5.5\" \"I tested\" -site:haiku55.com -site:datacamp.com",
+        "\"Haiku 5.5\" \"frontend\" \"tested\"",
+        "\"Haiku 5.5\" \"classification\" \"I\" site:reddit.com",
+        "\"Haiku 5.5\" \"tested\" \"code\" \"Oct 7\"",
+        "\"Haiku 5.5\" \"I\" \"built\" frontend"
+      ],
+      "status": "reviewed",
+      "summary": "Release-day original task reports reviewed: bounded extraction positives, challenge-case mistakes, batch truncation and attribution failure. Launch announcements and unsupported global rankings excluded.",
+      "evidence_ids": [
+        "claude-haiku-5-5-community-01",
+        "claude-haiku-5-5-community-02",
+        "claude-haiku-5-5-community-03"
+      ]
     }
   ]
 }

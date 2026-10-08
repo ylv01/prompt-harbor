@@ -3946,6 +3946,243 @@
       "reported_on": "2026-10-07",
       "reviewed_on": "2026-10-08",
       "comparison_group": "arena-webdev-2026-10-07"
+    },
+    {
+      "id": "haiku-5-5-extraction",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "haiku-5-5-docs",
+      "kind": "official_capability",
+      "claim": "Anthropic positions Haiku 5.5 for bounded extraction, classification and routing.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "data.extract"
+      ],
+      "measurement": null,
+      "setting": "Official model positioning.",
+      "limitations": "Capability description; no extraction accuracy measurement.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "haiku-5-5-summary",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "haiku-5-5-launch",
+      "kind": "official_capability",
+      "claim": "Anthropic recommends short summaries, compaction and bounded coding subagents.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "context.summary",
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": null,
+      "setting": "Release positioning.",
+      "limitations": "Bounded helpers; not evidence of completing a large project independently.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "haiku-5-5-terminal",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "haiku-5-5-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 39.2% on Terminal-Bench 4.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "accuracy",
+        "value": 39.2,
+        "unit": "percent",
+        "protocol": "Anthropic Haiku 5.5 release table"
+      },
+      "setting": "Vendor release table; effort not verified in this record.",
+      "limitations": "No independent replication; default medium effort may differ.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "haiku-5-5-computer",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "haiku-5-5-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 72.4% on OSWorld 2.1's offline subset.",
+      "direct_tasks": [
+        "agent.computer"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "OSWorld",
+        "version": "2.1 offline subset",
+        "metric": "accuracy",
+        "value": 72.4,
+        "unit": "percent",
+        "protocol": "Anthropic Haiku 5.5 offline release setup"
+      },
+      "setting": "Offline subset; effort not verified in this record.",
+      "limitations": "Does not establish performance on live browser services.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "haiku-5-5-chart",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "haiku-5-5-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 46.4% on Chartography without tools.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Chartography",
+        "version": "release snapshot",
+        "metric": "accuracy",
+        "value": 46.4,
+        "unit": "percent",
+        "protocol": "Anthropic Haiku 5.5 release table without tools"
+      },
+      "setting": "No tools; effort not verified in this record.",
+      "limitations": "Vendor result; unfamiliar chart layouts remain untested.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "haiku-5-5-plotly-analysis",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "plotly-haiku-5-5-analysis",
+      "kind": "independent_eval",
+      "claim": "Plotly reports 37/43 questions passed (86%), including all 20 SQL analytics questions.",
+      "direct_tasks": [
+        "data.analysis",
+        "data.sql"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Plotly data analytics exam",
+        "version": "Haiku 5.5 October 2026 release run",
+        "metric": "questions passed",
+        "value": 37,
+        "unit": "out of 43",
+        "protocol": "Plotly Studio Embedded; same agent/tools/prompts; synthetic wind-fleet warehouse"
+      },
+      "setting": "20M rows, 44 tables; verified answer keys; 14s median per question. Effort unspecified.",
+      "limitations": "Private exam, one harness, no independent rerun. Missed three hidden patterns and three statistics traps.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null
+    },
+    {
+      "id": "claude-haiku-5-5-community-01",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "rundown-haiku-5-5-routing",
+      "kind": "community_test",
+      "claim": "Rundown's helper matched 8/8 initial routing records and 11/12 challenge records, preserving IDs and quotes.",
+      "direct_tasks": [
+        "data.extract"
+      ],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": null,
+      "setting": "Claude Code 2.1.293+; exact Haiku 5.5, medium effort, Read-only six-turn helper; Sonnet parent.",
+      "limitations": "Small fixture, no speed/billing comparison; missed one resolved-ticket label. We did not reproduce the run.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "The Rundown",
+        "origin_id": "rundown-haiku55-message-routing-oct7",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [
+          "https://app.therundown.ai/guides/claude-haiku-workflows"
+        ],
+        "rating": {
+          "value": 7,
+          "rationale": "Clear fixture and execution records support bounded extraction; tiny sample and one miss cap confidence.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "claude-haiku-5-5-community-02",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "steadybatch-haiku-5-5",
+      "kind": "community_test",
+      "claim": "On 1,000 synthetic support chats, the author reports 999 returned and 89.1% sentiment accuracy by default; disabling thinking returned 1,000 with 91.0%.",
+      "direct_tasks": [
+        "data.extract"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Exact claude-haiku-5-5 on Anthropic Message Batches; same schema/definitions; two thinking configurations.",
+      "limitations": "Fixed output cap caused incomplete replies; differing thinking settings change error direction. Public harness available, raw result files not fetched, no rerun here.",
+      "reported_on": "2026-10-07",
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Ankur Kotwal",
+        "origin_id": "kotwal-steadybatch-haiku55-support-chats-oct7",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [
+          "https://github.com/kotwal-itpro/steadybatch",
+          "https://github.com/kotwal-itpro/steadybatch/blob/main/results/latest/summary.md"
+        ],
+        "rating": {
+          "value": 6.5,
+          "rationale": "Public harness and concrete outcomes support verification, but default truncation and setting sensitivity limit task reliability.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
+    },
+    {
+      "id": "claude-haiku-5-5-community-03",
+      "model_id": "claude-haiku-5-5",
+      "source_id": "reddit-haiku-5-5-attribution",
+      "kind": "community_test",
+      "claim": "A commenter reports finding book lines correctly but assigning their attributions incorrectly with Haiku 5.5.",
+      "direct_tasks": [
+        "data.extract",
+        "context.retrieve"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Firsthand book-line categorization; exact model stated; effort, prompts and corpus size unspecified.",
+      "limitations": "Single early anecdote, no source text or outputs; no measured error rate.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-08",
+      "comparison_group": null,
+      "community": {
+        "author": "Strange-Pin-2998 (comment)",
+        "origin_id": "strange-pin2998-haiku55-book-attribution",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-10-08",
+        "artifact_urls": [],
+        "rating": {
+          "value": 3,
+          "rationale": "Specific attribution failure is relevant, but missing artifacts and setup keep confidence low.",
+          "confidence": "low",
+          "assessed_on": "2026-10-08"
+        }
+      }
     }
   ]
 }

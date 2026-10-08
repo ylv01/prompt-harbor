@@ -169,6 +169,33 @@
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
+      "price_reference": {
+        "status": "available",
+        "text": "$10 / $50 (输入长度 ≤272,000 tokens); $20 / $75 (输入长度 >272,000–≤1,050,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 10,
+            "output": 50
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 20,
+            "output": 75.0
+          }
+        ],
+        "source": {
+          "id": "openai-astra-pricing",
+          "title": "GPT-6 Astra model documentation — API pricing",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
+      },
       "rank": 1,
       "reason": "有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源"
     },
@@ -280,6 +307,28 @@
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
       },
+      "price_reference": {
+        "status": "available",
+        "text": "$4 / $20 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4,
+            "output": 20
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
+      },
       "rank": 2,
       "reason": "有匹配该任务的独立评测，对应任务：前端实现"
     },
@@ -385,6 +434,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$2 / $10 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 2,
+            "output": 10
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       },
       "rank": 3,
       "reason": "有匹配该任务的独立评测，对应任务：前端实现"
@@ -543,6 +614,33 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$10 / $50 (输入长度 ≤272,000 tokens); $20 / $75 (输入长度 >272,000–≤1,050,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 10,
+            "output": 50
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 20,
+            "output": 75.0
+          }
+        ],
+        "source": {
+          "id": "openai-astra-pricing",
+          "title": "GPT-6 Astra model documentation — API pricing",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -652,6 +750,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$4 / $20 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4,
+            "output": 20
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -756,6 +876,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$2 / $10 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 2,
+            "output": 10
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -954,6 +1096,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$10 / $50 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 10,
+            "output": 50
+          }
+        ],
+        "source": {
+          "id": "claude-pricing",
+          "title": "Claude API official pricing",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -1083,6 +1247,33 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$2 / $10 (输入长度 ≤272,000 tokens); $4 / $15 (输入长度 >272,000–≤1,050,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 2,
+            "output": 10
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 4,
+            "output": 15.0
+          }
+        ],
+        "source": {
+          "id": "openai-sol-6-1-pricing",
+          "title": "GPT-6.1 Sol model documentation — API pricing",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -1318,6 +1509,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$3 / $15 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 3,
+            "output": 15
+          }
+        ],
+        "source": {
+          "id": "kimi-pricing",
+          "title": "Kimi API official model pricing",
+          "url": "https://platform.kimi.ai/",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -1476,6 +1689,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.14 / $0.28 (输入长度 ≤1,000,000 tokens) · 海外美元价目；国内人民币计费另有价格。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.14,
+            "output": 0.28
+          }
+        ],
+        "source": {
+          "id": "mimo-pricing",
+          "title": "Xiaomi MiMo official API pricing",
+          "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "海外美元价目；国内人民币计费另有价格。",
+        "valid_until": null
       }
     },
     {
@@ -1676,6 +1911,33 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$2 / $6 (输入长度 ≤200,000 tokens); $4 / $12 (输入长度 >200,000–≤500,000 tokens) · 全球标准 API；不含美国区域附加费及应用内 Fast 模式。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 200000,
+            "input": 2,
+            "output": 6
+          },
+          {
+            "max_input_tokens": 500000,
+            "input": 4,
+            "output": 12
+          }
+        ],
+        "source": {
+          "id": "grok-pricing",
+          "title": "Grok 4.7 release and long-context pricing",
+          "url": "https://docs.x.ai/developers/release-notes",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "全球标准 API；不含美国区域附加费及应用内 Fast 模式。",
+        "valid_until": null
       }
     },
     {
@@ -1807,6 +2069,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$1.4 / $4.4 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 1.4,
+            "output": 4.4
+          }
+        ],
+        "source": {
+          "id": "glm-pricing",
+          "title": "Z.ai official USD API pricing",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -2009,6 +2293,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.435 / $0.87 (输入长度 ≤1,000,000 tokens) · 海外美元价目；国内人民币计费另有价格。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.435,
+            "output": 0.87
+          }
+        ],
+        "source": {
+          "id": "mimo-pricing",
+          "title": "Xiaomi MiMo official API pricing",
+          "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "海外美元价目；国内人民币计费另有价格。",
+        "valid_until": null
       }
     },
     {
@@ -2155,6 +2461,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.3 / $1.2 (输入长度 ≤1,000,000 tokens) · 以上为高峰参考；非高峰 $0.15 / $0.60。高峰为周一至周五 UTC 01:00–04:00、06:00–10:00，中国法定节假日除外。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.3,
+            "output": 1.2
+          }
+        ],
+        "source": {
+          "id": "deepseek-pricing",
+          "title": "DeepSeek API official pricing",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "以上为高峰参考；非高峰 $0.15 / $0.60。高峰为周一至周五 UTC 01:00–04:00、06:00–10:00，中国法定节假日除外。",
+        "valid_until": null
       }
     },
     {
@@ -2311,6 +2639,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.15 / $0.5 (输入长度 ≤1,000,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.15,
+            "output": 0.5
+          }
+        ],
+        "source": {
+          "id": "glm-pricing",
+          "title": "Z.ai official USD API pricing",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -2415,6 +2765,22 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "unknown",
+        "text": "未知，请核实厂商价格 · 价格取决于托管平台或本地运行成本；开放权重不等于免费推理。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [],
+        "source": {
+          "id": "qwen-card",
+          "title": "Qwen3.8-27B model card",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "verified_on": "2026-09-29"
+        },
+        "context_tokens": null,
+        "note": "价格取决于托管平台或本地运行成本；开放权重不等于免费推理。",
+        "valid_until": null
       }
     },
     {
@@ -2524,6 +2890,33 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.1 / $0.5 (输入长度 ≤272,000 tokens); $0.2 / $0.75 (输入长度 >272,000–≤1,050,000 tokens)",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 0.1,
+            "output": 0.5
+          },
+          {
+            "max_input_tokens": 1050000,
+            "input": 0.2,
+            "output": 0.75
+          }
+        ],
+        "source": {
+          "id": "openai-luna-pricing",
+          "title": "GPT-6 Luna model documentation — API pricing",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": null,
+        "valid_until": null
       }
     },
     {
@@ -2720,6 +3113,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$0.75 / $3.75 (输入长度 ≤1,000,000 tokens) · 标准 API 优惠价截至 2026-12-31。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 0.75,
+            "output": 3.75
+          }
+        ],
+        "source": {
+          "id": "gemini-pricing",
+          "title": "Gemini Developer API official pricing",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "标准 API 优惠价截至 2026-12-31。",
+        "valid_until": "2026-12-31"
       }
     },
     {
@@ -2846,6 +3261,28 @@
           }
         ],
         "meaning": "Editorial recommendation support for this task and candidate set; not a probability or global ability score."
+      },
+      "price_reference": {
+        "status": "available",
+        "text": "$4.35 / $8.7 (输入长度 ≤1,000,000 tokens) · 海外美元价目；国内人民币计费另有价格。",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 4.35,
+            "output": 8.7
+          }
+        ],
+        "source": {
+          "id": "mimo-pricing",
+          "title": "Xiaomi MiMo official API pricing",
+          "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
+          "verified_on": "2026-10-08"
+        },
+        "context_tokens": null,
+        "note": "海外美元价目；国内人民币计费另有价格。",
+        "valid_until": null
       }
     }
   ],
@@ -2853,7 +3290,14 @@
     "action": "test_first",
     "reason": "尚无针对同一任务的实测证明切换值得，建议先试做再决定。"
   },
-  "excluded": [],
+  "excluded": [
+    {
+      "model_id": "claude-haiku-5-5",
+      "reasons": [
+        "no_fresh_task_evidence"
+      ]
+    }
+  ],
   "stale_evidence": [],
   "warnings": [],
   "validation": [

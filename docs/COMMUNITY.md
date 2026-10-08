@@ -1,6 +1,6 @@
 # Community task ratings
 
-Reviewed: **2026-10-08**. All **16** catalog models were searched.
+Reviewed: **2026-10-08**. All **17** catalog models were searched.
 
 Scores are PromptHarbor editorial judgments of specific reported outcomes, on a 0–10 scale. They are not benchmark measurements or global model ratings.
 Unknown task ratings remain unknown. A **proxy** label means only adjacent-task reports support that rating; it is not a direct observation of that task.
@@ -25,6 +25,7 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 | MiMo-V2.6-Pro-UltraSpeed | `software.frontend` **4.5**; `software.frontend.fidelity` **4.5** | 1 |
 | GLM-5.3 | `software.algorithm` **7.5**; `software.debug` **7.7**; `software.frontend` **8.0**; `software.repo` **8.0** (proxy); `writing.creative` **3.5** | 3 |
 | GLM-5.3-Flash | `agent.long` **4.1**; `software.debug` **8.0**; `software.frontend` **6.5**; `software.frontend.design` **6.5** (proxy); `software.repo` **5.9**; `software.terminal` **3.0** | 3 |
+| Claude Haiku 5.5 | `agent.workflow` **7.0** (proxy); `context.retrieve` **3.0**; `data.extract` **6.5** | 3 |
 
 ## GPT-6 Astra
 
@@ -910,3 +911,53 @@ The author publishes strong simple-page outputs but a dense dashboard with sever
 **Limits:** Accessibility is not visual quality or complete interaction correctness. Different harnesses and reruns affect results; small public sample. PromptHarbor opened the profile but did not visually accept or rerun outputs.
 
 Artifacts: [artifact 1](https://openvibeeval.com/models/glm-5-3-flash/).
+
+## Claude Haiku 5.5
+
+Search: 2026-10-08 · status: reviewed
+
+Queries: `"Haiku 5.5" experience coding benchmark`; `"Haiku 5.5" reddit coding`; `"Haiku 5.5" "I tested" -site:haiku55.com -site:datacamp.com`; `"Haiku 5.5" "frontend" "tested"`; `"Haiku 5.5" "classification" "I" site:reddit.com`; `"Haiku 5.5" "tested" "code" "Oct 7"`; `"Haiku 5.5" "I" "built" frontend`
+
+- `agent.workflow`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
+- `context.retrieve`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
+- `data.extract`: **6.5/10**, medium confidence, direct mapping, 3 origin(s).
+
+### [Rundown's Haiku 5.5 message-routing fixture](https://app.therundown.ai/guides/claude-haiku-workflows)
+
+**7/10** · mixed · artifact_report · low confidence. Author: The Rundown.
+Reported: 2026-10-07 · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `data.extract`. Proxy tasks: `agent.workflow`.
+
+Rundown's helper matched 8/8 initial routing records and 11/12 challenge records, preserving IDs and quotes.
+
+**Rating reason:** Clear fixture and execution records support bounded extraction; tiny sample and one miss cap confidence.
+
+**Limits:** Small fixture, no speed/billing comparison; missed one resolved-ticket label. We did not reproduce the run.
+
+Artifacts: [artifact 1](https://app.therundown.ai/guides/claude-haiku-workflows).
+
+### [Haiku 5.5 structured-extraction batch runs](https://github.com/kotwal-itpro/steadybatch)
+
+**6.5/10** · mixed · artifact_report · low confidence. Author: Ankur Kotwal.
+Reported: 2026-10-07 · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `data.extract`. Proxy tasks: None.
+
+On 1,000 synthetic support chats, the author reports 999 returned and 89.1% sentiment accuracy by default; disabling thinking returned 1,000 with 91.0%.
+
+**Rating reason:** Public harness and concrete outcomes support verification, but default truncation and setting sensitivity limit task reliability.
+
+**Limits:** Fixed output cap caused incomplete replies; differing thinking settings change error direction. Public harness available, raw result files not fetched, no rerun here.
+
+Artifacts: [artifact 1](https://github.com/kotwal-itpro/steadybatch), [artifact 2](https://github.com/kotwal-itpro/steadybatch/blob/main/results/latest/summary.md).
+
+### [Haiku 5.5 book-line attribution and context reports](https://www.reddit.com/r/ClaudeAI/comments/1x0829f/haiku_55_token_usage/)
+
+**3/10** · negative · firsthand · low confidence. Author: Strange-Pin-2998 (comment).
+Reported: absolute date unknown · first seen: 2026-10-08 · assessed: 2026-10-08.
+Direct tasks: `data.extract`, `context.retrieve`. Proxy tasks: None.
+
+A commenter reports finding book lines correctly but assigning their attributions incorrectly with Haiku 5.5.
+
+**Rating reason:** Specific attribution failure is relevant, but missing artifacts and setup keep confidence low.
+
+**Limits:** Single early anecdote, no source text or outputs; no measured error rate.

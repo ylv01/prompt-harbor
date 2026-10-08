@@ -1051,6 +1051,54 @@
       "setting": "通过 ZCode 和 Cline 使用 GLM-5.3-Flash；模型页运行日期为 2026-08-26/29；文章最初描述较小的 7 个完成结果集合。",
       "limitations": "无障碍分数不等于视觉质量或完整交互正确性。不同执行框架和重试影响结果；公开样本小。本项目已打开结果页，但未进行视觉验收或复现。",
       "rating_rationale": "公开产物展示了随复杂度变化的优势与缺陷；混合分数避免把快速渲染等同于可靠的复杂 UI 实现。"
+    },
+    "haiku-5-5-extraction": {
+      "claim": "Anthropic 将 Haiku 5.5 定位于范围明确的信息抽取、分类与路由任务。",
+      "setting": "官方模型定位。",
+      "limitations": "能力说明，未提供信息抽取准确率。"
+    },
+    "haiku-5-5-summary": {
+      "claim": "Anthropic 推荐用于短摘要、上下文压缩及范围明确的编程子任务。",
+      "setting": "发布说明中的任务定位。",
+      "limitations": "针对范围明确的辅助任务，不能据此判断独立完成大型项目的能力。"
+    },
+    "haiku-5-5-terminal": {
+      "claim": "Anthropic 报告 Terminal-Bench 4.0 成绩为 39.2%。",
+      "setting": "厂商发布表格；本记录未核实测试的推理档位。",
+      "limitations": "未经独立复现，成绩可能与默认 medium 档位不同。"
+    },
+    "haiku-5-5-computer": {
+      "claim": "Anthropic 报告 OSWorld 2.1 离线子集成绩为 72.4%。",
+      "setting": "离线子集；本记录未核实测试的推理档位。",
+      "limitations": "不能据此确定在实时浏览器服务中的表现。"
+    },
+    "haiku-5-5-chart": {
+      "claim": "Anthropic 报告无工具 Chartography 图表评测成绩为 46.4%。",
+      "setting": "无工具；本记录未核实测试的推理档位。",
+      "limitations": "厂商评测；未验证陌生图表版式的表现。"
+    },
+    "haiku-5-5-plotly-analysis": {
+      "claim": "Plotly 报告通过 43 题中的 37 题（86%），其中 20 道 SQL 分析题全部通过。",
+      "setting": "2,000 万行、44 张表，使用核验答案及相同 Agent、工具和提示词；每题中位耗时 14 秒，未注明推理档位。",
+      "limitations": "题库未公开，仅一个执行环境且未独立复跑；漏掉三处隐藏模式及三个统计陷阱。"
+    },
+    "claude-haiku-5-5-community-01": {
+      "claim": "Rundown 的 Haiku 辅助任务初轮匹配 8/8 条分类记录，挑战轮匹配 11/12 条，并保留全部编号及原文引用。",
+      "setting": "Claude Code 2.1.293 及以上；精确型号 Haiku 5.5、medium 档位、仅读取、最多六轮；主窗口使用 Sonnet。",
+      "limitations": "仅小型样例，未比较速度或账单；误判一条已解决工单。本项目未复跑。",
+      "rating_rationale": "任务条件、原文引用及执行截图明确，但样本很小且存在误判，给予有限的正面评价。"
+    },
+    "claude-haiku-5-5-community-02": {
+      "claim": "作者在 1,000 条合成客服对话上报告：默认设置返回 999 条、情感准确率 89.1%；关闭思考返回 1,000 条、准确率 91.0%。",
+      "setting": "精确型号 claude-haiku-5-5；Anthropic Message Batches；相同数据格式和字段定义，对比两种思考设置。",
+      "limitations": "固定输出上限导致不完整回答，切换思考设置改变误判方向；公开了测试代码，但本项目未取得原始结果文件或复跑。",
+      "rating_rationale": "公开代码和明确的任务结果提高可核查性，但默认设置存在截断，且结果受到思考档位影响。"
+    },
+    "claude-haiku-5-5-community-03": {
+      "claim": "一位使用者报告 Haiku 5.5 能找到书中所需语句，但在分类时给出了错误的归属信息。",
+      "setting": "书中语句分类的一手报告，明确提及 Haiku 5.5；未说明推理档位、提示词或语料规模。",
+      "limitations": "仅一条早期经验，无原文及输出，未测量错误率。",
+      "rating_rationale": "具体失败模式支持有限的负面信号；缺乏输出及复现条件，保持低置信度。"
     }
   },
   "models": {
@@ -1156,6 +1204,13 @@
         "官方上下文写作 1M；此处按保守的 1000000 token 记录。",
         "MIT 许可证权重：https://huggingface.co/zai-org/GLM-5.3-Flash；价格：https://docs.z.ai/guides/overview/pricing",
         "Coding Plan 配额与 API token 价格分别计算；FlashX 是独立的加速托管档位，其吞吐速度不等于 Flash 的任务质量分数。"
+      ]
+    },
+    "claude-haiku-5-5": {
+      "notes": [
+        "2026 年 10 月 7 日发布，定位于范围明确的信息抽取、摘要和辅助任务；数据分析依据来自一个 Plotly 执行环境。",
+        "单次输入超过 10 万 token 时，每百万输入/输出价格为 0.50/2.50 美元。默认推理档位为 medium，较高档位评测可能不同。",
+        "SQL 数据分析成绩没有评测表结构设计、事务正确性或完整后端交付。"
       ]
     }
   }

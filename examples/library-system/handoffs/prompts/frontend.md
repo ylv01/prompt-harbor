@@ -6,11 +6,25 @@
 
 ## Top 3 候选模型
 
+| 排名 | 模型 | 适合本任务的依据 | 价格参考 |
+|---|---|---|---|
+| 1 | **GPT-6 Astra** (`gpt-6-astra`) | 有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源 | $10 / $50 (输入长度 ≤272,000 tokens); $20 / $75 (输入长度 >272,000–≤1,050,000 tokens)<br>[价格来源](https://developers.openai.com/api/docs/models/gpt-6-astra) · 2026-10-08 |
+| 2 | **Claude Opus 5.5** (`claude-opus-5-5`) | 有匹配该任务的独立评测，对应任务：前端实现 | $4 / $20 (输入长度 ≤1,000,000 tokens)<br>[价格来源](https://platform.claude.com/docs/en/about-claude/pricing) · 2026-10-08 |
+| 3 | **Claude Sonnet 5.5** (`claude-sonnet-5-5`) | 有匹配该任务的独立评测，对应任务：前端实现 | $2 / $10 (输入长度 ≤1,000,000 tokens)<br>[价格来源](https://platform.claude.com/docs/en/about-claude/pricing) · 2026-10-08 |
+
+价格参考：标准文本 API 非缓存输入 / 输出单价，单位为美元 / 百万 tokens。仅供对比，不改变推荐权重；订阅、本地部署、音频、图像、工具及缓存费用需单独确认。
+
 - 1. **GPT-6 Astra** (`gpt-6-astra`): 有匹配该任务的独立评测，对应任务：前端实现；已计入社区评价，可查看评分及来源. 来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Astra built the author’s portfolio](https://www.najam.pk/blog/gpt-6-astra-review), [Arena WebDev Overall — October 7, 2026](https://arena.ai/leaderboard/code/webdev)
 - 2. **Claude Opus 5.5** (`claude-opus-5-5`): 有匹配该任务的独立评测，对应任务：前端实现. 来源: [Arena WebDev overall snapshot](https://arena.ai/leaderboard/code), [Arena WebDev Overall — October 7, 2026](https://arena.ai/leaderboard/code/webdev)
 - 3. **Claude Sonnet 5.5** (`claude-sonnet-5-5`): 有匹配该任务的独立评测，对应任务：前端实现. 来源: [Claude Sonnet 5.5 release evaluation](https://www.anthropic.com/claude-sonnet-5-5), [Arena WebDev Overall — October 7, 2026](https://arena.ai/leaderboard/code/webdev)
 
 实际使用的模型由用户选择。无论选择哪个候选，都应遵循同一份接口契约和验收标准。
+
+## 各模型的适用限制
+
+- **GPT-6 Astra** (`gpt-6-astra`): 需另行核查账号权限、地区和工具环境。
+- **Claude Opus 5.5** (`claude-opus-5-5`): 需另行核查账号权限、地区和工具环境。
+- **Claude Sonnet 5.5** (`claude-sonnet-5-5`): 需另行核查账号权限、地区和工具环境。
 
 ## 项目目标
 

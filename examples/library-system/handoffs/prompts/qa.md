@@ -6,11 +6,25 @@
 
 ## Top 3 候选模型
 
+| 排名 | 模型 | 适合本任务的依据 | 价格参考 |
+|---|---|---|---|
+| 1 | **GLM-5.3** (`glm-5.3`) | 有官方能力说明或相邻任务证据，对应任务：测试设计 | $1.4 / $4.4 (输入长度 ≤1,000,000 tokens)<br>[价格来源](https://docs.z.ai/guides/overview/pricing) · 2026-10-08 |
+| 2 | **GLM-5.3-Flash** (`glm-5.3-flash`) | 有官方能力说明或相邻任务证据，对应任务：测试设计 | $0.15 / $0.5 (输入长度 ≤1,000,000 tokens)<br>[价格来源](https://docs.z.ai/guides/overview/pricing) · 2026-10-08 |
+| 3 | **Claude Opus 5.5** (`claude-opus-5-5`) | 有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源 | $4 / $20 (输入长度 ≤1,000,000 tokens)<br>[价格来源](https://platform.claude.com/docs/en/about-claude/pricing) · 2026-10-08 |
+
+价格参考：标准文本 API 非缓存输入 / 输出单价，单位为美元 / 百万 tokens。仅供对比，不改变推荐权重；订阅、本地部署、音频、图像、工具及缓存费用需单独确认。
+
 - 1. **GLM-5.3** (`glm-5.3`): 有官方能力说明或相邻任务证据，对应任务：测试设计. 来源: [GLM-5.3 official weights and evaluation card](https://huggingface.co/zai-org/GLM-5.3), [GLM-5.3 model documentation](https://docs.z.ai/guides/llm/glm-5.3)
 - 2. **GLM-5.3-Flash** (`glm-5.3-flash`): 有官方能力说明或相邻任务证据，对应任务：测试设计. 来源: [GLM-5.3-Flash official machine-readable evaluation results](https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/.eval_results/GLM-5.3-Flash.yaml)
 - 3. **Claude Opus 5.5** (`claude-opus-5-5`): 有官方能力说明或相邻任务证据，对应任务：测试设计；已计入社区评价，可查看评分及来源. 来源: [Claude Opus 5.5 release evaluation](https://www.anthropic.com/claude-opus-5-5), [Opus 5.5 versus Sonnet 5.5 on a large test refactor](https://www.reddit.com/r/ClaudeCode/comments/1wtdgwy/where_does_sonnet_55_actually_fit_into_your_agent/)
 
 实际使用的模型由用户选择。无论选择哪个候选，都应遵循同一份接口契约和验收标准。
+
+## 各模型的适用限制
+
+- **GLM-5.3** (`glm-5.3`): 仅支持文本输入；图片和视频任务需要其他模型或外部预处理。 无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。 官方上下文写作 1M；此处按保守的十进制 1000000 token 记录。 开放权重采用 GLM-5.3 专用许可证：https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE 权重：https://huggingface.co/zai-org/GLM-5.3；价格：https://docs.z.ai/guides/overview/pricing 不同账户历史的 API 协议可用性可能不同；请分别确认端点及 Coding Plan 权限。
+- **GLM-5.3-Flash** (`glm-5.3-flash`): 原生支持文本、图片和视频；文件支持属于服务输入包装，不是单独的模态；视频 Agent 示例不作为原生音频输入的依据。 无法关闭推理；支持 low、high、max，默认 max；最大输出为 128K。 官方上下文写作 1M；此处按保守的 1000000 token 记录。 MIT 许可证权重：https://huggingface.co/zai-org/GLM-5.3-Flash；价格：https://docs.z.ai/guides/overview/pricing Coding Plan 配额与 API token 价格分别计算；FlashX 是独立的加速托管档位，其吞吐速度不等于 Flash 的任务质量分数。
+- **Claude Opus 5.5** (`claude-opus-5-5`): 需另行核查账号权限、地区和工具环境。
 
 ## 项目目标
 
