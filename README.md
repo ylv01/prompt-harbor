@@ -209,7 +209,11 @@ its source; original tables, articles and model weights are not redistributed.
 Current recommendations require the host to check availability, versions and
 fresh task-specific evidence online. Offline output is snapshot-based. The
 [refresh process](skills/promptharbor/references/refresh.md) and weekly freshness
-workflow identify review work; they never auto-promote scraped claims.
+workflow identify review work; they never auto-promote scraped claims. A nonempty
+weekly queue produces a warning, readable run summary and JSON artifact; invalid
+data or execution errors still fail the job. Expired evidence remains excluded
+from current recommendations. Use `python scripts/freshness.py --fail-due` for
+an explicitly strict maintenance check.
 See [methodology](skills/promptharbor/references/evidence.md) and
 [third-party attribution](THIRD_PARTY.md).
 

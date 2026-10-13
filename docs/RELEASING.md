@@ -8,6 +8,9 @@ release are separate steps.
    account and visibility. PromptHarbor is a project name, not trademark clearance.
 2. Run local tests, `harbor.py validate`, `scripts/check_repo.py` and freshness
    audit. A stale model-data snapshot needs review, not a cosmetic date bump.
+   The scheduled queue is advisory: inspect its warning, run summary and JSON
+   artifact. Use `python scripts/freshness.py --fail-due` when choosing a strict
+   release check; a green scheduled run does not establish current evidence.
 3. Review all files for private paths/prompts and credentials. The example's
    current model is hypothetical and its stack is explicitly scoped.
 4. Run `python scripts/package_skill.py`; inspect archive contents.
