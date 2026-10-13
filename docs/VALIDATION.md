@@ -62,3 +62,17 @@ clearance. The logo and layout inspections above were completed for the initial 
 These checks establish implementation behavior and packaging integrity, not the
 accuracy of model recommendations across arbitrary future prompts. The host
 evaluation fixtures and scoring process are in `evals/`.
+
+## Maintenance follow-up · 2026-10-13
+
+- **101 unittest cases passed** (91 existing plus 10 maintenance behavior cases).
+- The October 12 report still contains the three August 26 GLM Flash evaluations:
+  47 days old against a 45-day window. Advisory mode returns 0 with a warning;
+  explicit `--fail-due` returns 1. A clean October 8 report returns 0 in both modes.
+- Invalid or unreadable catalogs return 2. JSON artifacts and Markdown summaries
+  preserve original dates, concrete expiry reasons and source links.
+- Expired measurements remain excluded from current task routing, while other
+  fresh records can keep GLM Flash eligible. No catalog dates, policy windows or
+  recommendation weights were changed.
+- Repository and Skill Creator validation passed. Remote CI for this proposed
+  maintenance change has not been run before PR publication approval.

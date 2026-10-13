@@ -4,7 +4,23 @@ Run `python scripts/harbor.py audit` from the skill directory to see expired
 records and `community_searches_due`, the catalog searches due after 14 days.
 Source review intervals can be inspected with the repository maintenance
 script. The scheduled GitHub workflow produces a freshness report; it does not
-rewrite claims or assert that a page fetch revalidated them.
+rewrite claims or assert that a page fetch revalidated them. A nonempty scheduled
+queue emits a warning and a readable run summary with record IDs, dates, expiry
+reasons and source links; the JSON artifact preserves the full maintenance queue.
+Invalid catalog data or script errors still fail the workflow. Expired evidence
+remains excluded from current recommendations and retained for historical review.
+
+From the repository root, run:
+
+```sh
+python scripts/freshness.py --output freshness.json --summary freshness.md
+python scripts/freshness.py --fail-due
+```
+
+The first produces an advisory report. The second deliberately exits 1 for a
+nonempty queue. Neither renews any date or changes the recommendation policy.
+A model can remain eligible through other fresh records; an old measurement alone
+must not support a current task recommendation.
 
 For each relevant model family: verify the official current version and lifecycle,
 capabilities and pricing; inspect independent benchmark publishers and methods;

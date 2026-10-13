@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: '3.13'
       - name: Report review queue
-        run: python scripts/freshness.py --fail-due > freshness.json
+        run: python scripts/freshness.py --output freshness.json --summary "$GITHUB_STEP_SUMMARY" --github-actions
       - uses: actions/upload-artifact@v4
         if: always()
         with:

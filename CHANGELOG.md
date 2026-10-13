@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Treat the weekly evidence-review queue as advisory maintenance: emit a warning,
+  readable run summary and JSON artifact instead of failing solely on overdue items.
+- Preserve strict `--fail-due` checks, actual data/script failures, all evidence
+  dates and validity windows, and exclusion of expired records from current advice.
+- Show each expired record's model, original/review dates, expiry reason and source
+  so maintainers can update evidence without disguising an old evaluation as new.
+
 ## 0.4.0 — 2026-10-08
 
 - Add Claude Haiku 5.5 with exact-version official capabilities, qualified vendor
