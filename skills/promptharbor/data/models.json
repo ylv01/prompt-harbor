@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-10-08",
+  "snapshot_date": "2026-10-14",
   "coverage": "Task-specific curated catalog with community research for every listed model. Feature support and editorial report scores are separate from benchmark measurements.",
   "models": [
     {
@@ -693,6 +693,48 @@
             "output": 2.5
           }
         ]
+      }
+    },
+    {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_id": "gemini-4-argon-docs",
+      "status": "available",
+      "verified_on": "2026-10-14",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "context_tokens": 1048576,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": null,
+      "notes": [
+        "Stable API id gemini-4-argon is publicly documented from October 13; the September 30 announcement initially covered restricted Fairwind access. Paid API access is available; Google's pricing page excludes the Free tier and Google AI Pro plan. Consumer rollout and account availability need separate checking.",
+        "Input, thinking and output share 1048576 tokens. Default synchronous output is capped at 65536; larger outputs require background execution or client-side continuation and consume the remaining shared window. This is not 1M input plus a separate 1M output.",
+        "Text, image, video, audio and PDF inputs; text output only. PDF is a file input format rather than a separate modality. Default thinking is medium, with low and high available. Computer use is Preview; tools, grounding and code execution need a configured environment.",
+        "Standard uncached API reference is $2 input / $10 output per million tokens through 2026-11-30, then $4 / $20 from 2026-12-01. Output charges include thinking. This dated display-only price does not supply a numeric budget-filter quote. Cache, batch, flex, priority and search charges differ."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "gemini-4-argon-pricing",
+        "verified_on": "2026-10-14",
+        "tiers": [
+          {
+            "max_input_tokens": 1048576,
+            "input": 2,
+            "output": 10
+          }
+        ],
+        "valid_until": "2026-11-30",
+        "notes": {
+          "en": "Introductory standard API tariff through 2026-11-30; $4 / $20 from 2026-12-01. Output includes thinking; input, thinking and output share one context window.",
+          "zh-CN": "标准 API 优惠价截至 2026-11-30；2026-12-01 起为 $4 / $20。输出含思考 token，输入、思考与输出共享一个上下文窗口。"
+        }
       }
     }
   ]

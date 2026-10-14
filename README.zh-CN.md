@@ -1,9 +1,9 @@
 <p align="center"><img src="assets/brand/hero.svg" width="900" alt="PromptHarbor：理解任务，选择模型，汇合成果"></p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="Apache 2.0 许可证"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.4.0"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="版本 0.4.1"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
-  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="模型数据 2026-10-08"></a>
+  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="模型数据 2026-10-14"></a>
 </p>
 <p align="center"><b>给它一个问题，它给你最值得考虑的 Top 3 模型。<br>给它一个工程，它帮你拆分、分配模型，并把成果带回主窗口。</b></p>
 <p align="center"><a href="README.md">English</a> · 简体中文</p>
@@ -25,7 +25,7 @@ PromptHarbor 是一个 Agent Skill：识别普通 Prompt 的**领域、子领域
 
 | Top 3 | 简洁理由 | 选择时看什么 | 价格参考：输入 / 输出 |
 |---|---|---|---|
-| GPT-6.1 Sol | 当前快照的同组 WebDev 评测提供较强支持 | 已有账号的工具权限与额度 | [$2 / $10](https://developers.openai.com/api/docs/models/gpt-6.1-sol)，输入 ≤27.2 万 token |
+| GPT-6.1 Sol | 10 月 8 日示例的同组 WebDev 评测提供较强支持 | 已有账号的工具权限与额度 | [$2 / $10](https://developers.openai.com/api/docs/models/gpt-6.1-sol)，输入 ≤27.2 万 token |
 | Kimi K3 | WebDev 结果加上带作品的视觉网页社区记录 | 风格是否合适、可用额度；同时保留反面反馈 | [$3 / $15](https://platform.kimi.ai/)，输入 ≤100 万 token |
 | DeepSeek V4.1 Flash | 有同组任务评测，可作为第三个可用选择 | 实际部署、成本与交互验收 | [$0.15 / $0.60 非高峰；$0.30 / $1.20 高峰](https://api-docs.deepseek.com/quick_start/pricing/)，输入 ≤100 万 token |
 
@@ -115,6 +115,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.j
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "总结这段视频"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
@@ -130,12 +131,12 @@ job 和 project 可设置 `"language": "zh-CN"`（也接受 `"zh"`）、`"en"` �
 `--language zh-CN` 可覆盖 JSON 设置。宿主应同时用中文撰写目标、任务说明与验收标准，
 脚本不会翻译这些自由文本或契约原文。交付前应检查 `PLAN.md` 和各部分提示词的语言。
 
-复现历史示例时使用示例记录的日期，当前快照可加 `--as-of 2026-10-08`；当前建议应省略它，不能用旧日期绕过
+复现历史示例时使用示例记录的日期，Argon 当前快照可加 `--as-of 2026-10-14`，旧示例保留其 10 月 8 日复现日期；当前建议应省略它，不能用旧日期绕过
 过期检查。数据过期时可能不返回推荐。
 
 ## 依据与社区评价
 
-**2026-10-08 快照收录 17 个模型、49 个细分任务，全部模型都已开展社区检索。**
+**2026-10-14 快照收录 18 个模型、49 个细分任务，全部模型都已开展社区检索。**
 证据与来源数量见[覆盖表](docs/COVERAGE.md)；每个模型的任务评分、理由、来源和
 置信度见[社区评价表](docs/COMMUNITY.md)。没有合适材料的任务保持未知。
 
@@ -143,13 +144,20 @@ job 和 project 可设置 `"language": "zh-CN"`（也接受 `"zh"`）、`"en"` �
 |---|---|
 | OpenAI | GPT-6.1 Sol、GPT-6 Astra、GPT-6 Luna |
 | Anthropic | Claude Opus 5.5、Sonnet 5.5、Haiku 5.5、Fable 5.1 |
-| Google | Gemini 3.8 Flash |
+| Google | Gemini 4 Argon、Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
 | Alibaba | Qwen3.8-27B |
 | Moonshot AI | Kimi K3 |
 | xAI | Grok 4.7 |
 | Xiaomi | MiMo-V2.6-Pro、MiMo-V2.6-Flash、MiMo-V2.6-Pro-UltraSpeed |
 | Z.ai | GLM-5.3、GLM-5.3-Flash |
+
+Gemini 4 Argon 使用正式 API 型号 `gemini-4-argon`。输入、思考与输出共用
+1,048,576 token；长输出还需要后台执行或续写，并给输出预留空间。标准价格参考为
+每百万输入 / 输出 $2 / $10，优惠截至 2026-11-30。官方 API 价目页目前标注免费层
+和 Google AI Pro 方案不可用；消费端套餐权限和具体入口需另行确认。
+见[官方型号资料](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon)及
+[中文完整示例](examples/argon-output.zh-CN.md)。
 
 - 区分官方能力声明、供应商测评、独立评测、社区作品报告、亲历反馈与推断。
 - 保存模型版本、推理档位、工具环境、评测版本、指标、日期与局限。

@@ -909,6 +909,132 @@
       "published_on": null,
       "checked_on": "2026-10-08",
       "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-docs",
+      "title": "Gemini 4 Argon API model documentation",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+      "publisher": "Google",
+      "published_on": "2026-10-13",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-latest",
+      "title": "What's new in Gemini 4 Argon",
+      "url": "https://ai.google.dev/gemini-api/docs/latest-model?hl=en",
+      "publisher": "Google",
+      "published_on": "2026-10-13",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-pricing",
+      "title": "Gemini API pricing: Argon standard tier and introductory dates",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-card",
+      "title": "Gemini 4 Argon model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "publisher": "Google DeepMind",
+      "published_on": "2026-10-13",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-methodology",
+      "title": "Gemini 4 Argon model evaluation methodology",
+      "url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+      "publisher": "Google DeepMind",
+      "published_on": null,
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-announcement",
+      "title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "publisher": "Google",
+      "published_on": "2026-09-30",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-frontierswe",
+      "title": "FrontierSWE V2 official leaderboard",
+      "url": "https://www.frontierswe.com/",
+      "publisher": "Proximal Labs",
+      "published_on": null,
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-vals-finance",
+      "title": "Finance Agent v2 leaderboard and methodology",
+      "url": "https://www.vals.ai/benchmarks/fabv2",
+      "publisher": "Vals AI",
+      "published_on": "2026-10-12",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-vals-hlab",
+      "title": "Harvey's Legal Agent Benchmark leaderboard and methodology",
+      "url": "https://www.vals.ai/benchmarks/hlab",
+      "publisher": "Vals AI",
+      "published_on": "2026-10-12",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-ultralytics",
+      "title": "Gemini 4 Argon auto-annotation evaluation",
+      "url": "https://www.ultralytics.com/blog/gemini-4-argon-auto-annotation",
+      "publisher": "Ultralytics",
+      "published_on": "2026-10-14",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-community-tim-simmons",
+      "title": "Gemini 4 Argon, Tested: A Week as My Daily Driver",
+      "url": "https://theoreticallymedia.com/blog/gemini-4-argon-tested-800-million-tokens/",
+      "publisher": "Theoretically Media / Tim Simmons",
+      "published_on": "2026-10-13",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-community-devops",
+      "title": "Gemini 4 Argon: Pricing, Benchmarks, API and Real Tests",
+      "url": "https://computingforgeeks.com/gemini-4-argon-released-features-benchmarks/",
+      "publisher": "ComputingForGeeks / Josphat Mutai",
+      "published_on": "2026-10-13",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-community-tiny-world",
+      "title": "Gemini 4 Argon vs Claude Opus 5.5: same prompt, same notes, one planet",
+      "url": "https://ohmyunicorn.com/labs/dream-loop/planet-argon/",
+      "publisher": "OhMyUnicorn / Timisageek",
+      "published_on": "2026-10-13",
+      "checked_on": "2026-10-14",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-argon-community-aiwiz",
+      "title": "Gemini 4 Argon tested: what it costs and how good it is",
+      "url": "https://aiwiz.uk/blog/gemini-4-argon/",
+      "publisher": "AIWIZ",
+      "published_on": "2026-10-13",
+      "checked_on": "2026-10-14",
+      "review_days": 14
     }
   ]
 }

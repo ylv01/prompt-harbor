@@ -313,6 +313,24 @@
         "claude-haiku-5-5-community-02",
         "claude-haiku-5-5-community-03"
       ]
+    },
+    {
+      "id": "gemini-4-argon",
+      "searched_on": "2026-10-14",
+      "queries": [
+        "\"Gemini 4 Argon\" firsthand tested review coding",
+        "\"Gemini 4 Argon\" \"Tiny World\" same prompt",
+        "\"Gemini 4 Argon\" production backend planning review",
+        "\"Gemini 4 Argon\" \"DevOps\" manifests backup"
+      ],
+      "status": "reviewed",
+      "summary": "Four original task reports reviewed, covering sustained workflows, runtime deployment failures, a public visual prototype and effort-sensitive analysis; recycled launch benchmarks and artifact-free model-judged scores excluded.",
+      "evidence_ids": [
+        "gemini-4-argon-community-01",
+        "gemini-4-argon-community-02",
+        "gemini-4-argon-community-03",
+        "gemini-4-argon-community-04"
+      ]
     }
   ]
 }

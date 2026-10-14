@@ -1099,6 +1099,90 @@
       "setting": "书中语句分类的一手报告，明确提及 Haiku 5.5；未说明推理档位、提示词或语料规模。",
       "limitations": "仅一条早期经验，无原文及输出，未测量错误率。",
       "rating_rationale": "具体失败模式支持有限的负面信号；缺乏输出及复现条件，保持低置信度。"
+    },
+    "gemini-4-argon-multimodal-tools": {
+      "claim": "官方文档支持多模态文件输入、函数调用、结构化输出及搜索工具。",
+      "setting": "稳定 API；计算机操作仍属预览，默认思考档位为 medium。",
+      "limitations": "功能支持不等于已测准确率，仍需配置集成并预留共享 token 预算。"
+    },
+    "gemini-4-argon-deepswe": {
+      "claim": "Google 报告 DeepSWE v1.1 单次成功率为 77.9%。",
+      "setting": "Google 自测 Argon，使用 mini-swe-agent 与 high 思考档位。",
+      "limitations": "对照模型来自不同来源与设置；这是早期评测结果，并非开放 API 后的新复测。"
+    },
+    "gemini-4-argon-frontierswe": {
+      "claim": "Proximal 的 FrontierSWE V2 显示五次试验均值为 55.0%，所示波动范围为 ±9.9。",
+      "setting": "使用 Proximus 框架；34 个任务，每任务五次试验、每次预算 20 小时。",
+      "limitations": "Argon 使用非生产配置，缓存命中偏低；图中范围来自最差与最佳试验，并非置信区间，未核实生产配置复测。"
+    },
+    "gemini-4-argon-terminal": {
+      "claim": "Google 报告 Terminal-Bench 4.0 单次成功率为 57.4%。",
+      "setting": "Google 自测 Argon，使用 high 思考档位。",
+      "limitations": "对照结果另取来源；命令行评测不能证明完整工程交付可靠性。"
+    },
+    "gemini-4-argon-labbench": {
+      "claim": "Google 报告 LABBench 2 成绩为 88.8%。",
+      "setting": "提供 Linux 生物信息学工具、Python、R 与互联网；使用 high 思考档位。",
+      "limitations": "这是可调用工具的评测，不等于科研发现或实验结论得到验证。"
+    },
+    "gemini-4-argon-graphwalks-long": {
+      "claim": "Google 报告 GraphWalks 的 256k–1M 上下文子集 BFS F1 为 84.2%。",
+      "setting": "200 道图遍历问题；使用 high 思考档位。",
+      "limitations": "合成图检索不能直接代表任意长文档综合表现。"
+    },
+    "gemini-4-argon-lvbench": {
+      "claim": "Google 报告 LVBench 成绩为 91.7%。",
+      "setting": "不使用工具，视频按每秒一帧采样；使用 high 思考档位。",
+      "limitations": "其他模型的帧数预算不同，不能按统一设置进行跨模型排名。"
+    },
+    "gemini-4-argon-riemann": {
+      "claim": "Google 转述 Surge 的 RiemannBench 成绩为 76.0%。",
+      "setting": "来源为 Google 转述的 Surge 榜单；未核实原始运行设置。",
+      "limitations": "本仓库未将其认定为直接核验的独立评测；不能证明形式化证明或未见竞赛题表现。"
+    },
+    "gemini-4-argon-cwe": {
+      "claim": "Google 转述 CWE-bench v1 漏洞修复单次成功率为 68.0%。",
+      "setting": "Google 转述公开榜单；同分时用 pass@4 决定顺序。",
+      "limitations": "未直接核验原始测试协议；受邀网络安全版本可能与公开 API 的限制不同。"
+    },
+    "gemini-4-argon-vals-finance": {
+      "claim": "Vals AI 报告 Finance Agent v2 的关键条件门控部分得分为 65.40%。",
+      "setting": "统一提供 EDGAR、网页、HTML、检索、计算器与价格工具；三次运行，每次限时两小时。",
+      "limitations": "部分得分与全部检查通过不同；属于开放前结果，未验证交易策略或回测表现。"
+    },
+    "gemini-4-argon-vals-hlab": {
+      "claim": "Vals AI 报告 Harvey 法律 Agent 评测的任务通过率为 19.58%。",
+      "setting": "离线生成法律材料，使用六种文件工具与 DOCX/PPTX/XLSX 技能，由两名模型裁判评分。",
+      "limitations": "任务须满足全部条件；94.04% 条件通过率不是任务成功率。结果来自开放前访问与模型裁判。"
+    },
+    "gemini-4-argon-ultralytics-boxes": {
+      "claim": "Ultralytics 报告按类别提示生成目标框的 mAP50 为 0.565。",
+      "setting": "36 个数据集共 108 张图；各供应商使用默认推理设置，评测方未统一指定档位；中位每图约五秒。",
+      "limitations": "样本较小，电路板与安检 X 光场景低于 0.2；评测方经营标注服务，本仓库未复跑。"
+    },
+    "gemini-4-argon-community-01": {
+      "claim": "Simmons 报告了无人值守的隔夜 Skyrim 模组工作流和通过 MCP 剪辑访谈，最终仍由人整理成品。",
+      "setting": "作者以受邀测试者身份使用 Argon 一周；采用 goal 模式和 DaVinci MCP。Google 提供访问权限，作者声明没有报酬或编辑干预。",
+      "limitations": "来自早期访问集成和作者选取的演示，没有受控对比；仍需制作人复核。本项目未复跑工作流。",
+      "rating_rationale": "具体的持续工作流支持任务坚持能力；早期访问、选择性展示及人工收尾限制置信度。"
+    },
+    "gemini-4-argon-community-02": {
+      "claim": "12 次首轮 nginx 配置均通过静态检查却部署失败；收到错误反馈后 3 次修复可运行，其中 2 次改变了指定镜像或端口。",
+      "setting": "10 月 13 日通过 OpenRouter 固定到 AI Studio 调用 gemini-4-argon；默认、low、medium、high 各跑 3 次；k3s 1.36.5 和 nginx 1.27-alpine。",
+      "limitations": "仅一个部署提示词；备份脚本和 OpenTofu 校验成功。公开配置及错误，本项目未复跑，不能推断所有 DevOps 任务均失败。",
+      "rating_rationale": "反复的运行失败比静态检查通过更有分量；反馈修复有帮助，但常改变要求。证据范围较窄且依赖运行环境。"
+    },
+    "gemini-4-argon-community-03": {
+      "claim": "一次运行生成了未经人工修改的 Three.js 星球页面；作者认为创意有限，Agent 对自身页面的浏览器检查失败。",
+      "setting": "10 月 13 日在 Vertex 上以 Gemini CLI 0.63.0 默认设置调用 gemini-4-argon，隔离 Node 和浏览器环境；复用此前 Opus 实验的 223KB 笔记。",
+      "limitations": "Argon 和 Opus 各一次运行，Agent 及日期不同，视觉判断主观。已打开公开 HTML，但未在本项目测试渲染交互或无障碍性。",
+      "rating_rationale": "可查验的一次运行产物支持有限范围的实现能力；作者批评、页面检查失败及非受控视觉对比限制评分。"
+    },
+    "gemini-4-argon-community-04": {
+      "claim": "AIWIZ 将 16 项任务各跑两次，报告 high 通过 32/32 项检查、medium 为 28/32；medium 算错约 99K token 档案的合计，high 在 10 份文案中仍有 2 份虚构销售承诺。",
+      "setting": "10 月 13 日通过 OpenRouter 的 Google AI Studio 或 Vertex 路由使用 Argon medium/high；虚构营销数据、固定检查和人工复核失败；附 App 结果截图。",
+      "limitations": "作者设计的小型检查未覆盖文案真实性；较好结果依赖 high，未证明百万 token 表现。本项目未复跑，原文未提供公开测试框架。",
+      "rating_rationale": "高推理档位的数据分析有用，但默认设置错误及无依据的销售承诺降低评分；内部检查不等于普遍准确率。"
     }
   },
   "models": {
@@ -1211,6 +1295,14 @@
         "2026 年 10 月 7 日发布，定位于范围明确的信息抽取、摘要和辅助任务；数据分析依据来自一个 Plotly 执行环境。",
         "单次输入超过 10 万 token 时，每百万输入/输出价格为 0.50/2.50 美元。默认推理档位为 medium，较高档位评测可能不同。",
         "SQL 数据分析成绩没有评测表结构设计、事务正确性或完整后端交付。"
+      ]
+    },
+    "gemini-4-argon": {
+      "notes": [
+        "稳定 API 标识为 gemini-4-argon，10 月 13 日已公开写入文档；9 月 30 日最初仅面向 Fairwind 受邀用户。现可使用付费 API；官方价目页明确不支持免费层与 Google AI Pro 套餐。消费端开放范围及账号权限需单独核对。",
+        "输入、思考与输出共享 1,048,576 token。同步请求默认输出上限为 65,536；更长输出需后台执行或客户端续写，并占用共享窗口的剩余空间。不能同时分配 1M 输入和另一个 1M 输出。",
+        "支持文本、图片、视频、音频与 PDF 输入，仅输出文本。PDF 是文件格式而非独立模态。默认思考档位为 medium，另有 low、high；计算机操作仍属预览，工具、搜索及代码执行需要配置相应环境。",
+        "标准未缓存 API 参考价截至 2026-11-30 为每百万 token 输入 $2、输出 $10；2026-12-01 起为 $4 / $20，输出费用包含思考 token。这个有期限的价格仅供展示，不作为预算筛选的数值报价。缓存、批处理、Flex、Priority 和搜索另行计费。"
       ]
     }
   }

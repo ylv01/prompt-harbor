@@ -1,8 +1,8 @@
 # Task coverage and gaps
 
-Snapshot: **2026-10-08**. Generated from the catalog; not a quality leaderboard.
+Snapshot: **2026-10-14**. Generated from the catalog; not a quality leaderboard.
 
-Catalog: **17 models · 49 tasks · 149 evidence records · 101 sources**.
+Catalog: **18 models · 49 tasks · 165 evidence records · 115 sources**.
 
 Direct means a task-mapped measurement, not guaranteed transfer to the user’s prompt.
 Capability/proxy includes product support and adjacent-task inference. Missing means no admitted evidence.
@@ -10,59 +10,59 @@ All task mappings are editorial judgments. Community reports include signed coun
 
 | Task | Domain / subdomain | Independent measurement | Vendor measurement | Capability / proxy | Community reports |
 |---|---|---|---|---|---|
-| `software.debug` | Software / Maintenance | — | glm-5.3, glm-5.3-flash | claude-fable-5-1, claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6.1-sol, grok-4.7, mimo-v2.6-flash, mimo-v2.6-pro | claude-opus-5-5 (mixed), claude-opus-5-5 (positive), claude-sonnet-5-5 (negative), claude-sonnet-5-5 (positive), deepseek-v4.1-flash (negative), deepseek-v4.1-flash (positive), glm-5.3 (positive), glm-5.3-flash (positive), grok-4.7 (mixed), mimo-v2.6-flash (negative), mimo-v2.6-flash (positive), mimo-v2.6-pro (positive) |
-| `software.repo` | Software / Maintenance | — | claude-opus-5-5, deepseek-v4.1-flash, glm-5.3, glm-5.3-flash, qwen3.8-27b | claude-fable-5-1, claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6.1-sol, grok-4.7, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-opus-5-5 (mixed), claude-opus-5-5 (negative), claude-opus-5-5 (positive), claude-sonnet-5-5 (negative), claude-sonnet-5-5 (positive), deepseek-v4.1-flash (negative), deepseek-v4.1-flash (positive), gemini-3.8-flash (mixed), gemini-3.8-flash (positive), glm-5.3 (positive), glm-5.3-flash (negative), glm-5.3-flash (positive), gpt-6-luna (mixed), grok-4.7 (mixed), kimi-k3 (mixed), mimo-v2.6-flash (mixed), mimo-v2.6-flash (positive), mimo-v2.6-pro (negative) |
+| `software.debug` | Software / Maintenance | — | gemini-4-argon, glm-5.3, glm-5.3-flash | claude-fable-5-1, claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, gemini-4-argon, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6.1-sol, grok-4.7, mimo-v2.6-flash, mimo-v2.6-pro | claude-opus-5-5 (mixed), claude-opus-5-5 (positive), claude-sonnet-5-5 (negative), claude-sonnet-5-5 (positive), deepseek-v4.1-flash (negative), deepseek-v4.1-flash (positive), glm-5.3 (positive), glm-5.3-flash (positive), grok-4.7 (mixed), mimo-v2.6-flash (negative), mimo-v2.6-flash (positive), mimo-v2.6-pro (positive) |
+| `software.repo` | Software / Maintenance | gemini-4-argon | claude-opus-5-5, deepseek-v4.1-flash, gemini-4-argon, glm-5.3, glm-5.3-flash, qwen3.8-27b | claude-fable-5-1, claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6.1-sol, grok-4.7, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-opus-5-5 (mixed), claude-opus-5-5 (negative), claude-opus-5-5 (positive), claude-sonnet-5-5 (negative), claude-sonnet-5-5 (positive), deepseek-v4.1-flash (negative), deepseek-v4.1-flash (positive), gemini-3.8-flash (mixed), gemini-3.8-flash (positive), glm-5.3 (positive), glm-5.3-flash (negative), glm-5.3-flash (positive), gpt-6-luna (mixed), grok-4.7 (mixed), kimi-k3 (mixed), mimo-v2.6-flash (mixed), mimo-v2.6-flash (positive), mimo-v2.6-pro (negative) |
 | `software.algorithm` | Software / Algorithms | — | deepseek-v4.1-flash, qwen3.8-27b | — | glm-5.3 (positive) |
-| `software.frontend` | Software / Interfaces | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, gemini-3.8-flash, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6-luna, gpt-6.1-sol, grok-4.7, kimi-k3, mimo-v2.6-flash, mimo-v2.6-pro, qwen3.8-27b | — | claude-sonnet-5-5, glm-5.3-flash, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-fable-5-1 (mixed), claude-fable-5-1 (positive), deepseek-v4.1-flash (positive), gemini-3.8-flash (mixed), glm-5.3 (positive), glm-5.3-flash (mixed), gpt-6-astra (positive), gpt-6.1-sol (negative), grok-4.7 (mixed), grok-4.7 (negative), kimi-k3 (negative), kimi-k3 (positive), mimo-v2.6-flash (negative), mimo-v2.6-pro (negative), mimo-v2.6-pro-ultraspeed (mixed) |
-| `software.security` | Software / Security | — | glm-5.3 | — | kimi-k3 (mixed), mimo-v2.6-pro (negative) |
+| `software.frontend` | Software / Interfaces | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, gemini-3.8-flash, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6-luna, gpt-6.1-sol, grok-4.7, kimi-k3, mimo-v2.6-flash, mimo-v2.6-pro, qwen3.8-27b | — | claude-sonnet-5-5, glm-5.3-flash, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-fable-5-1 (mixed), claude-fable-5-1 (positive), deepseek-v4.1-flash (positive), gemini-3.8-flash (mixed), gemini-4-argon (mixed), glm-5.3 (positive), glm-5.3-flash (mixed), gpt-6-astra (positive), gpt-6.1-sol (negative), grok-4.7 (mixed), grok-4.7 (negative), kimi-k3 (negative), kimi-k3 (positive), mimo-v2.6-flash (negative), mimo-v2.6-pro (negative), mimo-v2.6-pro-ultraspeed (mixed) |
+| `software.security` | Software / Security | — | gemini-4-argon, glm-5.3 | — | kimi-k3 (mixed), mimo-v2.6-pro (negative) |
 | `software.architecture` | Software / Architecture | — | — | glm-5.3, glm-5.3-flash, gpt-6-astra | gpt-6.1-sol (positive), grok-4.7 (mixed), kimi-k3 (mixed), mimo-v2.6-pro (negative) |
-| `software.terminal` | Software / Tools | gpt-6-astra | claude-fable-5-1, claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, glm-5.3, glm-5.3-flash | mimo-v2.6-flash, mimo-v2.6-pro | claude-opus-5-5 (mixed), claude-sonnet-5-5 (positive), glm-5.3-flash (negative), mimo-v2.6-flash (mixed), mimo-v2.6-flash (negative), mimo-v2.6-flash (positive), mimo-v2.6-pro (negative) |
+| `software.terminal` | Software / Tools | gpt-6-astra | claude-fable-5-1, claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, gemini-4-argon, glm-5.3, glm-5.3-flash | mimo-v2.6-flash, mimo-v2.6-pro | claude-opus-5-5 (mixed), claude-sonnet-5-5 (positive), gemini-4-argon (mixed), glm-5.3-flash (negative), mimo-v2.6-flash (mixed), mimo-v2.6-flash (negative), mimo-v2.6-flash (positive), mimo-v2.6-pro (negative) |
 | `software.testing` | Software / Quality | — | — | claude-opus-5-5, glm-5.3, glm-5.3-flash | claude-opus-5-5 (negative), claude-sonnet-5-5 (positive), grok-4.7 (negative), kimi-k3 (mixed) |
-| `math.contest` | Mathematics / Problem solving | — | deepseek-v4.1-flash | glm-5.3, glm-5.3-flash | — |
-| `math.proof` | Mathematics / Proof | — | — | deepseek-v4.1-flash, gpt-6-astra | — |
+| `math.contest` | Mathematics / Problem solving | — | deepseek-v4.1-flash | gemini-4-argon, glm-5.3, glm-5.3-flash | — |
+| `math.proof` | Mathematics / Proof | — | — | deepseek-v4.1-flash, gemini-4-argon, gpt-6-astra | — |
 | `math.formal` | Mathematics / Formal verification | — | — | — | — |
 | `math.numerical` | Mathematics / Computation | — | — | gpt-6-astra | — |
-| `finance.filings` | Finance / Fundamental analysis | gemini-3.8-flash | — | glm-5.3-flash | — |
-| `finance.valuation` | Finance / Fundamental analysis | — | — | gemini-3.8-flash, glm-5.3-flash | — |
+| `finance.filings` | Finance / Fundamental analysis | gemini-3.8-flash, gemini-4-argon | — | glm-5.3-flash | — |
+| `finance.valuation` | Finance / Fundamental analysis | — | — | gemini-3.8-flash, gemini-4-argon, glm-5.3-flash | — |
 | `finance.backtest` | Finance / Quantitative research | — | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b | — |
 | `finance.factor` | Finance / Quantitative research | — | — | claude-opus-5-5, deepseek-v4.1-flash, qwen3.8-27b | — |
 | `finance.derivatives` | Finance / Quantitative research | — | — | deepseek-v4.1-flash | — |
-| `science.reasoning` | Science / Domain reasoning | — | deepseek-v4.1-flash | claude-opus-5-5, glm-5.3, glm-5.3-flash, gpt-6-astra | — |
-| `science.compute` | Science / Computational research | — | claude-opus-5-5, kimi-k3 | gpt-6-astra | — |
+| `science.reasoning` | Science / Domain reasoning | — | deepseek-v4.1-flash, gemini-4-argon | claude-opus-5-5, glm-5.3, glm-5.3-flash, gpt-6-astra | — |
+| `science.compute` | Science / Computational research | — | claude-opus-5-5, kimi-k3 | gemini-4-argon, gpt-6-astra | — |
 | `science.literature` | Science / Literature | — | — | gemini-3.8-flash, kimi-k3 | — |
 | `science.hypothesis` | Science / Discovery | — | — | — | — |
 | `writing.creative` | Writing / Creative | — | — | claude-sonnet-5-5 | glm-5.3 (negative), gpt-6-astra (mixed), gpt-6.1-sol (mixed), mimo-v2.6-pro (positive) |
 | `writing.edit` | Writing / Editing | — | — | claude-sonnet-5-5 | claude-fable-5-1 (mixed), claude-fable-5-1 (positive) |
-| `writing.professional` | Writing / Professional | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, glm-5.3-flash, gpt-6-astra, gpt-6.1-sol, grok-4.7 | claude-fable-5-1 (mixed), claude-fable-5-1 (positive), claude-opus-5-5 (mixed), claude-sonnet-5-5 (positive) |
+| `writing.professional` | Writing / Professional | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, gemini-4-argon, glm-5.3-flash, gpt-6-astra, gpt-6.1-sol, grok-4.7 | claude-fable-5-1 (mixed), claude-fable-5-1 (positive), claude-opus-5-5 (mixed), claude-sonnet-5-5 (positive), gemini-4-argon (mixed) |
 | `writing.translation` | Writing / Multilingual | — | — | gpt-6-luna | qwen3.8-27b (positive) |
-| `context.retrieve` | Long context / Retrieval | — | — | — | claude-haiku-5-5 (negative) |
-| `context.synthesis` | Long context / Synthesis | gpt-6-astra | kimi-k3 | claude-fable-5-1, claude-opus-5-5, glm-5.3-flash | qwen3.8-27b (negative) |
-| `context.summary` | Long context / Compression | — | — | claude-haiku-5-5, gpt-6-luna | gemini-3.8-flash (positive), gpt-6-luna (positive) |
-| `agent.workflow` | Agents / Tool use | gpt-6-astra | glm-5.3, glm-5.3-flash, kimi-k3 | gemini-3.8-flash, gpt-6.1-sol, grok-4.7, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-fable-5-1 (mixed), claude-haiku-5-5 (mixed), deepseek-v4.1-flash (negative), gpt-6-luna (positive), gpt-6.1-sol (positive), qwen3.8-27b (negative), qwen3.8-27b (positive) |
+| `context.retrieve` | Long context / Retrieval | — | gemini-4-argon | — | claude-haiku-5-5 (negative), gemini-4-argon (mixed) |
+| `context.synthesis` | Long context / Synthesis | gpt-6-astra | kimi-k3 | claude-fable-5-1, claude-opus-5-5, gemini-4-argon, glm-5.3-flash | gemini-4-argon (mixed), qwen3.8-27b (negative) |
+| `context.summary` | Long context / Compression | — | — | claude-haiku-5-5, gemini-4-argon, gpt-6-luna | gemini-3.8-flash (positive), gpt-6-luna (positive) |
+| `agent.workflow` | Agents / Tool use | gpt-6-astra | glm-5.3, glm-5.3-flash, kimi-k3 | gemini-3.8-flash, gemini-4-argon, gpt-6.1-sol, grok-4.7, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-fable-5-1 (mixed), claude-haiku-5-5 (mixed), deepseek-v4.1-flash (negative), gemini-4-argon (positive), gpt-6-luna (positive), gpt-6.1-sol (positive), qwen3.8-27b (negative), qwen3.8-27b (positive) |
 | `agent.computer` | Agents / Computer use | — | claude-haiku-5-5, qwen3.8-27b | glm-5.3-flash, gpt-6-astra, gpt-6.1-sol, mimo-v2.6-flash, mimo-v2.6-pro | qwen3.8-27b (positive) |
-| `agent.long` | Agents / Planning | — | — | claude-fable-5-1, claude-opus-5-5, glm-5.3, glm-5.3-flash, gpt-6-astra, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-fable-5-1 (mixed), glm-5.3-flash (negative), glm-5.3-flash (positive), kimi-k3 (mixed), mimo-v2.6-flash (negative), mimo-v2.6-pro (negative), qwen3.8-27b (negative) |
+| `agent.long` | Agents / Planning | — | — | claude-fable-5-1, claude-opus-5-5, gemini-4-argon, glm-5.3, glm-5.3-flash, gpt-6-astra, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed | claude-fable-5-1 (mixed), gemini-4-argon (positive), glm-5.3-flash (negative), glm-5.3-flash (positive), kimi-k3 (mixed), mimo-v2.6-flash (negative), mimo-v2.6-pro (negative), qwen3.8-27b (negative) |
 | `vision.chart` | Vision / Reasoning | — | claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, qwen3.8-27b | — | gemini-3.8-flash (positive) |
-| `vision.document` | Vision / Documents | — | qwen3.8-27b | glm-5.3-flash | claude-fable-5-1 (positive), gemini-3.8-flash (positive) |
-| `vision.video` | Vision / Temporal | — | — | gemini-3.8-flash, glm-5.3-flash, kimi-k3 | gemini-3.8-flash (positive) |
-| `vision.spatial` | Vision / Spatial reasoning | — | — | glm-5.3-flash | — |
+| `vision.document` | Vision / Documents | — | qwen3.8-27b | gemini-4-argon, glm-5.3-flash | claude-fable-5-1 (positive), gemini-3.8-flash (positive) |
+| `vision.video` | Vision / Temporal | — | gemini-4-argon | gemini-3.8-flash, glm-5.3-flash, kimi-k3 | gemini-3.8-flash (positive) |
+| `vision.spatial` | Vision / Spatial reasoning | gemini-4-argon | — | glm-5.3-flash | — |
 | `research.web` | Research / Web investigation | — | kimi-k3 | claude-fable-5-1, claude-opus-5-5, gemini-3.8-flash, gpt-6-astra | — |
 | `research.facts` | Research / Verification | — | — | gemini-3.8-flash, gpt-6-astra | — |
-| `data.analysis` | Data / Analysis | claude-haiku-5-5 | — | gemini-3.8-flash | — |
+| `data.analysis` | Data / Analysis | claude-haiku-5-5 | — | gemini-3.8-flash | gemini-4-argon (mixed) |
 | `data.sql` | Data / Querying | claude-haiku-5-5 | — | — | — |
 | `data.extract` | Data / Extraction | — | — | claude-haiku-5-5, gpt-6-luna | claude-haiku-5-5 (mixed), claude-haiku-5-5 (negative), gemini-3.8-flash (positive) |
 | `data.spreadsheet` | Data / Spreadsheets | — | kimi-k3 | claude-sonnet-5-5, glm-5.3-flash | — |
-| `audio.understand` | Audio / Understanding | — | — | gemini-3.8-flash | — |
+| `audio.understand` | Audio / Understanding | — | — | gemini-3.8-flash, gemini-4-argon | — |
 | `education.tutor` | Education / Learning | — | — | gpt-6-luna | — |
-| `professional.legal` | Professional / Legal | — | — | — | — |
+| `professional.legal` | Professional / Legal | gemini-4-argon | — | — | — |
 | `professional.medical` | Professional / Medical | — | — | — | — |
 | `general.everyday` | General / Everyday | — | — | gpt-6-luna | — |
 | `data.schema` | Data / Database design | — | — | — | — |
-| `software.frontend.design` | Software / Interface design | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, gemini-3.8-flash, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6-luna, gpt-6.1-sol, grok-4.7, kimi-k3, mimo-v2.6-flash, mimo-v2.6-pro, qwen3.8-27b | claude-fable-5-1 (mixed), claude-fable-5-1 (positive), deepseek-v4.1-flash (positive), gemini-3.8-flash (mixed), glm-5.3-flash (mixed), gpt-6-astra (positive), gpt-6.1-sol (negative), grok-4.7 (mixed), grok-4.7 (negative), kimi-k3 (negative), kimi-k3 (positive) |
+| `software.frontend.design` | Software / Interface design | — | — | claude-fable-5-1, claude-opus-5-5, claude-sonnet-5-5, deepseek-v4.1-flash, gemini-3.8-flash, glm-5.3, glm-5.3-flash, gpt-6-astra, gpt-6-luna, gpt-6.1-sol, grok-4.7, kimi-k3, mimo-v2.6-flash, mimo-v2.6-pro, qwen3.8-27b | claude-fable-5-1 (mixed), claude-fable-5-1 (positive), deepseek-v4.1-flash (positive), gemini-3.8-flash (mixed), gemini-4-argon (mixed), glm-5.3-flash (mixed), gpt-6-astra (positive), gpt-6.1-sol (negative), grok-4.7 (mixed), grok-4.7 (negative), kimi-k3 (negative), kimi-k3 (positive) |
 | `software.frontend.fidelity` | Software / Interface fidelity | — | — | glm-5.3-flash, mimo-v2.6-flash, mimo-v2.6-pro | mimo-v2.6-pro-ultraspeed (mixed) |
 
 ## Explicit gaps
 
-`math.formal`, `science.hypothesis`, `professional.legal`, `professional.medical`, `data.schema`
+`math.formal`, `science.hypothesis`, `professional.medical`, `data.schema`
 
 These tasks are recognizable even when the catalog cannot establish a winner. Research live evidence, retain a feasible current model as a baseline, or propose a task trial.
 
@@ -169,3 +169,17 @@ These tasks are recognizable even when the catalog cannot establish a winner. Re
 - [GPT-6 Astra model documentation — API pricing](https://developers.openai.com/api/docs/models/gpt-6-astra) — OpenAI; checked 2026-10-08; publication not established.
 - [GPT-6 Luna model documentation — API pricing](https://developers.openai.com/api/docs/models/gpt-6-luna) — OpenAI; checked 2026-10-08; publication not established.
 - [GPT-6.1 Sol model documentation — API pricing](https://developers.openai.com/api/docs/models/gpt-6.1-sol) — OpenAI; checked 2026-10-08; publication not established.
+- [Gemini 4 Argon API model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon) — Google; checked 2026-10-14; publication 2026-10-13.
+- [What's new in Gemini 4 Argon](https://ai.google.dev/gemini-api/docs/latest-model?hl=en) — Google; checked 2026-10-14; publication 2026-10-13.
+- [Gemini API pricing: Argon standard tier and introductory dates](https://ai.google.dev/gemini-api/docs/pricing) — Google; checked 2026-10-14; publication not established.
+- [Gemini 4 Argon model card](https://deepmind.google/models/model-cards/gemini-4-argon/) — Google DeepMind; checked 2026-10-14; publication 2026-10-13.
+- [Gemini 4 Argon model evaluation methodology](https://deepmind.google/models/evals-methodology/gemini-4-argon) — Google DeepMind; checked 2026-10-14; publication not established.
+- [Gemini 4 Argon: our next era of frontier intelligence](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/) — Google; checked 2026-10-14; publication 2026-09-30.
+- [FrontierSWE V2 official leaderboard](https://www.frontierswe.com/) — Proximal Labs; checked 2026-10-14; publication not established.
+- [Finance Agent v2 leaderboard and methodology](https://www.vals.ai/benchmarks/fabv2) — Vals AI; checked 2026-10-14; publication 2026-10-12.
+- [Harvey's Legal Agent Benchmark leaderboard and methodology](https://www.vals.ai/benchmarks/hlab) — Vals AI; checked 2026-10-14; publication 2026-10-12.
+- [Gemini 4 Argon auto-annotation evaluation](https://www.ultralytics.com/blog/gemini-4-argon-auto-annotation) — Ultralytics; checked 2026-10-14; publication 2026-10-14.
+- [Gemini 4 Argon, Tested: A Week as My Daily Driver](https://theoreticallymedia.com/blog/gemini-4-argon-tested-800-million-tokens/) — Theoretically Media / Tim Simmons; checked 2026-10-14; publication 2026-10-13.
+- [Gemini 4 Argon: Pricing, Benchmarks, API and Real Tests](https://computingforgeeks.com/gemini-4-argon-released-features-benchmarks/) — ComputingForGeeks / Josphat Mutai; checked 2026-10-14; publication 2026-10-13.
+- [Gemini 4 Argon vs Claude Opus 5.5: same prompt, same notes, one planet](https://ohmyunicorn.com/labs/dream-loop/planet-argon/) — OhMyUnicorn / Timisageek; checked 2026-10-14; publication 2026-10-13.
+- [Gemini 4 Argon tested: what it costs and how good it is](https://aiwiz.uk/blog/gemini-4-argon/) — AIWIZ; checked 2026-10-14; publication 2026-10-13.

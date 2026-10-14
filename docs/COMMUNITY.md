@@ -1,6 +1,6 @@
 # Community task ratings
 
-Reviewed: **2026-10-08**. All **17** catalog models were searched.
+Reviewed: **2026-10-14**. All **18** catalog models were searched.
 
 Scores are PromptHarbor editorial judgments of specific reported outcomes, on a 0–10 scale. They are not benchmark measurements or global model ratings.
 Unknown task ratings remain unknown. A **proxy** label means only adjacent-task reports support that rating; it is not a direct observation of that task.
@@ -12,20 +12,21 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 | GPT-6 Astra | `software.frontend` **8.0**; `software.frontend.design` **8.0** (proxy); `writing.creative` **6.5** | 2 |
 | GPT-6.1 Sol | `agent.workflow` **7.5**; `software.architecture` **7.5** (proxy); `software.frontend` **3.0**; `software.frontend.design` **3.0** (proxy); `writing.creative` **6.5** | 3 |
 | GPT-6 Luna | `agent.workflow` **7.5**; `context.summary` **7.5** (proxy); `software.repo` **5.0** | 2 |
-| Claude Opus 5.5 | `software.debug` **7.6**; `software.repo` **6.0**; `software.terminal` **7.0** (proxy); `software.testing` **4.0**; `writing.professional` **7.0** | 3 |
+| Claude Opus 5.5 | `software.debug` **7.6**; `software.repo` **5.9**; `software.terminal` **7.0** (proxy); `software.testing` **4.0**; `writing.professional` **7.0** | 3 |
 | Claude Sonnet 5.5 | `software.debug` **6.3**; `software.repo` **6.1**; `software.terminal` **7.5** (proxy); `software.testing` **8.0**; `writing.professional` **7.5** | 3 |
 | Claude Fable 5.1 | `agent.long` **6.0**; `agent.workflow` **6.0**; `software.frontend` **6.6** (proxy); `software.frontend.design` **6.6**; `vision.document` **8.0** (proxy); `writing.edit` **6.2**; `writing.professional` **6.7** | 3 |
 | Gemini 3.8 Flash | `context.summary` **7.0** (proxy); `data.extract` **8.0**; `software.frontend` **5.0**; `software.frontend.design` **4.5** (proxy); `software.repo` **5.9** (proxy); `vision.chart` **8.0**; `vision.document` **8.0**; `vision.video` **7.0** | 2 |
 | DeepSeek-V4.1-Flash | `agent.workflow` **3.5**; `software.debug` **5.9**; `software.frontend` **8.0**; `software.frontend.design` **8.0**; `software.repo` **5.2** | 3 |
 | Qwen3.8-27B | `agent.computer` **8.0**; `agent.long` **3.0**; `agent.workflow` **6.8**; `context.synthesis` **3.0** (proxy); `writing.translation` **8.0** | 3 |
-| Kimi K3 | `agent.long` **5.5** (proxy); `software.architecture` **8.0** (proxy); `software.frontend` **6.3**; `software.frontend.design` **7.0**; `software.repo` **6.6**; `software.security` **5.5**; `software.testing` **6.6** (proxy) | 5 |
+| Kimi K3 | `agent.long` **5.5** (proxy); `software.architecture` **8.0** (proxy); `software.repo` **6.5**; `software.security` **5.5**; `software.testing` **6.5** (proxy) | 5 |
 | Grok 4.7 | `software.architecture` **7.0** (proxy); `software.debug` **7.0**; `software.frontend` **3.7**; `software.frontend.design` **3.9**; `software.repo` **7.0**; `software.testing` **3.5** (proxy) | 3 |
 | MiMo-V2.6-Pro | `agent.long` **2.8** (proxy); `software.architecture` **3.0**; `software.debug` **8.0**; `software.frontend` **2.8**; `software.repo` **2.8**; `software.security` **2.5**; `software.terminal` **2.5**; `writing.creative` **8.0** | 5 |
 | MiMo-V2.6-Flash | `agent.long` **2.5** (proxy); `software.debug` **6.3**; `software.frontend` **2.5**; `software.repo` **7.5** (proxy); `software.terminal` **4.3** | 6 |
 | MiMo-V2.6-Pro-UltraSpeed | `software.frontend` **4.5**; `software.frontend.fidelity` **4.5** | 1 |
 | GLM-5.3 | `software.algorithm` **7.5**; `software.debug` **7.7**; `software.frontend` **8.0**; `software.repo` **8.0** (proxy); `writing.creative` **3.5** | 3 |
-| GLM-5.3-Flash | `agent.long` **4.1**; `software.debug` **8.0**; `software.frontend` **6.5**; `software.frontend.design` **6.5** (proxy); `software.repo` **5.9**; `software.terminal` **3.0** | 3 |
-| Claude Haiku 5.5 | `agent.workflow` **7.0** (proxy); `context.retrieve` **3.0**; `data.extract` **6.5** | 3 |
+| GLM-5.3-Flash | `agent.long` **4.2**; `software.debug` **8.0**; `software.frontend` **6.5**; `software.frontend.design` **6.5** (proxy); `software.repo` **6.0**; `software.terminal` **3.0** | 3 |
+| Claude Haiku 5.5 | `agent.workflow` **7.0** (proxy); `context.retrieve` **3.0**; `data.extract` **6.4** | 3 |
+| Gemini 4 Argon | `agent.long` **7.5**; `agent.workflow` **7.5**; `context.retrieve` **7.0**; `context.synthesis` **7.0** (proxy); `data.analysis` **7.0**; `software.frontend` **5.5**; `software.frontend.design` **5.5**; `software.terminal` **3.5**; `writing.professional` **7.0** (proxy) | 4 |
 
 ## GPT-6 Astra
 
@@ -152,7 +153,7 @@ Search: 2026-09-30 · status: reviewed
 Queries: `"Claude Opus 5.5" review coding Reddit`; `"Claude Opus 5.5" firsthand code review`; `"Sonnet 5.5" "review" -opus`
 
 - `software.debug`: **7.6/10**, low confidence, direct mapping, 2 origin(s).
-- `software.repo`: **6.0/10**, low confidence, direct_and_proxy mapping, 3 origin(s).
+- `software.repo`: **5.9/10**, low confidence, direct_and_proxy mapping, 3 origin(s).
 - `software.terminal`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
 - `software.testing`: **4.0/10**, low confidence, direct mapping, 1 origin(s).
 - `writing.professional`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
@@ -502,11 +503,9 @@ Queries: `"Kimi K3" coding review Reddit`; `"Kimi K3" "Context Tree" reviewer ag
 
 - `agent.long`: **5.5/10**, low confidence, proxy mapping, 1 origin(s).
 - `software.architecture`: **8.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.frontend`: **6.3/10**, low confidence, direct_and_proxy mapping, 3 origin(s).
-- `software.frontend.design`: **7.0/10**, low confidence, direct_and_proxy mapping, 3 origin(s).
-- `software.repo`: **6.6/10**, low confidence, direct mapping, 2 origin(s).
+- `software.repo`: **6.5/10**, low confidence, direct mapping, 2 origin(s).
 - `software.security`: **5.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.testing`: **6.6/10**, low confidence, proxy mapping, 2 origin(s).
+- `software.testing`: **6.5/10**, low confidence, proxy mapping, 2 origin(s).
 
 ### [AI Lab: authored web-generation experiments](https://neuralhub.dev/ai-test-results)
 
@@ -867,11 +866,11 @@ Search: 2026-10-08 · status: reviewed
 
 Queries: `"GLM 5.3 Flash" review Reddit`; `"GLM 5.3 Flash" backend debugging refactoring`; `"glm-5.3-flash" tool-call loop issue`; `"GLM 5.3 Flash" OCR`; `"GLM 5.3 Flash" frontend benchmark`; `"GLM 5.3 Flash" roleplay`
 
-- `agent.long`: **4.1/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
+- `agent.long`: **4.2/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
 - `software.debug`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
 - `software.frontend`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
 - `software.frontend.design`: **6.5/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.repo`: **5.9/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
+- `software.repo`: **6.0/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
 - `software.terminal`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [GLM-5.3-Flash implements planned backend and debugging work](https://www.reddit.com/r/opencode/comments/1wroplu/xiaomi_mimo_26_flash_vs_glm_53_flash/)
@@ -920,7 +919,7 @@ Queries: `"Haiku 5.5" experience coding benchmark`; `"Haiku 5.5" reddit coding`;
 
 - `agent.workflow`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
 - `context.retrieve`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
-- `data.extract`: **6.5/10**, medium confidence, direct mapping, 3 origin(s).
+- `data.extract`: **6.4/10**, medium confidence, direct mapping, 3 origin(s).
 
 ### [Rundown's Haiku 5.5 message-routing fixture](https://app.therundown.ai/guides/claude-haiku-workflows)
 
@@ -961,3 +960,75 @@ A commenter reports finding book lines correctly but assigning their attribution
 **Rating reason:** Specific attribution failure is relevant, but missing artifacts and setup keep confidence low.
 
 **Limits:** Single early anecdote, no source text or outputs; no measured error rate.
+
+## Gemini 4 Argon
+
+Search: 2026-10-14 · status: reviewed
+
+Queries: `"Gemini 4 Argon" firsthand tested review coding`; `"Gemini 4 Argon" "Tiny World" same prompt`; `"Gemini 4 Argon" production backend planning review`; `"Gemini 4 Argon" "DevOps" manifests backup`
+
+- `agent.long`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `agent.workflow`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `context.retrieve`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
+- `context.synthesis`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
+- `data.analysis`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend`: **5.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend.design`: **5.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.terminal`: **3.5/10**, low confidence, direct mapping, 1 origin(s).
+- `writing.professional`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
+
+### [Gemini 4 Argon, Tested: A Week as My Daily Driver](https://theoreticallymedia.com/blog/gemini-4-argon-tested-800-million-tokens/)
+
+**7.5/10** · positive · artifact_report · low confidence. Author: Tim Simmons.
+Reported: 2026-10-13 · first seen: 2026-10-14 · assessed: 2026-10-14.
+Direct tasks: `agent.long`, `agent.workflow`. Proxy tasks: None.
+
+Simmons reports an unattended overnight Skyrim mod workflow and an MCP-assisted interview edit, with human finishing work.
+
+**Rating reason:** Concrete sustained workflows support persistence; selected early-access demonstrations and human finishing limit confidence.
+
+**Limits:** Early-access integration, selected demonstrations, no controlled comparison; producer review remained necessary. We did not rerun the workflows.
+
+Artifacts: [artifact 1](https://www.youtube.com/watch?v=DD4oHSH5SEI).
+
+### [Gemini 4 Argon: Pricing, Benchmarks, API and Real Tests](https://computingforgeeks.com/gemini-4-argon-released-features-benchmarks/)
+
+**3.5/10** · mixed · artifact_report · medium confidence. Author: Josphat Mutai / ComputingForGeeks.
+Reported: 2026-10-13 · first seen: 2026-10-14 · assessed: 2026-10-14.
+Direct tasks: `software.terminal`. Proxy tasks: None.
+
+All 12 first-pass nginx manifests passed linting but failed deployment; three feedback repairs ran, with two changing specified image/port constraints.
+
+**Rating reason:** Repeated runtime failures outweigh lint success; repairs helped but often changed requirements. Evidence is narrow and environment-specific.
+
+**Limits:** One deployment prompt; backup scripts and OpenTofu validation succeeded. Published manifest and errors, no rerun here; does not establish failure on all DevOps tasks.
+
+Artifacts: [artifact 1](https://computingforgeeks.com/gemini-4-argon-released-features-benchmarks/).
+
+### [Gemini 4 Argon vs Claude Opus 5.5: same prompt, same notes, one planet](https://ohmyunicorn.com/labs/dream-loop/planet-argon/)
+
+**5.5/10** · mixed · artifact_report · low confidence. Author: Timisageek / OhMyUnicorn.
+Reported: 2026-10-13 · first seen: 2026-10-14 · assessed: 2026-10-14.
+Direct tasks: `software.frontend`, `software.frontend.design`. Proxy tasks: None.
+
+An unedited Three.js planet artifact was produced in one run; its author found creativity limited and the agent's browser inspection failed.
+
+**Rating reason:** An inspectable single-run artifact supports bounded implementation; author criticism, failed inspection and uncontrolled visual comparison limit the rating.
+
+**Limits:** One run per Argon/Opus, different agents and dates, subjective visual judgment. Public HTML opened; rendered interaction/accessibility not tested here.
+
+Artifacts: [artifact 1](https://ohmyunicorn.com/labs/dream-loop/planet-argon/argon.html), [artifact 2](https://ohmyunicorn.com/labs/dream-loop/planet-argon/opus.html), [artifact 3](https://www.reddit.com/r/ClaudeCode/comments/1x56wuh/gemini_4_argon_vs_claude_opus_55_same_prompt_tiny/).
+
+### [Gemini 4 Argon tested: what it costs and how good it is](https://aiwiz.uk/blog/gemini-4-argon/)
+
+**7/10** · mixed · artifact_report · low confidence. Author: AIWIZ.
+Reported: 2026-10-13 · first seen: 2026-10-14 · assessed: 2026-10-14.
+Direct tasks: `data.analysis`, `context.retrieve`. Proxy tasks: `context.synthesis`, `writing.professional`.
+
+On 16 jobs run twice, AIWIZ reports high 32/32 versus medium 28/32 checks; medium mis-summed a 99K-token archive, while high still invented 2/10 copywriting promises.
+
+**Rating reason:** Useful high-effort analysis is offset by default-setting errors and unsupported sales claims; internal checks are not universal accuracy.
+
+**Limits:** Small author-designed checks missed copy truthfulness; strong results require high and do not establish 1M-token performance. No public harness or rerun here.
+
+Artifacts: [artifact 1](https://aiwiz.uk/blog/gemini-4-argon/).

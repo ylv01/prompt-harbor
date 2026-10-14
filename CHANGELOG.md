@@ -1,6 +1,13 @@
 # Changelog
 
-## Unreleased
+## 0.4.1 — 2026-10-14
+
+- Add Gemini 4 Argon as an exact available API model, with task-specific evidence,
+  attributed community reports and complete Chinese explanations.
+- Record its shared input/thinking/output context budget, account access limits
+  and temporary standard API price reference without changing ranking weights.
+- Add a reproducible Chinese Argon example and exact-version regression coverage.
+
 
 - Treat the weekly evidence-review queue as advisory maintenance: emit a warning,
   readable run summary and JSON artifact instead of failing solely on overdue items.
