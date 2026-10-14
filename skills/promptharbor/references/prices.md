@@ -60,6 +60,12 @@ missing quotes overdue.
   $0.15 / $0.60 in the same cell. Peak hours are Mon–Fri 01:00–04:00 and
   06:00–10:00 UTC, excluding Chinese public holidays.
   [Official tariff](https://api-docs.deepseek.com/quick_start/pricing/).
+- Gemini 4 Argon's standard $2 / $10 input/output reference runs through
+  2026-11-30; the provider announces $4 / $20 from December 1. The offer expires
+  in the display data and is never automatically renewed. Its legacy budget price
+  is unknown: explicit price caps do not consume this display-only temporary quote.
+  The shared input/thinking/output context budget is 1,048,576 tokens.
+  [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing).
 - Gemini 3.8 Flash's $0.75 / $3.75 standard tariff ends on 2026-12-31; the offer
   expiration is recorded separately from the normal metadata freshness window.
   [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing).
@@ -70,8 +76,8 @@ missing quotes overdue.
   costs. Qwen3.8-27B has no single verified standard hosted USD quote in this
   snapshot, so its column says unknown instead of $0.
 
-These observations were checked on 2026-10-08; each catalog entry retains its own
-verification date. Cached tokens, batch/fast/priority service, audio/image billing,
+Argon was checked on 2026-10-14; other observations retain their own verification
+dates, including 2026-10-08. A new model does not renew older catalog prices. Cached tokens, batch/fast/priority service, audio/image billing,
 server tools, extra reasoning/output volume, regional rates and consumer app
 subscriptions can change the bill. A unit price is not an estimate of total task
 cost or proof of subscription access. Verify the chosen endpoint before spending.

@@ -3,9 +3,9 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.4.0"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.4.1"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
-  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-10-08"></a>
+  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-10-14"></a>
 </p>
 <p align="center"><b>Give it a question. Choose from its Top 3 models.<br>Give it a project. Get coordinated model handoffs.</b></p>
 <p align="center">English · <a href="README.zh-CN.md">简体中文</a></p>
@@ -27,7 +27,7 @@ produce inspectable choices and validate handoffs without API keys.
 
 | Top 3 | Task-fit reason | Resource consideration | Price reference: input / output |
 |---|---|---|---|
-| GPT-6.1 Sol | Stronger same-cohort WebDev support in this snapshot | Account tools and quota | [$2 / $10](https://developers.openai.com/api/docs/models/gpt-6.1-sol), input ≤272K |
+| GPT-6.1 Sol | Stronger same-cohort WebDev support in the October 8 example | Account tools and quota | [$2 / $10](https://developers.openai.com/api/docs/models/gpt-6.1-sol), input ≤272K |
 | Kimi K3 | WebDev evidence plus artifact-backed visual-web reports | Style fit, quota and conflicting feedback | [$3 / $15](https://platform.kimi.ai/), input ≤1M |
 | DeepSeek V4.1 Flash | Another available candidate with task evaluation evidence | Deployment, cost and interaction checks | [$0.15 / $0.60 off-peak; $0.30 / $1.20 peak](https://api-docs.deepseek.com/quick_start/pricing/), input ≤1M |
 
@@ -165,6 +165,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/frontend.j
 python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "Summarize this video"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
@@ -178,12 +179,12 @@ See [job format](skills/promptharbor/references/job-format.md) and
 [project format](skills/promptharbor/references/projects.md).
 
 For reproducible historical examples, use the date recorded with the example
-(`--as-of 2026-10-08` for the current snapshot); omit it for
+(`--as-of 2026-10-14` for the Argon snapshot; older examples retain October 8); omit it for
 current advice. Expired records are excluded and may yield no recommendation.
 
 ## Evidence and community feedback
 
-The **2026-10-08 snapshot includes 17 models and 49 task leaves**. Community
+The **2026-10-14 snapshot includes 18 models and 49 task leaves**. Community
 research has been performed for every catalog model. [Coverage and gaps](docs/COVERAGE.md)
 list the current evidence/source counts; [community assessments](docs/COMMUNITY.md)
 show model-by-task scores, origins and sources. Tasks without suitable reports
@@ -193,13 +194,21 @@ remain unrated.
 |---|---|
 | OpenAI | GPT-6.1 Sol, GPT-6 Astra, GPT-6 Luna |
 | Anthropic | Claude Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1 |
-| Google | Gemini 3.8 Flash |
+| Google | Gemini 4 Argon, Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
 | Alibaba | Qwen3.8-27B |
 | Moonshot AI | Kimi K3 |
 | xAI | Grok 4.7 |
 | Xiaomi | MiMo-V2.6-Pro, MiMo-V2.6-Flash, MiMo-V2.6-Pro-UltraSpeed |
 | Z.ai | GLM-5.3, GLM-5.3-Flash |
+
+Gemini 4 Argon is recorded as the stable `gemini-4-argon` API model. Input,
+thinking and output share a 1,048,576-token budget; long decode needs continuation
+or background execution and room after the input. The standard price reference is
+$2 / $10 per million input / output tokens through 2026-11-30. The official API pricing page
+marks the Free tier and Google AI Pro plan unavailable; consumer app entitlement
+and endpoint access must be checked separately. See the [official model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon)
+and [Chinese worked example](examples/argon-output.zh-CN.md).
 
 Sources include official documentation, model cards, independent evaluations
 and attributed firsthand community reports. [Research notes](docs/RESEARCH.md) explain

@@ -2,8 +2,8 @@
 
 These examples describe recommendation behavior, not paid cross-model evaluations.
 The current model in fixtures is a declared hypothetical value, not inferred
-from the assistant running the skill. Use `--as-of 2026-10-08` only to reproduce
-this snapshot; omit it for current advice.
+from the assistant running the skill. Use `--as-of 2026-10-08` for the historical examples, and
+`--as-of 2026-10-14` for the Argon example; omit it for current advice.
 
 ## One question
 
@@ -24,6 +24,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/video.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/agent-planning.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
 ```
 
 A backtest combines quantitative methodology and repository work. Coding evidence
@@ -51,6 +52,13 @@ All saved Top 3 tables show standard text API input/output price references,
 applicable length, source and verification date. Price references do not change
 selection weights. Missing prices are unknown; model subscriptions and local
 running costs are separate.
+
+`argon.json` is a Chinese repository/debugging brief restricted to Argon,
+GPT-6.1 Sol and Claude Opus 5.5. Its [saved Chinese output](argon-output.zh-CN.md)
+uses the 2026-10-14 snapshot and includes task-specific evidence, community scores,
+price references and switching advice. Run with `--as-of 2026-10-14` to reproduce
+it. The older frontend and library handoff outputs retain their dated October 8
+examples; their results have not been relabeled as new evaluations.
 
 ## A whole engineering project
 

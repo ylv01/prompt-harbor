@@ -1,0 +1,17 @@
+{
+  "prompt": "审查 Python 数据处理代码库并修复失败测试。我已有 Gemini 4 Argon、GPT-6.1 Sol 和 Claude Opus 5.5，请推荐三个候选并解释是否值得切换。",
+  "language": "zh-CN",
+  "tasks": [
+    "software.repo",
+    "software.debug"
+  ],
+  "classification_method": "host_semantic",
+  "current_model": "gpt-6.1-sol",
+  "available_models": [
+    "gemini-4-argon",
+    "gpt-6.1-sol",
+    "claude-opus-5-5"
+  ],
+  "tools_required": true,
+  "context_tokens": 100000
+}

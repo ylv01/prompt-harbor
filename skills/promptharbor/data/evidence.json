@@ -4183,6 +4183,448 @@
           "assessed_on": "2026-10-08"
         }
       }
+    },
+    {
+      "id": "gemini-4-argon-multimodal-tools",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-docs",
+      "kind": "official_capability",
+      "claim": "Google documents multimodal file inputs, function calling, structured output and search tools.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow",
+        "vision.document",
+        "audio.understand",
+        "context.summary"
+      ],
+      "measurement": null,
+      "setting": "Stable API; computer use remains Preview. Thinking defaults to medium.",
+      "limitations": "Feature support is not measured accuracy; integrations and shared token budget still matter.",
+      "reported_on": "2026-10-13",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-deepswe",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 77.9% on DeepSWE v1.1.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "DeepSWE",
+        "version": "1.1",
+        "metric": "pass@1",
+        "value": 77.9,
+        "unit": "percent",
+        "protocol": "Google Argon evaluation; mini-swe-agent; high thinking"
+      },
+      "setting": "Google-run Argon; mini-swe-agent, high thinking.",
+      "limitations": "Peers use mixed sources/settings. Preview-era result, not a new public-API rerun.",
+      "reported_on": "2026-09-30",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-frontierswe",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-frontierswe",
+      "kind": "independent_eval",
+      "claim": "Proximal's FrontierSWE V2 reports 55.0% mean@5 (displayed spread ±9.9).",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "agent.long",
+        "science.compute"
+      ],
+      "measurement": {
+        "benchmark": "FrontierSWE",
+        "version": "V2; 34-task leaderboard checked 2026-10-14",
+        "metric": "mean@5",
+        "value": 55,
+        "unit": "percent",
+        "protocol": "Proximus harness; 34 tasks; five trials per task; 20-hour trial budget"
+      },
+      "setting": "Proximus harness, 34 tasks, five trials/task, 20-hour budget.",
+      "limitations": "Non-production Argon configuration has low cache hits. Spread is worst/best trials, not a confidence interval; production rerun unverified.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-terminal",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 57.4% on Terminal-Bench 4.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "pass@1",
+        "value": 57.4,
+        "unit": "percent",
+        "protocol": "Google Argon evaluation; highest thinking; single attempt"
+      },
+      "setting": "Google-run Argon, high thinking.",
+      "limitations": "Peers sourced separately; terminal result does not establish full-project reliability.",
+      "reported_on": "2026-09-30",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-labbench",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 88.8% on LABBench 2.",
+      "direct_tasks": [
+        "science.reasoning"
+      ],
+      "proxy_tasks": [
+        "science.compute"
+      ],
+      "measurement": {
+        "benchmark": "LABBench",
+        "version": "2",
+        "metric": "pass@1",
+        "value": 88.8,
+        "unit": "percent",
+        "protocol": "Google evaluation; Linux with bioinformatics, Python, R and internet; highest thinking"
+      },
+      "setting": "Linux bioinformatics tools, Python, R, internet; high thinking.",
+      "limitations": "Tool-enabled benchmark; not scientific discovery or experimental validation.",
+      "reported_on": "2026-09-30",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-graphwalks-long",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 84.2% BFS F1 on GraphWalks at 256k–1M context.",
+      "direct_tasks": [
+        "context.retrieve"
+      ],
+      "proxy_tasks": [
+        "context.synthesis"
+      ],
+      "measurement": {
+        "benchmark": "GraphWalks",
+        "version": "256k–1M; 200-problem subset",
+        "metric": "BFS F1",
+        "value": 84.2,
+        "unit": "percent",
+        "protocol": "Google evaluation; 200 graph problems; highest thinking"
+      },
+      "setting": "200 graph-traversal problems; high thinking.",
+      "limitations": "Synthetic graph retrieval, not unrestricted document synthesis.",
+      "reported_on": "2026-09-30",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-lvbench",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 91.7% on LVBench.",
+      "direct_tasks": [
+        "vision.video"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "LVBench",
+        "version": "Google September 2026 evaluation",
+        "metric": "pass@1",
+        "value": 91.7,
+        "unit": "percent",
+        "protocol": "Google evaluation without tools; Gemini video sampled at 1 FPS; highest thinking"
+      },
+      "setting": "No tools, 1 FPS video sampling; high thinking.",
+      "limitations": "Other models have different frame budgets; no shared-setting peer ranking.",
+      "reported_on": "2026-09-30",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-riemann",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-card",
+      "kind": "vendor_eval",
+      "claim": "Google republishes a 76.0% RiemannBench result attributed to Surge.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "math.proof",
+        "math.contest"
+      ],
+      "measurement": {
+        "benchmark": "RiemannBench",
+        "version": "Google September 2026 reported snapshot",
+        "metric": "reported score",
+        "value": 76,
+        "unit": "percent",
+        "protocol": "Surge leaderboard result relayed by Google; original run details unverified here"
+      },
+      "setting": "Google relay of Surge leaderboard; original setting not verified.",
+      "limitations": "Not admitted as independently verified here; no proof-assistant or unseen-contest guarantee.",
+      "reported_on": "2026-09-30",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-cwe",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-card",
+      "kind": "vendor_eval",
+      "claim": "Google republishes a 68.0% CWE-bench v1 vulnerability-remediation result.",
+      "direct_tasks": [
+        "software.security"
+      ],
+      "proxy_tasks": [
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "CWE-bench",
+        "version": "v1",
+        "metric": "pass@1",
+        "value": 68,
+        "unit": "percent",
+        "protocol": "CWE-bench leaderboard result relayed by Google; pass@1 with pass@4 tie-break"
+      },
+      "setting": "Public leaderboard relayed by Google; pass@4 breaks ties.",
+      "limitations": "Original protocol not independently checked; restricted cyber access may differ from public API.",
+      "reported_on": "2026-09-30",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-vals-finance",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-vals-finance",
+      "kind": "independent_eval",
+      "claim": "Vals AI reports Finance Agent v2 partial-credit accuracy of 65.40%.",
+      "direct_tasks": [
+        "finance.filings"
+      ],
+      "proxy_tasks": [
+        "finance.valuation",
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Finance Agent",
+        "version": "v2; leaderboard updated 2026-10-12",
+        "metric": "dealbreaker-gated partial credit",
+        "value": 65.4,
+        "unit": "percent",
+        "protocol": "Shared six-tool harness; 2-hour limit; mean of three runs; three-judge jury"
+      },
+      "setting": "EDGAR/web/HTML/retrieval/calculator/prices; three runs, two-hour cap.",
+      "limitations": "Partial credit differs from all-pass. Early-access result; no trading/backtest validation.",
+      "reported_on": "2026-10-12",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-vals-hlab",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-vals-hlab",
+      "kind": "independent_eval",
+      "claim": "Vals AI reports 19.58% task pass rate on Harvey's Legal Agent Benchmark.",
+      "direct_tasks": [
+        "professional.legal"
+      ],
+      "proxy_tasks": [
+        "writing.professional"
+      ],
+      "measurement": {
+        "benchmark": "Harvey's Legal Agent Benchmark",
+        "version": "held-out leaderboard updated 2026-10-12",
+        "metric": "task pass rate",
+        "value": 19.58,
+        "unit": "percent",
+        "protocol": "Harvey protocol via Vals; held-out tasks; offline file tools and DOCX/PPTX/XLSX skills; two LLM judges"
+      },
+      "setting": "Offline legal artifacts, six file tools, three document skills, two judges.",
+      "limitations": "All criteria must pass; 94.04% criteria coverage is not task success. Early access and LLM grading.",
+      "reported_on": "2026-10-12",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-ultralytics-boxes",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-ultralytics",
+      "kind": "independent_eval",
+      "claim": "Ultralytics reports 0.565 mAP50 for class-prompted object-box annotation.",
+      "direct_tasks": [
+        "vision.spatial"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Ultralytics UL37 auto-annotation",
+        "version": "2026-10-14; 36 detection datasets, 108 images",
+        "metric": "mAP50",
+        "value": 0.565,
+        "unit": "0–1",
+        "protocol": "Ultralytics annotation-editor detection code; full class lists; each provider's default effort; 3 images per dataset"
+      },
+      "setting": "108 images, 36 datasets, default effort unset by evaluator; 5s median/image.",
+      "limitations": "Small selection; PCB/X-ray below 0.2. Evaluator sells annotation services; no rerun here.",
+      "reported_on": "2026-10-14",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-argon-community-01",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-community-tim-simmons",
+      "kind": "community_test",
+      "claim": "Simmons reports an unattended overnight Skyrim mod workflow and an MCP-assisted interview edit, with human finishing work.",
+      "direct_tasks": [
+        "agent.long",
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author's week of trusted-tester access to Argon; goal mode and DaVinci MCP. Google supplied access, not payment or editorial input.",
+      "limitations": "Early-access integration, selected demonstrations, no controlled comparison; producer review remained necessary. We did not rerun the workflows.",
+      "reported_on": "2026-10-13",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null,
+      "community": {
+        "author": "Tim Simmons",
+        "origin_id": "simmons-argon-daily-driver-oct13",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-10-14",
+        "artifact_urls": [
+          "https://www.youtube.com/watch?v=DD4oHSH5SEI"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Concrete sustained workflows support persistence; selected early-access demonstrations and human finishing limit confidence.",
+          "confidence": "low",
+          "assessed_on": "2026-10-14"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-argon-community-02",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-community-devops",
+      "kind": "community_test",
+      "claim": "All 12 first-pass nginx manifests passed linting but failed deployment; three feedback repairs ran, with two changing specified image/port constraints.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Oct 13 gemini-4-argon via OpenRouter pinned to AI Studio; default/low/medium/high, three runs each; k3s 1.36.5 and nginx 1.27-alpine.",
+      "limitations": "One deployment prompt; backup scripts and OpenTofu validation succeeded. Published manifest and errors, no rerun here; does not establish failure on all DevOps tasks.",
+      "reported_on": "2026-10-13",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null,
+      "community": {
+        "author": "Josphat Mutai / ComputingForGeeks",
+        "origin_id": "computingforgeeks-argon-devops-oct13",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-14",
+        "artifact_urls": [
+          "https://computingforgeeks.com/gemini-4-argon-released-features-benchmarks/"
+        ],
+        "rating": {
+          "value": 3.5,
+          "rationale": "Repeated runtime failures outweigh lint success; repairs helped but often changed requirements. Evidence is narrow and environment-specific.",
+          "confidence": "medium",
+          "assessed_on": "2026-10-14"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-argon-community-03",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-community-tiny-world",
+      "kind": "community_test",
+      "claim": "An unedited Three.js planet artifact was produced in one run; its author found creativity limited and the agent's browser inspection failed.",
+      "direct_tasks": [
+        "software.frontend",
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Oct 13 gemini-4-argon in Gemini CLI 0.63.0 on Vertex, default settings, isolated Node/browser environment; same 223KB notes as an earlier Opus run.",
+      "limitations": "One run per Argon/Opus, different agents and dates, subjective visual judgment. Public HTML opened; rendered interaction/accessibility not tested here.",
+      "reported_on": "2026-10-13",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null,
+      "community": {
+        "author": "Timisageek / OhMyUnicorn",
+        "origin_id": "ohmyunicorn-argon-tiny-world-oct13",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-14",
+        "artifact_urls": [
+          "https://ohmyunicorn.com/labs/dream-loop/planet-argon/argon.html",
+          "https://ohmyunicorn.com/labs/dream-loop/planet-argon/opus.html",
+          "https://www.reddit.com/r/ClaudeCode/comments/1x56wuh/gemini_4_argon_vs_claude_opus_55_same_prompt_tiny/"
+        ],
+        "rating": {
+          "value": 5.5,
+          "rationale": "An inspectable single-run artifact supports bounded implementation; author criticism, failed inspection and uncontrolled visual comparison limit the rating.",
+          "confidence": "low",
+          "assessed_on": "2026-10-14"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-argon-community-04",
+      "model_id": "gemini-4-argon",
+      "source_id": "gemini-4-argon-community-aiwiz",
+      "kind": "community_test",
+      "claim": "On 16 jobs run twice, AIWIZ reports high 32/32 versus medium 28/32 checks; medium mis-summed a 99K-token archive, while high still invented 2/10 copywriting promises.",
+      "direct_tasks": [
+        "data.analysis",
+        "context.retrieve"
+      ],
+      "proxy_tasks": [
+        "context.synthesis",
+        "writing.professional"
+      ],
+      "measurement": null,
+      "setting": "Oct 13 Argon medium/high via OpenRouter Google AI Studio/Vertex; fictional marketing data, fixed checks and manual failure review; app screenshot included.",
+      "limitations": "Small author-designed checks missed copy truthfulness; strong results require high and do not establish 1M-token performance. No public harness or rerun here.",
+      "reported_on": "2026-10-13",
+      "reviewed_on": "2026-10-14",
+      "comparison_group": null,
+      "community": {
+        "author": "AIWIZ",
+        "origin_id": "aiwiz-argon-marketing-analysis-oct13",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-14",
+        "artifact_urls": [
+          "https://aiwiz.uk/blog/gemini-4-argon/"
+        ],
+        "rating": {
+          "value": 7,
+          "rationale": "Useful high-effort analysis is offset by default-setting errors and unsupported sales claims; internal checks are not universal accuracy.",
+          "confidence": "low",
+          "assessed_on": "2026-10-14"
+        }
+      }
     }
   ]
 }

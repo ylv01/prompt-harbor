@@ -182,6 +182,47 @@ peak/off-peak and introductory tariffs. Existing budget/cost-priority inputs wer
 preserved. [Price rules](../skills/promptharbor/references/prices.md) explain the
 separate fields and why open weights or missing prices never imply free inference.
 
+## Gemini 4 Argon addition · 2026-10-14
+
+The [stable API model](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon)
+is `gemini-4-argon`. The September 30 restricted announcement and October 13
+public API documentation are distinct. Input, thinking and output share a single
+1,048,576-token window. Default synchronous output is 65,536 tokens; longer decode
+needs background execution or client-side continuation and remaining window space.
+Paid API eligibility and consumer app subscriptions are recorded separately.
+
+Twelve formal task records include one capability declaration, seven qualified
+vendor or vendor-relayed results and four original independent evaluations. The
+[FrontierSWE operator](https://www.frontierswe.com/) reports mean@5, not pass@1;
+its non-production Argon setup has an explicit limitation.
+[Vals Finance v2](https://www.vals.ai/benchmarks/fabv2) uses dealbreaker-gated partial
+credit; [Harvey LAB](https://www.vals.ai/benchmarks/hlab) reports 19.58% task pass,
+which is distinct from its much higher per-criterion coverage.
+[Ultralytics](https://www.ultralytics.com/blog/gemini-4-argon-auto-annotation) measures
+object-box annotation on 108 selected images and has an annotation-product
+interest. These results do not establish universal correctness or discovery.
+
+Vendor results retain the September 30 first-report date. Vals rows retain their
+October 12 early-access date; a later catalog check does not become a new run.
+No old peer cohort, model record, evidence row, source date or weight was changed.
+Artificial Analysis's aggregate index was inspected but not converted to specialty
+scores; its accessible page did not expose the needed numeric task observations.
+
+Four original [community reports](COMMUNITY.md#gemini-4-argon) retain task-scoped
+editorial scores and mixed outcomes: sustained multi-tool work, deployment failures,
+an inspectable visual prototype and effort-sensitive analysis. Earlier access,
+provider and agent differences, human finishing, changed constraints and unsupported
+sales promises remain visible. No paid cross-model run or independent reproduction
+was performed. Repository/debugging tasks without suitable community reports stay
+unrated in the Chinese example rather than inheriting workflow or visual scores.
+
+[Official pricing](https://ai.google.dev/gemini-api/docs/pricing) supplies a display
+reference of $2 / $10 through November 30 and announces $4 / $20 from December 1.
+The offer has an expiry and is not used as a numeric budget-filter quote. Price
+references still do not affect recommendation weights. The full catalog now has
+18 models, with each model's actual search and check dates preserved. Older overdue
+records remain in the maintenance queue; adding Argon does not refresh them.
+
 ## Architecture decisions
 
 1. **Semantic host, deterministic helpers.** The existing agent interprets intent

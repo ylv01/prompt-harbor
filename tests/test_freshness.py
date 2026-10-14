@@ -27,6 +27,25 @@ EXPIRED = {'glm-5.3-flash-deepswe', 'glm-5.3-flash-terminal', 'glm-5.3-flash-hle
 class FreshnessTests(unittest.TestCase):
     def setUp(self):
         self.data = harbor.load_data()
+        # Reproduce the catalog known on October 8. Later model verification
+        # and task reports must not turn this historical clean fixture into a
+        # queue of future-dated records. Source dates and validity stay intact.
+        known_models = {m['id'] for m in self.data['models']['models']
+                        if date.fromisoformat(m['verified_on']) <= CLEAN}
+        self.data['models']['models'] = [m for m in self.data['models']['models']
+                                        if m['id'] in known_models]
+        self.data['evidence']['evidence'] = [e for e in self.data['evidence']['evidence']
+                                            if e['model_id'] in known_models
+                                            and date.fromisoformat(e['reviewed_on']) <= CLEAN]
+        known_evidence = {e['id'] for e in self.data['evidence']['evidence']}
+        self.data['community_research']['models'] = [
+            r for r in self.data['community_research']['models'] if r['id'] in known_models]
+        for research in self.data['community_research']['models']:
+            research['evidence_ids'] = [e for e in research['evidence_ids'] if e in known_evidence]
+        self.data['locale_zh']['models'] = {
+            key: value for key, value in self.data['locale_zh']['models'].items() if key in known_models}
+        self.data['locale_zh']['evidence'] = {
+            key: value for key, value in self.data['locale_zh']['evidence'].items() if key in known_evidence}
 
     def run_cli(self, arguments, data=None):
         stdout, stderr = io.StringIO(), io.StringIO()

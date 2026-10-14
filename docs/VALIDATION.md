@@ -76,3 +76,22 @@ evaluation fixtures and scoring process are in `evals/`.
   recommendation weights were changed.
 - Repository and Skill Creator validation passed. Remote CI for this proposed
   maintenance change has not been run before PR publication approval.
+
+## Argon follow-up · 2026-10-14
+
+- **111 unittest cases passed** (101 existing plus 10 Argon behavior cases).
+- Exact `gemini-4-argon` resource selection, historical query exclusion,
+  text/image/video/audio and tool eligibility, closed-weight exclusion, the single
+  shared context cap and standalone Chinese ZIP recommendations passed.
+- The temporary $2/$10 display reference has a November 30 expiry. Changing it
+  does not change ranking, switching or budget behavior; explicit budget caps
+  retain the unknown legacy quote instead of consuming a display-only tariff.
+- All Argon evidence, source links, community report IDs and Chinese summaries
+  validate. Older catalog records and recommendation policy remain unchanged.
+- The historical freshness fixture now selects records known by October 8,
+  retaining the same October 12 three-record alert instead of auditing future data.
+- Repository and Skill Creator checks passed; the standalone skill archive was
+  built locally. New remote CI will run after PR publication approval.
+- At the current date, six older evidence records and 17 source reviews are due.
+  No Argon record is due; the maintenance workflow reports existing work without
+  renewing dates or concealing missing evidence.
