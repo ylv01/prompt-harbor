@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-10-14",
+  "snapshot_date": "2026-10-27",
   "coverage": "Task-specific curated catalog with community research for every listed model. Feature support and editorial report scores are separate from benchmark measurements.",
   "models": [
     {
@@ -734,6 +734,51 @@
         "notes": {
           "en": "Introductory standard API tariff through 2026-11-30; $4 / $20 from 2026-12-01. Output includes thinking; input, thinking and output share one context window.",
           "zh-CN": "标准 API 优惠价截至 2026-11-30；2026-12-01 起为 $4 / $20。输出含思考 token，输入、思考与输出共享一个上下文窗口。"
+        }
+      }
+    },
+    {
+      "id": "kimi-k3.1-pro",
+      "name": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_id": "kimi-k3.1-pro-docs",
+      "status": "available",
+      "verified_on": "2026-10-27",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "context_tokens": 1048576,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 1048576,
+        "scope": "Official standard uncached Kimi API USD per million tokens; separate cache write/read, tool and tax charges excluded."
+      },
+      "notes": [
+        "Public API id kimi-k3.1-pro; launched October 23. Full weights are promised by November 4, 2026, but were not downloadable at this check; local-only routing must exclude it.",
+        "Native text, image and video input; no verified native audio input. Tools and structured output require configured integrations. API access needs a successful top-up of at least $1; Kimi Code subscriptions are separate.",
+        "Context is 1048576 tokens. Thinking is always enabled; reasoning_effort accepts low, high and max (default max). max_completion_tokens defaults to 131072 and supports up to 1048576, subject to the context budget.",
+        "Base input/output is $2/$10 per million tokens across context lengths; cached input is $0.20. Cache writes are a separate TTL-dependent billing category, not an extra input charge on the same tokens. Recheck endpoint pricing and actual reasoning-token usage."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "kimi-k3.1-pro-pricing",
+        "verified_on": "2026-10-27",
+        "tiers": [
+          {
+            "max_input_tokens": 1048576,
+            "input": 2,
+            "output": 10
+          }
+        ],
+        "notes": {
+          "en": "Standard API base rates; cache read/write, tools and taxes differ. Kimi Code plan quota is separate.",
+          "zh-CN": "标准 API 基础单价；缓存读写、工具及税费另有规则，Kimi Code 套餐额度单独计算。"
         }
       }
     }

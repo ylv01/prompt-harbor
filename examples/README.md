@@ -3,7 +3,7 @@
 These examples describe recommendation behavior, not paid cross-model evaluations.
 The current model in fixtures is a declared hypothetical value, not inferred
 from the assistant running the skill. Use `--as-of 2026-10-08` for the historical examples, and
-`--as-of 2026-10-14` for the Argon example; omit it for current advice.
+`--as-of 2026-10-14` for Argon and `--as-of 2026-10-27` for Kimi K3.1; omit it for current advice.
 
 ## One question
 
@@ -25,6 +25,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/agent-plan
 python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/kimi31.json
 ```
 
 A backtest combines quantitative methodology and repository work. Coding evidence
@@ -59,6 +60,11 @@ uses the 2026-10-14 snapshot and includes task-specific evidence, community scor
 price references and switching advice. Run with `--as-of 2026-10-14` to reproduce
 it. The older frontend and library handoff outputs retain their dated October 8
 examples; their results have not been relabeled as new evaluations.
+
+`kimi31.json` compares a visual design/reference-reproduction brief using
+Kimi K3.1 Pro, Kimi K3 and Gemini 4 Argon. The [saved Chinese output](kimi31-output.zh-CN.md)
+uses October 27, preserving the distinction between visual preference and faithful
+reproduction. Existing dated examples retain their own original snapshots.
 
 ## A whole engineering project
 

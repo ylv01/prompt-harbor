@@ -1,0 +1,21 @@
+{
+  "prompt": "制作一个带交互和响应式布局的产品展示页，参照现有设计图还原视觉。我已有 Kimi K3.1 Pro、Kimi K3 和 Gemini 4 Argon，请推荐三个候选并说明是否值得切换。",
+  "language": "zh-CN",
+  "tasks": [
+    "software.frontend.design",
+    "software.frontend.fidelity"
+  ],
+  "classification_method": "host_semantic",
+  "current_model": "kimi-k3",
+  "available_models": [
+    "kimi-k3.1-pro",
+    "kimi-k3",
+    "gemini-4-argon"
+  ],
+  "tools_required": true,
+  "input_modalities": [
+    "text",
+    "image"
+  ],
+  "context_tokens": 50000
+}

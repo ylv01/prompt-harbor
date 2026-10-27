@@ -69,6 +69,13 @@ missing quotes overdue.
 - Gemini 3.8 Flash's $0.75 / $3.75 standard tariff ends on 2026-12-31; the offer
   expiration is recorded separately from the normal metadata freshness window.
   [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing).
+- Kimi K3.1 Pro standard uncached input/output is $2 / $10 per million tokens,
+  checked on 2026-10-27. Cache-hit input is listed at $0.20; cache-write policy and
+  tool fees are separate. Unlike Argon's expiring offer, this standard quote is
+  recorded in both its legacy budget field and display reference, so explicit
+  price constraints can use it. Display fields still do not affect ranking.
+  Highspeed is a separate $4 / $20 service and is not the catalog's standard Pro
+  candidate. [Official Kimi pricing](https://platform.kimi.ai/docs/pricing/chat).
 - Xiaomi references use the overseas USD tariff. Domestic RMB rates are distinct,
   and API balances are separate from Token Plan quota.
   [MiMo pricing](https://mimo.mi.com/docs/en-US/price/pay-as-you-go).
@@ -76,8 +83,9 @@ missing quotes overdue.
   costs. Qwen3.8-27B has no single verified standard hosted USD quote in this
   snapshot, so its column says unknown instead of $0.
 
-Argon was checked on 2026-10-14; other observations retain their own verification
-dates, including 2026-10-08. A new model does not renew older catalog prices. Cached tokens, batch/fast/priority service, audio/image billing,
+Kimi K3.1 Pro was checked on 2026-10-27, Argon on 2026-10-14; other observations
+retain their own verification dates, including 2026-10-08. A new model does not
+renew older catalog prices. Cached tokens, batch/fast/priority service, audio/image billing,
 server tools, extra reasoning/output volume, regional rates and consumer app
 subscriptions can change the bill. A unit price is not an estimate of total task
 cost or proof of subscription access. Verify the chosen endpoint before spending.
