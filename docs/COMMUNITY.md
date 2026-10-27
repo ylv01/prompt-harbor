@@ -1,6 +1,6 @@
 # Community task ratings
 
-Reviewed: **2026-10-14**. All **18** catalog models were searched.
+Reviewed: **2026-10-27**. All **19** catalog models were searched.
 
 Scores are PromptHarbor editorial judgments of specific reported outcomes, on a 0–10 scale. They are not benchmark measurements or global model ratings.
 Unknown task ratings remain unknown. A **proxy** label means only adjacent-task reports support that rating; it is not a direct observation of that task.
@@ -9,24 +9,25 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 
 | Model | Task ratings (0–10) | Distinct report origins |
 |---|---|---|
-| GPT-6 Astra | `software.frontend` **8.0**; `software.frontend.design` **8.0** (proxy); `writing.creative` **6.5** | 2 |
-| GPT-6.1 Sol | `agent.workflow` **7.5**; `software.architecture` **7.5** (proxy); `software.frontend` **3.0**; `software.frontend.design` **3.0** (proxy); `writing.creative` **6.5** | 3 |
-| GPT-6 Luna | `agent.workflow` **7.5**; `context.summary` **7.5** (proxy); `software.repo` **5.0** | 2 |
-| Claude Opus 5.5 | `software.debug` **7.6**; `software.repo` **5.9**; `software.terminal` **7.0** (proxy); `software.testing` **4.0**; `writing.professional` **7.0** | 3 |
-| Claude Sonnet 5.5 | `software.debug` **6.3**; `software.repo` **6.1**; `software.terminal` **7.5** (proxy); `software.testing` **8.0**; `writing.professional` **7.5** | 3 |
-| Claude Fable 5.1 | `agent.long` **6.0**; `agent.workflow` **6.0**; `software.frontend` **6.6** (proxy); `software.frontend.design` **6.6**; `vision.document` **8.0** (proxy); `writing.edit` **6.2**; `writing.professional` **6.7** | 3 |
-| Gemini 3.8 Flash | `context.summary` **7.0** (proxy); `data.extract` **8.0**; `software.frontend` **5.0**; `software.frontend.design` **4.5** (proxy); `software.repo` **5.9** (proxy); `vision.chart` **8.0**; `vision.document` **8.0**; `vision.video` **7.0** | 2 |
-| DeepSeek-V4.1-Flash | `agent.workflow` **3.5**; `software.debug` **5.9**; `software.frontend` **8.0**; `software.frontend.design` **8.0**; `software.repo` **5.2** | 3 |
-| Qwen3.8-27B | `agent.computer` **8.0**; `agent.long` **3.0**; `agent.workflow` **6.8**; `context.synthesis` **3.0** (proxy); `writing.translation` **8.0** | 3 |
-| Kimi K3 | `agent.long` **5.5** (proxy); `software.architecture` **8.0** (proxy); `software.repo` **6.5**; `software.security` **5.5**; `software.testing` **6.5** (proxy) | 5 |
-| Grok 4.7 | `software.architecture` **7.0** (proxy); `software.debug` **7.0**; `software.frontend` **3.7**; `software.frontend.design` **3.9**; `software.repo` **7.0**; `software.testing` **3.5** (proxy) | 3 |
-| MiMo-V2.6-Pro | `agent.long` **2.8** (proxy); `software.architecture` **3.0**; `software.debug` **8.0**; `software.frontend` **2.8**; `software.repo` **2.8**; `software.security` **2.5**; `software.terminal` **2.5**; `writing.creative` **8.0** | 5 |
-| MiMo-V2.6-Flash | `agent.long` **2.5** (proxy); `software.debug` **6.3**; `software.frontend` **2.5**; `software.repo` **7.5** (proxy); `software.terminal` **4.3** | 6 |
-| MiMo-V2.6-Pro-UltraSpeed | `software.frontend` **4.5**; `software.frontend.fidelity` **4.5** | 1 |
-| GLM-5.3 | `software.algorithm` **7.5**; `software.debug` **7.7**; `software.frontend` **8.0**; `software.repo` **8.0** (proxy); `writing.creative` **3.5** | 3 |
-| GLM-5.3-Flash | `agent.long` **4.2**; `software.debug` **8.0**; `software.frontend` **6.5**; `software.frontend.design` **6.5** (proxy); `software.repo` **6.0**; `software.terminal` **3.0** | 3 |
-| Claude Haiku 5.5 | `agent.workflow` **7.0** (proxy); `context.retrieve` **3.0**; `data.extract` **6.4** | 3 |
+| GPT-6 Astra | No admitted task reports | 2 |
+| GPT-6.1 Sol | No admitted task reports | 3 |
+| GPT-6 Luna | No admitted task reports | 2 |
+| Claude Opus 5.5 | No admitted task reports | 3 |
+| Claude Sonnet 5.5 | No admitted task reports | 3 |
+| Claude Fable 5.1 | No admitted task reports | 3 |
+| Gemini 3.8 Flash | No admitted task reports | 2 |
+| DeepSeek-V4.1-Flash | No admitted task reports | 3 |
+| Qwen3.8-27B | No admitted task reports | 3 |
+| Kimi K3 | No admitted task reports | 5 |
+| Grok 4.7 | No admitted task reports | 3 |
+| MiMo-V2.6-Pro | No admitted task reports | 5 |
+| MiMo-V2.6-Flash | No admitted task reports | 6 |
+| MiMo-V2.6-Pro-UltraSpeed | No admitted task reports | 1 |
+| GLM-5.3 | No admitted task reports | 3 |
+| GLM-5.3-Flash | No admitted task reports | 3 |
+| Claude Haiku 5.5 | No admitted task reports | 3 |
 | Gemini 4 Argon | `agent.long` **7.5**; `agent.workflow` **7.5**; `context.retrieve` **7.0**; `context.synthesis` **7.0** (proxy); `data.analysis` **7.0**; `software.frontend` **5.5**; `software.frontend.design` **5.5**; `software.terminal` **3.5**; `writing.professional` **7.0** (proxy) | 4 |
+| Kimi K3.1 Pro | `data.extract` **7.5**; `software.algorithm` **7.5**; `software.debug` **6.8**; `software.frontend` **6.8**; `software.frontend.design` **5.2**; `software.frontend.fidelity` **4.0**; `software.repo` **6.5** | 5 |
 
 ## GPT-6 Astra
 
@@ -34,9 +35,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"GPT-6 Astra" review portfolio coding`; `"GPT-6 Astra" writing firsthand Reddit`
 
-- `software.frontend`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend.design`: **8.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `writing.creative`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Astra built the author’s portfolio](https://www.najam.pk/blog/gpt-6-astra-review)
 
@@ -70,11 +68,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"gpt-6.1-sol" official model`; `"GPT-6.1 Sol" review writing`; `"GPT-6.1 Sol" planner Qwen`; `"GPT 6.1 Sol" disappointing game`
 
-- `agent.workflow`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.architecture`: **7.5/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.frontend`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend.design`: **3.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `writing.creative`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Scriptwriting comparison: Astra](https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/)
 
@@ -118,9 +111,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"GPT-6 Luna" AB tested repo`; `"GPT-6 Luna" OpenClaw context firsthand`
 
-- `agent.workflow`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
-- `context.summary`: **7.5/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.repo`: **5.0/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Sol repaired an agentic wiki](https://www.reddit.com/r/openclaw/comments/1wrgu8e/how_is_gpt6luna_so_good/)
 
@@ -152,11 +142,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"Claude Opus 5.5" review coding Reddit`; `"Claude Opus 5.5" firsthand code review`; `"Sonnet 5.5" "review" -opus`
 
-- `software.debug`: **7.6/10**, low confidence, direct mapping, 2 origin(s).
-- `software.repo`: **5.9/10**, low confidence, direct_and_proxy mapping, 3 origin(s).
-- `software.terminal`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.testing`: **4.0/10**, low confidence, direct mapping, 1 origin(s).
-- `writing.professional`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Opus 5.5 found two defects in the author's Stackchan/Home Assistant code](https://digitalhandwerk.rocks/ki/testbericht-zu-claude-opus-5-5-und-fehleranalyse/)
 
@@ -202,11 +187,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"Claude Sonnet 5.5" experience frontend reddit`; `"Sonnet 5.5" "I" "tested"`; `"Sonnet 5.5" site:reddit.com`; `"Sonnet 5.5" -opus -grok`
 
-- `software.debug`: **6.3/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.repo`: **6.1/10**, low confidence, direct_and_proxy mapping, 3 origin(s).
-- `software.terminal`: **7.5/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.testing`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `writing.professional`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Three-run skill comparison: Opus 5.5 and Sonnet 5.5](https://www.reddit.com/r/ClaudeAI/comments/1wtend0/tested_sonnet_55_vs_opus_55_with_the_same_skills/)
 
@@ -252,13 +232,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"Claude Fable 5.1" writing review`; `"Fable 5.1" firsthand writing tests`
 
-- `agent.long`: **6.0/10**, low confidence, direct mapping, 1 origin(s).
-- `agent.workflow`: **6.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend`: **6.6/10**, low confidence, proxy mapping, 2 origin(s).
-- `software.frontend.design`: **6.6/10**, low confidence, direct mapping, 2 origin(s).
-- `vision.document`: **8.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `writing.edit`: **6.2/10**, low confidence, direct mapping, 2 origin(s).
-- `writing.professional`: **6.7/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
 
 ### [Fable 5.1 structured a draft from handwritten notes](https://aaronmakelky.com/blog/astra-vs-fable)
 
@@ -334,14 +307,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"Gemini 3.8 Flash" experience review`; `"Gemini 3.8 Flash" hands-on video app tests`
 
-- `context.summary`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `data.extract`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend`: **5.0/10**, low confidence, direct mapping, 2 origin(s).
-- `software.frontend.design`: **4.5/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.repo`: **5.9/10**, low confidence, proxy mapping, 2 origin(s).
-- `vision.chart`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `vision.document`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `vision.video`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Plotline screenshot-to-data app worked from one prompt](https://promptslove.com/blog/gemini-3-8-flash-review/)
 
@@ -403,11 +368,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"DeepSeek V4.1 Flash" review Reddit coding`; `"DeepSeek-V4.1-Flash" "surprised" "UI bug"`
 
-- `agent.workflow`: **3.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.debug`: **5.9/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.frontend`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend.design`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.repo`: **5.2/10**, low confidence, direct mapping, 2 origin(s).
 
 ### [DeepSeek 4.1 Flash surprised me — 6 minutes, one attempt, $0.07](https://www.reddit.com/r/DeepSeek/comments/1wcj9ux/deepseek_41_flash_surprised_me_6_minutes_one/)
 
@@ -451,11 +411,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"Qwen3.8-27B" review Reddit`; `"Qwen3.8-27B" "Trial Report"`; `"Qwen3.8-27B" "Ninfer"`; `"Qwen3.8 27B" "Amazon"`
 
-- `agent.computer`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `agent.long`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
-- `agent.workflow`: **6.8/10**, low confidence, direct mapping, 2 origin(s).
-- `context.synthesis`: **3.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `writing.translation`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Qwen3.8-27B Trial Report (with Addendum)](https://note.com/a_matsukaze/n/n9796f33ac3c5?hl=en)
 
@@ -501,11 +456,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"Kimi K3" coding review Reddit`; `"Kimi K3" "Context Tree" reviewer agent`; `"Kimi K3" "backend" "reddit.com" review`; `"Kimi K3" "math" "review" reddit`
 
-- `agent.long`: **5.5/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.architecture`: **8.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.repo`: **6.5/10**, low confidence, direct mapping, 2 origin(s).
-- `software.security`: **5.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.testing`: **6.5/10**, low confidence, proxy mapping, 2 origin(s).
 
 ### [AI Lab: authored web-generation experiments](https://neuralhub.dev/ai-test-results)
 
@@ -579,12 +529,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `"Grok 4.7" review coding experience`; `"Grok 4.7" site:reddit.com`
 
-- `software.architecture`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.debug`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend`: **3.7/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.frontend.design`: **3.9/10**, low confidence, direct mapping, 2 origin(s).
-- `software.repo`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.testing`: **3.5/10**, low confidence, proxy mapping, 1 origin(s).
 
 ### [Grok 4.7 on a large Rust repository in Cursor](https://www.reddit.com/r/cursor/comments/1wrktgc/am_i_the_only_one_who_thinks_grok_47_is_actually/)
 
@@ -632,14 +576,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `MiMo Xiaomi models official September2026 MiMoV2 modelcard`; `site:github.com XiaomiMiMo MiMoV2ProFlash`; `MiMoV2Pro reviewcoding firsthandreddit`; `"MiMo-V2.6-Pro" "review"`; `"mimo-v2.6-flash" review`; `site:reddit.com "mimo" "2.6"`; `site:linux.do "MiMo" "2.6"`; `"mimo-v2.6-pro" "fixed" "reddit"`; `"mimo-v2.6-pro-ultraspeed" reviewreddit`; `site:mimo.mi.com "mimo-v2.6-pro-ultraspeed" "1M"`; `"mimo" "2.6 flash" "fixed" reddit`; `site:mimo.xiaomi.com "tool-call" "repetition"`
 
-- `agent.long`: **2.8/10**, low confidence, proxy mapping, 2 origin(s).
-- `software.architecture`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.debug`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend`: **2.8/10**, low confidence, direct mapping, 2 origin(s).
-- `software.repo`: **2.8/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.security`: **2.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.terminal`: **2.5/10**, low confidence, direct mapping, 1 origin(s).
-- `writing.creative`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Short review about the mimo 2.6 pro model](https://www.reddit.com/r/opencodeCLI/comments/1wmv8nn/short_review_about_the_mimo_26_pro_model/)
 
@@ -707,11 +643,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `MiMo Xiaomi models official September2026 MiMoV2 modelcard`; `site:github.com XiaomiMiMo MiMoV2ProFlash`; `MiMoV2Pro reviewcoding firsthandreddit`; `"MiMo-V2.6-Pro" "review"`; `"mimo-v2.6-flash" review`; `site:reddit.com "mimo" "2.6"`; `site:linux.do "MiMo" "2.6"`; `"mimo-v2.6-pro" "fixed" "reddit"`; `"mimo-v2.6-pro-ultraspeed" reviewreddit`; `site:mimo.mi.com "mimo-v2.6-pro-ultraspeed" "1M"`; `"mimo" "2.6 flash" "fixed" reddit`; `site:mimo.xiaomi.com "tool-call" "repetition"`
 
-- `agent.long`: **2.5/10**, low confidence, proxy mapping, 3 origin(s).
-- `software.debug`: **6.3/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.frontend`: **2.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.repo`: **7.5/10**, low confidence, proxy mapping, 3 origin(s).
-- `software.terminal`: **4.3/10**, low confidence, direct_and_proxy mapping, 5 origin(s).
 
 ### [For me, DS v4.1 is way better than mimo v2.6](https://www.reddit.com/r/CommandCode/comments/1wmvmut/for_me_ds_v41_is_way_better_than_mimo_v26/)
 
@@ -793,8 +724,6 @@ Search: 2026-09-30 · status: reviewed
 
 Queries: `MiMo Xiaomi models official September2026 MiMoV2 modelcard`; `site:github.com XiaomiMiMo MiMoV2ProFlash`; `MiMoV2Pro reviewcoding firsthandreddit`; `"MiMo-V2.6-Pro" "review"`; `"mimo-v2.6-flash" review`; `site:reddit.com "mimo" "2.6"`; `site:linux.do "MiMo" "2.6"`; `"mimo-v2.6-pro" "fixed" "reddit"`; `"mimo-v2.6-pro-ultraspeed" reviewreddit`; `site:mimo.mi.com "mimo-v2.6-pro-ultraspeed" "1M"`; `"mimo" "2.6 flash" "fixed" reddit`; `site:mimo.xiaomi.com "tool-call" "repetition"`
 
-- `software.frontend`: **4.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend.fidelity`: **4.5/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [MiMo 2.6 Pro UltraSpeed image-to-HTML comparison](https://news.ycombinator.com/item?id=49794584)
 
@@ -816,11 +745,6 @@ Search: 2026-10-08 · status: reviewed
 
 Queries: `"GLM 5.3" "I tested" coding`; `"GLM 5.3" daily driver debugging frontend`; `"GLM 5.3" long roleplay voice drift`; `"GLM 5.3" coding failed review`
 
-- `software.algorithm`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.debug`: **7.7/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.frontend`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.repo`: **8.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `writing.creative`: **3.5/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [GLM-5.3: nine executed Python functions, retained run aggregates](https://www.datallmlab.com/blog/glm-5-3-review.html)
 
@@ -866,12 +790,6 @@ Search: 2026-10-08 · status: reviewed
 
 Queries: `"GLM 5.3 Flash" review Reddit`; `"GLM 5.3 Flash" backend debugging refactoring`; `"glm-5.3-flash" tool-call loop issue`; `"GLM 5.3 Flash" OCR`; `"GLM 5.3 Flash" frontend benchmark`; `"GLM 5.3 Flash" roleplay`
 
-- `agent.long`: **4.2/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.debug`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend.design`: **6.5/10**, low confidence, proxy mapping, 1 origin(s).
-- `software.repo`: **6.0/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
-- `software.terminal`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [GLM-5.3-Flash implements planned backend and debugging work](https://www.reddit.com/r/opencode/comments/1wroplu/xiaomi_mimo_26_flash_vs_glm_53_flash/)
 
@@ -917,9 +835,6 @@ Search: 2026-10-08 · status: reviewed
 
 Queries: `"Haiku 5.5" experience coding benchmark`; `"Haiku 5.5" reddit coding`; `"Haiku 5.5" "I tested" -site:haiku55.com -site:datacamp.com`; `"Haiku 5.5" "frontend" "tested"`; `"Haiku 5.5" "classification" "I" site:reddit.com`; `"Haiku 5.5" "tested" "code" "Oct 7"`; `"Haiku 5.5" "I" "built" frontend`
 
-- `agent.workflow`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `context.retrieve`: **3.0/10**, low confidence, direct mapping, 1 origin(s).
-- `data.extract`: **6.4/10**, medium confidence, direct mapping, 3 origin(s).
 
 ### [Rundown's Haiku 5.5 message-routing fixture](https://app.therundown.ai/guides/claude-haiku-workflows)
 
@@ -1032,3 +947,87 @@ On 16 jobs run twice, AIWIZ reports high 32/32 versus medium 28/32 checks; mediu
 **Limits:** Small author-designed checks missed copy truthfulness; strong results require high and do not establish 1M-token performance. No public harness or rerun here.
 
 Artifacts: [artifact 1](https://aiwiz.uk/blog/gemini-4-argon/).
+
+## Kimi K3.1 Pro
+
+Search: 2026-10-27 · status: reviewed
+
+Queries: `Kimi K3.1 official model pricing benchmark October 2026`; `"Kimi K3.1" tested review frontend coding`; `"Kimi K3.1 Pro" "I tested" coding original`; `"Kimi K3.1 Pro" "3D" "failed" reviewer`
+
+- `data.extract`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.algorithm`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.debug`: **6.8/10**, low confidence, direct mapping, 2 origin(s).
+- `software.frontend`: **6.8/10**, low confidence, direct mapping, 2 origin(s).
+- `software.frontend.design`: **5.2/10**, low confidence, direct mapping, 2 origin(s).
+- `software.frontend.fidelity`: **4.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.repo`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
+
+### [Kimi K3.1 Pro in Our Five-Model Test: Useful Patches, Incomplete Handoffs](https://kingy.ai/blog/kimi-k3-1-pro-five-model-coding-research-test/)
+
+**6.5/10** · mixed · artifact_report · medium confidence. Author: Curtis Pyke / Kingy AI.
+Reported: 2026-10-23 · first seen: 2026-10-27 · assessed: 2026-10-27.
+Direct tasks: `software.repo`, `software.debug`. Proxy tasks: None.
+
+Kingy reports four of eight saved patches passed every required test; none completed the formal handoff before the runner input-reservation stop.
+
+**Rating reason:** Verified saved repairs support supervised debugging; small reused issues and harness-limited delivery prevent a stronger reliability claim.
+
+**Limits:** Only four public issues; accounting stopped the passing runs, so incomplete handoff is not a pure model failure. Public audit summaries inspected, full patches/traces private; no rerun here.
+
+Artifacts: [artifact 1](https://kingy.ai/wp-content/uploads/2026/10/kingy-kimi-k31-five-model-audit-20261023.zip).
+
+### [Kimi K3.1 Pro review: benchmarks, pricing and original test evidence](https://www.tokrace.com/en/guides/kimi-k3-1-pro)
+
+**7.5/10** · positive · artifact_report · medium confidence. Author: TOKRACE.
+Reported: 2026-10-24 · first seen: 2026-10-27 · assessed: 2026-10-27.
+Direct tasks: `data.extract`, `software.algorithm`. Proxy tasks: None.
+
+TOKRACE publishes 45 text and nine short JavaScript results passing fixed checks across requested default/low/max groups after quota recovery.
+
+**Rating reason:** Original prompts, responses and deterministic checks support bounded extraction/algorithm work; tiny tasks, retries and uncertain effective effort limit transfer.
+
+**Limits:** Default effective effort is unverified and some diagnostics accepted invalid effort. Recovery reuses successes and changes budgets; HTTP 429 and unsent tasks are not scored as incorrect. No large repository or 1M-context test; no rerun here.
+
+Artifacts: [artifact 1](https://www.tokrace.com/evaluations/kimi-k3-1-pro-resume-20261024.json).
+
+### [Kimi K3.1 Pro : je l’ai testé contre Opus 5.5 et GPT-6.1 Sol, mon verdict](https://www.codelynx.dev/posts/kimi-k3-1-pro-test-verdict)
+
+**6.5/10** · mixed · artifact_report · low confidence. Author: Melvynx / Codelynx.
+Reported: 2026-10-25 · first seen: 2026-10-27 · assessed: 2026-10-27.
+Direct tasks: `software.frontend`, `software.frontend.design`. Proxy tasks: None.
+
+The author reports a strong interactive lava lamp, but max-effort car physics failed while high improved; visual style remained less distinctive than Opus in his tests.
+
+**Rating reason:** Interactive 3D features support visual implementation, but physics errors and high/max reversals make the result mixed rather than a design-leadership claim.
+
+**Limits:** Shared nonisolated directory; author says a transcript audit found no peer-script reads. Subjective selected demos, differing agents, affiliate link; no controlled superiority or rerun here.
+
+Artifacts: [artifact 1](https://www.codelynx.dev/posts/kimi-k3-1-pro-test-verdict), [artifact 2](https://www.youtube-nocookie.com/embed/EzVoDlg6Awo).
+
+### [Kimi K3.1 Pro: No-Hype Full Review & Testing](https://www.aiformortals.co/blog/kimi-k3-1-pro-review)
+
+**4.0/10** · negative · artifact_report · low confidence. Author: Pat Simmons / AI for Mortals.
+Reported: 2026-10-26 · first seen: 2026-10-27 · assessed: 2026-10-27.
+Direct tasks: `software.frontend.design`, `software.frontend.fidelity`. Proxy tasks: None.
+
+Simmons publishes three heavy builds and ranks Kimi last in his billiards, website-clone and launch-video comparisons.
+
+**Rating reason:** Concrete public outputs provide counterevidence for demanding visual/reference work; subjective ranking and differing environments keep confidence low.
+
+**Limits:** Author-ranked outcomes rather than fixed acceptance scores; tool environments differ and the article is sponsored. Public billiards HTML read, interaction not tested here. API-equivalent costs are not subscription invoices; no rerun.
+
+Artifacts: [artifact 1](https://www.aiformortals.co/builds/club-no9-billiards-kimi-k3-1-pro), [artifact 2](https://www.aiformortals.co/builds/morpho-clone-kimi-k3-1-pro), [artifact 3](https://www.aiformortals.co/builds/kimi-launch-video-clone-kimi-k3-1-pro).
+
+### [Kimi K3.1 Pro Test: A 3D Ark in OpenCode](https://www.michaelleung.info/latest-news/kimi-k3-1-pro-opencode-3d-ark-test)
+
+**7.0/10** · mixed · artifact_report · low confidence. Author: Michael Leung.
+Reported: 2026-10-26 · first seen: 2026-10-27 · assessed: 2026-10-27.
+Direct tasks: `software.frontend`, `software.debug`. Proxy tasks: None.
+
+Leung reports an interactive Three.js ark with working controls; screenshot feedback repaired hull gaps and an overly tight mobile camera.
+
+**Rating reason:** Published scene and specific successful repairs support bounded frontend/debugging; human corrections and unmeasured swarm effects limit broader claims.
+
+**Limits:** One iterative demo, no agent-count, speed, cost or single-agent control; human visual review was necessary. Article AI-assisted. Public HTML opened, rendered interaction not independently tested or rerun here.
+
+Artifacts: [artifact 1](https://www.michaelleung.info/noah/).

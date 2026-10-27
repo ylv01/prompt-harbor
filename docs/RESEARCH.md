@@ -223,6 +223,48 @@ references still do not affect recommendation weights. The full catalog now has
 18 models, with each model's actual search and check dates preserved. Older overdue
 records remain in the maintenance queue; adding Argon does not refresh them.
 
+## Kimi K3.1 Pro addition · 2026-10-27
+
+The [official release](https://www.kimi.ai/blog/kimi-k3-1-pro) and
+[API guide](https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart) identify
+standard Pro as `kimi-k3.1-pro`. The hosted model is available, but its full weights
+are still promised by November 4. It is excluded from local-weight-only requests
+until downloadable weights and their terms are verified. Native text/image/video,
+always-on thinking, low/high/max effort and context/output limits are recorded
+separately from performance. Highspeed is a distinct serving option, not another
+ranked candidate in this update.
+
+Six vendor task measurements retain their October 23 first-report date and
+explicit harness/effort. They cover terminal work, internal long-horizon coding,
+BenchCAD geometry, OfficeQA document questions and financial workflows. Private
+workbook tests do not establish real-market profitability; visual geometry is
+not production CAD verification. Unreadable primary charts and secondhand copies
+were not converted into additional scores.
+
+The [October 22 Arena WebDev entry](https://arena.ai/leaderboard/code/webdev)
+provides one independent, preliminary preference record. Its same mapping as
+older catalog peers is preserved: direct frontend implementation, adjacent visual
+design, no design-fidelity measurement. No old peer cohort was relabeled or
+recomputed using the new row. The original score, vote count, effort and spread
+are recorded separately from quality claims about a specific prompt.
+
+Five original [community reports](COMMUNITY.md#kimi-k31-pro) include selected
+Python repairs, small deterministic extraction/algorithm tasks, mixed visual
+builds, adverse reference-heavy work and feedback-driven 3D repairs. Public
+artifacts are not PromptHarbor reruns. Harness budget stops, requested-versus-
+effective effort, quota recovery, shared directories, sponsored/affiliate content,
+human visual feedback and different agents qualify the task scores. Directly
+reading the AI for Mortals article revealed completed builds that its older search
+snippet still described as pending; the current primary page governs the record.
+
+[Official pricing](https://platform.kimi.ai/) lists standard uncached input/output
+at $2/$10 per million tokens without a temporary promotion. The new model therefore
+has a verified legacy budget quote as well as its display-only reference; the
+reference never changes ranking or switching. Cache read/write, tools, taxes and
+Kimi Code subscriptions remain distinct. No previous model, source, evidence,
+search date or recommendation weight was changed. Existing overdue records remain
+in the maintenance queue rather than receiving a cosmetic date renewal.
+
 ## Architecture decisions
 
 1. **Semantic host, deterministic helpers.** The existing agent interprets intent

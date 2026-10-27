@@ -95,3 +95,21 @@ evaluation fixtures and scoring process are in `evals/`.
 - At the current date, six older evidence records and 17 source reviews are due.
   No Argon record is due; the maintenance workflow reports existing work without
   renewing dates or concealing missing evidence.
+
+## Kimi K3.1 Pro follow-up · 2026-10-27
+
+- **122 unittest cases passed** (111 existing plus 11 Kimi K3.1 behavior cases).
+
+- Exact `kimi-k3.1-pro` routing, historical-date exclusion, visual/video/tool input,
+  unverified-audio exclusion, pending downloadable weights, context limits,
+  standard price caps and standalone Chinese ZIP recommendations passed.
+- The standard $2/$10 quote is available for explicit budget constraints; changing
+  its display reference does not change ranking, switching or cost decisions.
+- One new preliminary Arena entry follows the same direct/proxy task mapping as
+  older peers. Visual preference does not establish design-reference fidelity.
+- All 18 existing model records, 115 sources, 165 evidence records, 18 search logs
+  and the ranking policy are unchanged. K3 remains a distinct catalog candidate.
+- Repository and Skill Creator checks passed; v0.4.2 was packaged locally. Remote
+  CI will run only after publication approval.
+- Current maintenance work remains visible: 61 older evidence records, 17 community
+  searches and 97 source reviews are due. No new K3.1 Pro record is overdue.

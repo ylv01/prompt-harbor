@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.2 — 2026-10-27
+
+- Add Kimi K3.1 Pro as a separate exact API model with task evidence, attributed
+  community reports, current price references and complete Chinese descriptions.
+- Keep Kimi K3 and all other existing model records, dates and ranking weights
+  unchanged; announced future weights do not establish current local availability.
+- Add a reproducible Chinese example and model-specific regression coverage.
+
 ## 0.4.1 — 2026-10-14
 
 - Add Gemini 4 Argon as an exact available API model, with task-specific evidence,

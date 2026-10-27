@@ -1035,6 +1035,96 @@
       "published_on": "2026-10-13",
       "checked_on": "2026-10-14",
       "review_days": 14
+    },
+    {
+      "id": "kimi-k3.1-pro-docs",
+      "title": "Kimi K3.1 Pro API quickstart and limits",
+      "url": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
+      "publisher": "Moonshot AI",
+      "published_on": null,
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3.1-pro-pricing",
+      "title": "Kimi API official standard K3.1 Pro pricing",
+      "url": "https://platform.kimi.ai/",
+      "publisher": "Moonshot AI",
+      "published_on": null,
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3.1-pro-context-pricing",
+      "title": "Kimi API inference pricing and context limits",
+      "url": "https://platform.kimi.ai/docs/pricing/chat",
+      "publisher": "Moonshot AI",
+      "published_on": null,
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3.1-pro-launch",
+      "title": "Introducing Kimi K3.1 Pro: technical results and evaluation footnotes",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "publisher": "Moonshot AI",
+      "published_on": "2026-10-23",
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3-1-pro-arena-webdev",
+      "title": "Arena WebDev Overall — October 22, 2026 Kimi K3.1 Pro entry",
+      "url": "https://arena.ai/leaderboard/code/webdev",
+      "publisher": "Arena",
+      "published_on": "2026-10-22",
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3-1-pro-community-kingy",
+      "title": "Kimi K3.1 Pro in Our Five-Model Test: Useful Patches, Incomplete Handoffs",
+      "url": "https://kingy.ai/blog/kimi-k3-1-pro-five-model-coding-research-test/",
+      "publisher": "Kingy AI / Curtis Pyke",
+      "published_on": "2026-10-23",
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3-1-pro-community-tokrace",
+      "title": "Kimi K3.1 Pro review: benchmarks, pricing and original test evidence",
+      "url": "https://www.tokrace.com/en/guides/kimi-k3-1-pro",
+      "publisher": "TOKRACE",
+      "published_on": "2026-10-24",
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3-1-pro-community-codelynx",
+      "title": "Kimi K3.1 Pro : je l’ai testé contre Opus 5.5 et GPT-6.1 Sol, mon verdict",
+      "url": "https://www.codelynx.dev/posts/kimi-k3-1-pro-test-verdict",
+      "publisher": "Codelynx / Melvynx",
+      "published_on": "2026-10-25",
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3-1-pro-community-pat-simmons",
+      "title": "Kimi K3.1 Pro: No-Hype Full Review & Testing",
+      "url": "https://www.aiformortals.co/blog/kimi-k3-1-pro-review",
+      "publisher": "AI for Mortals / Pat Simmons",
+      "published_on": "2026-10-26",
+      "checked_on": "2026-10-27",
+      "review_days": 14
+    },
+    {
+      "id": "kimi-k3-1-pro-community-michael-leung",
+      "title": "Kimi K3.1 Pro Test: A 3D Ark in OpenCode",
+      "url": "https://www.michaelleung.info/latest-news/kimi-k3-1-pro-opencode-3d-ark-test",
+      "publisher": "Michael Leung",
+      "published_on": "2026-10-26",
+      "checked_on": "2026-10-27",
+      "review_days": 14
     }
   ]
 }

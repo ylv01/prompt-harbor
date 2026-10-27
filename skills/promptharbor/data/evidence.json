@@ -4625,6 +4625,401 @@
           "assessed_on": "2026-10-14"
         }
       }
+    },
+    {
+      "id": "kimi-k3.1-pro-tools-schema",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-docs",
+      "kind": "official_capability",
+      "claim": "API supports function calls and strict JSON Schema.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow",
+        "data.extract"
+      ],
+      "measurement": null,
+      "setting": "Configured tools; max effort default.",
+      "limitations": "Features do not measure task reliability.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3.1-pro-vision-input",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-docs",
+      "kind": "official_capability",
+      "claim": "API accepts image and uploaded-video input.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "vision.video",
+        "vision.document",
+        "context.summary"
+      ],
+      "measurement": null,
+      "setting": "Base64 or file IDs; text replies.",
+      "limitations": "Not native audio or generated video.",
+      "reported_on": null,
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3.1-pro-terminal",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-launch",
+      "kind": "vendor_eval",
+      "claim": "Moonshot reports 65.7% on Terminal-Bench 4.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "reported score",
+        "value": 65.7,
+        "unit": "percent",
+        "protocol": "Claude Code/max"
+      },
+      "setting": "Claude Code; max effort.",
+      "limitations": "Mixed peer configurations.",
+      "reported_on": "2026-10-23",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3.1-pro-long-coding",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-launch",
+      "kind": "vendor_eval",
+      "claim": "Moonshot reports 61.2% on Kimi Code Bench 3.0 Long-horizon.",
+      "direct_tasks": [
+        "software.repo",
+        "agent.long"
+      ],
+      "proxy_tasks": [
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "Kimi Code Bench",
+        "version": "3.0 Long-horizon",
+        "metric": "reported score",
+        "value": 61.2,
+        "unit": "percent",
+        "protocol": "Claude Code/max"
+      },
+      "setting": "Claude Code; max.",
+      "limitations": "Internal benchmark, no independent rerun.",
+      "reported_on": "2026-10-23",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3.1-pro-benchcad",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-launch",
+      "kind": "vendor_eval",
+      "claim": "Moonshot reports 92.7% voxel IoU on BenchCAD with tools.",
+      "direct_tasks": [
+        "vision.spatial"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "BenchCAD",
+        "version": "1000-case Vision2Code subset",
+        "metric": "Voxel IoU",
+        "value": 92.7,
+        "unit": "percent",
+        "protocol": "Claude Code/tools/max"
+      },
+      "setting": "Claude Code; max; 1000 cases.",
+      "limitations": "Subset; not physical geometry validation.",
+      "reported_on": "2026-10-23",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3.1-pro-officeqa",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-launch",
+      "kind": "vendor_eval",
+      "claim": "Moonshot reports 64.4 on OfficeQA Pro v2.",
+      "direct_tasks": [
+        "finance.filings",
+        "context.retrieve"
+      ],
+      "proxy_tasks": [
+        "vision.document",
+        "data.analysis"
+      ],
+      "measurement": {
+        "benchmark": "OfficeQA Pro",
+        "version": "v2",
+        "metric": "reported score",
+        "value": 64.4,
+        "unit": "points",
+        "protocol": "PDF images/Claude Code/max"
+      },
+      "setting": "Image-only PDFs; Claude Code/max.",
+      "limitations": "Fiscal-document questions, not trading.",
+      "reported_on": "2026-10-23",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3.1-pro-frontier-finance",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-launch",
+      "kind": "vendor_eval",
+      "claim": "Moonshot reports 58.6 on Frontier Finance.",
+      "direct_tasks": [
+        "finance.filings"
+      ],
+      "proxy_tasks": [
+        "finance.valuation",
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Frontier Finance",
+        "version": "launch snapshot; Finance Agent v2 harness",
+        "metric": "reported score",
+        "value": 58.6,
+        "unit": "points",
+        "protocol": "Finance Agent v2/max"
+      },
+      "setting": "Finance Agent v2 harness; max.",
+      "limitations": "Vendor run; not a Vals result.",
+      "reported_on": "2026-10-23",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3.1-pro-financial-modeling",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3.1-pro-launch",
+      "kind": "vendor_eval",
+      "claim": "Moonshot reports 57.6 on internal Financial Modeling.",
+      "direct_tasks": [
+        "data.spreadsheet"
+      ],
+      "proxy_tasks": [
+        "finance.valuation"
+      ],
+      "measurement": {
+        "benchmark": "Internal Financial Modeling",
+        "version": "K3.1 launch snapshot",
+        "metric": "reported score",
+        "value": 57.6,
+        "unit": "points",
+        "protocol": "internal/max"
+      },
+      "setting": "Internal workbook tasks; max.",
+      "limitations": "Private grading; no profitability claim.",
+      "reported_on": "2026-10-23",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3-1-pro-arena-webdev",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3-1-pro-arena-webdev",
+      "kind": "independent_eval",
+      "claim": "Arena lists Kimi K3.1 Pro (Max) at 1692 WebDev preference points, preliminary, with 2451 votes.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "Arena WebDev Overall",
+        "version": "2026-10-22 snapshot",
+        "metric": "preference score",
+        "value": 1692,
+        "unit": "points",
+        "protocol": "Arena blind WebDev voting; Kimi K3.1 Pro Max displayed entry"
+      },
+      "setting": "Max effort; 2451 votes; displayed interval +14/-14 and rank spread 7–13. Snapshot predates public launch.",
+      "limitations": "Preliminary preference result, not functional correctness or reference fidelity. Tool setups vary; no peer comparison cohort imported.",
+      "reported_on": "2026-10-22",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null
+    },
+    {
+      "id": "kimi-k3-1-pro-community-01",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3-1-pro-community-kingy",
+      "kind": "community_test",
+      "claim": "Kingy reports four of eight saved patches passed every required test; none completed the formal handoff before the runner input-reservation stop.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Four historical Python issues, two runs each; mini-SWE-agent 2.4.6, OpenRouter Moonshot MXFP4 route, high effort, isolated Linux containers; 20-minute cap.",
+      "limitations": "Only four public issues; accounting stopped the passing runs, so incomplete handoff is not a pure model failure. Public audit summaries inspected, full patches/traces private; no rerun here.",
+      "reported_on": "2026-10-23",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null,
+      "community": {
+        "author": "Curtis Pyke / Kingy AI",
+        "origin_id": "kingy-kimi31-selected-repairs-oct23",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-27",
+        "artifact_urls": [
+          "https://kingy.ai/wp-content/uploads/2026/10/kingy-kimi-k31-five-model-audit-20261023.zip"
+        ],
+        "rating": {
+          "value": 6.5,
+          "rationale": "Verified saved repairs support supervised debugging; small reused issues and harness-limited delivery prevent a stronger reliability claim.",
+          "confidence": "medium",
+          "assessed_on": "2026-10-27"
+        }
+      }
+    },
+    {
+      "id": "kimi-k3-1-pro-community-02",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3-1-pro-community-tokrace",
+      "kind": "community_test",
+      "claim": "TOKRACE publishes 45 text and nine short JavaScript results passing fixed checks across requested default/low/max groups after quota recovery.",
+      "direct_tasks": [
+        "data.extract",
+        "software.algorithm"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Official Coding Messages endpoint, model k3.1-pro; 15 text prompts and three JS tasks across three requested parameter groups; original and recovery batches retained.",
+      "limitations": "Default effective effort is unverified and some diagnostics accepted invalid effort. Recovery reuses successes and changes budgets; HTTP 429 and unsent tasks are not scored as incorrect. No large repository or 1M-context test; no rerun here.",
+      "reported_on": "2026-10-24",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null,
+      "community": {
+        "author": "TOKRACE",
+        "origin_id": "tokrace-kimi31-native-tasks-oct24",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-10-27",
+        "artifact_urls": [
+          "https://www.tokrace.com/evaluations/kimi-k3-1-pro-resume-20261024.json"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Original prompts, responses and deterministic checks support bounded extraction/algorithm work; tiny tasks, retries and uncertain effective effort limit transfer.",
+          "confidence": "medium",
+          "assessed_on": "2026-10-27"
+        }
+      }
+    },
+    {
+      "id": "kimi-k3-1-pro-community-03",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3-1-pro-community-codelynx",
+      "kind": "community_test",
+      "claim": "The author reports a strong interactive lava lamp, but max-effort car physics failed while high improved; visual style remained less distinctive than Opus in his tests.",
+      "direct_tasks": [
+        "software.frontend",
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Kimi Code CLI, six visual/code tasks at high and max; comparison images/video and per-run observations published.",
+      "limitations": "Shared nonisolated directory; author says a transcript audit found no peer-script reads. Subjective selected demos, differing agents, affiliate link; no controlled superiority or rerun here.",
+      "reported_on": "2026-10-25",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null,
+      "community": {
+        "author": "Melvynx / Codelynx",
+        "origin_id": "melvynx-kimi31-visual-six-tasks-oct25",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-27",
+        "artifact_urls": [
+          "https://www.codelynx.dev/posts/kimi-k3-1-pro-test-verdict",
+          "https://www.youtube-nocookie.com/embed/EzVoDlg6Awo"
+        ],
+        "rating": {
+          "value": 6.5,
+          "rationale": "Interactive 3D features support visual implementation, but physics errors and high/max reversals make the result mixed rather than a design-leadership claim.",
+          "confidence": "low",
+          "assessed_on": "2026-10-27"
+        }
+      }
+    },
+    {
+      "id": "kimi-k3-1-pro-community-04",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3-1-pro-community-pat-simmons",
+      "kind": "community_test",
+      "claim": "Simmons publishes three heavy builds and ranks Kimi last in his billiards, website-clone and launch-video comparisons.",
+      "direct_tasks": [
+        "software.frontend.design",
+        "software.frontend.fidelity"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Kimi Code subscription, unattended goal mode at high; identical prompts but different agent products; clone/video tasks use shared author playbooks.",
+      "limitations": "Author-ranked outcomes rather than fixed acceptance scores; tool environments differ and the article is sponsored. Public billiards HTML read, interaction not tested here. API-equivalent costs are not subscription invoices; no rerun.",
+      "reported_on": "2026-10-26",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null,
+      "community": {
+        "author": "Pat Simmons / AI for Mortals",
+        "origin_id": "pat-simmons-kimi31-heavy-builds-oct26",
+        "grade": "artifact_report",
+        "stance": "negative",
+        "first_seen_on": "2026-10-27",
+        "artifact_urls": [
+          "https://www.aiformortals.co/builds/club-no9-billiards-kimi-k3-1-pro",
+          "https://www.aiformortals.co/builds/morpho-clone-kimi-k3-1-pro",
+          "https://www.aiformortals.co/builds/kimi-launch-video-clone-kimi-k3-1-pro"
+        ],
+        "rating": {
+          "value": 4.0,
+          "rationale": "Concrete public outputs provide counterevidence for demanding visual/reference work; subjective ranking and differing environments keep confidence low.",
+          "confidence": "low",
+          "assessed_on": "2026-10-27"
+        }
+      }
+    },
+    {
+      "id": "kimi-k3-1-pro-community-05",
+      "model_id": "kimi-k3.1-pro",
+      "source_id": "kimi-k3-1-pro-community-michael-leung",
+      "kind": "community_test",
+      "claim": "Leung reports an interactive Three.js ark with working controls; screenshot feedback repaired hull gaps and an overly tight mobile camera.",
+      "direct_tasks": [
+        "software.frontend",
+        "software.debug"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Kimi K3.1 Pro in OpenCode swarm mode; one HTML scene; author checked desktop and 320/390px layouts, console and requests; effort unspecified.",
+      "limitations": "One iterative demo, no agent-count, speed, cost or single-agent control; human visual review was necessary. Article AI-assisted. Public HTML opened, rendered interaction not independently tested or rerun here.",
+      "reported_on": "2026-10-26",
+      "reviewed_on": "2026-10-27",
+      "comparison_group": null,
+      "community": {
+        "author": "Michael Leung",
+        "origin_id": "michael-leung-kimi31-opencode-ark-oct26",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-10-27",
+        "artifact_urls": [
+          "https://www.michaelleung.info/noah/"
+        ],
+        "rating": {
+          "value": 7.0,
+          "rationale": "Published scene and specific successful repairs support bounded frontend/debugging; human corrections and unmeasured swarm effects limit broader claims.",
+          "confidence": "low",
+          "assessed_on": "2026-10-27"
+        }
+      }
     }
   ]
 }

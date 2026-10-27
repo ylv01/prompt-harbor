@@ -331,6 +331,25 @@
         "gemini-4-argon-community-03",
         "gemini-4-argon-community-04"
       ]
+    },
+    {
+      "id": "kimi-k3.1-pro",
+      "searched_on": "2026-10-27",
+      "queries": [
+        "Kimi K3.1 official model pricing benchmark October 2026",
+        "\"Kimi K3.1\" tested review frontend coding",
+        "\"Kimi K3.1 Pro\" \"I tested\" coding original",
+        "\"Kimi K3.1 Pro\" \"3D\" \"failed\" reviewer"
+      ],
+      "status": "reviewed",
+      "summary": "Five original task-report origins reviewed: selected repository repairs, fixed extraction/algorithm tasks, mixed 3D frontend work, adverse reference-heavy builds and feedback-driven frontend fixes. Reposted benchmarks and global popularity claims excluded.",
+      "evidence_ids": [
+        "kimi-k3-1-pro-community-01",
+        "kimi-k3-1-pro-community-02",
+        "kimi-k3-1-pro-community-03",
+        "kimi-k3-1-pro-community-04",
+        "kimi-k3-1-pro-community-05"
+      ]
     }
   ]
 }

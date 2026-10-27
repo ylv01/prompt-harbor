@@ -3,9 +3,9 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.4.1"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.4.2"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
-  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-10-14"></a>
+  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-10-27"></a>
 </p>
 <p align="center"><b>Give it a question. Choose from its Top 3 models.<br>Give it a project. Get coordinated model handoffs.</b></p>
 <p align="center">English · <a href="README.zh-CN.md">简体中文</a></p>
@@ -166,6 +166,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/backtest.j
 python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/kimi31.json
 python skills/promptharbor/scripts/harbor.py recommend --prompt "Summarize this video"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
@@ -179,12 +180,12 @@ See [job format](skills/promptharbor/references/job-format.md) and
 [project format](skills/promptharbor/references/projects.md).
 
 For reproducible historical examples, use the date recorded with the example
-(`--as-of 2026-10-14` for the Argon snapshot; older examples retain October 8); omit it for
+(`--as-of 2026-10-27` for Kimi K3.1; Argon retains October 14, older examples October 8); omit it for
 current advice. Expired records are excluded and may yield no recommendation.
 
 ## Evidence and community feedback
 
-The **2026-10-14 snapshot includes 18 models and 49 task leaves**. Community
+The **2026-10-27 snapshot includes 19 models and 49 task leaves**. Community
 research has been performed for every catalog model. [Coverage and gaps](docs/COVERAGE.md)
 list the current evidence/source counts; [community assessments](docs/COMMUNITY.md)
 show model-by-task scores, origins and sources. Tasks without suitable reports
@@ -197,10 +198,18 @@ remain unrated.
 | Google | Gemini 4 Argon, Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
 | Alibaba | Qwen3.8-27B |
-| Moonshot AI | Kimi K3 |
+| Moonshot AI | Kimi K3.1 Pro, Kimi K3 |
 | xAI | Grok 4.7 |
 | Xiaomi | MiMo-V2.6-Pro, MiMo-V2.6-Flash, MiMo-V2.6-Pro-UltraSpeed |
 | Z.ai | GLM-5.3, GLM-5.3-Flash |
+
+Kimi K3.1 is recorded under its released model name **Kimi K3.1 Pro**, API ID
+`kimi-k3.1-pro`. API access is available; as checked on 2026-10-27, the official
+announcement still schedules full weights by November 4, so the catalog excludes
+it from local-weight-only requests. Standard API input/output is $2 / $10 per
+million tokens; cache, tools and subscriptions have separate billing. See the
+[official release](https://www.kimi.ai/blog/kimi-k3-1-pro) and
+[Chinese worked example](examples/kimi31-output.zh-CN.md).
 
 Gemini 4 Argon is recorded as the stable `gemini-4-argon` API model. Input,
 thinking and output share a 1,048,576-token budget; long decode needs continuation
