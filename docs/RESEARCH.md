@@ -265,6 +265,49 @@ Kimi Code subscriptions remain distinct. No previous model, source, evidence,
 search date or recommendation weight was changed. Existing overdue records remain
 in the maintenance queue rather than receiving a cosmetic date renewal.
 
+## Carbon, Hydrogen and Fable 5.2 additions · 2026-11-13
+
+The three exact models are `gemini-4-carbon`, `gemini-4-hydrogen` and
+`claude-fable-5-2`. Carbon's restricted announcement and public API access are
+distinct; Hydrogen is a short-term GA release. Claude Fable is separate from
+verified-access Mythos. Google input, thinking and output share one token window;
+Fable's API high default differs from its app/Claude Code medium default. Tools
+and consumer entitlements remain deployment facts, not quality measurements.
+
+Twenty-six formal records and eight original community reports were admitted,
+with actual source and evaluation dates. Carbon vendor scores retain their first
+October 28 announcement date, rather than the later model-card publication. Carbon
+includes original FrontierSWE
+mean@5 and a single materials-compute task; the latter's reward is not general
+scientific accuracy. Hydrogen includes original Zapier workflow and Plotly
+analytics evaluations. Its Terminal-Bench 4.1 score averages five attempts, and
+its OSWorld score is best-of-three partial credit on offline tasks. Neither is
+comparable to a differently configured single-attempt score.
+
+Fable's detailed system card was read to preserve safeguards and fallback rates,
+partial versus strict OSWorld grading, modified offline WANDR search and older
+AutomationBench run dates. [Bug Hunt](https://bughunt.productcompass.pm/data/benchmark.json) is admitted once
+as independent evaluation,
+not counted again as a community report. Earlier judge configurations prevent a
+casual cross-model comparison. Restricted Mythos demonstrations, multi-agent
+product throughput and overall intelligence indexes do not become single-model
+specialty scores. All new comparison groups are null.
+
+Original community reports retain mixed outcomes: inspectable visual prototypes,
+poor reference-heavy builds, public security workflow restrictions, supervised
+code-worker use, residual browser-editor data loss and architecture drift.
+Unspecified effort, private code, different agent products, subjective rankings,
+LLM grading, budget limits and human intervention remain visible. Hydrogen's
+unspecific joint-model complaints and launch reposts were not turned into fake
+task scores. None of these reports was rerun by PromptHarbor or a paid provider API.
+
+Carbon's introductory display quote expires on November 30 and is not used as
+an unverified permanent budget rate. Hydrogen and Fable have standard budget
+quotes plus display references. Optional Fast modes, cache charges, tool usage,
+free-tier quotas and consumer subscriptions differ. These records do not change
+ranking weights, and all previous catalog rows, check dates and policy remain
+unchanged. Existing maintenance work is not renewed by adding three models.
+
 ## Architecture decisions
 
 1. **Semantic host, deterministic helpers.** The existing agent interprets intent

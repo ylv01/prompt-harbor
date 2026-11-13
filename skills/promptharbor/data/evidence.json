@@ -5020,6 +5020,924 @@
           "assessed_on": "2026-10-27"
         }
       }
+    },
+    {
+      "id": "gemini-4-carbon-capabilities",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-docs",
+      "kind": "official_capability",
+      "claim": "Google documents multimodal input, function calls, computer use and structured outputs.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow",
+        "vision.document",
+        "audio.understand",
+        "vision.video"
+      ],
+      "measurement": null,
+      "setting": "Stable public API; configured tools.",
+      "limitations": "Feature availability is not task accuracy.",
+      "reported_on": "2026-11-10",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-frontierswe",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-frontierswe",
+      "kind": "independent_eval",
+      "claim": "Proximal reports 61.2% mean@5 on FrontierSWE V2.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "agent.long"
+      ],
+      "measurement": {
+        "benchmark": "FrontierSWE",
+        "version": "V2; leaderboard checked 2026-11-13",
+        "metric": "mean@5",
+        "value": 61.2,
+        "unit": "percent",
+        "protocol": "Proximus; 34 tasks; 5 trials per task; 20-hour budget"
+      },
+      "setting": "Proximus; 34 tasks, five trials each, 20-hour budgets; effort not specified here.",
+      "limitations": "Displayed ±5.3 is worst/best-trial spread, not confidence; no rerun or peer cohort.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-materials",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-materials",
+      "kind": "independent_eval",
+      "claim": "Carbon averages 0.9802 reward on the interatomic-potential task.",
+      "direct_tasks": [
+        "science.compute"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "FrontierSWE Machine-Learned Interatomic Potential",
+        "version": "V2 task; traces indexed 2026-11-12",
+        "metric": "mean verifier reward",
+        "value": 0.9802,
+        "unit": "0–1",
+        "protocol": "Proximus; five trials; deterministic task verifier"
+      },
+      "setting": "Five public traces, 20-hour budgets; energy/force prediction code.",
+      "limitations": "One materials task; normalized reward is not general science accuracy.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-terminal",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-announcement",
+      "kind": "vendor_eval",
+      "claim": "Google relays 65.2% on Terminal-Bench 4.0 (AA).",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0 (AA)",
+        "metric": "reported score",
+        "value": 65.2,
+        "unit": "percent",
+        "protocol": "AA result relayed in Carbon model card"
+      },
+      "setting": "AA result relayed by Google.",
+      "limitations": "Original AA setup not independently verified here.",
+      "reported_on": "2026-10-28",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-computer",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-announcement",
+      "kind": "vendor_eval",
+      "claim": "Google reports 77.4% on Agents' Last Exam v1.1.",
+      "direct_tasks": [
+        "agent.computer"
+      ],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Agents' Last Exam",
+        "version": "1.1; Oct17 task version",
+        "metric": "averaged rubric score",
+        "value": 77.4,
+        "unit": "percent",
+        "protocol": "Google; ALE-Claw; 122 tasks; five hours; safety filters enabled"
+      },
+      "setting": "ALE-Claw; 122 tasks, five hours, high thinking.",
+      "limitations": "Uses October 17 tasks without October 26 update; filtered replies can be empty.",
+      "reported_on": "2026-10-28",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-graphwalks",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-announcement",
+      "kind": "vendor_eval",
+      "claim": "Google reports 96.2% BFS F1 on GraphWalks.",
+      "direct_tasks": [
+        "context.retrieve"
+      ],
+      "proxy_tasks": [
+        "context.synthesis"
+      ],
+      "measurement": {
+        "benchmark": "GraphWalks",
+        "version": "256k–1M; 200 problems",
+        "metric": "BFS F1",
+        "value": 96.2,
+        "unit": "percent",
+        "protocol": "Google self-computed; 200 problems; highest thinking"
+      },
+      "setting": "200 problems at 256k–1M; high thinking.",
+      "limitations": "Synthetic graph traversal, not unrestricted document recall.",
+      "reported_on": "2026-10-28",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-charts",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-announcement",
+      "kind": "vendor_eval",
+      "claim": "Google reports 72.5% on Chartography.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Chartography",
+        "version": "Carbon October evaluation snapshot",
+        "metric": "pass@1",
+        "value": 72.5,
+        "unit": "percent",
+        "protocol": "Google; no tools; highest thinking"
+      },
+      "setting": "No tools; high thinking.",
+      "limitations": "Not arbitrary chart correctness or extraction accuracy.",
+      "reported_on": "2026-10-28",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-riemann",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-announcement",
+      "kind": "vendor_eval",
+      "claim": "Google relays 80.0% on RiemannBench.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "math.proof",
+        "math.contest"
+      ],
+      "measurement": {
+        "benchmark": "RiemannBench",
+        "version": "Carbon model-card snapshot",
+        "metric": "reported score",
+        "value": 80,
+        "unit": "percent",
+        "protocol": "Surge result relayed by Google; no independent rerun here"
+      },
+      "setting": "Surge leaderboard relayed by Google.",
+      "limitations": "Original run not verified; no formal-proof guarantee.",
+      "reported_on": "2026-10-28",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-carbon-community-01",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-community-simon",
+      "kind": "community_test",
+      "claim": "Willison published three SVG attempts and a Three.js/OpenStreetMap scene; a follow-up produced standalone HTML.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "Nov10: SVG at low/medium/high; 3D scene through Antigravity.",
+      "limitations": "Selected prototypes, no acceptance suite or functional rerun by us.",
+      "reported_on": "2026-11-10",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "Simon Willison",
+        "origin_id": "simon-carbon-pelican-yonkers-nov10",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [
+          "https://tools.simonwillison.net/markdown-svg-renderer?url=https://gist.github.com/simonw/e5bf860633fc12e8f926f305c4c3190c",
+          "https://static.simonwillison.net/static/2026/yonkers-mech-standalone.html"
+        ],
+        "rating": {
+          "value": 7,
+          "rationale": "Inspectable artifacts support bounded visual implementation; follow-up and absent acceptance checks limit transfer.",
+          "confidence": "low",
+          "assessed_on": "2026-11-13"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-carbon-community-02",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-community-pat",
+      "kind": "community_test",
+      "claim": "Simmons ranked Carbon last for the website clone and launch film, third for a browser flight simulator.",
+      "direct_tasks": [
+        "software.frontend.design",
+        "software.frontend.fidelity"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "One high-effort run per model/build; Carbon in Antigravity; other agents and dates differ.",
+      "limitations": "Subjective ranks; subscription logs yield API-equivalent estimates, not invoices; no rerun here.",
+      "reported_on": "2026-11-11",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "Pat Simmons / AI for Mortals",
+        "origin_id": "pat-simmons-carbon-three-builds-nov11",
+        "grade": "artifact_report",
+        "stance": "negative",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [
+          "https://www.aiformortals.co/builds/agrumea-clone-gemini-4-carbon"
+        ],
+        "rating": {
+          "value": 4,
+          "rationale": "Public outputs provide adverse evidence for demanding visual/reference work; differing environments and single runs keep confidence low.",
+          "confidence": "low",
+          "assessed_on": "2026-11-13"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-carbon-community-03",
+      "model_id": "gemini-4-carbon",
+      "source_id": "gemini-4-carbon-community-cleus",
+      "kind": "community_test",
+      "claim": "Cleus reports successful SQL-injection explanation and C-code review, but no office-network scan or beginner-CTF script answers.",
+      "direct_tasks": [
+        "software.security"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Nov11 API default settings, no system prompt; 11 prompts ×3 runs; another model graded replies.",
+      "limitations": "Small response/availability check, not correctness or exploit success; public API differs from Fairwind.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "Prabhu Biswal / Cleus",
+        "origin_id": "cleus-carbon-public-api-filter-test-nov11",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [
+          "https://cleus.ai/blog/gemini-4-carbon-public-release-filters-tested"
+        ],
+        "rating": {
+          "value": 5.5,
+          "rationale": "Defensive review answered, but relevant workflow refusals and inconsistent decoding limit usefulness; LLM grading is not validation.",
+          "confidence": "low",
+          "assessed_on": "2026-11-13"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-hydrogen-tools-documents",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-whats-new",
+      "kind": "official_capability",
+      "claim": "Google documents multimodal inputs, native tools and shared-window long decode.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow",
+        "vision.document",
+        "vision.video",
+        "audio.understand",
+        "context.summary"
+      ],
+      "measurement": null,
+      "setting": "Configured API integrations; high default.",
+      "limitations": "Capability support does not measure task accuracy.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-swe-sweep",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 13.5% on SWE-sweep.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "SWE-sweep",
+        "version": "Google November 2026 run",
+        "metric": "subtask-weighted reward",
+        "value": 13.5,
+        "unit": "percent",
+        "protocol": "Google agy 1.4.8 official integration with safety filters"
+      },
+      "setting": "Antigravity-CLI 1.4.8; highest thinking.",
+      "limitations": "Subtask reward, not complete-project success.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-terminal",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 57.0% on cheating-adjusted Terminal-Bench 4.1.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.1 cheating-adjusted",
+        "metric": "average reward over five attempts",
+        "value": 57,
+        "unit": "percent",
+        "protocol": "Google mini-swe-agent vision; high; mean of five attempts per task"
+      },
+      "setting": "Mini-swe-agent vision; high; five attempts averaged.",
+      "limitations": "Not pass@1 or version 4.0.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-computer",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 77.6% partial score on OSWorld 2.1 offline tasks.",
+      "direct_tasks": [
+        "agent.computer"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "OSWorld",
+        "version": "2.1 offline subset",
+        "metric": "partial score, best of three single attempts",
+        "value": 77.6,
+        "unit": "percent",
+        "protocol": "Google CUA screenshot harness; 1080p; 500 steps; max over three runs"
+      },
+      "setting": "82 offline tasks; 500 steps; best of three single attempts.",
+      "limitations": "No live-web guarantee; CUA harness matters.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-chart",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 66.6% on Chartography.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Chartography",
+        "version": "Google November 2026 run",
+        "metric": "pass@1",
+        "value": 66.6,
+        "unit": "percent",
+        "protocol": "Google evaluation without tools; highest available thinking"
+      },
+      "setting": "No tools; highest thinking.",
+      "limitations": "Vendor run; chart-layout transfer untested.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-science-terminal",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 51.4% on Terminal-Bench-Science 0.1.",
+      "direct_tasks": [
+        "science.compute"
+      ],
+      "proxy_tasks": [
+        "science.reasoning"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench-Science",
+        "version": "0.1",
+        "metric": "average reward over five attempts",
+        "value": 51.4,
+        "unit": "percent",
+        "protocol": "Google mini-swe-agent vision; mean of five attempts; highest thinking"
+      },
+      "setting": "Vision terminal harness; highest thinking; five attempts averaged.",
+      "limitations": "Tool-assisted tasks, not autonomous discovery.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-automation",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-zapier",
+      "kind": "independent_eval",
+      "claim": "Zapier reports 336/657 tasks passed (51.1%) on AutomationBench 1.0.6.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "AutomationBench",
+        "version": "1.0.6",
+        "metric": "task_completed_correctly",
+        "value": 51.1,
+        "unit": "percent",
+        "protocol": "Zapier API; 657 tasks; high; all assertions pass; 50-step cap"
+      },
+      "setting": "High; strict end-state assertions; 50-step cap; early access November 10.",
+      "limitations": "Task mix and tool harness matter; estimated costs are not invoices.",
+      "reported_on": "2026-11-10",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-plotly",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-plotly",
+      "kind": "independent_eval",
+      "claim": "Plotly reports all 43 analytics questions passed, including 20 SQL analytics questions.",
+      "direct_tasks": [
+        "data.analysis",
+        "data.sql"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Plotly DataAnalyticsBench",
+        "version": "Hydrogen November 12 release run",
+        "metric": "questions passed",
+        "value": 43,
+        "unit": "out of 43",
+        "protocol": "Plotly Studio Embedded; same exam and answer keys; OpenRouter; single run"
+      },
+      "setting": "Plotly Studio Embedded via OpenRouter; one launch-day run, hand-checked answer key; effort unspecified.",
+      "limitations": "Private exam and one harness; other-model reruns vary by up to three points. No rerun here.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-hydrogen-community-01",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-community-html",
+      "kind": "community_test",
+      "claim": "jjcm reports a successful image-to-HTML build and publishes its LCARS page.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.fidelity"
+      ],
+      "measurement": null,
+      "setting": "Original HN report links Hydrogen HTML and comparison/reference pages; effort and harness unspecified.",
+      "limitations": "One subjective example; reference canvas not visually inspected, HTML controls not executed. No controlled comparison or rerun here.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "jjcm",
+        "origin_id": "jjcm-hydrogen-lcars-html-nov12",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [
+          "https://html.non.io/lcars-gemini-4-hydrogen/",
+          "https://diffui.ai/app/canvas/5093e689-1e74-4f26-b632-2a4500f0da97?share=65ac3348-895b-4264-824e-b5f343040009"
+        ],
+        "rating": {
+          "value": 7,
+          "rationale": "An inspectable page supports bounded frontend work; unspecified setup and unverified reference matching limit the assessment.",
+          "confidence": "low",
+          "assessed_on": "2026-11-13"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-hydrogen-community-02",
+      "model_id": "gemini-4-hydrogen",
+      "source_id": "gemini-4-hydrogen-community-worker",
+      "kind": "community_test",
+      "claim": "cflewis reports useful code implementation as a subagent while a stronger model writes specifications and reviews results.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Firsthand Hydrogen use; planner and reviewer are other models; effort, code and tests undisclosed.",
+      "limitations": "Not independent architecture or end-to-end delivery; no artifacts, controlled comparison or rerun.",
+      "reported_on": "2026-11-12",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "cflewis",
+        "origin_id": "cflewis-hydrogen-code-worker-nov12",
+        "grade": "firsthand",
+        "stance": "positive",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [],
+        "rating": {
+          "value": 6.5,
+          "rationale": "Specific worker-role use supports supervised implementation; missing outputs and acceptance checks limit confidence.",
+          "confidence": "low",
+          "assessed_on": "2026-11-13"
+        }
+      }
+    },
+    {
+      "id": "fable-5-2-long-capability",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-docs",
+      "kind": "official_capability",
+      "claim": "Anthropic documents long-running agents, research and document deliverables.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.long",
+        "context.synthesis",
+        "research.web",
+        "writing.professional",
+        "data.spreadsheet"
+      ],
+      "measurement": null,
+      "setting": "Configured host and tools.",
+      "limitations": "Positioning, not task accuracy.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-frontiercode",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 49.1% on FrontierCode 2.0.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "FrontierCode",
+        "version": "2.0",
+        "metric": "mean@5 composite score",
+        "value": 49.1,
+        "unit": "percent",
+        "protocol": "Cognition run relayed by Anthropic; Claude Code; xhigh; 132 tasks, five trials"
+      },
+      "setting": "Xhigh; mean@5, 132 tasks.",
+      "limitations": "Composite rubric; not comparable to 1.1. Max scored lower.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-terminal",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-system-card",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 67.6% on Terminal-Bench 4.0.",
+      "direct_tasks": [
+        "software.terminal"
+      ],
+      "proxy_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "metric": "mean task success",
+        "value": 67.6,
+        "unit": "percent",
+        "protocol": "Anthropic; 66 tasks, 660 trials; offline tools; max; default safeguards/fallbacks"
+      },
+      "setting": "Max; offline Claude Code --bare, ten trials/task.",
+      "limitations": "Fallbacks: 2.5% requests, 10% trials; not base-model-only.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-science",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-system-card",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 74.6% on Terminal-Bench-Science 0.1.",
+      "direct_tasks": [
+        "science.compute"
+      ],
+      "proxy_tasks": [
+        "science.reasoning",
+        "agent.long"
+      ],
+      "measurement": {
+        "benchmark": "Terminal-Bench-Science",
+        "version": "0.1",
+        "metric": "mean task success",
+        "value": 74.6,
+        "unit": "percent",
+        "protocol": "Anthropic; 700 trials; Claude Code --bare; max; offline; safeguards with fallbacks"
+      },
+      "setting": "Max; offline, 70 tasks, ten trials/task.",
+      "limitations": "Fallbacks: 1.3% requests, 4.1% trials; no discovery guarantee.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-search",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-system-card",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 82.1% relaxed WANDR score.",
+      "direct_tasks": [
+        "research.web"
+      ],
+      "proxy_tasks": [
+        "research.facts"
+      ],
+      "measurement": {
+        "benchmark": "WANDR",
+        "version": "Anthropic modified offline release setup",
+        "metric": "relaxed soft F1",
+        "value": 82.1,
+        "unit": "percent",
+        "protocol": "Anthropic; 980k token budget; frozen index; Opus 4.6 grader; 500 tasks"
+      },
+      "setting": "Max; frozen offline search, 500 tasks.",
+      "limitations": "Modified soft-F1 grading; not live-web competitor-comparable.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-computer",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 89.3% partial credit on OSWorld 2.1.",
+      "direct_tasks": [
+        "agent.computer"
+      ],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "OSWorld",
+        "version": "2.1 official 82-task offline set",
+        "metric": "partial credit",
+        "value": 89.3,
+        "unit": "percent",
+        "protocol": "Anthropic; 1080p, 500 actions; five attempts/task; max"
+      },
+      "setting": "Max; 82 offline tasks, five attempts.",
+      "limitations": "Strict pass is 54.6%; partial credit is not completion.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-chart",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 73.4% on Chartography without tools.",
+      "direct_tasks": [
+        "vision.chart"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Chartography",
+        "version": "Anthropic November 2026 no-tool run",
+        "metric": "accuracy",
+        "value": 73.4,
+        "unit": "percent",
+        "protocol": "Anthropic; official tasks/ranges; Gemini 3.5 Flash grader; max, no tools"
+      },
+      "setting": "Max; no tools, 100 charts.",
+      "limitations": "Specialized charts; LLM-graded acceptable ranges.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-automation",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic relays 51.4% on AutomationBench 1.0.6.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "AutomationBench",
+        "version": "1.0.6 private held-out set",
+        "metric": "task pass rate",
+        "value": 51.4,
+        "unit": "percent",
+        "protocol": "Zapier run relayed by Anthropic; 657 tasks; max; default fallbacks"
+      },
+      "setting": "Zapier; max, 657 tasks, default fallbacks.",
+      "limitations": "Private held-out set; October 8 run.",
+      "reported_on": "2026-10-08",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-hle",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-launch",
+      "kind": "vendor_eval",
+      "claim": "Anthropic reports 74.2% on HLE with tools.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "math.contest",
+        "science.reasoning"
+      ],
+      "measurement": {
+        "benchmark": "Humanity’s Last Exam",
+        "version": "Anthropic November 2026 with-tools setup",
+        "metric": "accuracy",
+        "value": 74.2,
+        "unit": "percent",
+        "protocol": "Anthropic; 980k task budget; tool-enabled; Opus 4.6 grader; contamination screening"
+      },
+      "setting": "Max; search and code, 980k budget.",
+      "limitations": "Broad reasoning proxy; not proof-assistant validation.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "fable-5-2-bughunt-max",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-bughunt",
+      "kind": "independent_eval",
+      "claim": "Bug Hunt Bench reports a mean of 58 planted bugs fixed out of 105.",
+      "direct_tasks": [
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.repo"
+      ],
+      "measurement": {
+        "benchmark": "Bug Hunt Bench",
+        "version": "2026-11-10 data; two production repos, 105 planted bugs",
+        "metric": "mean planted bugs fixed",
+        "value": 58,
+        "unit": "out of 105",
+        "protocol": "Three max-effort Claude Code 2.1.321 runs; Linux cloud; blind Grok 4.7 diff grading"
+      },
+      "setting": "Max; Claude Code 2.1.321, first-party, three runs: 56/53/65.",
+      "limitations": "Two repos, Grok 4.7 judge, variable compaction. Earlier peers used another judge; list-estimated cost, no rerun here.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null
+    },
+    {
+      "id": "claude-fable-5-2-community-01",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-gekkode",
+      "kind": "community_test",
+      "claim": "Flandrin reports 42/42 browser-desktop checks after repairs; closing an unsaved editor still lost text.",
+      "direct_tasks": [
+        "software.frontend",
+        "software.debug"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "Five coding briefs in Claude Code, mainly xhigh; internet blocked except dependencies/fonts and selected browser tools.",
+      "limitations": "Selected author tasks; comparisons had different network access. Four shared tasks took 7h42; screenshots/video and checks published, no rerun here.",
+      "reported_on": "2026-11-11",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "Damien Flandrin",
+        "origin_id": "flandrin-fable52-five-coding-tests-nov11",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [
+          "https://www.gekkode.com/en/intelligence-artificielle/claude-fable-5-2-review/"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Detailed checks and successful repairs support frontend work; hidden data loss and long runtime prevent a broad reliability claim.",
+          "confidence": "medium",
+          "assessed_on": "2026-11-13"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-2-community-02",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-pat-simmons",
+      "kind": "community_test",
+      "claim": "Simmons ranks Fable first on three blind visual builds, with much higher API-equivalent cost than Opus.",
+      "direct_tasks": [
+        "software.frontend.design",
+        "software.frontend.fidelity"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Claude Code on release day; Central Park, Shopify clone and Roadster. Identical prompts, different agent products and comparison dates.",
+      "limitations": "Author stopped runs during polishing; subjective ranking, three selected builds, not fixed acceptance. Public build pages read, interaction not tested; token estimates are not subscription bills.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "Pat Simmons",
+        "origin_id": "pat-simmons-fable52-three-builds-nov9",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [
+          "https://www.aiformortals.co/builds/central-park-olmsted-fable-5-2",
+          "https://www.aiformortals.co/builds/shopify-editions-clone-fable-5-2",
+          "https://www.aiformortals.co/builds/tesla-roadster-blender-fable-5-2"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Inspectable results and blind author preference support visual tasks, while subjective scope, runtime and substantial cost qualify the benefit.",
+          "confidence": "low",
+          "assessed_on": "2026-11-13"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-2-community-03",
+      "model_id": "claude-fable-5-2",
+      "source_id": "fable-5-2-matt-shumer",
+      "kind": "community_test",
+      "claim": "Shumer reports repeated drift from a prompt-first architecture into edge-case code, requiring reminders.",
+      "direct_tasks": [
+        "software.architecture"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Author’s early-access agent product; multiple test snapshots and unspecified effort.",
+      "limitations": "Private architecture and no acceptance metric. The same review praises game builds, but those do not verify architecture compliance; no rerun here.",
+      "reported_on": "2026-11-09",
+      "reviewed_on": "2026-11-13",
+      "comparison_group": null,
+      "community": {
+        "author": "Matt Shumer",
+        "origin_id": "shumer-fable52-architecture-drift-nov9",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-11-13",
+        "artifact_urls": [],
+        "rating": {
+          "value": 4.5,
+          "rationale": "Specific constraint drift is adverse architecture evidence; private setup and test-snapshot uncertainty keep confidence low.",
+          "confidence": "low",
+          "assessed_on": "2026-11-13"
+        }
+      }
     }
   ]
 }

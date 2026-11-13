@@ -1125,6 +1125,285 @@
       "published_on": "2026-10-26",
       "checked_on": "2026-10-27",
       "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-docs",
+      "title": "Gemini 4 Carbon API model documentation",
+      "url": "https://aistudio.google.com/docs/models/gemini-4-carbon",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-thinking",
+      "title": "Gemini API thinking levels and shared token limits",
+      "url": "https://aistudio.google.com/docs/thinking",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-pricing",
+      "title": "Gemini API standard Carbon pricing and introductory deadline",
+      "url": "https://aistudio.google.com/docs/pricing#gemini-4-carbon",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-public-release",
+      "title": "Gemini 4 Carbon is now available",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "publisher": "Google",
+      "published_on": "2026-11-10",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-card",
+      "title": "Gemini 4 Carbon model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/",
+      "publisher": "Google DeepMind",
+      "published_on": "2026-11-10",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-methodology",
+      "title": "Gemini 4 Carbon model evaluation methodology",
+      "url": "https://deepmind.google/models/evals-methodology/gemini-4-carbon/",
+      "publisher": "Google DeepMind",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-frontierswe",
+      "title": "FrontierSWE V2 original leaderboard",
+      "url": "https://www.frontierswe.com/",
+      "publisher": "Proximal Labs",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-materials",
+      "title": "FrontierSWE machine-learned interatomic potential task",
+      "url": "https://www.frontierswe.com/tasks/materials-ml-potential",
+      "publisher": "Proximal Labs",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-community-simon",
+      "title": "llm-gemini 0.36: Carbon SVG and standalone 3D results",
+      "url": "https://simonwillison.net/2026/Nov/10/llm-gemini/",
+      "publisher": "Simon Willison",
+      "published_on": "2026-11-10",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-community-pat",
+      "title": "Gemini 4 Carbon: No-Hype Full Review and Testing",
+      "url": "https://www.aiformortals.co/blog/gemini-4-carbon-review",
+      "publisher": "AI for Mortals / Pat Simmons",
+      "published_on": "2026-11-11",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-community-cleus",
+      "title": "Gemini 4 Carbon public API filter test",
+      "url": "https://cleus.ai/blog/gemini-4-carbon-public-release-filters-tested",
+      "publisher": "Cleus / Prabhu Biswal",
+      "published_on": "2026-11-12",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-docs",
+      "title": "Gemini 4 Hydrogen Cloud model specifications",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-hydrogen",
+      "publisher": "Google Cloud",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-whats-new",
+      "title": "What's new in Gemini 4 Hydrogen",
+      "url": "https://aistudio.google.com/docs/whats-new-gemini-4-hydrogen",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-pricing",
+      "title": "Gemini API standard Hydrogen pricing",
+      "url": "https://aistudio.google.com/docs/pricing",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-card",
+      "title": "Gemini 4 Hydrogen model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
+      "publisher": "Google DeepMind",
+      "published_on": "2026-11-12",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-methodology",
+      "title": "Gemini 4 Hydrogen evaluation methodology",
+      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_model_evaluation.pdf",
+      "publisher": "Google DeepMind",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-zapier",
+      "title": "Gemini 4 Hydrogen AutomationBench 1.0.6 results",
+      "url": "https://zapier.com/benchmarks/gemini-hydrogen-4-report",
+      "publisher": "Zapier",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-plotly",
+      "title": "Gemini 4 Hydrogen data analytics exam",
+      "url": "https://plotly.com/blog/gemini-4-hydrogen-plotly-data-analytics-bench/",
+      "publisher": "Plotly",
+      "published_on": "2026-11-12",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-community-html",
+      "title": "Hydrogen image-to-HTML artifact report",
+      "url": "https://news.ycombinator.com/item?id=50474893",
+      "publisher": "Hacker News / jjcm",
+      "published_on": "2026-11-12",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-community-worker",
+      "title": "Hydrogen code-worker firsthand report",
+      "url": "https://news.ycombinator.com/item?id=50471670",
+      "publisher": "Hacker News / cflewis",
+      "published_on": "2026-11-12",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-hydrogen-cloud-release",
+      "title": "Google Cloud November 12 Hydrogen GA release",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+      "publisher": "Google Cloud",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-docs",
+      "title": "Claude Fable 5.2 model documentation",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+      "publisher": "Anthropic",
+      "published_on": "2026-11-09",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-pricing",
+      "title": "Claude API official pricing for Fable 5.2",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "publisher": "Anthropic",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-launch",
+      "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "publisher": "Anthropic",
+      "published_on": "2026-11-09",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-system-card",
+      "title": "Claude Fable 5.2 and Mythos 5.2 system card",
+      "url": "https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card",
+      "publisher": "Anthropic",
+      "published_on": "2026-11-09",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-whats-new",
+      "title": "What is new in Claude Fable 5.2",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+      "publisher": "Anthropic",
+      "published_on": "2026-11-09",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-bughunt",
+      "title": "Bug Hunt Bench original run data and methodology",
+      "url": "https://bughunt.productcompass.pm/data/benchmark.json",
+      "publisher": "Pawel Huryn / Product Compass",
+      "published_on": null,
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-gekkode",
+      "title": "Claude Fable 5.2: five coding tests with internet blocked",
+      "url": "https://www.gekkode.com/en/intelligence-artificielle/claude-fable-5-2-review/",
+      "publisher": "Gekkode / Damien Flandrin",
+      "published_on": "2026-11-11",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-pat-simmons",
+      "title": "Fable 5.2: No-Hype Full Review and Testing",
+      "url": "https://www.aiformortals.co/blog/fable-5-2",
+      "publisher": "AI for Mortals / Pat Simmons",
+      "published_on": "2026-11-09",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "fable-5-2-matt-shumer",
+      "title": "My Fable 5.2 Review",
+      "url": "https://somethingbig.ai/fable-5-2-review",
+      "publisher": "Matt Shumer / Something Big",
+      "published_on": "2026-11-09",
+      "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-carbon-announcement",
+      "title": "Gemini 4 Carbon original October 28 announcement and evaluation table",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "publisher": "Google",
+      "published_on": "2026-10-28",
+      "checked_on": "2026-11-13",
+      "review_days": 14
     }
   ]
 }

@@ -3,7 +3,8 @@
 These examples describe recommendation behavior, not paid cross-model evaluations.
 The current model in fixtures is a declared hypothetical value, not inferred
 from the assistant running the skill. Use `--as-of 2026-10-08` for the historical examples, and
-`--as-of 2026-10-14` for Argon and `--as-of 2026-10-27` for Kimi K3.1; omit it for current advice.
+`--as-of 2026-10-14` for Argon, `--as-of 2026-10-27` for Kimi K3.1 and
+`--as-of 2026-11-13` for the November additions; omit it for current advice.
 
 ## One question
 
@@ -26,6 +27,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/glm.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/kimi31.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/november-models.json
 ```
 
 A backtest combines quantitative methodology and repository work. Coding evidence
@@ -65,6 +67,15 @@ examples; their results have not been relabeled as new evaluations.
 Kimi K3.1 Pro, Kimi K3 and Gemini 4 Argon. The [saved Chinese output](kimi31-output.zh-CN.md)
 uses October 27, preserving the distinction between visual preference and faithful
 reproduction. Existing dated examples retain their own original snapshots.
+
+`november-models.json` is a Chinese multi-step coding workflow brief restricted
+to Gemini 4 Carbon, Gemini 4 Hydrogen and Claude Fable 5.2. Its
+[saved output](november-models-output.zh-CN.md) keeps each model's tools, evaluation
+settings, task reports and price scope visible. It does not run a provider API
+or automatically orchestrate the models.
+Fable’s independent debugging support comes from [Bug Hunt’s original results](https://bughunt.productcompass.pm/data/benchmark.json);
+its workflow record and fallback settings come from the [launch evaluation](https://www.anthropic.com/claude-fable-and-mythos-5-2).
+Complete task records are preserved in [the evidence catalog](../skills/promptharbor/data/evidence.json).
 
 ## A whole engineering project
 

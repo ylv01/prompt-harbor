@@ -1258,6 +1258,184 @@
       "setting": "OpenCode swarm 模式中的 Kimi K3.1 Pro；单个 HTML 场景，作者检查桌面、320/390 像素宽度、控制台及请求；未说明推理档位。",
       "limitations": "仅一个迭代演示，没有记录 Agent 数量、速度、成本或单 Agent 对照，仍需人工目视检查。文章由 AI 辅助编辑；本项目打开了公开 HTML，未独立验证渲染交互或复跑。",
       "rating_rationale": "公开场景及具体修复支持范围明确的前端与调试用途；人工纠正和未测量的 swarm 影响限制了更广结论。"
+    },
+    "gemini-4-carbon-capabilities": {
+      "claim": "Google 文档列明多模态输入、函数调用、计算机操作和结构化输出。",
+      "setting": "正式公开 API，需要配置工具。",
+      "limitations": "功能可用不等于任务准确率。"
+    },
+    "gemini-4-carbon-frontierswe": {
+      "claim": "Proximal 的 FrontierSWE V2 显示五次试验均值为 61.2%。",
+      "setting": "Proximus；34 个任务，每题五次试验、每次 20 小时；本记录未核实推理档位。",
+      "limitations": "页面 ±5.3 来自最差与最佳试验，并非置信区间；本项目未复跑，也未导入跨模型可比组。"
+    },
+    "gemini-4-carbon-materials": {
+      "claim": "Carbon 在原子间势建模任务上的平均验证奖励为 0.9802。",
+      "setting": "五条公开轨迹、20 小时预算；实现能量和原子力预测代码。",
+      "limitations": "仅一个材料任务；归一化奖励不等于通用科学准确率。"
+    },
+    "gemini-4-carbon-terminal": {
+      "claim": "Google 转述 Terminal-Bench 4.0（AA）成绩为 65.2%。",
+      "setting": "Google 转述的 AA 结果。",
+      "limitations": "本记录未独立核实原始 AA 执行设置。"
+    },
+    "gemini-4-carbon-computer": {
+      "claim": "Google 报告 Agents’ Last Exam v1.1 平均评分为 77.4%。",
+      "setting": "ALE-Claw；122 个任务，五小时，high 思考档位。",
+      "limitations": "采用 10 月 17 日任务，未应用 10 月 26 日更新；过滤后的回复可能为空。"
+    },
+    "gemini-4-carbon-graphwalks": {
+      "claim": "Google 报告 GraphWalks 的 BFS F1 为 96.2%。",
+      "setting": "200 个问题，长度 256k–1M；high 档位。",
+      "limitations": "合成图遍历，不是对任意文档的回忆能力证明。"
+    },
+    "gemini-4-carbon-charts": {
+      "claim": "Google 报告 Chartography 成绩为 72.5%。",
+      "setting": "无工具；high 档位。",
+      "limitations": "不能据此保证任意图表理解或信息提取准确。"
+    },
+    "gemini-4-carbon-riemann": {
+      "claim": "Google 转述 RiemannBench 成绩为 80.0%。",
+      "setting": "Google 转述 Surge 榜单。",
+      "limitations": "未核实原始运行；不保证形式化证明正确。"
+    },
+    "gemini-4-carbon-community-01": {
+      "claim": "Willison 公开三个 SVG 尝试及 Three.js/OpenStreetMap 场景，追问后得到独立 HTML。",
+      "setting": "11 月 10 日：SVG 分别使用 low、medium、high，3D 场景在 Antigravity 运行。",
+      "limitations": "仅选择的原型，没有验收套件，本项目未运行其功能。",
+      "rating_rationale": "可检查的作品支持有限视觉实现；需要追问且缺乏验收检查，限制其泛化。"
+    },
+    "gemini-4-carbon-community-02": {
+      "claim": "Simmons 在网站还原和发布影片中将 Carbon 排末位，在浏览器飞行模拟中排第三。",
+      "setting": "每个模型每项构建仅一次 high 档位运行；Carbon 用 Antigravity，其他 Agent 与日期不同。",
+      "limitations": "主观排名；订阅运行日志折算为 API 等价成本，并非账单；本项目未复跑。",
+      "rating_rationale": "公开产物为高要求视觉和参考还原提供负面依据；环境不同且仅一次运行，保持低置信度。"
+    },
+    "gemini-4-carbon-community-03": {
+      "claim": "Cleus 报告 SQL 注入解释和 C 代码检查可以回答，但办公室网络扫描及入门 CTF 脚本均未回答。",
+      "setting": "11 月 11 日 API 默认设置，无系统提示词；11 个提示词各三次，另一个模型给回复分类。",
+      "limitations": "仅小型响应与可用性检查，不是正确性或利用成功率；公开 API 与 Fairwind 不同。",
+      "rating_rationale": "防御性检查可用，但部分工作流被拒及解码不稳定限制实用性；LLM 分类不等于验证。"
+    },
+    "gemini-4-hydrogen-tools-documents": {
+      "claim": "Google 文档说明了多模态输入、原生工具和共享窗口长输出能力。",
+      "setting": "需配置 API 集成，默认 high。",
+      "limitations": "功能支持不等于任务准确率。"
+    },
+    "gemini-4-hydrogen-swe-sweep": {
+      "claim": "Google 报告 SWE-sweep 得分为 13.5%。",
+      "setting": "Antigravity-CLI 1.4.8，最高思考档位。",
+      "limitations": "计分为子任务加权奖励，不是完整项目成功率。"
+    },
+    "gemini-4-hydrogen-terminal": {
+      "claim": "Google 报告经作弊调整的 Terminal-Bench 4.1 得分为 57.0%。",
+      "setting": "mini-swe-agent 视觉框架，high，每题五次尝试取均值。",
+      "limitations": "不是 pass@1，也不是 4.0 版本。"
+    },
+    "gemini-4-hydrogen-computer": {
+      "claim": "Google 报告 OSWorld 2.1 离线任务部分得分为 77.6%。",
+      "setting": "82 个离线任务、500 步；三次独立尝试取最佳结果。",
+      "limitations": "不能保证实时网站表现，计算机操作框架也会影响结果。"
+    },
+    "gemini-4-hydrogen-chart": {
+      "claim": "Google 报告 Chartography 图表题得分为 66.6%。",
+      "setting": "无工具，最高思考档位。",
+      "limitations": "厂商测试，未验证向陌生图表布局的迁移。"
+    },
+    "gemini-4-hydrogen-science-terminal": {
+      "claim": "Google 报告 Terminal-Bench-Science 0.1 得分为 51.4%。",
+      "setting": "视觉终端框架，最高思考档位，每题五次尝试取均值。",
+      "limitations": "工具辅助科研任务，不等于自主科学发现。"
+    },
+    "gemini-4-hydrogen-automation": {
+      "claim": "Zapier 报告 AutomationBench 1.0.6 通过 657 题中的 336 题（51.1%）。",
+      "setting": "high，最终状态严格断言，50 步上限；11 月 10 日早期访问测试。",
+      "limitations": "任务分布和工具框架影响结果，估算成本不是实际账单。"
+    },
+    "gemini-4-hydrogen-plotly": {
+      "claim": "Plotly 报告 43 道数据分析题全部通过，其中包含 20 道 SQL 分析题。",
+      "setting": "通过 OpenRouter 使用 Plotly Studio Embedded，发布当天运行一次并人工核对答案，未说明思考档位。",
+      "limitations": "私有题库和单一框架；其他模型复跑曾波动三分，本项目未复跑。"
+    },
+    "gemini-4-hydrogen-community-01": {
+      "claim": "jjcm 报告完成图片转 HTML，并公开 LCARS 网页。",
+      "setting": "原始 HN 报告链接了 Hydrogen HTML、对照页面和参考图；未说明档位及执行框架。",
+      "limitations": "单个主观例子；未检查参考画布的实际视觉效果，也未运行 HTML 控件。没有受控比较，本项目未复跑。",
+      "rating_rationale": "可查看的页面支持有限范围前端实现，但设置不明，参考匹配未核实，因此保持低置信度。"
+    },
+    "gemini-4-hydrogen-community-02": {
+      "claim": "cflewis 报告 Hydrogen 作为子任务模型实现代码较实用，由更强模型编写规格并审核。",
+      "setting": "Hydrogen 一手使用经验，规划和审核由其他模型承担；未公开档位、代码或测试。",
+      "limitations": "不是独立架构设计或端到端交付证明；无产物、受控比较或复跑。",
+      "rating_rationale": "具体的执行子任务用途支持有人审核的代码实现；缺乏输出和验收记录，置信度有限。"
+    },
+    "fable-5-2-long-capability": {
+      "claim": "Anthropic 定位于长时间 Agent、研究和文档类交付。",
+      "setting": "需配置宿主与工具。",
+      "limitations": "这是能力定位，不是任务准确率。"
+    },
+    "fable-5-2-frontiercode": {
+      "claim": "Anthropic 报告 FrontierCode 2.0 为 49.1%。",
+      "setting": "Xhigh；132 个任务、五次试验均值。",
+      "limitations": "复合评分，不与 1.1 版直接比较；max 档位成绩更低。"
+    },
+    "fable-5-2-terminal": {
+      "claim": "Anthropic 报告 Terminal-Bench 4.0 为 67.6%。",
+      "setting": "Max；离线 Claude Code --bare，每题十次试验。",
+      "limitations": "2.5% 请求、10% 试验触发回退，不是基础模型单独成绩。"
+    },
+    "fable-5-2-science": {
+      "claim": "Anthropic 报告 Terminal-Bench-Science 0.1 为 74.6%。",
+      "setting": "Max；离线环境，70 个任务，每题十次试验。",
+      "limitations": "1.3% 请求、4.1% 试验触发回退；不能保证科研发现。"
+    },
+    "fable-5-2-search": {
+      "claim": "Anthropic 报告 WANDR 宽松评分为 82.1%。",
+      "setting": "Max；冻结的离线搜索索引，500 个任务。",
+      "limitations": "修改后的 soft F1 评分，不能与实时联网的对照结果直接比较。"
+    },
+    "fable-5-2-computer": {
+      "claim": "Anthropic 报告 OSWorld 2.1 部分得分为 89.3%。",
+      "setting": "Max；82 个离线任务，每题五次尝试。",
+      "limitations": "严格通过率为 54.6%；部分得分不等于完整完成任务。"
+    },
+    "fable-5-2-chart": {
+      "claim": "Anthropic 报告无工具 Chartography 为 73.4%。",
+      "setting": "Max；无工具，100 道图表题。",
+      "limitations": "专门图表任务，以模型判断是否落在专家允许范围内。"
+    },
+    "fable-5-2-automation": {
+      "claim": "Anthropic 转述 AutomationBench 1.0.6 为 51.4%。",
+      "setting": "Zapier 执行；max，657 个任务，默认回退。",
+      "limitations": "私有留出集；实际执行日期是 10 月 8 日。"
+    },
+    "fable-5-2-hle": {
+      "claim": "Anthropic 报告带工具 HLE 为 74.2%。",
+      "setting": "Max；搜索与代码工具，980k token 预算。",
+      "limitations": "仅作广泛推理的相邻证据，不是证明助手验证。"
+    },
+    "fable-5-2-bughunt-max": {
+      "claim": "Bug Hunt Bench 报告 105 个预埋缺陷中平均修复 58 个。",
+      "setting": "Max；Claude Code 2.1.321 直连官方；三次结果为 56、53、65。",
+      "limitations": "仅两个代码库，以 Grok 4.7 裁判，压缩状态有差异；早期对照使用另一裁判。成本是目录单价估算，本项目未复跑。"
+    },
+    "claude-fable-5-2-community-01": {
+      "claim": "Flandrin 报告浏览器桌面修复后通过 42/42 检查，但关闭未保存编辑器仍会丢失文本。",
+      "setting": "Claude Code 五个编程任务，主要使用 xhigh；网络受限，仅放行依赖、字体及指定浏览器工具。",
+      "limitations": "作者自选任务，对照联网条件不同；四项共同任务耗时 7 小时 42 分。公开截图、视频和检查结果，本项目未复跑。",
+      "rating_rationale": "明确检查和成功修复支持前端用途，但仍有数据丢失问题且耗时很长，不能泛化为全面可靠。"
+    },
+    "claude-fable-5-2-community-02": {
+      "claim": "Simmons 在三项盲评视觉构建中将 Fable 排在首位，但按 API 单价估算的成本远高于 Opus。",
+      "setting": "发布日使用 Claude Code；中央公园、Shopify 还原及 Roadster；提示词相同，但 Agent 产品和对照日期不同。",
+      "limitations": "作者在打磨阶段主动停止，属于三项自选任务和主观排名，并非固定验收。已读取公开作品页，未测试交互；token 成本估算不是订阅账单。",
+      "rating_rationale": "可查验产物及作者盲评偏好支持视觉任务；主观范围、耗时和显著成本限制其收益判断。"
+    },
+    "claude-fable-5-2-community-03": {
+      "claim": "Shumer 报告模型反复偏离以提示词为主的架构，转而堆积边缘情况代码，需要多次提醒。",
+      "setting": "作者早期访问期间的 Agent 产品；使用过多个测试快照，未注明推理档位。",
+      "limitations": "架构代码未公开且无固定验收指标；同篇文章赞扬游戏构建，但不能据此验证架构遵从，本项目未复跑。",
+      "rating_rationale": "具体的约束偏离为架构任务提供负面证据；私有环境及测试快照不确定性使置信度保持低。"
     }
   },
   "models": {
@@ -1386,6 +1564,30 @@
         "支持原生文本、图片和视频输入，未核实原生音频输入；工具调用与结构化输出需要配置集成。API 需要至少成功充值 1 美元，Kimi Code 订阅单独计费。",
         "上下文为 1,048,576 token，始终启用思考；reasoning_effort 接受 low、high、max，默认 max。max_completion_tokens 默认 131,072，最高可设为 1,048,576，但仍受上下文预算约束。",
         "基础输入/输出单价为每百万 token 2/10 美元，不按上下文长度分档；缓存命中输入为 0.20 美元。缓存写入按 TTL 单独列账，并非对同一批 token 再加一遍输入费；实际应核对端点价目与思考 token 用量。"
+      ]
+    },
+    "gemini-4-carbon": {
+      "notes": [
+        "稳定 API 型号为 gemini-4-carbon；10 月 28 日 Fairwind 限制访问后，11 月 10 日开放付费公开 API。消费端和 Agent 产品权限不同，Fairwind 的专项安全成绩不能证明公开 API 表现。",
+        "输入、思考和输出共享 1,048,576 token；同步默认输出 65,536，更长输出需要长输出、后台执行或续写，并受剩余窗口约束。",
+        "支持文本、图片、视频、音频及 PDF 输入，输出文本；工具、计算机操作和结构化输出需配置集成。默认思考为 medium，支持 low、medium、high。",
+        "截至 2026-11-30 的标准 API 参考价为每百万输入/输出 $2/$10，官方宣布 12 月 1 日起 $4/$20；思考计入输出。这个临时展示价不作为预算筛选数值报价，缓存、工具和服务档位另有规则。"
+      ]
+    },
+    "gemini-4-hydrogen": {
+      "notes": [
+        "正式 API 型号 gemini-4-hydrogen 于 11 月 12 日发布。Cloud 将其列为短期 GA 版本，退役至少提前 45 天通知。API 有免费与付费层，消费端选择权限及账号额度不同。",
+        "输入、思考、工具调用与最终输出共享 1,048,576 token。前台每段输出最多 65,536；更长输出需要后台执行或续写，并预留窗口空间。",
+        "支持文本、图片、音频、视频及相应文档输入，仅输出文本。思考档位为 low、medium、high（默认）、xhigh；工具、搜索及计算机操作需要配置环境，不支持 Live API。",
+        "标准每百万 token 输入/输出为 1.50/7.50 美元，不按上下文长度加价，未标注促销到期日。免费层有速率限制，不能视为生产用量无限免费；缓存和搜索另行计费。"
+      ]
+    },
+    "claude-fable-5-2": {
+      "notes": [
+        "11 月 9 日开放，正式型号为 claude-fable-5-2；Fable 面向一般客户，与需要验证资格的 Mythos 5.2 分开记录。支持文本与图片输入，仅输出文本；工具需要宿主配置。",
+        "上下文为 1M token，最大输出 128K；自适应思考始终开启。API 默认 high，Claude 应用和 Claude Code 默认 medium；支持 low、medium、high、xhigh、max。",
+        "标准 API 在 1M 上下文内每百万输入/输出为 $8/$40；Fast 模式为 $16/$80。缓存、批处理、工具和区域规则另计；API 单价不能代表订阅额度或整项任务成本。",
+        "部分公布评测包含回退模型；关闭保护机制的 Mythos 专属结果不能归于 Fable。提高推理档位不保证分数提高，也可能显著增加耗时和成本。"
       ]
     }
   }

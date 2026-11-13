@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.3 — 2026-11-13
+
+- Add Gemini 4 Carbon, Gemini 4 Hydrogen and Claude Fable 5.2 as separate exact
+  models, with task evidence, community research and complete Chinese descriptions.
+- Record each model's availability, context, tools, effort and price scope without
+  inheriting predecessor results or changing existing recommendation weights.
+- Add a Chinese resource-filtered example and exact-version regression coverage.
+
 ## 0.4.2 — 2026-10-27
 
 - Add Kimi K3.1 Pro as a separate exact API model with task evidence, attributed

@@ -113,3 +113,22 @@ evaluation fixtures and scoring process are in `evals/`.
   CI will run only after publication approval.
 - Current maintenance work remains visible: 61 older evidence records, 17 community
   searches and 97 source reviews are due. No new K3.1 Pro record is overdue.
+
+## November additions · 2026-11-13
+
+- **136 unittest cases passed** (122 existing plus 14 three-model behavior cases).
+- Exact resource filtering, historical-date exclusion, model-specific multimodal
+  and tool constraints, closed-weight exclusion and context boundaries passed.
+- Standard Hydrogen/Fable price caps, Carbon offer expiry and display-price
+  isolation preserve selection, ranking and switching behavior.
+- Chinese Top 3 tables retain each model's own source-linked price; an extracted
+  standalone ZIP produces the same three-model resource-filtered recommendation.
+- All new task evidence, community research links and Chinese descriptions validate.
+  Original dates, partial-credit definitions, effort and fallback caveats remain.
+- All 19 prior model rows, 125 source rows, 179 evidence rows and 19 search logs,
+  as well as taxonomy, old translations and recommendation policy, are unchanged.
+- Current maintenance work remains visible: 17 model metadata records, 105 evidence
+  records, 19 community searches, 16 price references and 121 source reviews are due.
+  No newly added model or evidence record is overdue.
+- Repository and Skill Creator validation passed. The v0.4.3 ZIP is built locally;
+  new remote CI will run after publication approval.

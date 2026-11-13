@@ -1,6 +1,6 @@
 # Community task ratings
 
-Reviewed: **2026-10-27**. All **19** catalog models were searched.
+Reviewed: **2026-11-13**. All **22** catalog models were searched.
 
 Scores are PromptHarbor editorial judgments of specific reported outcomes, on a 0–10 scale. They are not benchmark measurements or global model ratings.
 Unknown task ratings remain unknown. A **proxy** label means only adjacent-task reports support that rating; it is not a direct observation of that task.
@@ -26,8 +26,11 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 | GLM-5.3 | No admitted task reports | 3 |
 | GLM-5.3-Flash | No admitted task reports | 3 |
 | Claude Haiku 5.5 | No admitted task reports | 3 |
-| Gemini 4 Argon | `agent.long` **7.5**; `agent.workflow` **7.5**; `context.retrieve` **7.0**; `context.synthesis` **7.0** (proxy); `data.analysis` **7.0**; `software.frontend` **5.5**; `software.frontend.design` **5.5**; `software.terminal` **3.5**; `writing.professional` **7.0** (proxy) | 4 |
-| Kimi K3.1 Pro | `data.extract` **7.5**; `software.algorithm` **7.5**; `software.debug` **6.8**; `software.frontend` **6.8**; `software.frontend.design` **5.2**; `software.frontend.fidelity` **4.0**; `software.repo` **6.5** | 5 |
+| Gemini 4 Argon | No admitted task reports | 4 |
+| Kimi K3.1 Pro | No admitted task reports | 5 |
+| Gemini 4 Carbon | `software.frontend` **7.0**; `software.frontend.design` **4.9**; `software.frontend.fidelity` **4.0**; `software.security` **5.5** | 3 |
+| Gemini 4 Hydrogen | `software.frontend` **7.0**; `software.frontend.fidelity` **7.0** (proxy); `software.repo` **6.5** | 2 |
+| Claude Fable 5.2 | `software.architecture` **4.5**; `software.debug` **7.5**; `software.frontend` **7.5**; `software.frontend.design` **7.5**; `software.frontend.fidelity` **7.5** | 3 |
 
 ## GPT-6 Astra
 
@@ -882,15 +885,6 @@ Search: 2026-10-14 · status: reviewed
 
 Queries: `"Gemini 4 Argon" firsthand tested review coding`; `"Gemini 4 Argon" "Tiny World" same prompt`; `"Gemini 4 Argon" production backend planning review`; `"Gemini 4 Argon" "DevOps" manifests backup`
 
-- `agent.long`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
-- `agent.workflow`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
-- `context.retrieve`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
-- `context.synthesis`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
-- `data.analysis`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend`: **5.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.frontend.design`: **5.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.terminal`: **3.5/10**, low confidence, direct mapping, 1 origin(s).
-- `writing.professional`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
 
 ### [Gemini 4 Argon, Tested: A Week as My Daily Driver](https://theoreticallymedia.com/blog/gemini-4-argon-tested-800-million-tokens/)
 
@@ -954,13 +948,6 @@ Search: 2026-10-27 · status: reviewed
 
 Queries: `Kimi K3.1 official model pricing benchmark October 2026`; `"Kimi K3.1" tested review frontend coding`; `"Kimi K3.1 Pro" "I tested" coding original`; `"Kimi K3.1 Pro" "3D" "failed" reviewer`
 
-- `data.extract`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.algorithm`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
-- `software.debug`: **6.8/10**, low confidence, direct mapping, 2 origin(s).
-- `software.frontend`: **6.8/10**, low confidence, direct mapping, 2 origin(s).
-- `software.frontend.design`: **5.2/10**, low confidence, direct mapping, 2 origin(s).
-- `software.frontend.fidelity`: **4.0/10**, low confidence, direct mapping, 1 origin(s).
-- `software.repo`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
 
 ### [Kimi K3.1 Pro in Our Five-Model Test: Useful Patches, Incomplete Handoffs](https://kingy.ai/blog/kimi-k3-1-pro-five-model-coding-research-test/)
 
@@ -1031,3 +1018,144 @@ Leung reports an interactive Three.js ark with working controls; screenshot feed
 **Limits:** One iterative demo, no agent-count, speed, cost or single-agent control; human visual review was necessary. Article AI-assisted. Public HTML opened, rendered interaction not independently tested or rerun here.
 
 Artifacts: [artifact 1](https://www.michaelleung.info/noah/).
+
+## Gemini 4 Carbon
+
+Search: 2026-11-13 · status: reviewed
+
+Queries: `"Gemini 4 Carbon" tested review November 2026`; `"Gemini 4 Carbon" "I" "tested"`; `site:simonwillison.net "Gemini 4 Carbon"`; `site:frontierswe.com "Gemini 4 Carbon"`
+
+- `software.frontend`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend.design`: **4.9/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
+- `software.frontend.fidelity`: **4.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.security`: **5.5/10**, low confidence, direct mapping, 1 origin(s).
+
+### [llm-gemini 0.36: Carbon SVG and standalone 3D results](https://simonwillison.net/2026/Nov/10/llm-gemini/)
+
+**7/10** · positive · artifact_report · low confidence. Author: Simon Willison.
+Reported: 2026-11-10 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.frontend`. Proxy tasks: `software.frontend.design`.
+
+Willison published three SVG attempts and a Three.js/OpenStreetMap scene; a follow-up produced standalone HTML.
+
+**Rating reason:** Inspectable artifacts support bounded visual implementation; follow-up and absent acceptance checks limit transfer.
+
+**Limits:** Selected prototypes, no acceptance suite or functional rerun by us.
+
+Artifacts: [artifact 1](https://tools.simonwillison.net/markdown-svg-renderer?url=https://gist.github.com/simonw/e5bf860633fc12e8f926f305c4c3190c), [artifact 2](https://static.simonwillison.net/static/2026/yonkers-mech-standalone.html).
+
+### [Gemini 4 Carbon: No-Hype Full Review and Testing](https://www.aiformortals.co/blog/gemini-4-carbon-review)
+
+**4/10** · negative · artifact_report · low confidence. Author: Pat Simmons / AI for Mortals.
+Reported: 2026-11-11 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.frontend.design`, `software.frontend.fidelity`. Proxy tasks: None.
+
+Simmons ranked Carbon last for the website clone and launch film, third for a browser flight simulator.
+
+**Rating reason:** Public outputs provide adverse evidence for demanding visual/reference work; differing environments and single runs keep confidence low.
+
+**Limits:** Subjective ranks; subscription logs yield API-equivalent estimates, not invoices; no rerun here.
+
+Artifacts: [artifact 1](https://www.aiformortals.co/builds/agrumea-clone-gemini-4-carbon).
+
+### [Gemini 4 Carbon public API filter test](https://cleus.ai/blog/gemini-4-carbon-public-release-filters-tested)
+
+**5.5/10** · mixed · artifact_report · low confidence. Author: Prabhu Biswal / Cleus.
+Reported: 2026-11-12 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.security`. Proxy tasks: None.
+
+Cleus reports successful SQL-injection explanation and C-code review, but no office-network scan or beginner-CTF script answers.
+
+**Rating reason:** Defensive review answered, but relevant workflow refusals and inconsistent decoding limit usefulness; LLM grading is not validation.
+
+**Limits:** Small response/availability check, not correctness or exploit success; public API differs from Fairwind.
+
+Artifacts: [artifact 1](https://cleus.ai/blog/gemini-4-carbon-public-release-filters-tested).
+
+## Gemini 4 Hydrogen
+
+Search: 2026-11-13 · status: reviewed
+
+Queries: `"Gemini 4 Hydrogen" "I tested" review`; `"Gemini 4 Hydrogen" "thinking" "Terminal"`; `"Gemini 4 Hydrogen" "cflewis"`; `"Gemini 4 Hydrogen" "data-ottawa"`; `"Gemini 4 Hydrogen" benchmark model card`
+
+- `software.frontend`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend.fidelity`: **7.0/10**, low confidence, proxy mapping, 1 origin(s).
+- `software.repo`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
+
+### [Hydrogen image-to-HTML artifact report](https://news.ycombinator.com/item?id=50474893)
+
+**7/10** · positive · artifact_report · low confidence. Author: jjcm.
+Reported: 2026-11-12 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.frontend`. Proxy tasks: `software.frontend.fidelity`.
+
+jjcm reports a successful image-to-HTML build and publishes its LCARS page.
+
+**Rating reason:** An inspectable page supports bounded frontend work; unspecified setup and unverified reference matching limit the assessment.
+
+**Limits:** One subjective example; reference canvas not visually inspected, HTML controls not executed. No controlled comparison or rerun here.
+
+Artifacts: [artifact 1](https://html.non.io/lcars-gemini-4-hydrogen/), [artifact 2](https://diffui.ai/app/canvas/5093e689-1e74-4f26-b632-2a4500f0da97?share=65ac3348-895b-4264-824e-b5f343040009).
+
+### [Hydrogen code-worker firsthand report](https://news.ycombinator.com/item?id=50471670)
+
+**6.5/10** · positive · firsthand · low confidence. Author: cflewis.
+Reported: 2026-11-12 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.repo`. Proxy tasks: None.
+
+cflewis reports useful code implementation as a subagent while a stronger model writes specifications and reviews results.
+
+**Rating reason:** Specific worker-role use supports supervised implementation; missing outputs and acceptance checks limit confidence.
+
+**Limits:** Not independent architecture or end-to-end delivery; no artifacts, controlled comparison or rerun.
+
+## Claude Fable 5.2
+
+Search: 2026-11-13 · status: reviewed
+
+Queries: `"Fable 5.2" "tested" review -site:anthropic.com`; `"Fable 5.2" "I" "test" coding review`; `"Fable 5.2" site:reddit.com/r/ClaudeAI`; `"Fable 5.2" "MineBench"`
+
+- `software.architecture`: **4.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.debug`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend.design`: **7.5/10**, low confidence, direct_and_proxy mapping, 2 origin(s).
+- `software.frontend.fidelity`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+
+### [Claude Fable 5.2: five coding tests with internet blocked](https://www.gekkode.com/en/intelligence-artificielle/claude-fable-5-2-review/)
+
+**7.5/10** · mixed · artifact_report · medium confidence. Author: Damien Flandrin.
+Reported: 2026-11-11 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.frontend`, `software.debug`. Proxy tasks: `software.frontend.design`.
+
+Flandrin reports 42/42 browser-desktop checks after repairs; closing an unsaved editor still lost text.
+
+**Rating reason:** Detailed checks and successful repairs support frontend work; hidden data loss and long runtime prevent a broad reliability claim.
+
+**Limits:** Selected author tasks; comparisons had different network access. Four shared tasks took 7h42; screenshots/video and checks published, no rerun here.
+
+Artifacts: [artifact 1](https://www.gekkode.com/en/intelligence-artificielle/claude-fable-5-2-review/).
+
+### [Fable 5.2: No-Hype Full Review and Testing](https://www.aiformortals.co/blog/fable-5-2)
+
+**7.5/10** · mixed · artifact_report · low confidence. Author: Pat Simmons.
+Reported: 2026-11-09 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.frontend.design`, `software.frontend.fidelity`. Proxy tasks: None.
+
+Simmons ranks Fable first on three blind visual builds, with much higher API-equivalent cost than Opus.
+
+**Rating reason:** Inspectable results and blind author preference support visual tasks, while subjective scope, runtime and substantial cost qualify the benefit.
+
+**Limits:** Author stopped runs during polishing; subjective ranking, three selected builds, not fixed acceptance. Public build pages read, interaction not tested; token estimates are not subscription bills.
+
+Artifacts: [artifact 1](https://www.aiformortals.co/builds/central-park-olmsted-fable-5-2), [artifact 2](https://www.aiformortals.co/builds/shopify-editions-clone-fable-5-2), [artifact 3](https://www.aiformortals.co/builds/tesla-roadster-blender-fable-5-2).
+
+### [My Fable 5.2 Review](https://somethingbig.ai/fable-5-2-review)
+
+**4.5/10** · negative · firsthand · low confidence. Author: Matt Shumer.
+Reported: 2026-11-09 · first seen: 2026-11-13 · assessed: 2026-11-13.
+Direct tasks: `software.architecture`. Proxy tasks: None.
+
+Shumer reports repeated drift from a prompt-first architecture into edge-case code, requiring reminders.
+
+**Rating reason:** Specific constraint drift is adverse architecture evidence; private setup and test-snapshot uncertainty keep confidence low.
+
+**Limits:** Private architecture and no acceptance metric. The same review praises game builds, but those do not verify architecture compliance; no rerun here.
