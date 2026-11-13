@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-10-27",
+  "snapshot_date": "2026-11-13",
   "coverage": "Task-specific curated catalog with community research for every listed model. Feature support and editorial report scores are separate from benchmark measurements.",
   "models": [
     {
@@ -779,6 +779,138 @@
         "notes": {
           "en": "Standard API base rates; cache read/write, tools and taxes differ. Kimi Code plan quota is separate.",
           "zh-CN": "标准 API 基础单价；缓存读写、工具及税费另有规则，Kimi Code 套餐额度单独计算。"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-carbon",
+      "name": "Gemini 4 Carbon",
+      "provider": "Google",
+      "source_id": "gemini-4-carbon-docs",
+      "status": "available",
+      "verified_on": "2026-11-13",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "context_tokens": 1048576,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": null,
+      "notes": [
+        "Stable API id gemini-4-carbon; paid public API access opened November 10 after restricted October 28 Fairwind access. Consumer and agent-product entitlements differ; specialized Fairwind cyber results do not establish public-API behavior.",
+        "Input, thinking and output share 1048576 tokens. Default synchronous output is 65536; larger outputs require long decode/background execution or continuation and remaining context space.",
+        "Text, image, video, audio and PDF inputs; text output. Tools, computer use and structured output require configured integrations. Thinking defaults to medium and supports low, medium and high.",
+        "Standard API input/output reference is $2/$10 per million tokens through 2026-11-30, then announced $4/$20 from December 1. Thinking is billed as output. This temporary display reference is not a numeric budget-filter quote; caching, tools and service tiers differ."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "gemini-4-carbon-pricing",
+        "verified_on": "2026-11-13",
+        "valid_until": "2026-11-30",
+        "tiers": [
+          {
+            "max_input_tokens": 1048576,
+            "input": 2,
+            "output": 10
+          }
+        ],
+        "notes": {
+          "en": "Introductory standard API price through 2026-11-30; announced $4/$20 from December 1. Output includes thinking; all tokens share one context window.",
+          "zh-CN": "标准 API 优惠价截至 2026-11-30；官方宣布 12 月 1 日起为 $4/$20。输出含思考，输入、思考和输出共享窗口。"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-hydrogen",
+      "name": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "source_id": "gemini-4-hydrogen-docs",
+      "status": "available",
+      "verified_on": "2026-11-13",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "context_tokens": 1048576,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 1.5,
+        "output": 7.5,
+        "max_input_tokens": 1048576,
+        "scope": "Standard uncached paid Gemini API USD per million text tokens; output includes thinking, separate tools/cache/tax charges excluded."
+      },
+      "notes": [
+        "GA API model gemini-4-hydrogen released November 12. Cloud classifies it as a short-term GA release with at least 45 days retirement notice. Free and paid API access exist; consumer selection and account quotas differ.",
+        "Input, thinking, tool calls and final output share 1048576 tokens. Foreground output is limited to 65536 per segment; longer decode requires background execution or continuation and remaining window space.",
+        "Text, image, audio, video and supported document inputs; text output only. Thinking levels are low, medium, high (default) and xhigh. Tools, grounding and computer use require a configured environment; Live API is not supported.",
+        "Standard input/output is $1.50/$7.50 per million tokens, flat across context lengths; no introductory expiry is stated. A free tier is rate-limited, not a guarantee of free production capacity. Cache and search charges differ."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "gemini-4-hydrogen-pricing",
+        "verified_on": "2026-11-13",
+        "tiers": [
+          {
+            "max_input_tokens": 1048576,
+            "input": 1.5,
+            "output": 7.5
+          }
+        ],
+        "notes": {
+          "en": "Standard paid API reference, flat across context; output includes thinking. Free-tier quota and tool charges are separate.",
+          "zh-CN": "标准付费 API 参考价，不按上下文长度加价；输出包含思考 token。免费层额度与工具费用需单独确认。"
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5-2",
+      "name": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_id": "fable-5-2-docs",
+      "status": "available",
+      "verified_on": "2026-11-13",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "context_tokens": 1000000,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 8,
+        "output": 40,
+        "max_input_tokens": 1000000,
+        "scope": "Standard uncached global Claude API USD per million text tokens; excludes cache, Fast mode, tools, regional modifiers and subscriptions."
+      },
+      "notes": [
+        "Available since November 9 as claude-fable-5-2; Fable is the general-access model, distinct from verified-access Mythos 5.2. Text/image inputs and text output; tools require a configured host.",
+        "Context 1M tokens, maximum output 128K. Adaptive thinking is always on. API effort defaults to high; Claude apps and Claude Code default to medium. Available efforts: low, medium, high, xhigh, max.",
+        "Standard API input/output is $8/$40 per million across 1M context. Fast mode is $16/$80; cache, batch, tools and regional modifiers differ. API pricing does not establish subscription quota or total task cost.",
+        "Some reported evaluations include fallback models; safeguard-disabled Mythos-only results are not Fable results. Higher effort need not improve score and can greatly increase latency and cost."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "fable-5-2-pricing",
+        "verified_on": "2026-11-13",
+        "tiers": [
+          {
+            "max_input_tokens": 1000000,
+            "input": 8,
+            "output": 40
+          }
+        ],
+        "notes": {
+          "en": "Standard API; Fast mode $16/$80. Cache, batch, tools and regional pricing differ.",
+          "zh-CN": "标准 API 单价；Fast 模式为 $16/$80，缓存、批处理、工具及区域计价另有规则。"
         }
       }
     }

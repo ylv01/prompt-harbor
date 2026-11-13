@@ -1,0 +1,17 @@
+{
+  "prompt": "为代码库设计并执行多步骤问题排查流程，先读相关文件，再运行现有测试，最后总结需要修改的接口。我可以使用 Gemini 4 Carbon、Gemini 4 Hydrogen 和 Claude Fable 5.2，请给出候选、依据与价格参考。",
+  "language": "zh-CN",
+  "tasks": [
+    "software.repo",
+    "software.debug",
+    "agent.workflow"
+  ],
+  "classification_method": "host_semantic",
+  "available_models": [
+    "gemini-4-carbon",
+    "gemini-4-hydrogen",
+    "claude-fable-5-2"
+  ],
+  "tools_required": true,
+  "context_tokens": 50000
+}

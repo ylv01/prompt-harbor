@@ -350,6 +350,57 @@
         "kimi-k3-1-pro-community-04",
         "kimi-k3-1-pro-community-05"
       ]
+    },
+    {
+      "id": "gemini-4-carbon",
+      "searched_on": "2026-11-13",
+      "queries": [
+        "\"Gemini 4 Carbon\" tested review November 2026",
+        "\"Gemini 4 Carbon\" \"I\" \"tested\"",
+        "site:simonwillison.net \"Gemini 4 Carbon\"",
+        "site:frontierswe.com \"Gemini 4 Carbon\""
+      ],
+      "status": "reviewed",
+      "summary": "Three original task-report origins reviewed: inspectable visual prototypes, adverse reference-heavy builds and mixed public-API security response behavior. Reposts, launch hype and paywalled detail were not admitted.",
+      "evidence_ids": [
+        "gemini-4-carbon-community-01",
+        "gemini-4-carbon-community-02",
+        "gemini-4-carbon-community-03"
+      ]
+    },
+    {
+      "id": "gemini-4-hydrogen",
+      "searched_on": "2026-11-13",
+      "queries": [
+        "\"Gemini 4 Hydrogen\" \"I tested\" review",
+        "\"Gemini 4 Hydrogen\" \"thinking\" \"Terminal\"",
+        "\"Gemini 4 Hydrogen\" \"cflewis\"",
+        "\"Gemini 4 Hydrogen\" \"data-ottawa\"",
+        "\"Gemini 4 Hydrogen\" benchmark model card"
+      ],
+      "status": "reviewed",
+      "summary": "Original release-day task reports reviewed: one public image-to-HTML artifact and supervised code-worker use. Reposted launch claims, unspecified latency workloads and joint-model complaints without an isolatable task were not scored.",
+      "evidence_ids": [
+        "gemini-4-hydrogen-community-01",
+        "gemini-4-hydrogen-community-02"
+      ]
+    },
+    {
+      "id": "claude-fable-5-2",
+      "searched_on": "2026-11-13",
+      "queries": [
+        "\"Fable 5.2\" \"tested\" review -site:anthropic.com",
+        "\"Fable 5.2\" \"I\" \"test\" coding review",
+        "\"Fable 5.2\" site:reddit.com/r/ClaudeAI",
+        "\"Fable 5.2\" \"MineBench\""
+      ],
+      "status": "reviewed",
+      "summary": "Three original task-report origins reviewed: detailed browser tests, blind visual builds and adverse architecture adherence. Bug Hunt is counted once as independent evaluation, not again as community feedback. Speculative prerelease Reddit claims and copied launch summaries excluded.",
+      "evidence_ids": [
+        "claude-fable-5-2-community-01",
+        "claude-fable-5-2-community-02",
+        "claude-fable-5-2-community-03"
+      ]
     }
   ]
 }
