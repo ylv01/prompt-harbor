@@ -132,3 +132,15 @@ evaluation fixtures and scoring process are in `evals/`.
   No newly added model or evidence record is overdue.
 - Repository and Skill Creator validation passed. The v0.4.3 ZIP is built locally;
   new remote CI will run after publication approval.
+
+## Neon and GPT-6.2 additions · 2026-11-20
+
+- All 136 existing unit tests, repository checks and skill validation passed.
+- A three-model Chinese SQL query checked exact resource filtering, historical
+  exclusion, audio and video eligibility and verified API input limits.
+- Direct quotes at 272,000 and 272,001 input tokens verified both GPT-6.2 price
+  tiers. The extracted v0.4.4 skill returned the same three long-input quotes.
+- Comparison with the baseline checked that retained catalog entries,
+  translations, taxonomy and ranking policy are identical. Exact-resource
+  tests cover requests limited to removed model IDs. The maintenance report
+  has no entries due for the three new models.

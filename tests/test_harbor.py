@@ -145,7 +145,7 @@ class RecommendationTests(unittest.TestCase):
         self.assertEqual(r['confidence'], 'limited')
 
     def test_different_harness_scores_are_not_compared(self):
-        a = next(e for e in self.data['evidence']['evidence'] if e['id']=='astra-terminal')
+        a = next(e for e in self.data['evidence']['evidence'] if e['id']=='fable-5-2-terminal')
         b = next(e for e in self.data['evidence']['evidence'] if e['id']=='opus-terminal')
         self.assertFalse(harbor.comparable_pairs([a],[b]))
 

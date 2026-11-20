@@ -297,26 +297,6 @@
     }
   },
   "evidence": {
-    "astra-terminal": {
-      "claim": "AA 报告：在 Codex 中，Terminal-Bench 4.0 得分为 56%。",
-      "setting": "Codex；max 档位；与 AA 通用 Agent 配置不同。",
-      "limitations": "同一文章还报告了另一配置下的 59%；不要合并这两次运行。"
-    },
-    "astra-docs": {
-      "claim": "GDP.pdf 全部标准均通过的成功率报告为 31%。",
-      "setting": "AA 文档评测；具体配置见来源。",
-      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
-    },
-    "astra-workflow": {
-      "claim": "AutomationBench-AA 的得分报告为 69%。",
-      "setting": "AA Agent 环境；不同于 Zapier 排行榜协议。",
-      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
-    },
-    "astra-fit": {
-      "claim": "官方定位包括高难度推理、调研和借助工具完成的工作。",
-      "setting": "Responses API，配备合适的工具。",
-      "limitations": "产品定位和工具可用性不等于针对具体任务的比较评测。"
-    },
     "luna-fit": {
       "claim": "官方文档将 Luna 定位于范围明确、处理量大的任务。",
       "setting": "按需配置推理档位和结构化输出。",
@@ -329,11 +309,6 @@
     },
     "sonnet-terminal": {
       "claim": "Anthropic 报告：Terminal-Bench 4.0 得分为 70.6%。",
-      "setting": "Opus xhigh；Sonnet max；Fable max，带回退机制；具体见来源。",
-      "limitations": "推理档位和回退配置不同；结果来自厂商，并非独立复现。"
-    },
-    "fable-terminal": {
-      "claim": "Anthropic 报告：Terminal-Bench 4.0 得分为 55.8%。",
       "setting": "Opus xhigh；Sonnet max；Fable max，带回退机制；具体见来源。",
       "limitations": "推理档位和回退配置不同；结果来自厂商，并非独立复现。"
     },
@@ -363,11 +338,6 @@
       "limitations": "写作风格具有主观性；本次初始目录未收录针对特定语言的独立偏好研究。"
     },
     "opus-long": {
-      "claim": "官方概述描述了长程 Agent 和知识工作能力。",
-      "setting": "Claude API 或启用工具的宿主环境。",
-      "limitations": "1M 上下文规格不能证明在 1M tokens 范围内可靠回忆信息。"
-    },
-    "fable-long": {
       "claim": "官方概述描述了长程 Agent 和知识工作能力。",
       "setting": "Claude API 或启用工具的宿主环境。",
       "limitations": "1M 上下文规格不能证明在 1M tokens 范围内可靠回忆信息。"
@@ -480,16 +450,6 @@
     "claude-opus-5-5-arena-webdev": {
       "claim": "claude-opus-5.5-max：记录的 WebDev 偏好评分为 1827。",
       "setting": "claude-opus-5.5-max；Arena 部署环境，不代表所有面向用户的应用设置。",
-      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
-    },
-    "gpt-6-astra-arena-webdev": {
-      "claim": "gpt-6-astra-max：记录的 WebDev 偏好评分为 1792。",
-      "setting": "gpt-6-astra-max；Arena 部署环境，不代表所有面向用户的应用设置。",
-      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
-    },
-    "claude-fable-5-1-arena-webdev": {
-      "claim": "claude-fable-5.1-max：记录的 WebDev 偏好评分为 1751。",
-      "setting": "claude-fable-5.1-max；Arena 部署环境，不代表所有面向用户的应用设置。",
       "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
     },
     "kimi-k3-arena-webdev": {
@@ -610,18 +570,6 @@
       "setting": "官方技术说明发表于 2026 年 9 月 27 日，描述了 9 月 25 日 API 更新和 MOPD 权重发布；并非独立任务评测。",
       "limitations": "厂商关于问题缓解的说法，未独立验证任务完成。须区分原始 RL 的循环行为和更新后的 MOPD 部署；此前的 RL 分数未测量更新接口。"
     },
-    "gpt-6-astra-community-01": {
-      "claim": "作者报告在 Codex 中使用 Astra 搭建个人作品网站，编程结果出色，但订阅额度消耗很快。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "一个个人项目；没有相同提示词的对照或测试集。保留文章明确标注的 9 月 1 日，作为早期个人报告；发布及访问时间未被独立确认。订阅额度经历不等于 API 价格。",
-      "rating_rationale": "已发布的个人网站支持对范围明确的前端任务作出较好评价；一个项目和额度经历不能证明更广泛的优势。"
-    },
-    "gpt-6-astra-community-02": {
-      "claim": "作者内部由 AI 评审的脚本研究中，Astra 接近 6.1 Sol，但低于较早的 6 Sol。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "内部脚本写作研究包含 10 项任务，每项生成 5 个版本，由 3 个 AI 评审；没有公开提示词或评测代码。推理档位不同（6.1 Sol xhigh、Astra max）。AI 评审偏好不等于人类共识。原始页面仅显示相对时间，确切日期未知。",
-      "rating_rationale": "脚本有实用性，但报告显示其偏好评分落后于较早 Sol；规模较小、非公开的 AI 评审比较仅支持谨慎的混合评价。"
-    },
     "gpt-6-luna-community-01": {
       "claim": "作者报告，在混合模型 Agent 工作流中压缩 Discord 会话后，Luna 仍能有效延续上下文。",
       "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
@@ -687,36 +635,6 @@
       "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
       "limitations": "仅两个未详细说明的任务；没有提示词、补丁、账单或代码产物。这段经历涉及审查后的总成本，并非经过验证的 token 单价比较。",
       "rating_rationale": "具体的遗留缺陷和返工反馈构成负面参考；可复现性弱，置信度有限。"
-    },
-    "claude-fable-5-1-community-01": {
-      "claim": "面对 17 页手写扫描件，作者更偏好 Fable 5.1 草稿的结构和开头；处理耗时明显长于 Astra 配置。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "一个个人任务；应用和工具不同；属于主观偏好，没有盲评。作者披露收到了 OpenAI 宣传礼品。",
-      "rating_rationale": "明确的内容转换任务和质量/时间取舍支持写作适配性，同时保留比较中的干扰因素。"
-    },
-    "claude-fable-5-1-community-02": {
-      "claim": "展示的测试保留了既有页面的品牌风格，但新企业主页存在可读性和间距问题，完整品牌方案弱于作者偏好的 Astra 结果。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "两个需求简报、主观偏好，没有转化率测量；执行框架和图像生成权限不同。与写作测试来自同一作者，不应计为第二位独立评审。",
-      "rating_rationale": "品牌风格保留有实用性，但可见布局问题使该任务评价好坏参半。"
-    },
-    "claude-fable-5-1-community-03": {
-      "claim": "在 7 章课程改写中，作者发现文字只有轻微改善，仍需逐章编辑以恢复自己的文风。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "公开了改写前后片段，但未检查完整会话输出；fleet 模式使模型归因受到干扰。",
-      "rating_rationale": "改善幅度不大且仍需逐句编辑，支持对保留特定作者文风作出混合评分。"
-    },
-    "claude-fable-5-1-community-04": {
-      "claim": "课程工作流所需引导减少，并恢复了缓存的 Agent 结果，但低估用量，在完成前耗尽订阅额度。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "一个使用 fleet 模式的工作流；恢复执行和额度计量也涉及 Claude Code/产品行为。与课程改写来自同一主体，不应在同一任务中重复计数。",
-      "rating_rationale": "恢复执行具有实践价值；用量估算不足和交付中断抵消了其在长程工作上的部分优势。"
-    },
-    "claude-fable-5-1-community-05": {
-      "claim": "在 3 个可见动画需求中，Fable 5.1 的立交动画无明显故障、轮播旋转正确，并使运载火箭保持在画面内，但火箭仍有缺陷。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "每个需求仅尝试一次；评审并非盲评，制作工具的执行框架不同。附有在线产物链接，但未公开确切提示词文件；没有生产或无障碍验证。",
-      "rating_rationale": "具体的运动正确性对视觉原型有参考价值；残余缺陷和样本少限制了评分。"
     },
     "gemini-3.8-flash-community-01": {
       "claim": "作者在 OpenCode 中搭建 Plotline，报告 Gemini 3.8 Flash 成功完成混合截图抽取、可编辑表格和重新抽取功能。",
@@ -886,11 +804,6 @@
       "setting": "claude-opus-5.5-max；Arena 部署，使用页面列出的推理档位。",
       "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
     },
-    "gpt-6-astra-arena-webdev-2026-10-07": {
-      "claim": "gpt-6-astra-max 的 WebDev 偏好评分为 1788，页面区间为 ±11。",
-      "setting": "gpt-6-astra-max；Arena 部署，使用页面列出的推理档位。",
-      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
-    },
     "claude-sonnet-5-5-arena-webdev-2026-10-07": {
       "claim": "claude-sonnet-5.5-xhigh 的 WebDev 偏好评分为 1773，页面区间为 ±15。",
       "setting": "claude-sonnet-5.5-xhigh；Arena 部署，使用页面列出的推理档位。",
@@ -899,11 +812,6 @@
     "gpt-6.1-sol-arena-webdev-2026-10-07": {
       "claim": "gpt-6.1-sol-max 的 WebDev 偏好评分为 1757，页面区间为 ±15。",
       "setting": "gpt-6.1-sol-max；Arena 部署，使用页面列出的推理档位。",
-      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
-    },
-    "claude-fable-5-1-arena-webdev-2026-10-07": {
-      "claim": "claude-fable-5.1-max 的 WebDev 偏好评分为 1745，页面区间为 ±9。",
-      "setting": "claude-fable-5.1-max；Arena 部署，使用页面列出的推理档位。",
       "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
     },
     "kimi-k3-arena-webdev-2026-10-07": {
@@ -1436,14 +1344,171 @@
       "setting": "作者早期访问期间的 Agent 产品；使用过多个测试快照，未注明推理档位。",
       "limitations": "架构代码未公开且无固定验收指标；同篇文章赞扬游戏构建，但不能据此验证架构遵从，本项目未复跑。",
       "rating_rationale": "具体的约束偏离为架构任务提供负面证据；私有环境及测试快照不确定性使置信度保持低。"
+    },
+    "gemini-4-neon-multimodal-capability": {
+      "claim": "Google 文档列出 PDF、视频及音频输入，以及函数调用和计算机操作。",
+      "setting": "正式 Gemini API 型号输出文本。工具可用性取决于宿主和工具配置。",
+      "limitations": "文档说明受支持的输入和工具。任务准确率和工作流完成率没有实测数字。"
+    },
+    "gemini-4-neon-automation": {
+      "claim": "Zapier 报告 Neon 在 xhigh 档完成 657 项模拟业务流程中的 370 项（56.3%），在 high 档完成 357 项（54.3%）。",
+      "setting": "2026 年 11 月 17 至 18 日提前访问 API，在模拟工具环境中每题最多执行 50 步，以确定性断言检查最终状态。",
+      "limitations": "通过率取决于 Zapier 的工具和任务分布。报告费用是该评测的用量估算。"
+    },
+    "gemini-4-neon-plotly": {
+      "claim": "Plotly 修正一条数据质量评分规则后，报告 Neon 通过全部 43 项数据分析任务，包括 20 道分析题和 5 道隐含模式题。",
+      "setting": "使用 Plotly Studio Embedded 的多轮查询和制图工具，在发布日运行，11 月 19 日重新评分。思考档位未公开。",
+      "limitations": "私有题库、合成数据和单一运行框架，仅有一次运行。其他模型重复运行时的结果最多相差三题。"
+    },
+    "gemini-4-neon-gdp-pdf": {
+      "claim": "Artificial Analysis 报告 Neon 在 GDP.pdf 中 high 档的全项通过率为 33.4%，xhigh 档为 28.0%。",
+      "setting": "按 Artificial Analysis 流程提供解析后的 PDF 文本和页面渲染图。每次作答只有满足评判模型核验的全部评分要求才通过。",
+      "limitations": "得分受文档预处理、作答设置和评判模型影响，适用于这套评测中的专业文档任务。"
+    },
+    "gemini-4-neon-swe-sweep": {
+      "claim": "Google 在 SWE-sweep 中报告，使用 Antigravity CLI 1.5.9 获得 39.0% 的子任务加权奖励，使用 mini-swe-agent 视觉框架获得 12.8%。",
+      "setting": "厂商通过官方集成运行 Antigravity CLI 1.5.9，框架可将仓库工作分派给子 Agent。按 Google 评测方法使用最高思考档位。",
+      "limitations": "奖励按子任务加权。同一发布评测使用另一运行框架时得到不同结果。"
+    },
+    "gemini-4-neon-graphwalks": {
+      "claim": "Google 报告 Neon 在本次 GraphWalks 广度优先搜索评测中的 F1 为 95.2%。",
+      "setting": "在 256k 至 1M token 的上下文中完成 200 道合成图遍历题。按 Google 评测方法使用最高思考档位。",
+      "limitations": "分数衡量指定条件下的合成图遍历。对一般文档信息回取和综合的适用性仍需验证。"
+    },
+    "gemini-4-neon-community-01": {
+      "claim": "Waples 报告三次均交付可自我对弈的棋局页面，并用 chess.js 回放棋步、检查十个规则边界案例。",
+      "setting": "两组使用相同提示、工具和 medium 档位。作者发布了棋局结尾的录屏。",
+      "limitations": "只有一道需求和三次 Neon 运行。Carbon 的两次未完成与同步输出上限有关。本文仅覆盖该类前端任务，本项目未复跑。",
+      "rating_rationale": "多次完成交付且检查了规则，对范围明确的前端实现有参考价值。可迁移性受单项任务限制。"
+    },
+    "gemini-4-neon-community-02": {
+      "claim": "Neon 在 high 档位下通过时长解析的 30/30 项及 CSV 解析的 27/27 项测试。CSV 在 low 档位仍通过 27/27 项，high 耗时约为其两倍。",
+      "setting": "OpenRouter，两个 JavaScript 函数，由作者验证。CSV 使用同一提示另测 medium 和 low。",
+      "limitations": "仅两个小函数，每个设置只公开一个结果。费用与耗时受接入渠道影响，未测试大型代码库。",
+      "rating_rationale": "CSV 在所测档位均正确，对小函数任务有参考价值。该提示提高到 high 后增加了耗时和费用，测试通过数相同。"
+    },
+    "gemini-4-neon-community-03": {
+      "claim": "Neon 从合并的 23 篇文章中准确返回两个匹配的文章标识，作者用 grep 核对。该请求计入 103,361 个输入 token。",
+      "setting": "通过 OpenRouter 对 385 KB 的 Markdown 文本执行一次查找，有确定的预期结果。",
+      "limitations": "仅一次字面关键词查找。作者未展示长文综合、接近上下文上限的检索或重复试验。",
+      "rating_rationale": "准确命中是一个具体的长输入检索案例，查询较简单且只运行一次，因此维持低置信度。"
+    },
+    "gemini-4-neon-community-04": {
+      "claim": "Cold Iron 的编程子集为 15/30，另外 15 题在给出答案前耗尽了响应预算。",
+      "setting": "OpenRouter 默认请求，作者标注为 medium，strict_v01，每题上限 4,096 token。只发布了一轮评分。",
+      "limitations": "反映有限预算下的完成情况。未复测 Neon 的更低档位，其他模型档位有差异，本项目未复跑。",
+      "rating_rationale": "该预设下一半短编程题未给出最终答案。负面信号限定于上述预算和渠道配置。"
+    },
+    "gemini-4-neon-community-05": {
+      "claim": "Neon 用四个专项提示找出 90 处预置错误中的 88 处，合并提示则找出 87 处。四项分开检验时遗漏的两处均为语法或拼写问题。",
+      "setting": "icanwrite 用一篇 6,000 词英文故事及基于位置的确定性匹配来评分。型号结果页还记录了分开检验时的三个额外标记。",
+      "limitations": "只有一篇人为设置错误的故事，评估仅涉及检出错误。型号结果页未列出 Neon 的具体档位和服务渠道，本项目未复跑。",
+      "rating_rationale": "两种提示格式在固定故事中均检出大部分错误，对校对有参考价值。编辑验收仍要留意漏报及额外标记。"
+    },
+    "gpt-6.2-sol-capabilities": {
+      "claim": "OpenAI 文档列出图片输入、92.2 万 Token 的输入上限和 Responses API 的工具调用。",
+      "setting": "配置后可使用文件和网页检索、电脑操作等工具，委派功能仍处测试版。",
+      "limitations": "工具访问取决于宿主和账号。这条资料说明功能可用性。"
+    },
+    "gpt-6.2-sol-frontiercode-2": {
+      "claim": "Cognition 公布该模型在 FrontierCode 2.0 全部 132 项任务上的可合并性得分为 43.8%。",
+      "setting": "使用 Codex 和 max 推理档位，通过维护者评分规则和自动化检查评估现有代码库的修改。",
+      "limitations": "得分受任务集和执行环境影响，小幅分差需谨慎解读。"
+    },
+    "gpt-6.2-sol-harvey-lab-v11": {
+      "claim": "Artificial Analysis 公布该模型在 Harvey LAB-AA v1.1 中，经幻觉门槛筛查的全项通过率为 11.1%。",
+      "setting": "使用 Stirrup 和 max 档位，120 项私人测试任务横跨 24 个法律实务领域。由三个模型评审取平均，存在实质性幻觉的任务记零。",
+      "limitations": "结果取决于该任务集和评分方法。使用输出前，应人工核对法律依据、事实和义务。"
+    },
+    "gpt-6.2-sol-plotly-analytics": {
+      "claim": "Plotly 公布该模型共通过 40/43 题，其中常规分析题通过 20/20，隐藏规律题通过 2/5。",
+      "setting": "经 OpenRouter 在 Plotly Studio Embedded 中运行一次，使用数据库查询、图表和多轮工具调用。报告未披露推理档位。",
+      "limitations": "测试题未公开。Plotly 对其他模型重复测试时观察到最多三题的波动。"
+    },
+    "gpt-6.2-sol-aa-3d": {
+      "claim": "Artificial Analysis 公布该模型在交互式网页 3D 评测中的 Elo 为 1259，95% 区间为 1231–1288。",
+      "setting": "使用 Stirrup 和 max 档位。共 55 项任务，人工评审对相同需求生成的两个 three.js 场景进行盲评。",
+      "limitations": "交互式 3D 场景的相对偏好可作为网页前端的间接参考。投票样本和参与比较的模型会影响 Elo。"
+    },
+    "gpt-6.2-sol-agents-last-exam-v11": {
+      "claim": "Snorkel AI 榜单默认 Codex 记录的任务通过率为 41.8%，评分细则平均得分另列为 72.5%。",
+      "setting": "Agents’ Last Exam v1.1 包含 122 项公开的多步骤任务。本条采用榜单页面为该模型默认展示的档位。",
+      "limitations": "整项通过率与细则平均分的口径不同。替换推理档位或工具可能影响两项结果。"
+    },
+    "gpt-6.2-astra-capabilities": {
+      "claim": "OpenAI 文档列出图片输入、92.2 万 Token 的输入上限和 Responses API 的工具调用。",
+      "setting": "配置后可使用文件和网页检索、电脑操作等工具，委派功能仍处测试版。",
+      "limitations": "工具访问取决于宿主和账号。这条资料说明功能可用性。"
+    },
+    "gpt-6.2-astra-frontiercode-2": {
+      "claim": "Cognition 公布该模型在 FrontierCode 2.0 全部 132 项任务上的可合并性得分为 44.2%。",
+      "setting": "使用 Codex 和 max 推理档位，通过维护者评分规则和自动化检查评估现有代码库的修改。",
+      "limitations": "得分受任务集和执行环境影响，小幅分差需谨慎解读。"
+    },
+    "gpt-6.2-astra-harvey-lab-v11": {
+      "claim": "Artificial Analysis 公布该模型在 Harvey LAB-AA v1.1 中，经幻觉门槛筛查的全项通过率为 15.0%。",
+      "setting": "使用 Stirrup 和 max 档位，120 项私人测试任务横跨 24 个法律实务领域。由三个模型评审取平均，存在实质性幻觉的任务记零。",
+      "limitations": "结果取决于该任务集和评分方法。使用输出前，应人工核对法律依据、事实和义务。"
+    },
+    "gpt-6.2-astra-plotly-analytics": {
+      "claim": "Plotly 公布该模型共通过 41/43 题，其中常规分析题通过 20/20，隐藏规律题通过 3/5。",
+      "setting": "经 OpenRouter 在 Plotly Studio Embedded 中运行一次，使用数据库查询、图表和多轮工具调用。报告未披露推理档位。",
+      "limitations": "测试题未公开。Plotly 对其他模型重复测试时观察到最多三题的波动。"
+    },
+    "gpt-6.2-astra-aa-3d": {
+      "claim": "Artificial Analysis 公布该模型在交互式网页 3D 评测中的 Elo 为 1318，95% 区间为 1286–1349。",
+      "setting": "使用 Stirrup 和 max 档位。共 55 项任务，人工评审对相同需求生成的两个 three.js 场景进行盲评。",
+      "limitations": "交互式 3D 场景的相对偏好可作为网页前端的间接参考。投票样本和参与比较的模型会影响 Elo。"
+    },
+    "gpt-6.2-astra-agents-last-exam-v11": {
+      "claim": "Snorkel AI 榜单默认 Codex 记录的任务通过率为 47.5%，评分细则平均得分另列为 78.3%。",
+      "setting": "Agents’ Last Exam v1.1 包含 122 项公开的多步骤任务。本条采用榜单页面为该模型默认展示的档位。",
+      "limitations": "整项通过率与细则平均分的口径不同。替换推理档位或工具可能影响两项结果。"
+    },
+    "gpt-6.2-sol-community-01": {
+      "claim": "在 15 组配对试验中，30 份单模块提交各自通过了八项本地检查。需求变更涉及发票舍入、CSV 去重和按场地时区确定预订日期。",
+      "setting": "使用标准服务档的 Responses API，推理档位为 medium。三份 Python 测试样例各配对运行五次，每对共用初始方案，分别追加需求和修改原需求。作者公布了样例和逐次运行数据。",
+      "limitations": "只有三道合成任务，每题仅涉及一个文件，且模型未调用工具。所有提交都通过，无法据此区分两种工作方式。",
+      "rating_rationale": "可运行的行为检查支持小范围规则修改。重复这三份样例，对其他工作负载的参考有限。"
+    },
+    "gpt-6.2-sol-community-02": {
+      "claim": "18 次简短客服问答均包含全部必要的政策要点。五次订单查询返回空值时，Sol 都转交人工处理。14 条订单回复中有七条自行添加了快递链接，查询工具并未提供这些链接。",
+      "setting": "使用 Responses API，多数为 medium 档位。测试基于一份虚构的 SaaS 政策文档和模拟查询工具，由客服产品开发者人工评分。",
+      "limitations": "同一产品的小样本，部分提示反复使用，缺少外部验证。检查过的链接有效。作者所在公司销售客服软件。",
+      "rating_rationale": "政策要点完整，空结果处理明确。自行补充链接降低了对严格遵循工具结果场景的信心。"
+    },
+    "gpt-6.2-sol-community-03": {
+      "claim": "Sol 一次生成了可运行的水下海藻动画。评测者更认可它的画面真实感和手电筒光束的纵深，但海藻随光标移动的响应弱于对照版本。",
+      "setting": "在 OpenCode 中使用 high 档位，每个模型分别新开会话，使用相同提示和文件读写工具各运行一次。报告附有成品演示和评分标准。",
+      "limitations": "仅测试一个 HTML/GLSL 需求，评分带有主观判断，交互和画面也只在这份演示中检查。",
+      "rating_rationale": "公开成品支持范围明确的交互图形任务。光标响应偏弱，且只有一道需求，证据有限。"
+    },
+    "gpt-6.2-astra-community-01": {
+      "claim": "Caswell 报告 Astra 做出了可在浏览器中使用的家庭仪表板，联动日历、餐食计划、购物清单和家务任务，刷新后仍保留更改。",
+      "setting": "在 ChatGPT Work 中使用一条详细的构建提示，随后询问进度。文章公开了提示和成品截图。",
+      "limitations": "只有一个项目，未公开代码、独立逐项功能验证或对照测试，推理档位也未披露。",
+      "rating_rationale": "多功能原型和作者观察到的数据保留效果可用于判断首版前端交付。截图能支持的判断范围有限。"
+    },
+    "gpt-6.2-astra-community-02": {
+      "claim": "Astra 根据两个视角重建了可编辑的 Blender 场景，并完成相机、椅子和照明调整。在保留视角中，五个地标的像素偏差中位数为 14，桌宽偏差为 5 厘米。",
+      "setting": "在已登录的 Codex 中使用 high 档位和默认速度，配合 Blender 5.2.1。作者另用保留的第三视角检查结果，并重新打开保存的文件。",
+      "limitations": "只有一份干净的合成场景，每个模型只运行一次，地标由人工标注。源图缺少真实拍摄中的相机变化。",
+      "rating_rationale": "可编辑场景和另行核验的结果支持范围明确的空间重建。桌宽偏差与单场景限制了可迁移性。"
+    },
+    "gpt-6.2-astra-community-03": {
+      "claim": "作者发现，Astra 在较长的任务中有时会陷入某个细节，逐渐偏离目标。同一报告也提到，在需求明确的编码任务中，首轮表现良好。",
+      "setting": "来自提供这两款 GPT-6.2 模型的 Agent 平台，作者实际使用过编码 Agent。",
+      "limitations": "未公开逐项日志、样本量、推理档位或量化失败率。",
+      "rating_rationale": "给出了长时间执行时偏离目标的具体表现。整体证据受缺少任务日志和运行次数限制。"
+    },
+    "gpt-6.2-sol-community-04": {
+      "claim": "Sol 根据两个视角重建了可编辑的 Blender 场景，并完成相机、椅子和照明调整。在保留视角中，五个地标的像素误差中位数为 12，桌宽误差为 2.18 厘米。",
+      "setting": "在已登录的 Codex 中使用 high 档位和默认速度，配合 Blender 5.2.1。作者另用保留的第三视角检查结果，并重新打开保存的文件。",
+      "limitations": "只有一份干净的合成场景，每个模型只运行一次，地标由人工标注。源图缺少真实拍摄中的相机变化。",
+      "rating_rationale": "可编辑场景和另行核验的结果支持范围明确的空间重建。桌宽偏差与单场景限制了可迁移性。"
     }
   },
   "models": {
-    "gpt-6-astra": {
-      "notes": [
-        "需另行核查账号权限、地区和工具环境。"
-      ]
-    },
     "gpt-6.1-sol": {
       "notes": [
         "通过 Responses API 支持工具调用；该模型在 Chat Completions 中不支持工具。",
@@ -1465,11 +1530,6 @@
     "claude-sonnet-5-5": {
       "notes": [
         "需另行核查账号权限、地区和工具环境。"
-      ]
-    },
-    "claude-fable-5-1": {
-      "notes": [
-        "部分公开评测使用了回退模型；不能将组合结果仅归因于基础模型。"
       ]
     },
     "gemini-3.8-flash": {
@@ -1588,6 +1648,28 @@
         "上下文为 1M token，最大输出 128K；自适应思考始终开启。API 默认 high，Claude 应用和 Claude Code 默认 medium；支持 low、medium、high、xhigh、max。",
         "标准 API 在 1M 上下文内每百万输入/输出为 $8/$40；Fast 模式为 $16/$80。缓存、批处理、工具和区域规则另计；API 单价不能代表订阅额度或整项任务成本。",
         "部分公布评测包含回退模型；关闭保护机制的 Mythos 专属结果不能归于 Fable。提高推理档位不保证分数提高，也可能显著增加耗时和成本。"
+      ]
+    },
+    "gemini-4-neon": {
+      "notes": [
+        "Google 于 2026 年 11 月 18 日发布正式版 gemini-4-neon。Gemini API 仅提供付费访问，Gemini 应用和 Antigravity 的访问权限取决于账号及订阅。",
+        "输入、思考、工具调用和最终输出共用 1,048,576 token。默认同步输出最多 65,536 token，后台长输出可使用窗口内的剩余额度。",
+        "支持文本、图片、音频、视频和 PDF 输入，输出文本。思考档位为 low、medium、high（默认）和 xhigh。函数调用、搜索和计算机操作需要相应的运行环境。暂不支持 Live API。",
+        "标准输入／输出每百万 token 为 3／15 美元，各上下文长度同价。隐式缓存输入每百万 token 为 0.15 美元。官方价格未标注促销到期日。"
+      ]
+    },
+    "gpt-6.2-sol": {
+      "notes": [
+        "于 2026 年 11 月 17 日上线。支持文本、图片输入和文本输出。完整上下文窗口为 105 万 Token，最大输入 92.2 万，最大输出 12.8 万。知识截止 2026 年 6 月 1 日。",
+        "推理档位为 low、medium、high、xhigh 和 max。Responses API 配置相应工具后支持网页或文件检索、函数调用和电脑操作，并提供多 Agent 委派测试版。",
+        "标准 API 在输入不超过 27.2 万 Token 时，缓存输入价格为每百万 Token $0.10。超过 27.2 万时，整次请求按长上下文档位计费。"
+      ]
+    },
+    "gpt-6.2-astra": {
+      "notes": [
+        "于 2026 年 11 月 17 日上线。支持文本、图片输入和文本输出。完整上下文窗口为 105 万 Token，最大输入 92.2 万，最大输出 12.8 万。知识截止 2026 年 5 月 18 日。",
+        "推理档位为 low、medium、high、xhigh 和 max。Responses API 配置相应工具后支持网页或文件检索、函数调用和电脑操作，并提供多 Agent 委派测试版。",
+        "标准 API 在输入不超过 27.2 万 Token 时，缓存输入价格为每百万 Token $0.40。超过 27.2 万时，整次请求按长上下文档位计费。"
       ]
     }
   }

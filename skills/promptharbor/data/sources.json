@@ -2,15 +2,6 @@
   "schema_version": 1,
   "sources": [
     {
-      "id": "openai-astra",
-      "title": "GPT-6 Astra model documentation",
-      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-      "publisher": "OpenAI",
-      "published_on": null,
-      "checked_on": "2026-09-29",
-      "review_days": 14
-    },
-    {
       "id": "openai-luna",
       "title": "GPT-6 Luna model documentation",
       "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
@@ -61,15 +52,6 @@
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
       "publisher": "Google",
       "published_on": "2026-09-02",
-      "checked_on": "2026-09-29",
-      "review_days": 14
-    },
-    {
-      "id": "aa-astra",
-      "title": "Benchmarking GPT-6 Astra",
-      "url": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
-      "publisher": "Artificial Analysis",
-      "published_on": null,
       "checked_on": "2026-09-29",
       "review_days": 14
     },
@@ -317,15 +299,6 @@
       "review_days": 14
     },
     {
-      "id": "community-source-037",
-      "title": "Astra built the author’s portfolio",
-      "url": "https://www.najam.pk/blog/gpt-6-astra-review",
-      "publisher": "Najam Saeed",
-      "published_on": "2026-09-01",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
       "id": "community-source-038",
       "title": "Scriptwriting comparison: Astra",
       "url": "https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/",
@@ -403,33 +376,6 @@
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1wsqfzk/sonnet_55_is_not_worth_using_it_unless_at_lowmed/",
       "publisher": "msw3age (comment)",
       "published_on": null,
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
-      "id": "community-source-048",
-      "title": "Fable 5.1 structured a draft from handwritten notes",
-      "url": "https://aaronmakelky.com/blog/astra-vs-fable",
-      "publisher": "Aaron Makelky",
-      "published_on": "2026-09-15",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
-      "id": "community-source-049",
-      "title": "Seven-chapter Fable 5.1 rewrite still needed voice editing",
-      "url": "https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions",
-      "publisher": "AI-Native PM authors (Girish PM origin)",
-      "published_on": "2026-09-02",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
-      "id": "community-source-050",
-      "title": "Fable 5.1 animated SVG and rocket-page build-off",
-      "url": "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026",
-      "publisher": "BitsMinds hands-on reviewers",
-      "published_on": "2026-09-21",
       "checked_on": "2026-09-30",
       "review_days": 14
     },
@@ -879,15 +825,6 @@
       "title": "Grok 4.7 release and long-context pricing",
       "url": "https://docs.x.ai/developers/release-notes",
       "publisher": "SpaceXAI",
-      "published_on": null,
-      "checked_on": "2026-10-08",
-      "review_days": 14
-    },
-    {
-      "id": "openai-astra-pricing",
-      "title": "GPT-6 Astra model documentation — API pricing",
-      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-      "publisher": "OpenAI",
       "published_on": null,
       "checked_on": "2026-10-08",
       "review_days": 14
@@ -1403,6 +1340,276 @@
       "publisher": "Google",
       "published_on": "2026-10-28",
       "checked_on": "2026-11-13",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-docs",
+      "title": "Gemini 4 Neon model specification",
+      "url": "https://aistudio.google.com/docs/models/gemini-4-neon",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-whats-new",
+      "title": "What's new in Gemini 4 Neon",
+      "url": "https://aistudio.google.com/docs/whats-new-gemini-4-neon",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-pricing",
+      "title": "Gemini API pricing for Gemini 4 Neon",
+      "url": "https://aistudio.google.com/docs/pricing#gemini-4-neon",
+      "publisher": "Google",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-announcement",
+      "title": "Introducing Gemini 4 Neon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "publisher": "Google",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-card",
+      "title": "Gemini 4 Neon model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "publisher": "Google DeepMind",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-methodology",
+      "title": "Gemini 4 Neon model evaluation methodology",
+      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_neon_model_evaluation.pdf",
+      "publisher": "Google DeepMind",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-zapier",
+      "title": "Zapier AutomationBench Gemini 4 Neon release report",
+      "url": "https://zapier.com/benchmarks/gemini-neon-4-report",
+      "publisher": "Zapier",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-plotly",
+      "title": "Gemini 4 Neon Benchmark Results for Data Analysis",
+      "url": "https://plotly.com/blog/gemini-4-neon-plotly-data-analytics-bench/",
+      "publisher": "Plotly",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-aa",
+      "title": "Artificial Analysis Gemini 4 Neon release evaluation",
+      "url": "https://artificialanalysis.ai/articles/gemini-4-neon-intelligence-gain",
+      "publisher": "Artificial Analysis",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-gdp-pdf-methodology",
+      "title": "Artificial Analysis GDP.pdf evaluation protocol",
+      "url": "https://artificialanalysis.ai/evaluations/gdp-pdf",
+      "publisher": "Artificial Analysis",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-community-datacamp",
+      "title": "Gemini 4 Neon hands-on chess page tests",
+      "url": "https://www.datacamp.com/blog/gemini-4-neon",
+      "publisher": "DataCamp / Josef Waples",
+      "published_on": "2026-11-19",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-community-flaviocopes",
+      "title": "Gemini 4 Neon parser and long-input tests",
+      "url": "https://flaviocopes.com/gemini-4-neon/",
+      "publisher": "Flavio Copes",
+      "published_on": "2026-11-19",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-community-smf",
+      "title": "Neon on Cold Iron under a 4,096-token answer budget",
+      "url": "https://www.smfclearinghouse.com/blog/2026-11-19-gemini-4-neon-cold-iron/",
+      "publisher": "SMF Works / Nemo",
+      "published_on": "2026-11-19",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gemini-4-neon-community-icanwrite",
+      "title": "Gemini 4 Neon editing test results",
+      "url": "https://icanwrite.app/ai-editing-benchmark/gemini-4-neon",
+      "publisher": "icanwrite / maxthescribbler",
+      "published_on": "2026-11-19",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "openai-gpt-6-2-pricing",
+      "title": "OpenAI API Standard, Batch, Fast and Ultrafast pricing",
+      "publisher": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "openai-gpt-6-2-launch",
+      "title": "OpenAI GPT-6.2 Astra and Sol release announcement",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "published_on": "2026-11-17",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "cognition-gpt-6-2-frontiercode-2",
+      "title": "FrontierCode 2.0 original benchmark leaderboard",
+      "publisher": "Cognition",
+      "url": "https://cognition.com/frontiercode",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "aa-gpt-6-2-harvey-lab-v11",
+      "title": "Harvey LAB-AA v1.1 original benchmark and methodology",
+      "publisher": "Artificial Analysis / Harvey",
+      "url": "https://artificialanalysis.ai/evaluations/harvey-lab-aa",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "aa-gpt-6-2-3d-v1",
+      "title": "AA-3D original interactive web 3D benchmark leaderboard",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/evaluations/aa-3d",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "snorkel-gpt-6-2-agents-last-exam-v11",
+      "title": "Agents' Last Exam v1.1 original benchmark leaderboard",
+      "publisher": "Snorkel AI",
+      "url": "https://snorkel.ai/leaderboard/agents-last-exam/",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "openai-gpt-6-2-sol",
+      "title": "GPT-6.2 Sol official API model documentation",
+      "publisher": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "plotly-gpt-6-2-sol",
+      "title": "GPT-6.2 Sol test on PlotlyDataAnalyticsBench",
+      "publisher": "Plotly",
+      "url": "https://plotly.com/blog/gpt-6-2-sol-plotly-data-analytics-bench/",
+      "published_on": "2026-11-17",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "openai-gpt-6-2-astra",
+      "title": "GPT-6.2 Astra official API model documentation",
+      "publisher": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra",
+      "published_on": null,
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "plotly-gpt-6-2-astra",
+      "title": "GPT-6.2 Astra test on PlotlyDataAnalyticsBench",
+      "publisher": "Plotly",
+      "url": "https://plotly.com/blog/gpt-6-2-astra-plotly-data-analytics-bench/",
+      "published_on": "2026-11-17",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gpt-6.2-sol-community-kingy-patches",
+      "title": "Kingy tests Sol on revised requirements in Python modules",
+      "url": "https://kingy.ai/blog/gpt-6-2-sol-prompt-history-coding-test/",
+      "publisher": "Kingy AI / Curtis Pyke",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gpt-6.2-sol-community-eesel-support",
+      "title": "eesel AI tests Sol on policy and order-tracking support",
+      "url": "https://www.eesel.ai/blog/gpt-6-2-sol-review",
+      "publisher": "eesel AI / Rama Adi",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gpt-6.2-sol-community-datacamp-shader",
+      "title": "DataCamp runs a single-prompt browser shader build",
+      "url": "https://www.datacamp.com/blog/gpt-6-2-sol-vs-claude-opus-5-5",
+      "publisher": "DataCamp / Tom Farnschläder",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gpt-6.2-astra-community-toms-guide",
+      "title": "Tom's Guide builds an interactive household dashboard with Astra",
+      "url": "https://www.tomsguide.com/ai/chatgpt/i-tested-chatgpts-new-gpt-6-2-astra-with-one-prompt-and-built-a-website-id-actually-use",
+      "publisher": "Tom's Guide / Amanda Caswell",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gpt-6.2-community-kingy-blender",
+      "title": "Kingy checks Astra on a two-view Blender reconstruction",
+      "url": "https://kingy.ai/blog/gpt-6-2-astra-sol-blender-studio-test/",
+      "publisher": "Kingy AI / Curtis Pyke",
+      "published_on": "2026-11-17",
+      "checked_on": "2026-11-20",
+      "review_days": 14
+    },
+    {
+      "id": "gpt-6.2-astra-community-offloop",
+      "title": "Offloop reports drift during longer Astra assignments",
+      "url": "https://offloop.org/learn/gpt-6-2-sol-and-astra-review",
+      "publisher": "Offloop / Yifei",
+      "published_on": "2026-11-18",
+      "checked_on": "2026-11-20",
       "review_days": 14
     }
   ]

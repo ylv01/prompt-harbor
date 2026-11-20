@@ -1,50 +1,8 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-11-13",
+  "snapshot_date": "2026-11-20",
   "coverage": "Task-specific curated catalog with community research for every listed model. Feature support and editorial report scores are separate from benchmark measurements.",
   "models": [
-    {
-      "id": "gpt-6-astra",
-      "name": "GPT-6 Astra",
-      "provider": "OpenAI",
-      "source_id": "openai-astra",
-      "status": "available",
-      "verified_on": "2026-09-29",
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "context_tokens": 1050000,
-      "tool_calling": true,
-      "open_weights": false,
-      "price_usd_per_million": {
-        "input": 10,
-        "output": 50,
-        "max_input_tokens": 272000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "notes": [
-        "Account access, region and tool environment must be checked separately."
-      ],
-      "price_reference": {
-        "currency": "USD",
-        "unit": "per_million_tokens",
-        "source_id": "openai-astra-pricing",
-        "verified_on": "2026-10-08",
-        "tiers": [
-          {
-            "max_input_tokens": 272000,
-            "input": 10,
-            "output": 50
-          },
-          {
-            "max_input_tokens": 1050000,
-            "input": 20,
-            "output": 75.0
-          }
-        ]
-      }
-    },
     {
       "id": "gpt-6.1-sol",
       "name": "GPT-6.1 Sol",
@@ -202,43 +160,6 @@
             "max_input_tokens": 1000000,
             "input": 2,
             "output": 10
-          }
-        ]
-      }
-    },
-    {
-      "id": "claude-fable-5-1",
-      "name": "Claude Fable 5.1",
-      "provider": "Anthropic",
-      "source_id": "claude-models",
-      "status": "available",
-      "verified_on": "2026-09-29",
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "context_tokens": 1000000,
-      "tool_calling": true,
-      "open_weights": false,
-      "price_usd_per_million": {
-        "input": 10,
-        "output": 50,
-        "max_input_tokens": 200000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "notes": [
-        "Some published evaluations use fallback models; do not attribute the composite result to the base model alone."
-      ],
-      "price_reference": {
-        "currency": "USD",
-        "unit": "per_million_tokens",
-        "source_id": "claude-pricing",
-        "verified_on": "2026-10-08",
-        "tiers": [
-          {
-            "max_input_tokens": 1000000,
-            "input": 10,
-            "output": 50
           }
         ]
       }
@@ -911,6 +832,148 @@
         "notes": {
           "en": "Standard API; Fast mode $16/$80. Cache, batch, tools and regional pricing differ.",
           "zh-CN": "标准 API 单价；Fast 模式为 $16/$80，缓存、批处理、工具及区域计价另有规则。"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-neon",
+      "name": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_id": "gemini-4-neon-docs",
+      "status": "available",
+      "verified_on": "2026-11-20",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "context_tokens": 1048576,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 3,
+        "output": 15,
+        "max_input_tokens": 1048576,
+        "scope": "Standard uncached paid Gemini API USD per million text tokens. Output includes thinking. Cache, tool fees and taxes are separate."
+      },
+      "notes": [
+        "Google released the stable gemini-4-neon on November 18, 2026. The Gemini API has paid access only. Gemini app and Antigravity access depends on account and subscription.",
+        "The 1,048,576-token window is shared by input, thinking, tool calls and final output. Default synchronous output is limited to 65,536 tokens. Background long decode can use the remaining window.",
+        "Accepts text, images, audio, video and PDF, with text output. Thinking levels are low, medium, high (default) and xhigh. Function calling, search and computer use require the appropriate environment. Live API is unavailable.",
+        "Standard input/output pricing is $3/$15 per million tokens at all context lengths. Implicit cached input is $0.15 per million. The listed rates have no stated promotion expiry."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "gemini-4-neon-pricing",
+        "verified_on": "2026-11-20",
+        "tiers": [
+          {
+            "max_input_tokens": 1048576,
+            "input": 3,
+            "output": 15
+          }
+        ],
+        "notes": {
+          "en": "Standard paid API reference, flat across context lengths. Output includes thinking. Cache, tool fees and subscription quotas are separate.",
+          "zh-CN": "标准付费 API 参考价，各上下文长度同价。输出包含思考 token。缓存费用、工具费用和订阅额度另计。"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-sol",
+      "name": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_id": "openai-gpt-6-2-sol",
+      "status": "available",
+      "verified_on": "2026-11-20",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "context_tokens": 922000,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 2,
+        "output": 10,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached OpenAI API USD per million tokens; excludes tool fees and service-tier adjustments."
+      },
+      "notes": [
+        "Released November 17, 2026. Text and image input, text output. Full context window 1.05M tokens; maximum input 922K and maximum output 128K. Knowledge cutoff June 1, 2026.",
+        "Reasoning efforts: low, medium, high, xhigh and max. Responses API supports web/file search, function calls and computer use with configured tools, and multi-agent delegation in beta.",
+        "Standard cached input is $0.10 per million at up to 272K input tokens. Above 272K input tokens, long-context rates apply to the full request."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "openai-gpt-6-2-pricing",
+        "verified_on": "2026-11-20",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 2,
+            "output": 10
+          },
+          {
+            "max_input_tokens": 922000,
+            "input": 4,
+            "output": 15
+          }
+        ],
+        "notes": {
+          "en": "Standard uncached API. Above 272K input, long-context rates apply to the entire request. Cache, tools and processing tiers are priced separately.",
+          "zh-CN": "标准 API 未缓存价。输入超过 27.2 万 Token 时，整次请求按长上下文价格计费。缓存、工具和处理档位另计。"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-astra",
+      "name": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_id": "openai-gpt-6-2-astra",
+      "status": "available",
+      "verified_on": "2026-11-20",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "context_tokens": 922000,
+      "tool_calling": true,
+      "open_weights": false,
+      "price_usd_per_million": {
+        "input": 8,
+        "output": 40,
+        "max_input_tokens": 272000,
+        "scope": "Standard uncached OpenAI API USD per million tokens; excludes tool fees and service-tier adjustments."
+      },
+      "notes": [
+        "Released November 17, 2026. Text and image input, text output. Full context window 1.05M tokens; maximum input 922K and maximum output 128K. Knowledge cutoff May 18, 2026.",
+        "Reasoning efforts: low, medium, high, xhigh and max. Responses API supports web/file search, function calls and computer use with configured tools, and multi-agent delegation in beta.",
+        "Standard cached input is $0.40 per million at up to 272K input tokens. Above 272K input tokens, long-context rates apply to the full request."
+      ],
+      "price_reference": {
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "source_id": "openai-gpt-6-2-pricing",
+        "verified_on": "2026-11-20",
+        "tiers": [
+          {
+            "max_input_tokens": 272000,
+            "input": 8,
+            "output": 40
+          },
+          {
+            "max_input_tokens": 922000,
+            "input": 16,
+            "output": 60
+          }
+        ],
+        "notes": {
+          "en": "Standard uncached API. Above 272K input, long-context rates apply to the entire request. Cache, tools and processing tiers are priced separately.",
+          "zh-CN": "标准 API 未缓存价。输入超过 27.2 万 Token 时，整次请求按长上下文价格计费。缓存、工具和处理档位另计。"
         }
       }
     }

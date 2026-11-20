@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.4 — 2026-11-20
+
+- Add Gemini 4 Neon with task evidence, community reports, a standard API price
+  reference and a Chinese SQL and analytics example.
+- Add GPT-6.2 Sol and GPT-6.2 Astra as exact API models, with task evaluations,
+  community reports and both Standard pricing tiers.
+- Remove GPT-6 Astra and Claude Fable 5.1 from the current catalog. Their
+  successors cost 20% less at standard uncached rates. Historical fixtures
+  retain exact model names, with the original catalog available in the
+  [previous repository snapshot](https://github.com/ylv01/prompt-harbor/tree/4851e016b37f11b6c427835fec20792e00ea0307).
+
 ## 0.4.3 — 2026-11-13
 
 - Add Gemini 4 Carbon, Gemini 4 Hydrogen and Claude Fable 5.2 as separate exact

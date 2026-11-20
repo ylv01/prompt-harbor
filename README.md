@@ -3,9 +3,9 @@
 </p>
 <p align="center">
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="license Apache 2.0"></a>
-  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.4.3"></a>
+  <a href="CHANGELOG.md"><img src="assets/badges/version.svg" alt="version 0.4.4"></a>
   <a href="skills/promptharbor/SKILL.md"><img src="assets/badges/skill.svg" alt="Agent Skill"></a>
-  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-11-13"></a>
+  <a href="docs/COVERAGE.md"><img src="assets/badges/data.svg" alt="model data 2026-11-20"></a>
 </p>
 <p align="center"><b>Give it a question. Choose from its Top 3 models.<br>Give it a project. Get coordinated model handoffs.</b></p>
 <p align="center">English · <a href="README.zh-CN.md">简体中文</a></p>
@@ -168,6 +168,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/kimi31.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/november-models.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/neon.json --as-of 2026-11-20
 python skills/promptharbor/scripts/harbor.py recommend --prompt "Summarize this video"
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs
 python skills/promptharbor/scripts/project.py compile --project examples/library-system/project.json --out out/handoffs-zh --language zh-CN
@@ -181,12 +182,14 @@ See [job format](skills/promptharbor/references/job-format.md) and
 [project format](skills/promptharbor/references/projects.md).
 
 For reproducible historical examples, use the date recorded with the example
-(`--as-of 2026-11-13` for the November additions; Kimi K3.1 retains October 27, Argon October 14, older examples October 8); omit it for
+(`--as-of 2026-11-20` for Neon, November 13 for Carbon, Hydrogen and Fable 5.2; Kimi K3.1 retains October 27, Argon October 14, older examples October 8); omit it for
 current advice. Expired records are excluded and may yield no recommendation.
+Use the [previous repository snapshot](https://github.com/ylv01/prompt-harbor/tree/4851e016b37f11b6c427835fec20792e00ea0307) to reproduce the October
+examples with their original catalog.
 
 ## Evidence and community feedback
 
-The **2026-11-13 snapshot includes 22 models and 49 task leaves**. Community
+The **2026-11-20 snapshot includes 23 models and 49 task leaves**. Community
 research has been performed for every catalog model. [Coverage and gaps](docs/COVERAGE.md)
 list the current evidence/source counts; [community assessments](docs/COMMUNITY.md)
 show model-by-task scores, origins and sources. Tasks without suitable reports
@@ -194,9 +197,9 @@ remain unrated.
 
 | Provider | Catalog models |
 |---|---|
-| OpenAI | GPT-6.1 Sol, GPT-6 Astra, GPT-6 Luna |
-| Anthropic | Claude Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1 |
-| Google | Gemini 4 Carbon, Gemini 4 Hydrogen, Gemini 4 Argon, Gemini 3.8 Flash |
+| OpenAI | GPT-6.2 Sol, GPT-6.2 Astra, GPT-6.1 Sol, GPT-6 Luna |
+| Anthropic | Claude Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 |
+| Google | Gemini 4 Neon, Gemini 4 Carbon, Gemini 4 Hydrogen, Gemini 4 Argon, Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
 | Alibaba | Qwen3.8-27B |
 | Moonshot AI | Kimi K3.1 Pro, Kimi K3 |

@@ -44,7 +44,13 @@ class NovemberModelsTests(unittest.TestCase):
                 self.assertEqual([r['model_id'] for r in result['recommendations']], [model])
                 self.assertEqual(result['recommendations'][0]['resources']['access'], 'user_listed')
         self.assertFalse(harbor.route({'tasks': ['agent.workflow'], 'available_models': []}, self.data, NOW)['recommendations'])
-        self.assertTrue({'gemini-4-argon', 'claude-fable-5-1'} <= set(self.models))
+        self.assertIn('gemini-4-argon', self.models)
+        for model in ('gpt-6-sol', 'gpt-6-astra', 'claude-fable-5-1'):
+            with self.subTest(removed_model=model):
+                self.assertNotIn(model, self.models)
+                result = self.route(model, current_model=model)
+                self.assertFalse(result['recommendations'])
+                self.assertEqual(result['switch']['action'], 'unknown')
 
     def test_later_checks_cannot_support_historical_model_queries(self):
         for model in MODELS:

@@ -1,6 +1,6 @@
 # Community task ratings
 
-Reviewed: **2026-11-13**. All **22** catalog models were searched.
+Reviewed: **2026-11-20**. All **23** catalog models were searched.
 
 Scores are PromptHarbor editorial judgments of specific reported outcomes, on a 0–10 scale. They are not benchmark measurements or global model ratings.
 Unknown task ratings remain unknown. A **proxy** label means only adjacent-task reports support that rating; it is not a direct observation of that task.
@@ -9,12 +9,10 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 
 | Model | Task ratings (0–10) | Distinct report origins |
 |---|---|---|
-| GPT-6 Astra | No admitted task reports | 2 |
 | GPT-6.1 Sol | No admitted task reports | 3 |
 | GPT-6 Luna | No admitted task reports | 2 |
 | Claude Opus 5.5 | No admitted task reports | 3 |
 | Claude Sonnet 5.5 | No admitted task reports | 3 |
-| Claude Fable 5.1 | No admitted task reports | 3 |
 | Gemini 3.8 Flash | No admitted task reports | 2 |
 | DeepSeek-V4.1-Flash | No admitted task reports | 3 |
 | Qwen3.8-27B | No admitted task reports | 3 |
@@ -31,39 +29,9 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 | Gemini 4 Carbon | `software.frontend` **7.0**; `software.frontend.design` **4.9**; `software.frontend.fidelity` **4.0**; `software.security` **5.5** | 3 |
 | Gemini 4 Hydrogen | `software.frontend` **7.0**; `software.frontend.fidelity` **7.0** (proxy); `software.repo` **6.5** | 2 |
 | Claude Fable 5.2 | `software.architecture` **4.5**; `software.debug` **7.5**; `software.frontend` **7.5**; `software.frontend.design` **7.5**; `software.frontend.fidelity` **7.5** | 3 |
-
-## GPT-6 Astra
-
-Search: 2026-09-30 · status: reviewed
-
-Queries: `"GPT-6 Astra" review portfolio coding`; `"GPT-6 Astra" writing firsthand Reddit`
-
-
-### [Astra built the author’s portfolio](https://www.najam.pk/blog/gpt-6-astra-review)
-
-**8/10** · positive · artifact_report · low confidence. Author: Najam Saeed.
-Reported: 2026-09-01 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.frontend`. Proxy tasks: `software.frontend.design`.
-
-The author reports building his portfolio with Astra in Codex, with strong coding results but rapid subscription quota consumption.
-
-**Rating reason:** A published personal website supports a strong bounded frontend result; one project and quota anecdotes do not establish broader superiority.
-
-**Limits:** One personal project; no matched prompts or test suite. The explicit September 1 article date is retained as an early personal report; release/access timing is not independently established. Subscription quota anecdotes are not API prices.
-
-Artifacts: [artifact 1](https://www.najam.pk/).
-
-### [Scriptwriting comparison: Astra](https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/)
-
-**6.5/10** · mixed · firsthand · low confidence. Author: OnlyProggingForFun.
-Reported: absolute date unknown · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `writing.creative`. Proxy tasks: None.
-
-The author’s internal AI-judged script study places Astra near 6.1 Sol but below the older 6 Sol.
-
-**Rating reason:** Useful scripts with a reported preference gap to older Sol; a small private AI-judged comparison supports only a cautious mixed rating.
-
-**Limits:** Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.
+| Gemini 4 Neon | `context.retrieve` **7.0**; `software.algorithm` **5.5**; `software.frontend` **8.0**; `writing.edit` **8.0** | 4 |
+| GPT-6.2 Sol | `agent.workflow` **6.5**; `software.algorithm` **7.5**; `software.frontend` **7.0**; `software.frontend.design` **7.0**; `vision.spatial` **7.5** | 4 |
+| GPT-6.2 Astra | `agent.long` **4.5**; `software.frontend` **7.5**; `software.frontend.design` **7.5** (proxy); `vision.spatial` **7.5** | 3 |
 
 ## GPT-6.1 Sol
 
@@ -228,81 +196,6 @@ In two low/medium difficulty coding tasks, the commenter reports Sonnet 5.5 high
 **Rating reason:** Specific residual-defect and rework complaint is an adverse signal; weak reproducibility keeps the confidence limited.
 
 **Limits:** Only two unspecified tasks; no prompts, patches, invoice or code artifacts. Anecdote concerns total cost after review, not a verified token-rate comparison.
-
-## Claude Fable 5.1
-
-Search: 2026-09-30 · status: reviewed
-
-Queries: `"Claude Fable 5.1" writing review`; `"Fable 5.1" firsthand writing tests`
-
-
-### [Fable 5.1 structured a draft from handwritten notes](https://aaronmakelky.com/blog/astra-vs-fable)
-
-**8.0/10** · positive · firsthand · low confidence. Author: Aaron Makelky.
-Reported: 2026-09-15 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `writing.edit`, `writing.professional`. Proxy tasks: `vision.document`.
-
-Given 17 scanned handwritten pages, the author preferred Fable 5.1's draft structure and opening; processing took substantially longer than the Astra setup.
-
-**Rating reason:** Clear transformation task and explicit quality/time tradeoff support writing fit, with comparison confounds retained.
-
-**Limits:** One personal task; different applications and tools; subjective preference, no blind grading. Author discloses receiving OpenAI promotional merchandise.
-
-Artifacts: [artifact 1](https://aaronmakelky.com/blog/astra-vs-fable).
-
-### [Fable 5.1 structured a draft from handwritten notes](https://aaronmakelky.com/blog/astra-vs-fable)
-
-**5.0/10** · mixed · artifact_report · low confidence. Author: Aaron Makelky reporting tests with Ryan Doser.
-Reported: 2026-09-15 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.frontend.design`. Proxy tasks: `software.frontend`.
-
-The shown tests retained an existing page's branding, but a new business homepage had readability/spacing faults and a weaker complete brand package than the author's preferred Astra result.
-
-**Rating reason:** Brand retention is useful, while visible layout faults warrant a mixed task assessment.
-
-**Limits:** Two briefs, subjective preference, no conversion measurement; different harnesses and image-generation access. Same origin as the writing test; do not count as an independent second reviewer.
-
-Artifacts: [artifact 1](https://aaronmakelky.com/blog/astra-vs-fable).
-
-### [Seven-chapter Fable 5.1 rewrite still needed voice editing](https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions)
-
-**5.5/10** · mixed · artifact_report · low confidence. Author: AI-Native PM authors (Girish PM origin).
-Reported: 2026-09-02 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `writing.edit`. Proxy tasks: `writing.professional`.
-
-On a seven-chapter course rewrite, the authors found only marginal prose improvement and still edited every chapter to restore their voice.
-
-**Rating reason:** Modest improvement and necessary line editing support a mixed score for preserving a specific author voice.
-
-**Limits:** Before/after excerpt is public, but complete session outputs were not inspected; fleet mode confounds model attribution.
-
-Artifacts: [artifact 1](https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions).
-
-### [Seven-chapter Fable 5.1 rewrite still needed voice editing](https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions)
-
-**6.0/10** · mixed · firsthand · low confidence. Author: AI-Native PM authors (Girish PM origin).
-Reported: 2026-09-02 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `agent.long`, `agent.workflow`. Proxy tasks: None.
-
-The course workflow needed less steering and recovered cached agent results, but underestimated usage and exhausted its subscription allowance before completion.
-
-**Rating reason:** Recovery is a practical gain; usage estimation and interrupted delivery offset it for long-running work.
-
-**Limits:** One workflow with fleet mode; resumption and allowance accounting also belong to Claude Code/product behavior. Same origin as the course rewrite; do not count twice per task.
-
-### [Fable 5.1 animated SVG and rocket-page build-off](https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026)
-
-**8.0/10** · positive · artifact_report · low confidence. Author: BitsMinds hands-on reviewers.
-Reported: 2026-09-21 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.frontend.design`. Proxy tasks: `software.frontend`.
-
-In three visible animation briefs, Fable 5.1 had a fault-free interchange and a correctly rotating carousel, and kept the launch vehicle in frame, with remaining rocket defects.
-
-**Rating reason:** Concrete motion correctness is useful evidence for visual prototypes; residual defects and small sample cap the score.
-
-**Limits:** Single attempt per brief; non-blind judging and different maker harnesses. Live builds are linked, but exact prompt files were not published; no production/accessibility validation.
-
-Artifacts: [artifact 1](https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026).
 
 ## Gemini 3.8 Flash
 
@@ -1159,3 +1052,201 @@ Shumer reports repeated drift from a prompt-first architecture into edge-case co
 **Rating reason:** Specific constraint drift is adverse architecture evidence; private setup and test-snapshot uncertainty keep confidence low.
 
 **Limits:** Private architecture and no acceptance metric. The same review praises game builds, but those do not verify architecture compliance; no rerun here.
+
+## Gemini 4 Neon
+
+Search: 2026-11-20 · status: reviewed
+
+Queries: `"Gemini 4 Neon" tested review`; `"Gemini 4 Neon" "I tried" coding`; `"Gemini 4 Neon" site:news.ycombinator.com OR site:reddit.com`
+
+- `context.retrieve`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.algorithm`: **5.5/10**, low confidence, direct mapping, 2 origin(s).
+- `software.frontend`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
+- `writing.edit`: **8.0/10**, low confidence, direct mapping, 1 origin(s).
+
+### [Gemini 4 Neon hands-on chess page tests](https://www.datacamp.com/blog/gemini-4-neon)
+
+**8/10** · positive · artifact_report · medium confidence. Author: Josef Waples.
+Reported: 2026-11-19 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `software.frontend`. Proxy tasks: None.
+
+Waples reports three completed self-playing chess pages in three runs. He replayed moves and checked ten rule edge cases with chess.js.
+
+**Rating reason:** Repeated delivery plus rule checks supports bounded implementation. A single demonstration task limits transfer.
+
+**Limits:** One brief, three Neon runs. Carbon lost two runs to the synchronous output cap. The article does not establish broader frontend quality; no rerun here.
+
+Artifacts: [artifact 1](https://media.datacamp.com/cms/gemini-4-neon-chess-endgame.gif?w=630).
+
+### [Gemini 4 Neon parser and long-input tests](https://flaviocopes.com/gemini-4-neon/)
+
+**7.5/10** · mixed · artifact_report · medium confidence. Author: Flavio Copes.
+Reported: 2026-11-19 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `software.algorithm`. Proxy tasks: None.
+
+Neon passed 30/30 duration-parser tests and 27/27 CSV-parser tests at high effort. CSV stayed at 27/27 at low effort, while high took roughly twice as long.
+
+**Rating reason:** Correct output at all reported levels for the CSV task is useful. Extra high-effort latency and spend gave no benefit on that prompt.
+
+**Limits:** Two small functions, with one result per setting reported. Pricing and timings are route-specific; repository-scale behavior untested.
+
+Artifacts: [artifact 1](https://flaviocopes.com/gemini-4-neon/#the-test-setup).
+
+### [Gemini 4 Neon parser and long-input tests](https://flaviocopes.com/gemini-4-neon/)
+
+**7/10** · positive · artifact_report · low confidence. Author: Flavio Copes.
+Reported: 2026-11-19 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `context.retrieve`. Proxy tasks: None.
+
+Neon returned exactly the two matching article slugs from 23 concatenated posts, checked against grep. The request used 103,361 input tokens.
+
+**Rating reason:** The exact answer helps establish a concrete retrieval success. The simple query and single trial sharply limit the inference.
+
+**Limits:** One literal keyword lookup. No long-document synthesis, near-limit retrieval, or repeated trials were shown.
+
+Artifacts: [artifact 1](https://flaviocopes.com/gemini-4-neon/#a-100k-token-search).
+
+### [Neon on Cold Iron under a 4,096-token answer budget](https://www.smfclearinghouse.com/blog/2026-11-19-gemini-4-neon-cold-iron/)
+
+**3.5/10** · negative · artifact_report · medium confidence. Author: Nemo / SMF Works.
+Reported: 2026-11-19 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `software.algorithm`. Proxy tasks: None.
+
+Cold Iron reports 15/30 on its coding subset. The other 15 items hit the response budget before producing answers.
+
+**Rating reason:** Half the small coding tasks returned no final answer in this preset. The negative signal is scoped to that budget and provider configuration.
+
+**Limits:** This captures completion under a tight budget. Lower effort for Neon was not retested, and peers used different effort settings; no rerun here.
+
+Artifacts: [artifact 1](https://github.com/smfworks/NemoKnowledgebase/blob/main/benchmarks/gemini-4-neon).
+
+### [Gemini 4 Neon editing test results](https://icanwrite.app/ai-editing-benchmark/gemini-4-neon)
+
+**8/10** · positive · artifact_report · medium confidence. Author: maxthescribbler / icanwrite.
+Reported: 2026-11-19 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `writing.edit`. Proxy tasks: None.
+
+Neon found 88 of 90 planted issues with four prompts, and 87 with the combined prompt. Both separated-pass misses were grammar or spelling.
+
+**Rating reason:** High detection on the fixed story under both prompt formats supports proofreading. Misses and extra flags still matter in editorial review.
+
+**Limits:** One synthetic story, only error detection. Neon-specific effort and routing are not listed on the per-model results page; no rerun here.
+
+Artifacts: [artifact 1](https://icanwrite.app/ai-editing-benchmark/gemini-4-neon), [artifact 2](https://icanwrite.app/ai-editing-benchmark).
+
+## GPT-6.2 Sol
+
+Search: 2026-11-20 · status: reviewed
+
+Queries: `GPT-6.2 Sol hands-on tested coding code tests independent`; `GPT-6.2 Sol support tool grounding hands-on repeated trials`; `GPT-6.2 Sol vs Claude Opus 5.5 hands-on shader`
+
+- `agent.workflow`: **6.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.algorithm`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend.design`: **7.0/10**, low confidence, direct mapping, 1 origin(s).
+- `vision.spatial`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+
+### [Kingy tests Sol on revised requirements in Python modules](https://kingy.ai/blog/gpt-6-2-sol-prompt-history-coding-test/)
+
+**7.5/10** · positive · artifact_report · low confidence. Author: Curtis Pyke.
+Reported: 2026-11-18 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `software.algorithm`. Proxy tasks: None.
+
+All 30 single-module submissions across 15 paired runs passed eight local checks each. The requirement changes covered invoice rounding, CSV deduplication, and a venue-local booking date.
+
+**Rating reason:** Runnable behavior checks support small rule changes. Repeating three fixtures adds little evidence for other workloads.
+
+**Limits:** Only three synthetic tasks, one file per task, and no model-callable tools. The test had no failing submissions to distinguish the two workflows.
+
+Artifacts: [artifact 1](https://kingy.ai/wp-content/uploads/2026/11/sol-prompt-history-evidence/run-data.csv), [artifact 2](https://kingy.ai/wp-content/uploads/2026/11/sol-prompt-history-evidence/kingy-sol-prompt-history-evidence.zip).
+
+### [eesel AI tests Sol on policy and order-tracking support](https://www.eesel.ai/blog/gpt-6-2-sol-review)
+
+**6.5/10** · mixed · firsthand · low confidence. Author: Rama Adi.
+Reported: 2026-11-18 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `agent.workflow`. Proxy tasks: None.
+
+Sol included every required policy point in 18 short runs and escalated all five empty order lookups. Across the order replies, it added seven carrier links in 14 replies even though the tool returned no URL.
+
+**Rating reason:** Complete policy retrieval and explicit escalation were useful. The unsourced links reduce confidence in strict tool-grounding requirements.
+
+**Limits:** A small set from one product, with repeated prompts and no external validation. Tested URLs were valid. The author sells helpdesk software.
+
+### [DataCamp runs a single-prompt browser shader build](https://www.datacamp.com/blog/gpt-6-2-sol-vs-claude-opus-5-5)
+
+**7/10** · mixed · artifact_report · low confidence. Author: Tom Farnschläder.
+Reported: 2026-11-18 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `software.frontend`, `software.frontend.design`. Proxy tasks: None.
+
+Sol delivered a working animated kelp forest on its first attempt. The reviewer favored the visual realism and torch depth, but observed a weaker cursor-driven kelp response than in the comparison build.
+
+**Rating reason:** The published build supports a narrow interactive-graphics use case. Weak cursor response and a single brief limit the signal.
+
+**Limits:** Single HTML/GLSL visual brief with subjective scoring. Interaction and look were checked in this demo only.
+
+Artifacts: [artifact 1](https://fast.wistia.net/embed/iframe/1vqesnk1jd).
+
+### [Kingy checks Astra on a two-view Blender reconstruction](https://kingy.ai/blog/gpt-6-2-astra-sol-blender-studio-test/)
+
+**7.5/10** · positive · artifact_report · low confidence. Author: Curtis Pyke.
+Reported: 2026-11-17 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `vision.spatial`. Proxy tasks: None.
+
+Sol rebuilt an editable Blender scene from two views and completed the camera, chair, and lighting edits. Its median error across five withheld-view landmarks was 12 pixels, and desk width error was 2.18 cm.
+
+**Rating reason:** An editable scene and separately checked output support this bounded spatial reconstruction. The desk error and one-scene design limit transfer.
+
+**Limits:** One clean synthetic studio scene, a single run per model, and manually marked landmarks. The source images had no real-world camera variation.
+
+Artifacts: [artifact 1](https://kingy.ai/wp-content/uploads/2026/11/blender-studio-two-views/scorecard.html).
+
+## GPT-6.2 Astra
+
+Search: 2026-11-20 · status: reviewed
+
+Queries: `GPT-6.2 Astra hands-on website dashboard November 2026`; `GPT-6.2 Astra hands-on Blender reconstruction testing`; `GPT-6.2 Astra long agent firsthand Offloop review`
+
+- `agent.long`: **4.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+- `software.frontend.design`: **7.5/10**, low confidence, proxy mapping, 1 origin(s).
+- `vision.spatial`: **7.5/10**, low confidence, direct mapping, 1 origin(s).
+
+### [Tom's Guide builds an interactive household dashboard with Astra](https://www.tomsguide.com/ai/chatgpt/i-tested-chatgpts-new-gpt-6-2-astra-with-one-prompt-and-built-a-website-id-actually-use)
+
+**7.5/10** · positive · artifact_report · low confidence. Author: Amanda Caswell.
+Reported: 2026-11-18 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `software.frontend`. Proxy tasks: `software.frontend.design`.
+
+Caswell reports that Astra made a browser-based household dashboard with linked calendar, meal planning, grocery lists and chores, and that changes persisted after refresh.
+
+**Rating reason:** A usable multi-feature prototype and reported persistence support initial frontend delivery. Broader implementation quality cannot be inferred from a screenshot.
+
+**Limits:** One project. No public code, independent feature-by-feature verification, or controlled comparison. The effort setting was not reported.
+
+Artifacts: [artifact 1](https://cdn.mos.cms.futurecdn.net/uZ7a46fApaQChpifaFz9k7.jpg).
+
+### [Kingy checks Astra on a two-view Blender reconstruction](https://kingy.ai/blog/gpt-6-2-astra-sol-blender-studio-test/)
+
+**7.5/10** · positive · artifact_report · low confidence. Author: Curtis Pyke.
+Reported: 2026-11-17 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `vision.spatial`. Proxy tasks: None.
+
+Astra rebuilt an editable Blender scene from two views and completed the camera, chair, and lighting edits. It was 14 pixels off at the median of five withheld-view landmarks, and the desk width was 5 cm off.
+
+**Rating reason:** An editable scene and separately checked output support this bounded spatial reconstruction. The desk error and one-scene design limit transfer.
+
+**Limits:** One clean synthetic studio scene, a single run per model, and manually marked landmarks. The source images had no real-world camera variation.
+
+Artifacts: [artifact 1](https://kingy.ai/wp-content/uploads/2026/11/blender-studio-two-views/scorecard.html), [artifact 2](https://kingy.ai/wp-content/uploads/2026/11/blender-studio-two-views/astra-c.png).
+
+### [Offloop reports drift during longer Astra assignments](https://offloop.org/learn/gpt-6-2-sol-and-astra-review)
+
+**4.5/10** · negative · firsthand · low confidence. Author: Yifei.
+Reported: 2026-11-18 · first seen: 2026-11-20 · assessed: 2026-11-20.
+Direct tasks: `agent.long`. Proxy tasks: None.
+
+The author reports that Astra could get absorbed in a detail and move off course on longer assignments. First-pass coding worked well on clearly specified jobs in the same account.
+
+**Rating reason:** The report gives a concrete failure mode for sustained execution. Missing task logs and run counts keep the weight small.
+
+**Limits:** The account gives no task-by-task logs, sample size, effort setting, or measured failure rate.
