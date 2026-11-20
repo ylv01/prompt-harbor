@@ -5938,6 +5938,839 @@
           "assessed_on": "2026-11-13"
         }
       }
+    },
+    {
+      "id": "gemini-4-neon-multimodal-capability",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-docs",
+      "kind": "official_capability",
+      "claim": "Google documents PDF, video and audio inputs and support for function calling and computer use.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow",
+        "agent.computer",
+        "vision.document",
+        "vision.video",
+        "audio.understand"
+      ],
+      "measurement": null,
+      "setting": "Stable Gemini API model with text output. Tool use depends on the host and tool configuration.",
+      "limitations": "The documentation defines available inputs and tools. It provides no measured task accuracy or completed-workflow rate.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-neon-automation",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-zapier",
+      "kind": "independent_eval",
+      "claim": "Zapier reports that Neon at xhigh completed 370 of 657 simulated business workflows (56.3%). At high, it completed 357 of 657 (54.3%).",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "AutomationBench",
+        "version": "1.0.6",
+        "metric": "task_completed_correctly",
+        "value": 56.3,
+        "unit": "percent",
+        "protocol": "Zapier API run, 657 simulated tasks at xhigh, all final-state assertions required, 50-step cap"
+      },
+      "setting": "Early-access API run November 17–18, 2026. Up to 50 steps in a simulated tool environment, with deterministic checks of the final state.",
+      "limitations": "The pass rate is specific to Zapier's tools and task mix. Costs in the report estimate usage in the benchmark.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-neon-plotly",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-plotly",
+      "kind": "independent_eval",
+      "claim": "Plotly reports 43 of 43 data analytics tasks passed, including all 20 analytics questions and five hidden-pattern tasks, after correcting a data-quality grading rule.",
+      "direct_tasks": [
+        "data.analysis",
+        "data.sql"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Plotly DataAnalyticsBench",
+        "version": "November 18 launch run, November 19 grading correction",
+        "metric": "questions passed",
+        "value": 43,
+        "unit": "out of 43",
+        "protocol": "Single Plotly Studio Embedded run using a synthetic data warehouse. Human-confirmed correction to the rubric, with no Neon rerun."
+      },
+      "setting": "Plotly Studio Embedded with multi-turn data query and charting tools. Launch-day run with November 19 regrading. Reasoning effort unspecified.",
+      "limitations": "One run in one harness on a private exam with synthetic data. Other models varied by up to three questions across repeat runs.",
+      "reported_on": "2026-11-19",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-neon-gdp-pdf",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-aa",
+      "kind": "independent_eval",
+      "claim": "Artificial Analysis reports a 33.4% all-pass rate on GDP.pdf at high effort and 28.0% at xhigh.",
+      "direct_tasks": [
+        "vision.document"
+      ],
+      "proxy_tasks": [
+        "context.retrieve"
+      ],
+      "measurement": {
+        "benchmark": "GDP.pdf",
+        "version": "Artificial Analysis November 18 release results",
+        "metric": "all-pass attempt rate",
+        "value": 33.4,
+        "unit": "percent",
+        "protocol": "Artificial Analysis harness, high effort, 100 professional tasks, five attempts per task, judge checks every criterion"
+      },
+      "setting": "Parsed PDF text and page renderings under the Artificial Analysis protocol. Each attempt passes only when the rubric judge awards credit on every criterion.",
+      "limitations": "Score depends on document preparation, attempt settings and the rubric judge. The result applies to professional document tasks in this suite.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-neon-swe-sweep",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 39.0% subtask-weighted reward on SWE-sweep with Antigravity CLI 1.5.9 and 12.8% with the mini-swe-agent vision harness.",
+      "direct_tasks": [
+        "software.repo",
+        "software.debug"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "SWE-sweep",
+        "version": "Google November 2026 provider-harness run",
+        "metric": "subtask-weighted reward",
+        "value": 39,
+        "unit": "percent",
+        "protocol": "Vendor evaluation using Antigravity CLI 1.5.9 with a sub-agent fan-out tool at highest thinking"
+      },
+      "setting": "Vendor-run Antigravity CLI 1.5.9 through its official integration. The harness can delegate across the repository. Highest thinking per Google methodology.",
+      "limitations": "Reward weights individual subtasks. The change of harness produced a different result in the same release evaluation.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-neon-graphwalks",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-card",
+      "kind": "vendor_eval",
+      "claim": "Google reports 95.2% breadth-first-search F1 on its GraphWalks run.",
+      "direct_tasks": [
+        "context.retrieve"
+      ],
+      "proxy_tasks": [
+        "context.synthesis"
+      ],
+      "measurement": {
+        "benchmark": "GraphWalks",
+        "version": "256k–1M; 200 problems",
+        "metric": "BFS F1",
+        "value": 95.2,
+        "unit": "percent",
+        "protocol": "Vendor evaluation of 200 synthetic graph traversal tasks at 256k–1M context with highest thinking"
+      },
+      "setting": "200 synthetic graph traversal problems with context lengths from 256k to 1M tokens. Highest thinking per Google methodology.",
+      "limitations": "Measures synthetic graph traversal under the stated setup. Transfer to general document recall and synthesis is unverified.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gemini-4-neon-community-01",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-community-datacamp",
+      "kind": "community_test",
+      "claim": "Waples reports three completed self-playing chess pages in three runs. He replayed moves and checked ten rule edge cases with chess.js.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Medium effort, same prompt and tools per arm. Author published a game-end recording.",
+      "limitations": "One brief, three Neon runs. Carbon lost two runs to the synchronous output cap. The article does not establish broader frontend quality; no rerun here.",
+      "reported_on": "2026-11-19",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Josef Waples",
+        "origin_id": "waples-neon-chess-nov19",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://media.datacamp.com/cms/gemini-4-neon-chess-endgame.gif?w=630"
+        ],
+        "rating": {
+          "value": 8,
+          "rationale": "Repeated delivery plus rule checks supports bounded implementation. A single demonstration task limits transfer.",
+          "confidence": "medium",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-neon-community-02",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-community-flaviocopes",
+      "kind": "community_test",
+      "claim": "Neon passed 30/30 duration-parser tests and 27/27 CSV-parser tests at high effort. CSV stayed at 27/27 at low effort, while high took roughly twice as long.",
+      "direct_tasks": [
+        "software.algorithm"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "OpenRouter, two JavaScript functions, author-run checks; the same CSV prompt also rerun at medium and low.",
+      "limitations": "Two small functions, with one result per setting reported. Pricing and timings are route-specific; repository-scale behavior untested.",
+      "reported_on": "2026-11-19",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Flavio Copes",
+        "origin_id": "copes-neon-openrouter-nov19",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://flaviocopes.com/gemini-4-neon/#the-test-setup"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Correct output at all reported levels for the CSV task is useful. Extra high-effort latency and spend gave no benefit on that prompt.",
+          "confidence": "medium",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-neon-community-03",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-community-flaviocopes",
+      "kind": "community_test",
+      "claim": "Neon returned exactly the two matching article slugs from 23 concatenated posts, checked against grep. The request used 103,361 input tokens.",
+      "direct_tasks": [
+        "context.retrieve"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "One OpenRouter long-input lookup against a 385 KB Markdown corpus with an exact expected answer.",
+      "limitations": "One literal keyword lookup. No long-document synthesis, near-limit retrieval, or repeated trials were shown.",
+      "reported_on": "2026-11-19",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Flavio Copes",
+        "origin_id": "copes-neon-openrouter-nov19",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://flaviocopes.com/gemini-4-neon/#a-100k-token-search"
+        ],
+        "rating": {
+          "value": 7,
+          "rationale": "The exact answer helps establish a concrete retrieval success. The simple query and single trial sharply limit the inference.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-neon-community-04",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-community-smf",
+      "kind": "community_test",
+      "claim": "Cold Iron reports 15/30 on its coding subset. The other 15 items hit the response budget before producing answers.",
+      "direct_tasks": [
+        "software.algorithm"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "OpenRouter default payload, identified by the author as medium, strict_v01, 4,096-token per-item cap. One scored run.",
+      "limitations": "This captures completion under a tight budget. Lower effort for Neon was not retested, and peers used different effort settings; no rerun here.",
+      "reported_on": "2026-11-19",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Nemo / SMF Works",
+        "origin_id": "smf-cold-iron-neon-nov19",
+        "grade": "artifact_report",
+        "stance": "negative",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://github.com/smfworks/NemoKnowledgebase/blob/main/benchmarks/gemini-4-neon"
+        ],
+        "rating": {
+          "value": 3.5,
+          "rationale": "Half the small coding tasks returned no final answer in this preset. The negative signal is scoped to that budget and provider configuration.",
+          "confidence": "medium",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gemini-4-neon-community-05",
+      "model_id": "gemini-4-neon",
+      "source_id": "gemini-4-neon-community-icanwrite",
+      "kind": "community_test",
+      "claim": "Neon found 88 of 90 planted issues with four prompts, and 87 with the combined prompt. Both separated-pass misses were grammar or spelling.",
+      "direct_tasks": [
+        "writing.edit"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "icanwrite’s 6,000-word English story and deterministic location-based matching. The run page names three extra flags for the four checks.",
+      "limitations": "One synthetic story, only error detection. Neon-specific effort and routing are not listed on the per-model results page; no rerun here.",
+      "reported_on": "2026-11-19",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "maxthescribbler / icanwrite",
+        "origin_id": "icanwrite-neon-proofreading-nov19",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://icanwrite.app/ai-editing-benchmark/gemini-4-neon",
+          "https://icanwrite.app/ai-editing-benchmark"
+        ],
+        "rating": {
+          "value": 8,
+          "rationale": "High detection on the fixed story under both prompt formats supports proofreading. Misses and extra flags still matter in editorial review.",
+          "confidence": "medium",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-sol-capabilities",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "openai-gpt-6-2-sol",
+      "kind": "official_capability",
+      "claim": "OpenAI documents image input, a 922K input ceiling and tool calls on the Responses API.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow",
+        "agent.computer",
+        "vision.document",
+        "context.synthesis"
+      ],
+      "measurement": null,
+      "setting": "Configured Responses tools include file and web search and computer use; delegation is in beta.",
+      "limitations": "Tool access depends on the host and account; documented support measures availability only.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-sol-frontiercode-2",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "cognition-gpt-6-2-frontiercode-2",
+      "kind": "independent_eval",
+      "claim": "Cognition reports a 43.8% mergeability score on all 132 FrontierCode 2.0 tasks.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "FrontierCode",
+        "version": "2.0, 132-task all set",
+        "metric": "aggregate mergeability score",
+        "value": 43.8,
+        "unit": "percent",
+        "protocol": "Cognition evaluation; Codex; max effort; all 132 tasks"
+      },
+      "setting": "Codex at max effort; the score uses maintainer rubrics and automated checks for changes to existing codebases.",
+      "limitations": "The score reflects this harness and task set; small score differences should be interpreted cautiously.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-sol-harvey-lab-v11",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "aa-gpt-6-2-harvey-lab-v11",
+      "kind": "independent_eval",
+      "claim": "Artificial Analysis reports 11.1% on the hallucination-gated all-pass metric in Harvey LAB-AA v1.1.",
+      "direct_tasks": [
+        "professional.legal"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Harvey LAB-AA",
+        "version": "1.1",
+        "metric": "hallucination-gated all-pass rate",
+        "value": 11.1,
+        "unit": "percent",
+        "protocol": "Artificial Analysis Stirrup; max effort; 120 private tasks; three model judges"
+      },
+      "setting": "Stirrup, max effort, 120 private tasks across 24 practice areas; scores average three model judges, and material hallucinations zero the task.",
+      "limitations": "This is one legal workflow suite under a particular grading setup. Review authorities, facts and obligations before relying on the output.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-sol-plotly-analytics",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "plotly-gpt-6-2-sol",
+      "kind": "independent_eval",
+      "claim": "Plotly reports 40/43 questions passed, including 20/20 analytics questions and 2/5 hidden-pattern questions.",
+      "direct_tasks": [
+        "data.analysis",
+        "data.sql"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "PlotlyDataAnalyticsBench",
+        "version": "November 17, 2026 results; 43 questions",
+        "metric": "questions passed",
+        "value": 40,
+        "unit": "questions",
+        "protocol": "Plotly Studio Embedded; OpenRouter; one run over 43 private questions"
+      },
+      "setting": "A single run through OpenRouter in Plotly Studio Embedded, using database queries, charts and multi-turn tool calls. Reasoning effort was unspecified in the report.",
+      "limitations": "The questions were private. Plotly observed up to three items of variation in repeat runs for other models.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-sol-aa-3d",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "aa-gpt-6-2-3d-v1",
+      "kind": "independent_eval",
+      "claim": "Artificial Analysis reports 1259 Elo on interactive web 3D, with a 95% interval of 1231–1288.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.frontend",
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "AA-3D",
+        "version": "1.0",
+        "metric": "blind pairwise preference Elo",
+        "value": 1259,
+        "unit": "Elo",
+        "protocol": "Artificial Analysis Stirrup; max effort; 55 offline three.js scene prompts; blinded human pairwise votes"
+      },
+      "setting": "Stirrup at max effort. Human reviewers compare two three.js scenes built for the same brief across 55 tasks.",
+      "limitations": "Relative preference for interactive 3D scenes supplies adjacent evidence for web frontends. The voting sample and rival set affect Elo.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-sol-agents-last-exam-v11",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "snorkel-gpt-6-2-agents-last-exam-v11",
+      "kind": "independent_eval",
+      "claim": "Snorkel AI lists 41.8% task pass rate and a separate 72.5% rubric score for the selected Codex row.",
+      "direct_tasks": [
+        "agent.long"
+      ],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Agents' Last Exam",
+        "version": "1.1, 122 public tasks",
+        "metric": "task pass rate",
+        "value": 41.8,
+        "unit": "percent",
+        "protocol": "Snorkel AI leaderboard default Codex row; 122 tasks; rubric-graded deliverables"
+      },
+      "setting": "Agents’ Last Exam v1.1, 122 public multi-step tasks. This row uses the benchmark page's default effort selection for the model.",
+      "limitations": "Pass rate and averaged rubric score use different metrics; alternative reasoning settings and tools can change both.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-astra-capabilities",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "openai-gpt-6-2-astra",
+      "kind": "official_capability",
+      "claim": "OpenAI documents image input, a 922K input ceiling and tool calls on the Responses API.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "agent.workflow",
+        "agent.computer",
+        "vision.document",
+        "context.synthesis"
+      ],
+      "measurement": null,
+      "setting": "Configured Responses tools include file and web search and computer use; delegation is in beta.",
+      "limitations": "Tool access depends on the host and account; documented support measures availability only.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-astra-frontiercode-2",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "cognition-gpt-6-2-frontiercode-2",
+      "kind": "independent_eval",
+      "claim": "Cognition reports a 44.2% mergeability score on all 132 FrontierCode 2.0 tasks.",
+      "direct_tasks": [
+        "software.repo"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "FrontierCode",
+        "version": "2.0, 132-task all set",
+        "metric": "aggregate mergeability score",
+        "value": 44.2,
+        "unit": "percent",
+        "protocol": "Cognition evaluation; Codex; max effort; all 132 tasks"
+      },
+      "setting": "Codex at max effort; the score uses maintainer rubrics and automated checks for changes to existing codebases.",
+      "limitations": "The score reflects this harness and task set; small score differences should be interpreted cautiously.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-astra-harvey-lab-v11",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "aa-gpt-6-2-harvey-lab-v11",
+      "kind": "independent_eval",
+      "claim": "Artificial Analysis reports 15.0% on the hallucination-gated all-pass metric in Harvey LAB-AA v1.1.",
+      "direct_tasks": [
+        "professional.legal"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "Harvey LAB-AA",
+        "version": "1.1",
+        "metric": "hallucination-gated all-pass rate",
+        "value": 15,
+        "unit": "percent",
+        "protocol": "Artificial Analysis Stirrup; max effort; 120 private tasks; three model judges"
+      },
+      "setting": "Stirrup, max effort, 120 private tasks across 24 practice areas; scores average three model judges, and material hallucinations zero the task.",
+      "limitations": "This is one legal workflow suite under a particular grading setup. Review authorities, facts and obligations before relying on the output.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-astra-plotly-analytics",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "plotly-gpt-6-2-astra",
+      "kind": "independent_eval",
+      "claim": "Plotly reports 41/43 questions passed, including 20/20 analytics questions and 3/5 hidden-pattern questions.",
+      "direct_tasks": [
+        "data.analysis",
+        "data.sql"
+      ],
+      "proxy_tasks": [],
+      "measurement": {
+        "benchmark": "PlotlyDataAnalyticsBench",
+        "version": "November 17, 2026 results; 43 questions",
+        "metric": "questions passed",
+        "value": 41,
+        "unit": "questions",
+        "protocol": "Plotly Studio Embedded; OpenRouter; one run over 43 private questions"
+      },
+      "setting": "A single run through OpenRouter in Plotly Studio Embedded, using database queries, charts and multi-turn tool calls. Reasoning effort was unspecified in the report.",
+      "limitations": "The questions were private. Plotly observed up to three items of variation in repeat runs for other models.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-astra-aa-3d",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "aa-gpt-6-2-3d-v1",
+      "kind": "independent_eval",
+      "claim": "Artificial Analysis reports 1318 Elo on interactive web 3D, with a 95% interval of 1286–1349.",
+      "direct_tasks": [],
+      "proxy_tasks": [
+        "software.frontend",
+        "software.frontend.design"
+      ],
+      "measurement": {
+        "benchmark": "AA-3D",
+        "version": "1.0",
+        "metric": "blind pairwise preference Elo",
+        "value": 1318,
+        "unit": "Elo",
+        "protocol": "Artificial Analysis Stirrup; max effort; 55 offline three.js scene prompts; blinded human pairwise votes"
+      },
+      "setting": "Stirrup at max effort. Human reviewers compare two three.js scenes built for the same brief across 55 tasks.",
+      "limitations": "Relative preference for interactive 3D scenes supplies adjacent evidence for web frontends. The voting sample and rival set affect Elo.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-astra-agents-last-exam-v11",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "snorkel-gpt-6-2-agents-last-exam-v11",
+      "kind": "independent_eval",
+      "claim": "Snorkel AI lists 47.5% task pass rate and a separate 78.3% rubric score for the selected Codex row.",
+      "direct_tasks": [
+        "agent.long"
+      ],
+      "proxy_tasks": [
+        "agent.workflow"
+      ],
+      "measurement": {
+        "benchmark": "Agents' Last Exam",
+        "version": "1.1, 122 public tasks",
+        "metric": "task pass rate",
+        "value": 47.5,
+        "unit": "percent",
+        "protocol": "Snorkel AI leaderboard default Codex row; 122 tasks; rubric-graded deliverables"
+      },
+      "setting": "Agents’ Last Exam v1.1, 122 public multi-step tasks. This row uses the benchmark page's default effort selection for the model.",
+      "limitations": "Pass rate and averaged rubric score use different metrics; alternative reasoning settings and tools can change both.",
+      "reported_on": null,
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null
+    },
+    {
+      "id": "gpt-6.2-sol-community-01",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "gpt-6.2-sol-community-kingy-patches",
+      "kind": "community_test",
+      "claim": "All 30 single-module submissions across 15 paired runs passed eight local checks each. The requirement changes covered invoice rounding, CSV deduplication, and a venue-local booking date.",
+      "direct_tasks": [
+        "software.algorithm"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Responses API at medium effort on the default service tier. Three Python fixtures with five paired repeats. Each pair shared its initial plan and used appended versus edited requirements. The author publishes fixtures and run data.",
+      "limitations": "Only three synthetic tasks, one file per task, and no model-callable tools. The test had no failing submissions to distinguish the two workflows.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Curtis Pyke",
+        "origin_id": "kingyai-sol-revised-python-requirements-nov18",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://kingy.ai/wp-content/uploads/2026/11/sol-prompt-history-evidence/run-data.csv",
+          "https://kingy.ai/wp-content/uploads/2026/11/sol-prompt-history-evidence/kingy-sol-prompt-history-evidence.zip"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "Runnable behavior checks support small rule changes. Repeating three fixtures adds little evidence for other workloads.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-sol-community-02",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "gpt-6.2-sol-community-eesel-support",
+      "kind": "community_test",
+      "claim": "Sol included every required policy point in 18 short runs and escalated all five empty order lookups. Across the order replies, it added seven carrier links in 14 replies even though the tool returned no URL.",
+      "direct_tasks": [
+        "agent.workflow"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Responses API, mostly medium effort. One fictional SaaS policy document, a stubbed lookup tool, and manual scoring by a helpdesk product developer.",
+      "limitations": "A small set from one product, with repeated prompts and no external validation. Tested URLs were valid. The author sells helpdesk software.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Rama Adi",
+        "origin_id": "eesel-sol-customer-support-nov18",
+        "grade": "firsthand",
+        "stance": "mixed",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [],
+        "rating": {
+          "value": 6.5,
+          "rationale": "Complete policy retrieval and explicit escalation were useful. The unsourced links reduce confidence in strict tool-grounding requirements.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-sol-community-03",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "gpt-6.2-sol-community-datacamp-shader",
+      "kind": "community_test",
+      "claim": "Sol delivered a working animated kelp forest on its first attempt. The reviewer favored the visual realism and torch depth, but observed a weaker cursor-driven kelp response than in the comparison build.",
+      "direct_tasks": [
+        "software.frontend",
+        "software.frontend.design"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "OpenCode at high effort. One fresh run per model with the same prompt and file read/edit tools. The reviewer publishes the rendered example and a rubric.",
+      "limitations": "Single HTML/GLSL visual brief with subjective scoring. Interaction and look were checked in this demo only.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Tom Farnschläder",
+        "origin_id": "datacamp-sol-kelp-shader-nov18",
+        "grade": "artifact_report",
+        "stance": "mixed",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://fast.wistia.net/embed/iframe/1vqesnk1jd"
+        ],
+        "rating": {
+          "value": 7,
+          "rationale": "The published build supports a narrow interactive-graphics use case. Weak cursor response and a single brief limit the signal.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-sol-community-04",
+      "model_id": "gpt-6.2-sol",
+      "source_id": "gpt-6.2-community-kingy-blender",
+      "kind": "community_test",
+      "claim": "Sol rebuilt an editable Blender scene from two views and completed the camera, chair, and lighting edits. Its median error across five withheld-view landmarks was 12 pixels, and desk width error was 2.18 cm.",
+      "direct_tasks": [
+        "vision.spatial"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Signed-in Codex at high effort and default speed, with Blender 5.2.1. The author checked a withheld third view and reopened the saved file separately.",
+      "limitations": "One clean synthetic studio scene, a single run per model, and manually marked landmarks. The source images had no real-world camera variation.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Curtis Pyke",
+        "origin_id": "kingyai-astra-sol-blender-studio-nov17",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://kingy.ai/wp-content/uploads/2026/11/blender-studio-two-views/scorecard.html"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "An editable scene and separately checked output support this bounded spatial reconstruction. The desk error and one-scene design limit transfer.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-astra-community-01",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "gpt-6.2-astra-community-toms-guide",
+      "kind": "community_test",
+      "claim": "Caswell reports that Astra made a browser-based household dashboard with linked calendar, meal planning, grocery lists and chores, and that changes persisted after refresh.",
+      "direct_tasks": [
+        "software.frontend"
+      ],
+      "proxy_tasks": [
+        "software.frontend.design"
+      ],
+      "measurement": null,
+      "setting": "ChatGPT Work with one detailed build prompt and a later progress check. The article shows a screenshot and the prompt.",
+      "limitations": "One project. No public code, independent feature-by-feature verification, or controlled comparison. The effort setting was not reported.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Amanda Caswell",
+        "origin_id": "caswell-astra-household-dashboard-nov18",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://cdn.mos.cms.futurecdn.net/uZ7a46fApaQChpifaFz9k7.jpg"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "A usable multi-feature prototype and reported persistence support initial frontend delivery. Broader implementation quality cannot be inferred from a screenshot.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-astra-community-02",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "gpt-6.2-community-kingy-blender",
+      "kind": "community_test",
+      "claim": "Astra rebuilt an editable Blender scene from two views and completed the camera, chair, and lighting edits. It was 14 pixels off at the median of five withheld-view landmarks, and the desk width was 5 cm off.",
+      "direct_tasks": [
+        "vision.spatial"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Signed-in Codex at high effort and default speed, with Blender 5.2.1. The author checked a withheld third view and reopened the saved file separately.",
+      "limitations": "One clean synthetic studio scene, a single run per model, and manually marked landmarks. The source images had no real-world camera variation.",
+      "reported_on": "2026-11-17",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Curtis Pyke",
+        "origin_id": "kingyai-astra-sol-blender-studio-nov17",
+        "grade": "artifact_report",
+        "stance": "positive",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [
+          "https://kingy.ai/wp-content/uploads/2026/11/blender-studio-two-views/scorecard.html",
+          "https://kingy.ai/wp-content/uploads/2026/11/blender-studio-two-views/astra-c.png"
+        ],
+        "rating": {
+          "value": 7.5,
+          "rationale": "An editable scene and separately checked output support this bounded spatial reconstruction. The desk error and one-scene design limit transfer.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
+    },
+    {
+      "id": "gpt-6.2-astra-community-03",
+      "model_id": "gpt-6.2-astra",
+      "source_id": "gpt-6.2-astra-community-offloop",
+      "kind": "community_test",
+      "claim": "The author reports that Astra could get absorbed in a detail and move off course on longer assignments. First-pass coding worked well on clearly specified jobs in the same account.",
+      "direct_tasks": [
+        "agent.long"
+      ],
+      "proxy_tasks": [],
+      "measurement": null,
+      "setting": "Firsthand coding-agent use reported by an AI-agent platform that offers access to both GPT-6.2 models.",
+      "limitations": "The account gives no task-by-task logs, sample size, effort setting, or measured failure rate.",
+      "reported_on": "2026-11-18",
+      "reviewed_on": "2026-11-20",
+      "comparison_group": null,
+      "community": {
+        "author": "Yifei",
+        "origin_id": "offloop-yifei-gpt62-nov18",
+        "grade": "firsthand",
+        "stance": "negative",
+        "first_seen_on": "2026-11-20",
+        "artifact_urls": [],
+        "rating": {
+          "value": 4.5,
+          "rationale": "The report gives a concrete failure mode for sustained execution. Missing task logs and run counts keep the weight small.",
+          "confidence": "low",
+          "assessed_on": "2026-11-20"
+        }
+      }
     }
   ]
 }

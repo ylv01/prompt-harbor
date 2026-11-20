@@ -1,0 +1,16 @@
+{
+  "prompt": "用 SQL 分析一个合成数据仓库，核对聚合口径、缺失数据和异常模式。我目前用 Gemini 4 Hydrogen，也可使用 Gemini 4 Neon。请比较任务证据、标准 API 价格及是否值得先试用 Neon。",
+  "language": "zh-CN",
+  "tasks": [
+    "data.analysis",
+    "data.sql"
+  ],
+  "classification_method": "host_semantic",
+  "available_models": [
+    "gemini-4-hydrogen",
+    "gemini-4-neon"
+  ],
+  "current_model": "gemini-4-hydrogen",
+  "tools_required": true,
+  "context_tokens": 50000
+}

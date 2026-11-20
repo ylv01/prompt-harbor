@@ -401,6 +401,57 @@
         "claude-fable-5-2-community-02",
         "claude-fable-5-2-community-03"
       ]
+    },
+    {
+      "id": "gemini-4-neon",
+      "searched_on": "2026-11-20",
+      "queries": [
+        "\"Gemini 4 Neon\" tested review",
+        "\"Gemini 4 Neon\" \"I tried\" coding",
+        "\"Gemini 4 Neon\" site:news.ycombinator.com OR site:reddit.com"
+      ],
+      "status": "reviewed",
+      "summary": "Four firsthand origins reviewed for chess-page delivery, parser tests and long-input retrieval, fixed-budget coding failures, and seeded manuscript proofreading. Informal popularity claims and third-party recaps were excluded.",
+      "evidence_ids": [
+        "gemini-4-neon-community-01",
+        "gemini-4-neon-community-02",
+        "gemini-4-neon-community-03",
+        "gemini-4-neon-community-04",
+        "gemini-4-neon-community-05"
+      ]
+    },
+    {
+      "id": "gpt-6.2-sol",
+      "searched_on": "2026-11-20",
+      "queries": [
+        "GPT-6.2 Sol hands-on tested coding code tests independent",
+        "GPT-6.2 Sol support tool grounding hands-on repeated trials",
+        "GPT-6.2 Sol vs Claude Opus 5.5 hands-on shader"
+      ],
+      "status": "reviewed",
+      "summary": "Four firsthand reports cover small Python rule changes, tool-grounded support replies, a browser shader and two-view Blender reconstruction. Private-repository A/B summaries were excluded because grading was model-assisted and underlying materials were unavailable.",
+      "evidence_ids": [
+        "gpt-6.2-sol-community-01",
+        "gpt-6.2-sol-community-02",
+        "gpt-6.2-sol-community-03",
+        "gpt-6.2-sol-community-04"
+      ]
+    },
+    {
+      "id": "gpt-6.2-astra",
+      "searched_on": "2026-11-20",
+      "queries": [
+        "GPT-6.2 Astra hands-on website dashboard November 2026",
+        "GPT-6.2 Astra hands-on Blender reconstruction testing",
+        "GPT-6.2 Astra long agent firsthand Offloop review"
+      ],
+      "status": "reviewed",
+      "summary": "Three firsthand sources cover an interactive website, a two-view Blender reconstruction, and reported drift on longer tasks. A formal analytics benchmark and general popularity reports are outside this community review.",
+      "evidence_ids": [
+        "gpt-6.2-astra-community-01",
+        "gpt-6.2-astra-community-02",
+        "gpt-6.2-astra-community-03"
+      ]
     }
   ]
 }

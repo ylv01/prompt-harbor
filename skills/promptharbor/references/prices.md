@@ -47,8 +47,12 @@ missing quotes overdue.
 ## Scope and current distinctions
 
 - Catalog OpenAI models apply 2× input and 1.5× output rates to the full request
-  above 272K input tokens. The display records both tiers through the model context
-  limit; legacy budget inputs are unchanged.
+  above 272K input tokens. GPT-6.2 Sol is $2 / $10 through 272K and $4 / $15
+  above 272K. GPT-6.2 Astra is $8 / $40 through 272K and $16 / $60 above
+  272K. Both display long-input rates through the 922K API input limit.
+  Legacy budget inputs cover the short tier.
+  [GPT-6.2 Sol](https://developers.openai.com/api/docs/models/gpt-6.2-sol),
+  [GPT-6.2 Astra](https://developers.openai.com/api/docs/models/gpt-6.2-astra),
   [Astra](https://developers.openai.com/api/docs/models/gpt-6-astra),
   [Sol 6.1](https://developers.openai.com/api/docs/models/gpt-6.1-sol),
   [Luna](https://developers.openai.com/api/docs/models/gpt-6-luna).
@@ -76,6 +80,9 @@ missing quotes overdue.
   deadline, recorded for
   explicit budget constraints and display; reasoning output and tool fees still
   affect total cost. [Google pricing](https://aistudio.google.com/docs/pricing).
+- Gemini 4 Neon standard paid API input/output is $3 / $15 per million tokens.
+  Output includes thinking tokens. Implicit cache hits, Batch, Flex and Priority
+  have separate rates. [Google pricing](https://aistudio.google.com/docs/pricing#gemini-4-neon).
 - Claude Fable 5.2 standard input/output is $8 / $40 per million tokens across
   its 1M context. Optional Fast mode is $16 / $80 and is not the standard quote.
   [Official model pricing](https://platform.claude.com/docs/en/models/fable-5-2/overview).
@@ -93,8 +100,9 @@ missing quotes overdue.
   costs. Qwen3.8-27B has no single verified standard hosted USD quote in this
   snapshot, so its column says unknown instead of $0.
 
-Carbon, Hydrogen and Fable 5.2 were checked on 2026-11-13, Kimi K3.1 Pro on
-2026-10-27 and Argon on 2026-10-14. Other observations retain their own check
+Neon and both GPT-6.2 models were checked on 2026-11-20. Carbon, Hydrogen
+and Fable 5.2 were checked on 2026-11-13, Kimi K3.1 Pro on 2026-10-27, and
+Argon on 2026-10-14. Other observations retain their own check
 dates, including 2026-10-08. A new model does not renew older catalog prices. Cached tokens, batch/fast/priority service, audio/image billing,
 server tools, extra reasoning/output volume, regional rates and consumer app
 subscriptions can change the bill. A unit price is not an estimate of total task

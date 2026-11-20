@@ -4,7 +4,8 @@ These examples describe recommendation behavior, not paid cross-model evaluation
 The current model in fixtures is a declared hypothetical value, not inferred
 from the assistant running the skill. Use `--as-of 2026-10-08` for the historical examples, and
 `--as-of 2026-10-14` for Argon, `--as-of 2026-10-27` for Kimi K3.1 and
-`--as-of 2026-11-13` for the November additions; omit it for current advice.
+`--as-of 2026-11-13` for Carbon, Hydrogen and Fable 5.2. The Neon example uses
+`--as-of 2026-11-20`. Omit the date for current advice.
 
 ## One question
 
@@ -28,6 +29,7 @@ python skills/promptharbor/scripts/harbor.py recommend --job examples/haiku.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/argon.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/kimi31.json
 python skills/promptharbor/scripts/harbor.py recommend --job examples/november-models.json
+python skills/promptharbor/scripts/harbor.py recommend --job examples/neon.json --as-of 2026-11-20
 ```
 
 A backtest combines quantitative methodology and repository work. Coding evidence
@@ -76,6 +78,10 @@ or automatically orchestrate the models.
 Fable’s independent debugging support comes from [Bug Hunt’s original results](https://bughunt.productcompass.pm/data/benchmark.json);
 its workflow record and fallback settings come from the [launch evaluation](https://www.anthropic.com/claude-fable-and-mythos-5-2).
 Complete task records are preserved in [the evidence catalog](../skills/promptharbor/data/evidence.json).
+
+`neon.json` compares Neon and Hydrogen for SQL and analytics on a synthetic
+data warehouse. See the [saved Chinese recommendation](neon-output.zh-CN.md)
+for task evidence, standard API prices and switching advice.
 
 ## A whole engineering project
 

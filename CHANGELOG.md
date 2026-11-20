@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.4 — 2026-11-20
+
+- Add Gemini 4 Neon with task evidence, community reports, a standard API price
+  reference and a Chinese SQL and analytics example.
+- Add GPT-6.2 Sol and GPT-6.2 Astra as exact API models, with task evaluations,
+  community reports and both Standard pricing tiers. Earlier OpenAI
+  models remain available as separate catalog entries.
+
 ## 0.4.3 — 2026-11-13
 
 - Add Gemini 4 Carbon, Gemini 4 Hydrogen and Claude Fable 5.2 as separate exact
