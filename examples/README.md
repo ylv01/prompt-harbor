@@ -5,7 +5,8 @@ The current model in fixtures is a declared hypothetical value, not inferred
 from the assistant running the skill. Use `--as-of 2026-10-08` for the historical examples, and
 `--as-of 2026-10-14` for Argon, `--as-of 2026-10-27` for Kimi K3.1 and
 `--as-of 2026-11-13` for Carbon, Hydrogen and Fable 5.2. The Neon example uses
-`--as-of 2026-11-20`. Omit the date for current advice.
+`--as-of 2026-11-20`. Omit the date for current advice. Reproduce the original
+October outputs, including the saved handoffs, from the [previous snapshot](https://github.com/ylv01/prompt-harbor/tree/4851e016b37f11b6c427835fec20792e00ea0307).
 
 ## One question
 

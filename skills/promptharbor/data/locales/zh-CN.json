@@ -297,26 +297,6 @@
     }
   },
   "evidence": {
-    "astra-terminal": {
-      "claim": "AA 报告：在 Codex 中，Terminal-Bench 4.0 得分为 56%。",
-      "setting": "Codex；max 档位；与 AA 通用 Agent 配置不同。",
-      "limitations": "同一文章还报告了另一配置下的 59%；不要合并这两次运行。"
-    },
-    "astra-docs": {
-      "claim": "GDP.pdf 全部标准均通过的成功率报告为 31%。",
-      "setting": "AA 文档评测；具体配置见来源。",
-      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
-    },
-    "astra-workflow": {
-      "claim": "AutomationBench-AA 的得分报告为 69%。",
-      "setting": "AA Agent 环境；不同于 Zapier 排行榜协议。",
-      "limitations": "尚未测量向其他任务的迁移效果，以及在用户具体问题上的表现。"
-    },
-    "astra-fit": {
-      "claim": "官方定位包括高难度推理、调研和借助工具完成的工作。",
-      "setting": "Responses API，配备合适的工具。",
-      "limitations": "产品定位和工具可用性不等于针对具体任务的比较评测。"
-    },
     "luna-fit": {
       "claim": "官方文档将 Luna 定位于范围明确、处理量大的任务。",
       "setting": "按需配置推理档位和结构化输出。",
@@ -329,11 +309,6 @@
     },
     "sonnet-terminal": {
       "claim": "Anthropic 报告：Terminal-Bench 4.0 得分为 70.6%。",
-      "setting": "Opus xhigh；Sonnet max；Fable max，带回退机制；具体见来源。",
-      "limitations": "推理档位和回退配置不同；结果来自厂商，并非独立复现。"
-    },
-    "fable-terminal": {
-      "claim": "Anthropic 报告：Terminal-Bench 4.0 得分为 55.8%。",
       "setting": "Opus xhigh；Sonnet max；Fable max，带回退机制；具体见来源。",
       "limitations": "推理档位和回退配置不同；结果来自厂商，并非独立复现。"
     },
@@ -363,11 +338,6 @@
       "limitations": "写作风格具有主观性；本次初始目录未收录针对特定语言的独立偏好研究。"
     },
     "opus-long": {
-      "claim": "官方概述描述了长程 Agent 和知识工作能力。",
-      "setting": "Claude API 或启用工具的宿主环境。",
-      "limitations": "1M 上下文规格不能证明在 1M tokens 范围内可靠回忆信息。"
-    },
-    "fable-long": {
       "claim": "官方概述描述了长程 Agent 和知识工作能力。",
       "setting": "Claude API 或启用工具的宿主环境。",
       "limitations": "1M 上下文规格不能证明在 1M tokens 范围内可靠回忆信息。"
@@ -480,16 +450,6 @@
     "claude-opus-5-5-arena-webdev": {
       "claim": "claude-opus-5.5-max：记录的 WebDev 偏好评分为 1827。",
       "setting": "claude-opus-5.5-max；Arena 部署环境，不代表所有面向用户的应用设置。",
-      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
-    },
-    "gpt-6-astra-arena-webdev": {
-      "claim": "gpt-6-astra-max：记录的 WebDev 偏好评分为 1792。",
-      "setting": "gpt-6-astra-max；Arena 部署环境，不代表所有面向用户的应用设置。",
-      "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
-    },
-    "claude-fable-5-1-arena-webdev": {
-      "claim": "claude-fable-5.1-max：记录的 WebDev 偏好评分为 1751。",
-      "setting": "claude-fable-5.1-max；Arena 部署环境，不代表所有面向用户的应用设置。",
       "limitations": "社区偏好，并非功能验收测试。各条目的推理档位不同；来源列有误差区间和初步结果标记。排名差异不等于显著性检验。总体结果仅能间接参考视觉设计，不能证明参考设计还原度。"
     },
     "kimi-k3-arena-webdev": {
@@ -610,18 +570,6 @@
       "setting": "官方技术说明发表于 2026 年 9 月 27 日，描述了 9 月 25 日 API 更新和 MOPD 权重发布；并非独立任务评测。",
       "limitations": "厂商关于问题缓解的说法，未独立验证任务完成。须区分原始 RL 的循环行为和更新后的 MOPD 部署；此前的 RL 分数未测量更新接口。"
     },
-    "gpt-6-astra-community-01": {
-      "claim": "作者报告在 Codex 中使用 Astra 搭建个人作品网站，编程结果出色，但订阅额度消耗很快。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "一个个人项目；没有相同提示词的对照或测试集。保留文章明确标注的 9 月 1 日，作为早期个人报告；发布及访问时间未被独立确认。订阅额度经历不等于 API 价格。",
-      "rating_rationale": "已发布的个人网站支持对范围明确的前端任务作出较好评价；一个项目和额度经历不能证明更广泛的优势。"
-    },
-    "gpt-6-astra-community-02": {
-      "claim": "作者内部由 AI 评审的脚本研究中，Astra 接近 6.1 Sol，但低于较早的 6 Sol。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "内部脚本写作研究包含 10 项任务，每项生成 5 个版本，由 3 个 AI 评审；没有公开提示词或评测代码。推理档位不同（6.1 Sol xhigh、Astra max）。AI 评审偏好不等于人类共识。原始页面仅显示相对时间，确切日期未知。",
-      "rating_rationale": "脚本有实用性，但报告显示其偏好评分落后于较早 Sol；规模较小、非公开的 AI 评审比较仅支持谨慎的混合评价。"
-    },
     "gpt-6-luna-community-01": {
       "claim": "作者报告，在混合模型 Agent 工作流中压缩 Discord 会话后，Luna 仍能有效延续上下文。",
       "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
@@ -687,36 +635,6 @@
       "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
       "limitations": "仅两个未详细说明的任务；没有提示词、补丁、账单或代码产物。这段经历涉及审查后的总成本，并非经过验证的 token 单价比较。",
       "rating_rationale": "具体的遗留缺陷和返工反馈构成负面参考；可复现性弱，置信度有限。"
-    },
-    "claude-fable-5-1-community-01": {
-      "claim": "面对 17 页手写扫描件，作者更偏好 Fable 5.1 草稿的结构和开头；处理耗时明显长于 Astra 配置。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "一个个人任务；应用和工具不同；属于主观偏好，没有盲评。作者披露收到了 OpenAI 宣传礼品。",
-      "rating_rationale": "明确的内容转换任务和质量/时间取舍支持写作适配性，同时保留比较中的干扰因素。"
-    },
-    "claude-fable-5-1-community-02": {
-      "claim": "展示的测试保留了既有页面的品牌风格，但新企业主页存在可读性和间距问题，完整品牌方案弱于作者偏好的 Astra 结果。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "两个需求简报、主观偏好，没有转化率测量；执行框架和图像生成权限不同。与写作测试来自同一作者，不应计为第二位独立评审。",
-      "rating_rationale": "品牌风格保留有实用性，但可见布局问题使该任务评价好坏参半。"
-    },
-    "claude-fable-5-1-community-03": {
-      "claim": "在 7 章课程改写中，作者发现文字只有轻微改善，仍需逐章编辑以恢复自己的文风。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "公开了改写前后片段，但未检查完整会话输出；fleet 模式使模型归因受到干扰。",
-      "rating_rationale": "改善幅度不大且仍需逐句编辑，支持对保留特定作者文风作出混合评分。"
-    },
-    "claude-fable-5-1-community-04": {
-      "claim": "课程工作流所需引导减少，并恢复了缓存的 Agent 结果，但低估用量，在完成前耗尽订阅额度。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "一个使用 fleet 模式的工作流；恢复执行和额度计量也涉及 Claude Code/产品行为。与课程改写来自同一主体，不应在同一任务中重复计数。",
-      "rating_rationale": "恢复执行具有实践价值；用量估算不足和交付中断抵消了其在长程工作上的部分优势。"
-    },
-    "claude-fable-5-1-community-05": {
-      "claim": "在 3 个可见动画需求中，Fable 5.1 的立交动画无明显故障、轮播旋转正确，并使运载火箭保持在画面内，但火箭仍有缺陷。",
-      "setting": "作者报告了确切模型版本；除结论或限制中明确说明外，部署、推理档位和执行框架均未核实。",
-      "limitations": "每个需求仅尝试一次；评审并非盲评，制作工具的执行框架不同。附有在线产物链接，但未公开确切提示词文件；没有生产或无障碍验证。",
-      "rating_rationale": "具体的运动正确性对视觉原型有参考价值；残余缺陷和样本少限制了评分。"
     },
     "gemini-3.8-flash-community-01": {
       "claim": "作者在 OpenCode 中搭建 Plotline，报告 Gemini 3.8 Flash 成功完成混合截图抽取、可编辑表格和重新抽取功能。",
@@ -886,11 +804,6 @@
       "setting": "claude-opus-5.5-max；Arena 部署，使用页面列出的推理档位。",
       "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
     },
-    "gpt-6-astra-arena-webdev-2026-10-07": {
-      "claim": "gpt-6-astra-max 的 WebDev 偏好评分为 1788，页面区间为 ±11。",
-      "setting": "gpt-6-astra-max；Arena 部署，使用页面列出的推理档位。",
-      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
-    },
     "claude-sonnet-5-5-arena-webdev-2026-10-07": {
       "claim": "claude-sonnet-5.5-xhigh 的 WebDev 偏好评分为 1773，页面区间为 ±15。",
       "setting": "claude-sonnet-5.5-xhigh；Arena 部署，使用页面列出的推理档位。",
@@ -899,11 +812,6 @@
     "gpt-6.1-sol-arena-webdev-2026-10-07": {
       "claim": "gpt-6.1-sol-max 的 WebDev 偏好评分为 1757，页面区间为 ±15。",
       "setting": "gpt-6.1-sol-max；Arena 部署，使用页面列出的推理档位。",
-      "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
-    },
-    "claude-fable-5-1-arena-webdev-2026-10-07": {
-      "claim": "claude-fable-5.1-max 的 WebDev 偏好评分为 1745，页面区间为 ±9。",
-      "setting": "claude-fable-5.1-max；Arena 部署，使用页面列出的推理档位。",
       "limitations": "偏好评测不证明功能正确或设计稿还原能力；配置不同，区间可能重叠。服务别名不能确定本地权重版本。"
     },
     "kimi-k3-arena-webdev-2026-10-07": {
@@ -1601,11 +1509,6 @@
     }
   },
   "models": {
-    "gpt-6-astra": {
-      "notes": [
-        "需另行核查账号权限、地区和工具环境。"
-      ]
-    },
     "gpt-6.1-sol": {
       "notes": [
         "通过 Responses API 支持工具调用；该模型在 Chat Completions 中不支持工具。",
@@ -1627,11 +1530,6 @@
     "claude-sonnet-5-5": {
       "notes": [
         "需另行核查账号权限、地区和工具环境。"
-      ]
-    },
-    "claude-fable-5-1": {
-      "notes": [
-        "部分公开评测使用了回退模型；不能将组合结果仅归因于基础模型。"
       ]
     },
     "gemini-3.8-flash": {

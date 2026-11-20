@@ -4,20 +4,6 @@
   "score_definition": "Editorial judgment of retrieved task reports, not a measured benchmark or universal model ability score.",
   "models": [
     {
-      "id": "gpt-6-astra",
-      "searched_on": "2026-09-30",
-      "queries": [
-        "\"GPT-6 Astra\" review portfolio coding",
-        "\"GPT-6 Astra\" writing firsthand Reddit"
-      ],
-      "status": "reviewed",
-      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
-      "evidence_ids": [
-        "gpt-6-astra-community-01",
-        "gpt-6-astra-community-02"
-      ]
-    },
-    {
       "id": "gpt-6.1-sol",
       "searched_on": "2026-09-30",
       "queries": [
@@ -79,23 +65,6 @@
         "claude-sonnet-5-5-community-01",
         "claude-sonnet-5-5-community-02",
         "claude-sonnet-5-5-community-03"
-      ]
-    },
-    {
-      "id": "claude-fable-5-1",
-      "searched_on": "2026-09-30",
-      "queries": [
-        "\"Claude Fable 5.1\" writing review",
-        "\"Fable 5.1\" firsthand writing tests"
-      ],
-      "status": "reviewed",
-      "summary": "Original task reports reviewed; task-specific editorial ratings preserve outcomes, deployment conditions, negative feedback and uncertainty.",
-      "evidence_ids": [
-        "claude-fable-5-1-community-01",
-        "claude-fable-5-1-community-02",
-        "claude-fable-5-1-community-03",
-        "claude-fable-5-1-community-04",
-        "claude-fable-5-1-community-05"
       ]
     },
     {

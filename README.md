@@ -184,10 +184,12 @@ See [job format](skills/promptharbor/references/job-format.md) and
 For reproducible historical examples, use the date recorded with the example
 (`--as-of 2026-11-20` for Neon, November 13 for Carbon, Hydrogen and Fable 5.2; Kimi K3.1 retains October 27, Argon October 14, older examples October 8); omit it for
 current advice. Expired records are excluded and may yield no recommendation.
+Use the [previous repository snapshot](https://github.com/ylv01/prompt-harbor/tree/4851e016b37f11b6c427835fec20792e00ea0307) to reproduce the October
+examples with their original catalog.
 
 ## Evidence and community feedback
 
-The **2026-11-20 snapshot includes 25 models and 49 task leaves**. Community
+The **2026-11-20 snapshot includes 23 models and 49 task leaves**. Community
 research has been performed for every catalog model. [Coverage and gaps](docs/COVERAGE.md)
 list the current evidence/source counts; [community assessments](docs/COMMUNITY.md)
 show model-by-task scores, origins and sources. Tasks without suitable reports
@@ -195,8 +197,8 @@ remain unrated.
 
 | Provider | Catalog models |
 |---|---|
-| OpenAI | GPT-6.2 Sol, GPT-6.2 Astra, GPT-6.1 Sol, GPT-6 Astra, GPT-6 Luna |
-| Anthropic | Claude Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1 |
+| OpenAI | GPT-6.2 Sol, GPT-6.2 Astra, GPT-6.1 Sol, GPT-6 Luna |
+| Anthropic | Claude Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 |
 | Google | Gemini 4 Neon, Gemini 4 Carbon, Gemini 4 Hydrogen, Gemini 4 Argon, Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
 | Alibaba | Qwen3.8-27B |

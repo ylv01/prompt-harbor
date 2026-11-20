@@ -136,17 +136,18 @@ job 和 project 可设置 `"language": "zh-CN"`（也接受 `"zh"`）、`"en"` �
 
 复现历史示例时使用示例记录的日期，Neon 示例使用 `--as-of 2026-11-20`，Carbon、Hydrogen 和 Fable 5.2 示例使用 11 月 13 日，Kimi K3.1 保留 10 月 27 日、Argon 保留 10 月 14 日及其他旧示例的原日期；当前建议应省略它，不能用旧日期绕过
 过期检查。数据过期时可能不返回推荐。
+要用原始目录完整复现 10 月示例，请使用[清理前的仓库快照](https://github.com/ylv01/prompt-harbor/tree/4851e016b37f11b6c427835fec20792e00ea0307)。
 
 ## 依据与社区评价
 
-**2026-11-20 快照收录 25 个模型、49 个细分任务，全部模型都已开展社区检索。**
+**2026-11-20 快照收录 23 个模型、49 个细分任务，全部模型都已开展社区检索。**
 证据与来源数量见[覆盖表](docs/COVERAGE.md)；每个模型的任务评分、理由、来源和
 置信度见[社区评价表](docs/COMMUNITY.md)。没有合适材料的任务保持未知。
 
 | 厂商 | 已收录模型 |
 |---|---|
-| OpenAI | GPT-6.2 Sol、GPT-6.2 Astra、GPT-6.1 Sol、GPT-6 Astra、GPT-6 Luna |
-| Anthropic | Claude Fable 5.2、Opus 5.5、Sonnet 5.5、Haiku 5.5、Fable 5.1 |
+| OpenAI | GPT-6.2 Sol、GPT-6.2 Astra、GPT-6.1 Sol、GPT-6 Luna |
+| Anthropic | Claude Fable 5.2、Opus 5.5、Sonnet 5.5、Haiku 5.5 |
 | Google | Gemini 4 Neon、Gemini 4 Carbon、Gemini 4 Hydrogen、Gemini 4 Argon、Gemini 3.8 Flash |
 | DeepSeek | DeepSeek V4.1 Flash |
 | Alibaba | Qwen3.8-27B |

@@ -1,6 +1,6 @@
 # Community task ratings
 
-Reviewed: **2026-11-20**. All **25** catalog models were searched.
+Reviewed: **2026-11-20**. All **23** catalog models were searched.
 
 Scores are PromptHarbor editorial judgments of specific reported outcomes, on a 0–10 scale. They are not benchmark measurements or global model ratings.
 Unknown task ratings remain unknown. A **proxy** label means only adjacent-task reports support that rating; it is not a direct observation of that task.
@@ -9,12 +9,10 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 
 | Model | Task ratings (0–10) | Distinct report origins |
 |---|---|---|
-| GPT-6 Astra | No admitted task reports | 2 |
 | GPT-6.1 Sol | No admitted task reports | 3 |
 | GPT-6 Luna | No admitted task reports | 2 |
 | Claude Opus 5.5 | No admitted task reports | 3 |
 | Claude Sonnet 5.5 | No admitted task reports | 3 |
-| Claude Fable 5.1 | No admitted task reports | 3 |
 | Gemini 3.8 Flash | No admitted task reports | 2 |
 | DeepSeek-V4.1-Flash | No admitted task reports | 3 |
 | Qwen3.8-27B | No admitted task reports | 3 |
@@ -34,39 +32,6 @@ See the [rating rubric and weighting rules](../skills/promptharbor/references/co
 | Gemini 4 Neon | `context.retrieve` **7.0**; `software.algorithm` **5.5**; `software.frontend` **8.0**; `writing.edit` **8.0** | 4 |
 | GPT-6.2 Sol | `agent.workflow` **6.5**; `software.algorithm` **7.5**; `software.frontend` **7.0**; `software.frontend.design` **7.0**; `vision.spatial` **7.5** | 4 |
 | GPT-6.2 Astra | `agent.long` **4.5**; `software.frontend` **7.5**; `software.frontend.design` **7.5** (proxy); `vision.spatial` **7.5** | 3 |
-
-## GPT-6 Astra
-
-Search: 2026-09-30 · status: reviewed
-
-Queries: `"GPT-6 Astra" review portfolio coding`; `"GPT-6 Astra" writing firsthand Reddit`
-
-
-### [Astra built the author’s portfolio](https://www.najam.pk/blog/gpt-6-astra-review)
-
-**8/10** · positive · artifact_report · low confidence. Author: Najam Saeed.
-Reported: 2026-09-01 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.frontend`. Proxy tasks: `software.frontend.design`.
-
-The author reports building his portfolio with Astra in Codex, with strong coding results but rapid subscription quota consumption.
-
-**Rating reason:** A published personal website supports a strong bounded frontend result; one project and quota anecdotes do not establish broader superiority.
-
-**Limits:** One personal project; no matched prompts or test suite. The explicit September 1 article date is retained as an early personal report; release/access timing is not independently established. Subscription quota anecdotes are not API prices.
-
-Artifacts: [artifact 1](https://www.najam.pk/).
-
-### [Scriptwriting comparison: Astra](https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/)
-
-**6.5/10** · mixed · firsthand · low confidence. Author: OnlyProggingForFun.
-Reported: absolute date unknown · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `writing.creative`. Proxy tasks: None.
-
-The author’s internal AI-judged script study places Astra near 6.1 Sol but below the older 6 Sol.
-
-**Rating reason:** Useful scripts with a reported preference gap to older Sol; a small private AI-judged comparison supports only a cautious mixed rating.
-
-**Limits:** Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.
 
 ## GPT-6.1 Sol
 
@@ -231,81 +196,6 @@ In two low/medium difficulty coding tasks, the commenter reports Sonnet 5.5 high
 **Rating reason:** Specific residual-defect and rework complaint is an adverse signal; weak reproducibility keeps the confidence limited.
 
 **Limits:** Only two unspecified tasks; no prompts, patches, invoice or code artifacts. Anecdote concerns total cost after review, not a verified token-rate comparison.
-
-## Claude Fable 5.1
-
-Search: 2026-09-30 · status: reviewed
-
-Queries: `"Claude Fable 5.1" writing review`; `"Fable 5.1" firsthand writing tests`
-
-
-### [Fable 5.1 structured a draft from handwritten notes](https://aaronmakelky.com/blog/astra-vs-fable)
-
-**8.0/10** · positive · firsthand · low confidence. Author: Aaron Makelky.
-Reported: 2026-09-15 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `writing.edit`, `writing.professional`. Proxy tasks: `vision.document`.
-
-Given 17 scanned handwritten pages, the author preferred Fable 5.1's draft structure and opening; processing took substantially longer than the Astra setup.
-
-**Rating reason:** Clear transformation task and explicit quality/time tradeoff support writing fit, with comparison confounds retained.
-
-**Limits:** One personal task; different applications and tools; subjective preference, no blind grading. Author discloses receiving OpenAI promotional merchandise.
-
-Artifacts: [artifact 1](https://aaronmakelky.com/blog/astra-vs-fable).
-
-### [Fable 5.1 structured a draft from handwritten notes](https://aaronmakelky.com/blog/astra-vs-fable)
-
-**5.0/10** · mixed · artifact_report · low confidence. Author: Aaron Makelky reporting tests with Ryan Doser.
-Reported: 2026-09-15 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.frontend.design`. Proxy tasks: `software.frontend`.
-
-The shown tests retained an existing page's branding, but a new business homepage had readability/spacing faults and a weaker complete brand package than the author's preferred Astra result.
-
-**Rating reason:** Brand retention is useful, while visible layout faults warrant a mixed task assessment.
-
-**Limits:** Two briefs, subjective preference, no conversion measurement; different harnesses and image-generation access. Same origin as the writing test; do not count as an independent second reviewer.
-
-Artifacts: [artifact 1](https://aaronmakelky.com/blog/astra-vs-fable).
-
-### [Seven-chapter Fable 5.1 rewrite still needed voice editing](https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions)
-
-**5.5/10** · mixed · artifact_report · low confidence. Author: AI-Native PM authors (Girish PM origin).
-Reported: 2026-09-02 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `writing.edit`. Proxy tasks: `writing.professional`.
-
-On a seven-chapter course rewrite, the authors found only marginal prose improvement and still edited every chapter to restore their voice.
-
-**Rating reason:** Modest improvement and necessary line editing support a mixed score for preserving a specific author voice.
-
-**Limits:** Before/after excerpt is public, but complete session outputs were not inspected; fleet mode confounds model attribution.
-
-Artifacts: [artifact 1](https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions).
-
-### [Seven-chapter Fable 5.1 rewrite still needed voice editing](https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions)
-
-**6.0/10** · mixed · firsthand · low confidence. Author: AI-Native PM authors (Girish PM origin).
-Reported: 2026-09-02 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `agent.long`, `agent.workflow`. Proxy tasks: None.
-
-The course workflow needed less steering and recovered cached agent results, but underestimated usage and exhausted its subscription allowance before completion.
-
-**Rating reason:** Recovery is a practical gain; usage estimation and interrupted delivery offset it for long-running work.
-
-**Limits:** One workflow with fleet mode; resumption and allowance accounting also belong to Claude Code/product behavior. Same origin as the course rewrite; do not count twice per task.
-
-### [Fable 5.1 animated SVG and rocket-page build-off](https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026)
-
-**8.0/10** · positive · artifact_report · low confidence. Author: BitsMinds hands-on reviewers.
-Reported: 2026-09-21 · first seen: 2026-09-30 · assessed: 2026-09-30.
-Direct tasks: `software.frontend.design`. Proxy tasks: `software.frontend`.
-
-In three visible animation briefs, Fable 5.1 had a fault-free interchange and a correctly rotating carousel, and kept the launch vehicle in frame, with remaining rocket defects.
-
-**Rating reason:** Concrete motion correctness is useful evidence for visual prototypes; residual defects and small sample cap the score.
-
-**Limits:** Single attempt per brief; non-blind judging and different maker harnesses. Live builds are linked, but exact prompt files were not published; no production/accessibility validation.
-
-Artifacts: [artifact 1](https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026).
 
 ## Gemini 3.8 Flash
 

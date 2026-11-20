@@ -4,48 +4,6 @@
   "coverage": "Task-specific curated catalog with community research for every listed model. Feature support and editorial report scores are separate from benchmark measurements.",
   "models": [
     {
-      "id": "gpt-6-astra",
-      "name": "GPT-6 Astra",
-      "provider": "OpenAI",
-      "source_id": "openai-astra",
-      "status": "available",
-      "verified_on": "2026-09-29",
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "context_tokens": 1050000,
-      "tool_calling": true,
-      "open_weights": false,
-      "price_usd_per_million": {
-        "input": 10,
-        "output": 50,
-        "max_input_tokens": 272000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "notes": [
-        "Account access, region and tool environment must be checked separately."
-      ],
-      "price_reference": {
-        "currency": "USD",
-        "unit": "per_million_tokens",
-        "source_id": "openai-astra-pricing",
-        "verified_on": "2026-10-08",
-        "tiers": [
-          {
-            "max_input_tokens": 272000,
-            "input": 10,
-            "output": 50
-          },
-          {
-            "max_input_tokens": 1050000,
-            "input": 20,
-            "output": 75.0
-          }
-        ]
-      }
-    },
-    {
       "id": "gpt-6.1-sol",
       "name": "GPT-6.1 Sol",
       "provider": "OpenAI",
@@ -202,43 +160,6 @@
             "max_input_tokens": 1000000,
             "input": 2,
             "output": 10
-          }
-        ]
-      }
-    },
-    {
-      "id": "claude-fable-5-1",
-      "name": "Claude Fable 5.1",
-      "provider": "Anthropic",
-      "source_id": "claude-models",
-      "status": "available",
-      "verified_on": "2026-09-29",
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "context_tokens": 1000000,
-      "tool_calling": true,
-      "open_weights": false,
-      "price_usd_per_million": {
-        "input": 10,
-        "output": 50,
-        "max_input_tokens": 200000,
-        "scope": "Standard uncached API text tokens; excludes reasoning volume, tool fees, discounts and regional tiers."
-      },
-      "notes": [
-        "Some published evaluations use fallback models; do not attribute the composite result to the base model alone."
-      ],
-      "price_reference": {
-        "currency": "USD",
-        "unit": "per_million_tokens",
-        "source_id": "claude-pricing",
-        "verified_on": "2026-10-08",
-        "tiers": [
-          {
-            "max_input_tokens": 1000000,
-            "input": 10,
-            "output": 50
           }
         ]
       }

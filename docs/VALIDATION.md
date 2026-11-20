@@ -140,6 +140,7 @@ evaluation fixtures and scoring process are in `evals/`.
   exclusion, audio and video eligibility and verified API input limits.
 - Direct quotes at 272,000 and 272,001 input tokens verified both GPT-6.2 price
   tiers. The extracted v0.4.4 skill returned the same three long-input quotes.
-- The existing catalog entries, translations, taxonomy and ranking policy were
-  compared with the baseline. The maintenance report lists earlier evidence
-  reviews separately and has no entries due for the three new models.
+- Comparison with the baseline checked that retained catalog entries,
+  translations, taxonomy and ranking policy are identical. Exact-resource
+  tests cover requests limited to removed model IDs. The maintenance report
+  has no entries due for the three new models.

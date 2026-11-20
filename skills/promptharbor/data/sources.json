@@ -2,15 +2,6 @@
   "schema_version": 1,
   "sources": [
     {
-      "id": "openai-astra",
-      "title": "GPT-6 Astra model documentation",
-      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-      "publisher": "OpenAI",
-      "published_on": null,
-      "checked_on": "2026-09-29",
-      "review_days": 14
-    },
-    {
       "id": "openai-luna",
       "title": "GPT-6 Luna model documentation",
       "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
@@ -61,15 +52,6 @@
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
       "publisher": "Google",
       "published_on": "2026-09-02",
-      "checked_on": "2026-09-29",
-      "review_days": 14
-    },
-    {
-      "id": "aa-astra",
-      "title": "Benchmarking GPT-6 Astra",
-      "url": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
-      "publisher": "Artificial Analysis",
-      "published_on": null,
       "checked_on": "2026-09-29",
       "review_days": 14
     },
@@ -317,15 +299,6 @@
       "review_days": 14
     },
     {
-      "id": "community-source-037",
-      "title": "Astra built the author’s portfolio",
-      "url": "https://www.najam.pk/blog/gpt-6-astra-review",
-      "publisher": "Najam Saeed",
-      "published_on": "2026-09-01",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
       "id": "community-source-038",
       "title": "Scriptwriting comparison: Astra",
       "url": "https://www.reddit.com/r/LLMDevs/comments/1wtmb3m/gpt61_sol_seems_like_a_step_back_for_writing/",
@@ -403,33 +376,6 @@
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1wsqfzk/sonnet_55_is_not_worth_using_it_unless_at_lowmed/",
       "publisher": "msw3age (comment)",
       "published_on": null,
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
-      "id": "community-source-048",
-      "title": "Fable 5.1 structured a draft from handwritten notes",
-      "url": "https://aaronmakelky.com/blog/astra-vs-fable",
-      "publisher": "Aaron Makelky",
-      "published_on": "2026-09-15",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
-      "id": "community-source-049",
-      "title": "Seven-chapter Fable 5.1 rewrite still needed voice editing",
-      "url": "https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions",
-      "publisher": "AI-Native PM authors (Girish PM origin)",
-      "published_on": "2026-09-02",
-      "checked_on": "2026-09-30",
-      "review_days": 14
-    },
-    {
-      "id": "community-source-050",
-      "title": "Fable 5.1 animated SVG and rocket-page build-off",
-      "url": "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026",
-      "publisher": "BitsMinds hands-on reviewers",
-      "published_on": "2026-09-21",
       "checked_on": "2026-09-30",
       "review_days": 14
     },
@@ -879,15 +825,6 @@
       "title": "Grok 4.7 release and long-context pricing",
       "url": "https://docs.x.ai/developers/release-notes",
       "publisher": "SpaceXAI",
-      "published_on": null,
-      "checked_on": "2026-10-08",
-      "review_days": 14
-    },
-    {
-      "id": "openai-astra-pricing",
-      "title": "GPT-6 Astra model documentation — API pricing",
-      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-      "publisher": "OpenAI",
       "published_on": null,
       "checked_on": "2026-10-08",
       "review_days": 14

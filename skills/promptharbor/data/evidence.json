@@ -2,109 +2,6 @@
   "schema_version": 1,
   "evidence": [
     {
-      "id": "astra-terminal",
-      "model_id": "gpt-6-astra",
-      "source_id": "aa-astra",
-      "kind": "independent_eval",
-      "claim": "AA reports 56% on Terminal-Bench 4.0 in Codex.",
-      "direct_tasks": [
-        "software.terminal"
-      ],
-      "proxy_tasks": [
-        "software.debug",
-        "software.repo"
-      ],
-      "measurement": {
-        "benchmark": "Terminal-Bench",
-        "version": "4.0",
-        "metric": "accuracy",
-        "value": 56,
-        "unit": "percent",
-        "protocol": "AA Coding Agent Index / Codex"
-      },
-      "setting": "Codex; max effort; distinct from AA general-agent setup",
-      "limitations": "The same article also reports 59% in another setup; do not merge these runs.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-29",
-      "comparison_group": null
-    },
-    {
-      "id": "astra-docs",
-      "model_id": "gpt-6-astra",
-      "source_id": "aa-astra",
-      "kind": "independent_eval",
-      "claim": "GDP.pdf all-criteria success is reported as 31%.",
-      "direct_tasks": [
-        "context.synthesis"
-      ],
-      "proxy_tasks": [
-        "writing.professional"
-      ],
-      "measurement": {
-        "benchmark": "GDP.pdf",
-        "version": "article snapshot",
-        "metric": "all-criteria pass",
-        "value": 31,
-        "unit": "percent",
-        "protocol": "AA professional documents"
-      },
-      "setting": "AA document evaluation; see source for exact configuration",
-      "limitations": "Task transfer and performance on the user prompt are unmeasured.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-29",
-      "comparison_group": null
-    },
-    {
-      "id": "astra-workflow",
-      "model_id": "gpt-6-astra",
-      "source_id": "aa-astra",
-      "kind": "independent_eval",
-      "claim": "AutomationBench-AA is reported as 69%.",
-      "direct_tasks": [
-        "agent.workflow"
-      ],
-      "proxy_tasks": [
-        "agent.long"
-      ],
-      "measurement": {
-        "benchmark": "AutomationBench-AA",
-        "version": "article snapshot",
-        "metric": "accuracy",
-        "value": 69,
-        "unit": "percent",
-        "protocol": "AA implementation"
-      },
-      "setting": "AA agent environment; not the Zapier leaderboard protocol",
-      "limitations": "Task transfer and performance on the user prompt are unmeasured.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-29",
-      "comparison_group": null
-    },
-    {
-      "id": "astra-fit",
-      "model_id": "gpt-6-astra",
-      "source_id": "openai-astra",
-      "kind": "official_capability",
-      "claim": "Official positioning includes difficult reasoning, research and tool-based work.",
-      "direct_tasks": [],
-      "proxy_tasks": [
-        "math.proof",
-        "math.numerical",
-        "science.reasoning",
-        "science.compute",
-        "research.web",
-        "research.facts",
-        "software.architecture",
-        "agent.computer"
-      ],
-      "measurement": null,
-      "setting": "Responses API with appropriate tools",
-      "limitations": "Product positioning and available tools are not comparative task evaluations.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-29",
-      "comparison_group": null
-    },
-    {
       "id": "luna-fit",
       "model_id": "gpt-6-luna",
       "source_id": "openai-luna",
@@ -176,33 +73,6 @@
       "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
       "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
       "reported_on": "2026-09-28",
-      "reviewed_on": "2026-09-29",
-      "comparison_group": null
-    },
-    {
-      "id": "fable-terminal",
-      "model_id": "claude-fable-5-1",
-      "source_id": "opus-launch",
-      "kind": "vendor_eval",
-      "claim": "Anthropic reports 55.8% on Terminal-Bench 4.0.",
-      "direct_tasks": [
-        "software.terminal"
-      ],
-      "proxy_tasks": [
-        "software.debug",
-        "software.repo"
-      ],
-      "measurement": {
-        "benchmark": "Terminal-Bench",
-        "version": "4.0",
-        "metric": "accuracy",
-        "value": 55.8,
-        "unit": "percent",
-        "protocol": "Anthropic release setup"
-      },
-      "setting": "Opus xhigh; Sonnet max; Fable max with fallback; consult source",
-      "limitations": "Different effort and fallback configurations; vendor report, not independent replication.",
-      "reported_on": "2026-09-22",
       "reviewed_on": "2026-09-29",
       "comparison_group": null
     },
@@ -333,26 +203,6 @@
     {
       "id": "opus-long",
       "model_id": "claude-opus-5-5",
-      "source_id": "claude-models",
-      "kind": "official_capability",
-      "claim": "Official overview describes long-running agent and knowledge work.",
-      "direct_tasks": [],
-      "proxy_tasks": [
-        "agent.long",
-        "context.synthesis",
-        "writing.professional",
-        "research.web"
-      ],
-      "measurement": null,
-      "setting": "Claude API or tool-enabled host",
-      "limitations": "A 1M context specification does not prove reliable recall over 1M tokens.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-29",
-      "comparison_group": null
-    },
-    {
-      "id": "fable-long",
-      "model_id": "claude-fable-5-1",
       "source_id": "claude-models",
       "kind": "official_capability",
       "claim": "Official overview describes long-running agent and knowledge work.",
@@ -888,58 +738,6 @@
         "protocol": "Arena WebDev Overall snapshot; configuration per row"
       },
       "setting": "claude-opus-5.5-max; Arena deployment, not every consumer app setting",
-      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
-      "reported_on": "2026-09-25",
-      "reviewed_on": "2026-09-29",
-      "comparison_group": "arena-webdev-2026-09-25"
-    },
-    {
-      "id": "gpt-6-astra-arena-webdev",
-      "model_id": "gpt-6-astra",
-      "source_id": "arena-webdev",
-      "kind": "independent_eval",
-      "claim": "gpt-6-astra-max: observed WebDev preference rating 1792.",
-      "direct_tasks": [
-        "software.frontend"
-      ],
-      "proxy_tasks": [
-        "software.frontend.design"
-      ],
-      "measurement": {
-        "benchmark": "Arena WebDev",
-        "version": "2026-09-25 overall",
-        "metric": "preference rating",
-        "value": 1792,
-        "unit": "rating points",
-        "protocol": "Arena WebDev Overall snapshot; configuration per row"
-      },
-      "setting": "gpt-6-astra-max; Arena deployment, not every consumer app setting",
-      "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
-      "reported_on": "2026-09-25",
-      "reviewed_on": "2026-09-29",
-      "comparison_group": "arena-webdev-2026-09-25"
-    },
-    {
-      "id": "claude-fable-5-1-arena-webdev",
-      "model_id": "claude-fable-5-1",
-      "source_id": "arena-webdev",
-      "kind": "independent_eval",
-      "claim": "claude-fable-5.1-max: observed WebDev preference rating 1751.",
-      "direct_tasks": [
-        "software.frontend"
-      ],
-      "proxy_tasks": [
-        "software.frontend.design"
-      ],
-      "measurement": {
-        "benchmark": "Arena WebDev",
-        "version": "2026-09-25 overall",
-        "metric": "preference rating",
-        "value": 1751,
-        "unit": "rating points",
-        "protocol": "Arena WebDev Overall snapshot; configuration per row"
-      },
-      "setting": "claude-fable-5.1-max; Arena deployment, not every consumer app setting",
       "limitations": "Crowd preference, not a functional acceptance test. Effort differs by entry; error intervals and preliminary labels are on source. Ranking differences are not significance tests. Overall results are only a proxy for visual design, not reference fidelity.",
       "reported_on": "2026-09-25",
       "reviewed_on": "2026-09-29",
@@ -1527,72 +1325,6 @@
       "comparison_group": null
     },
     {
-      "id": "gpt-6-astra-community-01",
-      "model_id": "gpt-6-astra",
-      "source_id": "community-source-037",
-      "kind": "community_test",
-      "claim": "The author reports building his portfolio with Astra in Codex, with strong coding results but rapid subscription quota consumption.",
-      "direct_tasks": [
-        "software.frontend"
-      ],
-      "proxy_tasks": [
-        "software.frontend.design"
-      ],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "One personal project; no matched prompts or test suite. The explicit September 1 article date is retained as an early personal report; release/access timing is not independently established. Subscription quota anecdotes are not API prices.",
-      "reported_on": "2026-09-01",
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "Najam Saeed",
-        "origin_id": "author:najam saeed",
-        "grade": "artifact_report",
-        "stance": "positive",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [
-          "https://www.najam.pk/"
-        ],
-        "rating": {
-          "value": 8,
-          "rationale": "A published personal website supports a strong bounded frontend result; one project and quota anecdotes do not establish broader superiority.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "gpt-6-astra-community-02",
-      "model_id": "gpt-6-astra",
-      "source_id": "community-source-038",
-      "kind": "community_test",
-      "claim": "The author’s internal AI-judged script study places Astra near 6.1 Sol but below the older 6 Sol.",
-      "direct_tasks": [
-        "writing.creative"
-      ],
-      "proxy_tasks": [],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "Private 10-task scriptwriting study, five generations per task and three AI judges; no public prompts or evaluation code. Efforts differ (6.1 Sol xhigh, Astra max). AI-judge preference is not human consensus. Original page only exposes relative age; absolute date is unknown.",
-      "reported_on": null,
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "OnlyProggingForFun",
-        "origin_id": "author:onlyproggingforfun",
-        "grade": "firsthand",
-        "stance": "mixed",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [],
-        "rating": {
-          "value": 6.5,
-          "rationale": "Useful scripts with a reported preference gap to older Sol; a small private AI-judged comparison supports only a cautious mixed rating.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
       "id": "gpt-6-luna-community-01",
       "model_id": "gpt-6-luna",
       "source_id": "community-source-040",
@@ -1952,179 +1684,6 @@
         "rating": {
           "value": 3.5,
           "rationale": "Specific residual-defect and rework complaint is an adverse signal; weak reproducibility keeps the confidence limited.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "claude-fable-5-1-community-01",
-      "model_id": "claude-fable-5-1",
-      "source_id": "community-source-048",
-      "kind": "community_test",
-      "claim": "Given 17 scanned handwritten pages, the author preferred Fable 5.1's draft structure and opening; processing took substantially longer than the Astra setup.",
-      "direct_tasks": [
-        "writing.edit",
-        "writing.professional"
-      ],
-      "proxy_tasks": [
-        "vision.document"
-      ],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "One personal task; different applications and tools; subjective preference, no blind grading. Author discloses receiving OpenAI promotional merchandise.",
-      "reported_on": "2026-09-15",
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "Aaron Makelky",
-        "origin_id": "aaron-makelky-astra-fable-20260915",
-        "grade": "firsthand",
-        "stance": "positive",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [
-          "https://aaronmakelky.com/blog/astra-vs-fable"
-        ],
-        "rating": {
-          "value": 8.0,
-          "rationale": "Clear transformation task and explicit quality/time tradeoff support writing fit, with comparison confounds retained.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "claude-fable-5-1-community-02",
-      "model_id": "claude-fable-5-1",
-      "source_id": "community-source-048",
-      "kind": "community_test",
-      "claim": "The shown tests retained an existing page's branding, but a new business homepage had readability/spacing faults and a weaker complete brand package than the author's preferred Astra result.",
-      "direct_tasks": [
-        "software.frontend.design"
-      ],
-      "proxy_tasks": [
-        "software.frontend"
-      ],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "Two briefs, subjective preference, no conversion measurement; different harnesses and image-generation access. Same origin as the writing test; do not count as an independent second reviewer.",
-      "reported_on": "2026-09-15",
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "Aaron Makelky reporting tests with Ryan Doser",
-        "origin_id": "aaron-makelky-astra-fable-20260915",
-        "grade": "artifact_report",
-        "stance": "mixed",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [
-          "https://aaronmakelky.com/blog/astra-vs-fable"
-        ],
-        "rating": {
-          "value": 5.0,
-          "rationale": "Brand retention is useful, while visible layout faults warrant a mixed task assessment.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "claude-fable-5-1-community-03",
-      "model_id": "claude-fable-5-1",
-      "source_id": "community-source-049",
-      "kind": "community_test",
-      "claim": "On a seven-chapter course rewrite, the authors found only marginal prose improvement and still edited every chapter to restore their voice.",
-      "direct_tasks": [
-        "writing.edit"
-      ],
-      "proxy_tasks": [
-        "writing.professional"
-      ],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "Before/after excerpt is public, but complete session outputs were not inspected; fleet mode confounds model attribution.",
-      "reported_on": "2026-09-02",
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "AI-Native PM authors (Girish PM origin)",
-        "origin_id": "ai-native-pm-girishpm-fable-rewrite-20260902",
-        "grade": "artifact_report",
-        "stance": "mixed",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [
-          "https://ainativeproductmanager.com/field-notes/fable-5-1-first-impressions"
-        ],
-        "rating": {
-          "value": 5.5,
-          "rationale": "Modest improvement and necessary line editing support a mixed score for preserving a specific author voice.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "claude-fable-5-1-community-04",
-      "model_id": "claude-fable-5-1",
-      "source_id": "community-source-049",
-      "kind": "community_test",
-      "claim": "The course workflow needed less steering and recovered cached agent results, but underestimated usage and exhausted its subscription allowance before completion.",
-      "direct_tasks": [
-        "agent.long",
-        "agent.workflow"
-      ],
-      "proxy_tasks": [],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "One workflow with fleet mode; resumption and allowance accounting also belong to Claude Code/product behavior. Same origin as the course rewrite; do not count twice per task.",
-      "reported_on": "2026-09-02",
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "AI-Native PM authors (Girish PM origin)",
-        "origin_id": "ai-native-pm-girishpm-fable-rewrite-20260902",
-        "grade": "firsthand",
-        "stance": "mixed",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [],
-        "rating": {
-          "value": 6.0,
-          "rationale": "Recovery is a practical gain; usage estimation and interrupted delivery offset it for long-running work.",
-          "confidence": "low",
-          "assessed_on": "2026-09-30"
-        }
-      }
-    },
-    {
-      "id": "claude-fable-5-1-community-05",
-      "model_id": "claude-fable-5-1",
-      "source_id": "community-source-050",
-      "kind": "community_test",
-      "claim": "In three visible animation briefs, Fable 5.1 had a fault-free interchange and a correctly rotating carousel, and kept the launch vehicle in frame, with remaining rocket defects.",
-      "direct_tasks": [
-        "software.frontend.design"
-      ],
-      "proxy_tasks": [
-        "software.frontend"
-      ],
-      "measurement": null,
-      "setting": "Author-reported exact model version; deployment, effort and harness are unverified unless stated in claim/limitations.",
-      "limitations": "Single attempt per brief; non-blind judging and different maker harnesses. Live builds are linked, but exact prompt files were not published; no production/accessibility validation.",
-      "reported_on": "2026-09-21",
-      "reviewed_on": "2026-09-30",
-      "comparison_group": null,
-      "community": {
-        "author": "BitsMinds hands-on reviewers",
-        "origin_id": "bitsminds-cross-lab-three-briefs-20260921",
-        "grade": "artifact_report",
-        "stance": "positive",
-        "first_seen_on": "2026-09-30",
-        "artifact_urls": [
-          "https://www.bitsminds.com/news/grok-4-7-vs-fable-5-1-vs-astra-6-build-off-2026"
-        ],
-        "rating": {
-          "value": 8.0,
-          "rationale": "Concrete motion correctness is useful evidence for visual prototypes; residual defects and small sample cap the score.",
           "confidence": "low",
           "assessed_on": "2026-09-30"
         }
@@ -3081,32 +2640,6 @@
       "comparison_group": "arena-webdev-2026-10-07"
     },
     {
-      "id": "gpt-6-astra-arena-webdev-2026-10-07",
-      "model_id": "gpt-6-astra",
-      "source_id": "arena-webdev-2026-10-07",
-      "kind": "independent_eval",
-      "claim": "gpt-6-astra-max: WebDev preference rating 1788 (displayed interval ±11).",
-      "direct_tasks": [
-        "software.frontend"
-      ],
-      "proxy_tasks": [
-        "software.frontend.design"
-      ],
-      "measurement": {
-        "benchmark": "Arena WebDev",
-        "version": "2026-10-07 overall",
-        "metric": "preference rating",
-        "value": 1788,
-        "unit": "rating points",
-        "protocol": "Arena WebDev Overall snapshot; configuration per row"
-      },
-      "setting": "gpt-6-astra-max; Arena deployment with the displayed effort setting.",
-      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
-      "reported_on": "2026-10-07",
-      "reviewed_on": "2026-10-08",
-      "comparison_group": "arena-webdev-2026-10-07"
-    },
-    {
       "id": "claude-sonnet-5-5-arena-webdev-2026-10-07",
       "model_id": "claude-sonnet-5-5",
       "source_id": "arena-webdev-2026-10-07",
@@ -3153,32 +2686,6 @@
         "protocol": "Arena WebDev Overall snapshot; configuration per row"
       },
       "setting": "gpt-6.1-sol-max; Arena deployment with the displayed effort setting.",
-      "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
-      "reported_on": "2026-10-07",
-      "reviewed_on": "2026-10-08",
-      "comparison_group": "arena-webdev-2026-10-07"
-    },
-    {
-      "id": "claude-fable-5-1-arena-webdev-2026-10-07",
-      "model_id": "claude-fable-5-1",
-      "source_id": "arena-webdev-2026-10-07",
-      "kind": "independent_eval",
-      "claim": "claude-fable-5.1-max: WebDev preference rating 1745 (displayed interval ±9).",
-      "direct_tasks": [
-        "software.frontend"
-      ],
-      "proxy_tasks": [
-        "software.frontend.design"
-      ],
-      "measurement": {
-        "benchmark": "Arena WebDev",
-        "version": "2026-10-07 overall",
-        "metric": "preference rating",
-        "value": 1745,
-        "unit": "rating points",
-        "protocol": "Arena WebDev Overall snapshot; configuration per row"
-      },
-      "setting": "claude-fable-5.1-max; Arena deployment with the displayed effort setting.",
       "limitations": "Preference evaluation does not establish functional correctness or reference fidelity. Configurations differ; intervals can overlap. Serving aliases do not identify local checkpoints.",
       "reported_on": "2026-10-07",
       "reviewed_on": "2026-10-08",

@@ -53,7 +53,6 @@ missing quotes overdue.
   Legacy budget inputs cover the short tier.
   [GPT-6.2 Sol](https://developers.openai.com/api/docs/models/gpt-6.2-sol),
   [GPT-6.2 Astra](https://developers.openai.com/api/docs/models/gpt-6.2-astra),
-  [Astra](https://developers.openai.com/api/docs/models/gpt-6-astra),
   [Sol 6.1](https://developers.openai.com/api/docs/models/gpt-6.1-sol),
   [Luna](https://developers.openai.com/api/docs/models/gpt-6-luna).
 
